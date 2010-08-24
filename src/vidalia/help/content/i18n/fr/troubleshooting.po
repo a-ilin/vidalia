@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-03 15:49-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-23 20:52+0200\n"
+"Last-Translator: Médéric <mederic.ribreux@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 # type: Content of: <html><body><h1>
 #: en/troubleshooting.html:16
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Dépannage"
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:19
@@ -37,11 +38,15 @@ msgid ""
 "having, check out our website at <i>www.vidalia-project.net</i> for more "
 "support and information.  <a name=\"start\"/>"
 msgstr ""
+"Voici une liste de quelques problèmes et de questions rencontrées lors de "
+"l'utilisation de Tor. Si vous ne trouvez rien sur votre problème en "
+"particulier, consultez notre site web sur <i>www.vidalia-project.net</i> "
+"pour plus d'information et pour un support plus complet.  <a name=\"start\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:25
 msgid "I Can't Start Tor"
-msgstr ""
+msgstr "Je ne peux pas démarrer Tor"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:27
@@ -51,6 +56,11 @@ msgid ""
 "Vidalia where Tor is located by updating the <i>Tor Executable</i> option in "
 "the <a href=\"config.html#general\">general configuration settings</a>."
 msgstr ""
+"La raison principale pour laquelle Vidalia ne peut pas lancer Tor est lié au "
+"fait que Vidalia n'arrive pas à localiser correctement où est installé Tor. "
+"Vous pouvez indiquer cet emplacement à Vidalia en mettant à jour l'option "
+"<i>Exécutable Tor</i> dans les <a name=\"start\"/>paramètres de configuration "
+"générale</a>."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:33
@@ -59,6 +69,9 @@ msgid ""
 "another Tor process running. Check your list of running process and stop the "
 "previous Tor process, if you find one. Then, try running Tor again."
 msgstr ""
+"Une autre raison de non-démarrage de Tor est le fait qu'il existe déjà un "
+"processus Tor qui fonctionne. Vérifiez votre liste de processus en cours et "
+"arrêter l'ancien processus Tor si vous le trouvez. Ensuite, relancez Tor."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:38
@@ -67,21 +80,25 @@ msgid ""
 "if Tor printed any information about errors it encountered while trying to "
 "start."
 msgstr ""
+"Si ça ne fonctionne toujours pas, vérifiez votre <a href=\"log.html\">journal "
+"d'évènements</a> pour voir si Tor a inscrit des informations sur les erreurs "
+"qu'il a rencontré lors de sa tentative de lancement."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:43
 msgid "<a name=\"connect\"/>"
-msgstr ""
+msgstr "<a name=\"connect\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:44
 msgid "Vidalia Can't Connect to Tor"
-msgstr ""
+msgstr "Vidalia ne peut pas se connecter à Tor"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:46
 msgid "Vidalia manages Tor by communicating with it via Tor's <i>control port</i>."
 msgstr ""
+"Vidalia gère Tor en communiquant avec lui via <i>le port de contrôle</i>."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:49
@@ -91,6 +108,10 @@ msgid ""
 "your <a href=\"log.html\">message log</a> to see if Tor reported any errors "
 "while it started."
 msgstr ""
+"La raison principale du fait que Vidalia ne peut se connecter à Tor est liée "
+"à un arrêt prématuré de ce dernier. Vous devriez consulter votre <a "
+"href=\"log.html\">journal des évènements</a> pour voir si Tor a remonté des "
+"erreurs lors de son lancement."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:55
@@ -102,16 +123,22 @@ msgid ""
 "setting in Vidalia's <a href=\"config.html#advanced\">advanced configuration "
 "settings</a>."
 msgstr ""
+"Si Tor écoute sur un port différent de celui qui est configuré dans Vidalia, "
+"ce dernier ne pourra pas se connecter à Tor. Vous aurez rarement besoin de "
+"modifier ce paramètre. Néanmoins, si un service de votre machine utilise "
+"déjà le port de contrôle de port, vous aurez besoin d'indiquer un autre "
+"port. Vous pouvez modifier ce paramètre dans les <a "
+"href=\"config.html#advanced\">paramètres avancés de configuration</a>."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:63
 msgid "<a name=\"password\"/>"
-msgstr ""
+msgstr "<a name=\"password\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:64
 msgid "Why is Vidalia asking me for a \"control password\"?"
-msgstr ""
+msgstr "Pourquoi Vidalia me demande un \"mot de passe de contrôle\" ?"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:66
@@ -123,6 +150,12 @@ msgid ""
 "applications from also connecting to the control port and potentially "
 "compromising your anonymity."
 msgstr ""
+"Vidalia interagit avec Tor via \"le port de contrôle\". Ce port permet à "
+"Vidalia de recevoir des informations sur l'état de Tor, de demander une "
+"nouvelle identité, de configurer les paramètres de Tor, etc... Chaque fois "
+"que Vidalia lance Tor, l'application génère un mot de passe aléatoire pour "
+"le port de contrôle de manière à empêcher d'autres applications de s'y "
+"connecter et de compromettre votre anonymat."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:75
@@ -131,6 +164,9 @@ msgid ""
 "happens in the background. There are three common situations, though, where "
 "Vidalia may prompt you for a password:"
 msgstr ""
+"En règle générale, le processus de génération de mot de passe aléatoire a "
+"lieu en tâche de fond. Il existe trois situations au cours desquelles, "
+"Vidalia peut vous demander de saisir un mot de passe:"
 
 # type: Content of: <html><body><ul><li>
 #: en/troubleshooting.html:82
@@ -140,6 +176,10 @@ msgid ""
 "Tor Browser Bundle. In that case, you'll need to close the old Vidalia and "
 "Tor before you can run this one."
 msgstr ""
+"Vous avez déjà lancé Vidalia et Tor. Par exemple, cette situation survient "
+"lorsque vous avez installé le Pack Vidalia et que vous lancez le Pack de "
+"navigation Tor. Dans ce cas, vous aurez besoin de fermer l'ancienne instance "
+"de Vidalia et de Tor avant de lancer la nouvelle."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:89
@@ -148,6 +188,10 @@ msgid ""
 "password. After you restart Vidalia, it generates a new random password, but "
 "Vidalia can't talk to Tor, because the random passwords are different."
 msgstr ""
+"Vidalia a échoué mais Tor continue à fonctionner avec l'ancien mot de passe "
+"aléatoire. Une fois que vous aurez redémarrez Vidalia, un nouveau mot de "
+"passe sera généré mais Vidalia ne pourra dialoguer avec Tor car les deux "
+"mots de passe seront différents."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:94
@@ -156,6 +200,9 @@ msgid ""
 "button, you can click the button and Vidalia will restart Tor with a new "
 "random control password."
 msgstr ""
+"Si la boîte de dialogue qui vous propose de saisir un mot de passe de "
+"contrôle dispose d'un bouton <i>Mise à jour</i>, vous pouvez cliquer dessus "
+"et Vidalia redémarrera Tor avec un nouveau mot de passe."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:99
@@ -165,6 +212,11 @@ msgid ""
 "process or task manager, and terminate the Tor process. Then use Vidalia to "
 "restart Tor and all will work again."
 msgstr ""
+"Si aucun bouton <i>Mise à jour</i> n'est présent ou bien si Vidalia ne peut "
+"pas redémarrer Tor pour vous, vous pouvez toutefois corriger le problème "
+"manuellement. Allez simplement dans votre gestionnaire de processus ou de "
+"tâches et fermez le processus Tor. Utilisez ensuite Vidalia pour redémarrer "
+"Tor et tout fonctionnera à nouveau."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:106
@@ -177,6 +229,14 @@ msgid ""
 "running Tor. Vidalia generates a random password, but it is different than "
 "the saved password in the Tor service."
 msgstr ""
+"Vous avez précédemment configuré Tor pour fonctionner en tant que service. "
+"Lorsque Tor est un service, il se lance lors du démarrage de la machine. Si "
+"vous avez configuré Tor pour démarrer en tant que service par Vidalia, un "
+"mot de passe aléatoire a été généré et sauvegardé dans Tor. Lorsque vous "
+"redémarrez votre machine, Tor se lance et utilise cet ancien mot de passe. "
+"Vous ouvrez une session et démarrez Vidalia qui tente de dialoguer avec le "
+"processus Tor actif. Vidalia génère un mot de passe aléatoire mais qui sera "
+"différent de celui sauvegardé et utilisé par le service Tor."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:114
@@ -186,16 +246,21 @@ msgid ""
 "href=\"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ#WinNTService\"> "
 "Tor as a service</a> for more information on how to remove the Tor service."
 msgstr ""
+"Vous aurez besoin de reconfigurer Tor pour qu'il ne fonctionne pas en tant "
+"que service. Consultez la page du wiki sur la gestion de <a href=\"https://wi"
+"ki.torproject.org/noreply/TheOnionRouter/TorFAQ#WinNTService\">Tor en tant "
+"que service</a> pour plus d'information ou pour découvrir comment supprimer "
+"le service Tor."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:122
 msgid "<a name=\"torexited\"/>"
-msgstr ""
+msgstr "<a name=\"torexited\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:123
 msgid "Tor Exited Unexpectedly"
-msgstr ""
+msgstr "Tor s'est terminé prématurément"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:125
@@ -205,6 +270,11 @@ msgid ""
 "to see if any of the last few messages in the list are highlighted in yellow "
 "and contain a message similar to the following:"
 msgstr ""
+"Si Tor échoue immédiatement après avoir été lancé, vous avez de grandes "
+"chances qu'un processus Tor soit déjà en fonctionnement. Vérifiez <a "
+"href=\"log.html\">le journal des évènements</a> pour voir si un des derniers "
+"messages de la liste est surligné en jaune et contient un message proche de "
+"ce qui suit:"
 
 # type: Content of: <html><body><pre>
 #: en/troubleshooting.html:131
@@ -214,6 +284,9 @@ msgid ""
 "already in use. \n"
 "Is Tor already running?\n"
 msgstr ""
+"connection_create_listener(): Could not bind to 127.0.0.1:9050: Address "
+"already in use. \n"
+"Is Tor already running?\n"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:135
@@ -224,6 +297,12 @@ msgid ""
 "operating systems, the <i>ps</i> command can help you find the other Tor "
 "process."
 msgstr ""
+"Si vous trouvez un message d'erreur comme celui du dessus, vous aurez besoin "
+"d'arrêter le processus Tor avant d'en lancer un nouveau à l'aide de "
+"Vidalia. Sur Windows, vous aurez besoin de chercher après <i>tor.exe</i> "
+"dans votre gestionnaire des tâches. Sur la plupart des autres systèmes "
+"d'exploitation, la commande <i>ps</i> peut vous aider à trouver l'autre "
+"processus Tor."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:141
@@ -233,16 +312,21 @@ msgid ""
 "information about any errors Tor experienced before it exited. Such errors "
 "will be highlighted in either red or yellow."
 msgstr ""
+"Si Tor a fonctionné correctement depuis quelquetemps (plus que quelques "
+"secondes), alors vous devriez vérifier <a href=\"log.html\">le journal des "
+"évènements</a> pour d'autres informations sur les erreurs que Tor a "
+"rencontré avant de se terminer. De telles erreurs sont surlignées soit en "
+"rouge, soit en jaune."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:147
 msgid "<a name=\"stop\"/>"
-msgstr ""
+msgstr "<a name=\"stop\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:148
 msgid "Vidalia Can't Stop Tor"
-msgstr ""
+msgstr "Vidalia ne peut pas arrêter Tor"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:150
@@ -251,3 +335,6 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor reported any errors while "
 "trying to exit."
 msgstr ""
+"Si Vidalia ne peut pas arrêter Tor, vous devriez vérifier <a "
+"href=\"log.html\">le journal des évènements</a> pour voir si Tor a rapporté "
+"d'autres erreurs lors de sa tentative de fermeture."
