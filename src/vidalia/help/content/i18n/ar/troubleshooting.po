@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-03 15:49-0300\n"
-"PO-Revision-Date: 2010-08-24 01:56+0200\n"
+"PO-Revision-Date: 2010-08-24 03:19+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -283,6 +283,10 @@ msgid ""
 "operating systems, the <i>ps</i> command can help you find the other Tor "
 "process."
 msgstr ""
+"اذا وجدت رسالة خطأ مثل الرسالة أعلاه, سوف تحتاج إلى إيقاف عملية تور الأخرى "
+"قبل بدء واحدة جديدة مع فيداليا. في ويندوز, أنت بحاجة الى البحث "
+"<i>tor.exe</i> في مدير المهام الخاص بك. في معظم أنظمة التشغيل الأخرى, الأمر "
+"<i>ps</i> يمكن أن يساعدك في العثور على عملية تور الاخرى."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:141
@@ -292,6 +296,10 @@ msgid ""
 "information about any errors Tor experienced before it exited. Such errors "
 "will be highlighted in either red or yellow."
 msgstr ""
+"اذا تم تشغيل تور بنجاح لفترة قصيرة (وهذا, أكثر من بضع ثواني), عندها ينبغي "
+"عليك التحقق من <a href=\"log.html\">سجل الرسالة</a> للحصول على معلومات حول أية "
+"أخطاء إختبرها تور قبل خروجه. مثل هذه الأخطاء سوف تكون بارزة إمّا باللون "
+"الأحمر أو الأصفر."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:147
