@@ -304,7 +304,6 @@
         <file>map/world-map.png</file>
     </qresource>
     <qresource prefix="/pki">
-        <file>cacert_root.crt</file>
         <file>EquifaxSecureCA.crt</file>
     </qresource>
     <qresource prefix="/geoip">

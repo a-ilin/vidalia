@@ -507,10 +507,6 @@ Vidalia::loadDefaultCaCertificates() const
 {
   QSslSocket::setDefaultCaCertificates(QList<QSslCertificate>());
 
-  if (! QSslSocket::addDefaultCaCertificates(":/pki/cacert_root.crt"))
-    vWarn("Failed to add the CACert CA certificate to the default CA "
-          "certificate database.");
-
   if (! QSslSocket::addDefaultCaCertificates(":/pki/EquifaxSecureCA.crt"))
     vWarn("Failed to add the Equifax Secure CA certificate to the default CA "
           "certificate database.");
