@@ -572,9 +572,8 @@ MainWindow::setTrayIcon(const QString &iconFile)
 {
 #if defined(Q_WS_MAC)
   QApplication::setWindowIcon(QPixmap(iconFile));
-#else
-  _trayIcon.setIcon(QIcon(iconFile));
 #endif
+  _trayIcon.setIcon(QIcon(iconFile));
 }
 
 /** Respond to a double-click on the tray icon by opening the Control Panel
