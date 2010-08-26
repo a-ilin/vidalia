@@ -1,4 +1,4 @@
-0.2.10  xx-xxx-2010
+0.2.10  26-Aug-2010
   o Drop remote GeoIP lookups. Instead, the default behavior now is to use
     the country-level GeoIP database that ships with Tor to map an IP
     address to a country code, and then map the country code to latitude
@@ -11,6 +11,7 @@
     by Robert Hogan. (Ticket #608)
   o Update the menubar icon at the same time as the dock icon on OS X.
     Previously, we had a blank icon in the menubar. (Ticket #610)
+  o Updated several translations.
 
 
 0.2.9   20-May-2010
