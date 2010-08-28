@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-08-22 07:55+0200\n"
+"PO-Revision-Date: 2010-08-28 02:06+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -42,7 +42,7 @@ msgid ""
 msgstr ""
 "يسمح لك سجل الرسالة بمشاهدة معلومات الحالة حول عملية تور قيد التشغيل.  <a "
 "name=\"basic\"/> كل رسالة لديها <i>خطورة</i> مرتبطة بها, تتراوح من <b>خطأ</b> "
-"(الأشد خطورة) الى <b>تصحيح</b> (الأكثر إسهابا). أنظر قسم المساعدة في <a "
+"(الأشد خطورة) الى <b>تصحيح</b> (مطوّل أكثر). أنظر قسم المساعدة في <a "
 "href=\"#severities\">خطورات الرسالة</a> للمزيد من المعلوماتn.  <a "
 "name=\"severities\"/>"
 
@@ -59,14 +59,14 @@ msgid ""
 "Tor. Lower severity messages appear frequently during normal Tor operations "
 "and usually do not need to be logged."
 msgstr ""
-"خطورة رسالة تخبرك مدى أهمية الرسالة. رسالة خطورة أعلى عادة تشير إلى أن شيئا "
-"ما خطأ مع تور. الرسائل الأقل خطورة تظهر مرارا أثناء عمليات تور العادية وعادة "
-"لا تحتاج إلى تسجيل. "
+"خطورة رسالة ما تخبرك مدى أهمية الرسالة. رسالة خطورة أعلى عادة تشير إلى أن "
+"شيئا ما خطأ في تور. الرسائل الأقل خطورة تظهر مرارا أثناء عمليات تور العادية "
+"وعادة لا تحتاج إلى تسجيل. "
 
 #. type: Content of: <html><body><p>
 #: en/log.html:37
 msgid "The possible message severities, from most severe to least severe, are:"
-msgstr "خطورات الرسالة الممكنة, من الأشد خطورة الى الأقل خطورة, هي"
+msgstr "خطورات الرسالة الممكنة, من الأشد خطورة الى الأقل خطورة, هي:"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:41
