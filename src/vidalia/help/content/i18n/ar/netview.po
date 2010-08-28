@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-08-23 06:11+0200\n"
+"PO-Revision-Date: 2010-08-28 04:49+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -29,7 +29,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
 msgid "Network Viewer"
-msgstr "عارض الشبكة"
+msgstr "نظرة عامة على شبكة تور"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:20
@@ -37,8 +37,8 @@ msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
 msgstr ""
-"يسمح لك عارض الشبكة بمشاهدة المرحلات في شبكة تور والى أين تتجه حركة المرور "
-"الخاصة بك."
+"تسمح لك النظرة العامة على شبكة تور بمشاهدة المرحلات في شبكة تور والى أين "
+"تتجه حركة المرور الخاصة بك."
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
@@ -128,7 +128,7 @@ msgstr ""
 "يحدث عندما يقوم فيداليا بالبحث عن معلومات جغرافية لقائمة مرحلات تور. من "
 "المهم ملاحظة أن هذا الطلب تم من خلال تور, بحيث لا يتم كشف موقعك لمرحل الموقع "
 "الجغرافي لعنوان بروتوكول الانترنت (GeoIP).نتائج عمليات البحث سوف تكون محلية "
-"مؤقتا من اجل الحد من حمل على مرحلات الموقع الجغرافي لعنوان بروتوكول "
+"مؤقتا من اجل الحد من الحمل على مرحلات الموقع الجغرافي لعنوان بروتوكول "
 "الانترنت (GeoIP) لفيداليا."
 
 #. type: Content of: <html><body>
@@ -139,7 +139,7 @@ msgstr "<a name=\"relaylist\"/>"
 #. type: Content of: <html><body><h3>
 #: en/netview.html:67
 msgid "Relay Status"
-msgstr "حالة المرحل"
+msgstr "حالة المرحّل"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:69
@@ -148,9 +148,8 @@ msgid ""
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
 "The following table summarizes the possible relay status icons:"
 msgstr ""
-"على الجانب الأيسر من عرض الشبكة، سترى قائمة المرحلات في شبكة تور. بجانب كل "
-"مرحل هو رمز يشير إلى حالة المرحل. يلخص الجدول التالي رموز حالة المرحّل "
-"الممكنة:"
+"على الجانب الأيسر من الخريطة، سترى قائمة المرحلات في شبكة تور. بجانب كل مرحل "
+"هو رمز يشير إلى حالة المرحل. يلخص الجدول التالي رموز حالة المرحّل الممكنة:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
@@ -169,22 +168,22 @@ msgstr ""
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:92
 msgid "The relay is online, but has shown only minimal throughput."
-msgstr "المرحّل متصل، لكن قد أظهر الحد الأدنى فقط من الناتج. "
+msgstr "المرحّل متصل، لكن يدعم الحد الأدنى فقط من حركة المرور. "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:98
 msgid "The relay is online and has shown a throughput &gt;= 20 KB/s."
-msgstr "المرحل متصل وقد أظهر ناتج أكبر من= 20 كيلو بايت في الثانية."
+msgstr "المرحل متصل ويدعم حركة مرور أكبر من او= 20 كيلو بايت في الثانية."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:104
 msgid "The relay is online and has shown a throughput &gt;= 60 KB/s."
-msgstr "المرحل متصل وقد أظهر ناتج أكبر من= 60 كيلو بايت في الثانية."
+msgstr "المرحل متصل ويدعم حركة مرور أكبر من او= 60 كيلو بايت في الثانية."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:110
 msgid "The relay is online and has shown a throughput &gt;= 400 KB/s."
-msgstr "المرحل متصل وقد أظهر ناتج أكبر من= 400 كيلو بايت في الثانية."
+msgstr "المرحل متصل ويدعم حركة مرور أكبر من او= 400 كيلو بايت في الثانية."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:116
@@ -194,8 +193,8 @@ msgid ""
 "the past day."
 msgstr ""
 "جميع قيم عرض النطاق الترددي تقدر استناداً إلى الحد الأدنى من إما الإدخال أو "
-"الإخراج المطّرد لعرض النطاق الترددي الاقصى أكثر من أي فترة عشرة ثانية في "
-"اليوم السابق."
+"الإخراج المطّرد لعرض النطاق الترددي الاقصى خلال أية فترات عشر ثوان في اليوم "
+"السابق."
 
 #. type: Content of: <html><body>
 #: en/netview.html:122
@@ -276,8 +275,8 @@ msgid ""
 "Estimated maximum amount of bandwidth that the directory relays have seen "
 "this relay handle recently."
 msgstr ""
-"أقصى مقدار مقدر لعرض النطاق الترددي الذي عنده لاحظت مرحّلات الدليل التعامل "
-"مع هذا المرحّل مؤخرا. "
+"أقصى مقدار مقدّر لعرض النطاق الترددي حيث دعمت مرحّلات الدليل هذا المرحّل "
+"مؤخرا. "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:160
