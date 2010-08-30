@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-30 01:16+0200\n"
+"Last-Translator: Roconda <tim.slot@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/running.html:16
 msgid "Running Tor"
-msgstr ""
+msgstr "Tor Draaien"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:20
@@ -36,31 +37,33 @@ msgid ""
 "Tor, as well as monitoring Tor's status and letting you know if it exits "
 "unexpectedly."
 msgstr ""
+"Vidalia kan u helpen om uw Tor proces te laten starten of te stoppen. Ook "
+"kunt u hier Tor's status zien en of het overwachts gestopt is."
 
 #. type: Content of: <html><body>
 #: en/running.html:25
 msgid "<a name=\"starting\"/>"
-msgstr ""
+msgstr "<a name=\"starting\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:26
 msgid "Starting and Stopping Tor"
-msgstr ""
+msgstr "Tor Starten en Stoppen"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:28
 msgid "To <i>start</i> Tor,"
-msgstr ""
+msgstr "Tor <i>starten</i>,"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:30
 msgid "Select <i>Start</i> from Vidalia's tray menu or press <i>Ctrl+S</i>"
-msgstr ""
+msgstr "Selecteer <i>Start</i> vanuit Vidalia's menu of druk <i>Ctrl+S</i>"
 
 #. type: Content of: <html><body><p><ol>
 #: en/running.html:30 en/running.html:45
 msgid "."
-msgstr ""
+msgstr "."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:32
@@ -68,6 +71,8 @@ msgid ""
 "Vidalia's tray icon will change from an onion with a red X to a green onion "
 "when Tor has started."
 msgstr ""
+"Vildalia's icoon verandert van een ui met een rode X naar een groene uit "
+"wanneer Tor is gestart."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:36
@@ -77,16 +82,20 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"Als Vidalia onmogelijk Tor kan starten dan weergeeft het een error meteen "
+"bericht wat er fout ging. U kunt ook in de <a href=\"log.html\">log "
+"bestanden</a> kijken om te zien of Tor meer informatie geeft over wat er "
+"fout gegaan is."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:43
 msgid "To <i>stop</i> Tor,"
-msgstr ""
+msgstr "Tor <i>stoppen</i>."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:45
 msgid "Select <i>Stop</i> from Vidalia's tray menu or press <i>Ctrl+T</i>"
-msgstr ""
+msgstr "Selecteer <i>Stop</i> vanuit Vidalia's menu of druk <i>Ctrl+T</i>"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:47
@@ -94,6 +103,8 @@ msgid ""
 "Vidalia's tray icon will change from a green onion to a gray onion with a "
 "red X when Tor has stopped."
 msgstr ""
+"Vidalia's icoon verandert van een groene uit naar een grijze ui met een rode "
+"X wanneer Tor gestopt is."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:51
@@ -103,16 +114,20 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"Als Vidalia onmogelijk Tor kan stoppen dan toont Vidalia een error bericht "
+"wat u vertelt dat er iets mis is. U kunt ook kijken in de <a "
+"href=\"log.html\">log bestanden</a> om te zien of Tor meer informatie geeft "
+"over wat er fout gegaan is."
 
 #. type: Content of: <html><body>
 #: en/running.html:57
 msgid "<a name=\"monitoring\"/>"
-msgstr ""
+msgstr "<a name=\"monitoring\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:58
 msgid "Monitoring Tor's Status"
-msgstr ""
+msgstr "Bekijk Tor's Status"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:60
@@ -121,11 +136,15 @@ msgid ""
 "system tray or dock area. The following table shows the different states "
 "indicated by an icon in your system's notification area:"
 msgstr ""
+"Vadalia vertelt u wat de status van Tor is door het icoontje. De volgende "
+"tabel laat u zien wat de verschillende statussen zijn voor het icoon:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:69
 msgid "Tor is stopped. Select <i>Start</i> from the Vidalia menu to start Tor."
 msgstr ""
+"Tor is gestopt. Selecteer <i>Start</i> vanuit Vildalia's menu om Tor te "
+"starten."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:76
@@ -133,6 +152,8 @@ msgid ""
 "Tor is starting up. You can check the <a href=\"log.html\">message log</a> "
 "for status information about Tor while it is starting."
 msgstr ""
+"Tor is aan het opstarten. U kunt de <a href=\"log.html\">berichten log</a> "
+"bekijken voor meer informatie over Tor."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:84
@@ -142,11 +163,14 @@ msgid ""
 "href=\"log.html\">message log</a> while it is running, if you want to see "
 "what Tor is doing."
 msgstr ""
+"Tor is momenteel aan het draaien. Als u wilt dat Tor stopt selecteer dan "
+"<i>Stop</i> in het Vidalia menu. Tor weergeeft dan verdere informatie in het "
+"<a href=\"log.html\">log bestand</a> als het draait."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:92
 msgid "Tor is in the process of shutting down."
-msgstr ""
+msgstr "Tor is aan het afsluiten."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:98
@@ -156,3 +180,7 @@ msgid ""
 "wrong. You can also check the <a href=\"log.html\">message log</a> for "
 "details about any problems Tor encountered before it exited."
 msgstr ""
+"Als tor onverwachts stopt dan veranderd Vidialia's icoon in een donkere ui "
+"met een rode X en weergeeft het een bericht wat er fout ging. U kunt ook in "
+"de <a href=\"log.html\">log bestanden</a> om te zien of Tor meer informatie "
+"geeft over wat er fout gegaan is."

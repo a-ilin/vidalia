@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-30 16:04+0200\n"
+"Last-Translator: Roconda <tim.slot@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "Configureren van Vidalia en Tor"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,21 +37,26 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"Vidalia laat u gemakkelijk Tor configureren. Ook laat is het in staat om een "
+"<a href=\"server.html\">Tor relay</a> te managen, zodat het Tor netwerk "
+"gemakkelijk kan groeien."
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<a name=\"general\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "Algemene Instellingen"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
 msgid "Settings on the <i>General</i> page are the most commonly modified settings."
 msgstr ""
+"Instellingen op de <i>Algemene Instellingen</i> pagina zijn over het "
+"algemeen aan te raden om te veranderen."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
@@ -69,16 +75,19 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"<b>Opstart Opties</b>: Deze installingen laten u automatisch Tor starten "
+"wanneer Vidalia start. U kunt zelfs Tor op laten starten wanneer uw computer "
+"start (<i>Alleen Windows</i>)"
 
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<a name=\"network\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "Netwerk Instellingen"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
@@ -86,6 +95,8 @@ msgid ""
 "The <i>Network</i> settings page lets you change how Tor connects to the Tor "
 "network."
 msgstr ""
+"De <i>Netwerk</i> page laat u toe om het connecten naar het Tor netwerk te "
+"veranderen."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:53
@@ -98,6 +109,13 @@ msgid ""
 "you can also enter the <i>Username</i> and <i>Password</i> you use to "
 "connect to your proxy.  Otherwise, you can leave those fields blank."
 msgstr ""
+"<b>Ik gebruik een proxy voor mijn toegang tot het internet</b>: Als u een "
+"HTTP proxy gebruik om van het internet gebruik te kunnen maken dan kunt u "
+"Tor zo configureren dat alle verbindingen zowel over uw HTTP proxy gaat als "
+"over het Tor netwerk. U moet wel het juiste poort en adres van uw proxy "
+"opgeven. Als uw proxy authenticatie vereist dan is het wel noodzakelijk om "
+"een <i>Gebruikersnaam</i> en <i>Wachtwoord</i> op te geven, zo niet kunt u "
+"deze velden leeg laten."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:62
@@ -109,6 +127,10 @@ msgid ""
 "list of ports permitted by your firewall or proxy, separated by "
 "commas. (<i>Example: 80,443,8080</i>)"
 msgstr ""
+"<b>Mijn firewall staat alleen maar toe om specifieke poorten te "
+"benaderen</b>: Als u een stricte firewall of proxy hebt kunt u de poorten "
+"opgeven welke toegestaan zijn. De poorten dienen gescheiden te worden door "
+"comma's. (<i>Voorbeeld: 80,443,800</i>)"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
@@ -124,22 +146,22 @@ msgstr ""
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
 msgid "Below are examples of valid bridge address formats:"
-msgstr ""
+msgstr "Hier onder staan een paar voorbeelden van geldige bridge adressen:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:80
 msgid "128.213.48.13:8080"
-msgstr ""
+msgstr "128.213.48.13:8080"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:83
 msgid "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
-msgstr ""
+msgstr "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:86
 msgid "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
-msgstr ""
+msgstr "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
@@ -157,12 +179,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:100
 msgid "<a name=\"relay\"/>"
-msgstr ""
+msgstr "<a name=\"relay\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:101
 msgid "Relay Settings"
-msgstr ""
+msgstr "Relay Instellingen"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:103
@@ -170,16 +192,18 @@ msgid ""
 "<i> See <a href=\"server.html\">this help topic</a> for detailed information "
 "about setting up and managing a Tor relay.  </i>"
 msgstr ""
+"<i> Zie <a href=\"server.html\">dit help onderwerp</a> voor meer informatie "
+"over het opzetten en onderhouden van een Tor relay.</i>"
 
 #. type: Content of: <html><body>
 #: en/config.html:109
 msgid "<a name=\"appearance\"/>"
-msgstr ""
+msgstr "<a name=\"appearance\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:110
 msgid "Appearance Settings"
-msgstr ""
+msgstr "Uiterlijke Instellingen"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:112
@@ -187,6 +211,8 @@ msgid ""
 "The settings on the <i>Appearance</i> page allow you to customize the look "
 "and feel of Vidalia."
 msgstr ""
+"De instellingen op de <i>Uiterlijk</i> pagina laten u een ander uiterlijk "
+"geven aan Vildalia."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:116
@@ -206,16 +232,19 @@ msgid ""
 "default interface style. If you dislike the default, you can choose "
 "whichever interface style you prefer from the dropdown box."
 msgstr ""
+"<b>Style</b>: In de meeste gevallen pakt Vidalia de standard style van uw "
+"systeem. Als u dit niet fijn vindt dan kun u altijd nog uw style instellen "
+"in de dropdown box."
 
 #. type: Content of: <html><body>
 #: en/config.html:131
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:132
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Geavanceerde Instellingen"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:134
@@ -223,6 +252,8 @@ msgid ""
 "The settings on the <i>Advanced</i> page should generally only be modified "
 "by more experienced users."
 msgstr ""
+"De <i>Geavanceerde</i> installingen pagina dient enkel door gevorderde "
+"gebruikers ingesteld te worden."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:138
@@ -248,6 +279,9 @@ msgid ""
 "<b>strongly</b> discouraged. Any application or user on your computer can "
 "reconfigure your Tor installation."
 msgstr ""
+"<b>Geen</b> -- Geen authenticatie verplicht. Deze optie wordt <b>sterk</b> "
+"afgeraden. Elke applicatie of gebruiker kan uw Tor installatie "
+"herconfigureren."
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:155
@@ -285,6 +319,10 @@ msgid ""
 "information, Tor relay keys, and configuration files. If you leave this "
 "field blank, Tor will use its own default data directory location."
 msgstr ""
+"<b>Tor Data Map</b> <i>(optioneel)</i>: U kunt een locatie aangeven waar Tor "
+"tijdelijk bestanden op kan slaan, zoals Tor relay informatie, Tor relay "
+"sleutels en configuratie bestanden. Als u niets instelt dan zal Tor de "
+"standaard locatie gebruiken."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:181
@@ -298,12 +336,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:189
 msgid "<a name=\"services\"/>"
-msgstr ""
+msgstr "<a name=\"services\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:190
 msgid "Hidden Service Settings"
-msgstr ""
+msgstr "Verborgen Diensten Instellingen"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:192
@@ -311,3 +349,5 @@ msgid ""
 "Hidden services allow you to provide any kind of TCP-based service, e.g.  an "
 "HTTP service, to others without revealing your IP address."
 msgstr ""
+"Verborgen diensten leveren u ieder soort van TCP gebaseerde dienst, "
+"bijvoorbeeld een HTTP dienst om zo niet u ip prijs te geven."

@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-30 01:37+0200\n"
+"Last-Translator: Roconda <tim.slot@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/services.html:16
 msgid "Hidden Services"
-msgstr ""
+msgstr "Verborgen Diensten"
 
 #. type: Content of: <html><body>
 #: en/services.html:19
@@ -42,7 +43,7 @@ msgstr ""
 #. type: Content of: <html><body><h3>
 #: en/services.html:26
 msgid "What is a hidden service?"
-msgstr ""
+msgstr "Wat is een verborgen dienst?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:28
@@ -188,7 +189,7 @@ msgstr ""
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:107
 msgid "Add service: Creates a new empty service configuration."
-msgstr ""
+msgstr "Voegt dienst toe: Maakt een nieuwe dienst- configuratie aan."
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:108
@@ -212,7 +213,7 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/services.html:119
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:120
@@ -245,7 +246,7 @@ msgstr ""
 #. type: Content of: <html><body><h3>
 #: en/services.html:136
 msgid "How does Vidalia help me to access other hidden services?"
-msgstr ""
+msgstr "Hoe helpt Vidalia me aan toegang tot andere verborgen diensten?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:138
