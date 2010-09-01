@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-08-24 19:01+0200\n"
+"PO-Revision-Date: 2010-09-01 19:17+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -38,31 +38,34 @@ msgid ""
 "Tor, as well as monitoring Tor's status and letting you know if it exits "
 "unexpectedly."
 msgstr ""
+"يستطيع فيداليا مساعدتك بالتحكم بعملية تور الخاصة بك عن طريق السماح لك ببدء "
+"وإيقاف تور, بالإضافة الى مراقبة حالة تور والسماح لك بمعرفة إذا خرج بشكل غير "
+"متوقع."
 
 #. type: Content of: <html><body>
 #: en/running.html:25
 msgid "<a name=\"starting\"/>"
-msgstr ""
+msgstr "<a name=\"starting\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:26
 msgid "Starting and Stopping Tor"
-msgstr ""
+msgstr "بدء وإيقاف تور"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:28
 msgid "To <i>start</i> Tor,"
-msgstr ""
+msgstr "لبدء <i>تور</i>,"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:30
 msgid "Select <i>Start</i> from Vidalia's tray menu or press <i>Ctrl+S</i>"
-msgstr ""
+msgstr "إختر <i>بدء</i> من قائمة شريط فيداليا أو إضغط <i>Ctrl+S</i>"
 
 #. type: Content of: <html><body><p><ol>
 #: en/running.html:30 en/running.html:45
 msgid "."
-msgstr ""
+msgstr "."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:32
@@ -70,6 +73,8 @@ msgid ""
 "Vidalia's tray icon will change from an onion with a red X to a green onion "
 "when Tor has started."
 msgstr ""
+"سوف تتحول أيقونة شريط فيداليا من اونيون (بصلة) ذات علامة X حمراء الى بصلة "
+"خضراء اللون عند بدء تور."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:36
@@ -79,16 +84,20 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"إذا كان فيداليا غير قادر على تشغيل تور, سوف يقوم فيداليا بعرض رسالة خطأ "
+"تخبرك عن الخطأ الذي حدث. يمكنك أيضا إلقاء نظرة على <a href=\"log.html\">سجل "
+"الرسالة</a> لمعرفة إذا قام تور بإصدار المزيد من المعلومات حول ما لم يجري "
+"بشكل صحيح."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:43
 msgid "To <i>stop</i> Tor,"
-msgstr ""
+msgstr "لإيقاف <i>تور</i>,"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:45
 msgid "Select <i>Stop</i> from Vidalia's tray menu or press <i>Ctrl+T</i>"
-msgstr ""
+msgstr "إختر <i>إيقاف</i> من قائمة شريط فيداليا أو إضغط <i>Ctrl+T</i>"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:47
@@ -96,6 +105,8 @@ msgid ""
 "Vidalia's tray icon will change from a green onion to a gray onion with a "
 "red X when Tor has stopped."
 msgstr ""
+"سوف تتحول أيقونة شريط فيداليا من اونيون (بصلة) خضراء اللون الى بصلة رمادية "
+"اللون مع علامة X حمراء عند إيقاف تور."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:51
@@ -105,16 +116,20 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"إذا كان فيداليا غير قادر على إيقاف تور, سوف يقوم فيداليا بعرض رسالة خطأ "
+"تخبرك عن الخطأ الذي حدث. يمكنك أيضا إلقاء نظرة على <a href=\"log.html\">سجل "
+"الرسالة</a> لمعرفة ما إذا قام تور بإصدار المزيد من المعلومات حول ما الخطأ "
+"الذي حدث."
 
 #. type: Content of: <html><body>
 #: en/running.html:57
 msgid "<a name=\"monitoring\"/>"
-msgstr ""
+msgstr "<a name=\"monitoring\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:58
 msgid "Monitoring Tor's Status"
-msgstr ""
+msgstr "مراقبة حالة تور"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:60
@@ -123,6 +138,9 @@ msgid ""
 "system tray or dock area. The following table shows the different states "
 "indicated by an icon in your system's notification area:"
 msgstr ""
+"يخبرك فيداليا عن حالة تور عن طريق عرض أيقونة في شريط النظام أو منطقة الإرساء "
+"الخاصة بك. يبين الجدول التالي مختلف الدول المشار إليها بواسطة الرمز في "
+"منطقة الإشعار للنظام الخاص بك:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:69
