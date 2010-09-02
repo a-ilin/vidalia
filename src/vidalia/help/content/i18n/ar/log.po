@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-02 02:35+0200\n"
+"PO-Revision-Date: 2010-09-02 06:15+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -43,7 +43,7 @@ msgstr ""
 "يسمح لك سجل الاحداث بمشاهدة معلومات الحالة حول عملية تور قيد التشغيل.  <a "
 "name=\"basic\"/> كل رسالة لديها <i>خطورة</i> مرتبطة بها, تتراوح من <b>خطأ</b> "
 "(الأشد خطورة) الى <b>تصحيح</b> (مطوّل أكثر). أنظر قسم المساعدة في <a "
-"href=\"#severities\">خطورات الرسالة</a> للمزيد من المعلوماتn.  <a "
+"href=\"#severities\">خطورات الرسالة</a> للمزيد من المعلومات <a "
 "name=\"severities\"/>"
 
 #. type: Content of: <html><body><h3>
@@ -59,9 +59,9 @@ msgid ""
 "Tor. Lower severity messages appear frequently during normal Tor operations "
 "and usually do not need to be logged."
 msgstr ""
-"خطورة رسالة ما تخبرك مدى أهمية الرسالة. رسالة خطورة أعلى عادة تشير إلى أن "
-"شيئا ما خطأ في تور. الرسائل الأقل خطورة تظهر مرارا أثناء عمليات تور العادية "
-"وعادة لا تحتاج إلى تسجيل. "
+"خطورة رسالة ما تخبرك مدى أهمية الرسالة. رسالة خطورة أعلى عادة تشير إلى شيئا "
+"خطأ في تور. الرسائل الأقل خطورة تظهر مرارا أثناء عمليات تور العادية وعادة لا "
+"تحتاج إلى تسجيل. "
 
 #. type: Content of: <html><body><p>
 #: en/log.html:37
@@ -87,7 +87,7 @@ msgid ""
 "highlighted in <i>yellow</i>."
 msgstr ""
 "<b>تحذير</b>: الرسائل التي تظهر عندما يكون هناك خطأ قد حدث مع تور, لكنها "
-"ليست مميتة، وسوف يستمر تور بالتشغيل. سوف تكون تلك الرسائل بارزة باللون "
+"ليست كارثة وسوف يستمر تور بالتشغيل. سوف تكون تلك الرسائل بارزة باللون "
 "<i>الأصفر</i>."
 
 #. type: Content of: <html><body><ul><li>
@@ -96,8 +96,8 @@ msgid ""
 "<b>Notice</b>: Messages that appear infrequently during normal Tor operation "
 "and are not considered errors, but you still may care about."
 msgstr ""
-"<b>إنذار</b>: الرسائل التي تظهر أحيانا أثناء تشغيل تور العادي و لا تعد "
-"أخطاءا, ولكن لا تزال قد تهمك."
+"<b>إنذار</b>: الرسائل التي تظهر أحيانا أثناء تشغيل تور العادي ولا تعد "
+"أخطاءا, ولكن قد لا تزال تهمك."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:55
@@ -131,12 +131,12 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: en/log.html:71
 msgid "To select which message severities you would like to see, do the following:"
-msgstr "لإختيار أي خطورات الرسالة التي ترغب في رويتها, إعمل الآتي:"
+msgstr "لإختيار أي من خطورات الرسالة التي ترغب في رويتها, إعمل الآتي:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:73 en/log.html:92
 msgid "Open the message log from the Vidalia tray menu."
-msgstr "إفتح سجل الرسالة من قائمة صينية فيداليا."
+msgstr "إفتح سجل الاحداث من قائمة شريط فيداليا."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
@@ -173,15 +173,14 @@ msgid ""
 "Vidalia can also write log messages to a file, as well as logging them in "
 "the message log window. To enable logging to a file, follow these steps:"
 msgstr ""
-"تستطيع فيداليا ايضا كتابة رسائل سجل الى ملف, إضافة الى تسجيلهم في نافذة سجل "
+"يستطيع فيداليا ايضا حفظ رسائل السجل في ملف, إضافة الى تسجيلهم في نافذة سجل "
 "الاحداث. لتمكين تسجيل الدخول إلى ملف، إتّبع الخطوات التالية :"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:94
 msgid "Check the box labeled <i>Automatically save new log messages to a file</i>."
 msgstr ""
-"ضع علامة في الصندوق المسمى <i>تلقائيا يحفظ رسائل السجل الجديدة الى "
-"الملف</i>."
+"ضع علامة في الصندوق المسمى <i>حفظ رسائل السجل الجديدة في الملف تلقائيا</i>."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:96
@@ -190,7 +189,7 @@ msgid ""
 "either type the path and filename into the text box, or click <i>Browse</i> "
 "to navigate to a location for your log file."
 msgstr ""
-"إذا كنت ترغب في تغيير الملف الذي سيتم كتابة الرسائل اليه, إما ان تكتب المسار "
+"إذا كنت ترغب في تغيير الملف الذي سيتم تسجيل الرسائل فيه, إما ان تكتب المسار "
 "واسم الملف في مربع النص, أو أنقر على <i>تصفح</i> للانتقال إلى موقع لملف "
 "السجل الخاص بك."
 
