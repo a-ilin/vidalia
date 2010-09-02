@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: 2010-08-28 01:22+0200\n"
+"PO-Revision-Date: 2010-09-02 03:24+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -79,7 +79,7 @@ msgstr "هناك طريقتين رئيسيتين لمعرفة عنوان جسر:
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
 msgid "Get some friends to run private bridges for you"
-msgstr "أحصل على بعض الأصدقاء لتشغيل الجسور الخاصة لك"
+msgstr "أطلب من أصدقائك تثبيت الجسور الخاصة لك"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:37
@@ -102,7 +102,7 @@ msgstr ""
 "صفحة إعدادات <a href=\"server.html\">مرحل فيداليا</a>. بعد ذلك ينبغي ان يرسلوا "
 "لك سرا خط <i>عنوان الجسر</i> في أسفل صفحة المرحل الخاصة بهم. خلافا لتشغيل "
 "مرحل مخرج, تشغيل مرحل جسر يمرر فقط البيانات الى ومن شبكة تور, حتى لا ينبغي "
-"تعريض المشغل الى أي شكوى سوء استخدام."
+"تعريض المشغل لأي إساءة استخدام شبكة الانترنت."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:52
