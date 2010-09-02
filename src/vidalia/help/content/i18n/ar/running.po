@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-01 22:57+0200\n"
+"PO-Revision-Date: 2010-09-02 02:11+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -86,8 +86,8 @@ msgid ""
 msgstr ""
 "إذا كان فيداليا غير قادر على تشغيل تور, سوف يقوم فيداليا بعرض رسالة خطأ "
 "تخبرك عن الخطأ الذي حدث. يمكنك أيضا إلقاء نظرة على <a href=\"log.html\">سجل "
-"الرسالة</a> لمعرفة إذا قام تور بإصدار المزيد من المعلومات حول ما لم يجري "
-"بشكل صحيح."
+"الاحداث</a> لمعرفة إذا قام تور بإصدار المزيد من المعلومات حول ما الخطأ الذي "
+"حدث."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:43
@@ -118,7 +118,7 @@ msgid ""
 msgstr ""
 "إذا كان فيداليا غير قادر على إيقاف تور, سوف يقوم فيداليا بعرض رسالة خطأ "
 "تخبرك عن الخطأ الذي حدث. يمكنك أيضا إلقاء نظرة على <a href=\"log.html\">سجل "
-"الرسالة</a> لمعرفة ما إذا قام تور بإصدار المزيد من المعلومات حول ما الخطأ "
+"الاحداث</a> لمعرفة ما إذا قام تور بإصدار المزيد من المعلومات حول ما الخطأ "
 "الذي حدث."
 
 #. type: Content of: <html><body>
@@ -153,7 +153,7 @@ msgid ""
 "Tor is starting up. You can check the <a href=\"log.html\">message log</a> "
 "for status information about Tor while it is starting."
 msgstr ""
-"تور يبدأ بالتشغيل. يمكنك ان تتحقق من <a href=\"log.html\">سجل الرسالة</a> "
+"تور يبدأ بالتشغيل. يمكنك ان تتحقق من <a href=\"log.html\">سجل الاحداث</a> "
 "للحصول على معلومات عن حالة تور أثناء بدء تشغيله."
 
 #. type: Content of: <html><body><p><table><tr><td>
@@ -164,11 +164,14 @@ msgid ""
 "href=\"log.html\">message log</a> while it is running, if you want to see "
 "what Tor is doing."
 msgstr ""
+"تور قيد التشغيل. إذا أردت إيقاف تور, إختر <i>إيقاف</i> من قائمة فيداليا. سوف "
+"يصدر تور رسائل معلومات الى <a href=\"log.html\">سجل الاحداث</a> أثناء تشغيله "
+"إذا أردت رؤية ماذا يفعل."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:92
 msgid "Tor is in the process of shutting down."
-msgstr ""
+msgstr "تور في طور عملية الإغلاق."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:98
@@ -178,3 +181,7 @@ msgid ""
 "wrong. You can also check the <a href=\"log.html\">message log</a> for "
 "details about any problems Tor encountered before it exited."
 msgstr ""
+"اذا خرج تور بشكل غير متوقع, سوف يقوم فيداليا بتغيير لون أيقونته الى اونيون "
+"(بصلة) داكن مع علامة X حمراء اللون وإظهار رسالة خطأ لإعلامك ما الخطأ الذي "
+"حدث. يمكنك التحقق أيضا من <a href=\"log.html\">سجل الاحداث</a> للحصول على "
+"المزيد من التفاصيل عن أية مشاكل واجهها تور قبل خروجه."
