@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-08-28 02:06+0200\n"
+"PO-Revision-Date: 2010-09-02 02:35+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -29,7 +29,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/log.html:16
 msgid "Message Log"
-msgstr "سجل الرسائل"
+msgstr "سجل الاحداث"
 
 #. type: Content of: <html><body>
 #: en/log.html:19
@@ -40,7 +40,7 @@ msgid ""
 "verbose). See the help section on <a href=\"#severities\">message "
 "severities</a> for more information.  <a name=\"severities\"/>"
 msgstr ""
-"يسمح لك سجل الرسالة بمشاهدة معلومات الحالة حول عملية تور قيد التشغيل.  <a "
+"يسمح لك سجل الاحداث بمشاهدة معلومات الحالة حول عملية تور قيد التشغيل.  <a "
 "name=\"basic\"/> كل رسالة لديها <i>خطورة</i> مرتبطة بها, تتراوح من <b>خطأ</b> "
 "(الأشد خطورة) الى <b>تصحيح</b> (مطوّل أكثر). أنظر قسم المساعدة في <a "
 "href=\"#severities\">خطورات الرسالة</a> للمزيد من المعلوماتn.  <a "
@@ -77,7 +77,7 @@ msgid ""
 msgstr ""
 "<b>خطأ</b>: الرسائل التي تظهر عندما يكون هناك خطأ كبير جدا قد حدث وتور لا "
 "يستطيع المواصلة. سوف تكون تلك الرسائل بارزة باللون <i>الأحمر</i> في سجل "
-"الرسالة."
+"الاحداث."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:46
@@ -141,7 +141,7 @@ msgstr "إفتح سجل الرسالة من قائمة صينية فيداليا
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
 msgid "Click on <i>Settings</i> at the top of the message log window."
-msgstr "أنقر على <i>الإعدادات</i> في الجزء العلوي من نافذة سجل الرسالة."
+msgstr "أنقر على <i>الإعدادات</i> في الجزء العلوي من نافذة سجل الاحداث."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:76
@@ -174,7 +174,7 @@ msgid ""
 "the message log window. To enable logging to a file, follow these steps:"
 msgstr ""
 "تستطيع فيداليا ايضا كتابة رسائل سجل الى ملف, إضافة الى تسجيلهم في نافذة سجل "
-"الرسالة. لتمكين تسجيل الدخول إلى ملف، إتّبع الخطوات التالية :"
+"الاحداث. لتمكين تسجيل الدخول إلى ملف، إتّبع الخطوات التالية :"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:94
