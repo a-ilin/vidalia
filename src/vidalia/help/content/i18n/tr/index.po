@@ -27,7 +27,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/index.html:16
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Vidalia Yardım"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:20

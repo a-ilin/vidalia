@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-03 10:08+0200\n"
+"Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/services.html:16
 msgid "Hidden Services"
-msgstr ""
+msgstr "Скрытые сервисы"
 
 #. type: Content of: <html><body>
 #: en/services.html:19
@@ -38,11 +40,17 @@ msgid ""
 "goes wrong. If you find bugs or have comments on this new feature, please "
 "let us know! We need your feedback.  <a name=\"about\"/>"
 msgstr ""
+"Ремарка: Поддержка скрытых сервисов в Vidalia есть нововведение.Вы должны "
+"предполагать о возможных ошибках,таких как к примеру возможное повреждение "
+"настроек вашего скрытого сервиса. Таким образом, не полагайтесь на него, "
+"или, вернее, не вините нас, если что-то пойдет не так.Если Вы нашли ошибки "
+"или замечания по этой новой функции, пожалуйста, сообщите нам об этом! Нам "
+"нужна ваша обратная связь.  <a name=\"about\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:26
 msgid "What is a hidden service?"
-msgstr ""
+msgstr "Что такое скрытый сервис?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:28
@@ -52,6 +60,10 @@ msgid ""
 "provide a hidden service is built on top of the same circuits that Tor uses "
 "for anonymous browsing and roughly has similar anonymity properties."
 msgstr ""
+"Скрытые сервисы предоставляют любые TCP-основанные сервисы например HTTP "
+"сервис,не раскрывая свой IP-адрес . Протокол обеспечить скрытый сервис "
+"построенный на той же схеме, что Tor использует для анонимного серфинга и "
+"примерно аналогичные свойства анонимности."
 
 #. type: Content of: <html><body><p>
 #: en/services.html:35
@@ -60,21 +72,24 @@ msgid ""
 "Tor's design paper (doc/design-paper/tor-design.pdf) or the Rendezvous "
 "Specification (doc/spec/rend-spec.txt)."
 msgstr ""
+"Для дополнительной информации по скрытым сервисам вы можете почитать в "
+"секции 5 the Tor's design paper (doc/design-paper/tor-design.pdf) или the "
+"Rendezvous Specification (doc/spec/rend-spec.txt)."
 
 #. type: Content of: <html><body>
 #: en/services.html:40
 msgid "<a name=\"provide\"/>"
-msgstr ""
+msgstr "<a name=\"provide\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:41
 msgid "How do I provide a hidden service?"
-msgstr ""
+msgstr "Как обеспечить скрытый сервис?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:43
 msgid "Providing a hidden service consists of at least two steps:"
-msgstr ""
+msgstr "Обеспечение скрытого сервиса состоит из двух шагов:"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:45
@@ -82,6 +97,8 @@ msgid ""
 "Install a web server locally (or a server for whatever service you want to "
 "provide, e.g. IRC) to listen for local requests."
 msgstr ""
+"Установка web сервера локально (либо сервер предоставляющий другие услуги "
+"которые вам требуются например IRC ) для прослушивая местных запросов."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:47
@@ -89,6 +106,8 @@ msgid ""
 "Configure your hidden service, so that Tor relays requests coming from Tor "
 "users to your local server."
 msgstr ""
+"Настроить ваш скрытый сервис так чтобы Tor пере направление запросов "
+"приходило от Tor пользователей на ваш локальный сервер."
 
 #. type: Content of: <html><body><p>
 #: en/services.html:50
@@ -97,16 +116,19 @@ msgid ""
 "(https://www.torproject.org/docs/tor-hidden-service.html) that describes "
 "these steps in more detail."
 msgstr ""
+"На вебсайте Tor есть замечательное руководство "
+"(https://www.torproject.org/docs/tor-hidden-service.html) описанное по шагам "
+"более детально."
 
 #. type: Content of: <html><body>
 #: en/services.html:55
 msgid "<a name=\"data\"/>"
-msgstr ""
+msgstr "<a name=\"data\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:56
 msgid "What data do I need to provide?"
-msgstr ""
+msgstr "Какие данные мне необходимо предоставить?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:58
@@ -114,6 +136,8 @@ msgid ""
 "The services table contains five columns containing data about configured "
 "hidden services:"
 msgstr ""
+"Сервис таблица содержит 5 столбцов содержащих данные по настройке скрытых "
+"сервисов:"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:61

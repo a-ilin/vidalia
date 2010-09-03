@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-03 11:01+0200\n"
+"Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/server.html:16
 msgid "Setting Up a Tor Relay"
-msgstr ""
+msgstr "Настройка перенаправления в Tor."
 
 #. type: Content of: <html><body>
 #: en/server.html:19
@@ -36,11 +38,14 @@ msgid ""
 "of their spare bandwidth by running a Tor relay. Vidalia helps you do your "
 "part by making it easy to set up a relay of your own.  <a name=\"basic\"/>"
 msgstr ""
+"Tor сеть построена на добровольцах со всего мира которые жертвуют часть "
+"пропускной способности своего канала запуская Tor пере направление. Vidalia "
+"позволяет легко настроить пере направление самому.   <a name=\"basic\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:24
 msgid "Basic Settings"
-msgstr ""
+msgstr "Основные настройки."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:26
@@ -48,6 +53,8 @@ msgid ""
 "If you decide you want to help the Tor network grow by running a relay, you "
 "can follow these steps to get started:"
 msgstr ""
+"Если вы решили помочь расширить сеть запустив пере направление,вам "
+"потребуется выполнить эти шаги для начала:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:31
@@ -56,11 +63,13 @@ msgid ""
 "tray menu or <i>Preferences</i> from your system menubar on Macintosh "
 "systems."
 msgstr ""
+"Открыть <i>Диалог конфигурации</i> выбрать <i>Настройки</i> из меню в трее "
+"либо <i>Настройки</i> из меню системы Macintosh."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:35
 msgid "Select the <i>Relay</i> configuration page."
-msgstr ""
+msgstr "Выбрать <i>Пере направление</i> на странице конфигурации."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:37
@@ -72,11 +81,18 @@ msgid ""
 "relay or <i>Help censored users reach the Tor network</i> if you want to run "
 "a bridge relay."
 msgstr ""
+"Решите хотите вы запускать обычный режим Tor или <i>Режим моста</i> пере "
+"направление(Tor 0.2.0.8-alpha или более новая). Пере направление в режиме "
+"моста помогает Tor пользователям у кого заблокирована возможность доступа "
+"напрямую подключиться к сети Tor.  Установите флажок <i>Пере направление "
+"трафика через сеть Tor</i> если хотите обычное пере направление Tor или "
+"<i>Помочь заблокированным пользователям получить доступ к сети Tor</i> если "
+"хотите пере направление в режиме моста."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:44
 msgid "Enter the following information:"
-msgstr ""
+msgstr "Введите следующую информацию."
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:46
@@ -84,6 +100,8 @@ msgid ""
 "<b>Nickname</b>: The name which your relay will be known as on the Tor "
 "network. An example of a relay nickname is \"MyVidaliaRelay\"."
 msgstr ""
+"<b>Псевдоним</b>: Данное имя будет обозначать вас в сети Tor. Для примера "
+"псевдоним пере направления \"MyVidaliaRelay\"."
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:50
@@ -93,16 +111,25 @@ msgid ""
 "goes wrong with your relay. You might also include your PGP or GPG key ID "
 "and fingerprint."
 msgstr ""
+"<b>Контактная информация</b>: Ваш адрес электронной почты. Этот адрес будет "
+"использоваться только для связи с вами в случае, если появятся  важные "
+"обновления безопасности Tor или что-то пойдет не так с вашим сервером. Вы "
+"можете также включить ваш PGP или GPG ключ ID и отпечатки "
+"пальцев(fingerprint)."
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:56
+#, fuzzy
 msgid ""
 "<b>Relay Port</b>: The port on which your relay will listen for traffic from "
 "clients or other Tor relays."
 msgstr ""
+"<b>Relay Port</b>: Порт который будет ожидать соединения от клиентов или "
+"других Tor релеев."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:62
+#, fuzzy
 msgid ""
 "If you would like to mirror Tor's directory of relays for others on the "
 "network you can check the box labeled <i>Mirror the Relay Directory</i>.  If "
@@ -111,16 +138,22 @@ msgid ""
 "the <i>Relay port</i> you entered above. Bridge relays <i>must</i> mirror "
 "the relay directory."
 msgstr ""
+"Если вы хотите Mirror Tor's directory of relays для других в сети проверьте "
+"флажок в настройках <i>Mirror the Relay Directory</i>. Если пропускная "
+"способность вашего канала не достаточная следует снять флажок с этой "
+"опции.Так же если вы решили mirror the relay directory ,убедитесь что "
+"<i>Directory Port</i> отличный от <i>Relay port</i> который вы ввели ранее. "
+"Перенаправление в режиме моста <i>должно</i> mirror the relay directory."
 
 #. type: Content of: <html><body>
 #: en/server.html:71
 msgid "<a name=\"bandwidth\"/>"
-msgstr ""
+msgstr "<a name=\"bandwidth\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:72
 msgid "Bandwidth Limits"
-msgstr ""
+msgstr "Ограничение пропускной способности."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:74
