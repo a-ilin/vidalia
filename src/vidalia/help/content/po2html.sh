@@ -44,7 +44,7 @@ for file in $po ; do
 	# file was actually written, rename it.
 
 	# Convert translated po to xml.
-	po4a-translate -f xhtml -m "$html/$htmlfile" -p "$file" -l "$html/$lang/tmp-$htmlfile" --master-charset utf-8 -L utf-8
+	po4a-translate -f xhtml -m "$html/en/$htmlfile" -p "$file" -l "$html/$lang/tmp-$htmlfile" --master-charset utf-8 -L utf-8
 
 	# Check to see if the file was written. If yes, rename it.
 	if [ -e "$html/$lang/tmp-$htmlfile" ]
