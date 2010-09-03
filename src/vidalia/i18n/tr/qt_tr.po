@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2010-06-12 02:45-0600\n"
-"Last-Translator: yunus kaba <yunuskaba@gmail.com>\n"
+"PO-Revision-Date: 2010-08-31 17:04+0200\n"
+"Last-Translator: Necdet <necdetyucel@gmail.com>\n"
 "Language-Team: none\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 1.1.0\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
@@ -286,7 +287,7 @@ msgstr ""
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr "Silmek istediğinizden emin misiniz?"
+msgstr "% dosyasını silmek istediğinizden emin misiniz?"
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
@@ -296,7 +297,7 @@ msgstr "Klasör silinemiyor."
 #: qfiledialog_win.cpp:128
 msgctxt "QFileDialog"
 msgid "All Files (*.*)"
-msgstr "Tüm dosyalar"
+msgstr "Tüm dosyalar (*.*)"
 
 #: qfiledialog.cpp:437
 msgctxt "QFileDialog"
@@ -351,7 +352,7 @@ msgstr "seç"
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr "kaldır"
+msgstr "Kaldır"
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
@@ -379,8 +380,8 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
-"<b>\"%1\" ismi kullanılamıyor.</b><p> Lütfen başka bir ismi biraz daha "
-"karakterle ve yazım işareti kullanmadan deneyiniz."
+"<b>\"%1\" ismi kullanılamıyor.</b><p> Lütfen başka bir ismi biraz daha az "
+"karakterle veya yazım işareti kullanmadan deneyin."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
@@ -420,22 +421,22 @@ msgstr "Bilgisayar"
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr "TB"
+msgstr "%1 TB"
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr "GB"
+msgstr "%1 GB"
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr "MB"
+msgstr "%1 MB"
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr "KB"
+msgstr "%1 KB"
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
