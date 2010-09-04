@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-03 12:47+0200\n"
+"Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/log.html:16
 msgid "Message Log"
-msgstr ""
+msgstr "Журнал сообщений."
 
 #. type: Content of: <html><body>
 #: en/log.html:19
@@ -38,11 +40,17 @@ msgid ""
 "verbose). See the help section on <a href=\"#severities\">message "
 "severities</a> for more information.  <a name=\"severities\"/>"
 msgstr ""
+"Журнал сообщений позволяет просмотреть информацию о статусе запущенного "
+"процесса Tor.  <a name=\"basic\"/> Каждое сообщение имеет <i>уровень "
+"важности</i> связанное с ним от <b>Ошибка</b>(очень важное) до "
+"<b>Отладка</b> (очень информативное).Просмотрите секцию справки <a "
+"href=\"#severities\">Уровень важности сообщений</a> для дополнительной "
+"информации.  <a name=\"severities\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:28
 msgid "Message Severities"
-msgstr ""
+msgstr "Уровень важности сообщений."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:30
@@ -52,11 +60,16 @@ msgid ""
 "Tor. Lower severity messages appear frequently during normal Tor operations "
 "and usually do not need to be logged."
 msgstr ""
+"Уровень важности сообщений предоставляет возможность понять на сколько важно "
+"данное сообщение.Самое важный уровень сообщения обычно говорит о том что "
+"что то не так происходит с Tor.Самая низкая важность сообщений часто "
+"появляются в ходе нормального функционирования Tor и, как правило, не "
+"нуждается в записи."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:37
 msgid "The possible message severities, from most severe to least severe, are:"
-msgstr ""
+msgstr "Возможные сообщения , от наиболее важного до наименее:"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:41
@@ -65,6 +78,9 @@ msgid ""
 "Tor cannot proceed. These messages will be highlighted in <i>red</i> in the "
 "message log."
 msgstr ""
+"<b>Ошибка</b>:Сообщения прибывают когда происходит что-то не так и Tor далее "
+"не может продолжать работать.Такие сообщения помечены красным цветом в "
+"журнале сообщений."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:46
@@ -73,6 +89,9 @@ msgid ""
 "Tor, but are not fatal and Tor will continue running. These messages will be "
 "highlighted in <i>yellow</i>."
 msgstr ""
+"<b>Предупреждение</b>: Сообщения прибывают когда происходит что-то не так с "
+"Tor, но не фатально и Tor будет продолжать работать. Такие сообщения "
+"помечены желтым цветом."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:51
@@ -80,6 +99,9 @@ msgid ""
 "<b>Notice</b>: Messages that appear infrequently during normal Tor operation "
 "and are not considered errors, but you still may care about."
 msgstr ""
+"<b>Уведомления</b>: Сообщения которые появляются редко во время обычной "
+"работы Tor и не считаются ошибками,но в любом случае следует выяснить "
+"причину."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:55
@@ -87,6 +109,8 @@ msgid ""
 "<b>Info</b>: Messages that appear frequently during normal Tor operation and "
 "are not usually of interest to most users."
 msgstr ""
+"<b>Информация</b>: Сообщения которые появляются часто во время обычной "
+"работы Tor и обычно не представляют интерес для большинства пользователей."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:59
@@ -95,6 +119,9 @@ msgid ""
 "developers. You should generally not log debug messages unless you know what "
 "you are doing."
 msgstr ""
+"<b>Debug(Отладка)</b>: Очень подробные сообщения, которые в основном "
+"представляют интерес для разработчиков. Вам не следует включать данный вид "
+"информативности в журнале если вы явно не представляете для чего это нужно."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:66
@@ -102,21 +129,25 @@ msgid ""
 "Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i> "
 "messages."
 msgstr ""
+"Большинство пользователей используются для записи в журнал <i>Ошибка</i>, "
+"<i>Предупреждение</i>,и <i>Уведомление</i> сообщения."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:71
 msgid "To select which message severities you would like to see, do the following:"
 msgstr ""
+"Для того чтобы выбрать уровень важности сообщений которые вы хотели бы "
+"видеть, выполните следующее:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:73 en/log.html:92
 msgid "Open the message log from the Vidalia tray menu."
-msgstr ""
+msgstr "Откройте журнал сообщений из меню в трее Vidalia ."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
 msgid "Click on <i>Settings</i> at the top of the message log window."
-msgstr ""
+msgstr "Нажмите на <i>Настройки</i> в верхней части окна журнала сообщений."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:76
@@ -124,21 +155,24 @@ msgid ""
 "Check message severities you would like to see from the Message Filter group "
 "on the left and uncheck message severities you would like to hide."
 msgstr ""
+"Выберите уровень важности сообщений которые вам требуются из групп Фильтра "
+"Сообщений и снимите флажок на сообщениях которые вы бы хотели скрыть."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:79
 msgid "Click <i>Save Settings</i> to apply your new message filter."
 msgstr ""
+"Нажмите <i>Сохранить настройки</i> для применения нового фильтра сообщений. "
 
 #. type: Content of: <html><body>
 #: en/log.html:84
 msgid "<a name=\"logfile\"/>"
-msgstr ""
+msgstr "<a name=\"logfile\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:85
 msgid "Logging to a File"
-msgstr ""
+msgstr "Ведение журнала сообщений в файл."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:87
@@ -146,11 +180,16 @@ msgid ""
 "Vidalia can also write log messages to a file, as well as logging them in "
 "the message log window. To enable logging to a file, follow these steps:"
 msgstr ""
+"Так же Vidalia предоставляет возможность вести журнал сообщений в файл, а "
+"также регистрации их в окне журнала сообщений.Для использования данной "
+"возможности,выполните следующее:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:94
 msgid "Check the box labeled <i>Automatically save new log messages to a file</i>."
 msgstr ""
+"Установите флажок в опции <i>Автоматически сохранять новый журнал сообщений "
+"в файл</i>."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:96
@@ -159,8 +198,11 @@ msgid ""
 "either type the path and filename into the text box, or click <i>Browse</i> "
 "to navigate to a location for your log file."
 msgstr ""
+"Если вы хотите изменить файл, в который сообщения будут записаны,  введите "
+"путь и имя файла в текстовое поле или нажмите кнопку <i>Обзор</i> , чтобы "
+"перейти к местоположению лог-файл."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:100
 msgid "Click <i>Save Settings</i> to save your log destination."
-msgstr ""
+msgstr "Нажмите <i>Сохранить настройки</i> для начала записи журнала в файл."

@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-03 13:30+0200\n"
+"Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/running.html:16
 msgid "Running Tor"
-msgstr ""
+msgstr "Запуск Tor."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:20
@@ -36,26 +38,30 @@ msgid ""
 "Tor, as well as monitoring Tor's status and letting you know if it exits "
 "unexpectedly."
 msgstr ""
+"Vidalia поможет вам контролировать процесс Tor начиная с запуска заканчивая "
+"остановкой, так же мониторинг статуса Tor и даст вам знать если Tor будет "
+"неожиданно завершен."
 
 #. type: Content of: <html><body>
 #: en/running.html:25
 msgid "<a name=\"starting\"/>"
-msgstr ""
+msgstr "<a name=\"starting\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:26
 msgid "Starting and Stopping Tor"
-msgstr ""
+msgstr "Запуск и остановка Tor."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:28
 msgid "To <i>start</i> Tor,"
-msgstr ""
+msgstr "Для <i>запуска</i> Tor."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:30
 msgid "Select <i>Start</i> from Vidalia's tray menu or press <i>Ctrl+S</i>"
 msgstr ""
+"Выберите <i>Запуск</i> из меню в трее Vidalia либо нажмите <i>Ctrl+S</i>"
 
 #. type: Content of: <html><body><p><ol>
 #: en/running.html:30 en/running.html:45
@@ -68,6 +74,8 @@ msgid ""
 "Vidalia's tray icon will change from an onion with a red X to a green onion "
 "when Tor has started."
 msgstr ""
+"Иконка в трее Vidalia изменится со значка лука с красным X на зеленый лук "
+"тогда Tor запустился."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:36
@@ -77,16 +85,20 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"Если Vidalia не смогла запустить Tor, Vidalia отобразить сообщение об ошибке "
+"с описанием причины. Вы так же можете просмотреть <a href=\"log.html\">журнал "
+"сообщений</a> для более подробной информации об произошедшей ошибке."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:43
 msgid "To <i>stop</i> Tor,"
-msgstr ""
+msgstr "Для <i>остановки</i> Tor."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:45
 msgid "Select <i>Stop</i> from Vidalia's tray menu or press <i>Ctrl+T</i>"
 msgstr ""
+"Выберите <i>Остановить</i> в трее меню Vidalia либо нажмите <i>Ctrl+T</i>"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:47
@@ -94,6 +106,8 @@ msgid ""
 "Vidalia's tray icon will change from a green onion to a gray onion with a "
 "red X when Tor has stopped."
 msgstr ""
+"Иконка в трее Vidalia изменится со значка  зеленый лук на лук с красным X "
+"тогда Tor остановлен."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:51
@@ -103,16 +117,20 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"Если Vidalia не смогла остановить Tor, Vidalia отобразить сообщение об "
+"ошибке с описанием причины. Вы так же можете просмотреть <a "
+"href=\"log.html\">журнал сообщений</a> для более подробной информации об "
+"произошедшей ошибке."
 
 #. type: Content of: <html><body>
 #: en/running.html:57
 msgid "<a name=\"monitoring\"/>"
-msgstr ""
+msgstr "<a name=\"monitoring\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:58
 msgid "Monitoring Tor's Status"
-msgstr ""
+msgstr "Мониторинг статуса Tor."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:60
@@ -121,11 +139,14 @@ msgid ""
 "system tray or dock area. The following table shows the different states "
 "indicated by an icon in your system's notification area:"
 msgstr ""
+"Vidalia сообщает вам о статусе Tor отображая на иконке в вашем системном "
+"трее или специальной области на панели.В следующей таблице приведены "
+"различные статусы которые указаны на значке в области уведомлений системы:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:69
 msgid "Tor is stopped. Select <i>Start</i> from the Vidalia menu to start Tor."
-msgstr ""
+msgstr "Tor остановлен. Выберите <i>Запуск</i> из меню Vidalia для запуска Tor."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:76
@@ -133,6 +154,8 @@ msgid ""
 "Tor is starting up. You can check the <a href=\"log.html\">message log</a> "
 "for status information about Tor while it is starting."
 msgstr ""
+"Tor запускается .Вы можете проверить в <a href=\"log.html\">журнале "
+"сообщений</a> информацию о статусе Tor на момент запуска."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:84
@@ -142,11 +165,14 @@ msgid ""
 "href=\"log.html\">message log</a> while it is running, if you want to see "
 "what Tor is doing."
 msgstr ""
+"Tor запущен.Если хотите остановить Tor выберите <i>Остановить</i> из меню "
+"Vidalia.Tor сбросит информацию в <a href=\"log.html\">журнал сообщений</a> "
+"пока он работает, если вам интересно чем занимался Tor."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:92
 msgid "Tor is in the process of shutting down."
-msgstr ""
+msgstr "Tor в процессе завершения."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:98
@@ -156,3 +182,7 @@ msgid ""
 "wrong. You can also check the <a href=\"log.html\">message log</a> for "
 "details about any problems Tor encountered before it exited."
 msgstr ""
+"Если Tor завершился неожидано.Vidalia сменит иконку на темную луковку с "
+"красным X и отобразить ошибку с описанием проблемы.Вы так же можете "
+"просмотреть <a href=\"log.html\">журнал сообщений</a> для более детальной "
+"информации о проблеме которая спровоцировала выход."

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-03 10:08+0200\n"
+"PO-Revision-Date: 2010-09-03 15:51+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -136,7 +136,7 @@ msgid ""
 "The services table contains five columns containing data about configured "
 "hidden services:"
 msgstr ""
-"Сервис таблица содержит 5 столбцов содержащих данные по настройке скрытых "
+"Сервис таблица из 5 столбцов содержащих данные по настройке скрытых "
 "сервисов:"
 
 #. type: Content of: <html><body><p><ul><li>
@@ -202,17 +202,18 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/services.html:103
 msgid "<a name=\"buttons\"/>"
-msgstr ""
+msgstr "<a name=\"buttons\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:104
+#, fuzzy
 msgid "What are the five buttons used for?"
-msgstr ""
+msgstr "Для чего используются пять кнопок?"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:107
 msgid "Add service: Creates a new empty service configuration."
-msgstr ""
+msgstr "Добавить сервис: Создать новую пустую сервис конфигурацию."
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:108
@@ -220,6 +221,8 @@ msgid ""
 "Remove service: Permanently removes a hidden service configuration.  (If you "
 "want to temporarily remove a service, uncheck its Enabled checkbox.)"
 msgstr ""
+"Удалить сервис: Полностью удалить конфигурацию скрытого сервиса.  (Если вы "
+"желаете удалить временно сервис, снимите флажок.)"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:111
@@ -232,16 +235,18 @@ msgstr ""
 #: en/services.html:114
 msgid "Browse: Lets you browse to find a local hidden service directory."
 msgstr ""
+"Обзор: Позволяет просмотр для обнаружения локальную директорию скрытого "
+"сервиса."
 
 #. type: Content of: <html><body>
 #: en/services.html:119
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:120
 msgid "How can I configure advanced hidden service settings?"
-msgstr ""
+msgstr "Как мне настроить расширенные настройки скрытых сервисов?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:122
@@ -264,12 +269,14 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/services.html:135
 msgid "<a name=\"client\"/>"
-msgstr ""
+msgstr "<a name=\"client\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:136
 msgid "How does Vidalia help me to access other hidden services?"
 msgstr ""
+"Каким образом Vidalia поможет мне организовать доступ к другим скрытым "
+"сервисам?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:138

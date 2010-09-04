@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-03 11:01+0200\n"
+"PO-Revision-Date: 2010-09-03 11:26+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -39,8 +39,8 @@ msgid ""
 "part by making it easy to set up a relay of your own.  <a name=\"basic\"/>"
 msgstr ""
 "Tor сеть построена на добровольцах со всего мира которые жертвуют часть "
-"пропускной способности своего канала запуская Tor пере направление. Vidalia "
-"позволяет легко настроить пере направление самому.   <a name=\"basic\"/>"
+"пропускной способности своего канала запуская Tor перенаправление. Vidalia "
+"позволяет легко настроить перенаправление самому.   <a name=\"basic\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:24
@@ -53,7 +53,7 @@ msgid ""
 "If you decide you want to help the Tor network grow by running a relay, you "
 "can follow these steps to get started:"
 msgstr ""
-"Если вы решили помочь расширить сеть запустив пере направление,вам "
+"Если вы решили помочь расширить сеть запустив перенаправление,вам "
 "потребуется выполнить эти шаги для начала:"
 
 #. type: Content of: <html><body><ol><li>
@@ -69,7 +69,7 @@ msgstr ""
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:35
 msgid "Select the <i>Relay</i> configuration page."
-msgstr "Выбрать <i>Пере направление</i> на странице конфигурации."
+msgstr "Выбрать <i>Перенаправление</i> на странице конфигурации."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:37
@@ -81,13 +81,13 @@ msgid ""
 "relay or <i>Help censored users reach the Tor network</i> if you want to run "
 "a bridge relay."
 msgstr ""
-"Решите хотите вы запускать обычный режим Tor или <i>Режим моста</i> пере "
-"направление(Tor 0.2.0.8-alpha или более новая). Пере направление в режиме "
+"Решите хотите вы запускать обычный режим Tor или <i>Режим моста</i> "
+"перенаправление(Tor 0.2.0.8-alpha или более новая). Перенаправление в режиме "
 "моста помогает Tor пользователям у кого заблокирована возможность доступа "
-"напрямую подключиться к сети Tor.  Установите флажок <i>Пере направление "
-"трафика через сеть Tor</i> если хотите обычное пере направление Tor или "
+"напрямую подключиться к сети Tor.  Установите флажок <i>Перенаправление "
+"трафика через сеть Tor</i> если хотите обычное перенаправление Tor или "
 "<i>Помочь заблокированным пользователям получить доступ к сети Tor</i> если "
-"хотите пере направление в режиме моста."
+"хотите перенаправление в режиме моста."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:44
@@ -101,7 +101,7 @@ msgid ""
 "network. An example of a relay nickname is \"MyVidaliaRelay\"."
 msgstr ""
 "<b>Псевдоним</b>: Данное имя будет обозначать вас в сети Tor. Для примера "
-"псевдоним пере направления \"MyVidaliaRelay\"."
+"псевдоним перенаправления \"MyVidaliaRelay\"."
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:50
@@ -163,6 +163,11 @@ msgid ""
 "contribute to the Tor network. You can run a relay, while still keeping your "
 "network connection usable for your own use."
 msgstr ""
+"Запуск Tor в режиме перенаправления возможно потребует большую пропускную "
+"способность; как ни было Tor позволяет ограничивать пропускную способность, "
+"которую вы готовы внести свой вклад в сети Tor.Вы можете запустить режим "
+"перенаправления при этом параллельно использовать сетевое соединение для "
+"своих нужд."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:80
@@ -171,11 +176,14 @@ msgid ""
 "connection speed. If you select <i>Custom</i>, you will be able to specify "
 "your own limits."
 msgstr ""
+"Вы должны выбрать опцию из выпадающего меню которая лучше всего "
+"соответствует скорости вашего соединения. Если вы выбрали "
+"<i>Пользовательская</i>, вы сможете использовать свои ограничения."
 
 #. type: Content of: <html><body><h4>
 #: en/server.html:84
 msgid "Custom Limits"
-msgstr ""
+msgstr "Пользовательские ограничения."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:86
