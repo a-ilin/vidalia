@@ -97,3 +97,6 @@ be done once, unless Polipo ever gets updated. Steps 9-11 need to be
 repeated when the bundled version of Tor changes. Steps 12-13 need to be
 repeated when the bundled version of Vidalia changes.
 
+Experimental gcc-hardened Vidalia config:
+CFLAGS="-D_FORTIFY_SOURCE=2 -fstack-protector-all -fwrapv -fPIE -Wstack-protector -Wformat -Wformat-security -Wpointer-sign" \\
+LDFLAGS="-pie" cmake -DCMAKE_OSX_ARCHITECTURES=i386 -DCMAKE_BUILD_TYPE=minsizerel .
