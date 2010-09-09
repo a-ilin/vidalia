@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2010-09-05 06:03+0200\n"
-"Last-Translator: bladerunner <bladerunner2891@gmail.com>\n"
+"PO-Revision-Date: 2010-09-08 00:47+0200\n"
+"Last-Translator: iranfree <green.dove88@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -758,95 +758,95 @@ msgstr "مقدونيه"
 
 msgctxt "CountryInfo"
 msgid "Madagascar"
-msgstr ""
+msgstr "ماداگاسكار"
 
 msgctxt "CountryInfo"
 msgid "Malawi"
-msgstr ""
+msgstr "مالاوي"
 
 msgctxt "CountryInfo"
 msgid "Malaysia"
-msgstr ""
+msgstr "مالزي"
 
 msgctxt "CountryInfo"
 msgid "Mali"
-msgstr ""
+msgstr "مالي"
 
 msgctxt "CountryInfo"
 msgid "Malta"
-msgstr ""
+msgstr "مالت"
 
 msgctxt "CountryInfo"
 msgid "Marshall Islands"
-msgstr ""
+msgstr "جزاير مارشال"
 
 msgctxt "CountryInfo"
 msgid "Mauritania"
-msgstr ""
+msgstr "موريتاني"
 
 msgctxt "CountryInfo"
 msgid "Mauritius"
-msgstr ""
+msgstr "موريس"
 
 msgctxt "CountryInfo"
 msgid "Micronesia"
-msgstr ""
+msgstr "جزاير ميكرونزي"
 
 msgctxt "CountryInfo"
 msgid "Moldova"
-msgstr ""
+msgstr "مولداوي"
 
 msgctxt "CountryInfo"
 msgid "Monaco"
-msgstr ""
+msgstr "موناكو"
 
 msgctxt "CountryInfo"
 msgid "Mongolia"
-msgstr ""
+msgstr "مغولستان"
 
 msgctxt "CountryInfo"
 msgid "Montenegro"
-msgstr ""
+msgstr "مونته نگرو"
 
 msgctxt "CountryInfo"
 msgid "Morocco"
-msgstr ""
+msgstr "مراكش"
 
 msgctxt "CountryInfo"
 msgid "Mozambique"
-msgstr ""
+msgstr "موزامبيك"
 
 msgctxt "CountryInfo"
 msgid "Namibia"
-msgstr ""
+msgstr "نامبيا"
 
 msgctxt "CountryInfo"
 msgid "Nauru"
-msgstr ""
+msgstr "نائورو"
 
 msgctxt "CountryInfo"
 msgid "Nepal"
-msgstr ""
+msgstr "نپال"
 
 msgctxt "CountryInfo"
 msgid "Netherlands"
-msgstr ""
+msgstr "هلند"
 
 msgctxt "CountryInfo"
 msgid "New Zealand"
-msgstr ""
+msgstr "زلاند نو"
 
 msgctxt "CountryInfo"
 msgid "Nicaragua"
-msgstr ""
+msgstr "نيكاراگوئه"
 
 msgctxt "CountryInfo"
 msgid "Niger"
-msgstr ""
+msgstr "نيجر"
 
 msgctxt "CountryInfo"
 msgid "Nigeria"
-msgstr ""
+msgstr "نيجريه"
 
 msgctxt "CountryInfo"
 msgid "Norway"
@@ -854,43 +854,43 @@ msgstr "جلو"
 
 msgctxt "CountryInfo"
 msgid "Oman"
-msgstr ""
+msgstr "عمان"
 
 msgctxt "CountryInfo"
 msgid "Pakistan"
-msgstr ""
+msgstr "پاكستان"
 
 msgctxt "CountryInfo"
 msgid "Palau"
-msgstr ""
+msgstr "پالائو"
 
 msgctxt "CountryInfo"
 msgid "Palestine"
-msgstr ""
+msgstr "فلسطين"
 
 msgctxt "CountryInfo"
 msgid "Panama"
-msgstr ""
+msgstr "پاناما"
 
 msgctxt "CountryInfo"
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "پاپوآ گينه نو"
 
 msgctxt "CountryInfo"
 msgid "Paraguay"
-msgstr ""
+msgstr "پاراگوئه"
 
 msgctxt "CountryInfo"
 msgid "Peru"
-msgstr ""
+msgstr "پرو"
 
 msgctxt "CountryInfo"
 msgid "Philippines"
-msgstr ""
+msgstr "فيليپين"
 
 msgctxt "CountryInfo"
 msgid "Poland"
-msgstr ""
+msgstr "لهستان"
 
 msgctxt "CountryInfo"
 msgid "Portugal"
@@ -898,47 +898,47 @@ msgstr "پرتغال"
 
 msgctxt "CountryInfo"
 msgid "Qatar"
-msgstr ""
+msgstr "قطر"
 
 msgctxt "CountryInfo"
 msgid "Romania"
-msgstr ""
+msgstr "روماني"
 
 msgctxt "CountryInfo"
 msgid "Russia"
-msgstr ""
+msgstr "روسيه"
 
 msgctxt "CountryInfo"
 msgid "Rwanda"
-msgstr ""
+msgstr "روآندا"
 
 msgctxt "CountryInfo"
 msgid "Saint Kitts & Nevis"
-msgstr ""
+msgstr "سنت کيتس و نويس"
 
 msgctxt "CountryInfo"
 msgid "Saint Lucia"
-msgstr ""
+msgstr "سنت لوسيا"
 
 msgctxt "CountryInfo"
 msgid "Saint Vincent & the Grenadines"
-msgstr ""
+msgstr "سنت وينست و گرنادين"
 
 msgctxt "CountryInfo"
 msgid "Samoa"
-msgstr ""
+msgstr "ساموآ"
 
 msgctxt "CountryInfo"
 msgid "San Marino"
-msgstr ""
+msgstr "سن مارينو"
 
 msgctxt "CountryInfo"
 msgid "Sao Tome & Principe"
-msgstr ""
+msgstr "سائوتومه و پرنسيپ"
 
 msgctxt "CountryInfo"
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "عربستان سعودی"
 
 msgctxt "CountryInfo"
 msgid "Senegal"
@@ -946,39 +946,39 @@ msgstr "کلی"
 
 msgctxt "CountryInfo"
 msgid "Serbia"
-msgstr ""
+msgstr "صربستان"
 
 msgctxt "CountryInfo"
 msgid "Seychelles"
-msgstr ""
+msgstr "سيشل"
 
 msgctxt "CountryInfo"
 msgid "Sierra Leone"
-msgstr ""
+msgstr "سيرالئون"
 
 msgctxt "CountryInfo"
 msgid "Singapore"
-msgstr ""
+msgstr "سنگاپور"
 
 msgctxt "CountryInfo"
 msgid "Slovakia"
-msgstr ""
+msgstr "اسلواكي"
 
 msgctxt "CountryInfo"
 msgid "Slovenia"
-msgstr ""
+msgstr "اسلوونی"
 
 msgctxt "CountryInfo"
 msgid "Solomon Islands"
-msgstr ""
+msgstr "جزاير سليمان"
 
 msgctxt "CountryInfo"
 msgid "Somalia"
-msgstr ""
+msgstr "سومالي"
 
 msgctxt "CountryInfo"
 msgid "South Africa"
-msgstr ""
+msgstr "آفريقاي جنوبي"
 
 msgctxt "CountryInfo"
 msgid "Spain"
@@ -986,231 +986,231 @@ msgstr "اشتراک"
 
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
-msgstr ""
+msgstr "سريلانكا"
 
 msgctxt "CountryInfo"
 msgid "Sudan"
-msgstr ""
+msgstr "سودان"
 
 msgctxt "CountryInfo"
 msgid "Suriname"
-msgstr ""
+msgstr "سورينام"
 
 msgctxt "CountryInfo"
 msgid "Swaziland"
-msgstr ""
+msgstr "سوازيلند"
 
 msgctxt "CountryInfo"
 msgid "Sweden"
-msgstr ""
+msgstr "سوئد"
 
 msgctxt "CountryInfo"
 msgid "Switzerland"
-msgstr ""
+msgstr "سوئيس"
 
 msgctxt "CountryInfo"
 msgid "Syria"
-msgstr ""
+msgstr "سوريه"
 
 msgctxt "CountryInfo"
 msgid "Tajikistan"
-msgstr ""
+msgstr "تاجيكستان"
 
 msgctxt "CountryInfo"
 msgid "Tanzania"
-msgstr ""
+msgstr "تانزانيا"
 
 msgctxt "CountryInfo"
 msgid "Thailand"
-msgstr ""
+msgstr "تايلند"
 
 msgctxt "CountryInfo"
 msgid "Timor-Leste (East Timor)"
-msgstr ""
+msgstr "تيمور شرقي"
 
 msgctxt "CountryInfo"
 msgid "Togo"
-msgstr ""
+msgstr "توگو"
 
 msgctxt "CountryInfo"
 msgid "Tonga"
-msgstr ""
+msgstr "تونگا"
 
 msgctxt "CountryInfo"
 msgid "Trinidad & Tobago"
-msgstr ""
+msgstr "ترينيداد و توباگو"
 
 msgctxt "CountryInfo"
 msgid "Tunisia"
-msgstr ""
+msgstr "تونس"
 
 msgctxt "CountryInfo"
 msgid "Turkey"
-msgstr ""
+msgstr "تركيه"
 
 msgctxt "CountryInfo"
 msgid "Turkmenistan"
-msgstr ""
+msgstr "تركمنستان"
 
 msgctxt "CountryInfo"
 msgid "Tuvalu"
-msgstr ""
+msgstr "توالو"
 
 msgctxt "CountryInfo"
 msgid "Uganda"
-msgstr ""
+msgstr "اوگاندا"
 
 msgctxt "CountryInfo"
 msgid "Ukraine"
-msgstr ""
+msgstr "اوكراين"
 
 msgctxt "CountryInfo"
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "امارات متحده عربي"
 
 msgctxt "CountryInfo"
 msgid "United Kingdom"
-msgstr ""
+msgstr "انگلستان"
 
 msgctxt "CountryInfo"
 msgid "United States"
-msgstr ""
+msgstr "ايالات متحده آمريكا"
 
 msgctxt "CountryInfo"
 msgid "Uruguay"
-msgstr ""
+msgstr "اوروگوئه"
 
 msgctxt "CountryInfo"
 msgid "Uzbekistan"
-msgstr ""
+msgstr "ازبكستان"
 
 msgctxt "CountryInfo"
 msgid "Vanuatu"
-msgstr ""
+msgstr "وانوتائو"
 
 msgctxt "CountryInfo"
 msgid "Vatican"
-msgstr ""
+msgstr "واتيكان"
 
 msgctxt "CountryInfo"
 msgid "Venezuela"
-msgstr ""
+msgstr "ونزوئلا"
 
 msgctxt "CountryInfo"
 msgid "Vietnam"
-msgstr ""
+msgstr "ويتنام"
 
 msgctxt "CountryInfo"
 msgid "Western Sahara"
-msgstr ""
+msgstr "صحراي غربي"
 
 msgctxt "CountryInfo"
 msgid "Yemen"
-msgstr ""
+msgstr "يمن"
 
 msgctxt "CountryInfo"
 msgid "Zambia"
-msgstr ""
+msgstr "زامبيا"
 
 msgctxt "CountryInfo"
 msgid "Zimbabwe"
-msgstr ""
+msgstr "زيمباوه"
 
 msgctxt "CountryInfo"
 msgid "Albania"
-msgstr ""
+msgstr "آلباني"
 
 msgctxt "CountryInfo"
 msgid "Algeria"
-msgstr ""
+msgstr "الجزيره"
 
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "اتريش"
 
 msgctxt "CountryInfo"
 msgid "Bahrain"
-msgstr ""
+msgstr "بحرين"
 
 msgctxt "CountryInfo"
 msgid "Benin"
-msgstr ""
+msgstr "بنين"
 
 msgctxt "CountryInfo"
 msgid "Ethiopia"
-msgstr ""
+msgstr "اتيوپي"
 
 msgctxt "CountryInfo"
 msgid "Fiji"
-msgstr ""
+msgstr "فيجي"
 
 msgctxt "CountryInfo"
 msgid "Finland"
-msgstr ""
+msgstr "فنلاند"
 
 msgctxt "CountryInfo"
 msgid "Greece"
-msgstr ""
+msgstr "يونان"
 
 msgctxt "CountryInfo"
 msgid "Guam"
-msgstr ""
+msgstr "گوام"
 
 msgctxt "CountryInfo"
 msgid "Hungary"
-msgstr ""
+msgstr "مجارستان"
 
 msgctxt "CountryInfo"
 msgid "Iceland"
-msgstr ""
+msgstr "ايسلند"
 
 msgctxt "CountryInfo"
 msgid "India"
-msgstr ""
+msgstr "هندوستان"
 
 msgctxt "CountryInfo"
 msgid "Indonesia"
-msgstr ""
+msgstr "اندونزي"
 
 msgctxt "CountryInfo"
 msgid "Iran"
-msgstr ""
+msgstr "ايران"
 
 msgctxt "CountryInfo"
 msgid "Iraq"
-msgstr ""
+msgstr "عراق"
 
 msgctxt "CountryInfo"
 msgid "Ireland"
-msgstr ""
+msgstr "ايرلند"
 
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "كره شمالي"
 
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "كره جنوبي"
 
 msgctxt "CountryInfo"
 msgid "Libya"
-msgstr ""
+msgstr "ليبي"
 
 msgctxt "CountryInfo"
 msgid "Maldives"
-msgstr ""
+msgstr "مالديو"
 
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "مكزيك"
 
 msgctxt "CountryInfo"
 msgid "Myanmar"
-msgstr ""
+msgstr "ميانمار"
 
 msgctxt "CountryInfo"
 msgid "Taiwan"
-msgstr ""
+msgstr "تايوان"
 
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
@@ -1250,27 +1250,27 @@ msgstr "تُر"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "برنامه پروكسي(اختياري)"
 
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "آغاز يك برنامه پروكسي هنگام شروع تُر"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "توافقنامه برنامه پروكسي:"
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
-msgstr ""
+msgstr "به روز رسانی نرم افزار"
 
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
-msgstr ""
+msgstr "بررسي خودكار براي به روز رساني هاي جديد"
 
 msgctxt "GeneralPage"
 msgid "Check Now"
-msgstr ""
+msgstr "در حال بررسي"
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1290,11 +1290,11 @@ msgstr "%1 گیگا‌بایت"
 
 msgctxt "GraphFrame"
 msgid "Recv:"
-msgstr ""
+msgstr "دريافت شده:"
 
 msgctxt "GraphFrame"
 msgid "Sent:"
-msgstr ""
+msgstr "ارسال شده:"
 
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
@@ -1422,7 +1422,7 @@ msgstr "اسناد پیدا شده"
 
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents:"
-msgstr ""
+msgstr "خطا در بارگذاري فهرست راهنما:"
 
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
@@ -1446,11 +1446,11 @@ msgstr "ویدالیا نتوانست پیوند انتخاب شده در مرو
 
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
-msgstr ""
+msgstr "خطا در بازكردن فايل راهنما:"
 
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "مجوز اطلاعات"
 
 msgctxt "LicenseDialog"
 msgid "License"
@@ -1458,7 +1458,7 @@ msgstr "مجوز"
 
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "نوشته ها"
 
 msgctxt "LogEvent"
 msgid "Debug"
@@ -1870,11 +1870,14 @@ msgstr "پنهان کردن این پنجره"
 
 msgctxt "MainWindow"
 msgid "Password Reset Failed"
-msgstr ""
+msgstr "بازيابي كلمه عبور شكست خورد"
 
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
 msgstr ""
+"ويداليا در حال تلاش برای تعويض کلمه عبور تر است ، اما قادر به راه اندازی "
+"مجدد نرم افزار تر نيست.لطفا نوار وظيفه(Task manager)راچك كنيد تا هيچ برنامه "
+"تُر در حال اجرا نباشد."
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended."
@@ -1882,19 +1885,23 @@ msgstr "نسخه نصب شده تُر قدیمی است و دیگر توصیه �
 
 msgctxt "MainWindow"
 msgid "Would you like to check if a newer package is available for installation?"
-msgstr ""
+msgstr "آيا مي خواهيد بررسي كنم نسخه جديد نر افزار تر براي نصب موجود است؟"
 
 msgctxt "MainWindow"
 msgid "Potentially Unsafe Connection"
-msgstr ""
+msgstr "اتصلات نا امن"
 
 msgctxt "MainWindow"
 msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
 msgstr ""
+"به نظر مي رسد يكي از نرم افزار ها%1 اتصالات رمزنگاري نشده در پورت %2دارد.هر "
+"چيزي كه توسط اين اتصال ارسال شود مي تواند كنترل شود!لطفاً نرم افزار مورد نظر "
+"خود را بررسي كنيد و فقط از پروتكولهاي رمز نگاري شده،مثلssl،اگر ممكن است "
+"استفاده كنيد."
 
 msgctxt "MainWindow"
 msgid "Tor has automatically closed your connection in order to protect your anonymity."
-msgstr ""
+msgstr "تُر به صورت خودكار اتصال شما را بست تا در برابر شناسايي امن بمانيد."
 
 msgctxt "MainWindow"
 msgid "Update Failed"
@@ -1902,15 +1909,15 @@ msgstr "به روز رسانی تُر موجود می باشد"
 
 msgctxt "MainWindow"
 msgid "Your software is up to date"
-msgstr ""
+msgstr "نرم افزار شما به روز است."
 
 msgctxt "MainWindow"
 msgid "There are no new Tor software packages available for your computer at this time."
-msgstr ""
+msgstr "در حال حاضر نسخه اي از تُر براي كامپيوتر شما وجود ندارد."
 
 msgctxt "MainWindow"
 msgid "Installation Failed"
-msgstr ""
+msgstr "نصب ناموفق بود"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to install your software updates."
@@ -1918,36 +1925,41 @@ msgstr "ویدالیا نتوانست نرم افزار تُر را متوقف �
 
 msgctxt "MainWindow"
 msgid "The following error occurred:"
-msgstr ""
+msgstr "خطا هاي زير رخ داد:"
 
 msgctxt "MainWindow"
 msgid "failed (%1)"
-msgstr ""
+msgstr "ناموفق(%1)"
 
 msgctxt "MainWindow"
 msgid "Your relay is shutting down.\n"
 "Click 'Stop' again to stop your relay now."
-msgstr ""
+msgstr "باز ژخش شما متوقف شده است./n"
 
 msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
 "\n"
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"شما در حال حاضر يك بازپخش داريد.پايان دادن به اين بازپخش ميتواند اتصالات "
+"كاربران را متوقف كند./n/nآيا مي خواهيد به تدريج بازپخش بسته شود و به كاربران "
+"فرصت دهيد تا يك بازپخش جديد بيابند؟"
 
 msgctxt "MainWindow"
 msgid "Vidalia detected that the Tor software exited unexpectedly.\n"
 "\n"
 "Please check the message log for recent warning or error messages."
 msgstr ""
+"ويداليا يك نسخه از تُر را شناسايي كرده است./n/nلطفا پيغامها را براي خاطاها "
+"بررسي كنيد."
 
 msgctxt "MainWindow"
 msgid ", probably Telnet,"
-msgstr ""
+msgstr "، احتمالا شبکه راه دور ،"
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
-msgstr ""
+msgstr "احتمالا نرم افزار ايميل ،"
 
 msgctxt "MainWindow"
 msgid "Vidalia"
@@ -1955,7 +1967,7 @@ msgstr "ویدالیا"
 
 msgctxt "MainWindow"
 msgid "File"
-msgstr ""
+msgstr "فايل"
 
 msgctxt "MainWindow"
 msgid "About Vidalia"
@@ -1967,7 +1979,7 @@ msgstr "خانه"
 
 msgctxt "MainWindow"
 msgid "Check For Updates"
-msgstr ""
+msgstr "بررسي به روز رساني ها"
 
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
@@ -2228,12 +2240,14 @@ msgstr "به صورت خودکار کزارش پیام‌ها را در یک ف�
 msgctxt "MessageLog"
 msgid "Messages that appear when something has \n"
 "gone very wrong and Tor cannot proceed."
-msgstr ""
+msgstr "اين پيغام زماني ظاهر مي شود /nكه تُر نتواند اتفاقات را پردازش كند."
 
 msgctxt "MessageLog"
 msgid "Messages that only appear when \n"
 "something has gone wrong with Tor."
 msgstr ""
+"Messages that only appear when \n"
+"something has gone wrong with Tor."
 
 msgctxt "MessageLog"
 msgid "Messages that appear infrequently \n"
@@ -2241,22 +2255,33 @@ msgid "Messages that appear infrequently \n"
 "not considered errors, but you may \n"
 "care about."
 msgstr ""
+"Messages that appear infrequently \n"
+"during normal Tor operation and are \n"
+"not considered errors, but you may \n"
+"care about."
 
 msgctxt "MessageLog"
 msgid "Messages that appear frequently \n"
 "during normal Tor operation."
 msgstr ""
+"Messages that appear frequently \n"
+"during normal Tor operation."
 
 msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of \n"
 "interest to Tor developers."
 msgstr ""
+"Hyper-verbose messages primarily of \n"
+"interest to Tor developers."
 
 msgctxt "MessageLog"
 msgid "Cannot write file %1\n"
 "\n"
 "%2."
 msgstr ""
+"Cannot write file %1\n"
+"\n"
+"%2."
 
 msgctxt "NetViewer"
 msgid "Tor Network Map"
@@ -2344,7 +2369,7 @@ msgstr "فایل مورد نظر پیدا نشد"
 
 msgctxt "NetViewer"
 msgid "No details on the selected relay are available."
-msgstr ""
+msgstr "هيچ جزئياتي درباره ي بازپخش انتخاب شده موجود نيست."
 
 msgctxt "NetViewer"
 msgid "Unknown"
@@ -2352,11 +2377,11 @@ msgstr "ناشناخته"
 
 msgctxt "NetViewer"
 msgid "Full Screen"
-msgstr ""
+msgstr "تمام صفحه"
 
 msgctxt "NetViewer"
 msgid "View the network map as a full screen window"
-msgstr ""
+msgstr "مشاهده نقشه شبکه به صورت يك پنجره تمام صفحه"
 
 msgctxt "NetViewer"
 msgid "Ctrl+F"
@@ -2472,23 +2497,25 @@ msgstr "کپی کردن پل های منتخب در تخته یادداشت"
 
 msgctxt "NetworkPage"
 msgid "Find Bridges Now"
-msgstr ""
+msgstr "پيدا كردن پل ها"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How else can I find bridges?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">چگونه می توانيد پل ديگری پيدا کنم؟?</a>"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How can I find bridges?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">چگونه می توان پل پیدا کنم؟?</a>"
 
 msgctxt "NetworkPage"
 msgid "No new bridges are currently available. You can either wait a while and try again, or try another method of finding new bridges."
 msgstr ""
+"پلِ جديدي در دسترس نيست.شما مي توانيد صبر كنيد و مجدداً سعي كنيد،يا روش "
+"ديگري امتحان كنيد براي پيدا كردن پل هاي جديد."
 
 msgctxt "NetworkPage"
 msgid "Click Help to see other methods of finding new bridges."
-msgstr ""
+msgstr "بر روي راهنما كليك كنيد تا ديگر روشها را ببينيد."
 
 msgctxt "Policy"
 msgid "accept"
@@ -2556,11 +2583,11 @@ msgstr "ناشناخته"
 
 msgctxt "RouterInfoDialog"
 msgid "Relay Details"
-msgstr ""
+msgstr "اطلاعات بازپخش"
 
 msgctxt "RouterInfoDialog"
 msgid "Summary"
-msgstr ""
+msgstr "خلاصه"
 
 msgctxt "RouterInfoDialog"
 msgid "Name:"
@@ -2600,7 +2627,7 @@ msgstr "آخرین به‌روزرسانی:"
 
 msgctxt "RouterInfoDialog"
 msgid "Descriptor"
-msgstr ""
+msgstr "توضيحات"
 
 msgctxt "RouterListItem"
 msgid "Offline"
@@ -2632,11 +2659,11 @@ msgstr "کپی کن"
 
 msgctxt "RouterListWidget"
 msgid "Nickname"
-msgstr ""
+msgstr "Nickname"
 
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr ""
+msgstr "اثر انگشت"
 
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
@@ -2837,6 +2864,8 @@ msgstr "به چه منابع اینترنتی کاربران قادر به دس�
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
 msgstr ""
+"تُر همچنان بعضي از ايميل ها و فايلهاي اشتراك گذاري شده ارسالي را به صورت "
+"پيشفرض مسدود كرده براي جلوگيري از اسپمينگ و استفاده هاي نادرست."
 
 msgctxt "ServerPage"
 msgid "Exit Policies"
@@ -2856,15 +2885,17 @@ msgstr "کپی کردن هویت پل بازپخش شما در تخته یادد
 
 msgctxt "ServerPage"
 msgid "No Recent Usage"
-msgstr ""
+msgstr "اخيراً استفاده نشده"
 
 msgctxt "ServerPage"
 msgid "No clients have used your relay recently."
-msgstr ""
+msgstr "هيچ كاربري اخيراً از بازپخش شما استفاده نكرده است."
 
 msgctxt "ServerPage"
 msgid "Leave your relay running so clients have a better chance of finding and using it."
 msgstr ""
+"اجازه دهيد بازپخش شما ادامه پيدا كند اينطور كاربران شانس بيشتري دارند تا آن "
+"را پيدا كنند."
 
 msgctxt "ServerPage"
 msgid "Bridge History"
@@ -2877,10 +2908,12 @@ msgstr "ویدالیا نتوانست تنظیمات %1 را ذخیره کند."
 msgctxt "ServerPage"
 msgid "Tor returned an improperly formatted response when Vidalia requested your bridge's usage history."
 msgstr ""
+"Tor returned an improperly formatted response when Vidalia requested your "
+"bridge's usage history."
 
 msgctxt "ServerPage"
 msgid "The returned response was: %1"
-msgstr ""
+msgstr "The returned response was: %1"
 
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network"
@@ -2892,12 +2925,14 @@ msgstr "<a href=\"bridges.finding\">چطور می توانم یک پل را پی
 
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory"
-msgstr ""
+msgstr "لينكهاي بازپخش فهرست"
 
 msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a\n"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
+"Email address at which you may be reached if there is a\n"
+"problem with your relay. You might also include your PGP or GPG fingerprint."
 
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
@@ -2977,7 +3012,7 @@ msgstr "مرور در سیستم فایل و برگزیدن فهرست برای 
 
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr ""
+msgstr "طراحي شده توسط تُر"
 
 msgctxt "Stream"
 msgid "New"
