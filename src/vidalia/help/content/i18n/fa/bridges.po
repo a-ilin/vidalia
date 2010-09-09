@@ -10,34 +10,35 @@
 #   distributed except according to the terms described in the LICENSE
 #   file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-08 06:56+0200\n"
+"Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
 msgid "Bridge Relays"
-msgstr ""
+msgstr "پل های انتقالی"
 
 #. type: Content of: <html><body>
 #: en/bridges.html:19
 msgid "<a name=\"about\"/>"
-msgstr ""
+msgstr "یک نام = درباره"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:20
 msgid "What are bridge relays?"
-msgstr ""
+msgstr "پل های انتقالی چه هستند؟"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:22
@@ -51,21 +52,29 @@ msgid ""
 "filtering connections to all the known Tor relays, they probably won't be "
 "able to block all the bridges."
 msgstr ""
+"بعضی از سرویس دهندگان اینترنتی (ISPs) با مسدود کردن ارتباط با انتقال-دهنده "
+"های Tor اقدام به منع دسترسی کاربران به شبکه Tor  می کنند. پل های انتقالی (و "
+"یا صورت کوتاه شده آن، \"پل ها\") انتقال دهنده هایی هستند که به کاربران سانسور "
+"شده کمک می کند به شبکه Tor دسترسی یابند. برخلاف دیگر انتقال دهنده های Tor، "
+"پل ها در فهرست عمومی انتقال دهنده های معمولی وارد نشده اند. از آنجایی که هیچ "
+"فهرست عمومی کاملی از این پل ها موجود نیست، حتی از ISP شما دسترسی به تمام "
+"انتقال دهنده های شناخته شده ی Tor را فیلتر می کند، به احتمال زیاد قادر "
+"نخواهد بود تمامی پل ها را مسدود کند."
 
 #. type: Content of: <html><body>
 #: en/bridges.html:31
 msgid "<a name=\"finding\"/>"
-msgstr ""
+msgstr "یک نام = یافتن"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:32
 msgid "How do I find a bridge relay?"
-msgstr ""
+msgstr "چگونه یک پل انتقالی بیابم؟"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
-msgstr ""
+msgstr "دو راه اصلی برای پیدا کردن آدرس یک پل موجود است."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
@@ -75,7 +84,7 @@ msgstr ""
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:37
 msgid "Use some of the public bridges"
-msgstr ""
+msgstr "از برخی پل های عمومی استفاده کنید"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:42
@@ -88,6 +97,13 @@ msgid ""
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""
+"برای استفاده از پل های خصوصی از دوستانتان بخواهید Vidlia و Tor را در فضای "
+"سانسور نشده اینترنت نصب فعال کنند و سپس روی <i>Help censored users</i> در "
+"صفحه ی تنظیمات انتقال دهنده درVidalia <a href=\"server.html\"> کلیک کنند. حالا "
+"می توانند به طور خصوصی جمله <i>Bridge address</i> در پایین صحفه انتقال "
+"دهنده خود را برای شما ارسال کنند. فعال سازی پل انتقال دهنده، برخلاف فعال "
+"سازی انتقال دهنده خروج، تنها آمار را از شبکه Tor به مقصد و بالعکس منتقل می "
+"کند و قاعدتن نمی بایست  باعث شکایت از عامل به دلیل نقض مقررات بشود. "
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:52

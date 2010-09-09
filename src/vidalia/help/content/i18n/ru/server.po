@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-03 11:26+0200\n"
+"PO-Revision-Date: 2010-09-09 08:01+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -29,7 +29,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/server.html:16
 msgid "Setting Up a Tor Relay"
-msgstr "Настройка перенаправления в Tor."
+msgstr "Настройка Tor ретранслятора."
 
 #. type: Content of: <html><body>
 #: en/server.html:19
@@ -38,9 +38,9 @@ msgid ""
 "of their spare bandwidth by running a Tor relay. Vidalia helps you do your "
 "part by making it easy to set up a relay of your own.  <a name=\"basic\"/>"
 msgstr ""
-"Tor сеть построена на добровольцах со всего мира которые жертвуют часть "
+"Tor сеть построена добровольцами со всего мира , которые жертвуют часть "
 "пропускной способности своего канала запуская Tor перенаправление. Vidalia "
-"позволяет легко настроить перенаправление самому.   <a name=\"basic\"/>"
+"позволяет легко настроить ретранслятор самому.   <a name=\"basic\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:24
@@ -54,7 +54,7 @@ msgid ""
 "can follow these steps to get started:"
 msgstr ""
 "Если вы решили помочь расширить сеть запустив перенаправление,вам "
-"потребуется выполнить эти шаги для начала:"
+"потребуется для начала выполнить эти шаги :"
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:31
@@ -81,13 +81,13 @@ msgid ""
 "relay or <i>Help censored users reach the Tor network</i> if you want to run "
 "a bridge relay."
 msgstr ""
-"Решите хотите вы запускать обычный режим Tor или <i>Режим моста</i> "
-"перенаправление(Tor 0.2.0.8-alpha или более новая). Перенаправление в режиме "
-"моста помогает Tor пользователям у кого заблокирована возможность доступа "
-"напрямую подключиться к сети Tor.  Установите флажок <i>Перенаправление "
-"трафика через сеть Tor</i> если хотите обычное перенаправление Tor или "
-"<i>Помочь заблокированным пользователям получить доступ к сети Tor</i> если "
-"хотите перенаправление в режиме моста."
+"Решите какой тип запуска вам нужен, обычный режим Tor или ретранслятор типа "
+"<i>Мост</i>(Tor 0.2.0.8-alpha или более новая). Перенаправление в режиме "
+"моста помогает тем пользователям Tor у кого заблокирована возможность "
+"доступа напрямую подключиться к сети Tor.  Установите флажок "
+"<i>Перенаправление трафика через сеть Tor</i> если хотите обычное "
+"перенаправление Tor или <i>Помочь заблокированным пользователям получить "
+"доступ к сети Tor</i> если хотите перенаправление в режиме моста."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:44
@@ -112,20 +112,19 @@ msgid ""
 "and fingerprint."
 msgstr ""
 "<b>Контактная информация</b>: Ваш адрес электронной почты. Этот адрес будет "
-"использоваться только для связи с вами в случае, если появятся  важные "
+"использоваться только для связи с вами в случае, если появятся важные "
 "обновления безопасности Tor или что-то пойдет не так с вашим сервером. Вы "
 "можете также включить ваш PGP или GPG ключ ID и отпечатки "
 "пальцев(fingerprint)."
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:56
-#, fuzzy
 msgid ""
 "<b>Relay Port</b>: The port on which your relay will listen for traffic from "
 "clients or other Tor relays."
 msgstr ""
-"<b>Relay Port</b>: Порт который будет ожидать соединения от клиентов или "
-"других Tor релеев."
+"<b>Порт ретранслятора</b>: Порт который будет ожидать соединения от клиентов "
+"или других Tor ретрансляторов."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:62
@@ -138,12 +137,13 @@ msgid ""
 "the <i>Relay port</i> you entered above. Bridge relays <i>must</i> mirror "
 "the relay directory."
 msgstr ""
-"Если вы хотите Mirror Tor's directory of relays для других в сети проверьте "
-"флажок в настройках <i>Mirror the Relay Directory</i>. Если пропускная "
-"способность вашего канала не достаточная следует снять флажок с этой "
-"опции.Так же если вы решили mirror the relay directory ,убедитесь что "
-"<i>Directory Port</i> отличный от <i>Relay port</i> который вы ввели ранее. "
-"Перенаправление в режиме моста <i>должно</i> mirror the relay directory."
+"Если вы хотите зеркалировать директории ретранслятора Tor для других в сети "
+"проверьте флажок в настройках <i>Зеркалирование директории "
+"ретранслятора</i>, если пропускная способность вашего канала не достаточная "
+"следует снять флажок с этой опции.Так же если вы решили зеркалировать "
+"директории ретранслятора ,убедитесь что <i>Порт директории</i> отличный от "
+"<i>Порт ретранслятора</i> который вы ввели ранее. Перенаправление в режиме "
+"моста <i>должно</i> зеркалировать директории ретранслятора."
 
 #. type: Content of: <html><body>
 #: en/server.html:71
@@ -176,7 +176,7 @@ msgid ""
 "connection speed. If you select <i>Custom</i>, you will be able to specify "
 "your own limits."
 msgstr ""
-"Вы должны выбрать опцию из выпадающего меню которая лучше всего "
+"Вы должны выбрать опцию из выпадающего списка которая лучше всего "
 "соответствует скорости вашего соединения. Если вы выбрали "
 "<i>Пользовательская</i>, вы сможете использовать свои ограничения."
 
@@ -187,6 +187,7 @@ msgstr "Пользовательские ограничения."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:86
+#, fuzzy
 msgid ""
 "The <i>maximum rate</i> is a pool of bytes used to fulfill requests during "
 "short periods of traffic higher than your specified <i>average rate</i>, but "
@@ -197,9 +198,12 @@ msgid ""
 "exceed the specified rate. Your <i>maximum rate</i> must always be greater "
 "than or equal to your <i>average rate</i>."
 msgstr ""
+"<i>Максимальное значение </i> это пул байтов используемых для запросов за "
+"короткий период времени трафика выше, чем указанные Вами"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:96
+#, fuzzy
 msgid ""
 "The <i>average rate</i> is the maximum long-term average bandwidth allowed "
 "(in kilobytes per second). For example, you might want to choose 2 megabytes "
@@ -207,9 +211,15 @@ msgid ""
 "connection). Tor requires a minimum of 20 kilobytes per second to run a "
 "relay."
 msgstr ""
+"<i>Среднее значение</i> является максимальной долгосрочной средней "
+"пропускной способности позволили (в килобайтах в секунду). Например, вы "
+"можете выбрать 2 мегабайт в секунду (2048 Кб / с), или 50 килобайт в секунду "
+"(средней скорости кабельного соединения). Tor требуется не менее 20 "
+"килобайт в секунду, чтобы запустить сервер.блаблабалалбалабалбалабла"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:103
+#, fuzzy
 msgid ""
 "It is important to remember that Tor measures bandwidth in <b>bytes</b>, not "
 "bits. Also, Tor only looks at incoming bytes instead of outgoing bytes. For "
@@ -218,11 +228,15 @@ msgid ""
 "too much strain on your bandwidth, you should consider unchecking the "
 "checkbox labeled <i>Mirror the relay directory</i>."
 msgstr ""
+"Важно упомянуть то что Tor использует для меры пропускной способности "
+"<b>байты</b> а не биты.Так же Tor следит за входящими байтами вместо "
+"исходящих.Например, если ваш ретранслятор работает как зеркало директории "
+"скорее всего исходящего трафика будет больше чем входящего."
 
 #. type: Content of: <html><body>
 #: en/server.html:111
 msgid "<a name=\"exitpolicy\"/>"
-msgstr ""
+msgstr "<a name=\"exitpolicy\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:112
@@ -262,32 +276,32 @@ msgstr ""
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:138
 msgid "<b>Checkbox</b>"
-msgstr ""
+msgstr "<b>Флажок</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:139
 msgid "<b>Ports</b>"
-msgstr ""
+msgstr "<b>Порты</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:140
 msgid "<b>Description</b>"
-msgstr ""
+msgstr "<b>Описание</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:143
 msgid "Websites"
-msgstr ""
+msgstr "Вебсайты"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:144
 msgid "80"
-msgstr ""
+msgstr "80"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:145
 msgid "Normal, unencrypted Web browsing"
-msgstr ""
+msgstr "Обычный,не шифрованный веб сёрфинг"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:148
@@ -297,72 +311,73 @@ msgstr ""
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:149
 msgid "443"
-msgstr ""
+msgstr "443"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:150
 msgid "Encrypted Web browsing"
-msgstr ""
+msgstr "Шифрованный веб сёрфинг"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:153
 msgid "Retrieve Mail (POP, IMAP)"
-msgstr ""
+msgstr "Получить почту (POP,IMAP)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:154
 msgid "110, 143, 993, 995"
-msgstr ""
+msgstr "110, 143, 993, 995"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:155
 msgid "Downloading email (does not permit sending email)"
-msgstr ""
+msgstr "Загрузка электронной почты(не допускает отправку)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:158
 msgid "Instant Messaging (IM)"
-msgstr ""
+msgstr "Мгновенный обмен сообщениями (IM)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:159
 msgid "703, 1863, 5050, 5190, 5222, 5223, 8300, 8888"
-msgstr ""
+msgstr "703, 1863, 5050, 5190, 5222, 5223, 8300, 8888"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:160
 msgid "Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber"
 msgstr ""
+"Обмен мгновенными сообщениями такие как MSN Messenger, AIM, ICQ, и Jabber"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:163
 msgid "Internet Relay Chat (IRC)"
-msgstr ""
+msgstr "Ретранслируемый интернет-чат (IRC)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:164
 msgid "6660-6669, 6697, 7000-7001"
-msgstr ""
+msgstr "6660-6669, 6697, 7000-7001"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:165
 msgid "IRC clients and servers"
-msgstr ""
+msgstr "IRC клиенты и сервера"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:168
 msgid "Misc. Other Services"
-msgstr ""
+msgstr "Разное.Другие сервисы"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:169
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:170
 msgid "All other applications that aren't covered by the previous checkboxes"
-msgstr ""
+msgstr "Все остальные приложения, которые не отмечены предыдущим флажками"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:175
@@ -385,12 +400,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/server.html:188
 msgid "<a name=\"upnp\"/>"
-msgstr ""
+msgstr "<a name=\"upnp\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:189
 msgid "Port Forwarding"
-msgstr ""
+msgstr "Перенаправление портов"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:191
@@ -402,6 +417,14 @@ msgid ""
 "If you want to run a Tor relay, however, other Tor clients and relays must "
 "be able to connect to your relay through your home router or firewall."
 msgstr ""
+"Большинство домашних пользователей соединяются с интернетом через "
+"<i>маршрутизатор</i>, который позволяет нескольким компьютерам в локальной "
+"сети иметь доступ через одно соединение в интернет.Некоторые могут находится "
+"за брандмауэром который блокирует входящие соединения к вашему компьютеру "
+"другим компьютерам в сети интернет.Как бы ни было для работы Tor "
+"ретранслятора необходимо чтоб другие клиенты Tor имели возможность "
+"подключатся к вашему ретранслятору через домашний маршрутизатор либо "
+"брандмауэр."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:200
@@ -412,6 +435,13 @@ msgid ""
 "firewall to \"forward\" all connections to certain ports on your router or "
 "firewall to local ports on your computer."
 msgstr ""
+"Для того чтоб ваш релей имел публичный доступ ваш маршрутизатор или "
+"брандмауэр должен знать какие порты вашего компьютера следует разрешить на "
+"доступ из вне обычно данная опция в настройках имеет название "
+"<i>перенаправление портов</i>(port forwarding).Перенаправление портов "
+"настраивается в вашем маршрутизаторе или брандмауэре на перенаправление всех "
+"соединений на определенные порты перенаправляя соединение с маршрутизатора "
+"или брандмауэра на порты вашего компьютера."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:208

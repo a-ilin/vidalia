@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: 2010-09-03 11:00+0200\n"
+"PO-Revision-Date: 2010-09-07 10:09+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -29,17 +29,17 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
 msgid "Bridge Relays"
-msgstr "Перенаправление в режиме моста"
+msgstr "Ретрансляторы типа мост"
 
 #. type: Content of: <html><body>
 #: en/bridges.html:19
 msgid "<a name=\"about\"/>"
-msgstr ""
+msgstr "<a name=\"about\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:20
 msgid "What are bridge relays?"
-msgstr ""
+msgstr "Что значит ретрансляторы типа мост?"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:22
@@ -53,31 +53,39 @@ msgid ""
 "filtering connections to all the known Tor relays, they probably won't be "
 "able to block all the bridges."
 msgstr ""
+"Некоторые поставщики интернет услуг пытаются запретить пользователям доступ "
+"к сети Tor, блокируя подключение к известным ретрансляторам "
+"Tor.Ретрансляторы типа мост(или <i>мосты</i> для краткости) помогают таким "
+"заблокированным пользователям получить доступ в сети Tor.В отличии от других "
+"Tor ретрансляторов мосты не указаны в публичных директориях как обычные "
+"ретрансляторы.Поскольку не существует полного публичного списка ,даже если "
+"ваш провайдер будет фильтровать соединения со всеми известными Tor "
+"ретрансляторами то вряд ли он сможет заблокировать все мосты."
 
 #. type: Content of: <html><body>
 #: en/bridges.html:31
 msgid "<a name=\"finding\"/>"
-msgstr ""
+msgstr "<a name=\"finding\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:32
 msgid "How do I find a bridge relay?"
-msgstr ""
+msgstr "Как мне найти ретрансляторы типа мост?"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
-msgstr ""
+msgstr "Есть два основных пути узнать адрес мостов:"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
 msgid "Get some friends to run private bridges for you"
-msgstr ""
+msgstr "Попросить друзей запустить частный мост для вас"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:37
 msgid "Use some of the public bridges"
-msgstr ""
+msgstr "Использовать публичные мосты"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:42
@@ -90,6 +98,14 @@ msgid ""
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""
+"Для использования частных мостов, попросите друзей запустить Vidalia и Tor "
+"из не блокированной области интернета и нажать <i>Помочь блокированным "
+"пользователям</i> в Vidalia <a href=\"server.html\">Страница настройки "
+"ретранслятора</a>. Затем они должны вам отправить<i>Адрес моста</i>строка в "
+"нижней части страницы их ретранслятора.В отличии от работы обычного "
+"ретранслятора,  ретранслятор в режиме мост просто передает и принимает "
+"данные из сети Tor,поэтому не следует жаловаться о каких-либо нарушениях "
+"оператору."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:52
@@ -103,6 +119,13 @@ msgid ""
 "attacker to learn lots of bridge addresses, you must send this request from "
 "a Gmail account."
 msgstr ""
+"Вы можете найти публичные адреса мостов посетив "
+"<b>https://bridges.torproject.org</b>.Ответы на этой странице меняются "
+"каждые несколько дней, так что периодически проверяйте, если вам нужно "
+"больше адресов мостов.Другой путь найти публичные адреса послать письмо на "
+"адрес <b>bridges@torproject.org</b> со строкой <b>get bridges</b> в теле "
+"письма.Тем не менее мы создали трудности изучения большого количества "
+"адресов атакующими,вы должны делать запрос с учетной записи Gmail."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:63
@@ -110,3 +133,6 @@ msgid ""
 "Configuring more than one bridge address will make your Tor connection more "
 "stable, in case some of the bridges become unreachable."
 msgstr ""
+"Настройка больше чем один адрес моста позволит Tor соединению быть более "
+"стабильным , стоит учесть что некоторые мосты со временем становятся не "
+"доступны."

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: 2010-09-03 11:36+0200\n"
+"PO-Revision-Date: 2010-09-08 15:12+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -54,9 +54,9 @@ msgstr "Общие настройки."
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
-#, fuzzy
 msgid "Settings on the <i>General</i> page are the most commonly modified settings."
-msgstr "Настройки на странице <i>Общие</i>наиболее часто изменяемых."
+msgstr ""
+"Настройки на странице <i>Общие</i>наиболее часто модифицируемые настройки."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
@@ -67,6 +67,11 @@ msgid ""
 "clicking the <i>Browse</i> button and navigating to the particular Tor "
 "installation you want."
 msgstr ""
+"<b>Tor исполняемые файлы</b>: Это файлы Tor которые VIdalia запустит когда "
+"вы выберите <i>Запуск</i> из меню в трее. Если у вас установлено несколько "
+"версий Tor, вы можете явно указать Vidalia какую версия вы предпочитаете "
+"запускать .Нажмите кнопку <i>Обзор</i> и перейдите на те установленные файлы "
+"что вам нужны."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:39
@@ -75,16 +80,19 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"<b>Автозапуск</b>: Эта настройка позволит вам автоматически запускать Tor "
+"когда запустится Vidalia.Так же вы можете настроить  Vidalia на запуск при "
+"запуске системы (<i>только для Windows систем</i>)."
 
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<a name=\"network\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "Настройки сети"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
@@ -92,6 +100,8 @@ msgid ""
 "The <i>Network</i> settings page lets you change how Tor connects to the Tor "
 "network."
 msgstr ""
+"Страница настроек <i>Сеть</i> позволит вам изменить каким образом Tor будет "
+"подключатся к Tor сети."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:53
@@ -104,6 +114,14 @@ msgid ""
 "you can also enter the <i>Username</i> and <i>Password</i> you use to "
 "connect to your proxy.  Otherwise, you can leave those fields blank."
 msgstr ""
+"<b>Я использую прокси для доступа в интернет</b>: Если ваше интернет "
+"соединение требует HTTP прокси, вы можете настроить Tor на отправку всех "
+"запросов директории и соединения Tor ретранслятора через прокси.Вы должны "
+"указать как минимум имя компьютера или адрес и порт вашего прокси и порт "
+"который ваш прокси обслуживает для соединений.Если ваш прокси требует "
+"аутентификацию вы так же можете указать <i>Имя пользователя</i> и "
+"<i>Пароль</i> которые вы используете для подключения к прокси.В противном "
+"случае, вы можете оставить эти поля пустыми."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:62
@@ -115,9 +133,16 @@ msgid ""
 "list of ports permitted by your firewall or proxy, separated by "
 "commas. (<i>Example: 80,443,8080</i>)"
 msgstr ""
+"<b>Мой брандмауэр позволяет мне подключатся только к определенным "
+"портам</b>: Если вы находитесь за ограничивающим брандмауэром или прокси с "
+"ограничением по портам для соединения ,вы можете настроить Tor на соединение "
+"напрямую только на ретрансляторы с портами которые разрешены вам .Самое "
+"простое ввести все разрешенные порты на вашем брандмауэре или прокси "
+"разделенные запятыми. (<i>Пример: 80,443,8080</i>)"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
+#, fuzzy
 msgid ""
 "<b>My ISP blocks connections to the Tor network</b>: If your ISP (Internet "
 "Service Provider) blocks connections to the Tor network, Tor can attempt to "
@@ -125,27 +150,27 @@ msgid ""
 "to the Tor network through relays called <i>bridges</i> (Tor 0.2.0.3-alpha "
 "or newer only). You can add bridge relays by specifying either their address "
 "and port number, or their address, port number, and fingerprint."
-msgstr ""
+msgstr "<b>Мой провайдер блокирует соединения с сетью Tor</b>: "
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
 msgid "Below are examples of valid bridge address formats:"
-msgstr ""
+msgstr "Ниже приведен пример адреса моста в правильном формате :"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:80
 msgid "128.213.48.13:8080"
-msgstr ""
+msgstr "128.213.48.13:8080"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:83
 msgid "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
-msgstr ""
+msgstr "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:86
 msgid "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
-msgstr ""
+msgstr "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
@@ -163,12 +188,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:100
 msgid "<a name=\"relay\"/>"
-msgstr ""
+msgstr "<a name=\"relay\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:101
 msgid "Relay Settings"
-msgstr ""
+msgstr "Настройки ретранслятора."
 
 #. type: Content of: <html><body><p>
 #: en/config.html:103
@@ -180,12 +205,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:109
 msgid "<a name=\"appearance\"/>"
-msgstr ""
+msgstr "<a name=\"appearance\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:110
 msgid "Appearance Settings"
-msgstr ""
+msgstr "Настройки внешнего вида."
 
 #. type: Content of: <html><body><p>
 #: en/config.html:112
@@ -193,6 +218,8 @@ msgid ""
 "The settings on the <i>Appearance</i> page allow you to customize the look "
 "and feel of Vidalia."
 msgstr ""
+"Настройки на странице <i>Внешний вид</i> позволят вам настроить внешний вид "
+"Vidalia."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:116
@@ -204,6 +231,11 @@ msgid ""
 "the dropdown box. You will need to restart Vidalia after changing the "
 "displayed language for the changes to take effect."
 msgstr ""
+"<b>Язык</b>: Интерфейс Vidalia переведен на множество языков благодаря "
+"помощи добровольцев.При запуске Vidalia попытается определить язык который "
+"использует ваш компьютер.Если же Vidalia не сможет определить ваш язык либо "
+"вы предпочитаете другой , вы всегда можете поменять его в выпадающем "
+"списке.Для применения настроек языка вам потребуется перезапустить Vidalia."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:124
@@ -212,16 +244,20 @@ msgid ""
 "default interface style. If you dislike the default, you can choose "
 "whichever interface style you prefer from the dropdown box."
 msgstr ""
+"<b>Стиль</b>: В большинстве случаев, Vidalia будет использовать по умолчанию "
+" стиль интерфейса вашей платформы. Если вам не нравится по умолчанию, вы "
+"можете выбрать любой стиль интерфейса который  предпочтёте из выпадающего "
+"списка."
 
 #. type: Content of: <html><body>
 #: en/config.html:131
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:132
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Расширенные настройки"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:134
@@ -229,6 +265,8 @@ msgid ""
 "The settings on the <i>Advanced</i> page should generally only be modified "
 "by more experienced users."
 msgstr ""
+"Настройки на странице <i>Расширенные</i> как правило настраиваются только "
+"более опытными пользователями."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:138
@@ -238,6 +276,11 @@ msgid ""
 "have a conflict with another service on your machine, or if you are using "
 "Vidalia to control and monitor a Tor process running on another machine."
 msgstr ""
+"<b>Адрес управления &amp; Порт</b>: <i>Порт управления</i> это порт который "
+"Vidalia использует для общения с Tor. Нет нужды менять его , за исключением "
+"если у вас конфликт с другими сервисами на компьютере или вы используете "
+"Vidalia для управления и мониторинга  Tor процессов запущенных на другом "
+"компьютере."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:144
@@ -304,12 +347,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:189
 msgid "<a name=\"services\"/>"
-msgstr ""
+msgstr "<a name=\"services\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:190
 msgid "Hidden Service Settings"
-msgstr ""
+msgstr "Настройка скрытого сервиса"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:192
@@ -317,3 +360,5 @@ msgid ""
 "Hidden services allow you to provide any kind of TCP-based service, e.g.  an "
 "HTTP service, to others without revealing your IP address."
 msgstr ""
+"Скрытые сервисы позволять вам предоставить любые TCP-основанные сервисы "
+"например HTTP сервис не раскрывая ваш IP адрес."
