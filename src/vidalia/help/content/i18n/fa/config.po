@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-12 06:57+0200\n"
+"Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "راه اندازی Vidalia و Tor"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,21 +37,25 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"Vidalia به شما امکان می دهد که رایج ترین ویژگی های تعدیل شده Vidalia و Tor "
+"را فعال کنید. همچنین به شما امکان می دهد  بازپخش Tor که به رشد شبکه Tor  کمک "
+"می کند را مدیریت کنید. "
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<یک نام= \"عمومی\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "تنظیمات عمومی"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
 msgid "Settings on the <i>General</i> page are the most commonly modified settings."
 msgstr ""
+"تنظیمات صفحه همگانی بیشتر از تمام تنظیمات دیگر به طور عمومی تعدیل یافته اند."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
@@ -61,6 +66,10 @@ msgid ""
 "clicking the <i>Browse</i> button and navigating to the particular Tor "
 "installation you want."
 msgstr ""
+"قابل اجرا به وسیله Tor: هنگامی که گزینه Start را می زنید، Vidalia از لیست "
+"منو موارد قابل اجرا به وسیله Tor را فعال می کند. اگر ورژن های چندگانه Tor "
+"نصب کرده اید، می توانید به Vidalia  بگویید  با کلیک کردن روی دکمه Brows و "
+"پیمایش بر روی Tor موردنظر، کدام ورژن Tor را می خواهید فعال کنید."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:39
@@ -69,16 +78,20 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"گزینه های آغازین (Startup): این تنظیمات به شما امکان می دهد که Vidalia را "
+"وادارید به طور اتوماتیک Tor را همزمان با استارت Vidalia فعال کند. همچنین می "
+"توانید Vidalia تنظیم کنید تا همزمان با استارت سیستم شما، فعال شود (تنها در "
+"ویندوز ممکن است)."
 
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<یک اسم=\"شبکه\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "تنظیمات شبکه"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
@@ -86,6 +99,8 @@ msgid ""
 "The <i>Network</i> settings page lets you change how Tor connects to the Tor "
 "network."
 msgstr ""
+"تنظیمات صفحه شبکه به شما امکان می دهد چگونگی ارتباط Tor  با شبکه Tor  را "
+"تغییر دهید."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:53
@@ -98,6 +113,14 @@ msgid ""
 "you can also enter the <i>Username</i> and <i>Password</i> you use to "
 "connect to your proxy.  Otherwise, you can leave those fields blank."
 msgstr ""
+"من با فیلترشکن به اینترنت دسترسی می یابم: اگر ارتباط اینترنتی شما به "
+"فیلترشکن HTTP نیاز دارد، می توانید Tor را تنظیم کنید تا تمام نیازهای فهرست "
+"راهنما (Directory) و بازپخش های Tor را از طریق فیلترشکن شما بفرستد. در این "
+"صورت می بایست نام و آدرس سرویس دهنده فیلترشکن خود را و نیز درگاهی را که "
+"فیلترشکن شما از آنجا گوش به زنگ ارتباط ها می شود را مشخص کنید. اگر فیلترشکن "
+"شما نیاز به تایید دارد، می توانید نام کاربری و کلمه ورود که برای وصل شدن به "
+"فیلترشکن استفاده می کنید را وارد کنید، در غیر این صورت می توانید این جاها را "
+"خالی بگذارید."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:62
@@ -109,6 +132,13 @@ msgid ""
 "list of ports permitted by your firewall or proxy, separated by "
 "commas. (<i>Example: 80,443,8080</i>)"
 msgstr ""
+"فایروال من فقط امکان وصل شدن به درگاه های مشخصی را می دهد: اگر شما پشت "
+"فایروال یا فیلترشکن مانعی قرار گرفته اید که اتصال شما به درگاه های در دسترس "
+"را محدود می کند، می توانید Tor را تنظیم کنید تا مستقیمن فقط به بازپخش های "
+"درگاه شما وصل شود و در درگاه هایی که از طریق فایروال یا فیلترشکن شما مجاز "
+"هستند، شنود کند. کافی است لیستی از درگاه هایی که از طریق فایروال یا فیلترشکن "
+"شما مجاز هستند را وارد کنید. نام ها را با کاما از هم جدا کنید. (مثال: 80، "
+"443، 880،)"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
@@ -120,26 +150,31 @@ msgid ""
 "or newer only). You can add bridge relays by specifying either their address "
 "and port number, or their address, port number, and fingerprint."
 msgstr ""
+"ISP من مانع اتصال به شبکه Tor می شود: اگر ISP شما (سرویس دهنده اینترنت) "
+"اتصال به شبکه Tor را مسدود می کند، Tor می تواند فیلتر را با پنهان کردن فهرست "
+"اتصال خود دور بزند و از راه بازپخش هایی که \"پل\" نامیده می شود، وصل شود (فقط "
+"Tor 0.2.0.3-alpha و یا ورژن جدیدتر).  می توانید پل های بازپخش را با تعیین "
+"آدرس و شماره درگاه، و یا آدرس، شماره درگاه، و انگشت نگار، اضافه کنید. "
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
 msgid "Below are examples of valid bridge address formats:"
-msgstr ""
+msgstr "در زیر، نمونه های فرمت معتبر آدرس پل را می یابید."
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:80
 msgid "128.213.48.13:8080"
-msgstr ""
+msgstr "128.213.48.13:8080"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:83
 msgid "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
-msgstr ""
+msgstr "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:86
 msgid "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
-msgstr ""
+msgstr "128.213.48.13:8080105413B1DBDAF867B22674D252DF3D9FA3671F73"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
@@ -153,16 +188,20 @@ msgid ""
 "relays</a> for more information on how to learn new bridge relay addresses "
 "and fingerprints."
 msgstr ""
+"حتی اگر آدرس هیچ پل بازپخشی را ندارید، مراجعه به این چک-باکس می تواند سودمند "
+"باشد. Tor با پنهان کردن درخواست فهرست خود برای گرفتن اطلاعات درباره دیگر "
+"بازپخش ها، اقدام مکانیسمی که باعث مسدود شدن درخواست Tor می شود را خنثی می "
+"کند."
 
 #. type: Content of: <html><body>
 #: en/config.html:100
 msgid "<a name=\"relay\"/>"
-msgstr ""
+msgstr "<یک نام=\"بازپخش\">"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:101
 msgid "Relay Settings"
-msgstr ""
+msgstr "تنظیمات بازپخش"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:103
@@ -170,16 +209,18 @@ msgid ""
 "<i> See <a href=\"server.html\">this help topic</a> for detailed information "
 "about setting up and managing a Tor relay.  </i>"
 msgstr ""
+"از عبارت کمکی <a href=\"server.html\"> برای دریافت اطلاعات دقیق درباره راه "
+"اندازی و مدیریت بازپخش Tor استفاده کنید."
 
 #. type: Content of: <html><body>
 #: en/config.html:109
 msgid "<a name=\"appearance\"/>"
-msgstr ""
+msgstr "<یک نام=\"ظاهر\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:110
 msgid "Appearance Settings"
-msgstr ""
+msgstr "تنظیمات ظاهر"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:112
@@ -187,6 +228,8 @@ msgid ""
 "The settings on the <i>Appearance</i> page allow you to customize the look "
 "and feel of Vidalia."
 msgstr ""
+"تنظیمات صفحه \"ظاهر\" به شما امکان میدهد که شمایل و ظاهر Vidalia را به سلیقه ی "
+"خود تغییر دهید."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:116
@@ -198,6 +241,12 @@ msgid ""
 "the dropdown box. You will need to restart Vidalia after changing the "
 "displayed language for the changes to take effect."
 msgstr ""
+"زبان: خط اتصال Vidalia به وسیله مترجمانی مفید و موثر، به چندین زبان ترجمه "
+"شده. اولین بار که Vidalia فعال می شود تلاش می کند زبان مورد استفاده کامپیوتر "
+"شما را حدس بزند. اگر حدس Vidalia نادرست باشد، و یا اگر شما زبان دیگری را "
+"ترجیح بدهید، می توانید زبان دیگری را از فهرست منوی کرکره ای(dropdown menu)، "
+"انتخاب کنید. پس از تغییر زبان، می بایست سیستم را restart کنید تا زبان "
+"انتخابی شما فعال شود."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:124
@@ -206,16 +255,19 @@ msgid ""
 "default interface style. If you dislike the default, you can choose "
 "whichever interface style you prefer from the dropdown box."
 msgstr ""
+"استیل: در بیشتر موارد Validia استیل خط اتصال پیشفرض پلاتفرم شما را به عنوان "
+"پیشفرض بکار می گیرد. اگر این پیشفرض مطابق میل شما نیست، هر استیل دیگری برای "
+"خط اتصال را می توانید از فهرست منوی کرکره ای (dropdown) انتخاب کنید. "
 
 #. type: Content of: <html><body>
 #: en/config.html:131
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<یک نام=\"پیشرفته\">"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:132
 msgid "Advanced Settings"
-msgstr ""
+msgstr "تنظیمات پیشرفته"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:134
@@ -223,6 +275,7 @@ msgid ""
 "The settings on the <i>Advanced</i> page should generally only be modified "
 "by more experienced users."
 msgstr ""
+"تنظیمات صفحه <پیشرفته> معمولن فقط برای کاربران با تجربه تر، تعدیل می شود. "
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:138
@@ -240,6 +293,9 @@ msgid ""
 "limit the applications on your machine that can connect to and reconfigure "
 "your Tor installation. The available authentication methods are:"
 msgstr ""
+"تایید درگاه کنترل: تایید درگاه کنترل برای محدود کردن اپلیکیشن های روی سیستم "
+"شماست که می تواند مرتبط شود و نصب Tor شما را بازتنظمیم کند. متدهای تایید در "
+"دسترس  اینها هستند:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:150
@@ -248,6 +304,8 @@ msgid ""
 "<b>strongly</b> discouraged. Any application or user on your computer can "
 "reconfigure your Tor installation."
 msgstr ""
+"هیچ: هیچ تاییدی مورد لزوم نیست. استفاده از این گزینه \"شدیدن\" منع می شود. هر "
+"اپلیکیشن و یا کاربر روی سیستم شما می تواند نصب Tor را بازتنظیم کند. "
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:155
@@ -258,6 +316,11 @@ msgid ""
 "Vidalia randomly generate a new password each time it starts Tor by checking "
 "the <i>Randomly Generate</i> checkbox."
 msgstr ""
+"کلیدواژه: (پیشفرض) -- اگر این گزینه انتخاب شده باشد، می توانید کلیدواژه ای "
+"را مشخص کنید که Tor در هر بار که کاربر و یا اپلیکیشنی به درگاه کنترل Tor "
+"مرتبط بشود، مطالبه کند. اگر Vidalia برایتان Tor را آغاز کند، می توانید "
+"Vidalia  را تنظیم کنید تا هر بارکه Tor را آغاز می کند، با چک کردن جعبه "
+"\"تولید تصادفی\"، کلیدواژه تازه ای تولید کند. "
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:162
@@ -267,6 +330,10 @@ msgid ""
 "starts. Any user or application that tries to connect to Tor's control port "
 "must be able to provide the contents of this cookie."
 msgstr ""
+"کوکی -- اگر گزینه تایید کوکی انتخاب شده باشد، Tor فایلی (یا \"کوکی\") را خواهد "
+"نوشت  که شامل شمار تصادفی بایت های داتای فهرست در زمان فعال شدنش می شود. هر "
+"کاربر و یا اپلیکیشنی که سعی در اتصال به درگاه کنترل Tor  را داشته باشد، می "
+"بایست بتواند محتویات این کوکی را ارائه بدهد. "
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:170
@@ -276,6 +343,8 @@ msgid ""
 "file. If you leave this field blank, Tor will uses its own default torrc "
 "location."
 msgstr ""
+"فایل تنظیم Tor (اختیاری): می توانید این گزینه را برای آغاز کردن Tor توسط "
+"Validia با استفاده از یک <torrc> مشخص، فایل تایید Tor، استفاده کنید."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:175
