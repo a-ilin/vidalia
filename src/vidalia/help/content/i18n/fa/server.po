@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-14 05:39+0200\n"
+"Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/server.html:16
 msgid "Setting Up a Tor Relay"
-msgstr ""
+msgstr "راه اندازی بازپخش Tor"
 
 #. type: Content of: <html><body>
 #: en/server.html:19
@@ -40,7 +41,7 @@ msgstr ""
 #. type: Content of: <html><body><h3>
 #: en/server.html:24
 msgid "Basic Settings"
-msgstr ""
+msgstr "تنظیمات پایه"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:26
@@ -56,11 +57,13 @@ msgid ""
 "tray menu or <i>Preferences</i> from your system menubar on Macintosh "
 "systems."
 msgstr ""
+"<i>تنظیمات گفتگو</i> را با انتخاب <i> تنظیمات </i> از لیست منیو و یا از "
+"<i>گزینه ها</i> از نوار منیو در سیستم مکینتاش، باز کنید. "
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:35
 msgid "Select the <i>Relay</i> configuration page."
-msgstr ""
+msgstr "<i> بازپخش</i> را در صفحه تنظیمات انتخاب کنید. "
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:37
@@ -72,6 +75,13 @@ msgid ""
 "relay or <i>Help censored users reach the Tor network</i> if you want to run "
 "a bridge relay."
 msgstr ""
+"تصمیم بگیرید که مایلید بازپخش Tor معمولی را فعال کنید یا بازپخش <i>پل</i>، "
+"یعنی Tor معمولی یا ورژن جدیدتر آن. بازپخش های پل به کاربرهای سانسورشده Tor "
+"که راه دسترسشان به شبکه Tor مستقیمن مسدود شده کمک می کنند. اگر مایلید که Tor "
+"معمولی را فعال کنید، مربع مارک <i> ترافیک بازپخش برای شبکه تَر </i>  را تیک "
+"بزنید. اگر مایل هستید بازپخش معمولی Tor را فعال کنید و اگر می خواهید که یک "
+"بازپخش پل فعال کنید <i>کمک به کاربرها برای دسترسی به شبکه تُر</i> را انتخاب "
+"کنید."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:44

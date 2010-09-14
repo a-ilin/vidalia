@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-08 15:15+0200\n"
+"PO-Revision-Date: 2010-09-13 11:26+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -28,19 +28,17 @@ msgstr ""
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
-#, fuzzy
 msgid "Network Viewer"
 msgstr "Просмотрщик сети"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:20
-#, fuzzy
 msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
 msgstr ""
-"Просмотрщик сети позволяет просмотреть релеи в сети Tor и куда расходуется "
-"ваш трафик."
+"Просмотрщик сети позволяет обнаружить ретрансляторы в сети Tor и куда "
+"расходуется ваш трафик."
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
@@ -90,7 +88,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:44
-#, fuzzy
 msgid ""
 "You can zoom in on locations in the map by clicking the <b>Zoom In</b> and "
 "<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the "
@@ -98,25 +95,23 @@ msgid ""
 "would like to move the map."
 msgstr ""
 "Вы можете увеличивать местоположения на карте нажимая <b>Увеличить</b> и "
-"<b>Уменьшить</b> кнопки на панели инструментов.Вы также можете перемещаться "
-"на карте, нажав на карту, а затем перетащить его в любом направлении, "
+"<b>Уменьшить</b> кнопки на панели инструментов.Вы также можете перемещать "
+"обзор на карте, нажав на карту, а затем перетащив в любом направлении, "
 "которое вы хотели бы переместить карту."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:50
-#, fuzzy
 msgid ""
 "The geographic location of a Tor relay is determined by looking up the IP "
 "address of the relay in a GeoIP database, created by MaxMind and located at "
 "geoip.vidalia-project.net."
 msgstr ""
-"Географическое местонахождение Tor серверов обнаруживается по ip адресам в "
-"базе GeoIP., созданная MaxMind и находящаяся по адресу geoip.vidalia-"
-"project.net."
+"Географическое местонахождение Tor ретрансляторов обнаруживается по ip "
+"адресам в базе GeoIP, созданная MaxMind и находящаяся по адресу geoip"
+".vidalia-project.net."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:55
-#, fuzzy
 msgid ""
 "In the middle of the dialog, below the network map, you will see a list of "
 "your current circuits, as well as any application traffic currently on those "
@@ -128,13 +123,13 @@ msgid ""
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
 "В середине диалога, ниже по карте сети, вы увидите список ваших текущих "
-"схем, а также любое приложение движения в настоящее время на этих схем. "
-"Когда на карте сети первого нагрузок, вы вероятно увидите подключение к "
+"схем, а также любой трафик приложения в настоящее время на этих схемах. "
+"Когда карта сети загружается в первый раз, вы вероятно увидите подключение к "
 "geoip.vidalia-project.net, которое возникает, когда Vidalia просматривает "
-"информацию, для список серверов. Важно отметить, что этот запрос выполняется "
-"через Tor, так что ваше местоположение не раскрывается для реле GeoIP. "
-"Результаты поиска будут кэшироваться локально, с тем чтобы уменьшить "
-"нагрузку на реле GeoIP в Vidalia."
+"информацию, для получения списка серверов. Важно отметить, что этот запрос "
+"выполняется через Tor, так что ваше местоположение не раскрывается для "
+"ретранслятора GeoIP. Результаты поиска будут кэшироваться локально, для того "
+"чтоб уменьшить нагрузку на ретрансляторы GeoIP ."
 
 #. type: Content of: <html><body>
 #: en/netview.html:66
@@ -153,11 +148,15 @@ msgid ""
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
 "The following table summarizes the possible relay status icons:"
 msgstr ""
+"В левой части просмотрщика сети ,вы  увидите список ретрансляторов в сети "
+"Tor.Следующая за каждым ретранслятором иконка указывает на статус "
+"ретранслятора.ниже таблица кратко описывает возможные статусы ретрансляторов "
+"на иконках."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
 msgid "The relay is offline or simply not responding."
-msgstr ""
+msgstr "Ретранслятор не доступен или не отвечает"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:84
@@ -165,26 +164,34 @@ msgid ""
 "The relay is <i>hibernating</i>, meaning it is online, but has used up as "
 "much bandwidth as the operator is willing to allow for a given time period."
 msgstr ""
+"Ретранслятор в <i>спящем режиме</i>,означает что доступен но использовал "
+"большую часть пропускной способности по желанию оператора определенный "
+"временной период."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:92
 msgid "The relay is online, but has shown only minimal throughput."
 msgstr ""
+"Ретранслятор доступен но зафиксирована минимальная пропускная способность."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:98
 msgid "The relay is online and has shown a throughput &gt;= 20 KB/s."
 msgstr ""
+"Ретранслятор доступен , зафиксирована пропускная способность  &gt;= 20 КБ/с."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:104
 msgid "The relay is online and has shown a throughput &gt;= 60 KB/s."
 msgstr ""
+"Ретранслятор доступен , зафиксирована пропускная способность  &gt;= 60 КБ/с."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:110
 msgid "The relay is online and has shown a throughput &gt;= 400 KB/s."
 msgstr ""
+"Ретранслятор доступен , зафиксирована пропускная способность  &gt;= 400 "
+"КБ/с."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:116
@@ -193,16 +200,19 @@ msgid ""
 "maximum bandwidth sustained input or output over any ten second period in "
 "the past day."
 msgstr ""
+"Все значения пропускной способности оцениваются на основе минимальной или "
+"максимальной пропускной способности и устойчивости входящих или выходящих "
+"данных в любой десяти секундный период за прошлые дни."
 
 #. type: Content of: <html><body>
 #: en/netview.html:122
 msgid "<a name=\"details\"/>"
-msgstr ""
+msgstr "<a name=\"details\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:123
 msgid "Relay Details"
-msgstr ""
+msgstr "Подробности ретранслятора"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:125
@@ -213,6 +223,12 @@ msgid ""
 "in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
+"Панель подробностей ретранслятора в правой части экрана предоставит вам "
+"информацию о вашем ретрансляторе или выбранном из <a "
+"href=\"#relaylist\">список ретрансляторов</a>.Если вы выбрали схему цепи или "
+"поток из списка ваших текущих схем цепочек и потоков, эта панель покажет вам "
+"подробную информацию о каждом ретрансляторе, через который трафик в "
+"настоящее время отправлен."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:132
@@ -220,6 +236,8 @@ msgid ""
 "The fields that you may see in the panel are as follows (<i>Note</i>: not "
 "all of these fields will always be present):"
 msgstr ""
+"Поля, которые вы можете увидеть в панели являются (<i>Примечание</i>: не все "
+"эти поля всегда будут присутствовать):"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:138
@@ -238,9 +256,8 @@ msgstr "<b>IP адрес</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:143
-#, fuzzy
 msgid "IP address at which this Tor relay can be reached."
-msgstr "IP адрес который этот Tor ретранслятор может достигнуть."
+msgstr "IP адрес который этому Tor ретранслятор доступен"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:146

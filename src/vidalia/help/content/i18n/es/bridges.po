@@ -10,34 +10,35 @@
 #   distributed except according to the terms described in the LICENSE
 #   file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-13 16:57+0200\n"
+"Last-Translator: emma_f <emmafelber@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
 msgid "Bridge Relays"
-msgstr ""
+msgstr "Relevos de Puente"
 
 #. type: Content of: <html><body>
 #: en/bridges.html:19
 msgid "<a name=\"about\"/>"
-msgstr ""
+msgstr "<nombre=\"acerca_de\">"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:20
 msgid "What are bridge relays?"
-msgstr ""
+msgstr "¿Qué es un relevo de puente?"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:22
@@ -51,31 +52,39 @@ msgid ""
 "filtering connections to all the known Tor relays, they probably won't be "
 "able to block all the bridges."
 msgstr ""
+"Algunos proveedores de servicios de Internet intentan prevenir que usuarios "
+"tengan aceso a la red Tor,  bloqueando connexiones con conocidos relevos de "
+"Tor.  Relevos de puente (o <i>'puentes'</i>)  son relevos que apoyan a éstes "
+"usuarios censurados para que tengan aceso a la red Tor.  En cambio con "
+"otros relevos, los puentes no se encuentran en los mismos directorios que "
+"los releovs ordinarios.  Como no hay lista publica de ellos, aunque el ISP "
+"esté filtrando connexiones a todos los conocidos relevos de Tor, es muy "
+"probable que no puedan bloquear todos los puentes. "
 
 #. type: Content of: <html><body>
 #: en/bridges.html:31
 msgid "<a name=\"finding\"/>"
-msgstr ""
+msgstr "<nombre=\"buscando\">"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:32
 msgid "How do I find a bridge relay?"
-msgstr ""
+msgstr "¿Cómo se puede encontrar un relevo de puente?"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
-msgstr ""
+msgstr "Hay dos maneras mas comunes de conocer la dirección de un puente."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
 msgid "Get some friends to run private bridges for you"
-msgstr ""
+msgstr "Convencen a algunos amigos que mantengan puentes privadas para tí"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:37
 msgid "Use some of the public bridges"
-msgstr ""
+msgstr "Utilizan algunos de los puentes públicos."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:42
@@ -88,6 +97,14 @@ msgid ""
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""
+"Para utilizar puentes privados, pide a tus amigos que ejecuten Vidalia y Tor "
+"en una parte del internet sin censura, y luego haz clic en <i>Ayudar "
+"usuarios censurados</i> en <a href=\"server.html\">la página de 'Opciones de "
+"relevos' de Vidalia.</a>.  Luego ellos deberían mandarte de manera privada "
+"la linea con la <i>dirección de puente</a> al fondo de su página de relevo. "
+"  En cambio con el ejecutar de un relevo de salida, el ejecutar de un "
+"relevo de puente sólo pasa datos a y de la red Tor por eso no debe exponer "
+"el operador a quejas de abuso."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:52
@@ -101,6 +118,15 @@ msgid ""
 "attacker to learn lots of bridge addresses, you must send this request from "
 "a Gmail account."
 msgstr ""
+"Puedes encontrar direcciones de puentes públicos al visitar "
+"<b>https://bridges.torproject.org</b>.  .  Las respuestas que encuentras en "
+"ésta página se cambiará después de unos cuantos días, entonces visita de "
+"nuevo a menudo si quieres más direcciones de puentes.  La otra manera de "
+"encontrar direcciones de puentes públicos es mandar un correo a "
+"<b>bridges@torproject.com</b> con la linea <b>get bridges</b> sólo en el "
+"cuerpo el correo. Sin embargo, para que podamos hacerle más dificil para un "
+"hacker aprender muchas direcciones de puentes, debes mandarnos éste pedida "
+"desde una cuenta Gmail."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:63
@@ -108,3 +134,6 @@ msgid ""
 "Configuring more than one bridge address will make your Tor connection more "
 "stable, in case some of the bridges become unreachable."
 msgstr ""
+"Configurando  más que una direccion de puente asegura que tu connexión de "
+"Tor sea mas estabile, por si acaso que algunos de los puentes sean fuera del "
+"alcance."

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-03 15:49-0300\n"
-"PO-Revision-Date: 2010-09-03 09:29+0200\n"
+"PO-Revision-Date: 2010-09-13 14:28+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -42,12 +42,12 @@ msgstr ""
 "Ниже перечислены некоторые трудности и вопросы с которыми столкнулись люди "
 "при использовании программы Tor. Если вы не смогли найти решение вашей "
 "проблемы,проверьте наш веб-сайт <i>www.vidalia-project.net</i> для получения "
-"дополнительной информации и поддержки.        <a name=\"start\"/>"
+"дополнительной информации и поддержки. <a name=\"start\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:25
 msgid "I Can't Start Tor"
-msgstr "Не могу запустить Tor."
+msgstr "Не могу запустить Tor"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:27
@@ -110,7 +110,7 @@ msgid ""
 "while it started."
 msgstr ""
 "Самая распространенная причина того что Vidalia не может соединиться с Tor "
-"заключается в том что Tor запущен, но произошла ошибка и немедленное "
+"заключается в том что Tor запущен но произошла ошибка и немедленное "
 "завершение. Следует проверить <a href=\"log.html\">журнал сообщений</a> на "
 "предмет ошибок с генерированных при запуске программой Tor."
 

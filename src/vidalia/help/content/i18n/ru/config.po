@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: 2010-09-08 15:12+0200\n"
+"PO-Revision-Date: 2010-09-13 13:59+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -142,7 +142,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
-#, fuzzy
 msgid ""
 "<b>My ISP blocks connections to the Tor network</b>: If your ISP (Internet "
 "Service Provider) blocks connections to the Tor network, Tor can attempt to "
@@ -150,7 +149,13 @@ msgid ""
 "to the Tor network through relays called <i>bridges</i> (Tor 0.2.0.3-alpha "
 "or newer only). You can add bridge relays by specifying either their address "
 "and port number, or their address, port number, and fingerprint."
-msgstr "<b>Мой провайдер блокирует соединения с сетью Tor</b>: "
+msgstr ""
+"<b>Мой провайдер блокирует соединения с сетью Tor</b>: Если ваш провайдер "
+"блокирует соединения с сетью Tor, Tor может попытаться избежать фильтрации "
+"шифрованным соединением и соединится с Tor сетью через ретранслятор "
+"именуемый <i>мост</i>(Tor 0.2.0.3-alpha или более новая версия. Вы можете "
+"добавить мост типа ретранслятор указав адрес и порт или адрес ,порт и "
+"отпечаток пальцев."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
@@ -184,6 +189,15 @@ msgid ""
 "relays</a> for more information on how to learn new bridge relay addresses "
 "and fingerprints."
 msgstr ""
+"Даже если вы не знаете ни одного адреса ретранслятора типа мост установка "
+"данного флажка может оказаться полезной.Tor шифрует директорию запросов "
+",которую может повредить механизм блокировки пытаясь фильтровать Tor запросы "
+"об информации о других ретрансляторах.Если соединения обычного Tor "
+"ретранслятора так же блокируются,вам нужно изучить каким образом добавлять "
+"адрес ретранслятора типа мост.Просмотрите справку на <a "
+"href=\"bridges.html#finding\">найти ретрансляторы типа мост</a> для получения "
+"дополнительной информации о том, как узнать новый адреса ретранслятора типа "
+"мост и отпечатков пальцев."
 
 #. type: Content of: <html><body>
 #: en/config.html:100
@@ -201,6 +215,8 @@ msgid ""
 "<i> See <a href=\"server.html\">this help topic</a> for detailed information "
 "about setting up and managing a Tor relay.  </i>"
 msgstr ""
+"<i> Смотрите<a href=\"server.html\">справку</a> для подробной информации о "
+"настройках и управлении ретранслятора Tor.  </i>"
 
 #. type: Content of: <html><body>
 #: en/config.html:109
@@ -289,6 +305,10 @@ msgid ""
 "limit the applications on your machine that can connect to and reconfigure "
 "your Tor installation. The available authentication methods are:"
 msgstr ""
+"<b>Порт управления аутентификацией</b>: Порт управления аутентификацией "
+"используется для ограничения приложений на вашем компьютере способных "
+"соединятся и перенастраивать вашу установку Tor.Возможные методы "
+"аутентификации ниже:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:150
@@ -297,6 +317,9 @@ msgid ""
 "<b>strongly</b> discouraged. Any application or user on your computer can "
 "reconfigure your Tor installation."
 msgstr ""
+"<b>Без аутентификации</b> -- Не требуется аутентификация.Использовать эту "
+"опцию <b>настоятельно</b> не рекомендуется .Любые приложения или "
+"пользователь на вашем компьютере может перенастроить вам установку Tor."
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:155
@@ -307,6 +330,11 @@ msgid ""
 "Vidalia randomly generate a new password each time it starts Tor by checking "
 "the <i>Randomly Generate</i> checkbox."
 msgstr ""
+"<b>Пароль</b> <i>(По умолчанию)</i> -- Если выбран этот метод, вы можете "
+"указать пароль который Tor будет требовать при каждом соединения к порту "
+"управления Tor приложением или пользователем.Если запуск Tor осуществляет "
+"для вас Vidalia вы можете выбрать генерацию случайного нового пароля каждый "
+"раз при запуске Tor установив флажок на опции <i>Генерировать случайный</i>."
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:162
@@ -316,6 +344,11 @@ msgid ""
 "starts. Any user or application that tries to connect to Tor's control port "
 "must be able to provide the contents of this cookie."
 msgstr ""
+"<b>Cookie</b> --Если выбран данный метод аутентификации, Tor будет вести "
+"файл (или, <i>cookie</i>) содержащий случайный набор байтов в директории "
+"данных при запуске.Любой пользователь или приложение пытаясь подключится к "
+"порту управления Tor должны быть в состоянии обеспечить содержание этих "
+"cookie."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:170
@@ -325,6 +358,10 @@ msgid ""
 "file. If you leave this field blank, Tor will uses its own default torrc "
 "location."
 msgstr ""
+"<b>Файл настройки Tor</b> <i>(опционально)</i>: Вы можете использовать эту "
+"настройку для запуска ,Vidalia запустит Tor c указанным <i>torrc</i> "
+"конфигурационным файлом Tor.Если оставите поле пустым, Tor использует свой "
+"файл torrc по умолчанию."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:175
@@ -334,6 +371,11 @@ msgid ""
 "information, Tor relay keys, and configuration files. If you leave this "
 "field blank, Tor will use its own default data directory location."
 msgstr ""
+"<b>Директория данных Tor</b> <i>(опционально)</i>:Вы можете указать "
+"директорию в которой Tor будет сохранять данные,такие как кешированную "
+"информацию о Tor ретрансляторе ,ключи Tor ретранслятора и конфигурационные "
+"файлы.Если оставите поля пустыми Tor будет использовать собственную заданную "
+"по умолчанию директорию."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:181
@@ -343,6 +385,11 @@ msgid ""
 "starts.  If you enter a value for <b>Run as Group</b>, Tor will "
 "<i>setgid</i> to this group when it starts."
 msgstr ""
+"<b>Разрешения</b> <i>(опционально,не работает в Windows)</i>:Если вы "
+"вставите значение в поле<b>Запуск под пользователем</b>, Tor выставит "
+"<i>setuid</i> этого пользователя при запуске. :Если вы вставите значение в "
+"поле<b>Запуск под группой</b>, Tor выставит <i>setgid</i> этой группы при "
+"запуске."
 
 #. type: Content of: <html><body>
 #: en/config.html:189

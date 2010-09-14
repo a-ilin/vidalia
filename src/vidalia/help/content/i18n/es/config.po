@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-13 17:00+0200\n"
+"Last-Translator: emma_f <emmafelber@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "Configurando Vidalia. y Tor"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,11 +37,15 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"Vidalia te permite configurar algunos de los aspectos de Vidalia y Tor que "
+"son modificados con mas frequencia.  Tambien te deja instalar y manejar un "
+"<a href=\"server.html\"> relevo de Tor</a> para que puedas ayudar a la red Tor "
+"crecer."
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<nombre=\"general\">"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
