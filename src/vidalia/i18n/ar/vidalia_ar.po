@@ -1,17 +1,17 @@
+# Osama Khalid <osamak@gnu.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:55+0000\n"
-"PO-Revision-Date: 2010-05-03 11:45-0600\n"
-"Last-Translator: Anas Qtiesh <anasqtiesh@gmail.com>\n"
-"Language-Team: translations@vidalia-project.net\n"
+"PO-Revision-Date: 2010-09-09 20:11+0300\n"
+"Last-Translator: Osama Khalid <osamak@gnu.org>\n"
+"Language-Team: Arabic <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && "
-"n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 1.1\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -19,7 +19,7 @@ msgstr "عن ڤيداليا"
 
 msgctxt "AboutDialog"
 msgid "License"
-msgstr "ترخيص"
+msgstr "الترخيص"
 
 # لا توجد تعليقات.
 msgctxt "AboutDialog"
@@ -49,7 +49,7 @@ msgstr "Qt"
 
 msgctxt "AboutDialog"
 msgid "version"
-msgstr "الإصدار"
+msgstr "النسخة"
 
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
@@ -57,7 +57,7 @@ msgstr "'%1' ليس رقم IP صحيح."
 
 msgctxt "AdvancedPage"
 msgid "You selected 'Password' authentication, but did not specify a password."
-msgstr "لقد اخترت \"كلمة سر\" كنظام التحقق، لكنك لم تحدد كلمة سر."
+msgstr "لقد اخترت \"كلمة سر\" كنظام استيثاق، لكنك لم تحدد كلمة سر."
 
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
@@ -81,7 +81,7 @@ msgstr "تعذَّر إنشاء الملف %1 [%2]"
 
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
-msgstr "إختار مجلد لحفظ بيانات التور"
+msgstr "اختر مجلدًا لحفظ بيانات التور"
 
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
@@ -101,7 +101,7 @@ msgstr "مدخل التحكم"
 
 msgctxt "AdvancedPage"
 msgid "Authentication:"
-msgstr "المصادقة:"
+msgstr "الاستيثاق:"
 
 msgctxt "AdvancedPage"
 msgid "Address:"
@@ -117,7 +117,7 @@ msgstr "كعكة"
 
 msgctxt "AdvancedPage"
 msgid "Password"
-msgstr "كلمة مرور"
+msgstr "كلمة السر"
 
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
@@ -129,15 +129,15 @@ msgstr ":"
 
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
-msgstr "ملف إعدادات التور"
+msgstr "ملف ضبط تور"
 
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr "إبدأ برنامج تور بملف الإعدادات المحدد (torrc)"
+msgstr "ابدأ برنامج تور بملف الضبط المحدد (torrc)"
 
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr "اختر مسار ملف إعداداتك"
+msgstr "اختر مسار ملف ضبطك"
 
 msgctxt "AdvancedPage"
 msgid "Browse"
@@ -149,20 +149,21 @@ msgstr "مجلد البيانات"
 
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr "إحفظ بيانات برنامج تور في الدليل التالي"
+msgstr "احفظ بيانات برنامج تور في الدليل التالي"
 
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr "إختار الدليل المستعمل لحفظ بيانات برنامج تور"
+msgstr "اختر الدليل المستخدم لحفظ بيانات برنامج تور"
 
 msgctxt "AdvancedPage"
-msgid "Vidalia was unable to remove the Tor service.\n"
+msgid ""
+"Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
 msgstr ""
-"ڤيداليا لم يتمكن من إزالة خدمة تور\n"
+"لم يتمكن ڤيداليا من إزالة خدمة تور\n"
 "\n"
-"سيتوجب عليك إزالتها يدوياً."
+"قد تضطر لإزالتها يدوياً."
 
 msgctxt "AppearancePage"
 msgid "Language"
@@ -170,15 +171,15 @@ msgstr "اللغة"
 
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
-msgstr "اختر اللغة المستخدمة في فيداليا"
+msgstr "اختر اللغة المستخدمة في ڤيداليا"
 
 msgctxt "AppearancePage"
 msgid "Style"
-msgstr "شكل"
+msgstr "السمة"
 
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
-msgstr "اختر شكل واجهة ڤيداليا"
+msgstr "اختر سمة واجهة ڤيداليا"
 
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
@@ -190,19 +191,19 @@ msgstr "منذ:"
 
 msgctxt "BandwidthGraph"
 msgid "Hide Settings"
-msgstr "إخفاء الإعدادات"
+msgstr "أخفِ الإعدادات"
 
 msgctxt "BandwidthGraph"
 msgid "Show Settings"
-msgstr "استعراض الإعدادات"
+msgstr "أظهر الإعدادات"
 
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
-msgstr "استخدام تور لعرض الحزمة"
+msgstr "استخدام تور لعرض النطاق"
 
 msgctxt "BandwidthGraph"
 msgid "Reset"
-msgstr "إعادة ضبط"
+msgstr "أعد الضبط"
 
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
@@ -218,11 +219,11 @@ msgstr "دائما في المقدمة"
 
 msgctxt "BandwidthGraph"
 msgid "Style"
-msgstr "شكل"
+msgstr "السمة"
 
 msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
-msgstr "تغيير شفافية مخطط استهلاك عرض الحزمة"
+msgstr "تغيير شفافية مخطط عرض النطاق"
 
 msgctxt "BandwidthGraph"
 msgid "100"
@@ -234,11 +235,11 @@ msgstr "% غير شفاف"
 
 msgctxt "BandwidthGraph"
 msgid "Save"
-msgstr "حفظ"
+msgstr "احفظ"
 
 msgctxt "BandwidthGraph"
 msgid "Cancel"
-msgstr "إلغاء"
+msgstr "ألغِ"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
@@ -254,11 +255,11 @@ msgstr "جاري إرسال طلب HTTPS للجسور..."
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
-msgstr "جاري تحميل قائمة الجسور..."
+msgstr "تنزيل قائمة الجسور..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr "جاري تحميل الجسور"
+msgstr "تنزيل قائمة الجسور"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
@@ -294,7 +295,7 @@ msgstr "جديد"
 
 msgctxt "Circuit"
 msgid "Open"
-msgstr "فتح"
+msgstr "افتح"
 
 msgctxt "Circuit"
 msgid "Building"
@@ -346,7 +347,7 @@ msgstr "الشبكة"
 
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr "مشاركة"
+msgstr "المشاركة"
 
 msgctxt "ConfigDialog"
 msgid "Services"
@@ -370,7 +371,7 @@ msgstr "خطأ في حفظ الإعدادات"
 
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr "فيداليا لم يتمكن من حفظ إعداداتك لـ%1"
+msgstr "لم يتمكن ڤيداليا من حفظ إعداداتك ل%1"
 
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
@@ -378,7 +379,7 @@ msgstr "خطأ في تطبيق الإعدادات"
 
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr "فيداليا لا يستطيع تطبيق إعداداتك %1 في تور"
+msgstr "ڤيداليا لا يستطيع تطبيق إعداداتك %1 في تور"
 
 msgctxt "ConfigDialog"
 msgid "Settings"
@@ -386,7 +387,7 @@ msgstr "إعدادات"
 
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
-msgstr "فيداليا لا يستطيع الإتصال بتور. (%1)"
+msgstr "ڤيداليا لا يستطيع الإتصال بتور. (%1)"
 
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
@@ -394,17 +395,15 @@ msgstr "مقبس التحكم غير متصل."
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr "كلمة المرور مطلوبة"
+msgstr "كلمة السر مطلوبة"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr "تذكر كلمة المرور"
+msgstr "تذكر كلمة السر"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password:"
-msgstr ""
-"اتصل فيداليا بعملية تور جارية تتطلب كلمة مرور. يرجى أن تدخل كلمة مرور التحكم "
-"الخاصة بك:"
+msgstr "اتصل فيداليا بعملية تور جارية تتطلب كلمة سر. يرجى أن تدخل كلمة سر التحكم:"
 
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
@@ -1220,19 +1219,19 @@ msgstr "الملفات التنفيذية (*.exe)"
 
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
-msgstr "اختر مسار تور"
+msgstr "اختيار مسار تور"
 
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
-msgstr "اختر الملف التنفيذي للوكيل (بروكسي)"
+msgstr "اختيار الملف التنفيذي للوسيط (بروكسي)"
 
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
-msgstr "يجب تحديد اسم ملف تور التنفيذي"
+msgstr "يجب تحديد اسم ملف تور التنفيذي."
 
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
-msgstr "معاملات الوكيل المحددة غير صحيحة الهيئة"
+msgstr "معاملات الوسيط المحددة غير صحيحة الهيئة."
 
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
@@ -1252,15 +1251,15 @@ msgstr "تور"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr "تطبيق الوكيل (إختياري)"
+msgstr "تطبيق الوسيط (اختياري)"
 
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr "ابدأ تطبيق الوكيل مع بدء تشغيل تور"
+msgstr "ابدأ تطبيق الوسيط مع بدء تشغيل تور"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr "معاملات تطبيق الوكيل:"
+msgstr "معاملات تطبيق الوسيط:"
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
@@ -1268,11 +1267,11 @@ msgstr "تحديث البرنامج"
 
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
-msgstr "بحث آلي عن تحديثات البرنامج"
+msgstr "التمس تحديثات البرمجيات تلقائيًا"
 
 msgctxt "GeneralPage"
 msgid "Check Now"
-msgstr "البحث الأن"
+msgstr "التمس الآن"
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1388,11 +1387,11 @@ msgstr "بحث:"
 
 msgctxt "HelpBrowser"
 msgid "Find Previous"
-msgstr "بحث عن السابق"
+msgstr "ابحث عن السابق"
 
 msgctxt "HelpBrowser"
 msgid "Find Next"
-msgstr "بحث عن اللاحق"
+msgstr "ابحث عن اللاحق"
 
 msgctxt "HelpBrowser"
 msgid "Case sensitive"
@@ -1497,7 +1496,7 @@ msgstr "بدء تور"
 
 msgctxt "MainWindow"
 msgid "Exit"
-msgstr "خروج"
+msgstr "اخرج"
 
 msgctxt "MainWindow"
 msgid "Bandwidth Graph"
@@ -1565,7 +1564,7 @@ msgstr "تور"
 
 msgctxt "MainWindow"
 msgid "View"
-msgstr "عرض"
+msgstr "اعرض"
 
 msgctxt "MainWindow"
 msgid "Vidalia Help"
@@ -1581,19 +1580,19 @@ msgstr "لم يتمكن فيداليا من إطلاق المتصفح المضب
 
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr "خطأ في إطلاق وكيل التراسل المباشر"
+msgstr "خطأ في بدء عميل المراسلة الفورية"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr "لم يتمكن فيداليا من إطلاق وكيل التراسل المباشر المضبوطة إعداداته"
+msgstr "لم يتمكن فيداليا من إطلاق عميل المراسلة الفورية المضبوطة إعداداته"
 
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
-msgstr "خطأ في إطلاق مخدم الوكيل"
+msgstr "خطأ في بدء خادوم الوسيط"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr "لم يتمكن فيداليا من إطلاق مخدم الوكيل المضبوطة إعداداته"
+msgstr "لم يتمكن فيداليا من إطلاق خادوم الوسيط المضبوطة إعداداته"
 
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
@@ -1946,14 +1945,16 @@ msgid "failed (%1)"
 msgstr "فشل (%1)"
 
 msgctxt "MainWindow"
-msgid "Your relay is shutting down.\n"
+msgid ""
+"Your relay is shutting down.\n"
 "Click 'Stop' again to stop your relay now."
 msgstr ""
 "جار إيقاف تحويلتك.\n"
 "يرجى النقر على \"إيقاف\" مرة أخرى لتوقف تحويلتك الآن."
 
 msgctxt "MainWindow"
-msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
+msgid ""
+"You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
 "\n"
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
@@ -1964,7 +1965,8 @@ msgstr ""
 "جديدة؟"
 
 msgctxt "MainWindow"
-msgid "Vidalia detected that the Tor software exited unexpectedly.\n"
+msgid ""
+"Vidalia detected that the Tor software exited unexpectedly.\n"
 "\n"
 "Please check the message log for recent warning or error messages."
 msgstr ""
@@ -1978,7 +1980,7 @@ msgstr "، غالباً Telnet، "
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
-msgstr "، غالباً وكيل بريد إلكتروني، "
+msgstr "، غالباً عميل بريد إلكتروني، "
 
 msgctxt "MainWindow"
 msgid "Vidalia"
@@ -2002,7 +2004,7 @@ msgstr "تحقق من وجود تحديثات"
 
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
-msgstr "عُطل في ضبط الفلتر"
+msgstr "عُطل في ضبط المُرشِّح"
 
 msgctxt "MessageLog"
 msgid "Vidalia was unable to register for Tor's log events."
@@ -2054,7 +2056,7 @@ msgstr "لا يوجد"
 
 msgctxt "MessageLog"
 msgid "Search found 0 matches."
-msgstr "البحث وجد 0 نتيجة مطابقة"
+msgstr "لم يجد البحث أي نتائج مطابقة."
 
 msgctxt "MessageLog"
 msgid "Message Log"
@@ -2062,11 +2064,11 @@ msgstr "سِجِّل الرسائل"
 
 msgctxt "MessageLog"
 msgid "Message Filters..."
-msgstr "فلاتر الرسائل..."
+msgstr "مُرشّحات الرسائل..."
 
 msgctxt "MessageLog"
 msgid "Set message filters"
-msgstr "ضبط فلاتر الرسائل"
+msgstr "اضبط مرشحات الرسائل"
 
 msgctxt "MessageLog"
 msgid "History Size..."
@@ -2078,7 +2080,7 @@ msgstr "تحديد أقصى عدد يعرض من الرسائل"
 
 msgctxt "MessageLog"
 msgid "Clear"
-msgstr "مسح"
+msgstr "امسح"
 
 msgctxt "MessageLog"
 msgid "Clear all messages from the Message Log (Ctrl+E)"
@@ -2090,7 +2092,7 @@ msgstr "Ctrl+E"
 
 msgctxt "MessageLog"
 msgid "Copy"
-msgstr "نسخ"
+msgstr "انسخ"
 
 msgctxt "MessageLog"
 msgid "Copy the selected messages to the clipboard (Ctrl+C)"
@@ -2114,19 +2116,19 @@ msgstr "Ctrl+A"
 
 msgctxt "MessageLog"
 msgid "Save All"
-msgstr "حفظ الكل"
+msgstr "احفظ الكل"
 
 msgctxt "MessageLog"
 msgid "Save all messages to a file"
-msgstr "حفظ كل الرسائل في ملف"
+msgstr "يحفظ كل الرسائل في ملف"
 
 msgctxt "MessageLog"
 msgid "Save Selected"
-msgstr "حفظ المختارة"
+msgstr "احفظ المختارة"
 
 msgctxt "MessageLog"
 msgid "Save selected messages to a file"
-msgstr "حفظ الرسائل المختارة في ملف"
+msgstr "يحفظ الرسائل المختارة في ملف"
 
 msgctxt "MessageLog"
 msgid "Settings"
@@ -2134,7 +2136,7 @@ msgstr "إعدادات"
 
 msgctxt "MessageLog"
 msgid "Adjust Message Log Settings"
-msgstr "تعديل إعدادات سِجِّل الرسائل"
+msgstr "يعدل إعدادات سِجِّل الرسائل"
 
 msgctxt "MessageLog"
 msgid "Ctrl+T"
@@ -2146,7 +2148,7 @@ msgstr "مساعدة"
 
 msgctxt "MessageLog"
 msgid "Show the help browser"
-msgstr "أظهر متصفح المساعدة"
+msgstr "يظهر متصفح المساعدة"
 
 msgctxt "MessageLog"
 msgid "F1"
@@ -2154,11 +2156,11 @@ msgstr "F1"
 
 msgctxt "MessageLog"
 msgid "Close"
-msgstr "إغلاق"
+msgstr "أغلق"
 
 msgctxt "MessageLog"
 msgid "Close the Message Log"
-msgstr "إغلاق سِجِّل الرسائل"
+msgstr "يغلق سِجِّل الرسائل"
 
 msgctxt "MessageLog"
 msgid "Esc"
@@ -2166,7 +2168,7 @@ msgstr "Esc"
 
 msgctxt "MessageLog"
 msgid "Find"
-msgstr "بحث"
+msgstr "ابحث"
 
 msgctxt "MessageLog"
 msgid "Find all messages containing the search text (Ctrl+F)"
@@ -2194,7 +2196,7 @@ msgstr "حفظ إعدادات سجل الرسائل الحالية"
 
 msgctxt "MessageLog"
 msgid "Save Settings"
-msgstr "حفظ الإعدادات"
+msgstr "احفظ الإعدادات"
 
 msgctxt "MessageLog"
 msgid "Cancels changes made to settings"
@@ -2202,11 +2204,11 @@ msgstr "إلغاء التغييرات في الإعدادات"
 
 msgctxt "MessageLog"
 msgid "Cancel"
-msgstr "إلغاء"
+msgstr "ألغِ"
 
 msgctxt "MessageLog"
 msgid "Message Filter"
-msgstr "فلتر الرسائل"
+msgstr "مُرشِّح الرسائل"
 
 msgctxt "MessageLog"
 msgid "Error"
@@ -2222,19 +2224,19 @@ msgstr "تنبيه"
 
 msgctxt "MessageLog"
 msgid "Info"
-msgstr "معلومات"
+msgstr "معلومة"
 
 msgctxt "MessageLog"
 msgid "Debug"
-msgstr "تشخيص المشاكل"
+msgstr "تنقيح"
 
 msgctxt "MessageLog"
 msgid "Message Log History"
-msgstr "تاريخ سّجل الرسائل"
+msgstr "تاريخ سجل الرسائل"
 
 msgctxt "MessageLog"
 msgid "Number of messages to display in the message log window"
-msgstr "عدد الرسائل المعروضة في نافذة سِّجل الرسائل"
+msgstr "عدد الرسائل المعروضة في نافذة سجل الرسائل"
 
 msgctxt "MessageLog"
 msgid "messages"
@@ -2254,24 +2256,27 @@ msgstr "فعِّل الحفظ الأوتوماتيّ لكل رسائل السّ�
 
 msgctxt "MessageLog"
 msgid "Automatically save new log messages to a file"
-msgstr "حفظ رسائل السجِّل الجديدة في ملف أوتوماتيا"
+msgstr "احفظ رسائل السجِّل الجديدة في ملف تلقائيًا"
 
 msgctxt "MessageLog"
-msgid "Messages that appear when something has \n"
+msgid ""
+"Messages that appear when something has \n"
 "gone very wrong and Tor cannot proceed."
 msgstr ""
 "الرسائل التي تظهر عندما يحصل \n"
 "شيء ما بشكل خاطئ جداً ولا يستطيع تور المتابعة."
 
 msgctxt "MessageLog"
-msgid "Messages that only appear when \n"
+msgid ""
+"Messages that only appear when \n"
 "something has gone wrong with Tor."
 msgstr ""
 "الرسائل التي تظهر فقد عندما \n"
 "يحصل شيء خطأ في تور."
 
 msgctxt "MessageLog"
-msgid "Messages that appear infrequently \n"
+msgid ""
+"Messages that appear infrequently \n"
 "during normal Tor operation and are \n"
 "not considered errors, but you may \n"
 "care about."
@@ -2282,21 +2287,24 @@ msgstr ""
 "أن يهموك."
 
 msgctxt "MessageLog"
-msgid "Messages that appear frequently \n"
+msgid ""
+"Messages that appear frequently \n"
 "during normal Tor operation."
 msgstr ""
 "الرسائل التي تظهر بشكر متكرر \n"
 "أثناء تشغيل تور بشكل طبيعي."
 
 msgctxt "MessageLog"
-msgid "Hyper-verbose messages primarily of \n"
+msgid ""
+"Hyper-verbose messages primarily of \n"
 "interest to Tor developers."
 msgstr ""
 "رسائل مطولة جداً تهم مطوري \n"
 "تور بشكل رئيسي."
 
 msgctxt "MessageLog"
-msgid "Cannot write file %1\n"
+msgid ""
+"Cannot write file %1\n"
 "\n"
 "%2."
 msgstr ""
@@ -2338,7 +2346,7 @@ msgstr "F1"
 
 msgctxt "NetViewer"
 msgid "Close"
-msgstr "إغلاق"
+msgstr "أغلق"
 
 msgctxt "NetViewer"
 msgid "Close the network map"
@@ -2422,9 +2430,7 @@ msgstr "نسخ (Ctrl+C)"
 
 msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
-msgstr ""
-"يجب أن تحدد عنوان IP أو اسم مضيف ورقم مدخل لضبط إعدادات تور لاستخدام وكيل "
-"(بروكسي) للوصول إلى الإنترنت."
+msgstr "يجب أن تحدد إما عنوان IP أو اسم مضيف ورقم مدخل لضبط إعدادات تور لاستخدام وسيط للوصول إلى الإنترنت."
 
 msgctxt "NetworkPage"
 msgid "You must specify one or more ports to which your firewall allows you to connect."
@@ -2436,19 +2442,19 @@ msgstr "'%1' ليس رقماً صالحاً."
 
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
-msgstr "تحقق إذا كانت شبكتك المحلية تتطلب وكيلاً (بروكسي) للاتصال بالإنترنت"
+msgstr "تحقق إذا كانت شبكتك المحلية تتطلب وسيطًا للاتصال بالإنترنت"
 
 msgctxt "NetworkPage"
 msgid "I use a proxy to access the Internet"
-msgstr "أستخدم وكيل (بروكسي) للاتصال بالإنترنت"
+msgstr "أستخدم وسيطًا (بروكسي) للاتصال بالإنترنت"
 
 msgctxt "NetworkPage"
 msgid "Proxy Settings"
-msgstr "إعدادات الوكيل (البروكسي)"
+msgstr "إعدادات الوسيط"
 
 msgctxt "NetworkPage"
 msgid "HTTP Proxy:"
-msgstr "وكيل HTTP:"
+msgstr "وسيط HTTP:"
 
 msgctxt "NetworkPage"
 msgid "Username:"
@@ -2456,7 +2462,7 @@ msgstr "اسم المستخدم:"
 
 msgctxt "NetworkPage"
 msgid "Use this proxy for HTTPS also"
-msgstr "استخدم هذا الوكيل لأجل HTTPS أيضاً"
+msgstr "استخدم هذا الوسيط مع HTTPS أيضاً"
 
 msgctxt "NetworkPage"
 msgid "Password:"
@@ -2494,7 +2500,7 @@ msgstr ""
 
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
-msgstr "مزود خدمة الإنترنت الخاص بي يحجب الاتصال بشبكة تور"
+msgstr "مزود خدمة الإنترنت لي يحجب الاتصال بشبكة تور"
 
 msgctxt "NetworkPage"
 msgid "Bridge Settings"
@@ -2928,8 +2934,7 @@ msgstr "لم يستخدم أي عملاء تحويلتك مؤخراً"
 
 msgctxt "ServerPage"
 msgid "Leave your relay running so clients have a better chance of finding and using it."
-msgstr ""
-"اترك تحويلتك فاعلة كي يكون لدى العملاء فرصة أكبر في العثور عليها واستخدامها."
+msgstr "اترك تحويلتك فاعلة كي يكون لدى العملاء فرصة أكبر في العثور عليها واستخدامها."
 
 msgctxt "ServerPage"
 msgid "Bridge History"
@@ -2955,14 +2960,15 @@ msgstr "ساعد المستخدمين المحجوبين على الاتصال �
 
 msgctxt "ServerPage"
 msgid "<a href=\"#bridgeUsage\">Who has used my bridge?</a>"
-msgstr "<a href=\"#bridgeUsage\">من استخدم الجسر الخاص بي؟</a>"
+msgstr "<a href=\"#bridgeUsage\">من استخدم جسري؟</a>"
 
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory"
 msgstr "عكس (mirror) دليل التحويلات"
 
 msgctxt "ServerPage"
-msgid "Email address at which you may be reached if there is a\n"
+msgid ""
+"Email address at which you may be reached if there is a\n"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
 "عنوان البريد الذي يمكن الاتصال بك عبره في حال وجدت\n"
@@ -3036,19 +3042,19 @@ msgstr "أضف خدمة جديدة إلى القائمة"
 
 msgctxt "ServicePage"
 msgid "Remove selected service from list"
-msgstr "حذف الخدمات المختارة من القائمة"
+msgstr "احذف الخدمات المختارة من القائمة"
 
 msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
-msgstr "نسخ عنوان البصلة الخاص بالخدمات المختارة إلى لوح القصاصات"
+msgstr "انسخ عنوان البصلة لالخدمات المختارة إلى لوح القصاصات"
 
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
-msgstr "التصفح في نظام الملفات المحلي لاختيار دليل للخدمات المختارة"
+msgstr "تصفّح في نظام الملفات المحلي لاختيار دليل للخدمات المختارة"
 
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr "أنشئ بواسطة تور"
+msgstr "أنشأه تور"
 
 msgctxt "Stream"
 msgid "New"
@@ -3236,7 +3242,7 @@ msgstr "موافق"
 
 msgctxt "VMessageBox"
 msgid "Cancel"
-msgstr "إلغاء"
+msgstr "ألغِ"
 
 msgctxt "VMessageBox"
 msgid "Yes"
@@ -3268,7 +3274,7 @@ msgstr "متابعة"
 
 msgctxt "VMessageBox"
 msgid "Quit"
-msgstr "إنهاء"
+msgstr "أنهِ"
 
 msgctxt "VMessageBox"
 msgid "Browse"
@@ -3308,7 +3314,7 @@ msgstr "يحدد مدى تفصيل سِجِّل ڤيداليا."
 
 msgctxt "Vidalia"
 msgid "Sets Vidalia's interface style."
-msgstr "يحدد شكل واجهة ڤيداليا."
+msgstr "يحدد سمة واجهة ڤيداليا."
 
 msgctxt "Vidalia"
 msgid "Sets Vidalia's language."
@@ -3328,14 +3334,15 @@ msgstr "كود اللغة المحدد غير صحيح:"
 
 msgctxt "Vidalia"
 msgid "Invalid GUI style specified:"
-msgstr "شكل واجهة المستخدم المحدد غير صالح:"
+msgstr "سمة واجهة المستخدم المحددة غير صالحة:"
 
 msgctxt "Vidalia"
 msgid "Invalid log level specified:"
 msgstr "مستوى السجل المحدد غير صالح:"
 
 msgctxt "Vidalia"
-msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.\n"
+msgid ""
+"Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.\n"
 "\n"
 "Would you like to continue starting Vidalia?"
 msgstr ""
@@ -3375,3 +3382,5 @@ msgstr "%1 ساعات"
 msgctxt "stringutil.h"
 msgid "%1 mins"
 msgstr "%1 دقائق"
+
+
