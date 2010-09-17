@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,163 +11,163 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
-<h1>Network Viewer</h1>
+<h1>Просмотрщик сети</h1>
 <hr />
 
 <p>
-The network viewer lets you see relays in the Tor network and where
-your traffic is going.
+Просмотрщик сети позволяет обнаружить ретрансляторы в сети Tor и куда
+расходуется ваш трафик.
 </p>
 
 
 <a name="overview"/>
-<h3>Overview</h3>
+<h3>Обзор.</h3>
 <p>
-When you want to communicate anonymously through Tor (say, connecting to a
-website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections
-through a series of relays on the network. Your application's traffic is then
-sent as a <i>stream</i> through that circuit. For efficiency, multiple streams
-may share the same circuit.
+Когда вам требуется соединится анонимно через Tor (произносите,соединится с
+вебсайтом;)),Tor создает тунель или цепь зашифрованных соединений с помощью
+ряда релеев в сети. Трафик вашего приложения передается в поток через эту
+цепь.Для повышения эффективности, несколько потоков в той же цепи.
 </p>
 
 <a name="netmap"/>
-<h3>Network Map</h3>
+<h3>Карта сети.</h3>
 <p>
-The network map consists of a map of the world, with red pinpoints indicating
-the geographic location of relays in the Tor network. Green lines are drawn
-between relays to indicate the path of circuits that your Tor client has
-created through the Tor network.
+Карта сети содержит карту мира, красным отмечено географическое место
+нахождение релеев в сети Tor.Зеленым прочерчивается линия между релеями,
+путь цепочки который создал ваш клиент Tor в сети.
 </p>
 <p>
-You can zoom in on locations in the map by clicking the <b>Zoom In</b> and
-<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the map
-by clicking on the map and then dragging it in whatever direction you would
-like to move the map.
+Вы можете увеличивать местоположения на карте нажимая <b>Увеличить</b> и
+<b>Уменьшить</b> кнопки на панели инструментов.Вы также можете перемещать
+обзор на карте, нажав на карту, а затем перетащив в любом направлении,
+которое вы хотели бы переместить карту.
 </p>
 <p>
-The geographic location of a Tor relay is determined by looking up the IP
-address of the relay in a GeoIP database, created by MaxMind and located at
+Географическое местонахождение Tor ретрансляторов обнаруживается по ip
+адресам в базе GeoIP, созданная MaxMind и находящаяся по адресу
 geoip.vidalia-project.net.
 </p>
 <p>
-In the middle of the dialog, below the network map, you will see a list of
-your current circuits, as well as any application traffic currently on those
-circuits. When the network map first loads, you will probably see a connection
-to geoip.vidalia-project.net, which occurs when Vidalia is looking up
-geographic information for the list of Tor relays. It is important to note
-that this request is done through Tor, so your location is not revealed to the
-GeoIP relay. The results of the lookups will be cached locally in order to
-reduce load on Vidalia's GeoIP relays.
+В середине диалога, ниже по карте сети, вы увидите список ваших текущих
+схем, а также любой трафик приложения в настоящее время на этих
+схемах. Когда карта сети загружается в первый раз, вы вероятно увидите
+подключение к geoip.vidalia-project.net, которое возникает, когда Vidalia
+просматривает информацию, для получения списка серверов. Важно отметить, что
+этот запрос выполняется через Tor, так что ваше местоположение не
+раскрывается для ретранслятора GeoIP. Результаты поиска будут кэшироваться
+локально, для того чтоб уменьшить нагрузку на ретрансляторы GeoIP .
 </p>
 
 
 <a name="relaylist"/>
-<h3>Relay Status</h3>
+<h3>Статус ретранслятора.</h3>
 <p>
-On the left side of the network view, you will see a list of relays in the
-Tor network. Next to each relay is an icon indicating that relay's status.
-The following table summarizes the possible relay status icons:
+В левой части просмотрщика сети ,вы  увидите список ретрансляторов в сети
+Tor.Следующая за каждым ретранслятором иконка указывает на статус
+ретранслятора.ниже таблица кратко описывает возможные статусы ретрансляторов
+на иконках.
 </p>
 <p>
 <table border="1">
 <tr>
   <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
   <td valign="middle">
-    The relay is offline or simply not responding.
+    Ретранслятор не доступен или не отвечает
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
   <td valign="middle">
-    The relay is <i>hibernating</i>, meaning it is online, but has used up as
-    much bandwidth as the operator is willing to allow for a given time
-    period.
+    Ретранслятор в <i>спящем режиме</i>,означает что доступен но использовал
+большую часть пропускной способности по желанию оператора определенный
+временной период.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
   <td valign="middle">
-    The relay is online, but has shown only minimal throughput.
+    Ретранслятор доступен но зафиксирована минимальная пропускная способность.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
   <td valign="middle">
-    The relay is online and has shown a throughput &gt;= 20 KB/s.
+    Ретранслятор доступен , зафиксирована пропускная способность  &gt;= 20 КБ/с.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
   <td valign="middle">
-    The relay is online and has shown a throughput &gt;= 60 KB/s.
+    Ретранслятор доступен , зафиксирована пропускная способность  &gt;= 60 КБ/с.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
   <td valign="middle">
-    The relay is online and has shown a throughput &gt;= 400 KB/s.
+    Ретранслятор доступен , зафиксирована пропускная способность  &gt;= 400
+КБ/с.
   </td>
 </tr>
 </table>
 </p>
 <p>
-All bandwidth values are estimates based on the minimum of either 
-the maximum bandwidth sustained input or output over any ten second period 
-in the past day.
+Все значения пропускной способности оцениваются на основе минимальной или
+максимальной пропускной способности и устойчивости входящих или выходящих
+данных в любой десяти секундный период за прошлые дни.
 </p>
 
 
 <a name="details"/>
-<h3>Relay Details</h3>
+<h3>Подробности ретранслятора</h3>
 <p>
-The relay details panel at the right side of the screen gives you details
-about the relay or relays currently selected in the 
-<a href="#relaylist">relay list</a>. If you have selected a circuit or stream
-in the list of your current circuits and streams, this panel will show you
-details about each relay through which your traffic is currently being sent.
+Панель подробностей ретранслятора в правой части экрана предоставит вам
+информацию о вашем ретрансляторе или выбранном из <a
+href="#relaylist">список ретрансляторов</a>.Если вы выбрали схему цепи или
+поток из списка ваших текущих схем цепочек и потоков, эта панель покажет вам
+подробную информацию о каждом ретрансляторе, через который трафик в
+настоящее время отправлен.
 </p>
 <p>
-The fields that you may see in the panel are as follows (<i>Note</i>: not all
-of these fields will always be present):
+Поля, которые вы можете увидеть в панели являются (<i>Примечание</i>: не все
+эти поля всегда будут присутствовать):
 </p>
 <p>
 <table>
 <tr>
-  <td><b>Location</b></td>
-  <td>The geographic location of this Tor relay.</td>
+  <td><b>Местоположение</b></td>
+  <td>Географическое местоположение этого Tor ретранслятора.</td>
 </tr>
 <tr>
-  <td><b>IP Address</b></td>
-  <td>IP address at which this Tor relay can be reached.</td>
+  <td><b>IP адрес</b></td>
+  <td>IP адрес который этому Tor ретранслятор доступен</td>
 </tr>
 <tr>
-  <td><b>Platform</b></td>
+  <td><b>Платформа</b></td>
   <td>
-    Operating system information and Tor version on which this relay is
-    currently running.
+    Информация об операционной системе и версии Tor которые запущены на текущем
+ретрансляторе.
   </td>
 </tr>
 <tr>
-  <td><b>Bandwidth</b></td>
+  <td><b>Пропускная способность</b></td>
   <td>
-    Estimated maximum amount of bandwidth that the directory relays have 
-    seen this relay handle recently.
+    Расчетная максимальная сумма пропускной способности, зафиксированная на этом
+ретрансляторе в последнее время.
   </td>
 </tr>
 <tr>
-  <td><b>Uptime</b></td>
+  <td><b>Время работы</b></td>
   <td>
-    Length of time this relay has been available, which can be used to help
-    estimate this relay's stability.
+    Сколько времени данный ретранслятор был доступен, помогает понять насколько
+ретранслятор стабилен.
   </td>
 </tr>
 <tr>
-  <td><b>Last Updated</b></td>
-  <td>Date this relay's information was last updated.</td>
+  <td><b>Последнее обновление</b></td>
+  <td>Дата последнего обновления информации об этом ретрансляторе.</td>
 </tr>
 </table>
 </p>

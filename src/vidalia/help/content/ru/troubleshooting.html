@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,87 +11,145 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
-<h1>Troubleshooting</h1>
+<h1>Устранение неполадок</h1>
 <hr />
 
-Listed below are some of the common problems or questions people have while
-running Tor. If you can't find anything about the particular problem you're
-having, check out our website at <i>www.vidalia-project.net</i> for more
-support and information.
-
-<a name="start"/>
-<h3>I Can't Start Tor</h3>
+Ниже перечислены некоторые трудности и вопросы с которыми столкнулись люди
+при использовании программы Tor. Если вы не смогли найти решение вашей
+проблемы,проверьте наш веб-сайт <i>www.vidalia-project.net</i> для получения
+дополнительной информации и поддержки. <a name="start"/>
+<h3>Не могу запустить Tor</h3>
 <p>
-The most likely reason that Vidalia could not start Tor is because Vidalia is
-looking for your Tor installation in the wrong directory. You can tell Vidalia
-where Tor is located by updating the <i>Tor Executable</i> option in the 
-<a href="config.html#general">general configuration settings</a>.
+Наиболее вероятная причина того что Vidalia не может запустить Tor в том что
+Vidalia пытается найти установленный Tor в неверном каталоге.Вы можете явно
+указать Vidalia где находится <i>исполняемый файл Tor</i> в опциях <a
+href="config.html#general">общих параметров настройки</a>.
 </p>
 <p>
-Another possible reason that Tor cannot start is because there is already
-another Tor process running. Check your list of running process and stop the
-previous Tor process, if you find one. Then, try running Tor again.
+Другая возможная причина когда Tor не запускается в том что другой процесс
+программы Tor уже работает.Проверьте список запущенных процессов и
+остановите процесс Tor ,если таковой будет обнаружен.Далее следует
+попытаться вновь запустить Tor.
 </p>
 <p>
-If that did not help, check your <a href="log.html">message
-log</a> to see if Tor printed any information about errors it encountered
-while trying to start.
+Если это не помогло , проверьте <a href="log.html">журнал сообщений</a> для
+просмотра любой информации об ошибках с которыми программа Tor столкнулась
+при запуске.
 </p>
 
 <a name="connect"/>
-<h3>Vidalia Can't Connect to Tor</h3>
+<h3>Vidalia не может соединится с Tor .</h3>
 <p>
-Vidalia manages Tor by communicating with it via Tor's <i>control port</i>. 
+Vidalia управляет Tor, общаясь с ним через Tor <i>порт управления </ I>. 
 </p>
 <p>
-The most common reason that Vidalia cannot connect to Tor is because Tor
-started, but encountered an error and exited immediately. You should
-check your <a href="log.html">message log</a> to see if Tor reported any
-errors while it started.
+Самая распространенная причина того что Vidalia не может соединиться с Tor
+заключается в том что Tor запущен но произошла ошибка и немедленное
+завершение. Следует проверить <a href="log.html">журнал сообщений</a> на
+предмет ошибок с генерированных при запуске программой Tor.
 </p>
 <p>
-If Tor is listening on a different port than Vidalia expects, Vidalia will
-be unable to connect to Tor. You rarely need to change this setting, but if
-there is another service running on your machine that conflicts with Tor's 
-control port, you will need to specify a different port. You can change this
-setting in Vidalia's <a href="config.html#advanced">advanced configuration
-settings</a>.
+Если Tor ожидает соединения на порту отличном от того с которым Vidalia
+пытается соединится ,Vidalia не сможет установить соединение с Tor.Вам
+потребуется сменить данную настройку,но если присутствует другой запущенный
+сервис на вашем компьютере это может вызвать конфликт с портом управления
+Tor,вам потребуется назначить другой порт. Вы можете изменить эту настройку
+в Vidalia<a href="config.html#advanced">расширенные настройки
+конфигурации</a>.
 </p>
 
+<a name="password"/>
+<h3>Почему Vidalia спрашивает меня о "пароль управления"?</h3>
+<p>
+Vidalia взаимодействует с Tor через Tor «порт управления». Порт управления
+позволяет Vidalia получить обновленный статус из Tor , новый запрос
+идентификации ,сконфигурировать настройки Tor и тд.Каждый раз Vidalia
+соединяясь с Tor, устанавливает случайный пароль на порт управления Tor для
+предотвращения подключения другими приложениями к порту управления тем самым
+подвергая опасности вашу анонимность.
+</p>
+
+<p>
+Обычно процесс генерации и настройки случайного пароля происходит в фоновом
+режиме.Но есть три ситуации , когда Vidalia может запросить у вас пароль:
+</p>
+
+<ul>
+  <li>
+    Вы уже запустили Vidalia и Tor. Для примера, такая ситуация может произойти
+если вы установили Vidalia bundle и пытаетесь запустить Tor Browser
+Bundle. В этом случае вам нужно закрыть старый Vidalia и Tor перед их
+запуском.
+  </li>
+
+  <li>
+    <p>Vidalia аварийно завершилась но Tor продолжил работу с последним случайным
+паролем .После перезапуска Vidalia сгенеривала новый случайный пароль но
+Vidalia не может общаться с Tor так как случайные пароли отличны.</p>
+    
+    <p>Если появилось диалоговое окно с запросом пароля управления и кнопкой
+<i>Сброс</i>,вы можете нажать кнопку и Vidalia перезапустит Tor с новым
+случайным паролем управления.
+    </p>
+    
+    <p>Если кнопки <i>Сброс</i> вы не видите или если Vidalia не может
+перезапустить Tor, вы любом случае можете исправить это вручную.Самое
+простое запустить  диспетчер задач и завершить процесс Tor.Затем
+использовать Vidalia для перезапуска Tor .Все должно работать.</p>
+  </li>
+
+  <li>
+    <p>Ваш Tor ранее настроен на запуск как служба.Когда Tor настроен на запуск как
+служба, он запускается во время загрузки системы. Если вы настроили запуск
+Tor как служба через программу Vidalia, случайный пароль будет установлен и
+запомнен Tor.Когда вы пере загрузитесь Tor будет использовать случайный
+пароль тот что запомнил. При запуске Vidalia ,попытается общаться с уже
+запущенным Tor. Vidalia будет генерировать случайный пароль но он будет
+отличный от того который сохранила служба Tor.</p>
+  
+    <p>Вам нужно перенастроить Tor чтоб он не запускался как служба.Просмотрите
+страницу Tor wiki  <a
+href="https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ#WinNTService">
+Tor запуск как служба</a> для детальной информации как удалить службу Tor.</p>
+  </li>
+</ul>
+
+
 <a name="torexited"/> 
-<h3>Tor Exited Unexpectedly</h3> 
+<h3>Tor неожиданно завершился.</h3> 
 <p> 
-If Tor exits immediately after trying to start, you most likely have
-another Tor process already running. Check the <a href="log.html">message log</a> to
-see if any of the last few messages in the list are highlighted in yellow and
-contain a message similar to the following:
+Если Tor немедленно завершился после попытки запуска, вероятней всего другой
+процесс Tor уже запущен.Просмотрите <a href="log.html">журнал сообщений</a>
+для проверки последних сообщений в списке помеченных желтым цветом
+содержащих возможные строки:
 </p>
 <pre>
 connection_create_listener(): Could not bind to 127.0.0.1:9050: Address already in use. 
 Is Tor already running?
 </pre>
 <p>
-If you find an error message like the one above, you will need to stop the other
-Tor process before starting a new one with Vidalia. On Windows, you would need
-to look for <i>tor.exe</i> in your Task Manager. On most other operating systems,
-the <i>ps</i> command can help you find the other Tor process.
+Если у вас ошибка указанная выше следует остановить другие процессы Tor
+перед запуском новых с помощью Vidalia. В системе Windows вам потребуется
+найти процесс <i>tor.exe</i> в диспетчере задач.В большинстве других
+операционных систем вам поможет найти процессы Tor команда <i>ps</i>.
 </p>
 <p>
-If Tor had been running successfully for awhile (that is, longer than a few
-seconds), then you should check the <a href="log.html">message log</a> for
-information about any errors Tor experienced before it exited. Such errors
-will be highlighted in either red or yellow.
+Если Tor  успешно работал некоторое время (упомянутое время больше чем
+несколько секунд),тогда вы должны проверить<a href="log.html">журнал
+сообщений</a>для получения информации о любых ошибках с которыми мог
+столкнутся Tor перед тем как был завершен.Такие ошибки будут помечены
+красным или желтым цветом.
 </p>
 
 <a name="stop"/>
-<h3>Vidalia Can't Stop Tor</h3>
+<h3>Vidalia не может остановить Tor.</h3>
 <p>
-If Vidalia cannot stop Tor, you should check your <a href="log.html">message
-log</a> to see if Tor reported any errors while trying to exit.
+Если Vidalia не смогла остановить Tor, вам следует проверить <a
+href="log.html">журнал сообщений</a> для просмотра любых ошибок которые
+могли возникнуть при попытке завершить Tor.
 </p>
 
 </body>

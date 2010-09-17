@@ -1,104 +1,108 @@
-<!--
-** $Id$
-**
-** This file is part of Vidalia, and is subject to the license terms in the
-** LICENSE file, found in the top level directory of this distribution. If
-** you did not receive the LICENSE file with this file, you may obtain it
-** from the Vidalia source package distributed by the Vidalia Project at
-** http://www.vidalia-project.net/. No part of Vidalia, including this file,
-** may be copied, modified, propagated, or distributed except according to
-** the terms described in the LICENSE file.
--->
 
+
+<!--
+**  $Id$
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
 <html>
 <body>
 
-<h1>Utiliser Tor</h1>
+<h1>Faire fonctionner Tor</h1>
 <hr />
 
 <p>
-Vidalia facilite le contrôle de votre instance Tor en permettant aussi bien
-son démarrage et son arrêt que la surveillance de son état et l'analyse des
-causes d'un éventuel arrêt impromptu.
+Vidalia peut vous aider à contrôler Tor en vous permettant de le lancer et
+de l'arrêter ainsi que de surveiller son état et de savoir si un incident
+s'est déroulé.
 </p>
 
 <a name="starting"/>
 <h3>Démarrer et arrêter Tor</h3>
 <p>
-Pour <i>lancer</i> Tor, sélectionnez <i>Démarrer</i> dans le menu de Vidalia
-situé dans la zone de notification ou appuyez sur <i>Ctrl+S</i>. L'icône de
-Vidalia de la zone de notification change lorsque Tor démarre&nbsp;: l'oignon
-barré par un X rouge est remplacée par un oignon vert.
+Pour <i>démarrer</i> Tor,
+<ol>
+  <li>Sélectionnez <i>Démarrer</i> depuis la barre de menu Vidalia ou appuyez sur
+<i>Ctrl+S</i></li>.
+  <li>
+    L'icône de barre de tâche Vidalia passera d'un oignon avec un X rouge à un
+oignon vert lorsque Tor aura démarré.
+  </li>
+</ol>
+Si Vidalia ne peut pas démarrer Tor, l'application affichera un message
+d'erreur indiquant ce qui n'a pas fonctionné. Vous pouvez également
+consulter <a href="log.html">le journal des messages</a> pour voir si Tor a
+émis plus d'information sur ce qui ne s'est pas correctement déroulé.
 </p>
 
 <p>
-Si Vidalia ne parvient pas à démarrer Tor, il affiche un message d'erreur pour
-indiquer qu'un problème est survenu. Vous pouvez également consulter le <a
-href="log.html">Journal des messages</a> pour voir si Tor n'a pas donné
-d'autres informations sur le problème.
-</p>
-
-<p>
-Pour <i>arrêter</i> Tor, sélectionnez <i>Arrêter</i> dans le menu de Vidalia
-situé dans la zone de notification ou appuyez sur <i>Ctrl+T</i>. L'icône de
-Vidalia de la zone de notification change lorsque Tor s'arrête&nbsp;: l'oignon
-vert est remplacé par un oignon barré par un X rouge.
-</p>
-
-<p>
-Si Vidalia ne parvient pas à arrêter Tor, il affiche un message d'erreur pour
-indiquer qu'un problème est survenu. Vous pouvez également consulter le <a
-href="log.html">Journal des messages</a> pour voir si Tor n'a pas donné
-d'autres informations sur le problème.
+Pour <i>arrêter</i> Tor,
+<ol>
+  <li>Sélectionnez <i>Arrêt</i> depuis le menu de barre des tâches Vidalia ou
+appuyez sur <i>Ctrl+T</i></li>.
+  <li>
+    L'icône de barre de tâche Vidalia passera d'un oignon vert à un oignon avec
+un X rouge lorsque Tor se sera arrêté.
+  </li>
+</ol>
+Si Vidalia ne peut pas arrêter Tor, l'application affichera un message
+d'erreur indiquant ce qui n'a pas fonctionné. Vous pouvez également
+consulter <a href="log.html">le journal des messages</a> pour voir si Tor a
+émis plus d'information sur ce qui ne s'est pas correctement déroulé.
 </p>
 
 <a name="monitoring"/>
 <h3>Surveiller l'état de Tor</h3>
 <p>
-Vidalia indique l'état de Tor par le biais d'une icône située dans la zone de
-notification ou dans la barre des tâches. Le tableau suivant précise la
-correspondance entre cette icône et l'état de Tor.
+Vidalia vous renseigne sur l'état de Tor en affichant une icône dans votre
+barre des tâches. La table suivante indique les différents états indiqués
+par cette icône:
 </p>
-
 <p>
 <table border="1">
 <tr>
-  <td><img src="qrc:/images/32x32/tor-off.png"/></td>
-  <td valign="middle">
-    Tor est arrêté. Sélectionnez <i>Démarrer</i> dans le menu de Vidalia pour
-    lancer Tor.
-  </td>
+    <td><img src="qrc:/images/32x32/tor-off.png"/></td>
+    <td valign="middle">
+      Tor est arrêté. Sélectionnez <i>Démarrer</i> depuis le menu Vidalia pour
+démarrer Tor.
+    </td>
 </tr>
 <tr>
-  <td><img src="qrc:/images/32x32/tor-starting.png"/></td>
-  <td valign="middle">
-    Tor est en cours d'initialisation. Vous pouvez consulter le <a
-    href="log.html">Journal des messages</a> pour connaître les informations
-    sur l'état de Tor lorsqu'il démarre.
-  </td>
+    <td><img src="qrc:/images/32x32/tor-starting.png"/></td>
+    <td valign="middle">
+      Tor est en cours de démarrage. Vous pouvez consultez <a href="log.html">le
+journal des évènements</a> pour obtenir une information sur l'état de Tor au
+cours de son démarrage.
+    </td>
 </tr>
 <tr>
-  <td><img src="qrc:/images/32x32/tor-on.png"/></td>
-  <td valign="middle">
-    Tor est en cours de fonctionnement. Si vous voulez savoir ce qu'il fait,
-    vous pouvez consultez le <a href="log.html">Journal des messages</a> que
-    Tor envoie à Vidalia. Si vous voulez arrêter Tor, sélectionnez
-    <i>Arrêter</i> dans le menu de Vidalia.
-  </td>
+    <td><img src="qrc:/images/32x32/tor-on.png"/></td>
+    <td valign="middle">
+      Tor fonctionne. Si vous désirez l'arrêter, sélectionnez <i>Arrêt</i> depuis
+le menu Vidalia. Tor affichera ses messages d'informations dans <a
+href="log.html">le journal des évènements</a> si vous désirez voir ce qu'il
+fait.
+    </td>
 </tr>
 <tr>
-  <td><img src="qrc:/images/32x32/tor-stopping.png"/></td>
-  <td valign="middle">Tor est en cours d'arrêt.</td>
+    <td><img src="qrc:/images/32x32/tor-stopping.png"/></td>
+    <td valign="middle">Tor est en cours d'arrêt.</td>
 </tr>
 </table>
 </p>
 
 <p>
-Si Tor s'arrête de manière inattendue, Vidalia affiche l'icône de l'oignon
-noir barré d'un X rouge et montre un message d'erreur pour vous signaler le
-problème. Vous pouvez également consulter le <a href="log.html">Journal des
-messages</a> pour avoir davantage de details sur les problèmes rencontrés par
-Tor avant de se terminer.
+Si Tor se termine prématurément, Vidalia changera son icône en oignon noir
+avec une croix rouge et affichera un message d'erreur vous permettant de
+savoir ce qui n'a pas fonctionné. Vous pouvez également vérifier dans <a
+href="log.html">le journal des évènements</a> pour trouver plus de détails
+sur les problèmes que Tor a rencontré avant de se terminer.
 </p>
 
 </body>

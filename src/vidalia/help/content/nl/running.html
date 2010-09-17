@@ -1,0 +1,103 @@
+
+
+<!--
+**  $Id: running.html 2366 2008-03-01 17:58:23Z edmanm $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>Tor Draaien</h1>
+<hr />
+
+<p>
+Vidalia kan u helpen om uw Tor proces te laten starten of te stoppen. Ook
+kunt u hier Tor's status zien en of het overwachts gestopt is.
+</p>
+
+<a name="starting"/>
+<h3>Tor Starten en Stoppen</h3>
+<p>
+Tor <i>starten</i>,
+<ol>
+  <li>Selecteer <i>Start</i> vanuit Vidalia's menu of druk <i>Ctrl+S</i></li>.
+  <li>
+    Vildalia's icoon verandert van een ui met een rode X naar een groene uit
+wanneer Tor is gestart.
+  </li>
+</ol>
+Als Vidalia onmogelijk Tor kan starten dan weergeeft het een error meteen
+bericht wat er fout ging. U kunt ook in de <a href="log.html">log
+bestanden</a> kijken om te zien of Tor meer informatie geeft over wat er
+fout gegaan is.
+</p>
+
+<p>
+Tor <i>stoppen</i>.
+<ol>
+  <li>Selecteer <i>Stop</i> vanuit Vidalia's menu of druk <i>Ctrl+T</i></li>.
+  <li>
+    Vidalia's icoon verandert van een groene uit naar een grijze ui met een rode
+X wanneer Tor gestopt is.
+  </li>
+</ol>
+Als Vidalia onmogelijk Tor kan stoppen dan toont Vidalia een error bericht
+wat u vertelt dat er iets mis is. U kunt ook kijken in de <a
+href="log.html">log bestanden</a> om te zien of Tor meer informatie geeft
+over wat er fout gegaan is.
+</p>
+
+<a name="monitoring"/>
+<h3>Bekijk Tor's Status</h3>
+<p>
+Vadalia vertelt u wat de status van Tor is door het icoontje. De volgende
+tabel laat u zien wat de verschillende statussen zijn voor het icoon:
+</p>
+<p>
+<table border="1">
+<tr>
+    <td><img src="qrc:/images/32x32/tor-off.png"/></td>
+    <td valign="middle">
+      Tor is gestopt. Selecteer <i>Start</i> vanuit Vildalia's menu om Tor te
+starten.
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-starting.png"/></td>
+    <td valign="middle">
+      Tor is aan het opstarten. U kunt de <a href="log.html">berichten log</a>
+bekijken voor meer informatie over Tor.
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-on.png"/></td>
+    <td valign="middle">
+      Tor is momenteel aan het draaien. Als u wilt dat Tor stopt selecteer dan
+<i>Stop</i> in het Vidalia menu. Tor weergeeft dan verdere informatie in het
+<a href="log.html">log bestand</a> als het draait.
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-stopping.png"/></td>
+    <td valign="middle">Tor is aan het afsluiten.</td>
+</tr>
+</table>
+</p>
+
+<p>
+Als tor onverwachts stopt dan veranderd Vidialia's icoon in een donkere ui
+met een rode X en weergeeft het een bericht wat er fout ging. U kunt ook in
+de <a href="log.html">log bestanden</a> om te zien of Tor meer informatie
+geeft over wat er fout gegaan is.
+</p>
+
+</body>
+</html>
+

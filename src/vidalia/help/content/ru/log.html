@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,95 +11,96 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
-<h1>Message Log</h1>
+<h1>Журнал сообщений.</h1>
 <hr />
 
-The message log lets you see status information about a running Tor process.
-
-<a name="basic"/>
-Each message has a <i>severity</i> associated with it, ranging from
-<b>Error</b> (most serious) to <b>Debug</b> (most verbose). See the help
-section on <a href="#severities">message severities</a> for more information.
-
-
-<a name="severities"/>
-<h3>Message Severities</h3>
+Журнал сообщений позволяет просмотреть информацию о статусе запущенного
+процесса Tor.  <a name="basic"/> Каждое сообщение имеет <i>уровень
+важности</i> связанное с ним от <b>Ошибка</b>(очень важное) до
+<b>Отладка</b> (очень информативное).Просмотрите секцию справки <a
+href="#severities">Уровень важности сообщений</a> для дополнительной
+информации.  <a name="severities"/>
+<h3>Уровень важности сообщений.</h3>
 <p>
-A message's severity tells you how important the message is. A higher severity
-message usually indicates that something has gone wrong with Tor. Lower
-severity messages appear frequently during normal Tor operations and usually
-do not need to be logged.
+Уровень важности сообщений предоставляет возможность понять на сколько важно
+данное сообщение.Самое важный уровень сообщения обычно говорит о том что что
+то не так происходит с Tor.Самая низкая важность сообщений часто появляются
+в ходе нормального функционирования Tor и, как правило, не нуждается в
+записи.
 </p>
 
 <p>
-The possible message severities, from most severe to least severe, are:
+Возможные сообщения , от наиболее важного до наименее:
 </p>
 <ul>
   <li>
-    <b>Error</b>: Messages that appear when something has gone very wrong and
-    Tor cannot proceed. These messages will be highlighted in <i>red</i> in the
-    message log.
+    <b>Ошибка</b>:Сообщения прибывают когда происходит что-то не так и Tor далее
+не может продолжать работать.Такие сообщения помечены красным цветом в
+журнале сообщений.
   </li>
   <li>
-    <b>Warning</b>: Messages that only appear when something has gone wrong
-    with Tor, but are not fatal and Tor will continue running. These messages
-    will be highlighted in <i>yellow</i>.
+    <b>Предупреждение</b>: Сообщения прибывают когда происходит что-то не так с
+Tor, но не фатально и Tor будет продолжать работать. Такие сообщения
+помечены желтым цветом.
   </li>
   <li>
-    <b>Notice</b>: Messages that appear infrequently during normal Tor
-    operation and are not considered errors, but you still may care about.
+    <b>Уведомления</b>: Сообщения которые появляются редко во время обычной
+работы Tor и не считаются ошибками,но в любом случае следует выяснить
+причину.
   </li>
   <li>
-    <b>Info</b>: Messages that appear frequently during normal Tor operation
-    and are not usually of interest to most users.
+    <b>Информация</b>: Сообщения которые появляются часто во время обычной
+работы Tor и обычно не представляют интерес для большинства пользователей.
   </li>
   <li>
-    <b>Debug</b>: Extremely verbose messages that are primarily of interest to
-    developers. You should generally not log debug messages unless you know
-    what you are doing.
+    <b>Отладка</b>: Очень подробные сообщения, которые в основном представляют
+интерес для разработчиков. Вам не следует включать данный вид
+информативности в журнале если вы явно не представляете для чего это нужно.
   </li>
 </ul>
 
 <p>
-Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i>
-messages.
+Большинство пользователей используются для записи в журнал <i>Ошибка</i>,
+<i>Предупреждение</i>,и <i>Уведомление</i> сообщения.
 </p>
 
 <p>
-To select which message severities you would like to see, do the following:
+Для того чтобы выбрать уровень важности сообщений которые вы хотели бы
+видеть, выполните следующее:
 <ol>
-  <li>Open the message log from the Vidalia tray menu.</li>
-  <li>Click on <i>Settings</i> at the top of the message log window.</li>
+  <li>Откройте журнал сообщений из меню в трее Vidalia .</li>
+  <li>Нажмите на <i>Настройки</i> в верхней части окна журнала сообщений.</li>
   <li>
-    Check message severities you would like to see from the Message Filter
-    group on the left and uncheck message severities you would like to hide.
+    Выберите уровень важности сообщений которые вам требуются из групп Фильтра
+Сообщений и снимите флажок на сообщениях которые вы бы хотели скрыть.
   </li>
-  <li>Click <i>Save Settings</i> to apply your new message filter.</li>
+  <li>Нажмите <i>Сохранить настройки</i> для применения нового фильтра сообщений. </li>
 </ol>
 </p>
 
 
 <a name="logfile"/>
-<h3>Logging to a File</h3>
+<h3>Ведение журнала сообщений в файл.</h3>
 <p>
-Vidalia can also write log messages to a file, as well as logging them in the
-message log window. To enable logging to a file, follow these steps:
+Так же Vidalia предоставляет возможность вести журнал сообщений в файл, а
+также регистрации их в окне журнала сообщений.Для использования данной
+возможности,выполните следующее:
 </p>
 
 <ol>
-  <li>Open the message log from the Vidalia tray menu.</li>
-  <li>Click on <i>Settings</i> at the top of the message log window.</li>
-  <li>Check the box labeled <i>Automatically save new log messages to a file</i>.
+  <li>Откройте журнал сообщений из меню в трее Vidalia .</li>
+  <li>Нажмите на <i>Настройки</i> в верхней части окна журнала сообщений.</li>
+  <li>Установите флажок в опции <i>Автоматически сохранять новый журнал сообщений
+в файл</i>.</li>
   <li>
-    If you would like to change the file to which messages will be written,
-    either type the path and filename into the text box, or click <i>Browse</i>
-    to navigate to a location for your log file.
+    Если вы хотите изменить файл, в который сообщения будут записаны,  введите
+путь и имя файла в текстовое поле или нажмите кнопку <i>Обзор</i> , чтобы
+перейти к местоположению лог-файл.
   </li>
-  <li>Click <i>Save Settings</i> to save your log destination.</li>
+  <li>Нажмите <i>Сохранить настройки</i> для начала записи журнала в файл.</li>
 </ol>
 
 </body>

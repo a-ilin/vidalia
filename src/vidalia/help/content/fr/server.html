@@ -1,26 +1,26 @@
-<!--
-** $Id$
-**
-** This file is part of Vidalia, and is subject to the license terms in the
-** LICENSE file, found in the top level directory of this distribution. If
-** you did not receive the LICENSE file with this file, you may obtain it
-** from the Vidalia source package distributed by the Vidalia Project at
-** http://www.vidalia-project.net/. No part of Vidalia, including this file,
-** may be copied, modified, propagated, or distributed except according to
-** the terms described in the LICENSE file.
--->
 
+
+<!--
+**  $Id$
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
 <html>
 <body>
 
 <h1>Installer un relais Tor</h1>
 <hr />
-Le réseau Tor est constitué par des bénévoles du monde entier qui donnent une
-partie de leur bande passante perdue en installant un relais Tor. Vidalia vous
-aide à participer au réseau Tor en facilitant l'installation de votre propre
-relais.
 
-<a name="basic"/>
+Le réseau Tor est constitué par des bénévoles du monde entier qui donnent
+une partie de leur bande passante perdue en installant un relais
+Tor. Vidalia vous aide à participer au réseau Tor en facilitant
+l'installation de votre propre relais.  <a name="basic"/>
 <h3>Options de base</h3>
 <p>
 Si vous décidez de participer à la croissance du réseau Tor en installant un
@@ -29,44 +29,41 @@ relais, vous pouvez suivre la procédure suivante.
 <ol>
   <li>
     Ouvrez la <i>fenêtre de configuration</i> en sélectionnant <i>Options</i>
-    dans le menu de la zone de notification ou <i>Préférences</i> dans la
-    barre de menu système pour les systèmes Macintosh.
+dans le menu de la zone de notification ou <i>Préférences</i> dans la barre
+de menu système pour les systèmes Macintosh.
   </li>
   <li>Sélectionnez la page de configuration <i>Relais</i>.</li>
   <li>
     Précisez si vous souhaitez installer un relais Tor normal ou un relais
-    <i>passerelle</i> (Tor 0.2.0.8-alpha ou plus récent). Une passerelle
-    permet d'aider les utilisateurs de Tor bloqués par la censure et qui ne
-    peuvent pas accéder directement au réseau Tor. Cochez la case <i>Relayer
-    le trafic pour le réseau Tor</i> si vous voulez installer un relais Tor
-    normal ou <i>Aider les utilisateurs censurés à accéder au réseau Tor</i>
-    si vous voulez installer un relais passerelle.
+<i>passerelle</i> (Tor 0.2.0.8-alpha ou plus récent). Une passerelle permet
+d'aider les utilisateurs de Tor bloqués par la censure et qui ne peuvent pas
+accéder directement au réseau Tor. Cochez la case <i>Relayer le trafic pour
+le réseau Tor</i> si vous voulez installer un relais Tor normal ou <i>Aider
+les utilisateurs censurés à accéder au réseau Tor</i> si vous voulez
+installer un relais passerelle.
   </li>
-  <li>Indiquez les informations suivantes:
-  <ul>
-    <li><b>Surnom (nickname)</b>:
-      Le nom qui permettra à votre relais d'être connu sur le réseau Tor. Il
-      s'agit par exemple de "MonRelaisVidalia".
-    </li>
-    <li><b>Information de contact</b>:
-      Votre adresse électronique. Cette adresse sera utilisée seulement pour
-      vous signaler une mise à jour de sécurité importante ou un problème avec
-      votre relais. Vous pouvez également préciser votre identifiant PGP ou
-      GPG et votre empreinte.
-    </li>
-    <li><b>Port du relais</b>:
-      Le port par lequel votre relais écoutera le trafic de clients ou
-      d'autres relais Tor.
-    </li>
-  </ul>
+  <li>Indiquez les informations suivantes:</li>
+    <ul>
+      <li><b>Surnom (nickname)</b>: Le nom qui permettra à votre relais d'être connu
+sur le réseau Tor. Il s'agit par exemple de "MonRelaisVidalia".
+      </li>
+      <li><b>Information de contact</b>: Votre adresse électronique. Cette adresse
+sera utilisée seulement pour vous signaler une mise à jour de sécurité
+importante ou un problème avec votre relais. Vous pouvez également préciser
+votre identifiant PGP ou GPG et votre empreinte.
+      </li>
+      <li><b>Port du relais</b>: Le port par lequel votre relais écoutera le trafic de
+clients ou d'autres relais Tor.
+      </li>
+    </ul>
   <li>
     Si vous voulez également installer un miroir de l'annuaire Tor des relais,
-    cochez la case <i>Servir de miroir à l'annuaire des relais</i>.  Si vous
-    disposez d'une bande passante limitée, décochez cette case. Si vous
-    décidez malgré tout d'installer un miroir de l'annuaire, assurez-vous que
-    le <i>port de l'annuaire</i> est différent du <i>port du relais</i> que
-    vous avez indiquez plus haut. Les passerelles <i>doivent</i> avoir un
-    miroir de l'annuaire des relais.
+cochez la case <i>Servir de miroir à l'annuaire des relais</i>.  Si vous
+disposez d'une bande passante limitée, décochez cette case. Si vous décidez
+malgré tout d'installer un miroir de l'annuaire, assurez-vous que le <i>port
+de l'annuaire</i> est différent du <i>port du relais</i> que vous avez
+indiquez plus haut. Les passerelles <i>doivent</i> avoir un miroir de
+l'annuaire des relais.
   </li>
 </ol>
 
@@ -79,70 +76,66 @@ que vous souhaitez accorder au réseau Tor. Cela vous permet de faire
 fonctionner un relais Tor tout en conservant une connexion suffisante pour
 votre propre usage.
 </p>
-
 <p>
 Vous devez sélectionner dans la liste déroulante l'option qui correspond le
 mieux au débit de votre connexion. Si vous choisissez <i>Personnalisé</i>,
 vous pourrez paramétrer vous-mêmes les seuils.
 </p>
-
 <h4>Limites personnalisées</h4>
 <p>
-Le <i>débit maximal</i> correspond au nombre d'octets utilisables pour répondre
-aux requêtes pendant les courtes périodes où le trafic est supérieur au
-<i>débit moyen</i> que vous avez spécifié, mais qui permet de respecter la
-moyenne sur une longue période. Un débit moyen bas et un débit maximal élevé
-améliorent le niveau de trafic à long terme en autorisant davantage de trafic
-lors des pics, tant que le débit moyen n'a pas été atteint. Si votre débit moyen
-est identique à votre <i>débit maximal</i>, alors Tor ne dépassera jamais ce
-débit. Le <i>débit maximal</i> doit toujours être supérieur ou égal au <i>débit
-moyen</i>.
+Le <i>débit maximal</i> correspond au nombre d'octets utilisables pour
+répondre aux requêtes pendant les courtes périodes où le trafic est
+supérieur au <i>débit moyen</i> que vous avez spécifié, mais qui permet de
+respecter la moyenne sur une longue période. Un débit moyen bas et un débit
+maximal élevé améliorent le niveau de trafic à long terme en autorisant
+davantage de trafic lors des pics, tant que le débit moyen n'a pas été
+atteint. Si votre débit moyen est identique à votre <i>débit maximal</i>,
+alors Tor ne dépassera jamais ce débit. Le <i>débit maximal</i> doit
+toujours être supérieur ou égal au <i>débit moyen</i>.
 </p>
-
 <p>
-Le <i>débit moyen</i> correspond à la bande passante moyenne maximale autorisée
-à long terme (en kilo-octets par seconde). Par exemple, vous pouvez choisir de
-contribuer au réseau Tor pour 2 méga-octets par seconde (2048 Kio/s) ou 50
-kilo-octets par seconde (soit une connexion moyenne par cable). Tor a besoin
-au minimum de 20 kilo-octets par seconde pour faire fonctionner un relais.
+Le <i>débit moyen</i> correspond à la bande passante moyenne maximale
+autorisée à long terme (en kilo-octets par seconde). Par exemple, vous
+pouvez choisir de contribuer au réseau Tor pour 2 méga-octets par seconde
+(2048 Kio/s) ou 50 kilo-octets par seconde (soit une connexion moyenne par
+cable). Tor a besoin au minimum de 20 kilo-octets par seconde pour faire
+fonctionner un relais.
 </p>
-
 <p>
 Il est important de se rappeler que Tor mesure la bande passante en
 <b>octets</b> et non en bits. En outre, Tor comptabilise les octets entrants
 et non les octets sortants. De ce fait, si votre relais est également un
 miroir de l'annuaire des relais, vous enverrez davantage de données que vous
-n'en recevrez. Si vous constatez que cela constitue une contrainte trop forte
-pour votre bande passante, vous devrez penser à décocher la case <i>Servir
-de miroir à l'annuaire des relais</i>.
+n'en recevrez. Si vous constatez que cela constitue une contrainte trop
+forte pour votre bande passante, vous devrez penser à décocher la case
+<i>Servir de miroir à l'annuaire des relais</i>.
 </p>
 
 <a name="exitpolicy"/>
 <h3>Politiques de sortie</h3>
 <p>
-Les politiques de sortie vous permettent de spécifier les ressources Internet
-auxquelles les utilisateurs du réseau Tor peuvent accéder par le biais de
-votre relais. Par défaut, Tor utilise une liste de politiques de sortie qui
-empêche l'utisation de certains services, notamment l'envoi de courriels (afin
-d'éviter les spams) et certains ports de partage de fichiers (afin de réduire
-l'usage abusif du réseau Tor).
+Les politiques de sortie vous permettent de spécifier les ressources
+Internet auxquelles les utilisateurs du réseau Tor peuvent accéder par le
+biais de votre relais. Par défaut, Tor utilise une liste de politiques de
+sortie qui empêche l'utisation de certains services, notamment l'envoi de
+courriels (afin d'éviter les spams) et certains ports de partage de fichiers
+(afin de réduire l'usage abusif du réseau Tor). 
+</p>
+<p>
+Chaque case représente un type de ressources. Vous pouvez permettre ou
+refuser aux utilisateurs de Tor de passer par votre relais pour y
+accéder. Si vous décocher une case, les utilisateurs de Tor ne seront pas
+autorisés à accéder à la ressource correspondante à travers votre relais. Si
+la case <i>Autres services</i> est cochée, les utilisateurs de Tor pourront
+accéder aux services non couverts par les autres cases à cocher ou par la
+politique de sortie par défaut de Tor.
 </p>
 
 <p>
-Chaque case représente un type de ressources. Vous pouvez permettre ou refuser
-aux utilisateurs de Tor de passer par votre relais pour y accéder. Si vous
-décocher une case, les utilisateurs de Tor ne seront pas autorisés à accéder à
-la ressource correspondante à travers votre relais. Si la case <i>Autres
-services</i> est cochée, les utilisateurs de Tor pourront accéder aux services
-non couverts par les autres cases à cocher ou par la politique de sortie par
-défaut de Tor.
-</p>
-
-<p>
-Pour information, le tableau suivant liste les numéros de ports des politiques
-de sortie. La colonne <b>Description</b> signale les ressources auxquelles les
-clients Tor pourront accéder à travers votre relais, si la case correspondante
-est coché.
+Pour information, le tableau suivant liste les numéros de ports des
+politiques de sortie. La colonne <b>Description</b> signale les ressources
+auxquelles les clients Tor pourront accéder à travers votre relais, si la
+case correspondante est coché.
 </p>
 
 <table border="1">
@@ -169,10 +162,8 @@ est coché.
 <tr>
   <td>Messagerie instantanée (IM)</td>
   <td valign="middle">703, 1863, 5050, 5190, 5222, 5223, 8300, 8888</td>
-  <td>
-    Applications de messageries instantanées telles que Jabber, MSN
-    Messenger, AIM et ICQ
-  </td>
+  <td>Applications de messageries instantanées telles que Jabber, MSN Messenger,
+AIM et ICQ</td>
 </tr>
 <tr>
   <td>Chat (IRC)</td>
@@ -182,84 +173,83 @@ est coché.
 <tr>
   <td>Autres services</td>
   <td valign="middle">*</td>
-  <td>
-    Toutes les autres applications non couvertes par les précédentes cases à
-    cocher
-  </td>
+  <td>Toutes les autres applications non couvertes par les précédentes cases à
+cocher</td>
 </tr>
 </table>
 
 <p>
-Si vous ne voulez pas autoriser les utilisateurs de Tor à sortir du réseau par
-votre relais, vous pouvez décocher toutes les cases. Même dans ce cas, votre
-relais est utile pour le réseau Tor, car il permet encore aux utilisateurs de
-s'y connecter. Il permet également de relayer du trafic entre les autres
-relais Tor.
+Si vous ne voulez pas autoriser les utilisateurs de Tor à sortir du réseau
+par votre relais, vous pouvez décocher toutes les cases. Même dans ce cas,
+votre relais est utile pour le réseau Tor, car il permet encore aux
+utilisateurs de s'y connecter. Il permet également de relayer du trafic
+entre les autres relais Tor.
 </p>
-
 <p>
 Si vous choisissez d'installer un relais passerelle, l'onglet des
-<i>Politiques de sortie</i> sera grisé et inacessible, puisque une passerelle
-n'autorise pas les sorties&nbsp;: elle sert uniquement à se connecter au
-réseau Tor.
+<i>Politiques de sortie</i> sera grisé et inacessible, puisque une
+passerelle n'autorise pas les sorties&nbsp;: elle sert uniquement à se
+connecter au réseau Tor.
 </p>
+
 
 <a name="upnp"/>
 <h3>Transfert de Ports</h3>
 <p>
 De nombreux utilisateurs se connectent à Internet par un <i>routeur</i>, qui
-permet plusieurs ordinateurs sur un réseau local de partager la même connexion
-Internet.  Certains utilisateurs peuvent également être derrière un
-<i>pare-feu</i> qui bloque les connexions à votre ordinateur à partir d'autres
-ordinateurs d'Internet. Si vous voulez, toutefois, opérer un relais Tor,
-d'autres clients et relais Tor doivent être en mesure de se connecter à votre
-relais à travers votre routeur ou votre pare-feu.
+permet plusieurs ordinateurs sur un réseau local de partager la même
+connexion Internet.  Certains utilisateurs peuvent également être derrière
+un <i>pare-feu</i> qui bloque les connexions à votre ordinateur à partir
+d'autres ordinateurs d'Internet. Si vous voulez, toutefois, opérer un relais
+Tor, d'autres clients et relais Tor doivent être en mesure de se connecter à
+votre relais à travers votre routeur ou votre pare-feu. 
 </p>
 
 <p>
 Pour rendre votre relais publiquement accessible, votre routeur ou pare-feu
-doit savoir quels ports autoriser pour votre ordinateur, la mise en place est
-connu sous le nom de <i> transfert de ports </i>. Le transfert de ports
-configure votre routeur ou pare-feu pour "rediriger" toutes les connexions de
-certains ports de votre routeur ou pare-feu locaux vers les ports ouverts
+doit savoir quels ports autoriser pour votre ordinateur, la mise en place
+est connu sous le nom de <i> transfert de ports </i>. Le transfert de ports
+configure votre routeur ou pare-feu pour "rediriger" toutes les connexions
+de certains ports de votre routeur ou pare-feu locaux vers les ports ouverts
 correspondants de votre ordinateur.
 </p>
 
 <p>
-Si vous cochez la case <i>Tenter de configurer automatiquement le transfert de
-ports</ i>, Vidalia tentera de mettre en place automatiquement le transfert de
-port sur votre connexion réseau pour que les autres Tor clients puissent se
-connecter à votre relais. Mais, tous les routeurs ne supportent pas le
-transfert automatique de ports.  Vous pouvez utiliser le bouton<i>Test</i> à
-côté de la case à cocher pour savoir si Vidalia est en mesure de mettre en
-place automatiquement le transfert de port pour vous.
+Si vous cochez la case <i>Tenter de configurer automatiquement le transfert
+de ports</i>, Vidalia tentera de mettre en place automatiquement le
+transfert de port sur votre connexion réseau pour que les autres Tor clients
+puissent se connecter à votre relais. Mais, tous les routeurs ne supportent
+pas le transfert automatique de ports.  Vous pouvez utiliser le
+bouton<i>Test</i> à côté de la case à cocher pour savoir si Vidalia est en
+mesure de mettre en place automatiquement le transfert de port pour vous.
 </p>
 
 <p>
-Si le <i>Test</i> estime que Vidalia n'est pas en mesure de mettre en place le
-transfert de port pour vous,  vous pouvez activer cette fonctionalité sur
+Si le <i>Test</i> estime que Vidalia n'est pas en mesure de mettre en place
+le transfert de port pour vous, vous pouvez activer cette fonctionalité sur
 votre routeur ou paramétrer la redirection de port manuellement. Certains
 périphériques réseau ont une fonction appelée <i>Universal Plug-and-Play</i>
 (UPnP). Si vous pouvez accéder à votre routeur interface d'administration,
-vous devriez chercher à activer une option UPnP. Le interface d'administration
-de la plupart des routeurs peut être accessible en ouvrant <a
-href="http://192.168.0.1/">http://192.168.0.1</a> ou <a
-href="http://192.168.1.1/">http://192.168.1.1</a> dans votre navigateur. Vous
-devriez consulter le manuel d'instruction de votre routeur pour de plus amples
-informations.
+vous devriez chercher à activer une option UPnP. Le interface
+d'administration de la plupart des routeurs peut être accessible en ouvrant
+<a href="http://192.168.0.1/">http://192.168.0.1</a> ou <a
+href="http://192.168.1.1/">http://192.168.1.1</a> dans votre
+navigateur. Vous devriez consulter le manuel d'instruction de votre routeur
+pour de plus amples informations.
 </p>
 
 <p>
-Si vous devez configurer manuellement le transfert de port, le site <a href =
+Si vous devez configurer manuellement le transfert de port, le site <a href
+=
 "http://www.portforward.com/english/routers/port_forwarding/routerindex.htm">
 portforward.com </a> contient des instructions sur la manière de mettre en
-place la redirection de port pour de nombreux types de routeurs et pare-feu.
-Au minimum, vous aurez besoin de transférer <i>votre Port Relais</i>, qui par
-défaut est le port 443 sur Windows et 9001 sur tous les autres systèmes
-d'exploitation. Si vous avez aussi coché la case <i>Servir de miroir à
-l'annuaire des relais</i>, vous devrez également trasferrer votre <i> Port
-Annuaire</ i>. Le <i> Port Annuaire</ i> est le port 9030 par défaut sur tous
-les les systèmes d'exploitation.
+place la redirection de port pour de nombreux types de routeurs et
+pare-feu.  Au minimum, vous aurez besoin de transférer <i>votre Port
+Relais</i>, qui par défaut est le port 443 sur Windows et 9001 sur tous les
+autres systèmes d'exploitation. Si vous avez aussi coché la case <i>Servir
+de miroir à l'annuaire des relais</i>, vous devrez également trasferrer
+votre <i> Port Annuaire</i>. Le <i> Port Annuaire</i> est le port 9030 par
+défaut sur tous les les systèmes d'exploitation.
 </p>
 
 </body>

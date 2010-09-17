@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,179 +11,235 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
-<h1>Setting Up a Tor Relay</h1>
+<h1>Настройка Tor ретранслятора.</h1>
 <hr />
 
-The Tor network is made up of volunteers all over the world who donate some of
-their spare bandwidth by running a Tor relay. Vidalia helps you do your part by
-making it easy to set up a relay of your own.
-
-<a name="basic"/>
-<h3>Basic Settings</h3>
+Tor сеть построена добровольцами со всего мира , которые жертвуют часть
+пропускной способности своего канала запуская Tor перенаправление. Vidalia
+позволяет легко настроить ретранслятор самому.   <a name="basic"/>
+<h3>Основные настройки.</h3>
 <p>
-If you decide you want to help the Tor network grow by running a relay, you
-can follow these steps to get started:
+Если вы решили помочь расширить сеть запустив перенаправление,вам
+потребуется для начала выполнить эти шаги :
 </p>
 <ol>
   <li>
-    Open the <i>Configuration Dialog</i> by selecting <i>Settings</i> from
-    the tray menu or <i>Preferences</i> from your system menubar on Macintosh
-    systems.
+    Открыть <i>Диалог конфигурации</i> выбрать <i>Настройки</i> из меню в трее
+либо <i>Настройки</i> из меню системы Macintosh.
   </li>
-  <li>Select the <i>Relay</i> configuration page.</li>
+  <li>Выбрать <i>Перенаправление</i> на странице конфигурации.</li>
   <li>
-    Decide whether you want to run a normal Tor relay or a <i>bridge</i>
-    relay (Tor 0.2.0.8-alpha or newer). Bridge relays help censored Tor users
-    who are blocked from accessing the Tor network directly.
-    Check the box labeled <i>Relay traffic for the Tor network</i> if you want
-    to run a normal Tor relay or <i>Help censored users reach the Tor network</i>
-    if you want to run a bridge relay.
+    Решите какой тип запуска вам нужен, обычный режим Tor или ретранслятор типа
+<i>Мост</i>(Tor 0.2.0.8-alpha или более новая). Перенаправление в режиме
+мост помогает тем пользователям Tor у кого заблокирована возможность доступа
+напрямую подключиться к сети Tor.  Установите флажок <i>Перенаправление
+трафика через сеть Tor</i> если хотите обычное перенаправление Tor или
+<i>Помочь заблокированным пользователям получить доступ к сети Tor</i> если
+хотите перенаправление в режиме моста.
   </li>
-  <li>Enter the following information:
+  <li>Введите следующую информацию.</li>
     <ul>
-      <li><b>Nickname</b>:
-        The name which your relay will be known as on the Tor network. An
-        example of a relay nickname is "MyVidaliaRelay".
+      <li><b>Псевдоним</b>: Данное имя будет обозначать вас в сети Tor. Для примера
+псевдоним перенаправления "MyVidaliaRelay".
       </li>
-      <li><b>Contact Info</b>:
-        Your e-mail address. This address will only be used to
-        contact you in case there is an important Tor security update or
-        something goes wrong with your relay. You might also include your PGP
-        or GPG key ID and fingerprint.
+      <li><b>Контактная информация</b>: Ваш адрес электронной почты. Этот адрес будет
+использоваться только для связи с вами в случае, если появятся важные
+обновления безопасности Tor или что-то пойдет не так с вашим сервером. Вы
+можете также включить ваш PGP или GPG ключ ID и отпечатки
+пальцев(fingerprint).
       </li>
-      <li><b>Relay Port</b>:
-        The port on which your relay will listen for traffic from clients or
-        other Tor relays.
+      <li><b>Порт ретранслятора</b>: Порт который будет ожидать соединения от клиентов
+или других Tor ретрансляторов.
       </li>
     </ul>
   <li>
-    If you would like to mirror Tor's directory of relays for others on the
-    network you can check the box labeled <i>Mirror the Relay Directory</i>.
-    If you do not have much bandwidth, uncheck this box. If you do
-    decide to mirror the relay directory, make sure the <i>Directory Port</i> is
-    different than the <i>Relay port</i> you entered above. Bridge relays
-    <i>must</i> mirror the relay directory.
+    Если вы хотите зеркало директории Tor ретранслятора для других в сети
+проверьте флажок в настройках <i>Зеркалo директории ретранслятора</i> .Eсли
+пропускная способность вашего канала не достаточная следует снять флажок с
+этой опции.Так же если вы решили включить зеркало директории ретранслятора
+,убедитесь что <i>Порт директории</i> отличный от <i>Порт ретранслятора</i>
+который вы ввели ранее.Ретранслятор типа мост <i>должен</i> зеркалировать
+директории ретранслятора.
   </li>
 </ol>
 
 <a name="bandwidth"/>
-<h3>Bandwidth Limits</h3>
+<h3>Ограничение пропускной способности.</h3>
 <p>
-Running a Tor relay can consume a large amount of bandwidth; however, Tor
-allows you to limit the amount of bandwidth that you are willing to contribute
-to the Tor network. You can run a relay, while still keeping your network
-connection usable for your own use.
+Запуск Tor в режиме перенаправления возможно потребует большую пропускную
+способность; как ни было Tor позволяет ограничивать пропускную способность,
+которую вы готовы внести свой вклад в сети Tor.Вы можете запустить режим
+перенаправления при этом параллельно использовать сетевое соединение для
+своих нужд.
 </p>
 <p>
-You should select the option in the dropdown box that best matches your
-connection speed. If you select <i>Custom</i>, you will be able to specify
-your own limits.
+Вы должны выбрать опцию из выпадающего списка которая лучше всего
+соответствует скорости вашего соединения. Если вы выбрали
+<i>Пользовательская</i>, вы сможете использовать свои ограничения.
 </p>
-<h4>Custom Limits</h4>
+<h4>Пользовательские ограничения.</h4>
 <p>
-The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
-short periods of traffic higher than your specified <i>average rate</i>, but
-still maintains the average over a long period. A low average rate but a high
-maximum rate enforces a long-term average while still allowing more traffic
-during peak times if the average hasn't been reached lately. If your average
-rate is the same as your <i>maximum rate</i>, then Tor will never exceed the
-specified rate. Your <i>maximum rate</i> must always be greater than or equal
-to your <i>average rate</i>.
-</p>
-<p>
-The <i>average rate</i> is the maximum long-term average bandwidth allowed (in
-kilobytes per second). For example, you might want to choose 2 megabytes per 
-second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable
-connection). Tor requires a minimum of 20 kilobytes per second to run a
-relay.
+<i>максимальное значение </i> это пул байтов используемых для запросов за
+короткий период прохождения выше чем указанное вами в <i>среднее
+значение</i>,но все еще сохраняется среднем в течение длительного
+периода.Низкое среднее значение но высокое максимальное значение
+обеспечивает долгосрочные средние то же время позволяя увеличить трафик в
+часы пик если средняя не была достигнута за последнее время.Если ваше
+среднее значение такое же как <i>максимальное значение</i>,тогда Tor не
+будет превышать указанного значения.Ваше <i>максимальное значение</i> должно
+всегда быть эквивалентно либо больше чем ваше <i>среднее значение</i>.
 </p>
 <p>
-It is important to remember that Tor measures bandwidth in <b>bytes</b>, not
-bits. Also, Tor only looks at incoming bytes instead of outgoing bytes. For
-example, if your relay acts as a directory mirror, you may be sending more
-outgoing bytes than incoming. If you find this is the case and is putting too
-much strain on your bandwidth, you should consider unchecking the checkbox
-labeled <i>Mirror the relay directory</i>.
+<i>среднее значение</i> является максимальной долгосрочной средней
+разрешенной пропускной способностью (в килобайтах в секунду). Например, вы
+можете выбрать 2 мегабайт в секунду (2048 Кб / с), или 50 килобайт в секунду
+(средней скорости кабельного соединения). Tor требуется не менее 20 килобайт
+в секунду, чтобы запустить ретранслятор.
+</p>
+<p>
+Важно упомянуть то что Tor использует для меры пропускной способности
+<b>байты</b> а не биты.Так же Tor следит за входящими байтами вместо
+исходящих.Например, если ваш ретранслятор работает как зеркало директории
+скорее всего исходящего трафика будет больше чем входящего.Если окажется что
+это создает большую нагрузку на вашу пропускную способность вам следует
+отключить опцию <i>Зеркало директории ретранслятора</i>.
 </p>
 
 <a name="exitpolicy"/>
-<h3>Exit Policies</h3>
+<h3>Ограничения выхода</h3>
 <p>
-Exit policies give you a way to specify what kinds of resources on the
-Internet you are willing let other Tor users access from your Tor relay. 
-Tor uses a default list of exit policies that restrict some services, 
-such as mail to prevent spam and some default file sharing ports to reduce 
-abuse of the Tor network. 
+Ограничения выхода предоставляет возможность настроить доступ определенных
+ресурсов интернет клиентами Tor через ваш Tor ретранслятор.Tor по умолчанию
+использует список ограничений выхода запрещая некоторые сервисы такие
+например как почта блокируя спам и некоторые порты общего доступа к файлам
+которыми могут злоупотреблять в Tor сети. 
 </p>
 <p>
-Each of the checkboxes represents a type of resource that you can allow Tor
-users to access through your relay. If you uncheck the box next to a
-particular type of resource, Tor users will not be allowed to access that
-resource from your relay. If the box labeled <i>Misc Other Services</i> 
-is checked, Tor users will be able to access other services not
-covered by the other checkboxes or Tor's default exit policy.
+Каждый флажок представляет тип ресурса который вы можете разрешить доступ
+Tor пользователям через ваш ретранслятор.Если флажок будет снят с
+определенным видом ресурса, Tor пользователи не смогут иметь доступ к
+данному ресурсу через ваш ретранслятор.Если установлен флажок <i>Разное
+Другие сервисы</i>, Tor пользователи будут иметь доступ другим сервисам не
+распространяющиеся на другие флажки или ограничения выхода Tor по умолчанию
 </p>
 
 <p>
-For completeness, the following table lists the specific port numbers
-represented by each of the exit policy checkboxes. The <b>Description</b>
-column describes the resources Tor clients will be allowed to access through
-your relay, if the associated box is checked.
+Для полной ясности ,следующая таблица номеров портов представляет каждый
+флажок ограничения выхода.Столбец <b>Описание</b> описывает ресурсы которые
+будут доступны Tor клиентам через ваш ретранслятор,если связанный флажок
+выставлен.
 </p>
 
 <table border="1">
 <tr>
-  <td><b>Checkbox</b></td>
-  <td><b>Ports</b></td>
-  <td><b>Description</b></td>
+  <td><b>Флажок</b></td>
+  <td><b>Порты</b></td>
+  <td><b>Описание</b></td>
 </tr>
 <tr>
-  <td>Websites</td>
+  <td>Вебсайты</td>
   <td valign="middle">80</td>
-  <td>Normal, unencrypted Web browsing</td>
+  <td>Обычный,не шифрованный просмотр веб-страниц</td>
 </tr>
 <tr>
-  <td>Secure Websites (SSL)</td>
+  <td>Защищенные вебсайты (SSL)</td>
   <td valign="middle">443</td>
-  <td>Encrypted Web browsing</td>
+  <td>Шифрованный просмотр веб-страниц</td>
 </tr>
 <tr>
-  <td>Retrieve Mail (POP, IMAP)</td>
+  <td>Получить почту (POP,IMAP)</td>
   <td valign="middle">110, 143, 993, 995</td>
-  <td>Downloading email (does not permit sending email)</td>
+  <td>Загрузка электронной почты(не допускает отправку)</td>
 </tr>
 <tr>
-  <td>Instant Messaging (IM)</td>
+  <td>Мгновенный обмен сообщениями (IM)</td>
   <td valign="middle">703, 1863, 5050, 5190, 5222, 5223, 8300, 8888</td>
-  <td>Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber</td>
+  <td>Обмен мгновенными сообщениями такие как MSN Messenger, AIM, ICQ, и Jabber</td>
 </tr>
 <tr>
-  <td>Internet Relay Chat (IRC)</td>
+  <td>Ретранслируемый интернет-чат (IRC)</td>
   <td valign="middle">6660-6669, 6697, 7000-7001</td>
-  <td>IRC clients and servers</td>
+  <td>IRC клиенты и сервера</td>
 </tr>
 <tr>
-  <td>Misc. Other Services</td>
+  <td>Разное.Другие сервисы</td>
   <td valign="middle">*</td>
-  <td>All other applications that aren't covered by the previous checkboxes</td>
+  <td>Все остальные приложения, которые не отмечены предыдущим флажками</td>
 </tr>
 </table>
 
 <p>
-If you do not want to let other Tor users make connections outside the Tor
-network from your relay, you can uncheck all of the checkboxes. Even if you
-uncheck all of the checkboxes, your relay is still useful to the Tor network.
-Your relay will allow other Tor users to connect to the Tor network and will
-help relay traffic between other Tor relays.
+Если вы не хотите другим пользователям Tor позволять соединяться за пределы
+Tor сети через ваш ретранслятор,вы можете снять все флажки.Даже если вы
+сняли все флажки, ваш ретранслятор все еще полезен для Tor сети. Ваш
+ретранслятор разрешит другим пользователям Tor соединятся с сетью Tor и
+поможет перенаправлять трафик между другими Tor ретрансляторами.
 </p>
 <p>
-If you chose to run a bridge relay, the <i>Exit Policies</i> tab will be
-grayed out, since bridge relays do not allow exit connections. Bridges are
-only used by Tor clients to connect to the Tor network.
+Если вы выбрали запуск ретранслятора типа мост <i>Exit Policies</i> вкладка
+будет серого цвета,ретранслятор типа мост не позволит разорвать соединение
+.Мосты используются клиентами Tor только для подключения к сети Tor.
+</p>
+
+
+<a name="upnp"/>
+<h3>Перенаправление портов</h3>
+<p>
+Большинство домашних пользователей соединяются с интернетом через
+<i>маршрутизатор</i>, который позволяет нескольким компьютерам в локальной
+сети иметь доступ через одно соединение в интернет.Некоторые могут находится
+за брандмауэром который блокирует входящие соединения к вашему компьютеру
+другим компьютерам в сети интернет.Как бы ни было для работы Tor
+ретранслятора необходимо чтоб другие клиенты Tor имели возможность
+подключатся к вашему ретранслятору через домашний маршрутизатор либо
+брандмауэр. 
+</p>
+
+<p>
+Для того чтоб ваш релей имел публичный доступ, ваш маршрутизатор или
+брандмауэр должен знать какие порты вашего компьютера следует разрешить на
+доступ из вне обычно данная опция в настройках имеет название
+<i>перенаправление портов</i>(port forwarding).Перенаправление портов
+настраивается в вашем маршрутизаторе или брандмауэре на перенаправление всех
+соединений на определенные порты перенаправляя соединение с маршрутизатора
+или брандмауэра на порты вашего компьютера.
+</p>
+
+<p>
+Если вы установите флажок <i>Попытаться автоматически настроить
+перенаправление порта</i>, Vidalia будет пытаться автоматически настроить
+перенаправление порта на ваше внутреннее соединение так чтобы другие Tor
+клиенты смогли соединится с вашим ретранслятором.Не все маршрутизаторы
+поддерживают автоматическое перенаправление портов.Вы можете использовать
+кнопку <i>Тест</i> расположенную рядом с флажком для выяснения имеет ли
+возможность Vidalia настроить перенаправление для вас.
+</p>
+
+<p>
+Если после нажатия кнопки <i>Тест</i> Vidalia не смогла настроить
+перенаправление порта, возможно вам потребуется включить эту настройку в
+маршрутизаторе либо настраивать вручную.Некоторые сетевые устройства имеют
+особенность так называемую <i>Universal Plug-and-Play</i> (UPnP).Если вы
+имеете доступ к администраторскому интерфейсу вашего маршрутизатора, вам
+следует проверить активна ли данная функция.У большинства маршрутизаторов
+доступ к  административному интерфейсу осуществляется по адресу <a
+href="http://192.168.0.1/">http://192.168.0.1</a> или <a
+href="http://192.168.1.1/">http://192.168.1.1</a> в вашем браузере.Для
+дополнительной информации уточнитесь в руководстве по вашему маршрутизатору.
+</p>
+
+<p>
+Если вам требуется ручная настройка перенаправление порта ,вебсайт <a
+href="http://www.portforward.com/english/routers/port_forwarding/routerindex.htm">
+portforward.com</a> содержит инструкции по настройке перенаправления портов
+большинство типов маршрутизаторов и брандмауэров.Минимально вам нужно
+перенаправить <i>Порт ретранслятора</i>, по умолчанию порт 443 в системе
+Windows и 9001 на других операционных системах.Если у вас установлен флажок
+на опции <i>Зеркало директории ретранслятора</i>, вам нужно перенаправить
+<i>Порт директории</i>.По умолчанию на всех операционных система порт 9030.
 </p>
 
 </body>

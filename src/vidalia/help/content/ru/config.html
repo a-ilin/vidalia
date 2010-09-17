@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,75 +11,67 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
-<!--
- en: 2325
--->
-
 <html>
 <body>
 
-<h1>Настройка Vidalia и Tor</h1>
+<h1>Настройка Vidalia и Tor.</h1>
 <hr />
 
 <p>
-С помощью Vidalia вы можете настроить некоторые из наиболее часто изменяемых
-параметров работы Vidalia и Tor. Также вы сможете запустить и настроить
-<a href="server.html">сервер Tor</a> тем самым увеличивая сеть Tor.
+Vidalia позволяет вам настроить некоторые из наиболее часто меняющихся
+аспектов Vidalia и Tor.Так же возможность создавать и управлять <a
+href="server.html">Tor перенаправление</a>что позволяет расширить сеть Tor .
 </p>
 
 <a name="general"/>
-<h3>Общие настройки</h3>
+<h3>Общие настройки.</h3>
 <p>
-Settings on the <i>General</i> page are the most commonly modified settings.
+Настройки на странице <i>Общие</i>наиболее часто модифицируемые настройки.
 </p>
 <ul>
-  <li><b>Tor Executable</b>:
-    This is the Tor executable that Vidalia will run when you select
-    <i>Start</i> from the tray menu. If you have multiple versions of Tor installed,
-    you can tell Vidalia which version you would like to run by clicking the
-    <i>Browse</i> button and navigating to the particular Tor installation you
-    want.
+  <li><b>Tor исполняемые файлы</b>: Это файлы Tor которые VIdalia запустит когда
+вы выберите <i>Запуск</i> из меню в трее. Если у вас установлено несколько
+версий Tor, вы можете явно указать Vidalia какую версия вы предпочитаете
+запускать .Нажмите кнопку <i>Обзор</i> и перейдите на те установленные файлы
+что вам нужны.
   </li>
-  <li><b>Startup Options</b>:
-    This setting allows you to have Vidalia automatically start Tor when
-    Vidalia starts. You can also configure Vidalia to run when your system
-    starts (<i>Windows only</i>).
+  <li><b>Автозапуск</b>: Эта настройка позволит вам автоматически запускать Tor
+когда запустится Vidalia.Так же вы можете настроить  Vidalia на запуск при
+запуске системы (<i>только для Windows систем</i>).
   </li>
 </ul>
 
 <a name="network"/>
-<h3>Network Settings</h3>
+<h3>Настройки сети</h3>
 <p>
-The <i>Network</i> settings page lets you change how Tor connects to the Tor
-network.
+Страница настроек <i>Сеть</i> позволит вам изменить каким образом Tor будет
+подключатся к Tor сети.
 </p>
 <ul>
-  <li><b>I use a proxy to access the Internet</b>:
-    If your Internet connection requires an HTTP proxy, you can configure Tor
-    to send all of its directory requests and Tor relay connections through
-    your proxy. You must specify at least the hostname or address of your
-    proxy, and the port on which your proxy is listening for connections. If
-    your proxy requires authentication, you can also enter the
-    <i>Username</i> and <i>Password</i> you use to connect to your proxy.
-    Otherwise, you can leave those fields blank.
+  <li><b>Я использую прокси для доступа в интернет</b>: Если ваше интернет
+соединение требует HTTP прокси, вы можете настроить Tor на отправку всех
+запросов директории и соединения Tor ретранслятора через прокси.Вы должны
+указать как минимум имя компьютера или адрес и порт вашего прокси и порт
+который ваш прокси обслуживает для соединений.Если ваш прокси требует
+аутентификацию вы так же можете указать <i>Имя пользователя</i> и
+<i>Пароль</i> которые вы используете для подключения к прокси.В противном
+случае, вы можете оставить эти поля пустыми.
   </li>
-  <li><b>My firewall only lets me connect to certain ports</b>:
-    If you are behind a restrictive firewall or proxy that limits the ports you
-    are able to connect to, you can configure Tor to connect directly only to
-    relays listening on the ports allowed by your firewall or proxy. Simply
-    enter a list of ports permitted by your firewall or proxy, separated by
-    commas. (<i>Example: 80,443,8080</i>)
+  <li><b>Мой брандмауэр позволяет мне подключатся только к определенным
+портам</b>: Если вы находитесь за ограничивающим брандмауэром или прокси с
+ограничением по портам для соединения ,вы можете настроить Tor на соединение
+напрямую только на ретрансляторы с портами которые разрешены вам .Самое
+простое ввести все разрешенные порты на вашем брандмауэре или прокси
+разделенные запятыми. (<i>Пример: 80,443,8080</i>)
   </li>
-  <li><b>My ISP blocks connections to the Tor network</b>:
-    If your ISP (Internet Service Provider) blocks connections to the Tor
-    network, Tor can attempt to avoid being filtered by encrypting its
-    directory connections and connecting to the Tor network through relays
-    called <i>bridges</i> (Tor 0.2.0.3-alpha or newer only). You can add
-    bridge relays by specifying either their address and port number, or
-    their address, port number, and fingerprint.<br>
+  <li><b>Мой провайдер блокирует соединения с сетью Tor</b>: Если ваш провайдер
+блокирует соединения с сетью Tor, Tor может попытаться избежать фильтрации
+шифрованным соединением и соединится с Tor сетью через ретранслятор
+именуемый <i>мост</i>(Tor 0.2.0.3-alpha или более новая версия. Вы можете
+добавить мост типа ретранслятор указав адрес и порт или адрес ,порт и
+отпечаток пальцев.<br/>
 
-    Below are examples of valid bridge address formats:
+    Ниже приведен пример адреса моста в правильном формате :
     <ul>
       <li>
         128.213.48.13:8080
@@ -89,105 +83,110 @@ network.
         128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73
       </li>
     </ul>
-    Even if you do not know any bridge relay addresses, checking this checkbox
-    may still be helpful. Tor will encrypt its directory requests, which can
-    defeat blocking mechanisms that try to filter Tor's requests for
-    information about other relays. If connections to normal Tor relays are
-    also blocked, then you will need to learn a bridge relay address somehow
-    and add it here. See the help topic on <a href="bridges.html#finding">finding
-    bridge relays</a> for more information on how to learn new bridge relay
-    addresses and fingerprints.
+    Даже если вы не знаете ни одного адреса ретранслятора типа мост установка
+данного флажка может оказаться полезной.Tor шифрует директорию запросов
+,которую может повредить механизм блокировки пытаясь фильтровать Tor запросы
+об информации о других ретрансляторах.Если соединения обычного Tor
+ретранслятора так же блокируются,вам нужно изучить каким образом добавлять
+адрес ретранслятора типа мост.Просмотрите справку на <a
+href="bridges.html#finding">найти ретрансляторы типа мост</a> для получения
+дополнительной информации о том, как узнать новый адреса ретранслятора типа
+мост и отпечатков пальцев.
   </li>
 </ul>
 
 <a name="relay"/>
-<h3>Relay Settings</h3>
+<h3>Настройки ретранслятора.</h3>
 <p>
-<i>
-  See <a href="server.html">this help topic</a> for detailed
-  information about setting up and managing a Tor relay.
-</i>
+<i> Смотрите<a href="server.html">справку</a> для подробной информации о
+настройках и управлении ретранслятора Tor.  </i>
 </p>
 
 <a name="appearance"/>
-<h3>Appearance Settings</h3>
+<h3>Настройки внешнего вида.</h3>
 <p>
-The settings on the <i>Appearance</i> page allow you to customize the
-look and feel of Vidalia.
+Настройки на странице <i>Внешний вид</i> позволят вам настроить внешний вид
+Vidalia.
 </p>
 <ul>
-  <li><b>Language</b>:
-    Vidalia's interface has been translated into many languages by helpful
-    volunteers. When Vidalia is first run, it will try to guess which language
-    your computer is currently using. If Vidalia guesses incorrectly, or if
-    you prefer a different language, you can choose another language from the
-    dropdown box. You will need to restart Vidalia after changing the
-    displayed language for the changes to take effect.
+  <li><b>Язык</b>: Интерфейс Vidalia переведен на множество языков благодаря
+помощи добровольцев.При запуске Vidalia попытается определить язык который
+использует ваш компьютер.Если же Vidalia не сможет определить ваш язык либо
+вы предпочитаете другой , вы всегда можете поменять его в выпадающем
+списке.Для применения настроек языка вам потребуется перезапустить Vidalia.
   </li>
-  <li><b>Style</b>:
-    In most cases, Vidalia will default to using your platform's default
-    interface style. If you dislike the default, you can choose whichever
-    interface style you prefer from the dropdown box.
+  <li><b>Стиль</b>: В большинстве случаев, Vidalia будет использовать по умолчанию
+стиль интерфейса вашей платформы. Если вам не нравится по умолчанию, вы
+можете выбрать любой стиль интерфейса который  предпочтёте из выпадающего
+списка.
   </li>
 </ul>
 
 <a name="advanced"/>
-<h3>Advanced Settings</h3>
+<h3>Расширенные настройки</h3>
 <p>
-The settings on the <i>Advanced</i> page should generally only be
-modified by more experienced users.
+Настройки на странице <i>Расширенные</i> как правило настраиваются только
+более опытными пользователями.
 </p>
 <ul>
-  <li><b>Control Address &amp; Port</b>:
-    The <i>Control Port</i> is the port which Vidalia uses to talk to Tor.
-    This doesn't need to be changed unless you have a conflict with another
-    service on your machine, or if you are using Vidalia to control and
-    monitor a Tor process running on another machine.
+  <li><b>Адрес управления &amp; Порт</b>: <i>Порт управления</i> это порт который
+Vidalia использует для общения с Tor. Нет нужды менять его , за исключением
+если у вас конфликт с другими сервисами на компьютере или вы используете
+Vidalia для управления и мониторинга  Tor процессов запущенных на другом
+компьютере.
   </li>
-  <li><b>Control Port Authentication</b>:
-    Control port authentication is used to limit the applications on your
-    machine that can connect to and reconfigure your Tor installation. The
-    available authentication methods are:
-    <ul>
+  <li><b>Порт управления аутентификацией</b>: Порт управления аутентификацией
+используется для ограничения приложений на вашем компьютере способных
+соединятся и перенастраивать вашу установку Tor.Возможные методы
+аутентификации ниже:
+    <ul>  
       <li>
-        <b>None</b> -- No authentication is required. Use of this option is
-        <b>strongly</b> discouraged. Any application or user on your computer
-        can reconfigure your Tor installation.
+        <b>Без аутентификации</b> -- Не требуется аутентификация.Использовать эту
+опцию <b>настоятельно</b> не рекомендуется .Любые приложения или
+пользователь на вашем компьютере может перенастроить вам установку Tor.
+      </li>
+      <li> 
+        <b>Пароль</b> <i>(По умолчанию)</i> -- Если выбран этот метод, вы можете
+указать пароль который Tor будет требовать при каждом соединения к порту
+управления Tor приложением или пользователем.Если запуск Tor осуществляет
+для вас Vidalia вы можете выбрать генерацию случайного нового пароля каждый
+раз при запуске Tor установив флажок на опции <i>Генерировать случайный</i>.
       </li>
       <li>
-        <b>Password</b> <i>(Default)</i> -- If this method is selected, you
-        can specify a password that Tor will require each time a user or
-        application connects to Tor's control port. If Vidalia starts Tor for
-        you, you can have Vidalia randomly generate a new password each time
-        it starts Tor by checking the <i>Randomly Generate</i> checkbox.
-      </li>
-      <li>
-        <b>Cookie</b> -- If cookie authentication is selected, Tor will
-        write a file (or, <i>cookie</i>) containing random bytes to its data
-        directory when it starts. Any user or application that tries to
-        connect to Tor's control port must be able to provide the contents of
-        this cookie.
+        <b>Cookie</b> --Если выбран данный метод аутентификации, Tor будет вести
+файл (или, <i>cookie</i>) содержащий случайный набор байтов в директории
+данных при запуске.Любой пользователь или приложение пытаясь подключится к
+порту управления Tor должны быть в состоянии обеспечить содержание этих
+cookie.
       </li>
     </ul>
   </li>
-  <li><b>Tor Configuration File</b> <i>(optional)</i>:
-    You can use this option to have Vidalia start Tor using a
-    specific <i>torrc</i>, Tor's configuration file. If you leave this field
-    blank, Tor will uses its own default torrc location.
+  <li><b>Файл настройки Tor</b> <i>(опционально)</i>: Вы можете использовать эту
+настройку для запуска ,Vidalia запустит Tor c указанным <i>torrc</i>
+конфигурационным файлом Tor.Если оставите поле пустым, Tor использует свой
+файл torrc по умолчанию.
   </li>
-  <li><b>Tor Data Directory</b> <i>(optional)</i>:
-    You can specify the directory in which Tor will store its saved data,
-    such as cached Tor relay information, Tor relay keys, and configuration
-    files. If you leave this field blank, Tor will use its own default data
-    directory location.
+  <li><b>Директория данных Tor</b> <i>(опционально)</i>:Вы можете указать
+директорию в которой Tor будет сохранять данные,такие как кешированную
+информацию о Tor ретрансляторе ,ключи Tor ретранслятора и конфигурационные
+файлы.Если оставите поля пустыми Tor будет использовать собственную заданную
+по умолчанию директорию.
   </li>
-  <li><b>Permissions</b> <i>(optional, not available on Windows)</i>:
-    If you enter a value for <b>Run as User</b>, Tor will <i>setuid</i> to this user
-    when it starts.
-    If you enter a value for <b>Run as Group</b>, Tor will <i>setgid</i> to this
-    group when it starts.
+  <li><b>Разрешения</b> <i>(опционально,не работает в Windows)</i>:Если вы
+вставите значение в поле<b>Запуск под пользователем</b>, Tor выставит
+<i>setuid</i> этого пользователя при запуске. :Если вы вставите значение в
+поле<b>Запуск под группой</b>, Tor выставит <i>setgid</i> этой группы при
+запуске.
   </li>
 </ul>
 
+<a name="services"/>
+<h3>Настройка скрытого сервиса</h3>
+<p>
+Скрытые сервисы позволять вам предоставить любые TCP-основанные сервисы
+например HTTP сервис не раскрывая ваш IP адрес.
+</p>
+
 </body>
 </html>
+

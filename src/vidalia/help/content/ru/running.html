@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,97 +11,93 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
-<h1>Running Tor</h1>
+<h1>Запуск Tor.</h1>
 <hr />
 
 <p>
-Vidalia can help you control your Tor process by letting you start and stop
-Tor, as well as monitoring Tor's status and letting you know if it exits
-unexpectedly.
+Vidalia поможет вам контролировать процесс Tor начиная с запуска заканчивая
+остановкой, так же мониторинг статуса Tor и даст вам знать если Tor будет
+неожиданно завершен.
 </p>
 
 <a name="starting"/>
-<h3>Starting and Stopping Tor</h3>
+<h3>Запуск и остановка Tor.</h3>
 <p>
-To <i>start</i> Tor,
+Для <i>запуска</i> Tor.
 <ol>
-  <li>Select <i>Start</i> from Vidalia's tray menu or press <i>Ctrl+S</i></li>.
+  <li>Выберите <i>Запуск</i> из меню в трее Vidalia либо нажмите <i>Ctrl+S</i></li>.
   <li>
-    Vidalia's tray icon will change from an onion with a red X to a green
-    onion when Tor has started.
+    Иконка в трее Vidalia изменится со значка лука с красным X на зеленый лук
+тогда Tor запустился.
   </li>
 </ol>
-If Vidalia is unable to start Tor, Vidalia will display an error message
-telling you what went wrong. You can also look at your
-<a href="log.html">message log</a> to see if
-Tor printed any more information about what went wrong.
+Если Vidalia не смогла запустить Tor, Vidalia отобразить сообщение об ошибке
+с описанием причины. Вы так же можете просмотреть <a href="log.html">журнал
+сообщений</a> для более подробной информации об произошедшей ошибке.
 </p>
 
 <p>
-To <i>stop</i> Tor,
+Для <i>остановки</i> Tor.
 <ol>
-  <li>Select <i>Stop</i> from Vidalia's tray menu or press <i>Ctrl+T</i></li>.
+  <li>Выберите <i>Остановить</i> в трее меню Vidalia либо нажмите <i>Ctrl+T</i></li>.
   <li>
-    Vidalia's tray icon will change from a green onion to a gray onion with a
-    red X when Tor has stopped.
+    Иконка в трее Vidalia изменится со значка  зеленый лук на лук с красным X
+тогда Tor остановлен.
   </li>
 </ol>
-If Vidalia was unable to stop Tor, Vidalia will display an error message
-telling you what went wrong. You can also look at your
-<a href="log.html">message log</a> to see if Tor printed any more
-information about what went wrong.
+Если Vidalia не смогла остановить Tor, Vidalia отобразить сообщение об
+ошибке с описанием причины. Вы так же можете просмотреть <a
+href="log.html">журнал сообщений</a> для более подробной информации об
+произошедшей ошибке.
 </p>
 
 <a name="monitoring"/>
-<h3>Monitoring Tor's Status</h3>
+<h3>Мониторинг статуса Tor.</h3>
 <p>
-Vidalia tells you about the status of Tor by displaying an icon in your system
-tray or dock area. The following table shows the different states indicated by
-an icon in your system's notification area:
+Vidalia сообщает вам о статусе Tor отображая на иконке в вашем системном
+трее или специальной области на панели.В следующей таблице приведены
+различные статусы которые указаны на значке в области уведомлений системы:
 </p>
 <p>
 <table border="1">
 <tr>
     <td><img src="qrc:/images/32x32/tor-off.png"/></td>
     <td valign="middle">
-      Tor is stopped. Select <i>Start</i> from the Vidalia menu
-      to start Tor.
+      Tor остановлен. Выберите <i>Запуск</i> из меню Vidalia для запуска Tor.
     </td>
 </tr>
 <tr>
     <td><img src="qrc:/images/32x32/tor-starting.png"/></td>
     <td valign="middle">
-      Tor is starting up. You can check the
-      <a href="log.html">message log</a> for status information about Tor
-      while it is starting.
+      Tor запускается .Вы можете проверить в <a href="log.html">журнале
+сообщений</a> информацию о статусе Tor на момент запуска.
     </td>
 </tr>
 <tr>
     <td><img src="qrc:/images/32x32/tor-on.png"/></td>
     <td valign="middle">
-      Tor is running. If you want to stop Tor, select <i>Stop</i> from the
-      Vidalia menu. Tor will print informational messages to the
-      <a href="log.html">message log</a> while it is running, if you want to
-      see what Tor is doing.
+      Tor запущен.Если хотите остановить Tor выберите <i>Остановить</i> из меню
+Vidalia.Tor сбросит информацию в <a href="log.html">журнал сообщений</a>
+пока он работает, если вам интересно чем занимался Tor.
     </td>
 </tr>
 <tr>
     <td><img src="qrc:/images/32x32/tor-stopping.png"/></td>
-    <td valign="middle">Tor is in the process of shutting down.</td>
+    <td valign="middle">Tor в процессе завершения.</td>
 </tr>
 </table>
 </p>
 
 <p>
-If Tor exits unexpectedly, Vidalia will change its icon to the dark onion with a
-red X and display an error message letting you know what went wrong. You can
-also check the <a href="log.html">message log</a> for details about any problems
-Tor encountered before it exited.
+Если Tor завершился неожидано.Vidalia сменит иконку на темную луковку с
+красным X и отобразить ошибку с описанием проблемы.Вы так же можете
+просмотреть <a href="log.html">журнал сообщений</a> для более детальной
+информации о проблеме которая спровоцировала выход.
 </p>
 
 </body>
 </html>
+

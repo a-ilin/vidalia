@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,7 +11,6 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
@@ -22,45 +23,46 @@ Ihnen Tor zu starten und zu beenden, zeigt Statusinformationen an und
 benachrichtigt Sie, falls Tor unerwartet beendet wurde.
 </p>
 
-<a name="starting"/>
+<a name=\"starting\"/>
 <h3>Tor starten und beenden</h3>
 <p>
 Um Tor zu <i>starten</i>,
 <ol>
-  <li>w&auml;hlen Sie <i>Start</i> aus Vidalias Traymen&uuml; oder dr&uuml;cken Sie <i>Strg+S</i></li>.
+  <li>w&auml;hlen Sie <i>Start</i> aus Vidalias Traymen&uuml; oder dr&uuml;cken
+Sie <i>Strg+S</i></li>.
   <li>
     Vidalias Traysymbol wird sich von einer Zwiebel mit einem roten X hin zu
-    einer gr&uuml;nen Zwiebel ver&auml;ndern, sobald Tor gestartet wurde.
+einer gr&uuml;nen Zwiebel ver&auml;ndern, sobald Tor gestartet wurde.
   </li>
 </ol>
-Falls Vidalia Tor nicht starten konnte, wird Ihnen eine Fehlermeldung
-mit entsprechenden Hinweisen angezeigt. Sie k&ouml;nnen au&szlig;erdem
-im <a href="log.html">Nachrichtenprotokoll</a> nachschauen, ob Tor weitere
+Falls Vidalia Tor nicht starten konnte, wird Ihnen eine Fehlermeldung mit
+entsprechenden Hinweisen angezeigt. Sie k&ouml;nnen au&szlig;erdem im <a
+href=\"log.html\">Nachrichtenprotokoll</a> nachschauen, ob Tor weitere
 Informationen ausgegeben hat.
 </p>
 
 <p>
 Um Tor zu <i>stoppen</i>,
-<ol> 
-  <li>w&auml;hlen Sie <i>Stop</i> aus Vidalias Traymen&uuml; oder dr&uuml;cken Sie <i>Strg+T</i></li>.
+<ol>
+  <li>w&auml;hlen Sie <i>Stop</i> aus Vidalias Traymen&uuml; oder dr&uuml;cken Sie
+<i>Strg+T</i></li>.
   <li>
-	 Vidalias Traysymbol wird sich von einer gr&uuml;nen Zwiebel hin zu
-	 einer grauen Zwiebel mit einem roten X ver&auml;ndern, sobald Tor
-	 beendet wurde.
+    Vidalias Traysymbol wird sich von einer gr&uuml;nen Zwiebel hin zu einer
+grauen Zwiebel mit einem roten X ver&auml;ndern, sobald Tor beendet wurde.
   </li>
 </ol>
-Falls Vidalia Tor nicht beenden konnte, wird Ihnen eine Fehlermeldung
-mit entsprechenden Hinweisen angezeigt. Sie k&ouml;nnen au&szlig;erdem
-im <a href="log.html">Nachrichtenprotokoll</a> nachschauen, ob Tor weitere
+Falls Vidalia Tor nicht beenden konnte, wird Ihnen eine Fehlermeldung mit
+entsprechenden Hinweisen angezeigt. Sie k&ouml;nnen au&szlig;erdem im <a
+href=\"log.html\">Nachrichtenprotokoll</a> nachschauen, ob Tor weitere
 Informationen ausgegeben hat.
 </p>
 
-<a name="monitoring"/>
+<a name=\"monitoring\"/>
 <h3>Tors Status &uuml;berwachen</h3>
 <p>
 Vidalia informiert Sie &uuml;ber den Status von Tor durch die Anzeige eines
-Symbols im Systemtray oder Dock. Die folgende Tabelle zeigt die verschiedenen
-Zust&auml;nde dieses Symbols:
+Symbols im Systemtray oder Dock. Die folgende Tabelle zeigt die
+verschiedenen Zust&auml;nde dieses Symbols:
 </p>
 <p>
 <table border="1">
@@ -68,23 +70,24 @@ Zust&auml;nde dieses Symbols:
     <td><img src="qrc:/images/32x32/tor-off.png"/></td>
     <td valign="middle">
       Tor wurde gestoppt. W&auml;hlen Sie <i>Start</i> aus dem Vidalia-Men&uuml;
-      um Tor zu starten.
+um Tor zu starten.
     </td>
 </tr>
 <tr>
     <td><img src="qrc:/images/32x32/tor-starting.png"/></td>
     <td valign="middle">
-      Tor wird gestartet. Sie k&ouml;nnen im <a href="log.html">Nachrichtenprotokoll</a>
-      Statusinformationen abrufen, w&auml;hrend Tor startet.
+      Tor wird gestartet. Sie k&ouml;nnen im <a
+href=\"log.html\">Nachrichtenprotokoll</a> Statusinformationen abrufen,
+w&auml;hrend Tor startet.
     </td>
 </tr>
 <tr>
     <td><img src="qrc:/images/32x32/tor-on.png"/></td>
     <td valign="middle">
-      Tor wird ausgef&uuml;hrt. Falls Sie Tor stoppen wollen, w&auml;hlen
-      Sie <i>Stop</i> aus dem Vidalia-Men&uuml;. Tor speichert w&auml;hrend des
-      Betriebs Informationen im <a href="log.html">Nachrichtenprotokoll</a>.
-      Um weitere Informationen zu erfahren, k&ouml;nnen Sie dort nachschauen.
+      Tor wird ausgef&uuml;hrt. Falls Sie Tor stoppen wollen, w&auml;hlen Sie
+<i>Stop</i> aus dem Vidalia-Men&uuml;. Tor speichert w&auml;hrend des
+Betriebs Informationen im <a href=\"log.html\">Nachrichtenprotokoll</a>.  Um
+weitere Informationen zu erfahren, k&ouml;nnen Sie dort nachschauen.
     </td>
 </tr>
 <tr>
@@ -95,11 +98,11 @@ Zust&auml;nde dieses Symbols:
 </p>
 
 <p>
-Falls Tor unerwartet beendet wird, ver&auml;ndert sich das Vidalia-Symbol zu einer
-dunklen Zwiebel mit einem roten X und eine entsprechende Fehlermeldung wird
-angezeigt. Sie k&ouml;nnen au&szlig;erdem das <a href="log.html">Nachrichtenprotokoll</a>
-auf weitere Details zu Problemen untersuchen, die zur Beendigung von Tor gef&uuml;hrt
-haben.
+Falls Tor unerwartet beendet wird, ver&auml;ndert sich das Vidalia-Symbol zu
+einer dunklen Zwiebel mit einem roten X und eine entsprechende Fehlermeldung
+wird angezeigt. Sie k&ouml;nnen au&szlig;erdem das <a
+href=\"log.html\">Nachrichtenprotokoll</a> auf weitere Details zu Problemen
+untersuchen, die zur Beendigung von Tor gef&uuml;hrt haben.
 </p>
 
 </body>

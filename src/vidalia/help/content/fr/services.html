@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id $
 ** 
@@ -9,7 +11,6 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
@@ -17,21 +18,19 @@
 <hr />
 
 Attention: Le support des services cachés est neuf sur Vidalia. Vous pouvez
-vous attendre à avoir des bogues et dans certains cas des corruption de votre
-configuration des services cachées. Donc, ne comptez pas sur cette
-fonctionnalité, ou plutôt, ne pas nous blâmez pas si quelque chose ne va pas.
-Si vous trouvez des bogues ou vous avez des commentaires sur cette nouvelle
-fonctionnalité, merci de  nous le faire savoir! Nous avons besoin de vos
-commentaires.
-
-<a name="about"/>
+vous attendre à avoir des bogues et dans certains cas des corruption de
+votre configuration des services cachées. Donc, ne comptez pas sur cette
+fonctionnalité, ou plutôt, ne pas nous blâmez pas si quelque chose ne va
+pas.  Si vous trouvez des bogues ou vous avez des commentaires sur cette
+nouvelle fonctionnalité, merci de nous le faire savoir! Nous avons besoin de
+vos commentaires.  <a name="about"/>
 <h3>Qu'est ce qu'un service caché ?</h3>
 <p>
-Les services cachés vous permettent de fournir n'importe quel type de service
-TCP, par exemple un service HTTP, à des tiers sans révéler votre adresse IP.
-Le protocole de fournir un service caché est construit pour utiliser les mêmes
-circuits que Tor utilise pour la navigation anonyme et a à peu près les mêmes
-caractéristiques d'anonymat.
+Les services cachés vous permettent de fournir n'importe quel type de
+service TCP, par exemple un service HTTP, à des tiers sans révéler votre
+adresse IP.  Le protocole de fournir un service caché est construit pour
+utiliser les mêmes circuits que Tor utilise pour la navigation anonyme et a
+à peu près les mêmes caractéristiques d'anonymat.
 </p>
 
 <p>
@@ -46,17 +45,14 @@ partie 5 de la spécification technique de Tor
 <p>
 Fournir un service caché se fait en au moins deux étapes:
 <ol>
-  <li>Installer un serveur web local (ou un serveur pour le quelconque service
-  si vous souhaitez offrir, par ex IRC) pour écouter les requêtes
-  locales.</li>
-
+  <li>Installer un serveur web local (ou un serveur pour le quelconque service si
+vous souhaitez offrir, par ex IRC) pour écouter les requêtes locales.</li>
   <li>Configurez votre service caché, de sorte que Tor relaie les requêtes
-  entrantes des utilisateurs de Tor vers votre serveur local</li>
+entrantes des utilisateurs de Tor vers votre serveur local</li>
 </ol>
-
 Il y a un bon tutoriel sur le site web de Tor
-(https://www.torproject.org/docs/tor-hidden-service.html) qui décrit
-ces étapes plus en détails.
+(https://www.torproject.org/docs/tor-hidden-service.html) qui décrit ces
+étapes plus en détails.
 </p>
 
 <a name="data"/>
@@ -64,52 +60,46 @@ ces étapes plus en détails.
 <p>
 La table des services comporte cinq colonnes contenant les données sur les
 services cachés configurés:
-
 <ul>
-
-  <li>Addresse Oignon(générée): L'adresse du service (ou adresse oignon) est
-  créée par Tor pour identifier de manière unique votre service. Donnez cette
-  adresse au personnes qui doivent accèder à votre service. Vous pouvez
-  utiliser le bouton "Copier dans le presse-papiers" pour eviter les erreur de
-  saisie.Si vous avez juste créé, le champ affiche "[Créé par Tor]"; afin de
-  lui faire afficher l'adresse oignon réelle, vous devez sauver votre
-  configuration et réouvrir la fenêtre des paramètres.</li>
-
-  <li>Port Virtuel(obligatoire): C'est le port TCP que les clients auront
-  besoin à savoir pour avoir accès à votre service. En règle générale, vous
-  voudrez utiliser le port de servicespécifique, par ex port 80 pour HTTP.
-  Notez que le port virtuel a généralement rien à voir avec les paramètres de
-  pare-feu, car il n'est utilisé que par Tor de manière locale.</li>
-
+  <li>Addresse Oignon(générée): L'adresse du service (ou adresse oignon) est créée
+par Tor pour identifier de manière unique votre service. Donnez cette
+adresse au personnes qui doivent accèder à votre service. Vous pouvez
+utiliser le bouton "Copier dans le presse-papiers" pour eviter les erreur de
+saisie.Si vous avez juste créé, le champ affiche "[Créé par Tor]"; afin de
+lui faire afficher l'adresse oignon réelle, vous devez sauver votre
+configuration et réouvrir la fenêtre des paramètres.</li>
+  <li>Port Virtuel(obligatoire): C'est le port TCP que les clients auront besoin à
+savoir pour avoir accès à votre service. En règle générale, vous voudrez
+utiliser le port de servicespécifique, par ex port 80 pour HTTP.  Notez que
+le port virtuel a généralement rien à voir avec les paramètres de pare-feu,
+car il n'est utilisé que par Tor de manière locale.</li>
   <li>Destination (facultatif): Pratique si vous souhaitez que Tor relaie les
-  demandes de connexion locale sur un port différent que celui que vous avez
-  indiqué dans "Port virtuel". Par conséquent, vous pouvez spécifier une cible
-  composée de adresse physique et le port où les demandes de votre service
-  caché sont redirigés, par ex à localhost:5222 (ou sur n'importe quel port
-  votre serveur est à l'écoute). Si vous ne spécifiez pas aucune cible, Tor va
-  rediriger les demandes vers le port spécifié dans "port virtuel" de votre
-  machine locale (localhost).</li>
- 
-  <li>Répertoire du Service (obligatoire): Tor a besoin pour de stocker
-  certains fichiers des services cachés dans un répertoire séparé, par ex la
-  clé privée et le fichier nom d'hôte contenant l'adresse oignon. Ce
-  répertoire devrait être doit être distinct du répertoire contenant le
-  contenu du service fourni. Une bonne chose ce peut être un service de
-  répertoire ce peut être un sous répertoire du répertoire Tor de données. --
-  Notez que vous ne pouvez pas changer le répertoire d'un service actif (cela
-  n'aurait pas beaucoup de sens de permettre cela, car Vidalia n'est pas censé
-  déplacer les répertoires sur votre disque dur !). Si vous souhaitez déplacer
-  un service caché dans un autre répertoire, merci de procéder comme suit:
-  Commencez par désactiver le service dans Vidalia et sauver la configuration.
-  Puis déplacez le répertoire de votre disque dur au nouveau endroit. Enfin,
-  changez le répertoire dans Vidalia vers le nouvel emplacement, activez à
-  nouveau le service, et enregistrez la nouvelle configuration.</li>
-
-  <li>Activé: Si cette case à cocher est désactivée, Vidalia ne configurera
-  pas le service caché correspondant dans Tor. Cela peut être utile pour
-  garder une configuration d'un service non utilisée actuellement pour une
-  utilisation ultérieure. Tous services inactives sont stockées dans le
-  fichier de configuration spécifique de Vidalia vidalia.conf.</li>
+demandes de connexion locale sur un port différent que celui que vous avez
+indiqué dans "Port virtuel". Par conséquent, vous pouvez spécifier une cible
+composée de adresse physique et le port où les demandes de votre service
+caché sont redirigés, par ex à localhost:5222 (ou sur n'importe quel port
+votre serveur est à l'écoute). Si vous ne spécifiez pas aucune cible, Tor va
+rediriger les demandes vers le port spécifié dans "port virtuel" de votre
+machine locale (localhost).</li>
+  <li>Répertoire du Service (obligatoire): Tor a besoin pour de stocker certains
+fichiers des services cachés dans un répertoire séparé, par ex la clé privée
+et le fichier nom d'hôte contenant l'adresse oignon. Ce répertoire devrait
+être doit être distinct du répertoire contenant le contenu du service
+fourni. Une bonne chose ce peut être un service de répertoire ce peut être
+un sous répertoire du répertoire Tor de données. -- Notez que vous ne pouvez
+pas changer le répertoire d'un service actif (cela n'aurait pas beaucoup de
+sens de permettre cela, car Vidalia n'est pas censé déplacer les répertoires
+sur votre disque dur !). Si vous souhaitez déplacer un service caché dans un
+autre répertoire, merci de procéder comme suit: Commencez par désactiver le
+service dans Vidalia et sauver la configuration.  Puis déplacez le
+répertoire de votre disque dur au nouveau endroit. Enfin, changez le
+répertoire dans Vidalia vers le nouvel emplacement, activez à nouveau le
+service, et enregistrez la nouvelle configuration.</li>
+  <li>Activé: Si cette case à cocher est désactivée, Vidalia ne configurera pas le
+service caché correspondant dans Tor. Cela peut être utile pour garder une
+configuration d'un service non utilisée actuellement pour une utilisation
+ultérieure. Tous services inactives sont stockées dans le fichier de
+configuration spécifique de Vidalia vidalia.conf.</li>
 </ul>
 </p>
 
@@ -118,45 +108,43 @@ services cachés configurés:
 <p>
 <ul>
   <li>Ajouter un service: Crée une nouvelle configuration de services.</li>
-  
   <li>Supprimer un service: Supprime de façon permanente une configuration de
-  service caché.  (Si vous voulez temporairement retirer un service, décochez
-  sa case Activé.)</li>
-  
-  <li>Copie dans le presse-papier: Copie l'adresse oignon dans le
-  presse-papiers, de sorte que vous puissiez l'annoncer à tous ceux qui
-  doivent être en mesure d'utiliser votre service.</li>
-  
+service caché.  (Si vous voulez temporairement retirer un service, décochez
+sa case Activé.)</li>
+  <li>Copie dans le presse-papier: Copie l'adresse oignon dans le presse-papiers,
+de sorte que vous puissiez l'annoncer à tous ceux qui doivent être en mesure
+d'utiliser votre service.</li>
   <li>Parcourir: Vous permet de naviguer pour trouver un répertoure de service
-  caché.</li>
+caché.</li>
 </ul>
 </p>
 
 <a name="advanced"/>
 <h3>Comment configurer les paramètres avancés des services cachés ?</h3>
 <p>
-Tor permet la configuration des paramètres plus spécifiques pour les services
-cachés, par ex forçer à utiliser (ou éviter), certains noeuds comme des points
-d'introduction, ou Fournir de multiples ports virtuels pour le même service.
+Tor permet la configuration des paramètres plus spécifiques pour les
+services cachés, par ex forçer à utiliser (ou éviter), certains noeuds comme
+des points d'introduction, ou Fournir de multiples ports virtuels pour le
+même service.
 </p>
 
 <p>
 Toutefois, nous avons décidé de simplifier les choses dans Vidalia et de
 fournir seulement les paramètres les plus communs. Si vous voulez configurer
-les paramètres avancés, vous devez le faire Tor dans le fichier torrc. Vidalia
-ne supprimera pas ces paramètres, même lorsque vous modifiez vos services
-cachés. Si vous spécifier plus d'un port virtuel port, seule le premièr sera
-affiché et sera modifiable.
+les paramètres avancés, vous devez le faire Tor dans le fichier
+torrc. Vidalia ne supprimera pas ces paramètres, même lorsque vous modifiez
+vos services cachés. Si vous spécifier plus d'un port virtuel port, seule le
+premièr sera affiché et sera modifiable.
 </p>
 
 <a name="client"/>
 <h3>Est ce que Vidalia m'aide à accéder aux autres services cachés ?</h3>
 <p>
 Pas du tout. Il n'est pas nécessaire de faire quelque chose. Si vous voulez
-accéder à un autre service caché , tapez l'adresse onion du service dans votre
-navigateur (ou dans le client approprié si ce n'est pas un service web), et
-Tor fait le reste pour vous. Il n'est pas nécessaire de configurer Tor
-spécifiquement pour cela.
+accéder à un autre service caché , tapez l'adresse onion du service dans
+votre navigateur (ou dans le client approprié si ce n'est pas un service
+web), et Tor fait le reste pour vous. Il n'est pas nécessaire de configurer
+Tor spécifiquement pour cela.
 </p>
 
 </body>

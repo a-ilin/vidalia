@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,7 +11,6 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
@@ -17,36 +18,37 @@
 <hr />
 
 <p>
-Der Netzwerk-Betrachter zeigt die Server im Tor-Netzwerk und den
-Weg des Datenverkehrs an.
+Der Netzwerk-Betrachter zeigt die Server im Tor-Netzwerk und den Weg des
+Datenverkehrs an.
 </p>
 
 
-<a name="overview"/>
+<a name=\"overview\"/>
 <h3>&Uuml;berblick</h3>
 <p>
-Wenn Sie anonym mit Hilfe von Tor kommunizieren wollen (bspw. eine Verbindung
-zu einer Webseite herstellen), erstellt Tor einen Tunnel oder <i>Kanal</i> von
-verschl&uuml;sselten Verbindungen &uuml;ber verschiedene Server im Netzwerk.
-Der von ihrem Programm erzeugte Netzwerkverkehr wird dann als <i>Datenstrom</i>
-durch einen solchen Kanal geleitet. Aus Effizienzgr&uuml;nden werden mehrere
-Datenstr&ouml;me &uuml;ber den selben Kanal geleitet.
+Wenn Sie anonym mit Hilfe von Tor kommunizieren wollen (bspw. eine
+Verbindung zu einer Webseite herstellen), erstellt Tor einen Tunnel oder
+<i>Kanal</i> von verschl&uuml;sselten Verbindungen &uuml;ber verschiedene
+Server im Netzwerk.  Der von ihrem Programm erzeugte Netzwerkverkehr wird
+dann als <i>Datenstrom</i> durch einen solchen Kanal geleitet. Aus
+Effizienzgr&uuml;nden werden mehrere Datenstr&ouml;me &uuml;ber den selben
+Kanal geleitet.
 </p>
 
-<a name="netmap"/>
+<a name=\"netmap\"/>
 <h3>Netzwerk-Karte</h3>
 <p>
-Die Netzwerk-Karte besteht aus einer Weltkarte, auf der durch rote Punkte die
-geographischen Standorte der Server im Tor-Netzwerk gekennzeichnet sind. Anhand
-der gr&uuml;nen Linien zwischen den Servern werden die von Ihrem Tor-Client
-hergestellten Verbindungen im Tor-Netzwerk gekennzeichnet.
+Die Netzwerk-Karte besteht aus einer Weltkarte, auf der durch rote Punkte
+die geographischen Standorte der Server im Tor-Netzwerk gekennzeichnet
+sind. Anhand der gr&uuml;nen Linien zwischen den Servern werden die von
+Ihrem Tor-Client hergestellten Verbindungen im Tor-Netzwerk gekennzeichnet.
 </p>
 <p>
 Durch einen Klick auf <b>Vergr&ouml;&szlig;ern</b> oder <b>Verkleinern</b>
 k&ouml;nnen Sie die Standorte auf der Karte betrachten. Um sich einen
 anderen Kartenausschnitt anzeigen zu lassen, klicken auf die Karte und
-bewegen Sie den Mauszeiger bei gedr&uuml;ckter Maustaste in die gew&uuml;nschte
-Richtung.
+bewegen Sie den Mauszeiger bei gedr&uuml;ckter Maustaste in die
+gew&uuml;nschte Richtung.
 </p>
 <p>
 Der geographische Standort eines Tor-Servers wird mit Hilfe der IP-Adresse
@@ -56,23 +58,23 @@ erstellt und ist unter geoip.vidalia-project.net zu finden.
 <p>
 In der Mitte unterhalb der Netzwerk-Karte finden Sie eine Liste mit Ihren
 momentanen Verbindungen und den dar&uuml;br laufenden Netzwerkverkehr. Beim
-ersten Start der Netzwerk-Karte wird Ihnen m&ouml;glicherweise eine Verbindung
-zu geoip.vidalia-project.net auffallen. Diese Verbindung erscheint, wenn
-Vidalia den geographischen Standort f&uuml;r die Liste der Tor-Server ermittelt.
-Diese Verbindung wird ebenfalls &uuml;ber Tor hergestellt, so dass ihr
-Standort gegen&uuml;ber dem GeoIP-Server nicht bekannt gegeben wird. Die
-Ergebnisse dieser Anfragen werden lokal zwischen gespeichert, um Vidalias
-GeoIP-Server zu entlasten.
+ersten Start der Netzwerk-Karte wird Ihnen m&ouml;glicherweise eine
+Verbindung zu geoip.vidalia-project.net auffallen. Diese Verbindung
+erscheint, wenn Vidalia den geographischen Standort f&uuml;r die Liste der
+Tor-Server ermittelt.  Diese Verbindung wird ebenfalls &uuml;ber Tor
+hergestellt, so dass ihr Standort gegen&uuml;ber dem GeoIP-Server nicht
+bekannt gegeben wird. Die Ergebnisse dieser Anfragen werden lokal zwischen
+gespeichert, um Vidalias GeoIP-Server zu entlasten.
 </p>
 
 
-<a name="serverlist"/>
+<a name=\"relaylist\"/>
 <h3>Server-Status</h3>
 <p>
 Auf der linken Seite des Netzwerk-Betrachters befindet sich eine Liste von
 Servern im Tor-Netzwerk. Neben jeden Server befindet sich ein Symbol, dass
-den Server-Status anzeigt. Die folgende Tabelle beschreibt die m&ouml;glichen
-Symbole:
+den Server-Status anzeigt. Die folgende Tabelle beschreibt die
+"m&ouml;glichen Symbole:
 </p>
 <p>
 <table border="1">
@@ -86,61 +88,60 @@ Symbole:
   <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
   <td valign="middle">
     Der Server ist im <i>Ruhezustand</i>, d.h. er ist online, hat aber bereits
-    alle ihm vom Serverbetreiber zugestandene Bandbreite w&auml;hrend eines
-    bestimmten Zeitraums verbraucht.
+alle ihm vom Serverbetreiber zugestandene Bandbreite w&auml;hrend eines
+bestimmten Zeitraums verbraucht.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
   <td valign="middle">
-    Der Server ist online, hat aber nur einen minimalen
-    Datendurchsatz.
+    Der Server ist online, hat aber nur einen minimalen Datendurchsatz.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
   <td valign="middle">
-    Der Server ist online und hat einen ermittelten Datendurchsatz
-    von &gt;= 20 KB/s.
+    Der Server ist online und hat einen ermittelten Datendurchsatz von &gt;= 20
+KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
   <td valign="middle">
-    Der Server ist online und hat einen ermittelten Datendurchsatz
-    von &gt;= 60 KB/s.
+    Der Server ist online und hat einen ermittelten Datendurchsatz von &gt;= 60
+KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
   <td valign="middle">
-    Der Server ist online und hat einen ermittelten Datendurchsatz
-    von &gt;= 400 KB/s.
+    Der Server ist online und hat einen ermittelten Datendurchsatz von &gt;= 400
+KB/s.
   </td>
 </tr>
 </table>
 </p>
 <p>
-Alle Bandbreitenangaben sind Sch&auml;tzungen, die auf dem kleinsten
-Wert der maximalen Bandbreite des eingehenden oder ausgehenden Datenverkehrs
+Alle Bandbreitenangaben sind Sch&auml;tzungen, die auf dem kleinsten Wert
+der maximalen Bandbreite des eingehenden oder ausgehenden Datenverkehrs
 basieren. Dieser Wert wurde innerhalb eines beliebigen zehn Sekunden langen
 Intervalls am vergangenen Tag gemessen.
 </p>
 
 
-<a name="details"/>
+<a name=\"details\"/>
 <h3>Server-Details</h3>
 <p>
 Die Server-Details auf der rechten Seite des Fensters zeigen weitere
-Informationen zu den Servern an, die momentan in der 
-<a href="#serverlist">Server-Liste</a> ausgew&auml;hlt wurden. Wenn Sie
-einen Kanal oder einen Datenstrom aus der entsprechenden Liste ausgew&auml;hlt
-haben, werden Ihnen in detailierte Informationen &uuml;ber jeden Server angezeigt,
-der Ihren Datenverkehr weiter leitet.
+Informationen zu den Servern an, die momentan in der <a
+href=\"#serverlist\">Server-Liste</a> ausgew&auml;hlt wurden. Wenn Sie einen
+Kanal oder einen Datenstrom aus der entsprechenden Liste ausgew&auml;hlt
+haben, werden Ihnen in detailierte Informationen &uuml;ber jeden Server
+angezeigt, der Ihren Datenverkehr weiter leitet.
 </p>
 <p>
-Folgende Informationen werden in den Server-Details angezeigt (<i>Hinweis</i>:
-nicht immer sind alle Informationen verf&uuml;gbar):
+Folgende Informationen werden in den Server-Details angezeigt
+(<i>Hinweis</i>: nicht immer sind alle Informationen verf&uuml;gbar):
 </p>
 <p>
 <table>
@@ -155,22 +156,22 @@ nicht immer sind alle Informationen verf&uuml;gbar):
 <tr>
   <td><b>Plattform</b></td>
   <td>
-    Gibt an, mit welchen Betriebssystem und welcher Tor-Version dieser
-    Server betrieben wird.
+    Gibt an, mit welchen Betriebssystem und welcher Tor-Version dieser Server
+betrieben wird.
   </td>
 </tr>
 <tr>
   <td><b>Bandbreite</b></td>
   <td>
-    Gesch&auml;tzte maximal Bandbreite, die der Verzeichnis-Server
-    f&uuml;r diesen Server in letzter Zeit beobachtet hat.
+    Gesch&auml;tzte maximal Bandbreite, die der Verzeichnis-Server f&uuml;r
+diesen Server in letzter Zeit beobachtet hat.
   </td>
 </tr>
 <tr>
   <td><b>L&auml;uft seit</b></td>
   <td>
     Gibt an, seit wann der Server bereits l&auml;ft. Dadurch kann die
-    Stabilit&auml;t des Servers abgesch&auml;tzt werden.
+Stabilit&auml;t des Servers abgesch&auml;tzt werden.
   </td>
 </tr>
 <tr>
