@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-14 05:39+0200\n"
+"PO-Revision-Date: 2010-09-17 05:22+0200\n"
 "Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fa\n"
@@ -37,6 +37,9 @@ msgid ""
 "of their spare bandwidth by running a Tor relay. Vidalia helps you do your "
 "part by making it easy to set up a relay of your own.  <a name=\"basic\"/>"
 msgstr ""
+"این شبکه با همکاری داوطلبانه افرادی در سراسر جهان، که بخشی از پهنای نوار خود "
+"را، با فعال سازی بازپخش Tor اهدا می کنند، تشکیل شده است. Vidalia با آسان "
+"نمودن مراحل راه اندازی، امکان می دهد که شما هم سهم خود را ادا کنید. "
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:24
@@ -49,6 +52,8 @@ msgid ""
 "If you decide you want to help the Tor network grow by running a relay, you "
 "can follow these steps to get started:"
 msgstr ""
+"اگر مایلید شما نیز با راه اندازی یک بازپخش به رشد و گسترش شبکه Tor  یاری "
+"کنید، برای شروع این مراحل را گام به گام اجرا کنید."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:31
@@ -86,7 +91,7 @@ msgstr ""
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:44
 msgid "Enter the following information:"
-msgstr ""
+msgstr "اطلاعات زیر را وارد کنید:"
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:46
@@ -94,6 +99,8 @@ msgid ""
 "<b>Nickname</b>: The name which your relay will be known as on the Tor "
 "network. An example of a relay nickname is \"MyVidaliaRelay\"."
 msgstr ""
+"<b>اسم مستعار</b>: نامی است که بازپخش شما در شبکه Tor به آن نام شناخته می "
+"شود. نمونه ای از نام مستعار بازپخش، \"بازپخش ویدالیای من\" (\"MyVidaliaRelay\")."
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:50
@@ -103,6 +110,10 @@ msgid ""
 "goes wrong with your relay. You might also include your PGP or GPG key ID "
 "and fingerprint."
 msgstr ""
+"<b>اطلاعات تماس</b>: آدرس ایمیل شما. این آدرس فقط برای تماس با شما در صورتی "
+"که یک بروزرسانی امنیتی ضرورت پیدا کند و یا بازپخش شما دچار اشکال شود، "
+"استفاده می شود. همچنین می توانید رمز شناسایی و انگشت نگاری PGP و یا GPG را "
+"وارد کنید. "
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:56
@@ -110,6 +121,8 @@ msgid ""
 "<b>Relay Port</b>: The port on which your relay will listen for traffic from "
 "clients or other Tor relays."
 msgstr ""
+"<b>درگاه بازپخش</b>: درگاهی که از آن بازپخش شما به ترافیک کاربران و یا "
+"بازپخش های دیگر Tor گوش می دهد. "
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:62
@@ -121,16 +134,22 @@ msgid ""
 "the <i>Relay port</i> you entered above. Bridge relays <i>must</i> mirror "
 "the relay directory."
 msgstr ""
+"اگر مایلید فهرست بازپخش های Tor را برای دیگران بر روی شبکه منعکس کنید می "
+"توانید مربع مجاور <i>فهرست بازپخش را منعکس کن</i> را تیک بزنید. اگر پهنای "
+"نوار شما کافی نیست، این مربع را خالی بگذارید. اگر تصمیم گرفتید که فهرست "
+"بازپخش را منعکس کنید، مطمئن شوید که <i>درگاه فهرست</i> از <i>درگاه "
+"بازپخش</i> که در بالا وارد کردید، متفاوت است. پل های بازپخش <i>می بایست</i> "
+"فهرست بازپخش را منعکس کنند.  "
 
 #. type: Content of: <html><body>
 #: en/server.html:71
 msgid "<a name=\"bandwidth\"/>"
-msgstr ""
+msgstr "<یک نام=\"پهنای نوار\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:72
 msgid "Bandwidth Limits"
-msgstr ""
+msgstr "حد پهنای نوار"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:74
@@ -140,6 +159,10 @@ msgid ""
 "contribute to the Tor network. You can run a relay, while still keeping your "
 "network connection usable for your own use."
 msgstr ""
+"فعال سازی بازپخش Tor بخش عظیمی از پهنای نوار را اشغال می کند، با این وجود، "
+"Tor این امکان را ایجاد می کند که شما مقدار پهنای نواری که مایلید به شبکه Tor "
+"اهدا کنید را محدود کنید. می توانید همزمان که یک بازپخش را فعال می کنید، "
+"ارتباط با شبکه را برای استفاده خصوصی خود حفظ کنید."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:80
@@ -148,11 +171,14 @@ msgid ""
 "connection speed. If you select <i>Custom</i>, you will be able to specify "
 "your own limits."
 msgstr ""
+"می بایست گزینه ای که بیش از همه با سرعت اتصال شما هماهنگ است را در منوی "
+"کرکره ای (dropdown menu) تیک بزنید. اگر <i>سلیقه</i> را انتخاب کرده اید، می "
+"توانید خودتان تعیین کنید که چه حدی به کار شما می آید."
 
 #. type: Content of: <html><body><h4>
 #: en/server.html:84
 msgid "Custom Limits"
-msgstr ""
+msgstr "محدودیت های خودساخته"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:86
@@ -166,6 +192,14 @@ msgid ""
 "exceed the specified rate. Your <i>maximum rate</i> must always be greater "
 "than or equal to your <i>average rate</i>."
 msgstr ""
+"<i>نرخ حداکثری</i> مخزنی از بایت است که در دوره های کوتاه ترافیک بالا که بیش "
+"از ظرفتی است که در<i>نرخ متوسط</i> تعیین کرده اید، به عنوان نیروی کمکی عمل "
+"می کند، اما در دراز مدت همچنان متوسط می ماند. یک نرخ متوسط نازل، همراه با "
+"نرخ حداکثری بالا، در دراز مدت نرخ متوسط را تقویت می کند و همزمان در ساعات "
+"شلوغ، امکان ترافیک شدیدتر را، در صورتی که ظرفیت متوسط به طور کامل مصرف نشده "
+"باشد، ایجاد می کند. اگر نرخ متوسط شما با<i>نرخ حداکثری</i> شما یکسان است، در "
+"این صورت Tor هیچ وقت از نرخی که تعیین کرده اید، تجاوز نمی کند. <i>نرخ "
+"حداکثری</i> شما می بایست از <i>نرخ متوسط</i> بیشتر یا همسان باشد. "
 
 #. type: Content of: <html><body><p>
 #: en/server.html:96
@@ -176,6 +210,10 @@ msgid ""
 "connection). Tor requires a minimum of 20 kilobytes per second to run a "
 "relay."
 msgstr ""
+"<i>نرخ متوسط</i> حداکثر پهنای نواری با نرخ متوسط است که برای مصرف دراز مدت "
+"(کیلوبایت در ثانیه) مجاز است. برای نمونه، ممکن است گزینه 2 مگابایت در ثانیه "
+"(2048 KB/s) و یا 50 کیلوبایت در ثانیه (اتصال کیبلی سرعت متوسط) را انتخاب "
+"کنید. Tor به 20 کیلوبایت در ثانیه نیاز دارد تا بازپخش را فعال کند."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:103
@@ -187,16 +225,22 @@ msgid ""
 "too much strain on your bandwidth, you should consider unchecking the "
 "checkbox labeled <i>Mirror the relay directory</i>."
 msgstr ""
+"نکته با اهمیتی که باید به خاطر داشت آن است که Tor پهنای نوار را <b>بایت</b> "
+" اندازه می گیرد نه با بیت (bits). همچنین، Tor تنها به بایت های ورودی توجه "
+"می کند نه بایت های خروجی. برای مثال اگر بازپخش شما به عنوان منعکس کننده "
+"فهرست عمل می کنند، امکان دارد بایت های خروجی شما بیشتر از بایت های ورودی شما "
+"باشد. اگر اینطور باشد و فشار زیادی بر پهنای نوار شما وارد کند، بهتر است چک "
+"باکس <i>فهرست را منعکس کن</i> تیک نزنید."
 
 #. type: Content of: <html><body>
 #: en/server.html:111
 msgid "<a name=\"exitpolicy\"/>"
-msgstr ""
+msgstr "<یک اسم=\"مقررات خروج\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:112
 msgid "Exit Policies"
-msgstr ""
+msgstr "مقررات خروج"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:114
@@ -207,6 +251,11 @@ msgid ""
 "as mail to prevent spam and some default file sharing ports to reduce abuse "
 "of the Tor network."
 msgstr ""
+"مقررات خروج به شما امکان می دهد تعیین کنید  دیگر کاربران Tor از کدام منابع "
+"اینترنتی شما مجازند استفاده کنند. Tor یک لیست پیشفرض از مقررات خروج، که "
+"استفاده بعضی از سرویس ها نظیر ایمیل، برای جلوگیری از ارسال هرزنامه، و چند "
+"درگاه اشتراک فایل پیشفرض شده، برای جلوگیری از سوء استفاده خلاف از شبکه Tor "
+"را مسدود می کند. "
 
 #. type: Content of: <html><body><p>
 #: en/server.html:121
@@ -218,6 +267,12 @@ msgid ""
 "checked, Tor users will be able to access other services not covered by the "
 "other checkboxes or Tor's default exit policy."
 msgstr ""
+"هر چک باکس مربوط به یک نوع از منابعی است که شما می توانید به کاربران Tor "
+"اجازه بدهید از طریق آن به بازپخش شما دسترسی پیدا کنند. اگر چک باکس کنار یک "
+"منبع را تیک نزنید، کاربران Tor مجاز به دسترسی به آن منبع از طریق بازپخش شما "
+"نخواهند بود. اگر باکس <i>Misc Other Services</i> تیک شده باشد، کاربران Tor "
+"قادر خواهند بود به دیگر سرویس هایی که شامل چک باکس های دیگر و یا مقررات خروج "
+"پیشفرض شده Tor نمی شوند، دسترس داشته باشند. "
 
 #. type: Content of: <html><body><p>
 #: en/server.html:130
@@ -227,71 +282,75 @@ msgid ""
 "column describes the resources Tor clients will be allowed to access through "
 "your relay, if the associated box is checked."
 msgstr ""
+"برای تکمیل، جدول زیر، لیستی از شماره درگاه های معین با چک باکس مربوط به آن "
+"درگاه به دست می دهد. ستون<b>شرح</b> منابعی را معین می کند که کاربران Tor "
+"مجاز خواهند بود از طریق بازپخش شما به آن دسترسی یابند، اگر باکس مربوط تیک "
+"خورده باشد. "
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:138
 msgid "<b>Checkbox</b>"
-msgstr ""
+msgstr "<b>چک باکس</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:139
 msgid "<b>Ports</b>"
-msgstr ""
+msgstr "<b>درگاه ها</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:140
 msgid "<b>Description</b>"
-msgstr ""
+msgstr "<b>شرح</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:143
 msgid "Websites"
-msgstr ""
+msgstr "وبسایت ها"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:144
 msgid "80"
-msgstr ""
+msgstr "80"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:145
 msgid "Normal, unencrypted Web browsing"
-msgstr ""
+msgstr "مرور وب نرمال و رمزبندی نشده"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:148
 msgid "Secure Websites (SSL)"
-msgstr ""
+msgstr "وبسایت های امن (SSL)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:149
 msgid "443"
-msgstr ""
+msgstr "443"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:150
 msgid "Encrypted Web browsing"
-msgstr ""
+msgstr "مرور وب رمزبندی شده"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:153
 msgid "Retrieve Mail (POP, IMAP)"
-msgstr ""
+msgstr "بازیابی ارسالات (POP , IMAP)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:154
 msgid "110, 143, 993, 995"
-msgstr ""
+msgstr "995, 993, 143, 110"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:155
 msgid "Downloading email (does not permit sending email)"
-msgstr ""
+msgstr "بارگیری ایمیل (اجازه ارسال ایمیل نمی دهد)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:158
 msgid "Instant Messaging (IM)"
-msgstr ""
+msgstr "ارسال فوری پیام"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:159
@@ -302,36 +361,37 @@ msgstr ""
 #: en/server.html:160
 msgid "Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber"
 msgstr ""
+"برنامه های ارسال فوری پیام نظیر ام اس ان مسنجر، ای آی ام، آی سی کیو، و جابر"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:163
 msgid "Internet Relay Chat (IRC)"
-msgstr ""
+msgstr "چت بازپخش اینترنتی (IRC)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:164
 msgid "6660-6669, 6697, 7000-7001"
-msgstr ""
+msgstr "6660-6669, 6697, 7000-7001"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:165
 msgid "IRC clients and servers"
-msgstr ""
+msgstr "کاربران و سرویسدهندگان آی آر سی"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:168
 msgid "Misc. Other Services"
-msgstr ""
+msgstr "دیگر سرویس های متفرقه"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:169
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:170
 msgid "All other applications that aren't covered by the previous checkboxes"
-msgstr ""
+msgstr "تمامی دیگر برنامه های کاربردی که شامل چک باکس های پیشین نمی شوند."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:175
@@ -342,6 +402,11 @@ msgid ""
 "network.  Your relay will allow other Tor users to connect to the Tor "
 "network and will help relay traffic between other Tor relays."
 msgstr ""
+"اگر مایل نیستید دیگر کاربران Tor از طریق بازپخش شما با خارج از شبکه Tor در "
+"ارتباط باشند، هیچکدام از چک باکس ها را تیک نزنید. حتی اگر هیچ کدام از چک "
+"باکس ها را تیک نزنید، بازپخش شما همچنان برای شبکه Tor سودمند خواهد بود. "
+"بازپخش شما به دیگر کاربران Tor امکان می دهد که به شبکه Tor متصل شوند و نیز "
+"به بازپخش ترافیک میان دیگر بازپخش های Tor کمک می کند. "
 
 #. type: Content of: <html><body><p>
 #: en/server.html:182
@@ -350,16 +415,19 @@ msgid ""
 "grayed out, since bridge relays do not allow exit connections. Bridges are "
 "only used by Tor clients to connect to the Tor network."
 msgstr ""
+"اگر تصمیم گرفتید یک پل بازپخش فعال کنید، کلید <i>مقررات خروج</i> خاکستری می "
+"شود، و پل های بازپخش اجازه ارتباطات خروجی را نمی دهند. پل ها تنها توسط "
+"مشتریان Tor برای اتصال به شبکه Tor استفاده می شود. "
 
 #. type: Content of: <html><body>
 #: en/server.html:188
 msgid "<a name=\"upnp\"/>"
-msgstr ""
+msgstr "<a name=\"upnp\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:189
 msgid "Port Forwarding"
-msgstr ""
+msgstr "ارسال درگاه"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:191
@@ -371,6 +439,12 @@ msgid ""
 "If you want to run a Tor relay, however, other Tor clients and relays must "
 "be able to connect to your relay through your home router or firewall."
 msgstr ""
+"بسیاری از کاربران خانگی از طریق <i>راوتر</i> به اینترنت وصل می شوند که به "
+"همزمان به چندین کامپیوتر اجازه میدهد که از یک اتصال اینترنتی واحد استفاده "
+"کنند. بعضی از کاربران ممکن است توسط <i>فایروال</i> که اتصال ورودی به "
+"کامپیوتر شما از طریق دیگر کامپیوترهای آنلاین را مسدود می کند. اگر می خواهید "
+"بازپخش Tor را فعال کنید دیگر کارکنان و مشتریان  Tor و بازپخش ها می بایست "
+"مجاز باشند از طریق رواتر خانگی و یا فایروال به بازپخش شما متصل شوند."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:200
