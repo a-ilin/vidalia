@@ -79,35 +79,35 @@ endif(CONFIGURE_BUNDLE_NSI)
 
 ## Convert the .po files to NSIS .nsh files at build time
 vidalia_add_nsh(vidalia_NSH
-  cs/vidalia_cs.po  CZECH     ISO-8859-2)
+  po/cs/vidalia_cs.po  CZECH     ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
-  de/vidalia_de.po  GERMAN    ISO-8859-1)
+  po/de/vidalia_de.po  GERMAN    ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  en/vidalia_en.po  ENGLISH   ISO-8859-1)
+  po/en/vidalia_en.po  ENGLISH   ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  es/vidalia_es.po  SPANISH   ISO-8859-1)
+  po/es/vidalia_es.po  SPANISH   ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  fa/vidalia_fa.po  FARSI     ISO-8859-6)
+  po/fa/vidalia_fa.po  FARSI     ISO-8859-6)
 vidalia_add_nsh(vidalia_NSH
-  fi/vidalia_fi.po  FINNISH   ISO-8859-1)
+  po/fi/vidalia_fi.po  FINNISH   ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  fr/vidalia_fr.po  FRENCH    ISO-8859-1)
+  po/fr/vidalia_fr.po  FRENCH    ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  he/vidalia_he.po  HEBREW    ISO-8859-8)
+  po/he/vidalia_he.po  HEBREW    ISO-8859-8)
 vidalia_add_nsh(vidalia_NSH
-  it/vidalia_it.po  ITALIAN   ISO-8859-1)
+  po/it/vidalia_it.po  ITALIAN   ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  nl/vidalia_nl.po  DUTCH     ISO-8859-1)
+  po/nl/vidalia_nl.po  DUTCH     ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  pl/vidalia_pl.po  POLISH    ISO-8859-2)
+  po/pl/vidalia_pl.po  POLISH    ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
-  pt/vidalia_pt.po  PORTUGUESE  ISO-8859-1)
+  po/pt/vidalia_pt.po  PORTUGUESE  ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  ro/vidalia_ro.po  ROMANIAN  ISO-8859-2)
+  po/ro/vidalia_ro.po  ROMANIAN  ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
-  ru/vidalia_ru.po  RUSSIAN   Windows-1251)
+  po/ru/vidalia_ru.po  RUSSIAN   Windows-1251)
 vidalia_add_nsh(vidalia_NSH
-  sv/vidalia_sv.po  SWEDISH   ISO-8859-1)
+  po/sv/vidalia_sv.po  SWEDISH   ISO-8859-1)
 #vidalia_add_nsh(vidalia_NSH
 #  zh_CN/vidalia_zh_CN.po  SIMPCHINESE   GB18030)
 #vidalia_add_nsh(vidalia_NSH
@@ -117,39 +117,39 @@ add_custom_target(i18n-win32-installer DEPENDS ${vidalia_NSH})
 
 ## Convert the .po files to WiX .wxl files at build time
 vidalia_add_wxl(vidalia_WXL
-  cs/vidalia_cs.po  cs    ISO-8859-2)
+  po/cs/vidalia_cs.po  cs    ISO-8859-2)
 vidalia_add_wxl(vidalia_WXL
-  de/vidalia_de.po  de    ISO-8859-1)
+  po/de/vidalia_de.po  de    ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  en/vidalia_en.po  en   ISO-8859-1)
+  po/en/vidalia_en.po  en   ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  es/vidalia_es.po  es   ISO-8859-1)
+  po/es/vidalia_es.po  es   ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  fa/vidalia_fa.po  fa     ISO-8859-6)
+  po/fa/vidalia_fa.po  fa     ISO-8859-6)
 vidalia_add_wxl(vidalia_WXL
-  fi/vidalia_fi.po  fi   ISO-8859-1)
+  po/fi/vidalia_fi.po  fi   ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  fr/vidalia_fr.po  fr    ISO-8859-1)
+  po/fr/vidalia_fr.po  fr    ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  he/vidalia_he.po  he    ISO-8859-8)
+  po/he/vidalia_he.po  he    ISO-8859-8)
 vidalia_add_wxl(vidalia_WXL
-  it/vidalia_it.po  it   ISO-8859-1)
+  po/it/vidalia_it.po  it   ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  nl/vidalia_nl.po  nl     ISO-8859-1)
+  po/nl/vidalia_nl.po  nl     ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  pl/vidalia_pl.po  pl    ISO-8859-2)
+  po/pl/vidalia_pl.po  pl    ISO-8859-2)
 vidalia_add_wxl(vidalia_WXL
-  pt/vidalia_pt.po  pt  ISO-8859-1)
+  po/pt/vidalia_pt.po  pt  ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  ro/vidalia_ro.po  ro  ISO-8859-2)
+  po/ro/vidalia_ro.po  ro  ISO-8859-2)
 vidalia_add_wxl(vidalia_WXL
-  ru/vidalia_ru.po  ru   1251)
+  po/ru/vidalia_ru.po  ru   1251)
 vidalia_add_wxl(vidalia_WXL
-  sv/vidalia_sv.po  sv   ISO-8859-1)
+  po/sv/vidalia_sv.po  sv   ISO-8859-1)
 vidalia_add_wxl(vidalia_WXL
-  zh_CN/vidalia_zh_CN.po  zh-CN   936)
+  po/zh_CN/vidalia_zh_CN.po  zh-CN   936)
 vidalia_add_wxl(vidalia_WXL
-  zh_TW/vidalia_ZH_TW.po  zh-TW   950)
+  po/zh_TW/vidalia_ZH_TW.po  zh-TW   950)
 
 add_custom_target(dist-win32
   COMMAND ${WIX_CANDLE_EXECUTABLE} 
