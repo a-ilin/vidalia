@@ -27,17 +27,17 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
 msgid "Bridge Relays"
-msgstr ""
+msgstr "Bridge Relays"
 
 #. type: Content of: <html><body>
 #: en/bridges.html:19
 msgid "<a name=\"about\"/>"
-msgstr ""
+msgstr "<a name=\"about\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:20
 msgid "What are bridge relays?"
-msgstr ""
+msgstr "bridge relays ေတြဆိုတာ ဘာလဲ?"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:22
@@ -51,31 +51,40 @@ msgid ""
 "filtering connections to all the known Tor relays, they probably won't be "
 "able to block all the bridges."
 msgstr ""
+"အခ်ိဳ႕ေသာ Internet Service Providers (ISPs) ေတြဟာ Tor relays မ်ားကို "
+"ဆက္သြယ္မႈအား ပိတ္ဆို႔ျခင္းအားျဖင့္ Tor ကြန္ယက္ကို အသံုးျပဳသူေတြ ခ်ိတ္ဆက္မႈမွ "
+"ကာကြယ္ရန္ ၾကိဳးစားၾကပါတယ္။ Bridge relays (သို႔မဟုတ္ အတိုေကာက္<i>bridges</i> "
+")ေတြဟာ relays မ်ား ျဖစ္ၾကျပီး Tor ကြန္ယက္ကို ခ်ိတ္ဆက္ဖို႔ ဆင္ဆာ အျဖတ္ခံရတဲ့ "
+"အသံုးျပဳသူေတြကို ကူညီေပးပါတယ္။ Tor relays ေတြနဲ႔ မတူတာက ပံုမွန္ relays "
+"မ်ားလို bridges ေတြဟာ အမ်ားသူငါဆိုင္ရာ လမ္းညႊန္စာရင္းတြင္ မပါဝင္ေပ။ "
+"ျပီးျပည့္စံုေသာ အမ်ားသူငါဆိုင္ရာ စာရင္းဟူ၍ မရွိေပ။ အကယ္၍ သင္၏ ISP က "
+"၎တို႔သိေသာ Tor relays မ်ားအားလံုးကို စီစစ္လိုက္တယ္ ဆိုရင္ေတာင္ bridges "
+"အားလံုးကို ပိတ္ဆို႔ဖို႔ေတာ့ မျဖစ္ႏိုင္ေပ။"
 
 #. type: Content of: <html><body>
 #: en/bridges.html:31
 msgid "<a name=\"finding\"/>"
-msgstr ""
+msgstr "<a name=\"finding\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:32
 msgid "How do I find a bridge relay?"
-msgstr ""
+msgstr "bridge relay ကိုဘယ္လိုရွာေဖြရမလဲ?"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
-msgstr ""
+msgstr "bridge လိပ္စာႏွင့္ပတ္သက္ျပီး ေလ့လာရန္ အဓိက နည္းလမ္း ႏွစ္သြယ္ရွိပါတယ္။ :"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
 msgid "Get some friends to run private bridges for you"
-msgstr ""
+msgstr "သင့္အတြက္ သီးသန္႔ bridges မ်ားကို run ရန္ သူငယ္ခ်င္းအခ်ိဳ႕ရွာပါ။"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:37
 msgid "Use some of the public bridges"
-msgstr ""
+msgstr "အမ်ားသူငါဆိုင္ရာ bridges အခ်ိဳ႕ကို သံုးပါ။"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:42
@@ -88,6 +97,15 @@ msgid ""
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""
+"သီးသန္႔ bridges မ်ားကို သံုးရန္ အင္တာနက္ ဆင္ဆာမျဖတ္ထားေသာ နယ္နမိတ္ထဲမွာ "
+"Vidalia ႏွင့္ Tor ကို သူငယ္ခ်င္းမ်ားကို run ခိုင္းပါ။ျပီးလွ်င္ Vidalia ၏ <a "
+"href=\"server.html\">Relay settings page</a> မွာ <i>ဆင္ဆာျဖတ္ေတာက္ခံထားရေသာ "
+"အသံုးျပဳသူမ်ားကို ကူညီပါ</i> ဆိုတာကို ႏွိပ္ပါ။ ထို႔ေနာက္ Relay page ၏ "
+"ေအာက္ေျခရွိ <i>Bridge address</i> လိုင္းကို သင့္ထံသို႔ သီးသန္႔ေပးပို႔ "
+"ခိုင္းရပါမယ္။ ရွိျပီးသား relay ႏွင့္ run ပံုခ်င္း မတူသည္မွာ bridge relay သည္ "
+"Tor ကြန္ယက္၏ အသြားအျပန္လမ္းေၾကာင္းတြင္ အခ်က္အလက္မ်ား ျဖတ္သန္းရံုမွ်သာ run "
+"ျခင္းေၾကာင့္ျဖစ္သည္။ ထို႔ေၾကာင့္ ေစာဒကတက္မႈ တစ္စံုတစ္ရာကို operator "
+"ျမင္ေအာင္ မျပသင့္ေပ။"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:52
@@ -101,6 +119,15 @@ msgid ""
 "attacker to learn lots of bridge addresses, you must send this request from "
 "a Gmail account."
 msgstr ""
+"အမ်ားသူငါဆိုင္ရာ bridge လိပ္စာမ်ားကို <b>https://bridges.torproject.org</b> "
+"ကိုသြားေရာက္၍ ရွာေဖြႏိုင္သည္။ ၎စာမ်က္ႏွာမွ သင္ရရွိေသာ အေျဖမ်ားသည္ "
+"ေန႔စဉ္နဲ႔အမွ် ေျပာင္းလဲ ေနလိမ့္မည္။ အကယ္၍ bridge လိပ္စာ မ်ားကို သင္ပိုမို "
+"လိုအပ္တယ္ဆိုရင္ အခါအားေလ်ာ္စြာ ျပန္လည္စစ္ေဆးပါ။ အမ်ားသူငါဆိုင္ရာ bridge "
+"လိပ္စာမ်ားကို ရွာေဖြရန္ အျခားေသာ နည္းလမ္းမွာ ေမးလ္၏ စာကိုယ္တြင္ <b>get "
+"bridges</b> ဟုထည့္သြင္းျပီး <b>bridges@torproject.org</b> "
+"သို႔ေပးပို႔ႏိုင္ပါတယ္။ ဘယ္လိုပဲျဖစ္ျဖစ္ တိုက္ခုိက္သူေတြ bridge လိပ္စာမ်ားကို "
+"ေလ့လာဖို႔ ခက္ခဲေအာင္ ကၽြန္ေတာ္တို႔က ျပဳလုပ္ႏိုင္ပါတယ္။ Gmail အေကာင့္မွ "
+"ေတာင္းဆိုမႈမ်ားကိုေတာ့ မျဖစ္မေန ေပးပို႔ရမွာပါ။"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:63
@@ -108,3 +135,6 @@ msgid ""
 "Configuring more than one bridge address will make your Tor connection more "
 "stable, in case some of the bridges become unreachable."
 msgstr ""
+"အကယ္၍ အခ်ိဳ႕ေသာ bridges မ်ားသည္ မေရာက္ရွိႏိုင္ျဖစ္ခဲ့လွ်င္ bridge လိပ္စာ "
+"တစ္ခုထက္ပိုမို ျပင္ဆင္ထည့္သြင္းထားျခင္းသည္ Tor သို႔ခ်ိတ္ဆက္မႈကို ပိုမို "
+"တည္ျငိမ္ေစမွာ ျဖစ္ပါတယ္။ "

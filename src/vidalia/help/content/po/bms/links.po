@@ -27,22 +27,22 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/links.html:16
 msgid "Helpful Links"
-msgstr ""
+msgstr "အသံုးဝင္ေသာ Links မ်ား"
 
 #. type: Content of: <html><body><h3>
 #: en/links.html:19
 msgid "Vidalia"
-msgstr ""
+msgstr "Vidalia"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:22 en/links.html:30 en/links.html:38 en/links.html:50 en/links.html:57 en/links.html:65 en/links.html:73
 msgid "&nbsp;&nbsp;&nbsp;"
-msgstr ""
+msgstr "&nbsp;&nbsp;&nbsp;"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:23 en/links.html:51
 msgid "Homepage"
-msgstr ""
+msgstr "မူလစာမ်က္ႏွာ"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:25
@@ -50,11 +50,13 @@ msgid ""
 "<a href=\"https://www.torproject.org/vidalia/\"> "
 "https://www.torproject.org/vidalia/</a>"
 msgstr ""
+"<a href=\"https://www.torproject.org/vidalia/\"> "
+"https://www.torproject.org/vidalia/</a>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:31 en/links.html:66
 msgid "Wiki"
-msgstr ""
+msgstr "Wiki"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:33
@@ -62,11 +64,13 @@ msgid ""
 "<a href=\"http://trac.vidalia-project.net/wiki\"> "
 "http://trac.vidalia-project.net/wiki</a>"
 msgstr ""
+"<a href=\"http://trac.vidalia-project.net/wiki\"> http://trac.vidalia-"
+"project.net/wiki</a>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:39 en/links.html:74
 msgid "Bugtracker"
-msgstr ""
+msgstr "Bugtracker"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:41
@@ -74,21 +78,23 @@ msgid ""
 "<a href=\"http://trac.vidalia-project.net/report\"> "
 "http://trac.vidalia-project.net/report</a>"
 msgstr ""
+"<a href=\"http://trac.vidalia-project.net/report\"> http://trac.vidalia-"
+"project.net/report</a>"
 
 #. type: Content of: <html><body><h3>
 #: en/links.html:47
 msgid "Tor"
-msgstr ""
+msgstr "Tor"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:53
 msgid "<a href=\"https://www.torproject.org/\">https://www.torproject.org/</a>"
-msgstr ""
+msgstr "<a href=\"https://www.torproject.org/\">https://www.torproject.org/</a>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:58
 msgid "FAQ"
-msgstr ""
+msgstr "ေမးေနက်ေမးခြန္းမ်ား"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:60
@@ -96,6 +102,8 @@ msgid ""
 "<a href=\"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ\"> "
 "https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ</a>"
 msgstr ""
+"<a href=\"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ\"> "
+"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ</a>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:68
@@ -103,6 +111,8 @@ msgid ""
 "<a href=\"https://wiki.torproject.org/noreply/TheOnionRouter\"> "
 "https://wiki.torproject.org/noreply/TheOnionRouter</a>"
 msgstr ""
+"<a href=\"https://wiki.torproject.org/noreply/TheOnionRouter\"> "
+"https://wiki.torproject.org/noreply/TheOnionRouter</a>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/links.html:76
@@ -110,3 +120,5 @@ msgid ""
 "<a href=\"https://bugs.torproject.org/flyspray/\"> "
 "https://bugs.torproject.org/flyspray</a>"
 msgstr ""
+"<a href=\"https://bugs.torproject.org/flyspray/\"> "
+"https://bugs.torproject.org/flyspray</a>"

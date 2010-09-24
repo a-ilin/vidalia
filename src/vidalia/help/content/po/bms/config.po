@@ -27,7 +27,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "Vidalia ႏွင့္ Tor ကိုျပင္ဆင္ျခင္း"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,21 +36,27 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"Vidalia သည္ Vidalia ႏွင့္ Tor ၏ အသြင္ျပင္ကို ျပဳျပင္ရန္ ခြင့္ျပဳပါသည္။ <a "
+"href=\"server.html\">Tor relay</a>ကို ျပဳျပင္ထိန္းသိမ္းရန္ ႏွင့္ set up "
+"ျပဳလုပ္ရန္လည္း ခြင့္ျပဳပါသည္။ ထို႔ေၾကာင့္ Tor ကြန္ယက္ တိုးတက္ေအာင္ "
+"သင့္ကူညီႏိုင္ပါသည္။"
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<a name=\"general\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "အေထြေထြ Settings မ်ား"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
 msgid "Settings on the <i>General</i> page are the most commonly modified settings."
 msgstr ""
+"<i>အေထြေထြ</i> စာမ်က္ႏွာေပၚမွ settings မ်ားသည္ အမ်ားအားျဖင့္ "
+"ျပဳျပင္မြမ္းမံႏိုင္ေသာ settings မ်ား ျဖစ္ၾကပါသည္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
@@ -61,6 +67,11 @@ msgid ""
 "clicking the <i>Browse</i> button and navigating to the particular Tor "
 "installation you want."
 msgstr ""
+"<b>Tor Executable</b> : tray menu မွ <i>Start</i> ကို သင္ေရြးခ်ယ္လိုက္တဲ့အခါ "
+"Vidalia ကို run မည့္ Tor executable ျဖစ္ပါသည္။ အကယ္၍ Tor multiple "
+"ဗားရွင္းမ်ားကို install လုပ္ထားတယ္ ဆိုရင္ <i>Browse</i> button ကို "
+"ႏွိပ္ျခင္းအားျဖင့္ မည္သည့္ Vidalia ဗားရွင္းဆိုတာ ေျပာျပႏိုင္ျပီး "
+"သင္လိုခ်င္ေသာ ပံုမွန္ Tor installation ကို သြားႏိုင္ပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:39
@@ -69,16 +80,19 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"<b>Startup Options</b>: Vidalia စတင္လိုက္တာနဲ႔ Tor ကို အလိုအေလ်ာက္ စတင္ေစမွာ "
+"ျဖစ္ပါတယ္။ သင္၏ system စတင္တာနဲ႔ run ဖို႔ Vidalia ကို ျပင္ဆင္မႈ ျပဳလုပ္ထား "
+"ႏိုင္ပါေသးတယ္။ (<i>Windows တြင္သာ</i>)"
 
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<a name=\"network\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "Network Settings"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
@@ -86,6 +100,8 @@ msgid ""
 "The <i>Network</i> settings page lets you change how Tor connects to the Tor "
 "network."
 msgstr ""
+"<i>Network</i> settings စာမ်က္ႏွာသည္ သင့္ကို Tor ကြန္ယက္သို႔ Tor "
+"ဘယ္လိုခ်ိတ္ဆက္ရမယ္ဆိုတာကို ျပဳျပင္ခြင့္ျပဳထားပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:53
@@ -98,6 +114,15 @@ msgid ""
 "you can also enter the <i>Username</i> and <i>Password</i> you use to "
 "connect to your proxy.  Otherwise, you can leave those fields blank."
 msgstr ""
+"<b>အင္တာနက္ရရန္ ကၽြန္ေတာ္သည္ proxy ကိုအသံုးျပဳေနရပါသည္။</b>: သင္၏ "
+"အင္တာနက္ဆက္သြယ္မႈသည္ HTTP proxy လိုအပ္တယ္ဆိုလွ်င္ Tor relay ဆက္သြယ္မႈက သင့္ "
+"proxy ကိုျဖတ္၍ ေတာင္းဆိုမႈလမ္းေၾကာင္းမ်ားကို ပို႔ေပးရန္ Tor ကို "
+"ျပင္ဆင္ႏိုင္ပါသည္။ သင့္အေနနဲ႔ အနည္းဆံုး hostname သို႔မဟုတ္ သင္၏ proxy "
+"မ်ားကို သတ္မွတ္ရပါမယ္။ ထို႔ေနာက္ ဆက္သြယ္မႈမ်ားအတြက္ မည္သည့္ port ေပၚမွ proxy "
+"က ၾကားနာေနသည္ဆို သည္ကိုလည္း သတ္မွတ္ရပါမယ္။  အကယ္၍ သင့္ proxy သည္ "
+"authentication လိုအပ္တယ္ဆိုလွ်င္ proxy ကိုခ်ိတ္ဆက္ဖို႔အတြက္ <i>Username</i> "
+"ႏွင့္ <i>Password</i> ထည့္ကာ အသံုးျပဳႏိုင္ပါတယ္။ အျခားတနည္းကေတာ့ "
+"ဤျဖည့္စရာမ်ားကို ကြက္လပ္ထားခဲ့လို႔ရပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:62
@@ -109,6 +134,13 @@ msgid ""
 "list of ports permitted by your firewall or proxy, separated by "
 "commas. (<i>Example: 80,443,8080</i>)"
 msgstr ""
+"<b>ကၽြန္ေတာ္၏ firewall သည္ သတ္မွတ္ထားေသာ ports မ်ားကိုသာ "
+"ဆက္သြယ္ခြင့္ျပဳသည္။</b>: အကယ္၍ ကန္႔သတ္ထားေသာ firewall သို႔မဟုတ္ "
+"ဆက္သြယ္မႈျပဳလုပ္ရန္ ports မ်ားကို ကန္႔သတ္ထားေသာ proxy ေနာက္တြင္ "
+"သင္ရွိေနလွ်င္ သင္၏ firewall သို႔မဟုတ္ proxy က ခြင့္ျပဳေသာ ports မ်ားေပၚရွိ "
+"relays မ်ားကို သိရွိရန္ Tor ကို တိုက္ရိုက္ခ်ိတ္ဆက္ကာ ျပင္ဆင္ႏိုင္သည္။ comma "
+"ျဖင့္ခြဲ၍ သင္၏ firewall သို႔မဟုတ္ proxy က ခြင့္ျပဳေသာ ports စာရင္းမ်ားကို "
+"ရိုးရိုးရွင္းရွင္း ရိုက္ထည့္ပါ။ (<i>ဥပမာ: 80,443,8080</i>)"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
@@ -120,26 +152,35 @@ msgid ""
 "or newer only). You can add bridge relays by specifying either their address "
 "and port number, or their address, port number, and fingerprint."
 msgstr ""
+"<b>ကၽြန္ေတာ္၏ ISP သည္ Tor ကြန္ယက္သို႔ ခ်ိတ္ဆက္ျခင္းကို "
+"ပိတ္ဆို႔ထားပါသည္။</b>: အကယ္၍ သင္၏ ISP (Internet Service Provider) သည္ Tor "
+"ကြန္ယက္သို႔ ခ်ိတ္ဆက္ျခင္းကို ပိတ္ဆိုထားသည္ ဆိုလွ်င္ <i>bridges</i>(Tor "
+"0.2.0.3-alpha သို႔မဟုတ္ ဗားရွင္းအသစ္ မ်ားတြင္သာ)ဟုေခၚေသာ relays မ်ားကို "
+"ျဖတ္၍ Tor ကြန္ယက္သို႔ ခ်ိတ္ဆက္ျခင္းႏွင့္ ဆက္သြယ္မႈ လမ္းေၾကာင္းမ်ားကို "
+"encrypt (ပံုစံဖ်က္ျခင္း) အားျဖင့္ Tor သည္ စီစစ္ျခင္းမ်ားကို "
+"ေရွာင္ရွားႏိုင္ပါသည္။ ၎တို႔၏ လိပ္စာ၊ port နံပါတ္မ်ားႏွင့္ fingerprint "
+"မ်ားကို  သတ္မွတ္ျခင္းအားျဖင့္ bridge relays မ်ားကို သင္ေပါင္းထည့္ႏိုင္ပါသည္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
 msgid "Below are examples of valid bridge address formats:"
 msgstr ""
+"ေအာက္တြင္ေဖာ္ျပထားသည္မွာ မွန္ကန္ေသာ bridge လိပ္စာ ပံုစံနမူနာမ်ားျဖစ္ပါတယ္။:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:80
 msgid "128.213.48.13:8080"
-msgstr ""
+msgstr "128.213.48.13:8080"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:83
 msgid "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
-msgstr ""
+msgstr "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:86
 msgid "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
-msgstr ""
+msgstr "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
@@ -153,16 +194,26 @@ msgid ""
 "relays</a> for more information on how to learn new bridge relay addresses "
 "and fingerprints."
 msgstr ""
+"bridge relay လိပ္စာမ်ားကို သင္မသိဘူးဆိုရင္ေတာင္ ဤcheckbox ကို check "
+"လုပ္ျခင္းအားျဖင့္ အကူညီရရွိပါလိမ့္မည္။ အျခား relays မ်ားအတြက္ "
+"သတင္းအခ်က္အလက္မ်ားကို Tor မွ ေတာင္းဆိုမႈမ်ားကို စီစစ္ရန္ ၾကိဳးစားေသာ "
+"ကိရိယာမ်ားကို directory ေတာင္းဆိုမႈမ်ားအား Tor က  encrypt လုပ္ျခင္းအားျဖင့္ "
+"ေက်ာ္လႊားႏိုင္ပါတယ္။ ပံုမွန္ Tor relays မ်ား၏ ခ်ိတ္ဆက္မႈမ်ားကို "
+"ပိတ္ဆို႔ခံလိုက္ရလွ်င္ bridge relay လိပ္စာ ဘယ္လိုနည္းနဲ႔ ဤေနရာတြင္ "
+"ထည့္သြင္းရမည္ ဆိုတာကို ေလ့လာရပါလိမ့္မယ္။ bridge relay လိပ္စာအသစ္မ်ားႏွင့္ "
+"fingerprints မ်ား အေၾကာင္း သတင္းအခ်က္လက္မ်ားကို <a "
+"href=\"bridges.html#finding\">bridge relaysမ်ားရွာေဖြျခင္း</a> ရွိ အကူအညီက႑ကို "
+"ၾကည့္ရႈပါ။"
 
 #. type: Content of: <html><body>
 #: en/config.html:100
 msgid "<a name=\"relay\"/>"
-msgstr ""
+msgstr "<a name=\"relay\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:101
 msgid "Relay Settings"
-msgstr ""
+msgstr "Relay Settings"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:103
@@ -170,16 +221,18 @@ msgid ""
 "<i> See <a href=\"server.html\">this help topic</a> for detailed information "
 "about setting up and managing a Tor relay.  </i>"
 msgstr ""
+"<i>Tor relay တစ္ခုကို ျပင္ဆင္ျခင္းႏွင့္ စီမံခန္႔ခြဲျခင္းမ်ား ဆိုင္ရာ "
+"သတင္းအခ်က္လက္မ်ားကို <a href=\"server.html\">အကူအညီ က႑</a></i>တြင္ ၾကည့္ရႈပါ။"
 
 #. type: Content of: <html><body>
 #: en/config.html:109
 msgid "<a name=\"appearance\"/>"
-msgstr ""
+msgstr "<a name=\"appearance\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:110
 msgid "Appearance Settings"
-msgstr ""
+msgstr "Appearance Settings"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:112
@@ -187,6 +240,8 @@ msgid ""
 "The settings on the <i>Appearance</i> page allow you to customize the look "
 "and feel of Vidalia."
 msgstr ""
+"<i>Appearance</i> စာမ်က္ႏွာရွိ setting သည္ Vidalia ၏ အသြင္ျပင္ကို "
+"သင့္စိတ္ၾကိဳက္ျပင္ဆင္ခြင့္ျပဳပါသည္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:116
@@ -198,6 +253,15 @@ msgid ""
 "the dropdown box. You will need to restart Vidalia after changing the "
 "displayed language for the changes to take effect."
 msgstr ""
+"<b>ဘာသာစကား</b>: Vidalia ၏ interface ကို ေစတနာ့ဝန္ထမ္းမ်ားက "
+"ဘာသာစကားမ်ိဳးစံုသို႔ ကူညီဘာသာျပန္ဆိုထားျပီး ျဖစ္ပါတယ္။ Vidalia ကိုစတင္ run "
+"လိုက္တာနဲ႔ လက္ရွိသင္၏ ကြန္ျပဴတာဟာ ဘယ္ဘာသာစကားကို အသံုးျပဳေနတယ္ဆိုတာ "
+"ခန္႔မွန္းဖို႔ ၾကိဳးစားပါလိမ့္မယ္။ အကယ္၍ Vidalia ၏ မွန္းဆခ်က္သည္ "
+"မမွန္ဘူးဆိုလွ်င္ သို႔မဟုတ္ တစ္ျခားကြဲျပားေသာ ဘာသာစကားကို "
+"ရည္ညႊန္းခ်င္တယ္ဆိုလွ်င္ dropdown box မွ တစ္ျခားဘာသာစကားတစ္ခုကို "
+"သင္ေရြးခ်ယ္ႏိုင္ပါတယ္။ ေဖာ္ျပရန္ ဘာသာစကားကိုေျပာင္းလဲ ျပီးတာနဲ႔ "
+"အဲ့ဒိအေျပာင္းလဲအတြက္ သက္ေရာက္မႈရွိေစရန္ Vidalia ကို restart ျပန္လုပ္ဖို႔ "
+"လုိပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:124
@@ -206,16 +270,19 @@ msgid ""
 "default interface style. If you dislike the default, you can choose "
 "whichever interface style you prefer from the dropdown box."
 msgstr ""
+"<b>အသြင္အျပင္</b>: အမ်ားအားျဖင့္ Vidalia ဟာ သင့္ platform ၏ မူရင္း interface "
+"အသြင္ျပင္ကိုပဲ အသံုးျပဳပါတယ္။ အကယ္၍ မူရင္းပံုစံသြင္ျပင္ကို မၾကိဳက္ဘူးဆိုရင္ "
+"dropdown box ထဲက ၾကိဳက္ႏွစ္သက္ရာ interface အသြင္ျပင္ကို ေရြးခ်ယ္ႏိုင္ပါတယ္။"
 
 #. type: Content of: <html><body>
 #: en/config.html:131
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:132
 msgid "Advanced Settings"
-msgstr ""
+msgstr "အဆင့္ျမင့္ Settings"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:134
@@ -223,6 +290,8 @@ msgid ""
 "The settings on the <i>Advanced</i> page should generally only be modified "
 "by more experienced users."
 msgstr ""
+"<i>အဆင့္ျမင့္</i> စာမ်က္ႏွာ မွာရွိတဲ့ settings ေတြဟာ ပံုမွန္အားျဖင့္ "
+"အေတြ႕အၾကံဳရွိအသံုးျပဳသူေတြသာ ျပင္ဆင္မြမ္းမံ ႏိုင္ပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:138
@@ -232,6 +301,11 @@ msgid ""
 "have a conflict with another service on your machine, or if you are using "
 "Vidalia to control and monitor a Tor process running on another machine."
 msgstr ""
+"<b>Control Address &amp; Port</b>: <i>Control Port</i> သည္ Vidalia က Tor "
+"ကိုေျပာရန္ အသံုးျပဳသည့္ port ျဖစ္သည္။ သင့္စက္ထဲမွာ အျခားေသာ ဝန္ေဆာင္မႈေတြနဲ႔ "
+"ပဋိပကၡ မျဖစ္ဘူးဆိုရင္  ဒါမွမဟုတ္ တစ္ျခား စက္ထဲမွာ Tor process "
+"အလုပ္လုပ္ေနတာကို ေစာင့္ၾကည့္ဖို႔နဲ႔ ထိန္းခ်ဳပ္ဖို႔ Vidalia "
+"ကိုအသံုးျပဳေနတာဆိုရင္ ၎ကို ေျပာင္းလဲဖို႔ မလိုအပ္ပါဘူး။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:144
@@ -240,6 +314,10 @@ msgid ""
 "limit the applications on your machine that can connect to and reconfigure "
 "your Tor installation. The available authentication methods are:"
 msgstr ""
+"<b>Control Port Authentication</b>: Control port authentication သည္ "
+"သင့္စက္ထဲမွာ ရွိတဲ့ applications ေတြကို Tor ၏ installation ကို "
+"ျပန္လည္ျပင္ဆင္ရန္ႏွင့္ ခ်ိတ္ဆက္တာေတြကို ကန္႔သတ္ရန္ အတြက္ "
+"အသံုးျပဳျခင္းျဖစ္သည္။ ရရွိႏိုင္ေသာ authentication နည္းလမ္းမ်ားကေတာ့:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:150
@@ -248,6 +326,9 @@ msgid ""
 "<b>strongly</b> discouraged. Any application or user on your computer can "
 "reconfigure your Tor installation."
 msgstr ""
+"<b>None</b> --authentication မလိုပါ။ ဒီ option ကို သံုးတာဟာ <b>လံုးဝ</b> "
+"မေရရာပါဘူး။ သင့္ကြန္ျပဴတာေပၚကေန application သို႔မဟုတ္ အသံုးျပဳသူ "
+"တစ္ေယာက္ေယာက္က သင့္ရဲ႕ Tor installation ကို ျပန္လည္ျပင္ဆင္လိုက္ႏိုင္ပါတယ္။"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:155
@@ -258,6 +339,12 @@ msgid ""
 "Vidalia randomly generate a new password each time it starts Tor by checking "
 "the <i>Randomly Generate</i> checkbox."
 msgstr ""
+"<b>Password</b> <i>(Default)</i> -- အကယ္၍ ဒီနည္းလမ္းကို ေရြးခ်ယ္ခဲ့လွ်င္ "
+"အသံုးျပဳသူပဲျဖစ္ျဖစ္ application ပဲျဖစ္ျဖစ္ Tor ရဲ႕ control port ကို "
+"ခ်ိတ္ဆက္တိုင္း ခ်ိတ္ဆက္တိုင္းမွာ လိုအပ္မယ့္ password ကို "
+"သင္သတ္မွတ္ထားႏိုင္ပါတယ္။ အကယ္၍ Vidalia က သင့္အတြက္ Tor ကို စတင္ခဲ့ရင္ "
+"<i>Randomly Generate</i> checkbox ကို ေရြးခ်ယ္ထားျခင္းအားျဖင့္ Tor "
+"စတင္တိုင္းမွာ Vidlia ဟာ password အသစ္ေတြကို က်ပန္း ထုတ္ေပးေနမွာ ျဖစ္ပါတယ္။"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:162
@@ -267,6 +354,12 @@ msgid ""
 "starts. Any user or application that tries to connect to Tor's control port "
 "must be able to provide the contents of this cookie."
 msgstr ""
+"<b>Cookie</b> -- အကယ္၍ cookie authentication ကိုေရြးခ်ယ္ျပီးလွ်င္ စတင္တာနဲ႔ "
+"Tor ဟာ က်ပန္း bytes ေတြပါဝင္တဲ့ ဖိုင္တစ္ဖိုင္ (သို႔မဟုတ္ <i>cookie</i>) ကို "
+"သူရဲ႕အခ်က္အလက္ေတြ သိမ္းထားရာ ေနရာမွာ write လုပ္မွာ ျဖစ္ပါတယ္။ "
+"ဘယ္အသံုးျပဳသူပဲျဖစ္ျဖစ္ သို႔မဟုတ္ ဘယ္application ပဲျဖစ္ျဖစ္ Tor ရဲ႕ control "
+"port ကို ခ်ိတ္ဆက္ဖို႔ၾကိဳးစားရင္ ၎က cookie ရဲ႕ contents ေတြကို "
+"ေထာက္ပံ့ကူညီေပးမွာပါ။ "
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:170
@@ -276,6 +369,11 @@ msgid ""
 "file. If you leave this field blank, Tor will uses its own default torrc "
 "location."
 msgstr ""
+"<b>Tor Configuration File</b> <i>(optional)</i>: သတ္မွတ္ထားေသာ Tor ရဲ႕ "
+"<i>torrc</i> configuration file ကို အသံုးျပဳထားေသာ Tor ကို Vidalia "
+"စတင္ရန္အတြက္  ဒီ ဝption ကို အသံုးျပဳႏိုင္ပါတယ္။ အကယ္၍ သင္ဟာ ဒီေနရာမွာ "
+"ကြက္လပ္ ထားခဲ့မယ္ ဆိုရင္ Tor က ၎၏ မူရင္း torrc ေနရာကို အသံုးျပဳမွာ "
+"ျဖစ္ပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:175
@@ -285,6 +383,11 @@ msgid ""
 "information, Tor relay keys, and configuration files. If you leave this "
 "field blank, Tor will use its own default data directory location."
 msgstr ""
+"<b>Tor Data Directory</b> <i>(optional)</i>: Tor ရဲ႕ အခ်က္အလက္ သိမ္းဆည္းမည့္ "
+"directory ကို သင့္သတ္မွတ္ႏိုင္သည္။ Tor relay သတင္းအခ်က္အလက္မ်ား၊Tor relay "
+"keys ႏွင့္ configuration ဖိုင္မ်ား ကို သိမ္းထားျခင္းမ်ိဳးကဲ့သို႔ ျဖစ္သည္။ "
+"အကယ္၍ ဒီေနရာကို ကြက္လပ္ထားခဲ့လွ်င္ Tor က သူရဲ႕ ကိုယ္ပိုင္ "
+"မူရင္းအခ်က္အလက္သိမ္းတဲ့ေနရာ ကို အသံုးျပဳမွာျဖစ္ပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:181
@@ -294,16 +397,21 @@ msgid ""
 "starts.  If you enter a value for <b>Run as Group</b>, Tor will "
 "<i>setgid</i> to this group when it starts."
 msgstr ""
+"<b>ခြင့္ျပဳခ်က္မ်ား</b> <i>(optional, Windows တြင္မရပါ)</i>: <b>Run as "
+"User</b> အေနနဲ႔ တန္ဖိုးထည့္လိုက္လွ်င္ စတင္လိုက္သည္ႏွင့္ Tor ဟာ "
+"<i>setuid</i>(အသံုးျပဳသူ၏ ID ကိုမွန္မမွန္ စစ္ေဆးျခင္းကို) လုပ္ပါလိမ့္မယ္။ "
+"အကယ္၍  <b>Run as Group</b> လို႔ တန္ဖိုးထည့္လိုက္လွ်င္ စတင္လုိက္တာနဲ႔ Tor ဟာ "
+"<i>setgid</i> (အဲ့ဒိအုပ္စု၏ ID မွန္မမွန္စစ္ေဆးျခင္းကို) ျပဳလုပ္ပါလိမ့္မယ္။"
 
 #. type: Content of: <html><body>
 #: en/config.html:189
 msgid "<a name=\"services\"/>"
-msgstr ""
+msgstr "<a name=\"services\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:190
 msgid "Hidden Service Settings"
-msgstr ""
+msgstr "Hidden Service Settings"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:192
@@ -311,3 +419,6 @@ msgid ""
 "Hidden services allow you to provide any kind of TCP-based service, e.g.  an "
 "HTTP service, to others without revealing your IP address."
 msgstr ""
+"သိုဝွက္ထားေသာ ဝန္ေဆာင္မႈမ်ားက မည္သည့္ TCP-based ဝန္ေဆာင္မႈမ်ားျဖင့္မဆို "
+"ေထာက္ကူေပးရန္ ခြင့္ျပဳပါသည္။ ဥပမာ HTTP ဝန္ေဆာင္မႈက သင္၏ IP လိပ္စာကို "
+"မည္သူကိုမွ ထုတ္ေဖာ္ မျပျခင္းမ်ိဳး ျဖစ္သည္။"

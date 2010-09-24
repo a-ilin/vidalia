@@ -27,7 +27,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/log.html:16
 msgid "Message Log"
-msgstr ""
+msgstr "Message Log"
 
 #. type: Content of: <html><body>
 #: en/log.html:19
@@ -38,11 +38,17 @@ msgid ""
 "verbose). See the help section on <a href=\"#severities\">message "
 "severities</a> for more information.  <a name=\"severities\"/>"
 msgstr ""
+"message log သည္ Tor process run ေနေသာ သတင္းအခ်က္အလက္ status ကို "
+"ၾကည့္ရႈခြင့္ေပးသည္။ <a name=\"basic\"/>message "
+"တစ္ခုခ်င္းစီတြင္<b>အမွား</b>(အေတာ္ေလး) မွ <b>Debug</b>(ပိုမိုမ်ားျပားသည္) "
+"အထိ စီရီထားျပီး ၎ႏွင့္ ဆက္စပ္လွ်က္ရွိေသာ <i>severity</i> ရွိၾကသည္။ "
+"ပိုမိုသိလိုေသာ သတင္းအခ်က္အလက္မ်ားအတြက္ အကူအညီက႑ရွိ <a "
+"href=\"#severities\">message severities</a> ကို ၾကည့္ပါ။<a name=\"severities\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:28
 msgid "Message Severities"
-msgstr ""
+msgstr "Message Severities"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:30
@@ -52,11 +58,16 @@ msgid ""
 "Tor. Lower severity messages appear frequently during normal Tor operations "
 "and usually do not need to be logged."
 msgstr ""
+"message ၏ severity က သင့္ကို message သည္မည္မွ် အေရးၾကီးေၾကာင္း "
+"ေျပာျပလိမ့္မည္။ အဆင့္ျမင့္ေသာ severity message ေတြဟာ Tor ၌ ျဖစ္ေပၚလာေသာ "
+"မွားယြင္းမႈ တစ္စံုတစ္ရာကို ေဖာ္ျပပါသည္။ အဆင့္နိမ့္ေသာ severity messages "
+"ေတြဟာ Tor operations မ်ားအတြင္း မၾကာခဏ ေပၚလာျပီး အျမဲတမ္း log လုပ္ရန္ "
+"မလိုအပ္ေပ။"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:37
 msgid "The possible message severities, from most severe to least severe, are:"
-msgstr ""
+msgstr "အေရးအၾကီးဆံုးမွ စ၍ အစဥ္အတိုင္းစီထားေသာ message မ်ား:"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:41
@@ -65,6 +76,9 @@ msgid ""
 "Tor cannot proceed. These messages will be highlighted in <i>red</i> in the "
 "message log."
 msgstr ""
+"<b>Error</b>: ေတာ္ေတာ္ေလး အမွားယြင္းျဖစ္ေန၍ message ေပၚလာတဲ့အခါမွာေတာ့ Tor က "
+"ဆက္လက္ အလုပ္လုပ္ႏိုင္ေတာ့မွာ မဟုတ္ပါဘူး။ အဲ့ဒိလို message မ်ိဳးကို message "
+"log ထဲတြင္ <i>အနီ</i>ျဖင့္ မ်ဥ္းတား ျပသထားမွာ ျဖစ္ပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:46
@@ -73,6 +87,9 @@ msgid ""
 "Tor, but are not fatal and Tor will continue running. These messages will be "
 "highlighted in <i>yellow</i>."
 msgstr ""
+"<b>သတိေပးခ်က္</b>: Tor တြင္ တစ္ခုခု အမွားယြင္းေၾကာင့္ ေပၚလာေသာ messages "
+"ေတြဟာ ပ်က္စီးေစမွာ မဟုတ္ပဲ Tor က ဆက္လက္ run ေနပါလိမ့္မယ္။ အဲ့ဒိ messages "
+"ေတြကို <i>အဝါေရာင္</i>ျဖင့္ မ်ဥ္းတားျပထားေပးမွာ ျဖစ္ပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:51
@@ -80,6 +97,9 @@ msgid ""
 "<b>Notice</b>: Messages that appear infrequently during normal Tor operation "
 "and are not considered errors, but you still may care about."
 msgstr ""
+"<b>အသိေပးခ်က္</b>: ပံုမွန္ Tor operation အတြင္း မၾကာခဏမဟုတ္ပဲ ေပၚလာေသာ "
+"messages ေတြဟာ errors ေတြကို အဆံုးအျဖတ္မေပးႏိုင္ေပးမယ့္ သင္အေနနဲ႔ "
+"ဂရုစိုက္ဖို႔ေတာ့ လိုပါတယ္။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:55
@@ -87,6 +107,8 @@ msgid ""
 "<b>Info</b>: Messages that appear frequently during normal Tor operation and "
 "are not usually of interest to most users."
 msgstr ""
+"<b>Info</b>: ပံုမွန္ Tor operation အတြင္း မၾကာခဏ ေပၚလာေသာ messages ေတြဟာ "
+"သာမန္အသံုးျပဳသူေတြကို စိတ္မဝင္စား ေစပါဘူး။"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:59
@@ -95,6 +117,9 @@ msgid ""
 "developers. You should generally not log debug messages unless you know what "
 "you are doing."
 msgstr ""
+"<b>Debug</b>:အလြန္ရွည္လ်ားေသာ message ေတြဟာ developers မ်ားကို အဓိက "
+"စိတ္ဝင္စားေစပါတယ္။ သင္ဘာလုပ္ရမယ္ဆိုတာ မသိရင္ေတာင္ ပံုမွန္အားျဖင့္ debug ကို "
+"log မလုပ္သင့္ပါဘူး။"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:66
@@ -102,21 +127,23 @@ msgid ""
 "Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i> "
 "messages."
 msgstr ""
+"အသံုးျပဳသူအမ်ားစုသည္ <i>Error</i>, <i>Warning</i>, ႏွင့္ <i>Notice</i> "
+"messages မ်ားကိုသာ log လုပ္သင့္ပါသည္။"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:71
 msgid "To select which message severities you would like to see, do the following:"
-msgstr ""
+msgstr "ျမင္ခ်င္ေသာ message ကို ေရြးခ်ယ္ရန္ ေအာက္ပါအတိုင္းျပဳလုပ္ပါ။"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:73 en/log.html:92
 msgid "Open the message log from the Vidalia tray menu."
-msgstr ""
+msgstr "Vidalia ၏ အေသးခ်ံဳ႕ထားေသာ menu မွ message log ကိုဖြင့္ပါ။"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
 msgid "Click on <i>Settings</i> at the top of the message log window."
-msgstr ""
+msgstr "message log window အေပၚဘက္ရွိ <i>Settings</i> ကိုႏွိပ္ပါ။"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:76
@@ -124,21 +151,24 @@ msgid ""
 "Check message severities you would like to see from the Message Filter group "
 "on the left and uncheck message severities you would like to hide."
 msgstr ""
+"ဘယ္ဘက္ျခမ္းရွိ Message Filter group မွ ျမင္ခ်င္ေသာ message ကို check  "
+"လုပ္ျပီးမျမင္ခ်င္ေသာ message ကို uncheck လုပ္ပါ။"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:79
 msgid "Click <i>Save Settings</i> to apply your new message filter."
 msgstr ""
+"message အသစ္ filter ကို apply ျပဳလုပ္ရန္ <i>Save Settings</i> ကို ႏွိပ္ပါ။"
 
 #. type: Content of: <html><body>
 #: en/log.html:84
 msgid "<a name=\"logfile\"/>"
-msgstr ""
+msgstr "<a name=\"logfile\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:85
 msgid "Logging to a File"
-msgstr ""
+msgstr "Logging to a File"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:87
@@ -146,11 +176,16 @@ msgid ""
 "Vidalia can also write log messages to a file, as well as logging them in "
 "the message log window. To enable logging to a file, follow these steps:"
 msgstr ""
+"Vidalia သည္လည္း message log window ထဲသို႔ log in ဝင္ျပီး log messages "
+"မ်ားကို ဖိုင္အျဖစ္ write လုပ္ႏိုင္ပါတယ္။ ဖိုင္ကို logging ျပဳလုပ္ျခင္းအား "
+"enable လုပ္ရန္ ေအာက္ပါအဆင့္မ်ားအတိုင္း လုပ္ေဆာင္ပါ:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:94
 msgid "Check the box labeled <i>Automatically save new log messages to a file</i>."
 msgstr ""
+"<i>log messages အသစ္မ်ားကို ဖိုင္အျဖစ္ အလိုအေလ်ာက္သိမ္းပါ။</i>ဆိုသည့္ "
+"နာမည္တပ္ထားေသာ box ကို check လုပ္ပါ။ "
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:96
@@ -159,8 +194,11 @@ msgid ""
 "either type the path and filename into the text box, or click <i>Browse</i> "
 "to navigate to a location for your log file."
 msgstr ""
+"အကယ္၍ message ကို write လုပ္မယ့္ ဖိုင္ကို ေျပာင္းလဲခ်င္တယ္ဆိုလွ်င္ text box "
+"ထဲမွာ ဖိုင္နာမည္ႏွင့္ လမ္းေၾကာင္းေတြကို ရိုက္ထည့္ရပါမယ္။ သို႔မဟုတ္ သင္၏ log "
+"ဖိုင္ တည္ေနရာကို ညႊန္းဖို႔ <i>Browse</i> ကိုႏွိပ္ပါ။"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:100
 msgid "Click <i>Save Settings</i> to save your log destination."
-msgstr ""
+msgstr "သင္၏ log မ်ားကို သိမ္းရန္ <i>Save Settings</i>ကို ႏွိပ္ပါ။"

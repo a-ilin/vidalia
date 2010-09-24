@@ -27,7 +27,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/running.html:16
 msgid "Running Tor"
-msgstr ""
+msgstr "Running Tor"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:20
@@ -36,31 +36,36 @@ msgid ""
 "Tor, as well as monitoring Tor's status and letting you know if it exits "
 "unexpectedly."
 msgstr ""
+"Vidalia သည္ မေမွ်ာ္လင့္ပဲ ပရိုဂရမ္ ပိတ္သြားျခင္းကို သင္အား ေပးသိျပီး Tor ၏ "
+"status ကို ေကာင္းစြာ ေစာင့္ၾကည့္ေလ့လာရန္ Tor ကို start ႏွင့္ stop သင့္အား "
+"ျပဳလုပ္ေစျခင္းအားျဖင့္ Tor process ကို သင္ ထိန္းခ်ဳပ္ႏိုင္ရန္ ကူညီေပးပါသည္။ "
 
 #. type: Content of: <html><body>
 #: en/running.html:25
 msgid "<a name=\"starting\"/>"
-msgstr ""
+msgstr "<a name=\"starting\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:26
 msgid "Starting and Stopping Tor"
-msgstr ""
+msgstr "Starting and Stopping Tor"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:28
 msgid "To <i>start</i> Tor,"
-msgstr ""
+msgstr "Tor ကို <i>start</i>လုပ္ရန္"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:30
 msgid "Select <i>Start</i> from Vidalia's tray menu or press <i>Ctrl+S</i>"
 msgstr ""
+"Vidalia ၏ tray meanu မွ <i>Start</i>ကို ေရြးခ်ယ္ပါ သို႔မဟုတ္ "
+"<i>Ctrl+S</i>ကို ႏွိပ္ပါ။"
 
 #. type: Content of: <html><body><p><ol>
 #: en/running.html:30 en/running.html:45
 msgid "."
-msgstr ""
+msgstr "."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:32
@@ -68,6 +73,8 @@ msgid ""
 "Vidalia's tray icon will change from an onion with a red X to a green onion "
 "when Tor has started."
 msgstr ""
+"Tor စတင္လိုက္တဲ့အခ်ိန္မွာ Vidalia ၏ tray icon သည္ အနီေရာင္ X ႏွင့္ onion မွ "
+"အစိမ္းေရာင္ onion သို႔ ေျပာင္းလဲသြားမွာ ျဖစ္ပါတယ္။"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:36
@@ -77,16 +84,22 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"အကယ္၍ Vidalia သည္ Tor ကို မစတင္ႏိုင္ဘူး ဆိုလွ်င္ ဘာမွားေနတယ္ဆိုတဲ့ error "
+"message ကို Vidalia က ျပသေပးမွာ ျဖစ္ပါတယ္။ ဘာမွားေနတယ္ဆိုတဲ့ "
+"အခ်က္အလက္မ်ားကို Tor က ေဖာ္ျပခဲ့လွ်င္ <a href=\"log.html\">message "
+"log</a>မွာလည္း ၾကည့္ရႈႏိုင္ပါတယ္။"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:43
 msgid "To <i>stop</i> Tor,"
-msgstr ""
+msgstr "Tor ကို <i>stop</i>ျပဳလုပ္ရန္"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:45
 msgid "Select <i>Stop</i> from Vidalia's tray menu or press <i>Ctrl+T</i>"
 msgstr ""
+"Vidalia ၏ tray menu မွ <i>Stop</i>ကို ေရြးခ်ယ္ပါ သို႔မဟုတ္ <i>Ctrl+T</i> "
+"ႏွိပ္ပါ။"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:47
@@ -94,6 +107,8 @@ msgid ""
 "Vidalia's tray icon will change from a green onion to a gray onion with a "
 "red X when Tor has stopped."
 msgstr ""
+"Tor ကို ရပ္တန္႔လိုက္တဲ့အခါ Vidalia ၏ tray icon သည္ အစိမ္းေရာင္ onion မွ "
+"အနီေရာင္ X ႏွင့္အတူ မီးခိုးေရာင္ onion အျဖစ္သို႔ ေျပာင္းလဲသြား ပါလိမ့္မယ္။"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:51
@@ -103,16 +118,20 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"အကယ္၍ Vidalia သည္ Tor ကို မရပ္တန္႔ႏိုင္ခဲ့လွ်င္ Vidalia သည္ "
+"ဘာမွားေနတယ္ဆိုတဲ့ error message ကို ျပသေပးမွာ ျဖစ္ပါတယ္။ အကယ္၍ Tor က "
+"ဘာမွားေနတယ္ဆိုတဲ့ အခ်က္အလက္မ်ားကို ေဖာ္ျပခဲ့လွ်င္ <a href=\"log.html\">message "
+"log</a> မွာလည္း ၾကည့္ရႈႏိုင္ပါေသးတယ္။"
 
 #. type: Content of: <html><body>
 #: en/running.html:57
 msgid "<a name=\"monitoring\"/>"
-msgstr ""
+msgstr "<a name=\"monitoring\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:58
 msgid "Monitoring Tor's Status"
-msgstr ""
+msgstr "Tor ၏ Status ကို ေစာင့္ၾကည့္ေလ့လာျခင္း"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:60
@@ -121,11 +140,17 @@ msgid ""
 "system tray or dock area. The following table shows the different states "
 "indicated by an icon in your system's notification area:"
 msgstr ""
+"dock area သို႔မဟုတ္ သင္၏ system tray ထဲမွာ icon ကို ေဖာ္ျပျခင္းအားျဖင့္ "
+"Vidalia က Tor ၏ status ေတြ အေၾကာင္း သင့္ကိုေျပာျပမွာပါ။ ေအာက္ေဖာ္ျပပါ "
+"ဇယားကြက္သည္ သင့္ system ၏ notification area ရွိ icon က မတူညီတဲ့ "
+"အေျခအေနေတြကို ရည္ညႊန္းထားတဲ့ ဇယားကြက္ျဖစ္ပါတယ္:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:69
 msgid "Tor is stopped. Select <i>Start</i> from the Vidalia menu to start Tor."
 msgstr ""
+"Tor ရပ္တန္႔သြားပါျပီ။ Tor ကို စတင္ရန္ Vidalia menu မွ <i>Start</i>ကို "
+"ေရြးပါ။"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:76
@@ -133,6 +158,8 @@ msgid ""
 "Tor is starting up. You can check the <a href=\"log.html\">message log</a> "
 "for status information about Tor while it is starting."
 msgstr ""
+"Tor သည္ စတင္ေနပါျပီ။ စတင္ေနတဲ့အခ်ိန္မွာပဲ Tor အေၾကာင္း အခ်က္အလက္ status "
+"အတြက္ <a href=\"log.html\">message log</a>ကို စစ္ပါ။"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:84
@@ -142,11 +169,15 @@ msgid ""
 "href=\"log.html\">message log</a> while it is running, if you want to see "
 "what Tor is doing."
 msgstr ""
+"Tor သည္ run ေနပါသည္။ အကယ္၍ Tor ကို ရပ္တန္႔ခ်င္လွ်င္ Vidalia menu မွ "
+"<i>Stop</i> ကိုေရြးပါ။ အကယ္၍ Tor ဘာလုပ္ေနတယ္ဆိုတာ ျမင္ခ်င္ရင္ Tor က "
+"အခ်က္အလက္ဆိုင္ရာ messages မ်ားကို <a href=\"log.html\">message log</a> မွာ "
+"ေဖာ္ျပေပးမွာ ျဖစ္ပါတယ္။"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:92
 msgid "Tor is in the process of shutting down."
-msgstr ""
+msgstr "Tor ဟာ shut down ျပဳလုပ္ေနဆဲ အေျခအေနမွာပါ။"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:98
@@ -156,3 +187,7 @@ msgid ""
 "wrong. You can also check the <a href=\"log.html\">message log</a> for "
 "details about any problems Tor encountered before it exited."
 msgstr ""
+"အကယ္၍ မေမွ်ာ္လင့္ပဲ Tor က ထြက္သြားခဲ့လွ်င္ Vidalia ဟာ red X ႏွင့္ အမဲေရာင္ "
+"onion ကိုေျပာင္းလဲသြားမွာ ျဖစ္ျပီး ဘာမွားသြားတယ္ဆိုတဲ့ error message ကို "
+"ျပသမွာ ျဖစ္ပါတယ္။ မထြက္ခင္မွာ Tor ဟာ ျပႆနာတစ္ခုခုႏွင့္ ၾကံဳေတြ႕တဲ့ အေသးစိတ္ "
+"အေၾကာင္းကို <a href=\"log.html\">message log</a> မွာ စစ္ေဆးႏိုင္ပါတယ္။"

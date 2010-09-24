@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-06 09:48+0200\n"
+"PO-Revision-Date: 2010-09-24 08:24+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -61,7 +61,7 @@ msgid ""
 "and usually do not need to be logged."
 msgstr ""
 "Уровень важности сообщений предоставляет возможность понять на сколько важно "
-"данное сообщение.Самое важный уровень сообщения обычно говорит о том что "
+"данное сообщение.Самый важный уровень сообщения обычно говорит о том что "
 "что то не так происходит с Tor.Самая низкая важность сообщений часто "
 "появляются в ходе нормального функционирования Tor и, как правило, не "
 "нуждается в записи."
@@ -100,8 +100,8 @@ msgid ""
 "and are not considered errors, but you still may care about."
 msgstr ""
 "<b>Уведомления</b>: Сообщения которые появляются редко во время обычной "
-"работы Tor и не считаются ошибками,но в любом случае следует выяснить "
-"причину."
+"работы Tor и не считаются ошибками,но в любом случае вы можете "
+"поинтересоваться причиной появления сообщения."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:55
@@ -136,13 +136,13 @@ msgstr ""
 #: en/log.html:71
 msgid "To select which message severities you would like to see, do the following:"
 msgstr ""
-"Для того чтобы выбрать уровень важности сообщений которые вы хотели бы "
+"Для того чтобы выбрать уровни важности сообщений которые вы хотели бы "
 "видеть, выполните следующее:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:73 en/log.html:92
 msgid "Open the message log from the Vidalia tray menu."
-msgstr "Откройте журнал сообщений из меню в трее Vidalia ."
+msgstr "Откройте журнал сообщений из меню Vidalia в трее."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
@@ -155,7 +155,7 @@ msgid ""
 "Check message severities you would like to see from the Message Filter group "
 "on the left and uncheck message severities you would like to hide."
 msgstr ""
-"Выберите уровень важности сообщений которые вам требуются из групп Фильтра "
+"Выберите уровни важности сообщений которые вам требуются из групп Фильтра "
 "Сообщений и снимите флажок на сообщениях которые вы бы хотели скрыть."
 
 #. type: Content of: <html><body><p><ol><li>
@@ -198,7 +198,7 @@ msgid ""
 "either type the path and filename into the text box, or click <i>Browse</i> "
 "to navigate to a location for your log file."
 msgstr ""
-"Если вы хотите изменить файл, в который сообщения будут записаны,  введите "
+"Если вы хотите изменить файл, в который сообщения будут записаны, введите "
 "путь и имя файла в текстовое поле или нажмите кнопку <i>Обзор</i> , чтобы "
 "перейти к местоположению лог-файл."
 

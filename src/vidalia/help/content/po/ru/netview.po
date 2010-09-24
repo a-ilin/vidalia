@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-13 11:26+0200\n"
+"PO-Revision-Date: 2010-09-24 08:48+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -29,7 +29,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
 msgid "Network Viewer"
-msgstr "Просмотрщик сети"
+msgstr "Обзор сети"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:20
@@ -37,8 +37,8 @@ msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
 msgstr ""
-"Просмотрщик сети позволяет обнаружить ретрансляторы в сети Tor и куда "
-"расходуется ваш трафик."
+"Обзор сети позволяет просмотреть ретрансляторы в сети Tor и куда расходуется "
+"ваш трафик."
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
@@ -148,7 +148,7 @@ msgid ""
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
 "The following table summarizes the possible relay status icons:"
 msgstr ""
-"В левой части просмотрщика сети ,вы  увидите список ретрансляторов в сети "
+"В левой части просмотрщика сети ,вы увидите список ретрансляторов в сети "
 "Tor.Следующая за каждым ретранслятором иконка указывает на статус "
 "ретранслятора.ниже таблица кратко описывает возможные статусы ретрансляторов "
 "на иконках."
@@ -257,7 +257,7 @@ msgstr "<b>IP адрес</b>"
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:143
 msgid "IP address at which this Tor relay can be reached."
-msgstr "IP адрес который этому Tor ретранслятор доступен"
+msgstr "IP адрес который этому Tor ретранслятору доступен"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:146

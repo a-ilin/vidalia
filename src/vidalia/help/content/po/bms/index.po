@@ -27,7 +27,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/index.html:16
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Vidalia အကူအညီ"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:20
@@ -35,6 +35,8 @@ msgid ""
 "Select a help topic from the tree on the left or click on the Search button "
 "above the list of topics to search through all available help topics."
 msgstr ""
+"ရရွိႏိုင္ေသာ က႑မ်ားကို Serch button ျဖင့္ အထက္ပါ က႑မ်ား စာရင္းမွလည္းေကာင္း၊ "
+"သို႔မဟုတ္ ဘယ္ဘက္ျခမ္းရွိ tree မွ အကူအညီ က႑ကိုလည္းေကာင္း ေရြးခ်ယ္ပါ။"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:25
@@ -42,11 +44,15 @@ msgid ""
 "You can use the <i>Find</i> button on the toolbar above to search within a "
 "particular help topic."
 msgstr ""
+"toolbar ၏ အထက္မွာရွိတဲ့ <i>ရွာပါ</i> button ကို အကူအညီက႑ တစ္ခုခ်င္းစီအလိုက္ "
+"ရွာရန္ အသံုးျပဳႏိုင္ပါတယ္။"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:30
 msgid "The <i>Home</i> button above will bring you back to this home page."
 msgstr ""
+"အထက္ပါ <i>မူလစာမ်က္ႏွာသို႔</i> button သည္ သင့္ကို မူလစာမ်က္ႏွာသို႔ ျပန္လည္ "
+"ေခၚေဆာင္သြားမွာ ျဖစ္ပါတယ္။"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:34
@@ -54,3 +60,5 @@ msgid ""
 "See the <a href=\"links.html\">Helpful Links</a> topic for some places you "
 "can visit to find additional help and information about Vidalia and Tor."
 msgstr ""
+"Vidalia ႏွင့္ Tor တို႔၏ အပိုေဆာင္း အကူညီႏွင့္ သတင္းအခ်က္အလက္မ်ားကို "
+"ရွာေဖြရန္ <a href=\"links.html\">အသုံးဝင္ေသာ Links မ်ား</a>က႑ ကိုၾကည့္ပါ။"

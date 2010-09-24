@@ -27,7 +27,7 @@ msgstr ""
 #. type: Content of: <html><body><h1>
 #: en/services.html:16
 msgid "Hidden Services"
-msgstr ""
+msgstr "Hidden Services"
 
 #. type: Content of: <html><body>
 #: en/services.html:19
@@ -38,11 +38,15 @@ msgid ""
 "goes wrong. If you find bugs or have comments on this new feature, please "
 "let us know! We need your feedback.  <a name=\"about\"/>"
 msgstr ""
+"သတိျပဳရန္၊ Vidalia ရွိ Hidden service အတြက္ ေထာက္ပံ့မႈသည္ အသစ္ျဖစ္ပါသည္။ bug "
+"မ်ားလည္းရွိေနႏိုင္ၿပီး သင္၏ hidden service configuration ကိုလည္း "
+"အေႏွာင့္အယွက္ေပးႏိုင္သည္။ ထို႔ေၾကာင့္ ထိုတခုထဲကို ပံုေအာအားမကိုးပါႏွင့္။ bug "
+"သို႔မဟုတ္ feature အသစ္အတြက္ မွတ္ခ်က္ရွိပါက အသိေပးပါ။ <a name=\"about\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:26
 msgid "What is a hidden service?"
-msgstr ""
+msgstr "hidden service ဆိုတာဘာလဲ"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:28
@@ -52,6 +56,10 @@ msgid ""
 "provide a hidden service is built on top of the same circuits that Tor uses "
 "for anonymous browsing and roughly has similar anonymity properties."
 msgstr ""
+"hidden service က သင့္ကို HTTP service သို႔မဟုတ္ IP လိပ္စာမေဖာ္ျပပဲလုပ္ရသည့္ "
+"TCP အေျခခံ service အကုန္ ေထာက္ပံ့ေပးႏိုင္ပါသည္။ hidden service "
+"ကိုေထာက္ပံ့ေပးမည့္ protocol ကို Tor က လံုၿခံဳေရးအတြက္အသံုးျပဳထားသည့္ "
+"အခ်က္အလက္မ်ားရွိသည့္ circuit မ်ားတြင္ တည္ေဆာက္ထားပါသည္။"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:35
@@ -60,21 +68,24 @@ msgid ""
 "Tor's design paper (doc/design-paper/tor-design.pdf) or the Rendezvous "
 "Specification (doc/spec/rend-spec.txt)."
 msgstr ""
+"hidden service အတြက္ အေသးစိတ္အခ်က္လက္မ်ားကို Tor's design paper (doc/design-"
+"paper/tor-design.pdf) သို႔မဟုတ္ Rendezvous Specification (doc/spec/rend-"
+"spec.txt)၏ က႑ ၅ တြင္ဖတ္ပါ။"
 
 #. type: Content of: <html><body>
 #: en/services.html:40
 msgid "<a name=\"provide\"/>"
-msgstr ""
+msgstr "<a name=\"provide\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:41
 msgid "How do I provide a hidden service?"
-msgstr ""
+msgstr "hidden service ကိုဘယ္လို ေထာက္ပံ့ေပးရမလဲ"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:43
 msgid "Providing a hidden service consists of at least two steps:"
-msgstr ""
+msgstr "hidden service ကိုေထာက္ပံ့ျခင္းတြင္ အနည္းဆံုးအဆင့္ ၂ ခုရွိပါသည္"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:45
@@ -82,6 +93,8 @@ msgid ""
 "Install a web server locally (or a server for whatever service you want to "
 "provide, e.g. IRC) to listen for local requests."
 msgstr ""
+"web server ကိုသြင္းယူျခင္း (IRC ကဲ့သို႔ သင္ေထာက္ပံ့လိုေသာ မည္သည့္ service "
+"မဆို၏ဆာဗာအတြက္) local request မ်ားကိုၾကည့္ပါ။"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:47
@@ -89,6 +102,8 @@ msgid ""
 "Configure your hidden service, so that Tor relays requests coming from Tor "
 "users to your local server."
 msgstr ""
+"သင္၏ hidden service ကို configure လုပ္ပါ။ ထိုအခါမွ သင့္ local server ထဲကို "
+"Tor user မ်ားထံမွ relay request မ်ားေရာက္ပါမည္။"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:50
@@ -97,16 +112,18 @@ msgid ""
 "(https://www.torproject.org/docs/tor-hidden-service.html) that describes "
 "these steps in more detail."
 msgstr ""
+"Tor website (https://www.torproject.org/docs/tor-hidden-service.html)တြင္ "
+"အေသးစိတ္ကို အဆင့္လိုက္ျပထားေသာ tutorial ေကာင္းမ်ားရွိပါသည္။ "
 
 #. type: Content of: <html><body>
 #: en/services.html:55
 msgid "<a name=\"data\"/>"
-msgstr ""
+msgstr "<a name=\"data\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:56
 msgid "What data do I need to provide?"
-msgstr ""
+msgstr "ဘယ္ေဒတာေတြကို ေထာက္ပံ့ေပးဖို႔လိုသလဲ။"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:58
@@ -114,6 +131,7 @@ msgid ""
 "The services table contains five columns containing data about configured "
 "hidden services:"
 msgstr ""
+"service table တြင္ configured hidden အေၾကာင္းပါဝင္ေသာ colum ၅ ခုပါရွိသည္။"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:61
@@ -126,6 +144,13 @@ msgid ""
 "display the real onion address, you need to save your configuration and "
 "re-open the settings window."
 msgstr ""
+"Onion လိပ္စာ (ေဖာ္ျပျပီး): Tor သည္ သင့္ဝန္ေဆာင္မႈကို ေရြးထုတ္ျခင္းအားျဖင့္ "
+"ဝန္ေဆာင္မႈ (သို႔မဟုတ္ onion) လိပ္စာကို ေဖာ္ျပေပးပါသည္။ ဝန္ေဆာင္မႈကို "
+"ရယူႏိုင္ေသာ သူေတြကို onion လိပ္စာကို ေပးပါ။ \"Copy to clipboard\" button ကို "
+"typos အား ေရွာင္ၾကဥ္ရန္ အသံုးျပဳႏိုင္သည္။ အကယ္၍ ဝွက္ထားေသာ ဝန္ေဆာင္မႈကို "
+"ဖန္တီးျပီးသြားခဲ့လွ်င္ \"[Created by Tor]\" လို႔ ေျပာလိမ့္မည္။ onion လိပ္စာ "
+"အစစ္မွန္ကို ျပသရန္ အလို႔ငွာ သင့္ ျပင္ဆင္ခ်က္မ်ားကို သိမ္းထားရန္ လိုအပ္ျပီး "
+"setting မ်ား၏ window ကို ျပန္ဖြင့္ရ လိုအပ္မည္ ျဖစ္သည္။"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:68
@@ -136,6 +161,11 @@ msgid ""
 "port usually has nothing to do with firewall settings, because it is only "
 "used Tor-internally."
 msgstr ""
+"Virtual Port (လိုအပ္သည္): ၎သည္ သင့္ဝန္ေဆာင္မႈကို ရယူရန္ အလို႔ငွာ client က "
+"သိရန္ လိုအပ္ေသာ TCP port ျဖစ္သည္။ ပံုမွန္အားျဖင့္ သတ္မွတ္ထားေသာ ဝန္ေဆာင္မႈ "
+"port ကို အသံုးျပဳလိမ့္မည္။ ဥပမာ HTTP အတြက္ port 80 ။ virtual port သည္ "
+"ပံုမွန္အားျဖင့္ firewall setting မ်ားႏွင့္ ျပဳလုပ္ရန္ မရွိပါ "
+"အဘယ့္ေၾကာင့္ဆုိေသာ္ ၎သည္ Tor ကို internally သာ အသံုးျပဳေသာေၾကာင့္ ျဖစ္သည္။"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:73
@@ -148,6 +178,14 @@ msgid ""
 "specify any target, Tor will redirect requests to the port specified in "
 "\"Virtual Port\" on localhost."
 msgstr ""
+"Target (optional): \"Virtual Port\" ထဲရွိ သင္သတ္မွတ္ထားသည့္ တစ္ခုထက္ မတူညီေသာ "
+"port ေပၚရွိ localhost ကို Tor ဆီမွ relay ဆက္သြယ္မႈ request "
+"ပံုမွန္ျပဳလုပ္လိမ့္မည္။ ထို႔ေၾကာင့္ ဦးတည္ခ်က္ပါဝင္ေသာ physical လိပ္စာကို "
+"သင္သတ္မွတ္ႏိုင္ျပီး port ဆီမွ သင့္ဝွက္ထားေသာ ဝန္ေဆာင္မႈဆီသို႔ redirect "
+"ျပဳလုပ္ရန္ request လုပ္ႏိုင္သည္။ ဥပမာ localhost:5222 သို႔ (သို႔မဟုတ္ port "
+"သည္ သင့္ဆာဗာကို မည္သို႔ listen ျပဳလုပ္သည္ျဖစ္ေစ)။ မည္သည့္ ဦးတည္ခ်က္ကိုမွ "
+"သင္မသတ္မွတ္ ႏိုင္ခဲ့လွ်င္ localhost ထဲရွိ \"Virtual Port\" ထဲတြင္ port "
+"သတ္မွတ္ရန္ Tor က request မ်ားကို redirect လုပ္လိမ့္မည္။"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:81
@@ -165,6 +203,20 @@ msgid ""
 "disk to the new place. Finally, change the directory in Vidalia to the new "
 "location, enable the service again, and save the new configuration."
 msgstr ""
+"Service Directory (required): Tor သည္ သပ္သပ္စီ ခြဲထုတ္ထားေသာ directory "
+"ထဲတြင္ အခ်ိဳ႕ ဝွက္ထားေသာ ဝန္ေဆာင္မႈ သတ္မွတ္ခ်က္ဖိုင္မ်ားကို သိမ္းထားရန္ "
+"လိုအပ္သည္။ ဥပမာ- private key ႏွင့္ onion လိပ္စာ ပါဝင္ေသာ hostname ဖိုင္။ ၎ "
+"directory သည္ ဝန္ေဆာင္မႈက ေထာက္ပံ့ေပးေသာ content မ်ားပါဝင္ေသာ directory "
+"ႏွင့္ ကြဲျပားသင့္သည္။ ဝန္ေဆာင္မႈ directory အတြက္ အေကာင္းဆံုး ေနရာသည္ Tor ၏ "
+"data directory ထဲတြင္ directory အခြဲတစ္ခုသာ ျဖစ္သင့္သည္။ run ေနေသာ "
+"ဝန္ေဆာင္မႈ၏ directory ကို မေျပာင္းႏိုင္သည္ကို မွတ္ထားပါ။ (၎ကို ခြင့္ျပဳရန္ "
+"မျဖစ္ႏိုင္ပါ အဘယ့္ေၾကာင့္ဆိုေသာ္ သင့္ hard disk ေပၚရွိ directory မ်ားကို "
+"ဖယ္ထုတ္ရန္ အေထာက္ကူမေပးႏိုင္ပါ) အကယ္၍ အျခားေသာ directory သို႔ ဝွက္ထားေသာ "
+"ဝန္ေဆာင္မႈကို ေရႊ႕ေျပာင္းခ်င္လွ်င္ ေက်းဇူးျပဳ၍ ေအာက္ပါအတိုင္း ျပဳလုပ္ပါ: "
+"Vidalia ထဲရွိ ဝန္ေဆာင္မႈကို disable ျပဳလုပ္ရန္ စတင္ပါ။ ျပင္ဆင္ခ်က္မ်ားကို "
+"သိမ္းပါ။ ထို႔ေနာက္ သင့္ hard disk ေပၚက directory ကို ေနရာအသစ္သို႔ ေရႊ႕ပါ။ "
+"Vidalia ထဲရွိ directory ကို ေနရာ အသစ္သို႔ ေျပာင္းပါ။ ဝန္ေဆာင္မႈကို enable "
+"လုပ္ပါ။ ျပင္ဆင္ခ်က္အသစ္ကို သိမ္းပါ။"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:95
@@ -174,21 +226,27 @@ msgid ""
 "currently unused service for later use. All non-enabled services are stored "
 "in the Vidalia-specific configuration file vidalia.conf."
 msgstr ""
+"Enabled: အကယ္၍ checkbox ကို disable လုပ္ထားလွ်င္ Vidalia သည္ Tor ထဲရွိ "
+"ဝွက္ထားသည့္ ဝန္ေဆာင္မႈကို မျပင္ဆင္ႏိုင္ပါ။ ၎သည္ လက္ရွိအသံုးမလိုေသာ "
+"ဝန္ေဆာင္မႈ၏ ျပင္ဆင္ခ်က္မ်ားကို သိမ္းထား ျခင္းအားျဖင့္ ေနာက္ပိုင္းအသံုးျပဳရန္ "
+"အသံုးဝင္ႏိုင္သည္။ enable မလုပ္ထားေသာ ဝန္ေဆာင္မႈမ်ား အားလံုးကို "
+"သတ္မွတ္ထားေသာ Vidalia ျပင္ဆင္ခ်က္ ဖိုင္ vidalia.conf ထဲတြင္ သိမ္းထားသည္။"
 
 #. type: Content of: <html><body>
 #: en/services.html:103
 msgid "<a name=\"buttons\"/>"
-msgstr ""
+msgstr "<a name=\"buttons\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:104
 msgid "What are the five buttons used for?"
-msgstr ""
+msgstr "button ငါးခုက ဘာအတြက္ အသံုးျပဳတာလဲ?"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:107
 msgid "Add service: Creates a new empty service configuration."
 msgstr ""
+"ဝန္ေဆာင္မႈမ်ားကိုထပ္ေပါင္းျခင္း: ဝန္ေဆာင္မႈအသစ္ ျပင္ဆင္မႈမ်ားကို ဖန္တီးပါ။"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:108
@@ -196,6 +254,9 @@ msgid ""
 "Remove service: Permanently removes a hidden service configuration.  (If you "
 "want to temporarily remove a service, uncheck its Enabled checkbox.)"
 msgstr ""
+"ဝန္ေဆာင္မႈမ်ားကိုျဖဳတ္ျခင္း: ဝွက္ထားေသာ ဝန္ေဆာင္မႈ ျပင္ဆင္ျခင္းမ်ားကို ထာဝရ "
+"ျဖဳတ္ပစ္သည္။ (အကယ္၍ ဝန္ေဆာင္မႈကို ယာယီျဖဳတ္ခ်င္လွ်င္ enable လုပ္ထားျပီးသား "
+"checkbox ကို uncheck လုပ္ပါ။)"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:111
@@ -203,21 +264,23 @@ msgid ""
 "Copy to clipboard: Copies the onion address to the clipboard, so that you "
 "can tell it to whoever shall be able to use your service."
 msgstr ""
+"Copy to clipboard: clipboard သို႔ onion လိပ္စာကို ကူးပါ။ ထို႔ေၾကာင့္ "
+"သင့္ဝန္ေဆာင္မႈကို မည္သူမဆို အသံုးျပဳရန္ ေျပာျပႏိုင္ပါသည္။"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:114
 msgid "Browse: Lets you browse to find a local hidden service directory."
-msgstr ""
+msgstr "Browse: local ဝန္ေဆာင္မႈ directory ကို ရွာေဖြရန္ ခြင့္ျပဳသည္။"
 
 #. type: Content of: <html><body>
 #: en/services.html:119
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:120
 msgid "How can I configure advanced hidden service settings?"
-msgstr ""
+msgstr "အဆင့္ျမင့္ ဝွက္ထားေသာ ဝန္ေဆာင္မႈ setting မ်ားကို ျပင္ဆင္ႏိုင္ပါသလား?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:122
@@ -226,6 +289,10 @@ msgid ""
 "e.g. forcing to use (or avoiding) certain nodes as introduction points, or "
 "providing multiple virtual ports for the same service."
 msgstr ""
+"Tor သည္ ဝွက္ထားေသာ ဝန္ေဆာင္မႈမ်ား အတြက္ သတ္မွတ္ထားေသာ setting မ်ားကို "
+"ျပင္ဆင္ရန္ ခြင့္ျပဳပါသည္။ ဥပမာ မိတ္ဆက္ ပြိဳင့္မ်ား အျဖစ္ ေသခ်ာေသာ node "
+"မ်ားကို အသံုးျပဳရန္ (သို႔မဟုတ္ ေရွာင္ၾကဥ္ရန္) သို႔မဟုတ္ တူညီေသာ "
+"ဝန္ေဆာင္မႈအတြက္ မ်ားစြာေသာ virtual port မ်ားကို ေထာက္ပံ့ေပးရန္ တို႔ ျဖစ္သည္။"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:128
@@ -236,16 +303,23 @@ msgid ""
 "are editing your hidden services. If you specify more than one virtual port, "
 "only the first will be displayed and be editable."
 msgstr ""
+"ဘယ္လိုပဲျဖစ္ျဖစ္ ကၽြႏု္ပ္တို႔သည္ ဘံု setting မ်ားကိုသာ ေထာက္ပံ့ေပးရန္ ႏွင့္ "
+"Vidalia ထဲရွိ အရာမ်ားကို သတ္မွတ္ရန္ ဆံုးျဖတ္ခဲ့ပါသည္။ အကယ္၍ အဆင့္ျမင့္ "
+"setting မ်ားကို ျပင္ဆင္ခ်င္လွ်င္ Tor torrc ဖိုင္ထဲတြင္ ျပဳလုပ္ရန္ "
+"လိုအပ္ပါသည္။ ဝွက္ထားေသာ ဝန္ေဆာင္မႈမ်ားကို တည္းျဖတ္ေနတဲ့ အခါမွာေတာင္ Vidalia "
+"က ၎ setting မ်ားကို ဖယ္ထုတ္ လိမ့္မည္ မဟုတ္ပါ။ အကယ္၍ virtual port "
+"တစ္ခုထက္ပို၍ သတ္မွတ္ခ်င္လွ်င္ ပထမဦးစြာ ေဖာ္ျပေပးလိမ့္မည္ ျဖစ္ျပီး "
+"တည္းျဖတ္ႏိုင္ပါလိမ့္မည္။"
 
 #. type: Content of: <html><body>
 #: en/services.html:135
 msgid "<a name=\"client\"/>"
-msgstr ""
+msgstr "<a name=\"client\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:136
 msgid "How does Vidalia help me to access other hidden services?"
-msgstr ""
+msgstr "အျခား ဝွက္ထားေသာ ဝန္ေဆာင္မႈမ်ားကို ရယူရန္ Vidalia က ဘယ္လိုလုပ္သလဲ?"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:138
@@ -255,3 +329,8 @@ msgid ""
 "client application if it's not a web service), and Tor does the rest for "
 "you. There is no need to specifically configure Tor for that."
 msgstr ""
+"ထိုကဲ့သို႔ ျပဳလုပ္ရန္ မလိုအပ္ပါ။ အကယ္၍ အျခားေသာ ဝွက္ထားေသာ ဝန္ေဆာင္မႈကို "
+"ရယူခ်င္လွ်င္ ဝန္ေဆာင္မႈ၏ onion လိပ္စာကို သင့္ browser ထဲတြင္ ရိုက္ထည့္ပါ။ "
+"(သို႔မဟုတ္ web ဝန္ေဆာင္မႈ မဟုတ္လွ်င္ သင့္ေလွ်ာ္ေသာ client application "
+"ကိုသံုးပါ)။ က်န္တာကို Tor က ျပဳလုပ္ေပးပါမည္။ အဲ့ဒိအတြက္ Tor ကို အေထြထူး "
+"ျပင္ဆင္ရန္ မလိုအပ္ပါ။ "

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-06 10:22+0200\n"
+"PO-Revision-Date: 2010-09-24 08:59+0200\n"
 "Last-Translator: euneko <euneko@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ru\n"
@@ -61,7 +61,7 @@ msgid ""
 "for anonymous browsing and roughly has similar anonymity properties."
 msgstr ""
 "Скрытые сервисы предоставляют любые TCP-основанные сервисы например HTTP "
-"сервис,не раскрывая свой IP-адрес . Протокол обеспечить скрытый сервис "
+"сервис,не раскрывая ваш IP-адрес . Протокол обеспечить скрытый сервис "
 "построенный на той же схеме, что Tor использует для анонимного серфинга и "
 "примерно аналогичные свойства анонимности."
 
@@ -89,7 +89,7 @@ msgstr "Как обеспечить скрытый сервис?"
 #. type: Content of: <html><body><p>
 #: en/services.html:43
 msgid "Providing a hidden service consists of at least two steps:"
-msgstr "Обеспечение скрытого сервиса состоит из двух шагов:"
+msgstr "Предоставление скрытого сервиса состоит из двух шагов:"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:45
