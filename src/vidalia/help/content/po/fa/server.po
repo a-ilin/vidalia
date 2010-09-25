@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-25 16:42+0200\n"
+"PO-Revision-Date: 2010-09-25 16:46+0200\n"
 "Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fa\n"
@@ -355,7 +355,7 @@ msgstr "ارسال فوری پیام"
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:159
 msgid "703, 1863, 5050, 5190, 5222, 5223, 8300, 8888"
-msgstr ""
+msgstr "703،1863،5050،5190،5222،5223،8300،8888"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:160
