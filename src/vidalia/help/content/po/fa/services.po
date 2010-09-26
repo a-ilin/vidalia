@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-26 18:52+0200\n"
+"Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/services.html:16
 msgid "Hidden Services"
-msgstr ""
+msgstr "سرویس های مخفی"
 
 #. type: Content of: <html><body>
 #: en/services.html:19
@@ -38,11 +39,17 @@ msgid ""
 "goes wrong. If you find bugs or have comments on this new feature, please "
 "let us know! We need your feedback.  <a name=\"about\"/>"
 msgstr ""
+"توجه: سرویس پشتیبانی از سرویس های مخفی در Vidalia تازه است. در نظر داشته "
+"باشید که این سرویس ممکن است باگ (نارسایی) داشته باشد و برخی از این باگ ها "
+"تنظیم سرویس های مخفی شما را دچار اشکال کنند. به این سرویس نباید اطمینان کامل "
+"داشت، و نیز، اگر اشکالی پیش آمد ما را شماتت نکنید. اگر با اشکال مواجه شدید "
+"و یا پیشنهادی در مورد این برنامه جدید داشتید، خواهشمندیم با ما در میان "
+"بگذارید. منتظر دریافت نظرات شما هستیم. "
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:26
 msgid "What is a hidden service?"
-msgstr ""
+msgstr "سرویس مخفی چیست؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:28
@@ -52,6 +59,10 @@ msgid ""
 "provide a hidden service is built on top of the same circuits that Tor uses "
 "for anonymous browsing and roughly has similar anonymity properties."
 msgstr ""
+"سرویس مخفی به شما امکان می دهد هر نوع سرویس TCPمثل سرویس HTTP را در اختیار "
+"دیگران بگذارید بدون این که آدرس آی پی خود شما آشکار شود. پیشنویس قرارداد "
+"ارائه سرویس مخفی بر روی همان مداری که کار شده است که Tor برای مرورگری مخفی "
+"استفاده می کند و تقریبن از ویژگی های مشابه برای استتار هویت برخوردار است.  "
 
 #. type: Content of: <html><body><p>
 #: en/services.html:35
@@ -60,21 +71,24 @@ msgid ""
 "Tor's design paper (doc/design-paper/tor-design.pdf) or the Rendezvous "
 "Specification (doc/spec/rend-spec.txt)."
 msgstr ""
+"برای اطلاعات بیشتر در مورد سرویس مخفی می توانید بخش 5 از مقاله ساختار Tor در "
+"(doc/design-paper/tor-design.pdf) و یا شاخصه ی میعادگاه را (doc/spec/rend-"
+"spec.txt) را بخوانید."
 
 #. type: Content of: <html><body>
 #: en/services.html:40
 msgid "<a name=\"provide\"/>"
-msgstr ""
+msgstr "<یک اسم=\"ارائه\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:41
 msgid "How do I provide a hidden service?"
-msgstr ""
+msgstr "چگونه سرویس مخفی ارائه کنم؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:43
 msgid "Providing a hidden service consists of at least two steps:"
-msgstr ""
+msgstr "ارائه سرویس مخفی شامل دست کم دو مرحله می شود:"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:45
@@ -82,6 +96,8 @@ msgid ""
 "Install a web server locally (or a server for whatever service you want to "
 "provide, e.g. IRC) to listen for local requests."
 msgstr ""
+"نصب یک سرویس دهنده وب بر سیستم (و یا هر سرویس دهنده ای که سرویسی که مایل به "
+"ارائه هستید را ارائه کند، نظیر IRC) برای شنود مطالبات محلی. "
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:47
@@ -89,6 +105,8 @@ msgid ""
 "Configure your hidden service, so that Tor relays requests coming from Tor "
 "users to your local server."
 msgstr ""
+"سرویس مخفی خود را تنظیم کنید تا مطالبات بازپخش Tor از طرف کاربران Tor به "
+"سرویس دهنده محلی شما برسد."
 
 #. type: Content of: <html><body><p>
 #: en/services.html:50
@@ -97,16 +115,19 @@ msgid ""
 "(https://www.torproject.org/docs/tor-hidden-service.html) that describes "
 "these steps in more detail."
 msgstr ""
+"آموختاری بسیار عالی در وبسایت Tor (https://www.torproject.org/docs/tor-"
+"hidden-service.html) موجود است که تمام این مراحل را با جزئیات بیشتر شرح می "
+"دهد."
 
 #. type: Content of: <html><body>
 #: en/services.html:55
 msgid "<a name=\"data\"/>"
-msgstr ""
+msgstr "<یک اسم=\"اطلاعات\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:56
 msgid "What data do I need to provide?"
-msgstr ""
+msgstr "چه اطلاعاتی را می بایست ارائه کنم؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:58
@@ -114,6 +135,7 @@ msgid ""
 "The services table contains five columns containing data about configured "
 "hidden services:"
 msgstr ""
+"جدول سرویس، دارای پنج ستون حاوی اطلاعات در سرویس های مخفی تنظیم شده است. "
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:61
@@ -126,6 +148,13 @@ msgid ""
 "display the real onion address, you need to save your configuration and "
 "re-open the settings window."
 msgstr ""
+"آدرس روترهای پیازی (مولد): آدرس سرویس (یا پیاز) به وسیله Tor تولید شده تا به "
+"گونه ای منحصر به فرد سرویس شما را شناسایی کند. این آدرس پیازی را به کسانی "
+"که قرار است به سرویس شما دسترسی داشته باشند بدهید. می توانید از کلید (کپی کن "
+"روی کلیپبورد) تا اشتباه تایپی جلوگیری کنید. اگر درجا یک سرویس مخفی ایجاد "
+"کرده اید، محیط اینگونه خوانده خواهد شد \"[Created by Tor]؛ برای این که آدرس "
+"پیازی واقعی را نشان دهد، می بایست تنظیمات خود را سیو کنید و پنجره تنظیمات "
+"محیط را بازگشایی کنید."
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:68
@@ -136,6 +165,11 @@ msgid ""
 "port usually has nothing to do with firewall settings, because it is only "
 "used Tor-internally."
 msgstr ""
+"درگاه مجازی (ضروری): برای دسترسی به سرویس شما کاربران به شناسایی درگاه TCP "
+"نیاز دارند. قاعدتن، شما مایل خواهید بود که درگاه ویژه سرویسدهی را در اینجا "
+"استفاده کنید، نظیر درگاه 80 برای HTTP. در نظر داشته باشید که درگاه مجازی "
+"معمولن ربطی به محیط firewall ندارد، زیرا تنها در موارد درونTorی استفاده شده "
+"است. "
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:73
@@ -148,6 +182,13 @@ msgid ""
 "specify any target, Tor will redirect requests to the port specified in "
 "\"Virtual Port\" on localhost."
 msgstr ""
+"هدف (اختیاری): معمولن شما می خواهید که Tor مطالبات اتصال به هاست-محلی را در "
+"درگاهی متفاوت از آنچه شما در \"درگاه مجازی\" معین کرده اید، بازپخش کند. در "
+"نتیجه، شما می توانید هدفی متشکل از آدرس فیزیکی و درگاهی که درخواستهای مربوط "
+"به سرویس مخفی به آن باز-ارسال شده، معین کنید نظیر به هاست-محلی: 5222 (و یا "
+"بر روی هرکدام از درگاه هایی که سرویسدهنده ی شما شنود می کند) تعیین کنید. اگر "
+"هیچ هدفی را معین نکنید، Tor مطالبات را به درگاه تعیین شده برای \"درگاه "
+"مجازی\" در هاست-محلی باز-ارسال خواهد کرد."
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:81
@@ -165,6 +206,18 @@ msgid ""
 "disk to the new place. Finally, change the directory in Vidalia to the new "
 "location, enable the service again, and save the new configuration."
 msgstr ""
+"فهرست خدمات (ضروری): Tor می بایست برخی فایل های معین سرویس مخفی را در یک "
+"فهرست مجزا ذخیره کند، نظیر یک کلید خصوصی و فایل نام سرویس دهنده حاوی آدرس "
+"های پیازی. این فهرست می بایست از فهرستی که حاوی اطلاعات ارائه شده توسط "
+"سرویسدهنده است مجزا باشد. محل مناسب برای قراردادن فهرست سرویس، ایجاد  شاخه "
+"فرعی در لیست اصلی اطلاعات Tor است. --- توجه داشته باشید که نمی توانید لیست "
+"یک سرویس را هنگامی که در حال کار است، تغییر دهید( به دلیل آن که   جابجایی "
+"لیست های روی سخت افزار شما جزو وظایف Vidalia نیست، مجاز داشتن Vidalia به "
+"تغییر لیست، بی معنا است!). اگر مایلید یک سرویس مخفی را به لیست دیگری منتقل "
+"کنید، لطفن به این ترتیب عمل کنید: اول سرویس را در Vidalia غیرفعال کنید و "
+"تنظیمات را سیو کنید. سپس لیست روی سخت افزار خود را به محل جدید منتقل کنید. "
+"دست آخر، لیست Vidalia را به محل جدید منتقل کنید، سرویس را دوباره فعال کنید، "
+"و تنظیمات جدید را سیو کنید. "
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:95
@@ -174,21 +227,26 @@ msgid ""
 "currently unused service for later use. All non-enabled services are stored "
 "in the Vidalia-specific configuration file vidalia.conf."
 msgstr ""
+"فعال-شده: اگر این چک-باکس به عنوان غیرفعال، تیک خورده باشد، Vidalia آدرس "
+"سرویس مخفی که به Tor داده شده را پیکربندی نخواهد کرد. این می تواند برای "
+"استفاده های آینده از پیکربندی سرویسی که در حال حاضر استفاده نشده، سودمند "
+"باشد. تمام سرویس های فعال-نشده در فایل پیکربندی ویژه Vidalia،  در "
+"vidalia.conf. نگهداری می شوند."
 
 #. type: Content of: <html><body>
 #: en/services.html:103
 msgid "<a name=\"buttons\"/>"
-msgstr ""
+msgstr "<یک اسم=\"کلیدها\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:104
 msgid "What are the five buttons used for?"
-msgstr ""
+msgstr "این پنج کلید چه استفاده ای دارند؟"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:107
 msgid "Add service: Creates a new empty service configuration."
-msgstr ""
+msgstr "افزودن سرویس: پیکربندی یک سرویس خالی جدید ایجاد می کند. "
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:108
@@ -196,6 +254,8 @@ msgid ""
 "Remove service: Permanently removes a hidden service configuration.  (If you "
 "want to temporarily remove a service, uncheck its Enabled checkbox.)"
 msgstr ""
+"حذف سرویس: پیکربندی یک سرویس مخفی را برای همیشه حذف می کند. (اگر می خواهید "
+"سرویس را به طور موقت حذف کنید، چک-باکس \"فعال\" این سرویس را تیک نزنید.)"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:111
@@ -203,21 +263,25 @@ msgid ""
 "Copy to clipboard: Copies the onion address to the clipboard, so that you "
 "can tell it to whoever shall be able to use your service."
 msgstr ""
+"کپی به کلیپ بورد: آدرس های پیازی را روی کلیپ بورد کپی می کند تا شما بتوانید "
+"آدرس را به هر کس که مایلید سرویس شما را استفاده کنید، بدهید."
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:114
 msgid "Browse: Lets you browse to find a local hidden service directory."
 msgstr ""
+"مرورگری: به شما امکان می دهد که بگردید و جای لیست یک سرویس مخفی را پیدا "
+"کنید."
 
 #. type: Content of: <html><body>
 #: en/services.html:119
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<یک اسم=\"پیشرفته\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:120
 msgid "How can I configure advanced hidden service settings?"
-msgstr ""
+msgstr "چگونه تنظیمات محیط پیشرفته سرویس مخفی را پیکربندی کنم؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:122
@@ -226,6 +290,9 @@ msgid ""
 "e.g. forcing to use (or avoiding) certain nodes as introduction points, or "
 "providing multiple virtual ports for the same service."
 msgstr ""
+"Tor امکان تنظیمات بیشتر برای سرویس های مخفی با محیط ویژه را ایجاد می کند، "
+"نظیر واداشتن به استفاده (و یا جلوگیری از) گره های معین به عنوان نقطه تلاقی، "
+"و یا ارائه درگاه های مجازی متعدد برای سرویس واحد."
 
 #. type: Content of: <html><body><p>
 #: en/services.html:128
@@ -236,16 +303,21 @@ msgid ""
 "are editing your hidden services. If you specify more than one virtual port, "
 "only the first will be displayed and be editable."
 msgstr ""
+"با این وجود، ما بر آن شدیم که استفاده از Vidalia را سهل تر کنیم و به این "
+"خاطر تنها رایج ترین محیط ها را در دسترس قرار دادیم. اگر مایل به پیکربندی "
+"محیط های پیشرفته هستید، اینکار را می بایست در فایل torrc در Tor انجام دهید. "
+"اگر بیش از یک درگاه مجازی را مشخص کرده باشید، تنها اولین درگاه نشان داده "
+"خواهد شد و تنها همان درگاه قابل ویرایش خواهد بود. "
 
 #. type: Content of: <html><body>
 #: en/services.html:135
 msgid "<a name=\"client\"/>"
-msgstr ""
+msgstr "<یک اسم=\"کاربر\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:136
 msgid "How does Vidalia help me to access other hidden services?"
-msgstr ""
+msgstr "Vidalia چگونه به من کمک می کند به دیگر سرویس های مخفی دسترس داشته باشم؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:138
@@ -255,3 +327,7 @@ msgid ""
 "client application if it's not a web service), and Tor does the rest for "
 "you. There is no need to specifically configure Tor for that."
 msgstr ""
+"نه، اصلن. هیچ نیازی به این کار نیست. اگر می خواهید به یک سرویس مخفی دیگر "
+"دسترسی داشته باشید، آدرس پیازی آن سرویس را در مرورگر خود (و یا در فرم کاربری "
+"مربوطه) تایپ کنید، و Tor  بقیه کارها را برای شما انجام می دهد. نیازی  که "
+"Tor  به طور ویژه برای این کار تنظیم شود. "
