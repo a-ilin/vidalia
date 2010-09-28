@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:59+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-27 02:19+0200\n"
+"Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/index.html:16
 msgid "Vidalia Help"
-msgstr ""
+msgstr "پشتیبانی Vidaial"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:20
@@ -35,6 +36,9 @@ msgid ""
 "Select a help topic from the tree on the left or click on the Search button "
 "above the list of topics to search through all available help topics."
 msgstr ""
+"از لیست سمت چپ یکی از سرفصل های مربوط به پشتیبانی را انتخاب کنید و یا کلید "
+"جستجو در بالای لیست سرفصل ها را بزنید تا تمام موضوعات مربوط به پشتیبانی را "
+"مشاهده کنید."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:25
@@ -42,11 +46,13 @@ msgid ""
 "You can use the <i>Find</i> button on the toolbar above to search within a "
 "particular help topic."
 msgstr ""
+"می توانید از کلید <i>Find</i> (پیدا کن) در نوار ابزار (toolbar) بالا استفاده "
+"کنید تا سرفصل های یک موضوع مشخص از پشتیبانی را مشاهده کنید. "
 
 #. type: Content of: <html><body><p>
 #: en/index.html:30
 msgid "The <i>Home</i> button above will bring you back to this home page."
-msgstr ""
+msgstr "کلید <i>Home</i> (خانه) در بالای صفحه شما را به صفحه نخست بازمی گرداند."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:34
@@ -54,3 +60,6 @@ msgid ""
 "See the <a href=\"links.html\">Helpful Links</a> topic for some places you "
 "can visit to find additional help and information about Vidalia and Tor."
 msgstr ""
+"به سرفصل <a href=\"links.html\">Helpful Links</a> (لینک های مفید) مراجعه کنید "
+"تا در میان صفحه های ارائه شده اطلاعات و پشتیبانی بیشتر در Vidalia و Tor به "
+"دست آورید."

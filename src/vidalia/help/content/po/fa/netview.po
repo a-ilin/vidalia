@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-28 08:27+0200\n"
+"Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
 msgid "Network Viewer"
-msgstr ""
+msgstr "ناظر شبکه"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:20
@@ -35,16 +36,18 @@ msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
 msgstr ""
+"ناظر شبکه به شما امکان می دهد بازپخش های شبکه Tor و مسیر ترافیک خود را "
+"مشاهده کنید."
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
 msgid "<a name=\"overview\"/>"
-msgstr ""
+msgstr "<یک اسم=نظارت\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:26
 msgid "Overview"
-msgstr ""
+msgstr "نظارت"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:28
@@ -55,16 +58,21 @@ msgid ""
 "then sent as a <i>stream</i> through that circuit. For efficiency, multiple "
 "streams may share the same circuit."
 msgstr ""
+"اگر بخواهید به طور ناشناس از طریق Tor ارتباط برقرار کنید (مثلن با یک وبسایت "
+"ارتباط برقرار کنید)، Tor از اتصال های رمزبندی شده از طریق شماری از بازپخش ها "
+"در شبکه یک تونل ایجاد می کند و یا یک <i>circuit</i> (مدار). ترافیک اپلیکیشن "
+"شما در این زمان به عنوان <i>stream</i> (جریان) از مسیر مدار ارسال می شود. "
+"برای تاثیر بیشتر، چندین جریان می توانند از یک مدار واحد عبور کنند. "
 
 #. type: Content of: <html><body>
 #: en/netview.html:35
 msgid "<a name=\"netmap\"/>"
-msgstr ""
+msgstr "<یک اسم=\"نقشه ی نت\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:36
 msgid "Network Map"
-msgstr ""
+msgstr "نقشه ی شبکه"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:38
@@ -74,6 +82,9 @@ msgid ""
 "are drawn between relays to indicate the path of circuits that your Tor "
 "client has created through the Tor network."
 msgstr ""
+"نقشه شبکه شامل نقشه ای از جهان است با علامت های قرمز که محل بازپخش های شبکه "
+"Tor را معین می کنند. در فاصله بازپخش ها خط های سبز مسیر مداری که کاربر Tor "
+"شما از طریق شبکه Tor ایجاد کرده را مشخص می کنند."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:44
@@ -83,6 +94,9 @@ msgid ""
 "map by clicking on the map and then dragging it in whatever direction you "
 "would like to move the map."
 msgstr ""
+"برای درشت نمایی محلی از نقشه روی <b>Zoom In</b> و <b>Zoom Out</b> در toolbar "
+"کلیک کنید. همچنین می توانید با کلیک کردن روی نقشه و کشاندن آن به هر سمتی که "
+"مایلید،  دورتادور نقشه را تماشا کنید."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:50
@@ -91,6 +105,9 @@ msgid ""
 "address of the relay in a GeoIP database, created by MaxMind and located at "
 "geoip.vidalia-project.net."
 msgstr ""
+" منطقه جغرافیایی یک بازپخش Tor با پیدا کردن آدرس آی پی آن بازپخش در بخش "
+"اطلاعات GeoIP  که توسط MaxMind ایجاد شده و در geoip.vidalia-project.net قرار "
+"داده شده، تعیین می شود. "
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:55
@@ -104,16 +121,24 @@ msgid ""
 "not revealed to the GeoIP relay. The results of the lookups will be cached "
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
+"در وسط دیالوگ، زیر نقشه شبکه، لیستی از مدارهای موجود خود و نیز تمام آمد و شد "
+"اپلیکشن هایی که در همان موقع در آن مدارها جریان دارند را مشاهده می کنید. "
+"وقتی که نقشه شبکه برای بار اول باز می شود، احتمالن اتصال به geoip.vidalia-"
+"project.net را می بینید، که معمولن وقتی که Vidalia در حال یافتن اطلاعات "
+"جغرافیایی برای لیست بازپخش های Tor است، قابل مشاهده است. در نظر داشته باشید "
+"که این درخواست از طریق Tor صورت می گیرد، و به همین خاطر محل جغرافیایی شما از "
+"سوی بازپخش GeoIP آشکار نخواهد شد. نتایج جستجو، در محل ذخیره می شود تا بار "
+"بازپخش های GeoIP متعلق به Vidalia را کاهش دهد."
 
 #. type: Content of: <html><body>
 #: en/netview.html:66
 msgid "<a name=\"relaylist\"/>"
-msgstr ""
+msgstr "<یک اسم=\"لیست بازپخش\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:67
 msgid "Relay Status"
-msgstr ""
+msgstr "موقعیت بازپخش"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:69
@@ -122,11 +147,14 @@ msgid ""
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
 "The following table summarizes the possible relay status icons:"
 msgstr ""
+"در سمت چپ نمای (view) شبکه لیستی ز بازپخش شبکه Tor را می بینید. کنار هر "
+"بازپخش ایکونی هست که موقعیت بازپخش را نشان می دهد. جدول زیر خلاصه ای از "
+"موقعیت های ممکن ایکون ها را نشان می دهد:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
 msgid "The relay is offline or simply not responding."
-msgstr ""
+msgstr "با پخش در موقعیت برون-خط است و یا این که پاسخ نمی دهد."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:84
@@ -134,26 +162,28 @@ msgid ""
 "The relay is <i>hibernating</i>, meaning it is online, but has used up as "
 "much bandwidth as the operator is willing to allow for a given time period."
 msgstr ""
+"بازپخش در موقعیت <i>hibernating</i> (در خواب) است، یعنی آنلاین است اما "
+"حداکثر پهنای نواری که اپراتور در این مقطع مجاز نموده را مصرف است.  "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:92
 msgid "The relay is online, but has shown only minimal throughput."
-msgstr ""
+msgstr "بازپخش آنلاین است اما حداقل توان کار را نشان می دهد."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:98
 msgid "The relay is online and has shown a throughput &gt;= 20 KB/s."
-msgstr ""
+msgstr "بازپخش آنلاین است و توان کاری &gt;= 20 KB/s را نشان می دهد."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:104
 msgid "The relay is online and has shown a throughput &gt;= 60 KB/s."
-msgstr ""
+msgstr "بازپخش آنلاین است و توان کاری &gt;= 60 KB/s را نشان می دهد."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:110
 msgid "The relay is online and has shown a throughput &gt;= 400 KB/s."
-msgstr ""
+msgstr "بازپخش آنلاین است و توان کاری &gt;= 400 KB/s را نشان می دهد."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:116
@@ -162,16 +192,19 @@ msgid ""
 "maximum bandwidth sustained input or output over any ten second period in "
 "the past day."
 msgstr ""
+"تمام ارزشگذاری پهنای نوار از روی مقیاسی بر اساس حداقل پهنای نواری که در "
+"ظرفیت حداکثری خود در ده ثانیه در روز پیش، ورودی و یا خروجی داشته است، محاسبه "
+"می شود."
 
 #. type: Content of: <html><body>
 #: en/netview.html:122
 msgid "<a name=\"details\"/>"
-msgstr ""
+msgstr "<یک اسم=\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:123
 msgid "Relay Details"
-msgstr ""
+msgstr "جرئیات بازپخش"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:125
@@ -182,6 +215,11 @@ msgid ""
 "in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
+"تابلو شرح جزئیات بازپخش در سمت راست صفحه جزئیات مربوط به بازپخش و یا بازپخشی "
+"که در حال حاضر در href=\"#relaylist\">relay list</a> گزینش شده است را در "
+"اختیار شما قرار می دهد. اگر یک مدار و یا یک جریان را در لیست مدارها و یا "
+"جریان ها موجود فعلی خود انتخاب کرده اید، این تابلو به شما جزئیات مربوط هر "
+"بازپخشی که همین حالا از مسیر ترافیک شما ارسال می شود را نشان می دهد."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:132
