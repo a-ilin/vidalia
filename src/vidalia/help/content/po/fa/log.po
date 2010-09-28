@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-13 13:48+0200\n"
+"PO-Revision-Date: 2010-09-28 07:17+0200\n"
 "Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fa\n"
@@ -48,7 +48,7 @@ msgstr ""
 #. type: Content of: <html><body><h3>
 #: en/log.html:28
 msgid "Message Severities"
-msgstr "جدیت عبارت"
+msgstr "جدیت پیام"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:30
@@ -58,15 +58,14 @@ msgid ""
 "Tor. Lower severity messages appear frequently during normal Tor operations "
 "and usually do not need to be logged."
 msgstr ""
-"جدیت یک عبارت به شما نشان می دهد که مضمون هشداری عبارت تا چه اندازه جدی است. "
-"عبارتهای با درجه جدیت بالاتر نشاندهنده بروز خطا در Tor هستند. عبارتهای با "
-"درجه جدیت پایین تر عمومن در طول فعالیت معمولی Tor اتفاق می افتند و معمولن "
-"نیاز به ورود به سیستم برای ترمیم نیست."
+"جدیت یک پیام نشان می دهد که هشدار تا چه اندازه جدی است. پیام های با درجه "
+"جدیت بالاتر نشان از بروز خطا در Tor دارند. عبارتهای با درجه جدیت پایین تر "
+"عمومن در طول فعالیت Tor دیده می شوند و  نیاز به پاکسازی ندارند."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:37
 msgid "The possible message severities, from most severe to least severe, are:"
-msgstr "جدیت عبارات معمول از بیشترین تا کمترین میزان جدیت از این قرارند:"
+msgstr "پیام های هشدار معمول، با درجه جدیت حداکثر تا حداقل، از این قرارند:"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:41
@@ -75,6 +74,9 @@ msgid ""
 "Tor cannot proceed. These messages will be highlighted in <i>red</i> in the "
 "message log."
 msgstr ""
+"<b>Error</b> (خطا): پیام هایی هستند که وقتی خطای بزرگی رخ می دهد که Tor قادر "
+"به ادامه نیست، ظاهر می شوند. این پیام ها <i>red</i> با قرمز در ورودی پیام "
+"ها مشخص می شوند."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:46
@@ -83,6 +85,9 @@ msgid ""
 "Tor, but are not fatal and Tor will continue running. These messages will be "
 "highlighted in <i>yellow</i>."
 msgstr ""
+"<b>Warning</b> (هشدار): پیام هایی هستند که تنها هنگامی که Tor دچار اشکال شود "
+"ظاهر می شوند، اما خطرناک نیستند و Tor به کار خود ادامه خواهد داد. این پیام "
+"ها با <i>yellow</i> زرد مشخص می شوند."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:51
@@ -90,6 +95,9 @@ msgid ""
 "<b>Notice</b>: Messages that appear infrequently during normal Tor operation "
 "and are not considered errors, but you still may care about."
 msgstr ""
+"<b>Notice</b> (توجه): پیام هایی هستند که به ندرت هنگام فعالیت معمول Tor ظاهر "
+"می شوند و خطا به شمار نمی آیند، با وجود این بهتر است توجه لازم را نشان "
+"دهید. "
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:55
@@ -97,6 +105,8 @@ msgid ""
 "<b>Info</b>: Messages that appear frequently during normal Tor operation and "
 "are not usually of interest to most users."
 msgstr ""
+"<b>Info</b>(اطلاعات): پیام هایی هستند که مکرر در طول فعالیت معمول Tor ظاهر "
+"می شوند و غالبن نیز موفق به جلب  توجه کاربران نمی شوند. "
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:59
@@ -105,6 +115,8 @@ msgid ""
 "developers. You should generally not log debug messages unless you know what "
 "you are doing."
 msgstr ""
+"<b>Debug</b> (اشکال زدایی): پیام های بسیار طویل که اساسن مورد توجه سازندگان "
+"نرم افزارند. اگر اطلاع کافی ندارید بهتر است پیام را حذف نکنید."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:66
@@ -112,21 +124,23 @@ msgid ""
 "Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i> "
 "messages."
 msgstr ""
+"برای بیشتر کاربران، مناسب تر است که فقط پیام های خطا، هشدار، و توجه را حذف "
+"کنند."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:71
 msgid "To select which message severities you would like to see, do the following:"
-msgstr ""
+msgstr "برای انتخاب جدیت پیامی که مایلید مشاهده کنید، مراحل زیر را انجام دهید:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:73 en/log.html:92
 msgid "Open the message log from the Vidalia tray menu."
-msgstr ""
+msgstr "ورودی پیام ها را از روی منوی Vidalia باز نمایید."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
 msgid "Click on <i>Settings</i> at the top of the message log window."
-msgstr ""
+msgstr "روی <i>Settings</i> در بالای پنجره ورودی پیام کلید کنید."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:76
@@ -134,21 +148,23 @@ msgid ""
 "Check message severities you would like to see from the Message Filter group "
 "on the left and uncheck message severities you would like to hide."
 msgstr ""
+"جدیت پیامی را که مایلید ببینید را از روی گروه پالایش پیام در سمت چپ چک کنید "
+"و سپس چک-باکس جدیت پیامی را که انتخاب کرده اید، تیک نزنید."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:79
 msgid "Click <i>Save Settings</i> to apply your new message filter."
-msgstr ""
+msgstr "روی <i>Save Settings</i> کلیک کنید تا پیام پالایش جدید شما سیو شود. "
 
 #. type: Content of: <html><body>
 #: en/log.html:84
 msgid "<a name=\"logfile\"/>"
-msgstr ""
+msgstr "<یک اسم=\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:85
 msgid "Logging to a File"
-msgstr ""
+msgstr "ورود به یک فایل"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:87
@@ -156,11 +172,16 @@ msgid ""
 "Vidalia can also write log messages to a file, as well as logging them in "
 "the message log window. To enable logging to a file, follow these steps:"
 msgstr ""
+"Vidalia همچنین می تواند پیام ورود به فایل بنویسد، و نیز می تواند آنها را به "
+"پنجره ورودی پیام ها وارد کند. برای فعال کردن ورود به فایل، این مراحل را "
+"دنبال کنید:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:94
 msgid "Check the box labeled <i>Automatically save new log messages to a file</i>."
 msgstr ""
+"چک-باکسی که عنوان <i> پیام ورود جدید را به طور اتوماتیک در فایل سیو کن</i> "
+"دارد را تیک بزنید."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:96
@@ -169,8 +190,12 @@ msgid ""
 "either type the path and filename into the text box, or click <i>Browse</i> "
 "to navigate to a location for your log file."
 msgstr ""
+"اگر مایلید محل فایلی که پیام های شما آنجا نوشته می شود را تغییر دهید، یا "
+"آدرس فایل و اسم فایل را در تکست-باکس بنویسید و یا روی <i>Browse</i> (مرور) "
+"کلیک کنید و بگردید تا محلی که مایلید پیام ها در آنجا ذخیره شود را انتخاب "
+"کنید. "
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:100
 msgid "Click <i>Save Settings</i> to save your log destination."
-msgstr ""
+msgstr "برای سیو کردن محل مخزن پیام، روی <i>Save Settings</i> کلیک کنید."
