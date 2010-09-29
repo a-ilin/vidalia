@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-28 08:27+0200\n"
+"PO-Revision-Date: 2010-09-29 03:05+0200\n"
 "Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fa\n"
@@ -227,31 +227,33 @@ msgid ""
 "The fields that you may see in the panel are as follows (<i>Note</i>: not "
 "all of these fields will always be present):"
 msgstr ""
+"زمینه هایی که در تابلو ممکن است دیده شوند از این قرارند: (<i>Note</i> توجه: "
+"همه زمینه ها همیشه دیده نمی شوند):"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:138
 msgid "<b>Location</b>"
-msgstr ""
+msgstr "<b>محل</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:139
 msgid "The geographic location of this Tor relay."
-msgstr ""
+msgstr "محل جغرافیایی این بازپخش Tor. "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:142
 msgid "<b>IP Address</b>"
-msgstr ""
+msgstr "<b> آدرس آی پی</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:143
 msgid "IP address at which this Tor relay can be reached."
-msgstr ""
+msgstr "آدرس آی پی دسترسی به این بازپخش Tor "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:146
 msgid "<b>Platform</b>"
-msgstr ""
+msgstr "<b>بستر نرم افزاری</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:148
@@ -259,11 +261,13 @@ msgid ""
 "Operating system information and Tor version on which this relay is "
 "currently running."
 msgstr ""
+"سیستم عامل اطلاعاتی و نمونه ای از Tor که این بازپخش در حال حاضر بر روی آن "
+"فعال است."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:153
 msgid "<b>Bandwidth</b>"
-msgstr ""
+msgstr "<b>پهنای نوار</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:155
@@ -271,11 +275,13 @@ msgid ""
 "Estimated maximum amount of bandwidth that the directory relays have seen "
 "this relay handle recently."
 msgstr ""
+"حداکثر پهنای نواری که بنا به تخمین فهرست اطلاعاتی بازپخش ها این بازپخش اخیرن "
+"قادر بوده بکار بگیرد."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:160
 msgid "<b>Uptime</b>"
-msgstr ""
+msgstr "<b>بر خط</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:162
@@ -283,13 +289,15 @@ msgid ""
 "Length of time this relay has been available, which can be used to help "
 "estimate this relay's stability."
 msgstr ""
+"مدت زمانی که این بازپخش در دسترس بوده و بر اساس آن می توان درجه ی تثبیت آن "
+"را تخمین زد."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:167
 msgid "<b>Last Updated</b>"
-msgstr ""
+msgstr "<b>آخرین به روز رسانی</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:168
 msgid "Date this relay's information was last updated."
-msgstr ""
+msgstr "آخرین تاریخ به روزرسانی اطلاعات این بازپخش."
