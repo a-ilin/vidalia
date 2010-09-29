@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-09-29 05:04+0200\n"
+"Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/running.html:16
 msgid "Running Tor"
-msgstr ""
+msgstr "Tor فعال"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:20
@@ -36,31 +37,35 @@ msgid ""
 "Tor, as well as monitoring Tor's status and letting you know if it exits "
 "unexpectedly."
 msgstr ""
+"Vidalia می تواند برای کنترل پروسه Tor، با ایجاد امکان راه اندازی و متوقف "
+"سازی Tor و همینطور کنترل وضعیت Tor و آگاه سازی از خروج ناگهانی Tor به شما "
+"کمک کند.  "
 
 #. type: Content of: <html><body>
 #: en/running.html:25
 msgid "<a name=\"starting\"/>"
-msgstr ""
+msgstr "<یک اسم=\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:26
 msgid "Starting and Stopping Tor"
-msgstr ""
+msgstr "راه اندازی و متوقف سازی Tor"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:28
 msgid "To <i>start</i> Tor,"
-msgstr ""
+msgstr "به سوی <i>استارت</i> سرویس Tor"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:30
 msgid "Select <i>Start</i> from Vidalia's tray menu or press <i>Ctrl+S</i>"
 msgstr ""
+"از منوی  Vidalia استارت را انتخاب کنید و یا روی <i>Ctrl+S</i> کلیک کنید."
 
 #. type: Content of: <html><body><p><ol>
 #: en/running.html:30 en/running.html:45
 msgid "."
-msgstr ""
+msgstr "."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:32
@@ -68,6 +73,8 @@ msgid ""
 "Vidalia's tray icon will change from an onion with a red X to a green onion "
 "when Tor has started."
 msgstr ""
+"وقتی که Tor راه اندازی می شود، ایکون منوی Vidalia از پیاز با x قرمز به پیاز "
+"سبز تغییر می کند. "
 
 #. type: Content of: <html><body><p>
 #: en/running.html:36
@@ -77,16 +84,21 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"اگر Vidalia قادر به استارت Tor نباشد، Vidalia سپس پیام خطایی را نشان می دهد "
+"که به شما اشکال ایجاد شده را اطلاع می دهد. شما همچنین می توانید به مخزن پیام "
+"خود در <a href=\"log.html\">message log</a> مراجعه کنید و ببینید آیا Tor "
+"اطلاعات بیشتری در مورد اشکالی که ایجاد شده ارسال کرده است یا نه. "
 
 #. type: Content of: <html><body><p>
 #: en/running.html:43
 msgid "To <i>stop</i> Tor,"
-msgstr ""
+msgstr "برای <i>stop</i> (توقف)سرویس Tor"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:45
 msgid "Select <i>Stop</i> from Vidalia's tray menu or press <i>Ctrl+T</i>"
 msgstr ""
+"از منوی ویدالیا <i>Stop</i> را انتخاب کنید و یا <i>Ctrl+T</i> را کلیک کنید."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:47
@@ -94,6 +106,8 @@ msgid ""
 "Vidalia's tray icon will change from a green onion to a gray onion with a "
 "red X when Tor has stopped."
 msgstr ""
+"وقتی Tor متوقف می شود، ایکون منوی Vidalia از پیاز سبز به پیاز خاکستری با x "
+"قرمز تبدیل می شود."
 
 #. type: Content of: <html><body><p>
 #: en/running.html:51
@@ -103,16 +117,20 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"اگر Vidalia قادر به توقف Tor نباشد پیام خطایی را منعکس می کند و اشکال ایجاد "
+"شده را توضیح می دهد. همچنین می توانید به <a href=\"log.html\">message log</a> "
+"مراجعه کنید و ببینید آیا Tor هیچ پیامی در مورد اشکالی که ایجاد شده ارسال "
+"کرده است یا نه. "
 
 #. type: Content of: <html><body>
 #: en/running.html:57
 msgid "<a name=\"monitoring\"/>"
-msgstr ""
+msgstr "<یک اسم=\"نظارت\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:58
 msgid "Monitoring Tor's Status"
-msgstr ""
+msgstr "نظارت بر وضعیت Tor"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:60
@@ -121,11 +139,15 @@ msgid ""
 "system tray or dock area. The following table shows the different states "
 "indicated by an icon in your system's notification area:"
 msgstr ""
+"Vidaila وضعیت Tor را با نمایش ایکونی در منوی سیستم و منطقه بارگیری مشخص می "
+"کند. جدول زیر وضعیت های گوناگون را با ایکونی که در تابلوی اعلانات سیستم شما "
+"نمایش داده می شود، نشان می دهد:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:69
 msgid "Tor is stopped. Select <i>Start</i> from the Vidalia menu to start Tor."
 msgstr ""
+"Tor متوقف شد. برای استارت Tor از منوی Vidalia <i>Start</i> انتخاب کنید. "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:76
@@ -133,6 +155,8 @@ msgid ""
 "Tor is starting up. You can check the <a href=\"log.html\">message log</a> "
 "for status information about Tor while it is starting."
 msgstr ""
+"Tor در حال استارت است. برای اطلاع از وضعیت Tor در مرحله استارت به <a "
+"href=\"log.html\">message log</a> مراجعه کنید."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:84
@@ -142,11 +166,15 @@ msgid ""
 "href=\"log.html\">message log</a> while it is running, if you want to see "
 "what Tor is doing."
 msgstr ""
+"Tor فعال شده است. اگر مایلید Tor را متوقف کنید، از منوی Vidalia <i>Stop</i> "
+"را انتخاب کنید. اگر میخواهید بدانید مشغول به چه کاری  است، Tor همزمان با "
+"فعالیت خود، اطلاعاتی را در مخزن پیام در <a href=\"log.html\">message log</a> "
+"منتشر می کند. "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:92
 msgid "Tor is in the process of shutting down."
-msgstr ""
+msgstr "Tor در حال بسته شدن است"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:98
@@ -156,3 +184,7 @@ msgid ""
 "wrong. You can also check the <a href=\"log.html\">message log</a> for "
 "details about any problems Tor encountered before it exited."
 msgstr ""
+"اگر Tor ناگهانی خارج شود، Vidalia ایکون خود رابه پیاز تیره با x قرمز تغییر "
+"می دهد و با نمایش یک پیام خطا اشکال ایجاد شده را به شما اطلاع می دهد. همچنین "
+"می توانید مخزن پیام ها را در <a href=\"log.html\">message log</a> برای اطلاع "
+"از جزئیات مشکلی که Tor پیش از خروج با آن روبرو شده است، چک کنید. "

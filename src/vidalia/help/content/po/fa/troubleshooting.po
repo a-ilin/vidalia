@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-03 15:49-0300\n"
-"PO-Revision-Date: 2010-09-22 07:42+0200\n"
+"PO-Revision-Date: 2010-09-29 04:17+0200\n"
 "Last-Translator: Ghazal <nevisht@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fa\n"
@@ -199,6 +199,8 @@ msgid ""
 "button, you can click the button and Vidalia will restart Tor with a new "
 "random control password."
 msgstr ""
+"اگر مکالمه ای که از شما طلب کلمه عبور می کند کلید <i>Reset</i> دارد، روی آن "
+"کلیک کنید. Vidalia با یک کلمه عبور تصادفی دیگر Tor را فعال خواهد کرد. "
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:99
@@ -208,6 +210,10 @@ msgid ""
 "process or task manager, and terminate the Tor process. Then use Vidalia to "
 "restart Tor and all will work again."
 msgstr ""
+"اگر کلید <i>Reset</i> را نمی یابید، و یا اگر Vidalia قادر به ری-استارت Tor "
+"نیست، می توانید مشکل را به صورت دستی حل کنید. کافی است روی بخش مدیریت پروسه "
+"و مدیریت تکلیف کلیک کنید و پروسه Tor را قطع کنید. پس از آن برای ری-استارت "
+"Tor از Vidaila استفاده کنید و همه اپلیکشن ها دوباره بکار می افتند. "
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:106
@@ -220,6 +226,14 @@ msgid ""
 "running Tor. Vidalia generates a random password, but it is different than "
 "the saved password in the Tor service."
 msgstr ""
+"پیش از این Tor را فعال کرده بودید تا به عنوان سرویس فعال باشد. اگر Tor به "
+"عنوان سرویس، فعال باشد، با راه-اندازی سیستم شروع به کار می کند. اگر Tor را "
+"تنظیم کرده باشید تا به عنوان سرویس، و از طریق Vidaila آغاز کند، کلمه عبوری "
+"هم برایش معین شده و در Tor سیو شده است. در هنگام راه-اندازی مجدد، Tor با "
+"استفاده از کلمه عبور تصادفی که سیو کرده است، شروع به کار می کند. شما وارد "
+"سیستم می شوید و Vidalia را فعال می کنید. Vidalia سعی می کند با Tor که از قبل "
+"فعال بوده وارد مکالمه شود. Vidalia یک کلمه عبور تصادفی تولید می کند، اما "
+"این کلمه عبور با کلمه عبوری که در Tor سیو شده، متفاوت است."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:114
@@ -229,16 +243,20 @@ msgid ""
 "href=\"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ#WinNTService\"> "
 "Tor as a service</a> for more information on how to remove the Tor service."
 msgstr ""
+"شما می بایست Tor را طوری تنظیم کنید که سرویس نباشد. به صفحه wiki Tor در فعال "
+"ساختن Tor به عنوان سرویس در <a href=\"https://wiki.torproject.org/noreply/Th"
+"eOnionRouter/TorFAQ#WinNTService\"> مراجعه کنید تا اطلاعات بیشتر در مورد خارج "
+"کردن Tor از وضعیت سرویس به دست آورید. "
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:122
 msgid "<a name=\"torexited\"/>"
-msgstr ""
+msgstr "<یک اسم=\"Torخارج شد\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:123
 msgid "Tor Exited Unexpectedly"
-msgstr ""
+msgstr "Tor ناگهان از سرویس خارج شد"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:125
@@ -248,6 +266,10 @@ msgid ""
 "to see if any of the last few messages in the list are highlighted in yellow "
 "and contain a message similar to the following:"
 msgstr ""
+"اگر Tor بلافاصله بعد از تلاش برای استارت خارج شود، به احتمال قوی شما یک Tor "
+"دیگر از قبل دارید که فعال است. پیام <a href=\"log.html\">message log</a> را چک "
+"کنید ببینید آیا هیچیک از پیام های لیست با رنگ زرد مشخص شده اند و پیامی شبیه "
+"به پیام زیر دارند یا نه:"
 
 # type: Content of: <html><body><pre>
 #: en/troubleshooting.html:131
@@ -257,6 +279,8 @@ msgid ""
 "already in use. \n"
 "Is Tor already running?\n"
 msgstr ""
+"ارتباط-ایجاد-شنونده(): امکان اتصال به 127.0.0.1:9050 نبود: آدرس پیشاپیش مورد "
+"استفاده بوده است. آیا Tor در حال حاضر فعال است؟"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:135
@@ -267,6 +291,11 @@ msgid ""
 "operating systems, the <i>ps</i> command can help you find the other Tor "
 "process."
 msgstr ""
+"گر به پیام خطا، مشابه پیام بالا برخوردید، می بایست پروسه Torهای دیگر را اپیش "
+"از آن که یک پروسه تازه همراه با Vidalia شروع کنید، قطع کنید. در ویندوز، "
+"<i>tor.exe</i> را در بخش مدیریت تکلیف (task manager) پیدا کنید. در اکثر "
+"سیستم های عامل دیگر، فرمان<i>ps</i> می تواند به یافتن دیگر پروسه های Tor کمک "
+"کند. "
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:141
@@ -276,16 +305,20 @@ msgid ""
 "information about any errors Tor experienced before it exited. Such errors "
 "will be highlighted in either red or yellow."
 msgstr ""
+"اگر Tor برای مدتی به طور موفقیت آمیز فعال بوده، (یعنی بیشتر از چند ثانیه)، "
+"می بایست بخش ذخیره پیام <a href=\"log.html\">message log</a> را برای اطلاعات "
+"مربوط به هر نوع خطایی که Tor قبل از خروج به آن برخورده، چک کنید. این خطاها "
+"با رنگ زرد و یا قرمز مشخص شده اند."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:147
 msgid "<a name=\"stop\"/>"
-msgstr ""
+msgstr "<یک اسم=\"توقف\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:148
 msgid "Vidalia Can't Stop Tor"
-msgstr ""
+msgstr "Vidalia قادر نیست Tor را متوقف کند"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:150
@@ -294,3 +327,6 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor reported any errors while "
 "trying to exit."
 msgstr ""
+"اگر Vidalia نتواند Tor را متوقف کند، می بایست مخزن پیام خود در <a "
+"href=\"log.html\">message log</a> چک کنید و ببینید آیا Tor پیام خطایی قبل از "
+"تلاش برای خروج ارسال کرده است یا نه."
