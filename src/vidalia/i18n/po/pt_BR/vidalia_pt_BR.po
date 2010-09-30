@@ -3,13 +3,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:59+0000\n"
-"PO-Revision-Date: 2010-02-02 17:19-0700\n"
-"Last-Translator: Aníbal Deboni Neto <anibaldeboni@gmail.com>\n"
+"PO-Revision-Date: 2010-09-30 16:30+0200\n"
+"Last-Translator: worm <joner@worm.sh>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: aboutdialog.ui:16
 msgctxt "AboutDialog"
@@ -160,10 +162,11 @@ msgctxt "AdvancedPage"
 msgid "Password"
 msgstr "Senha"
 
+# Wrong verb tense: generate=gerar generated=gerado
 #: advancedpage.ui:111
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
-msgstr "Gerado aleatoriamente"
+msgstr "Gerar aleatoriamente"
 
 #: advancedpage.ui:157
 msgctxt "AdvancedPage"
@@ -196,10 +199,11 @@ msgctxt "AdvancedPage"
 msgid "Data Directory"
 msgstr "Diretório de dados"
 
+# Uniform case: Tor, not TOR
 #: advancedpage.ui:296
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr "Salve dados para o programa TOR no seguinte diretório"
+msgstr "Salve dados para o programa Tor no seguinte diretório"
 
 #: advancedpage.ui:315
 msgctxt "AdvancedPage"
@@ -254,7 +258,7 @@ msgstr "Largura de banda usada pelo Tor"
 #: bwgraph.ui:63
 msgctxt "BandwidthGraph"
 msgid "Reset"
-msgstr "Reset"
+msgstr "Reinicializar"
 
 #: bwgraph.ui:151
 msgctxt "BandwidthGraph"
@@ -401,10 +405,11 @@ msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
 msgstr "Erro ao salvar configurações"
 
+# typo: as = das
 #: configdialog.cpp:198
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr "Vidalia foi incapaz de salvar o parâmetro %1 as configurações."
+msgstr "Vidalia foi incapaz de salvar o parâmetro %1 das configurações."
 
 #: configdialog.cpp:225
 msgctxt "ConfigDialog"
@@ -2372,7 +2377,6 @@ msgid "Let others access your bridge by giving them this line:"
 msgstr "Permite que outros usuários acessem sua ponte dando-lhes esta linha:"
 
 #: serverpage.ui:1039
-#, fuzzy
 msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
 msgstr ""
@@ -2601,13 +2605,12 @@ msgstr "Procurando dispositivos UPnP-compatível"
 #: upnptestdialog.cpp:117
 msgctxt "UPNPTestDialog"
 msgid "Updating directory port mapping"
-msgstr "Atualizando diretório de mapeamento de portas"
+msgstr "Atualizando mapeamento de portas do diretório"
 
 #: upnptestdialog.cpp:122
-#, fuzzy
 msgctxt "UPNPTestDialog"
 msgid "Updating relay port mapping"
-msgstr "Atualizando servidor de porta mapeada"
+msgstr "Atualizando mapeamento de portas do servidor"
 
 #: upnptestdialog.cpp:127
 msgctxt "UPNPTestDialog"
