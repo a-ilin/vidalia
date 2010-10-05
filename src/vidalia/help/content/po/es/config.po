@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: 2010-09-13 17:00+0200\n"
-"Last-Translator: emma_f <emmafelber@gmail.com>\n"
+"PO-Revision-Date: 2010-09-30 04:37+0200\n"
+"Last-Translator: Ricardo A. <ra.hermosillac@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -42,15 +42,16 @@ msgstr ""
 "<a href=\"server.html\"> relevo de Tor</a> para que puedas ayudar a la red Tor "
 "crecer."
 
+# Estas etiquetas no se traducen
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr "<nombre=\"general\">"
+msgstr "<a name=\"general\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "Configuraciones Generales"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
