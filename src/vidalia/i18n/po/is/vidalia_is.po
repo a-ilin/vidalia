@@ -1,16 +1,17 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:59+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-10-03 02:53+0200\n"
+"Last-Translator: nifgraup <nifgraup@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: aboutdialog.ui:16
 msgctxt "AboutDialog"
@@ -197,137 +198,137 @@ msgstr ""
 #: advancedpage.ui:296
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "Geyma Tor forritið í eftirfarandi möppu"
 
 #: advancedpage.ui:315
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "Veldu möppu til að geyma gögn fyrir Tor"
 
 #: appearancepage.ui:22
 msgctxt "AppearancePage"
 msgid "Language"
-msgstr ""
+msgstr "Tungumál"
 
 #: appearancepage.ui:37
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
-msgstr ""
+msgstr "Veldu tungumál til að nota í Vidalia"
 
 #: appearancepage.ui:75
 msgctxt "AppearancePage"
 msgid "Style"
-msgstr ""
+msgstr "Stíll"
 
 #: appearancepage.ui:103
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
-msgstr ""
+msgstr "Veldu viðmótsstíl Vidalia"
 
 #: appearancepage.cpp:67
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Vidalia tókst ekki að hlaða inn valdri þýðingu."
 
 #: bwgraph.cpp:166
 msgctxt "BandwidthGraph"
 msgid "Since:"
-msgstr ""
+msgstr "Síðan:"
 
 #: bwgraph.cpp:232
 msgctxt "BandwidthGraph"
 msgid "Hide Settings"
-msgstr ""
+msgstr "Fela stillingar"
 
 #: bwgraph.ui:40
 msgctxt "BandwidthGraph"
 msgid "Show Settings"
-msgstr ""
+msgstr "Sýna stillingar"
 
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
-msgstr ""
+msgstr "Bandvíddarnotkun Tor"
 
 #: bwgraph.ui:63
 msgctxt "BandwidthGraph"
 msgid "Reset"
-msgstr ""
+msgstr "Endurstilla"
 
 #: bwgraph.ui:151
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
-msgstr ""
+msgstr "Viðtökuhraði"
 
 #: bwgraph.ui:170
 msgctxt "BandwidthGraph"
 msgid "Send Rate"
-msgstr ""
+msgstr "Sendingarhraði"
 
 #: bwgraph.ui:183
 msgctxt "BandwidthGraph"
 msgid "Always on Top"
-msgstr ""
+msgstr "Alltaf efst"
 
 #: bwgraph.ui:234
 msgctxt "BandwidthGraph"
 msgid "Style"
-msgstr ""
+msgstr "Stíll"
 
 #: bwgraph.ui:284
 msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
-msgstr ""
+msgstr "Breyta gegnsæi bandvíddargrafsins"
 
 #: bwgraph.ui:368
 msgctxt "BandwidthGraph"
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: bwgraph.ui:383
 msgctxt "BandwidthGraph"
 msgid "% Opaque"
-msgstr ""
+msgstr "% matt"
 
 #: bwgraph.ui:443
 msgctxt "BandwidthGraph"
 msgid "Save"
-msgstr ""
+msgstr "Vista"
 
 #: bwgraph.ui:450
 msgctxt "BandwidthGraph"
 msgid "Cancel"
-msgstr ""
+msgstr "Hætta við"
 
 #: circuit.cpp:112
 msgctxt "Circuit"
 msgid "New"
-msgstr ""
+msgstr "Nýtt"
 
 #: circuit.cpp:113
 msgctxt "Circuit"
 msgid "Open"
-msgstr ""
+msgstr "Opna"
 
 #: circuit.cpp:114
 msgctxt "Circuit"
 msgid "Building"
-msgstr ""
+msgstr "Byggi"
 
 #: circuit.cpp:115
 msgctxt "Circuit"
 msgid "Failed"
-msgstr ""
+msgstr "Mistókst"
 
 #: circuit.cpp:116
 msgctxt "Circuit"
 msgid "Closed"
-msgstr ""
+msgstr "Lokað"
 
 #: circuit.cpp:117
 msgctxt "Circuit"
 msgid "Unknown"
-msgstr ""
+msgstr "Óþekkt"
 
 #: circuititem.cpp:39
 msgctxt "CircuitItem"
@@ -337,12 +338,12 @@ msgstr ""
 #: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Connection"
-msgstr ""
+msgstr "Tenging"
 
 #: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Status"
-msgstr ""
+msgstr "Staða"
 
 #: circuitlistwidget.cpp:87
 msgctxt "CircuitListWidget"
@@ -362,67 +363,67 @@ msgstr ""
 #: configdialog.cpp:77
 msgctxt "ConfigDialog"
 msgid "General"
-msgstr ""
+msgstr "Almennt"
 
 #: configdialog.cpp:81
 msgctxt "ConfigDialog"
 msgid "Network"
-msgstr ""
+msgstr "Net"
 
 #: configdialog.cpp:85
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr ""
+msgstr "Deiling"
 
 #: configdialog.cpp:89
 msgctxt "ConfigDialog"
 msgid "Services"
-msgstr ""
+msgstr "Þjónustur"
 
 #: configdialog.cpp:93
 msgctxt "ConfigDialog"
 msgid "Appearance"
-msgstr ""
+msgstr "Útlit"
 
 #: configdialog.cpp:97
 msgctxt "ConfigDialog"
 msgid "Advanced"
-msgstr ""
+msgstr "Nánar"
 
 #: configdialog.cpp:111
 msgctxt "ConfigDialog"
 msgid "Help"
-msgstr ""
+msgstr "Hjálp"
 
 #: configdialog.cpp:196
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
-msgstr ""
+msgstr "Villa við að vista stillingar"
 
 #: configdialog.cpp:198
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr ""
+msgstr "Vildalia tókst ekki að vista %1 stillingar."
 
 #: configdialog.cpp:225
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
-msgstr ""
+msgstr "Villa við að virkja stillingar"
 
 #: configdialog.cpp:227
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr ""
+msgstr "Vildalia tókst ekki að virkja %1 stillingar."
 
 #: configdialog.ui:16
 msgctxt "ConfigDialog"
 msgid "Settings"
-msgstr ""
+msgstr "Stillingar"
 
 #: controlconnection.cpp:134
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
-msgstr ""
+msgstr "Vidalia tókst ekki að tengjast Tor. (%1)"
 
 #: controlconnection.cpp:331
 msgctxt "ControlConnection"
@@ -432,7 +433,7 @@ msgstr ""
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Lykilorð er nauðsynlegt"
 
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
@@ -442,7 +443,7 @@ msgstr ""
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Muna lykilorðið mitt"
 
 #: controlsocket.cpp:70
 msgctxt "ControlSocket"
@@ -467,12 +468,12 @@ msgstr ""
 #: generalpage.cpp:62
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
-msgstr ""
+msgstr "Forritsskrár (*.exe)"
 
 #: generalpage.cpp:75
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
-msgstr ""
+msgstr "Veldu slóð að Tor"
 
 #: generalpage.cpp:85
 msgctxt "GeneralPage"
@@ -492,7 +493,7 @@ msgstr ""
 #: generalpage.ui:28
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "Ræsa Vidalia þegar tölvan er ræst"
 
 #: generalpage.ui:121
 msgctxt "GeneralPage"
@@ -502,12 +503,12 @@ msgstr ""
 #: generalpage.ui:57
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "Keyra upp Tor þegar Vidalia er ræst"
 
 #: generalpage.ui:51
 msgctxt "GeneralPage"
 msgid "Tor"
-msgstr ""
+msgstr "Tor"
 
 #: generalpage.ui:93
 msgctxt "GeneralPage"
@@ -532,37 +533,37 @@ msgstr ""
 #: graphframe.cpp:298
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
-msgstr ""
+msgstr "%1 KB/s"
 
 #: graphframe.cpp:247
 msgctxt "GraphFrame"
 msgid "Sent: "
-msgstr ""
+msgstr "Sent:"
 
 #: graphframe.cpp:259
 msgctxt "GraphFrame"
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: graphframe.cpp:262
 msgctxt "GraphFrame"
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: graphframe.cpp:265
 msgctxt "GraphFrame"
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: helpbrowser.cpp:135
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents: "
-msgstr ""
+msgstr "Tókst ekki að hlaða inn hjálpinni:"
 
 #: helpbrowser.cpp:147
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
-msgstr ""
+msgstr "XML skráin er ekki gild."
 
 #: helpbrowser.cpp:396
 msgctxt "HelpBrowser"
@@ -577,22 +578,22 @@ msgstr ""
 #: helpbrowser.cpp:400
 msgctxt "HelpBrowser"
 msgid "Text not found in document"
-msgstr ""
+msgstr "Textinn fannst ekki í skránni"
 
 #: helpbrowser.cpp:445
 msgctxt "HelpBrowser"
 msgid "Found %1 results"
-msgstr ""
+msgstr "Fann %1 niðurstöður"
 
 #: helpbrowser.ui:33
 msgctxt "HelpBrowser"
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Vildalia hjálp"
 
 #: helpbrowser.ui:484
 msgctxt "HelpBrowser"
 msgid "Back"
-msgstr ""
+msgstr "Til baka"
 
 #: helpbrowser.ui:487
 msgctxt "HelpBrowser"
@@ -607,7 +608,7 @@ msgstr ""
 #: helpbrowser.ui:498
 msgctxt "HelpBrowser"
 msgid "Forward"
-msgstr ""
+msgstr "Áfram"
 
 #: helpbrowser.ui:501
 msgctxt "HelpBrowser"
@@ -622,72 +623,72 @@ msgstr ""
 #: helpbrowser.ui:512
 msgctxt "HelpBrowser"
 msgid "Home"
-msgstr ""
+msgstr "Heim"
 
 #: helpbrowser.ui:515
 msgctxt "HelpBrowser"
 msgid "Move to the Home page (Ctrl+H)"
-msgstr ""
+msgstr "Fara á upphafssíðu (Ctrl+H)"
 
 #: helpbrowser.ui:518
 msgctxt "HelpBrowser"
 msgid "Ctrl+H"
-msgstr ""
+msgstr "Ctrl+H"
 
 #: helpbrowser.ui:535
 msgctxt "HelpBrowser"
 msgid "Find"
-msgstr ""
+msgstr "Finna"
 
 #: helpbrowser.ui:538
 msgctxt "HelpBrowser"
 msgid "Search for a word or phrase on current page (Ctrl+F)"
-msgstr ""
+msgstr "Leita að orði eða setningu á núverandi síðu (Ctrl+F)"
 
 #: helpbrowser.ui:541
 msgctxt "HelpBrowser"
 msgid "Ctrl+F"
-msgstr ""
+msgstr "Ctrl+F"
 
 #: helpbrowser.ui:549
 msgctxt "HelpBrowser"
 msgid "Close"
-msgstr ""
+msgstr "Loka"
 
 #: helpbrowser.ui:552
 msgctxt "HelpBrowser"
 msgid "Close Vidalia Help"
-msgstr ""
+msgstr "Loka Vidalia-hjálpinni"
 
 #: helpbrowser.ui:555
 msgctxt "HelpBrowser"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #: helpbrowser.ui:152
 msgctxt "HelpBrowser"
 msgid "Find:"
-msgstr ""
+msgstr "Finna:"
 
 #: helpbrowser.ui:174
 msgctxt "HelpBrowser"
 msgid "Find Previous"
-msgstr ""
+msgstr "Finna fyrri"
 
 #: helpbrowser.ui:187
 msgctxt "HelpBrowser"
 msgid "Find Next"
-msgstr ""
+msgstr "Finna næsta"
 
 #: helpbrowser.ui:221
 msgctxt "HelpBrowser"
 msgid "Case sensitive"
-msgstr ""
+msgstr "Háð há/lágstöfum"
 
 #: helpbrowser.ui:231
 msgctxt "HelpBrowser"
 msgid "Whole words only"
-msgstr ""
+msgstr "Einungis heil orð"
 
 #: helpbrowser.ui:305
 msgctxt "HelpBrowser"
@@ -707,22 +708,22 @@ msgstr ""
 #: helpbrowser.ui:362
 msgctxt "HelpBrowser"
 msgid "Searching for:"
-msgstr ""
+msgstr "Leita að:"
 
 #: helpbrowser.ui:405
 msgctxt "HelpBrowser"
 msgid "Found Documents"
-msgstr ""
+msgstr "Fann skjöl"
 
 #: helptextbrowser.cpp:54
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file: "
-msgstr ""
+msgstr "Villa við að opna hjálparskrá:"
 
 #: helptextbrowser.cpp:72
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "Opna utanaðkomandi tengil"
 
 #: helptextbrowser.cpp:76
 msgctxt "HelpTextBrowser"
@@ -732,12 +733,12 @@ msgstr ""
 #: helptextbrowser.cpp:78
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Vilu að Vidalia opni tengilinn í vefskoðara?"
 
 #: helptextbrowser.cpp:88
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Gat ekki opnað tengil"
 
 #: helptextbrowser.cpp:90
 msgctxt "HelpTextBrowser"
@@ -747,17 +748,17 @@ msgstr ""
 #: licensedialog.ui:13
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Upplýsingar um notkunarleyfi"
 
 #: licensedialog.ui:43
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Notkunarleyfi"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Þakkir"
 
 #: logevent.cpp:57
 msgctxt "LogEvent"
@@ -777,37 +778,37 @@ msgstr ""
 #: logevent.cpp:60
 msgctxt "LogEvent"
 msgid "Warning"
-msgstr ""
+msgstr "Aðvörun"
 
 #: logevent.cpp:61
 msgctxt "LogEvent"
 msgid "Error"
-msgstr ""
+msgstr "Villa"
 
 #: logevent.cpp:62
 msgctxt "LogEvent"
 msgid "Unknown"
-msgstr ""
+msgstr "Óþekkt"
 
 #: mainwindow.ui:233
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "Ræsa Tor"
 
 #: mainwindow.ui:443
 msgctxt "MainWindow"
 msgid "Exit"
-msgstr ""
+msgstr "Hætta"
 
 #: mainwindow.ui:304
 msgctxt "MainWindow"
 msgid "Bandwidth Graph"
-msgstr ""
+msgstr "Bandvíddargraf"
 
 #: mainwindow.ui:317
 msgctxt "MainWindow"
 msgid "Message Log"
-msgstr ""
+msgstr "Annáll"
 
 #: mainwindow.cpp:348
 msgctxt "MainWindow"
@@ -822,92 +823,92 @@ msgstr ""
 #: mainwindow.ui:380
 msgctxt "MainWindow"
 msgid "Settings"
-msgstr ""
+msgstr "Stillingar"
 
 #: mainwindow.ui:430
 msgctxt "MainWindow"
 msgid "About"
-msgstr ""
+msgstr "Um"
 
 #: mainwindow.ui:367
 msgctxt "MainWindow"
 msgid "Help"
-msgstr ""
+msgstr "Hjálp"
 
 #: mainwindow.cpp:1391
 msgctxt "MainWindow"
 msgid "New Identity"
-msgstr ""
+msgstr "Nýtt auðkenni"
 
 #: mainwindow.cpp:437
 msgctxt "MainWindow"
 msgid "Ctrl+T"
-msgstr ""
+msgstr "Ctrl+T"
 
 #: mainwindow.cpp:438
 msgctxt "MainWindow"
 msgid "Ctrl+B"
-msgstr ""
+msgstr "Ctrl+B"
 
 #: mainwindow.cpp:439
 msgctxt "MainWindow"
 msgid "Ctrl+L"
-msgstr ""
+msgstr "Ctrl+L"
 
 #: mainwindow.cpp:440
 msgctxt "MainWindow"
 msgid "Ctrl+N"
-msgstr ""
+msgstr "Ctrl+N"
 
 #: mainwindow.cpp:441
 msgctxt "MainWindow"
 msgid "Ctrl+?"
-msgstr ""
+msgstr "Ctrl+?"
 
 #: mainwindow.cpp:442
 msgctxt "MainWindow"
 msgid "Ctrl+I"
-msgstr ""
+msgstr "Ctrl+I"
 
 #: mainwindow.cpp:443
 msgctxt "MainWindow"
 msgid "Ctrl+P"
-msgstr ""
+msgstr "Ctrl+P"
 
 #: mainwindow.cpp:463
 msgctxt "MainWindow"
 msgid "Tor"
-msgstr ""
+msgstr "Tor"
 
 #: mainwindow.cpp:468
 msgctxt "MainWindow"
 msgid "View"
-msgstr ""
+msgstr "Sýn"
 
 #: mainwindow.cpp:476
 msgctxt "MainWindow"
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Vidalia hjálp"
 
 #: mainwindow.cpp:527
 msgctxt "MainWindow"
 msgid "Error starting web browser"
-msgstr ""
+msgstr "Tókst ekki að ræsa vefskoðara"
 
 #: mainwindow.cpp:528
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
-msgstr ""
+msgstr "Vidalia tókst ekki að ræsa innstilltan vefskoðara"
 
 #: mainwindow.cpp:540
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Villa við að ræsa spjallforrit"
 
 #: mainwindow.cpp:541
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia tókst ekki að ræsa instillt spjallforrit"
 
 #: mainwindow.cpp:562
 msgctxt "MainWindow"
