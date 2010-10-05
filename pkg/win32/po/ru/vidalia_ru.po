@@ -201,11 +201,11 @@ msgstr "Установить ${POLIPO_DESC}."
 
 msgctxt "PolipoShortcuts"
 msgid "Add to Start Menu"
-msgstr "Добавить в Меню \"Пуск\""
+msgstr "Добавить в Меню Пуск"
 
 msgctxt "PolipoShortcutsDesc"
 msgid "Add ${POLIPO_NAME} to your Start menu."
-msgstr "Добавить ${POLIPO_NAME} в ваше меню \"Пуск\"."
+msgstr "Добавить ${POLIPO_NAME} в ваше меню Пуск."
 
 msgctxt "PolipoStartup"
 msgid "Run At Startup"
