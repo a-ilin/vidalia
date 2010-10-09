@@ -1,0 +1,74 @@
+
+
+<!--
+**  $Id: bridges.html 3007 2008-08-22 00:12:08Z edmanm $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>Przekaźnik Mostkowy</h1>
+<hr />
+
+<a name="about"/>
+<h3>Czym jest przekaźnik mostkowy?</h3>
+<p>
+Niektórzy ISP (Dostawca Usług Internetowych) blokują dostęp do sieci Tora
+poprzez blokowanie połączeń do znanych przekaźników Tora. Przekaźniki
+mostkowe (lub <i>mostek</i> w skrócie) pomagają cenzurowanym użytkownikom do
+podłączenia się do sieci Tor. Nie tak jak inne przekaźniki Tora, mostki nie
+są katalogowane w tym samym publicznym katalogu tak jak inne
+przekaźniki. Ponieważ nie ma kompletnej publicznej listy przekaźników, nawet
+jeśli twój ISP(Dostawca Usług Internetowych) filtruje wszystkie połączenia
+do znanych przekaźników Tora, prawdopodobnie nie będzie zdolny zablokować
+ich wszystkich.
+</p>
+
+<a name="finding"/>
+<h3>Jak mam znaleźć przekaźnik mostkowy?</h3>
+<p>
+Istnieją dwa główne sposoby na znalezienie adresu mostka. 
+<ol>
+  <li>Znajdź kilku przyjaciół którzy uruchomią dla ciebie mostek.</li>
+  <li>Użyj kilku publicznych mostków.</li>
+</ol>
+</p>
+
+<p>
+Aby użyć prywatnego mostka, zapytaj przyjaciół czy by nie uruchomili Vidalii
+i Tora na niecenzurowanym obszarze Internetu, a potem kliknij na <i>Pomóż
+cenzurowanym użytkownikom</i> w Vidalii <a href="server.html">Strona
+ustawień przekaźnika</a>. Wtedy powinni przesłać ci drogą prywatna <i>Adres
+mostka</i>, który znajduje się na dole strony ustawień przekaźnika. W
+przeciwieństwie do przekaźników wychodzących, prowadzenie przekaźnika
+mostkowego przepuszcza tylko dane z sieci Tor lub do sieci Tor, więc nie
+powinno to narazić operatora przekaźnika mostkowego na jakiekolwiek skargi o
+nadużycie czy też innego rodzaju problemy.
+</p>
+
+<p>
+You can find public bridge addresses by visiting
+<b>https://bridges.torproject.org</b>.  The answers you get from that page
+will change every few days, so check back periodically if you need more
+bridge addresses. Another way to find public bridge addresses is to send
+mail to <b>bridges@torproject.org</b> with the line <b>get bridges</b> by
+itself in the body of the mail. However, so we can make it harder for an
+attacker to learn lots of bridge addresses, you must send this request from
+a Gmail account.
+</p>
+
+<p>
+Configuring more than one bridge address will make your Tor connection more
+stable, in case some of the bridges become unreachable.
+</p>
+
+</body>
+</html>
+

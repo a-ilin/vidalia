@@ -1,0 +1,105 @@
+
+
+<!--
+**  $Id: running.html 2366 2008-03-01 17:58:23Z edmanm $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>Tor فعال</h1>
+<hr />
+
+<p>
+Vidalia می تواند برای کنترل پروسه Tor، با ایجاد امکان راه اندازی و متوقف
+سازی Tor و همینطور کنترل وضعیت Tor و آگاه سازی از خروج ناگهانی Tor به شما
+کمک کند.  
+</p>
+
+<یک اسم="/>
+<h3>راه اندازی و متوقف سازی Tor</h3>
+<p>
+به سوی <i>استارت</i> سرویس Tor
+<ol>
+  <li>از منوی  Vidalia استارت را انتخاب کنید و یا روی <i>Ctrl+S</i> کلیک کنید.</li>.
+  <li>
+    وقتی که Tor راه اندازی می شود، ایکون منوی Vidalia از پیاز با x قرمز به پیاز
+سبز تغییر می کند. 
+  </li>
+</ol>
+اگر Vidalia قادر به استارت Tor نباشد، Vidalia سپس پیام خطایی را نشان می دهد
+که به شما اشکال ایجاد شده را اطلاع می دهد. شما همچنین می توانید به مخزن پیام
+خود در <a href="log.html">message log</a> مراجعه کنید و ببینید آیا Tor
+اطلاعات بیشتری در مورد اشکالی که ایجاد شده ارسال کرده است یا نه. 
+</p>
+
+<p>
+برای <i>stop</i> (توقف)سرویس Tor
+<ol>
+  <li>از منوی ویدالیا <i>Stop</i> را انتخاب کنید و یا <i>Ctrl+T</i> را کلیک کنید.</li>.
+  <li>
+    وقتی Tor متوقف می شود، ایکون منوی Vidalia از پیاز سبز به پیاز خاکستری با x
+قرمز تبدیل می شود.
+  </li>
+</ol>
+اگر Vidalia قادر به توقف Tor نباشد پیام خطایی را منعکس می کند و اشکال ایجاد
+شده را توضیح می دهد. همچنین می توانید به <a href="log.html">message log</a>
+مراجعه کنید و ببینید آیا Tor هیچ پیامی در مورد اشکالی که ایجاد شده ارسال
+کرده است یا نه. 
+</p>
+
+<یک اسم="نظارت"/>
+<h3>نظارت بر وضعیت Tor</h3>
+<p>
+Vidaila وضعیت Tor را با نمایش ایکونی در منوی سیستم و منطقه بارگیری مشخص می
+کند. جدول زیر وضعیت های گوناگون را با ایکونی که در تابلوی اعلانات سیستم شما
+نمایش داده می شود، نشان می دهد:
+</p>
+<p>
+<table border="1">
+<tr>
+    <td><img src="qrc:/images/32x32/tor-off.png"/></td>
+    <td valign="middle">
+      Tor متوقف شد. برای استارت Tor از منوی Vidalia <i>Start</i> انتخاب کنید. 
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-starting.png"/></td>
+    <td valign="middle">
+      Tor در حال استارت است. برای اطلاع از وضعیت Tor در مرحله استارت به <a
+href="log.html">message log</a> مراجعه کنید.
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-on.png"/></td>
+    <td valign="middle">
+      Tor فعال شده است. اگر مایلید Tor را متوقف کنید، از منوی Vidalia <i>Stop</i>
+را انتخاب کنید. اگر میخواهید بدانید مشغول به چه کاری  است، Tor همزمان با
+فعالیت خود، اطلاعاتی را در مخزن پیام در <a href="log.html">message log</a>
+منتشر می کند. 
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-stopping.png"/></td>
+    <td valign="middle">Tor در حال بسته شدن است</td>
+</tr>
+</table>
+</p>
+
+<p>
+اگر Tor ناگهانی خارج شود، Vidalia ایکون خود رابه پیاز تیره با x قرمز تغییر
+می دهد و با نمایش یک پیام خطا اشکال ایجاد شده را به شما اطلاع می دهد. همچنین
+می توانید مخزن پیام ها را در <a href="log.html">message log</a> برای اطلاع
+از جزئیات مشکلی که Tor پیش از خروج با آن روبرو شده است، چک کنید. 
+</p>
+
+</body>
+</html>
+

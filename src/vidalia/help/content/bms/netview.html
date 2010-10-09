@@ -1,0 +1,182 @@
+
+
+<!--
+**  $Id: netview.html 2366 2008-03-01 17:58:23Z edmanm $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>Network Viewer</h1>
+<hr />
+
+<p>
+network viewer ဟာ သင္၏ လမ္းေၾကာင္းဘယ္ကို သြားေနလဲဆိုတာရယ္၊ Tor ကြန္ယက္ေပၚက
+relays ေတြကို ၾကည့္ရႈႏိုင္ေအာင္ လုပ္ေဆာင္ေပးပါတယ္။
+</p>
+
+
+<a name="overview"/>
+<h3>ျခံဳငံုၾကည့္ျခင္း</h3>
+<p>
+Tor ကို ျဖတ္ျပီး အမည္မသိအေနနဲ႔ သင္ခ်ိတ္ဆက္လိုလွ်င္ (တနည္းအားျဖင့္
+ဝက္ဘ္ဆိုက္ကို ခ်ိတ္ဆက္ခ်င္လွ်င္)၊ Tor က tunnel တစ္ခုကို ဖန္တီးေပးပါတယ္။
+သို႔မဟုတ္ encrypt (ပံုစံဖ်က္ထားေသာ) ခ်ိတ္ဆက္မႈမ်ား၏ <i>circuit</i>သည္
+ကြန္ယက္ေပၚမွာ ရွိတဲ့ relays အတြဲလိုက္ကို ျဖတ္သန္းသြားပါလိမ့္မယ္။ သင့္
+application ရဲ႕ လမ္းေၾကာင္းေတြဟာ အဲဒိ circuit ကိုျဖတ္ျပီး
+<i>စီးဆင္းရာလမ္းေၾကာင္း</i> အျဖစ္ ပို႔ေဆာင္ မွာ ျဖစ္ပါတယ္။
+အဆင္ေျပေခ်ာေမြ႕ေစရန္ အတြက္ မ်ားစြာေသာ စီးဆင္းရာလမ္းေၾကာင္းေတြကို တူညီတဲ့
+circuit မွာပဲ ေဝမွ်ေပးမွာ ျဖစ္ပါတယ္။
+</p>
+
+<a name="netmap"/>
+<h3>ကြန္ယက္ေျမပံု</h3>
+<p>
+ကြန္ယက္ေျမပံုတြင္ အနီေရာင္ pinpoints မ်ားျဖင့္ ရည္ညႊန္းထားေသာ Tor
+ကြန္ယက္ေပၚရွိ relays မ်ား၏ ပထဝီဆိုင္ရာ ေဒသမ်ားႏွင့္  ကမၻာ့ေျမပံုပါဝင္ပါသည္။
+အစိမ္းေရာင္လိုင္းမ်ားသည္ relays မ်ားအၾကား Tor ကြန္ယက္ကို ျဖတ္၍ ဖန္တီးထားေသာ
+Tor client ျဖစ္တဲ့ circuits မ်ား၏ လမ္းေၾကာင္းကို ရည္ညႊန္းပါတယ္။
+</p>
+<p>
+ေျမပံုေပၚရွိ တည္ေနရာမ်ားကို toolbar ေပၚရွိ <b>Zoom In</b> ႏွင့္ <b>Zoom
+Out</b> ကိုႏွိပ္၍ ခ်ံဳ႕၍/ခ်ဲ႕၍ ၾကည့္ႏိုင္ပါတယ္။ ေျမပံုေပၚတြင္ မည္သည့္
+လမ္းေၾကာင္းကို မဆို သင္ေရြ႕၍ ၾကည့္လိုလွ်င္ ၎ေပၚတြင္ ႏွိပ္၍ ဆြဲေရႊ႕ျပီး
+ၾကည့္ရႈႏိုင္ပါတယ္။
+</p>
+<p>
+GeoIP database ထဲက relay ၏ IP လိပ္စာမ်ားကို ၾကည့္ျခင္းအားျဖင့္ Tor relay
+တစ္ခု၏ ပထဝီဆိုင္ရာ တည္ေနရာကို ဆံုးျဖတ္ႏိုင္ပါသည္။ ၎ကို MaxMind က ဖန္တီးထားတာ
+ျဖစ္ျပီး geoip.vidalia-project.net မွာတည္ရွိပါတယ္။
+</p>
+<p>
+ကြန္ယက္ေျမပံု၏ ေအာက္ဘက္ ဒိုင္ယာေလာ့ခ္၏ အလယ္တြင္ အဲ့ဒိ circuits မ်ားေပၚရွိ
+လတ္တေလာ application လမ္းေၾကာင္းမ်ား ကဲ့သို႔ပင္ သင္၏ လက္ရွိ circuits မ်ား
+စာရင္းကို ျမင္ေတြ႕ႏိုင္ပါတယ္။ ကြန္ယက္ ေျမပံု ပထမဆံုး စတင္တဲ့အခါမွာ Tor
+relays မ်ား၏ စာရင္းအတြက္ ပထဝီဆိုင္ရာ သတင္းအခ်က္အလက္မ်ားကို Vidalia
+ၾကည့္တဲ့ခါ ေတြ႕ရမယ့္ geoip.vidalia-project.net ကို ခ်ိတ္ဆက္မႈအား ျမင္ရမွာပါ။
+အေရးတၾကီး သိရမွာက Tor ကိုျဖတ္၍ ျပီးသြားတယ္ဆိုတာပါပဲ။ ထို႔ေၾကာင့္ GeoIP relay
+သို႔ သင့္တည္ေနရာကို ထုတ္ေဖာ္ေျပာမွာ မဟုတ္ပါဘူး။ ၾကည့္ရႈျခင္း၏ ရလဒ္ကေတာ့
+Vidalia ၏ GeoIP relays မ်ားေပၚမွာ load လုပ္တာကို ေလွ်ာ့ခ်ရန္ အလို႔ငွာ local
+မွာပဲ ဖမ္းယူေပးထားမွာ ျဖစ္ပါတယ္။
+</p>
+
+
+<a name="relaylist"/>
+<h3>Relay Status</h3>
+<p>
+network view ၏ ဘယ္ဘက္ျခမ္းတြင္ Tor ကြန္ယက္ထဲရွိ relays မ်ား စာရင္းကို
+သင္ျမင္ေတြ႕ရမွာ ျဖစ္ပါတယ္။ ေနာက္တစ္ခုကေတာ့ relay တစ္ခုခ်င္းစီဟာ relay ၏
+status ကို ညႊန္းတဲ့ icon ျဖစ္ပါတယ္။ ေအာက္ေဖာ္ျပပါ ဇယားကြက္ကေတာ့ relay status
+icons မ်ားရဲ႕ ျဖစ္ႏိုင္ေျခရွိတဲ့ အႏွစ္ခ်ဳပ္ ဇယားကြက္ ျဖစ္ပါတယ္:
+</p>
+<p>
+<table border="1">
+<tr>
+  <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
+  <td valign="middle">
+    relay သည္ offline ျဖစ္ေနျခင္း သို႔မဟုတ္ တံု႔ျပန္မႈမရရွိပါ။
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
+  <td valign="middle">
+    relay သည္ <i>hibernating</i> ျဖစ္ေနပါသည္။ ဆိုလိုတာကေတာ့ online ျဖစ္ေနတယ္
+ဒါေပမယ့္  ေပးထားေသာ အခ်ိန္အတိုင္းအတာအတြင္း operator က ခြင့္ျပဳလိုေပမယ့္
+bandwidth ေတာ္ေတာ္မ်ားမ်ားဟာ အသံုးျပဳလိုက္ျပီး ျဖစ္ေနပါတယ္။
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
+  <td valign="middle">
+    Relay သည္ online ျဖစ္ေနသည္။ သို႔ေသာ္ ၎၏ အနိမ့္ဆံုး ႏႈန္းကို သာ
+ေဖာ္ျပထားပါသည္။
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
+  <td valign="middle">
+    Relay သည္ အြန္လိုင္းျဖစ္ေနသည္။ ၎၏ ႏႈန္းမွာ = 20 KB/s
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
+  <td valign="middle">
+    Relay သည္ အြန္လိုင္းျဖစ္ေနသည္။ ၎၏ ႏႈန္းမွာ = 60 KB/s
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
+  <td valign="middle">
+    Relay သည္ အြန္လိုင္းျဖစ္ေနသည္။ ၎၏ ႏႈန္းမွာ = 400 KB/s
+  </td>
+</tr>
+</table>
+</p>
+<p>
+bandwidth တန္ဖိုးအားလံုးသည္ အျမင့္ဆံုး bandwidth ၏ input သို႔မဟုတ္
+လြန္ခဲ့ေသာ ရက္ရွိ ၁၀ စကၠန္႔စာ output ၏ အနိမ့္ဆံုးေပၚတြင္ အၾကမ္းဖ်ဥ္း
+အေျခခံပါသည္။
+</p>
+
+
+<a name="details"/>
+<h3>Relay အေသးစိတ္မ်ား</h3>
+<p>
+screen ၏ ညာဘက္ျခမ္းမွာရွိတဲ့ relay အေသးစိတ္ panel သည္ relay အေၾကာင္း
+အေသးစိတ္ သို႔မဟုတ္ <a href="#relaylist">relay စာရင္း</a> ထဲတြင္ လတ္တေလာ
+ေရြးခ်ယ္ထားေသာ realy အေၾကာင္းကို ေဖာ္ျပေပးပါသည္။ သင္၏ လတ္တေလာ circuits
+မ်ားႏွင့္ streams မ်ား စာရင္းထဲတြင္ circuit သို႔ မဟုတ္ stream ကို
+သင္ေရြးခ်ယ္ထားျပီးျပီ ဆိုလွ်င္ ၎panel သည္ relay တစ္ခုခ်င္းစီကို ျဖတ္၍
+လတ္တေလာ ေပးပို႔ေနေသာ သင္၏ လမ္းေၾကာင္း အေၾကာင္း အေသးစိတ္ကို
+ေဖာ္ျပေပးပါလိမ့္မယ္။
+</p>
+<p>
+panel ထဲတြင္ သင္ျမင္ေတြ႕ရမည့္ နယ္ပယ္မွာ ေအာက္ပါအတိုင္း ျဖစ္ပါသည္။
+(<i>မွတ္ခ်က္</i>: နယ္ပယ္ေတြအားလံုးကေတာ့ အျမဲတမ္း ေဖာ္ျပႏိုင္မွာ မဟုတ္ပါဘူး):
+</p>
+<p>
+<table>
+<tr>
+  <td><b>တည္ေနရာ</b></td>
+  <td>၎ Tor relay ၏ ပထဝီဆိုင္ရာ တည္ေနရာ။</td>
+</tr>
+<tr>
+  <td><b>IP Address</b></td>
+  <td>၎ Tor relay ေပၚရွိ IP လိပ္စာသည္ ေရာက္ရွိႏိုင္ပါသည္။</td>
+</tr>
+<tr>
+  <td><b>Platform</b></td>
+  <td>
+    ၎ relay ေပၚရွိ Operating system သတင္းအခ်က္အလက္ႏွင့္ Tor version မ်ားသည္
+လက္တေလာတြင္ run ေနပါသည္။
+  </td>
+</tr>
+<tr>
+  <td><b>Bandwidth</b></td>
+  <td>
+    bandwidth ၏ အၾကမ္းဖ်ဥ္း အမ်ားဆံုး ပမာဏျဖစ္ေသာ relays ၏ လမ္းေၾကာင္းသည္ ၎
+realy ၏ လတ္တေလာ အေျခအေနကို ထိန္းထားႏိုင္ပါလိမ့္မည္။
+  </td>
+</tr>
+<tr>
+  <td><b>Uptime</b></td>
+  <td>
+    ၎ relay ၏တည္ျငိမ္မႈကို ကူညီရန္ relay ၏ အခ်ိန္အတိုင္းတာကို ရရွိႏိုင္ပါျပီ။
+  </td>
+</tr>
+<tr>
+  <td><b>ေနာက္ဆံုး update ျပဳလုပ္ျပီးျခင္း</b></td>
+  <td>ဤ relay ေန႔စြဲ၏ သတင္းအခ်က္အလက္သည္ ေနာက္ဆံုး update ျပဳလုပ္ျပီး ျဖစ္ပါသည္။</td>
+</tr>
+</table>
+</p>
+</body>
+</html>
+
