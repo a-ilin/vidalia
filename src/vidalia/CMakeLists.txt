@@ -367,6 +367,8 @@ if (APPLE)
   add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
     COMMAND ${CMAKE_COMMAND}
       ARGS -E make_directory ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources
+    COMMAND ${CMAKE_COMMAND}
+      ARGS -E make_directory ${MACOSX_BUNDLE_DIRECTORY}/share/tor
     COMMAND cp
       ARGS ${CMAKE_CURRENT_SOURCE_DIR}/res/icons/*.icns 
            ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources/

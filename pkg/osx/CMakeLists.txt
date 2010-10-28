@@ -167,7 +167,7 @@ if (TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
       --copy ${TOR_SOURCE_DIR}/src/tools/tor-checkkey:/Vidalia.app/Contents/MacOS/
       --copy ${TOR_SOURCE_DIR}/src/tools/tor-gencert:/Vidalia.app/Contents/MacOS/
       --copy ${TOR_SOURCE_DIR}/src/tools/tor-resolve:/Vidalia.app/Contents/MacOS/
-      --copy ${TOR_SOURCE_DIR}/src/config/geoip:/Vidalia.app/Contents/Resources/
+      --copy ${TOR_SOURCE_DIR}/src/config/geoip:/Vidalia.app/share/tor/
       --copy ${TOR_SOURCE_DIR}/src/config/torrc.sample:/Vidalia.app/Contents/Resources/
       --copy ${POLIPO_SOURCE_DIR}/polipo:/Vidalia.app/Contents/MacOS/
       --copy ${CMAKE_CURRENT_SOURCE_DIR}/polipo.conf:/Vidalia.app/Contents/Resources/
