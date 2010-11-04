@@ -106,6 +106,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/Service.cpp
   config/ServiceList.cpp
   config/ServicePage.cpp
+  config/TorrcDialog.cpp
   config/ServiceSettings.cpp
   config/TorSettings.cpp
   config/VidaliaSettings.cpp
@@ -131,6 +132,7 @@ qt4_wrap_cpp(vidalia_SRCS
   config/ServerPage.h
   config/ServerSettings.h
   config/ServicePage.h
+  config/TorrcDialog.h
   config/TorSettings.h
   config/VidaliaSettings.h
   config/VSettings.h
@@ -276,6 +278,7 @@ qt4_wrap_ui(vidalia_SRCS
   config/NetworkPage.ui
   config/ServerPage.ui
   config/ServicePage.ui
+  config/TorrcDialog.ui
   help/browser/HelpBrowser.ui
   log/MessageLog.ui
   network/NetViewer.ui

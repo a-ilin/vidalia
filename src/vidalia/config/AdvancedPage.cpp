@@ -15,6 +15,7 @@
 */
 
 #include "AdvancedPage.h"
+#include "TorrcDialog.h"
 #include "Vidalia.h"
 #include "VMessageBox.h"
 #include "IpValidator.h"
@@ -60,6 +61,8 @@ AdvancedPage::AdvancedPage(QWidget *parent)
           this, SLOT(authMethodChanged(int)));
   connect(ui.chkRandomPassword, SIGNAL(toggled(bool)),
           ui.linePassword, SLOT(setDisabled(bool)));
+  connect(ui.btnEditTorConfig, SIGNAL(clicked()),
+          this, SLOT(displayTorrcDialog()));
 
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
@@ -329,3 +332,10 @@ AdvancedPage::setupService(bool useService)
 #endif
 #endif
 
+/** Called when the user presses the Edit current torrc button */
+void 
+AdvancedPage::displayTorrcDialog()
+{
+  TorrcDialog rcdialog(this);
+  rcdialog.exec();
+}

@@ -326,7 +326,7 @@
          <property name="orientation" >
           <enum>Qt::Vertical</enum>
          </property>
-         <property name="sizeHint" stdset="0" >
+         <property name="sizeHint" >
           <size>
            <width>20</width>
            <height>40</height>

@@ -61,6 +61,9 @@ private slots:
   /** Called when the user clicks "Browse" to choose the location of Tor's
    * data directory. */
   void browseTorDataDirectory();
+  /** Called when the user clicks "Edit current torrc" to edit Tor's config in
+   * a more advanced way */
+  void displayTorrcDialog();
 
 private:
   /** Returns the authentication method for the given <b>index</b>. */

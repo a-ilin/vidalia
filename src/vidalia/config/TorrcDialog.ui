@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TorrcDialog</class>
+ <widget class="QDialog" name="TorrcDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>601</width>
+    <height>582</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Editing torrc</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/vidalia.qrc">
+    <normaloff>:/images/16x16/system-run.png</normaloff>:/images/16x16/system-run.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="1" column="0">
+      <widget class="QTextEdit" name="teditTorrc"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QCheckBox" name="chkSave">
+       <property name="text">
+        <string>Save settings. If unchecked it will only apply settings to the current Tor instance.</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btnCut">
+         <property name="text">
+          <string>Cut</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/vidalia.qrc">
+           <normaloff>:/images/22x22/editcut.png</normaloff>:/images/22x22/editcut.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnCopy">
+         <property name="text">
+          <string>Copy</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/vidalia.qrc">
+           <normaloff>:/images/22x22/edit-copy.png</normaloff>:/images/22x22/edit-copy.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnPaste">
+         <property name="text">
+          <string>Paste</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/vidalia.qrc">
+           <normaloff>:/images/22x22/editpaste.png</normaloff>:/images/22x22/editpaste.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnUndo">
+         <property name="text">
+          <string>Undo</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/vidalia.qrc">
+           <normaloff>:/images/22x22/edit_undo.png</normaloff>:/images/22x22/edit_undo.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnRedo">
+         <property name="text">
+          <string>Redo</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/vidalia.qrc">
+           <normaloff>:/images/22x22/edit_redo.png</normaloff>:/images/22x22/edit_redo.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSelectAll">
+         <property name="text">
+          <string>Select All</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../res/vidalia.qrc">
+           <normaloff>:/images/22x22/edit_select_all.png</normaloff>:/images/22x22/edit_select_all.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item row="3" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QRadioButton" name="rdoAll">
+         <property name="text">
+          <string>Apply all</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="rdoSelection">
+         <property name="text">
+          <string>Apply selection only</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../res/vidalia.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>TorrcDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnUndo</sender>
+   <signal>clicked()</signal>
+   <receiver>teditTorrc</receiver>
+   <slot>undo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>35</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnRedo</sender>
+   <signal>clicked()</signal>
+   <receiver>teditTorrc</receiver>
+   <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>97</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnSelectAll</sender>
+   <signal>clicked()</signal>
+   <receiver>teditTorrc</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>171</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCopy</sender>
+   <signal>clicked()</signal>
+   <receiver>teditTorrc</receiver>
+   <slot>copy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnPaste</sender>
+   <signal>clicked()</signal>
+   <receiver>teditTorrc</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCut</sender>
+   <signal>clicked()</signal>
+   <receiver>teditTorrc</receiver>
+   <slot>cut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>29</x>
+     <y>17</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>265</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
