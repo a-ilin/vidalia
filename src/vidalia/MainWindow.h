@@ -72,6 +72,8 @@ private slots:
   void showHelpDialog(const QString &topic);
   /** Called when the user selects "Start" from the menu. */
   void start();
+  /** Called when the user changes a setting that needs Tor restarting */
+  void restart();
   /** Called when the Tor process fails to start. */
   void startFailed(QString errmsg);
   /** Called when the Tor process has successfully started. */

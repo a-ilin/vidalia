@@ -66,6 +66,8 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   connect(Vidalia::torControl(), SIGNAL(authenticated()),
                            this, SLOT(applyChanges()));
 
+  /* Used to connect restartTor signals */
+  AdvancedPage *advancedPage;
   /* Create the config pages and actions */
   QActionGroup *grp = new QActionGroup(this);
   GeneralPage *generalPage = new GeneralPage(ui.stackPages);
@@ -91,9 +93,11 @@ ConfigDialog::ConfigDialog(QWidget* parent)
                      createPageAction(QIcon(IMAGE_APPEARANCE),
                                       tr("Appearance"), "Appearance", grp));
 
-  ui.stackPages->add(new AdvancedPage(ui.stackPages),
+  ui.stackPages->add(advancedPage = new AdvancedPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_ADVANCED),
                                       tr("Advanced"), "Advanced", grp));
+
+  connect(advancedPage, SIGNAL(restartTor()), this, SIGNAL(restartTor()));
 
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     connect(page, SIGNAL(helpRequested(QString)),

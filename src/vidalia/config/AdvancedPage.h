@@ -51,6 +51,10 @@ public:
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
 
+signals:
+  /** Emitted when the user changes torrc file to restart Tor */
+  void restartTor();
+
 private slots:
   /** Called when the user selects a different authentication method from the
    * combo box. */

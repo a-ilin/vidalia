@@ -50,6 +50,8 @@ signals:
   /** Emitted when the user clicks "Check Now" to initiate a check
    * for software updates. */
   void checkForUpdates();
+  /** Emitted when the user changes torrc file to restart Tor */
+  void restartTor();
 
 protected:
   /** Called when the user changes the UI translation. */

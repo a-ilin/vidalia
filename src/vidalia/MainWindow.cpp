@@ -118,6 +118,8 @@ MainWindow::MainWindow()
           this, SLOT(showHelpDialog(QString)));
   connect(_configDialog, SIGNAL(helpRequested(QString)),
           this, SLOT(showHelpDialog(QString)));
+  connect(_configDialog, SIGNAL(restartTor()),
+          this, SLOT(restart()));
 
   /* Create the actions that will go in the tray menu */
   createActions();
@@ -1053,6 +1055,15 @@ MainWindow::start()
   _isIntentionalExit = true;
   /* Kick off the Tor process */
   _torControl->start(settings.getExecutable(), args);
+}
+
+/** Called when the user changes a setting that needs Tor restarting */
+void
+MainWindow::restart()
+{
+  if(_torControl->stop()) {
+    start();
+  }
 }
 
 /** Called when the Tor process fails to start, for example, because the path
