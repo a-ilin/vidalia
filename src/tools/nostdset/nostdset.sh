@@ -10,4 +10,4 @@
 ##  the terms described in the LICENSE file.
 ##
 
-find -name *.ui | xargs sed "s/stdset=\"0\" //" -i
+find -name *.ui | xargs sed "s/sizeHint\" stdset=\"0\" /sizeHint\"/" -i

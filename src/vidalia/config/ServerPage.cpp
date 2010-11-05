@@ -102,6 +102,8 @@ ServerPage::ServerPage(QWidget *parent)
                               this, SLOT(copyBridgeIdentity()));
   connect(ui.lblBridgeUsage, SIGNAL(linkActivated(QString)),
                        this, SLOT(linkActivated(QString)));
+  connect(ui.lblWhatsThis, SIGNAL(linkActivated(QString)),
+                       this, SLOT(linkActivated(QString)));
 
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
@@ -550,6 +552,8 @@ ServerPage::linkActivated(const QString &url)
 {
   if (!url.compare("#bridgeUsage"))
     displayBridgeUsage();
+  else if(!url.compare("#bridgeHelp"))
+    emit helpRequested("bridges.about");
 }
 
 /** Retrieves bridge usage history from Tor, parses and validates it, and

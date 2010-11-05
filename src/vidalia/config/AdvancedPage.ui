@@ -118,7 +118,7 @@
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint" stdset="0">
+            <property name="sizeHint" >
              <size>
               <width>0</width>
               <height>20</height>
@@ -186,7 +186,7 @@
             <property name="sizeType">
              <enum>QSizePolicy::Expanding</enum>
             </property>
-            <property name="sizeHint" stdset="0">
+            <property name="sizeHint" >
              <size>
               <width>40</width>
               <height>20</height>
@@ -343,7 +343,7 @@
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" stdset="0">
+     <property name="sizeHint" >
       <size>
        <width>489</width>
        <height>141</height>
