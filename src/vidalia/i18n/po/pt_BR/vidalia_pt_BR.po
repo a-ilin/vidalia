@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:59+0000\n"
-"PO-Revision-Date: 2010-09-30 16:30+0200\n"
-"Last-Translator: worm <joner@worm.sh>\n"
+"PO-Revision-Date: 2010-10-25 22:52+0200\n"
+"Last-Translator: Polegar <polegar@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -551,17 +551,17 @@ msgstr "Env:"
 #: graphframe.cpp:259
 msgctxt "GraphFrame"
 msgid "%1 KB"
-msgstr "%1 kb"
+msgstr "%1 KB"
 
 #: graphframe.cpp:262
 msgctxt "GraphFrame"
 msgid "%1 MB"
-msgstr "%1 mb"
+msgstr "%1 MB"
 
 #: graphframe.cpp:265
 msgctxt "GraphFrame"
 msgid "%1 GB"
-msgstr "%1 gb"
+msgstr "%1 GB"
 
 #: helpbrowser.cpp:135
 msgctxt "HelpBrowser"
