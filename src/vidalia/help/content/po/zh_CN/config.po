@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-11-09 10:52+0200\n"
+"Last-Translator: jonchil <abcd666@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "配置 Vidalia 和 Tor"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,22 +37,26 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"Vidalia 允许您配置大多数 Vidalia 和 Tor 的常用部分。它也允许您设置和管理一个<a href=\"server.html\">Tor "
+"中继</a>，使得您能帮助到 Tor 网络的成长。"
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<a name=\"general\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "常规设置"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
 msgid "Settings on the <i>General</i> page are the most commonly modified settings."
-msgstr ""
+msgstr "<i>常规</i>设置页面是一些最常用的设定。"
 
+# Tor Executable 不知如何翻译，暂时留空
+# by Jonchil
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
 msgid ""
@@ -69,23 +74,25 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"<b>启动选项</b>：该设定允许您让 Vidalia 在启动的同时也启动 Tor。您也可以配置 Vidalia 在系统启动时运行(<i>仅限 "
+"Windows</i>)。"
 
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<a name=\"network\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "网络设置"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
 msgid ""
 "The <i>Network</i> settings page lets you change how Tor connects to the Tor "
 "network."
-msgstr ""
+msgstr "<i>网络</i>设置页面使您可以更改 Tor 连接到网络的方式。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:53
@@ -98,6 +105,9 @@ msgid ""
 "you can also enter the <i>Username</i> and <i>Password</i> you use to "
 "connect to your proxy.  Otherwise, you can leave those fields blank."
 msgstr ""
+"<b>我使用代理服务器连接到网络</b>：如果您的 Internet 连接需要以 HTTP 代理方式，您可以配置 Tor 通过您的代理服务器发送所有的目"
+"录请求和中继连接。您必须至少指定一个主机名或代理服务器的地址，并且您代理服务器的端口也必须处于监听连接状态。如果您的代理服务器要求身份验证，您也可以输入"
+"连接到代理服务器的<i>用户名</i和<i>密码</i>。或者，您可以留空这些选项。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:62
@@ -109,9 +119,14 @@ msgid ""
 "list of ports permitted by your firewall or proxy, separated by "
 "commas. (<i>Example: 80,443,8080</i>)"
 msgstr ""
+"<b>我的防火墙只允许我连接到指定端口</b>：如果您处于防火墙限制下或代理服务器限制您连接的端口，您可以配置 Tor "
+"直接从您防火墙或代理服务器允许的端口连接。仅需要输入您防火墙或代理服务器允许的端口列表，通过逗号来分隔。（例如：80,443,8080）"
 
+# 版本号随时更新，模糊记号
+# by Jonchil
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
+#, fuzzy
 msgid ""
 "<b>My ISP blocks connections to the Tor network</b>: If your ISP (Internet "
 "Service Provider) blocks connections to the Tor network, Tor can attempt to "
@@ -120,29 +135,35 @@ msgid ""
 "or newer only). You can add bridge relays by specifying either their address "
 "and port number, or their address, port number, and fingerprint."
 msgstr ""
+"<b>我的 ISP 阻挡了对 Tor 网络的连接</b>：如果您的 ISP(互联网服务提供商)阻止了您连接到 Tor "
+"网络，Tor会通过尝试加密目录连接和以被称作<i>网桥</i>的中继连接，来避免被过滤掉（仅限 Tor 0.2.0.3-alpha "
+"或更高版本）。您可以通过指定地址或端口来添加网桥中继，或者他们的地址，端口号，和指纹。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
 msgid "Below are examples of valid bridge address formats:"
-msgstr ""
+msgstr "以下是可用网桥地址格式的例子："
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:80
 msgid "128.213.48.13:8080"
-msgstr ""
+msgstr "128.213.48.13:8080"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:83
 msgid "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
-msgstr ""
+msgstr "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:86
 msgid "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
-msgstr ""
+msgstr "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
 
+# fingerprints 不知如何翻译，模糊
+# by Jonchil
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
+#, fuzzy
 msgid ""
 "Even if you do not know any bridge relay addresses, checking this checkbox "
 "may still be helpful. Tor will encrypt its directory requests, which can "
@@ -153,40 +174,44 @@ msgid ""
 "relays</a> for more information on how to learn new bridge relay addresses "
 "and fingerprints."
 msgstr ""
+"即使您无从得知任何网桥中继的地址，配置该部分也仍然很有帮助。Tor 会加密他的目录请求，该方式可以防止过滤 Tor "
+"请求网桥和其他信息的阻止机制。如果链接到常规 Tor 中继被阻止，您就需要通过某种方式来寻找 Tor "
+"网桥中继地址，并且添加到这里。更多关于寻找新网桥中继地址和指纹的信息，请查看帮助主题<a "
+"href=\"bridges.html#finding\">寻找网桥中继</a>。"
 
 #. type: Content of: <html><body>
 #: en/config.html:100
 msgid "<a name=\"relay\"/>"
-msgstr ""
+msgstr "<a name=\"relay\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:101
 msgid "Relay Settings"
-msgstr ""
+msgstr "中继设定"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:103
 msgid ""
 "<i> See <a href=\"server.html\">this help topic</a> for detailed information "
 "about setting up and managing a Tor relay.  </i>"
-msgstr ""
+msgstr "更多关于设置和管理一个 Tor 中继的细节，<i>请查看<a href=\"server.html\">该帮助主题</a>。"
 
 #. type: Content of: <html><body>
 #: en/config.html:109
 msgid "<a name=\"appearance\"/>"
-msgstr ""
+msgstr "<a name=\"appearance\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:110
 msgid "Appearance Settings"
-msgstr ""
+msgstr "外观设定"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:112
 msgid ""
 "The settings on the <i>Appearance</i> page allow you to customize the look "
 "and feel of Vidalia."
-msgstr ""
+msgstr "<i>外观</i>页的设置允许您定制 Vidalia 的外观。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:116
@@ -198,6 +223,8 @@ msgid ""
 "the dropdown box. You will need to restart Vidalia after changing the "
 "displayed language for the changes to take effect."
 msgstr ""
+"<b>语言</b>：Vidalia 的界面已经被志愿者们翻译成了许多种语言.当 Vidalia 第一次运行的时候,他会试着猜测您正使用哪种语言。如果 "
+"Vidalia 猜测错误，或如果您更喜欢不同的语言，您可以从下拉菜单中选择别的语言。在改变显示语言之后,您需要重启 Vidalia 使之生效。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:124
@@ -205,24 +232,24 @@ msgid ""
 "<b>Style</b>: In most cases, Vidalia will default to using your platform's "
 "default interface style. If you dislike the default, you can choose "
 "whichever interface style you prefer from the dropdown box."
-msgstr ""
+msgstr "<b>风格</b>：在很多情况下，Vidalia 会默认使用您平台的默认界面风格。如果您不喜欢默认风格，可以从下拉菜单中选择您喜欢的风格。"
 
 #. type: Content of: <html><body>
 #: en/config.html:131
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:132
 msgid "Advanced Settings"
-msgstr ""
+msgstr "高级设定"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:134
 msgid ""
 "The settings on the <i>Advanced</i> page should generally only be modified "
 "by more experienced users."
-msgstr ""
+msgstr "<i>高级</i>页面中的设置通常情况下应当需要有更多经验的用户来改变。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:138
@@ -232,6 +259,8 @@ msgid ""
 "have a conflict with another service on your machine, or if you are using "
 "Vidalia to control and monitor a Tor process running on another machine."
 msgstr ""
+"<b>控制地址 &amp; 端口</b>：<i>控制端口</i>是 Vidalia 与 Tor "
+"通信的端口。通常无需改变，除非与您机器上的其他服务有冲突，或者您正在使用 Vidalia 控制和监视在其他机器上运行的 Tor 进程。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:144
@@ -239,7 +268,7 @@ msgid ""
 "<b>Control Port Authentication</b>: Control port authentication is used to "
 "limit the applications on your machine that can connect to and reconfigure "
 "your Tor installation. The available authentication methods are:"
-msgstr ""
+msgstr "<b>控制端口身份验证</b>：控制端口身份验证是用于限制您机器上的应用程序连接和配置您的 Tor 设备的。可用的身份验证格式如下："
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:150
@@ -247,7 +276,7 @@ msgid ""
 "<b>None</b> -- No authentication is required. Use of this option is "
 "<b>strongly</b> discouraged. Any application or user on your computer can "
 "reconfigure your Tor installation."
-msgstr ""
+msgstr "<b>无</b> -- 要求无身份验证。使用该设置是<b>强烈</b>不鼓励的。任何您电脑上的应用程序或用户都可以配置您的 Tor 设备。"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:155
@@ -258,6 +287,8 @@ msgid ""
 "Vidalia randomly generate a new password each time it starts Tor by checking "
 "the <i>Randomly Generate</i> checkbox."
 msgstr ""
+"<b>密码</b> <i>(默认)</i> -- 如果选择该方式，您可以指定一个 Tor 要求每次用户或应用程序访问控制端口的密码。如果 Vidalia "
+"为您启动 Tor,您可以通过勾选<i>随机生成</i>项使得 Vidalia 每次启动 Tor 随机生成一个密码。"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:162
@@ -267,6 +298,9 @@ msgid ""
 "starts. Any user or application that tries to connect to Tor's control port "
 "must be able to provide the contents of this cookie."
 msgstr ""
+"<b>Cookie</b> -- 如果选择 Cookie 身份验证，Tor "
+"在启动时会写一个包含随机字符的文件（或<i>cookie</i>）到它的数据目录中。任何试着连接到 Tor 的控制端口的用户和应用程序都必须提供 "
+"Cookie 的内容。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:170
@@ -276,6 +310,8 @@ msgid ""
 "file. If you leave this field blank, Tor will uses its own default torrc "
 "location."
 msgstr ""
+"<b>Tor 配置文件</b><i>（可选）</i>：您可以通过该选项使得 Vidalia 启动 Tor 时使用指定的<i>torrc</i>,Tor "
+"的配置文件。如果您留空该项，Tor 会使用它默认的 torrc。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:175
@@ -285,29 +321,34 @@ msgid ""
 "information, Tor relay keys, and configuration files. If you leave this "
 "field blank, Tor will use its own default data directory location."
 msgstr ""
+"<b>Tor 数据目录</b><i>（可选）</i>：您可以指定目录让 Tor 存储数据，例如缓存 Tor 中继信息，Tor "
+"中继密钥，和配置文件。如果您留空该项，Tor 会使用它默认的数据目录位置。"
 
+# Linux命令如何翻译？
+# by Jonchil
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:181
+#, fuzzy
 msgid ""
 "<b>Permissions</b> <i>(optional, not available on Windows)</i>: If you enter "
 "a value for <b>Run as User</b>, Tor will <i>setuid</i> to this user when it "
 "starts.  If you enter a value for <b>Run as Group</b>, Tor will "
 "<i>setgid</i> to this group when it starts."
-msgstr ""
+msgstr "<b>许可</b><i>（可选，Windows 中不可用）</i>：如果您输入一个"
 
 #. type: Content of: <html><body>
 #: en/config.html:189
 msgid "<a name=\"services\"/>"
-msgstr ""
+msgstr "<a name=\"services\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:190
 msgid "Hidden Service Settings"
-msgstr ""
+msgstr "隐藏服务设定"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:192
 msgid ""
 "Hidden services allow you to provide any kind of TCP-based service, e.g.  an "
 "HTTP service, to others without revealing your IP address."
-msgstr ""
+msgstr "隐藏服务允许您提供任何形式基于 TCP 的服务给他人而无需隐藏您的 IP 地址，例如，一种 HTTP 服务。"

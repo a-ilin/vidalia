@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:59+0200\n"
-"PO-Revision-Date: 2010-10-07 03:10+0200\n"
-"Last-Translator: unnamed <qysnn1@gmail.com>\n"
+"PO-Revision-Date: 2010-10-31 17:05+0200\n"
+"Last-Translator: jonchil <abcd666@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -42,12 +42,12 @@ msgstr "从左方的树形图中选择一个帮助主题或者点击在主题列
 msgid ""
 "You can use the <i>Find</i> button on the toolbar above to search within a "
 "particular help topic."
-msgstr ""
+msgstr "您可以使用工具栏上的<i>查找</i>按钮来搜索特定的帮助主题"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:30
 msgid "The <i>Home</i> button above will bring you back to this home page."
-msgstr ""
+msgstr "上面的<i>主页</i>按钮会让您回到主页"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:34
@@ -55,3 +55,4 @@ msgid ""
 "See the <a href=\"links.html\">Helpful Links</a> topic for some places you "
 "can visit to find additional help and information about Vidalia and Tor."
 msgstr ""
+"您可以访问在很多地方看到的<a href=\"links.html\">有帮助的链接</a>主题，来查找关于 Vidalia 和 Tor 更多的帮助和信息"

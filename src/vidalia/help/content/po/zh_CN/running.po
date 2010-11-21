@@ -10,24 +10,25 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-11-05 13:03+0200\n"
+"Last-Translator: jonchil <abcd666@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/running.html:16
 msgid "Running Tor"
-msgstr ""
+msgstr "运行 Tor"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:20
@@ -35,39 +36,39 @@ msgid ""
 "Vidalia can help you control your Tor process by letting you start and stop "
 "Tor, as well as monitoring Tor's status and letting you know if it exits "
 "unexpectedly."
-msgstr ""
+msgstr "Vidalia 能帮助控制您的 Tor 进程使之启动或停止，同样也像监视器一样监视 Tor 的状态并且是您知道它是否异常退出。"
 
 #. type: Content of: <html><body>
 #: en/running.html:25
 msgid "<a name=\"starting\"/>"
-msgstr ""
+msgstr "<a name=\"starting\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:26
 msgid "Starting and Stopping Tor"
-msgstr ""
+msgstr "启动和停止 Tor"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:28
 msgid "To <i>start</i> Tor,"
-msgstr ""
+msgstr "<i>启动</i> Tor，"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:30
 msgid "Select <i>Start</i> from Vidalia's tray menu or press <i>Ctrl+S</i>"
-msgstr ""
+msgstr "在 Vidalia 的托盘菜单中选择<i>启动</i>,或按<i>Ctrl+S</i>"
 
 #. type: Content of: <html><body><p><ol>
 #: en/running.html:30 en/running.html:45
 msgid "."
-msgstr ""
+msgstr "。"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:32
 msgid ""
 "Vidalia's tray icon will change from an onion with a red X to a green onion "
 "when Tor has started."
-msgstr ""
+msgstr "当 Tor 已经启动的时候，Vidalia 面板图标会从一个有红X的洋葱图标，变成一个绿色的洋葱。"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:36
@@ -77,23 +78,25 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"如果 Vidalia 未能成功启动 Tor，Vidalia会显示一个错误信息来告诉您哪里有问题。您也可以查看您的<a "
+"href=\"log.html\">消息日志</a>来发现 Tor 打印了哪些运行中的错误。"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:43
 msgid "To <i>stop</i> Tor,"
-msgstr ""
+msgstr "<i>停止</i> Tor，"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:45
 msgid "Select <i>Stop</i> from Vidalia's tray menu or press <i>Ctrl+T</i>"
-msgstr ""
+msgstr "在 Vidalia 的托盘图标中选择<i>停止</i>或按<i>Ctrl+T</i>"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/running.html:47
 msgid ""
 "Vidalia's tray icon will change from a green onion to a gray onion with a "
 "red X when Tor has stopped."
-msgstr ""
+msgstr "当 Tor 停止的时候，Vidalia 面板图标会从一个绿色的洋葱变成一个有红X的洋葱。"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:51
@@ -103,16 +106,18 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor printed any more information "
 "about what went wrong."
 msgstr ""
+"如果 Vidalia 无法停止 Tor,Vidalia 会显示一个错误信息来告诉您哪里出了问题。您也可以通过<a "
+"href=\"log.html\">消息日志</a>来查看 Tor 是否有更多有关运行的错误。"
 
 #. type: Content of: <html><body>
 #: en/running.html:57
 msgid "<a name=\"monitoring\"/>"
-msgstr ""
+msgstr "<a name=\"monitoring\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/running.html:58
 msgid "Monitoring Tor's Status"
-msgstr ""
+msgstr "监视 Tor 的状态"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:60
@@ -120,19 +125,19 @@ msgid ""
 "Vidalia tells you about the status of Tor by displaying an icon in your "
 "system tray or dock area. The following table shows the different states "
 "indicated by an icon in your system's notification area:"
-msgstr ""
+msgstr "Vidalia 会通过显示在系统托盘或 Dock 区域的图标来告诉您 Tor 的状态。下面的表格会为您指出系统提醒区域 Tor 不同的状态。"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:69
 msgid "Tor is stopped. Select <i>Start</i> from the Vidalia menu to start Tor."
-msgstr ""
+msgstr "Tor 已经停止。请在 Vidalia 菜单中选择<i>启动</i>来启动 Tor。"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:76
 msgid ""
 "Tor is starting up. You can check the <a href=\"log.html\">message log</a> "
 "for status information about Tor while it is starting."
-msgstr ""
+msgstr "Tor 正在启动中。您可以通过检查<a href=\"log.html\">消息日志</a>获得有关 Tor 启动阶段的状态信息。"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:84
@@ -142,11 +147,13 @@ msgid ""
 "href=\"log.html\">message log</a> while it is running, if you want to see "
 "what Tor is doing."
 msgstr ""
+"Tor 正在运行。如果您想要停止 Tor，请在 Vidalia 菜单中选择<i>停止</i>。如果您想要查看 Tor 在做什么，Tor 在运行时会在<a "
+"href=\"log.html\">消息日志</a>中打印消息。"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/running.html:92
 msgid "Tor is in the process of shutting down."
-msgstr ""
+msgstr "Tor 正在关闭中。"
 
 #. type: Content of: <html><body><p>
 #: en/running.html:98
@@ -156,3 +163,5 @@ msgid ""
 "wrong. You can also check the <a href=\"log.html\">message log</a> for "
 "details about any problems Tor encountered before it exited."
 msgstr ""
+"如果 Tor 异常退出，Vidalia 会将图标变成一个有红X的黑色洋葱,并且显示一个错误消息,让您知道哪里有错误。您也可以通过查看<a "
+"href=\"log.html\">消息日志</a>获得关于 Tor 退出前发生情况的详细信息。"
