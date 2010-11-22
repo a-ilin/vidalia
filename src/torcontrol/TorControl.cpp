@@ -26,7 +26,7 @@
 
 
 /** Default constructor */
-TorControl::TorControl()
+TorControl::TorControl(ControlMethod::Method method)
 {
 #define RELAY_SIGNAL(src, sig) \
   QObject::connect((src), (sig), this, (sig))
@@ -69,7 +69,7 @@ TorControl::TorControl()
 
   /* Create an instance of a connection to Tor's control interface and give
    * it an object to use to handle asynchronous events. */
-  _controlConn = new ControlConnection(_eventHandler);
+  _controlConn = new ControlConnection(method, _eventHandler);
   RELAY_SIGNAL(_controlConn, SIGNAL(connected()));
   RELAY_SIGNAL(_controlConn, SIGNAL(connectFailed(QString)));
   QObject::connect(_controlConn, SIGNAL(disconnected()),
@@ -92,6 +92,7 @@ TorControl::TorControl()
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
 #endif
 #undef RELAY_SIGNAL
+  _method = method;
 }
 
 /** Default destructor */
@@ -191,6 +192,14 @@ void
 TorControl::connect(const QHostAddress &address, quint16 port)
 {
   _controlConn->connect(address, port);
+}
+
+/** Connect to Tor's control socket. The control socket to use is determined by
+ * Vidalia's configuration file. */
+void
+TorControl::connect(const QString &path)
+{
+  _controlConn->connect(path);
 }
 
 /** Disconnect from Tor's control port */

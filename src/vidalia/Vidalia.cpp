@@ -126,7 +126,7 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
   setStyle(_args.value(ARG_GUISTYLE));
 
   /* Creates a TorControl object, used to talk to Tor. */
-  _torControl = new TorControl();
+  _torControl = new TorControl(TorSettings().getControlMethod());
 
   /* If we were built with QSslSocket support, then populate the default
    * CA certificate store. */

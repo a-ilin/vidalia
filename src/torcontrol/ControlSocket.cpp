@@ -26,8 +26,26 @@
 
 
 /** Default constructor. */
-ControlSocket::ControlSocket()
+ControlSocket::ControlSocket(ControlMethod::Method method)
 {
+  _tcpSocket = new QTcpSocket();
+  _localSocket = new QLocalSocket();
+  _method = method;
+  switch(_method) {
+    case ControlMethod::Port:
+      _socket = _tcpSocket;
+      break;
+      
+    case ControlMethod::Socket:
+      _socket = _localSocket;
+      break;
+  }
+
+  QObject::connect(_socket, SIGNAL(readyRead()), this, SIGNAL(readyRead()));
+  QObject::connect(_socket, SIGNAL(disconnected()), this, SIGNAL(disconnected()));
+  QObject::connect(_socket, SIGNAL(connected()), this, SIGNAL(connected()));
+  QObject::connect(_socket, SIGNAL(error(QAbstractSocket::SocketError)), 
+                   this, SIGNAL(error(QAbstractSocket::SocketError)));
 }
 
 /** Returns true if the control socket is connected and ready to send or
@@ -35,7 +53,85 @@ ControlSocket::ControlSocket()
 bool
 ControlSocket::isConnected()
 {
-  return (isValid() && state() == QAbstractSocket::ConnectedState);
+  switch(_method) {
+    case ControlMethod::Port:
+      return (_tcpSocket->isValid() && _tcpSocket->state() == QAbstractSocket::ConnectedState);
+      break;
+      
+    default:
+    case ControlMethod::Socket:
+      return (_localSocket->isValid() && _localSocket->state() == QLocalSocket::ConnectedState);
+      break;
+  }
+}
+
+/** Connects to address:port */
+void 
+ControlSocket::connectToHost(const QHostAddress &address, quint16 port)
+{
+  _tcpSocket->connectToHost(address, port);
+}
+
+/** Disconnects from host */
+void 
+ControlSocket::disconnectFromHost()
+{
+  _tcpSocket->disconnectFromHost();
+}
+
+/** Connects to a unix socket file */
+void 
+ControlSocket::connectToServer(const QString &name)
+{
+  _localSocket->connectToServer(name);
+}
+
+/** Disconnects from the socket */
+void 
+ControlSocket::disconnectFromServer()
+{
+  _localSocket->disconnectFromServer();
+}
+
+/** Interface to QTcpSocket::canReadLine */
+bool
+ControlSocket::canReadLine()
+{
+  return _socket->canReadLine();
+}
+
+/** Returns the string description of <b>error</b>. */
+QString
+ControlSocket::toString(const QAbstractSocket::SocketError error)
+{
+  QString str;
+  switch (error) {
+    case QAbstractSocket::ConnectionRefusedError:
+      str = "Connection refused by peer."; break;
+    case QAbstractSocket::RemoteHostClosedError:
+      str = "Remote host closed the connection."; break;
+    case QAbstractSocket::HostNotFoundError:
+      str = "Host address not found."; break;
+    case QAbstractSocket::SocketAccessError:
+      str = "Insufficient access privileges."; break;
+    case QAbstractSocket::SocketResourceError:
+      str = "Insufficient resources."; break;
+    case QAbstractSocket::SocketTimeoutError:
+      str = "Socket operation timed out."; break;
+    case QAbstractSocket::DatagramTooLargeError:
+      str = "Datagram size exceeded the operating system limit."; break;
+    case QAbstractSocket::NetworkError:
+      str = "Network error occurred."; break;
+    case QAbstractSocket::AddressInUseError:
+      str = "Specified address already in use."; break;
+    case QAbstractSocket::SocketAddressNotAvailableError:
+      str = "Specified address does not belong to the host."; break;
+    case QAbstractSocket::UnsupportedSocketOperationError:
+      str = "The requested operation is not supported."; break;
+    default:
+      str = "An unidentified error occurred."; break;
+  }
+  return str;
 }
 
 /** Processes custom events sent to this object (e.g. SendCommandEvents) from
@@ -75,52 +171,22 @@ ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
   tc::debug("Control Command: %1").arg(strCmd.trimmed());
 
   /* Attempt to send the command to Tor */
-  if (write(strCmd.toLocal8Bit()) != strCmd.length()) {
+  if (_socket->write(strCmd.toLocal8Bit()) != strCmd.length()) {
     return err(errmsg, tr("Error sending control command. [%1]")
-                                            .arg(errorString()));
+                                            .arg(_socket->errorString()));
   }
-  flush();
-  return true;
-}
-
-/** Reads line data, one chunk at a time, until a newline character is
- * encountered. */
-bool
-ControlSocket::readLineData(QString &line, QString *errmsg)
-{
-  char buffer[1024];  /* Read in 1024 byte chunks at a time */
-  int bytesRecv = QAbstractSocket::readLine(buffer, 1024);
-  while (bytesRecv != -1) {
-    line.append(QString::fromLocal8Bit(buffer, bytesRecv));
-    if (buffer[bytesRecv-1] == '\n') {
+  switch(_method) {
+    case ControlMethod::Port:
+      _tcpSocket->flush();
       break;
-    }
-    bytesRecv = QAbstractSocket::readLine(buffer, 1024);
-  }
-  if (bytesRecv == -1) {
-    return err(errmsg, errorString());
+      
+    case ControlMethod::Socket:
+      _localSocket->flush();
+      break;
   }
   return true;
 }
 
-/** Reads a line of data from the socket and returns true if successful or
- * false if an error occurred while waiting for a line of data to become
- * available. */
-bool
-ControlSocket::readLine(QString &line, QString *errmsg)
-{
-  /* Make sure we have data to read before attempting anything. Note that this
-   * essentially makes our socket a blocking socket */
-  while (!canReadLine()) {
-    if (!isConnected()) {
-      return err(errmsg, tr("Socket disconnected while attempting "
-                            "to read a line of data."));
-    }
-    waitForReadyRead(READ_TIMEOUT);
-  }
-  line.clear();
-  return readLineData(line, errmsg);
-}
 
 /** Read a complete reply from the control socket. Replies take the following
  * form, based on Tor's Control Protocol v1:
@@ -182,37 +248,41 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
   return true;
 }
 
-/** Returns the string description of <b>error</b>. */
-QString
-ControlSocket::toString(const QAbstractSocket::SocketError error)
+/** Reads line data, one chunk at a time, until a newline character is
+ * encountered. */
+bool
+ControlSocket::readLineData(QString &line, QString *errmsg)
 {
-  QString str;
-  switch (error) {
-    case ConnectionRefusedError:
-      str = "Connection refused by peer."; break;
-    case RemoteHostClosedError:
-      str = "Remote host closed the connection."; break;
-    case HostNotFoundError:
-      str = "Host address not found."; break;
-    case SocketAccessError:
-      str = "Insufficient access privileges."; break;
-    case SocketResourceError:
-      str = "Insufficient resources."; break;
-    case SocketTimeoutError:
-      str = "Socket operation timed out."; break;
-    case DatagramTooLargeError:
-      str = "Datagram size exceeded the operating system limit."; break;
-    case NetworkError:
-      str = "Network error occurred."; break;
-    case AddressInUseError:
-      str = "Specified address already in use."; break;
-    case SocketAddressNotAvailableError:
-      str = "Specified address does not belong to the host."; break;
-    case UnsupportedSocketOperationError:
-      str = "The requested operation is not supported."; break;
-    default:
-      str = "An unidentified error occurred."; break;
+  char buffer[1024];  /* Read in 1024 byte chunks at a time */
+  int bytesRecv = _socket->readLine(buffer, 1024);
+  while (bytesRecv != -1) {
+    line.append(QString::fromLocal8Bit(buffer, bytesRecv));
+    if (buffer[bytesRecv-1] == '\n') {
+      break;
+    }
+    bytesRecv = _socket->readLine(buffer, 1024);
   }
-  return str;
+  if (bytesRecv == -1) {
+    return err(errmsg, _socket->errorString());
+  }
+  return true;
 }
 
+/** Reads a line of data from the socket and returns true if successful or
+ * false if an error occurred while waiting for a line of data to become
+ * available. */
+bool
+ControlSocket::readLine(QString &line, QString *errmsg)
+{
+  /* Make sure we have data to read before attempting anything. Note that this
+   * essentially makes our socket a blocking socket */
+  while (!_socket->canReadLine()) {
+    if (!isConnected()) {
+      return err(errmsg, tr("Socket disconnected while attempting "
+                            "to read a line of data."));
+    }
+    _socket->waitForReadyRead(READ_TIMEOUT);
+  }
+  line.clear();
+  return readLineData(line, errmsg);
+}

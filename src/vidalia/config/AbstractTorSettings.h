@@ -20,7 +20,6 @@
 #include "VSettings.h"
 #include "TorControl.h"
 
-
 class AbstractTorSettings : public VSettings
 {
   Q_OBJECT

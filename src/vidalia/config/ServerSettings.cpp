@@ -17,6 +17,7 @@
 #include "config.h"
 #include "ServerSettings.h"
 #include "TorSettings.h"
+#include "TorControl.h"
 #ifdef USE_MINIUPNPC
 #include "UPNPControl.h"
 #endif

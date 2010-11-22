@@ -45,12 +45,14 @@ public:
   };
 
   /** Default constructor. */
-  ControlConnection(TorEvents *events = 0);
+  ControlConnection(ControlMethod::Method method, TorEvents *events = 0);
   /** Destructor. */
   ~ControlConnection();
 
   /** Connect to the specified Tor control interface. */
   void connect(const QHostAddress &addr, quint16 port);
+  /** Connect to the specified Tor control socket interface. */
+  void connect(const QString &addr);
   /** Cancels a pending control connection to Tor. */
   void cancelConnect();
   /** Disconnect from Tor's control interface. */
@@ -93,6 +95,8 @@ private:
   void run();
 
   ControlSocket* _sock; /**< Socket used to communicate with Tor. */
+  ControlMethod::Method _method; /** Method used to communicate with Tor. */
+  QString _path; /**< Path to the socket */
   TorEvents* _events; /**< Dispatches asynchronous events from Tor. */
   Status _status; /**< Status of the control connection. */
   QHostAddress _addr; /**< Address of Tor's control interface. */

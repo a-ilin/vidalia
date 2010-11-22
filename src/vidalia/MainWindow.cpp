@@ -1002,10 +1002,17 @@ MainWindow::start()
   updateTorStatus(Starting);
 
   /* Check if Tor is already running separately */
-  if (net_test_connect(settings.getControlAddress(),
-                       settings.getControlPort())) {
-    started();
-    return;
+  if(settings.getControlMethod() == ControlMethod::Port) {
+    if (net_test_connect(settings.getControlAddress(),
+                        settings.getControlPort())) {
+      started();
+      return;
+    }
+  } else {
+    if (socket_test_connect(settings.getSocketPath())) {
+      started();
+      return;
+    }
   }
 
   /* Make sure the torrc we want to use really exists. */
@@ -1021,10 +1028,15 @@ MainWindow::start()
   if (!dataDirectory.isEmpty())
     args << "DataDirectory" << expand_filename(dataDirectory);
   
-  /* Add the intended control port value */
-  quint16 controlPort = settings.getControlPort();
-  if (controlPort)
-    args << "ControlPort" << QString::number(controlPort);
+  if(settings.getControlMethod() == ControlMethod::Port) {
+    /* Add the intended control port value */
+    quint16 controlPort = settings.getControlPort();
+    if (controlPort)
+      args << "ControlPort" << QString::number(controlPort);
+  } else {
+    QString path = settings.getSocketPath();
+    args << "ControlSocket" << path;
+  }
   
   /* Add the control port authentication arguments */
   switch (settings.getAuthenticationMethod()) {
@@ -1114,8 +1126,11 @@ MainWindow::started()
   /* Remember whether we started Tor or not */
   _isVidaliaRunningTor = _torControl->isVidaliaRunningTor();
   /* Try to connect to Tor's control port */
-  _torControl->connect(settings.getControlAddress(),
-                       settings.getControlPort());
+  if(settings.getControlMethod() == ControlMethod::Port)
+    _torControl->connect(settings.getControlAddress(),
+                        settings.getControlPort());
+  else
+    _torControl->connect(settings.getSocketPath());
   setStartupProgress(STARTUP_PROGRESS_CONNECTING, tr("Connecting to Tor"));
 }
 

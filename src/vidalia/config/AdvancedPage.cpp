@@ -63,12 +63,16 @@ AdvancedPage::AdvancedPage(QWidget *parent)
           ui.linePassword, SLOT(setDisabled(bool)));
   connect(ui.btnEditTorConfig, SIGNAL(clicked()),
           this, SLOT(displayTorrcDialog()));
+  connect(ui.rdoControlPort, SIGNAL(toggled(bool)), this, SLOT(toggleControl(bool)));
+  connect(ui.btnBrowseSocketPath, SIGNAL(clicked()), this, SLOT(browseSocketPath()));
 
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
 #if 0
   ui.grpService->setVisible(TorService::isSupported());
 #endif
+  /* Disable ControlSocket */
+  ui.rdoControlSocket->setEnabled(false);
 #endif
 }
 
@@ -114,12 +118,24 @@ AdvancedPage::revert()
 bool
 AdvancedPage::save(QString &errmsg)
 {
-  /* Validate the control listener address */
   QHostAddress controlAddress(ui.lineControlAddress->text());
-  if (controlAddress.isNull()) {
-    errmsg = tr("'%1' is not a valid IP address.")
-               .arg(ui.lineControlAddress->text());
-    return false; 
+  QString path(ui.lineSocketPath->text());
+
+  /* Validate the control settings */
+  if(ui.rdoControlPort->isChecked()) {
+    if (controlAddress.isNull()) {
+      errmsg = tr("'%1' is not a valid IP address.")
+                .arg(ui.lineControlAddress->text());
+      return false; 
+    }
+    _settings->setControlMethod(ControlMethod::Port);
+  } else {
+    QFileInfo finfo(path);
+    if(!finfo.exists()) {
+      errmsg = tr("ControlSocket path doesn't exist.");
+      return false;
+    }
+    _settings->setControlMethod(ControlMethod::Socket);
   }
   
   /* Validate the selected authentication options */
@@ -168,6 +184,7 @@ AdvancedPage::save(QString &errmsg)
 
   _settings->setControlAddress(controlAddress);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
+  _settings->setSocketPath(ui.lineSocketPath->text());
 
   _settings->setAuthenticationMethod(authMethod);
   _settings->setUseRandomPassword(ui.chkRandomPassword->isChecked());
@@ -199,6 +216,9 @@ AdvancedPage::load()
   ui.chkRandomPassword->setChecked(_settings->useRandomPassword());
   if (!ui.chkRandomPassword->isChecked())
     ui.linePassword->setText(_settings->getControlPassword());
+  ui.rdoControlPort->setChecked(_settings->getControlMethod() == ControlMethod::Port);
+  ui.rdoControlSocket->setChecked(_settings->getControlMethod() == ControlMethod::Socket);
+  ui.lineSocketPath->setText(_settings->getSocketPath());
 
 #if 0
 #if defined(Q_WS_WIN)
@@ -300,6 +320,22 @@ AdvancedPage::browseTorDataDirectory()
     ui.lineTorDataDirectory->setText(dataDir);
 }
 
+/** Opens a QFileDialog for the user to browse to or create a socket path to
+ * communicate to Tor */
+void
+AdvancedPage::browseSocketPath()
+{
+  QString start = QDir::currentPath();
+  if(!ui.lineSocketPath->text().isEmpty())
+    start = ui.lineSocketPath->text();
+  QString socketPath = QFileDialog::getOpenFileName(this,
+                      tr("Select a file to use for Tor socket path"),
+                      start);
+
+  if (!socketPath.isEmpty()) 
+    ui.lineSocketPath->setText(socketPath);
+}
+
 #if 0
 #if defined(Q_WS_WIN)
 /** Installs or removes the Tor service as necessary. */
@@ -341,4 +377,26 @@ AdvancedPage::displayTorrcDialog()
 {
   TorrcDialog rcdialog(this);
   rcdialog.exec();
+}
+
+void 
+AdvancedPage::toggleControl(bool)
+{
+  if(ui.rdoControlPort->isChecked()) {
+    ui.lblAddress->setEnabled(true);
+    ui.lineControlAddress->setEnabled(true);
+    ui.lineControlPort->setEnabled(true);
+    ui.lblPath->setEnabled(false);
+    ui.lineSocketPath->setEnabled(false);
+    ui.btnBrowseSocketPath->setEnabled(false);
+  } else {
+#if !defined(Q_OS_WIN32)
+    ui.lblAddress->setEnabled(false);
+    ui.lineControlAddress->setEnabled(false);
+    ui.lineControlPort->setEnabled(false);
+    ui.lblPath->setEnabled(true);
+    ui.lineSocketPath->setEnabled(true);
+    ui.btnBrowseSocketPath->setEnabled(true);
+#endif
+  }
 }

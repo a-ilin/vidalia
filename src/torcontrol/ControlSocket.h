@@ -19,17 +19,19 @@
 
 #include "ControlCommand.h"
 #include "ControlReply.h"
+#include "ControlMethod.h"
 
+#include <QtCore>
+#include <QLocalSocket>
 #include <QTcpSocket>
 
-
-class ControlSocket : public QTcpSocket
+class ControlSocket : public QObject
 {
   Q_OBJECT
 
 public:
   /** Default constructor. */
-  ControlSocket();
+  ControlSocket(ControlMethod::Method method = ControlMethod::Port);
 
   /** Send a command to Tor */
   bool sendCommand(ControlCommand cmd, QString *errmsg = 0);
@@ -39,10 +41,29 @@ public:
   /** Returns true if the control socket is connected and ready to send or
    * receive. */
   bool isConnected();
+  /** Interface to each socket's canReadLine implementation */
+  bool canReadLine();
+  
+  void connectToHost(const QHostAddress &address, quint16 port);
+  /** Disconnects from host */
+  void disconnectFromHost();
+  /** Connects to a unix socket file */
+  void connectToServer(const QString &name);
+  /** Disconnects from the socket */
+  void disconnectFromServer();
+
+  ControlMethod::Method getMethod() { return _method; }
   
   /** Returns the string description of <b>error</b>. */
   static QString toString(const QAbstractSocket::SocketError error);
-  
+
+signals:
+  /** Interface to the signals from each socket used */
+  void readyRead();
+  void disconnected();
+  void connected();
+  void error(QAbstractSocket::SocketError);
+
 protected:
   /** Processes custom events sent to this object (e.g. SendCommandEvents)
    * from other threads. */
@@ -51,6 +72,12 @@ protected:
   bool readLineData(QString &line, QString *errmsg = 0);
   /** Reads a line of data from the socket (blocking) */
   bool readLine(QString &line, QString *errmsg = 0);
+
+private:
+  QTcpSocket *_tcpSocket; /**< Socket used in the connection */
+  QLocalSocket *_localSocket; /**< Socket used in the connection */
+  QIODevice *_socket; /**< Abstract pointer to transparently use both sockets */
+  ControlMethod::Method _method;
 };
 
 #endif

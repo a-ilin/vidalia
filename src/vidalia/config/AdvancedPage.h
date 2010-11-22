@@ -65,6 +65,13 @@ private slots:
   /** Called when the user clicks "Browse" to choose the location of Tor's
    * data directory. */
   void browseTorDataDirectory();
+  /** Called when the user clicks "Browse" to choose the location of Tor's
+   * socket path. */
+  void browseSocketPath();
+  /** Called when the user changes from ControlPort to ControlSocket or
+   * the other way aroud */
+  void toggleControl(bool);
+
   /** Called when the user clicks "Edit current torrc" to edit Tor's config in
    * a more advanced way */
   void displayTorrcDialog();

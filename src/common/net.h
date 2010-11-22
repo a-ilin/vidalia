@@ -22,6 +22,9 @@
 /** Attempts a connection to <b>host</b> on <b>port</b>. Returns true if the
  * connection was successful, or false if the connection attempt failed. */
 bool net_test_connect(QHostAddress host, quint16 port, int timeout = 250);
+/** Attempts a connection to <b>server</b>. Returns true if the
+ * connection was successful, or false if the connection attempt failed. */
+bool socket_test_connect(QString server, int timeout = 250);
 
 #endif
 

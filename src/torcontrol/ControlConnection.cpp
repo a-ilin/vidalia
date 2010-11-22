@@ -29,12 +29,13 @@
 
 
 /** Default constructor. */
-ControlConnection::ControlConnection(TorEvents *events)
+ControlConnection::ControlConnection(ControlMethod::Method method, TorEvents *events)
 {
   _events = events;
   _status = Unset;
   _sock = 0;
   _sendWaiter = new SendCommandEvent::SendWaiter();
+  _method = method;
 }
 
 /** Destructor. */
@@ -69,6 +70,24 @@ ControlConnection::connect(const QHostAddress &addr, quint16 port)
   QThread::start();
 }
 
+/** Connect to the specified Tor control socket interface. */
+void
+ControlConnection::connect(const QString &addr)
+{
+  if (isRunning()) {
+    tc::error("Bug: Tried to call ControlConnection::connect() when the "
+              "control thread is already running.");
+    return;
+  }
+  
+  _path = addr;
+  _connectAttempt = 0;
+  setStatus(Connecting);
+
+  /* Kick off the thread in which the control socket will live */
+  QThread::start();
+}
+
 /** Attempt to establish a connection to Tor's control interface. We will try
  * a maximum of MAX_CONNECT_ATTEMPTS, waiting CONNECT_RETRY_DELAY between each
  * attempt, to give slow Tors a chance to finish binding their control port. */
@@ -80,7 +99,16 @@ ControlConnection::connect()
                                                    .arg(MAX_CONNECT_ATTEMPTS);
   
   _connMutex.lock();
-  _sock->connectToHost(_addr, _port);
+  switch(_method) {
+    case ControlMethod::Socket:
+      _sock->connectToServer(_path);
+    break;
+
+    default:
+    case ControlMethod::Port:
+      _sock->connectToHost(_addr, _port);
+    break;
+  }
   _connMutex.unlock();
 }
 
@@ -90,7 +118,16 @@ ControlConnection::disconnect()
 {
   setStatus(Disconnecting);
   _connMutex.lock();
-  _sock->disconnectFromHost();
+  switch(_method) {
+    case ControlMethod::Socket:
+      _sock->disconnectFromServer();
+    break;
+
+    default:
+    case ControlMethod::Port:
+      _sock->disconnectFromHost();
+    break;
+  }
   _connMutex.unlock();
 }
 
@@ -120,7 +157,7 @@ ControlConnection::onError(QAbstractSocket::SocketError error)
   if (status() == Connecting) {
     /* If we got a 'connection refused' and we haven't exceeded
      * MAX_CONNECT_ATTEMPTS, then try to reconnect since Tor is probably
-     * running, but it doesn't have a ControlPort open yet. */
+     * running, but it doesn't have a ControlSocket open yet. */
     if (error == QAbstractSocket::ConnectionRefusedError &&
         _connectAttempt < MAX_CONNECT_ATTEMPTS) {
       tc::debug("Control connection refused. Retrying in %1ms.")
@@ -288,7 +325,8 @@ ControlConnection::run()
 {
   /* Create a new control socket */
   _connMutex.lock();
-  _sock = new ControlSocket();
+  _sock = new ControlSocket(_method);
+
   _connectTimer = new QTimer();
   _connectTimer->setSingleShot(true);
   

@@ -32,6 +32,8 @@
 #define SETTING_TORRC               "Torrc"
 #define SETTING_CONTROL_ADDR        "ControlAddr"
 #define SETTING_CONTROL_PORT        "ControlPort"
+#define SETTING_SOCKET_PATH         "ControlSocket"
+#define SETTING_CONTROL_METHOD      "ControlMethod"
 #define SETTING_AUTH_TOKEN          "AuthToken"
 #define SETTING_TOR_USER            "User"
 #define SETTING_TOR_GROUP           "Group"
@@ -44,6 +46,10 @@
 
 /** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
+/** Default control method */
+#define DEFAULT_CONTROL_METHOD  "ControlPort"
+/** Default socket path */
+#define DEFAULT_SOCKET_PATH  ""
 
 /* Arguments we can pass to Tor on the command-line */
 #define TOR_ARG_CONTROL_PORT    "ControlPort"
@@ -75,6 +81,8 @@ TorSettings::TorSettings(TorControl *torControl)
   setDefault(SETTING_CONTROL_ADDR,  "127.0.0.1");
   setDefault(SETTING_CONTROL_PORT,  9051);
   setDefault(SETTING_AUTH_METHOD,   toString(DEFAULT_AUTH_METHOD));
+  setDefault(SETTING_CONTROL_METHOD, DEFAULT_CONTROL_METHOD);
+  setDefault(SETTING_SOCKET_PATH, DEFAULT_SOCKET_PATH);
   setDefault(SETTING_DATA_DIRECTORY, "");
   setDefault(SETTING_CONTROL_PASSWORD, "");
   setDefault(SETTING_USE_RANDOM_PASSWORD, true);
@@ -204,6 +212,34 @@ void
 TorSettings::setControlPort(quint16 port)
 {
   setValue(SETTING_CONTROL_PORT, port);
+}
+
+/** Get the path for ControlSocket */
+QString 
+TorSettings::getSocketPath() const
+{
+  return value(SETTING_SOCKET_PATH).toString();
+}
+
+/** Set the path for ControlSocket */
+void 
+TorSettings::setSocketPath(const QString &path)
+{
+  setValue(SETTING_SOCKET_PATH, path);
+}
+
+/** Get the current control method */
+ControlMethod::Method
+TorSettings::getControlMethod() const
+{
+  return ControlMethod::fromString(localValue(SETTING_CONTROL_METHOD).toString());
+}
+
+/** Set the control method */
+void 
+TorSettings::setControlMethod(ControlMethod::Method method)
+{
+  setValue(SETTING_CONTROL_METHOD, ControlMethod::toString(method));
 }
 
 /** Returns the plaintext (i.e., not hashed) control password used when

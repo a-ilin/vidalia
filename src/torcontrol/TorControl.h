@@ -28,6 +28,7 @@
 #include "Circuit.h"
 #include "Stream.h"
 #include "AddressMap.h"
+#include "ControlMethod.h"
 
 #if defined(Q_OS_WIN32)
 #include "TorService.h"
@@ -52,7 +53,7 @@ class TorControl : public QObject
   
 public:
   /** Default constructor */
-  TorControl();
+  TorControl(ControlMethod::Method method = ControlMethod::Port);
   /** Default destructor */
   ~TorControl();
 
@@ -70,6 +71,7 @@ public:
 
   /** Connect to Tor's control socket */
   void connect(const QHostAddress &address, quint16 port);
+  void connect(const QString &path);
   /** Disconnect from Tor's control socket */
   void disconnect();
   /** Check if we're connected to Tor's control socket */
@@ -382,6 +384,7 @@ private:
   TorEvents::Events _events;
   /** The version of Tor we're currently talking to. */
   QString _torVersion;
+  ControlMethod::Method _method;
 #if defined(Q_OS_WIN32)
   /** Manages the Tor service, if supported and enabled */
   TorService* _torService;

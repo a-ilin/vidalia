@@ -66,6 +66,18 @@ public:
   quint16 getControlPort() const;
   /** Set the control port. */
   void setControlPort(quint16 port);
+
+  /** Get the path for ControlSocket */
+  QString getSocketPath() const;
+
+  /** Get the current control method */
+  ControlMethod::Method getControlMethod() const;
+
+  /** Set the control method */
+  void setControlMethod(ControlMethod::Method method);
+
+  /** Set the path for ControlSocket */
+  void setSocketPath(const QString &path);
   
   /** Returns the plaintext (i.e., not hashed) control password used when
    * authenticating to Tor. */

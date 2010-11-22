@@ -15,6 +15,7 @@
 */
 
 #include "NetworkSettings.h"
+#include "TorControl.h"
 
 #define SETTING_FASCIST_FIREWALL    "FascistFirewall"
 #define SETTING_REACHABLE_ADDRESSES "ReachableAddresses"

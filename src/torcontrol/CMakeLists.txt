@@ -19,6 +19,7 @@ set(torcontrol_SRCS
   ControlConnection.cpp
   ControlReply.cpp
   ControlSocket.cpp
+  ControlMethod.cpp
   ProtocolInfo.cpp
   ReplyLine.cpp
   RouterDescriptor.cpp

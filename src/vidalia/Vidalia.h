@@ -19,6 +19,7 @@
 
 #include "config.h"
 #include "VidaliaSettings.h"
+#include "TorSettings.h"
 #include "Log.h"
 #include "TorControl.h"
 

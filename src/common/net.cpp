@@ -17,6 +17,7 @@
 #include "net.h"
 
 #include <QTcpSocket>
+#include <QLocalSocket>
 
 
 /** Attempts a connection to <b>host</b> on <b>port</b>. Returns true if the
@@ -30,6 +31,18 @@ net_test_connect(QHostAddress host, quint16 port, int timeout)
     return false;
   }
   sock.disconnectFromHost();
+  return true;
+}
+
+bool
+socket_test_connect(QString server, int timeout)
+{
+  QLocalSocket sock;
+  sock.connectToServer(server);
+  if (!sock.waitForConnected(timeout)) {
+    return false;
+  }
+  sock.disconnectFromServer();
   return true;
 }
 
