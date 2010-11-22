@@ -10,7 +10,7 @@
 
 /*
 ** \file ControlMethod.cpp
-** \version $Id: $
+** \version $Id$
 ** \brief Class for specifying which method is used to communicate to Tor
 */
 
