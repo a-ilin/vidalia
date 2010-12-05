@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-12 05:29+0000\n"
-"PO-Revision-Date: 2010-09-12 11:45+0200\n"
-"Last-Translator: Erdem <ebayer@bayer.gen.tr>\n"
+"PO-Revision-Date: 2010-12-02 12:09+0200\n"
+"Last-Translator: yunus kaba <yunuskaba@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,7 @@ msgstr "Parola"
 
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
-msgstr "Rastgele Oluştur"
+msgstr "Rastgele Seç"
 
 msgctxt "AdvancedPage"
 msgid ":"
@@ -1214,7 +1214,7 @@ msgstr "Taiwan"
 
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
-msgstr "Çalıştırılabilir(*.exe)"
+msgstr "Uygulamalar(*.exe)"
 
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
@@ -2472,7 +2472,7 @@ msgstr ""
 
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
-msgstr "İnternet sağlayıcım Tor ağını blokluyor"
+msgstr "İnternet sağlayıcım Tor ağını engelliyor"
 
 msgctxt "NetworkPage"
 msgid "Bridge Settings"
@@ -2554,7 +2554,7 @@ msgstr "Platform:"
 
 msgctxt "RouterDescriptorView"
 msgid "Bandwidth:"
-msgstr "Bandgenişliği:"
+msgstr "Bantgenişliği:"
 
 msgctxt "RouterDescriptorView"
 msgid "Uptime:"
@@ -2614,7 +2614,7 @@ msgstr "Platform:"
 
 msgctxt "RouterInfoDialog"
 msgid "Bandwidth:"
-msgstr "Bandgenişliği:"
+msgstr "Bantgenişliği:"
 
 msgctxt "RouterInfoDialog"
 msgid "Uptime:"
@@ -2696,7 +2696,7 @@ msgstr "Sadece kullanıcı olarak çalıştır"
 
 msgctxt "ServerPage"
 msgid "Relay traffic for the Tor network"
-msgstr "Tor ağı için aktarım trafiği"
+msgstr "Tor ağının bir parçası olmak istiyorum"
 
 msgctxt "ServerPage"
 msgid "Relay Port:"
@@ -2780,7 +2780,7 @@ msgstr "Internet bağlantısı için en sık kullanılan bağlantınızı seçin
 
 msgctxt "ServerPage"
 msgid "Show help topic on bandwidth rate limits"
-msgstr "Bandgenişliği ortalamasıyla ilgili yardım başlıkların göster"
+msgstr "Ortalama bantgenişliğiyle ilgili yardım başlıkların göster"
 
 msgctxt "ServerPage"
 msgid "Average Rate"
@@ -2800,15 +2800,17 @@ msgstr "Maximum ortalama"
 
 msgctxt "ServerPage"
 msgid "Peak bandwidth rate limit"
-msgstr "En yüksek bandgenişliği ortalaması"
+msgstr "En yüksek bantgenişliği ortalaması"
 
 msgctxt "ServerPage"
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
-msgstr "Maximum bandgenişliği oranın büyük veya eşit olmalı mevcut bandgenişlği ortlamasına. İki değerde en az 20KB/s."
+msgstr ""
+"Maximum bantgenişliği oranı mevcut bandgenişlği ortlamasına büyük veya eşit, "
+"iki değerde en az 20KB/s olmalı."
 
 msgctxt "ServerPage"
 msgid "Bandwidth Limits"
-msgstr "Bandgenişliği sınırı"
+msgstr "Bağlantı Tipi"
 
 msgctxt "ServerPage"
 msgid "Ports 6660 - 6669 and 6697"
@@ -2868,7 +2870,9 @@ msgstr "Hangi  internet kaynakları kullanıcılar tarafından sizin üzerinizde
 
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
-msgstr "Tor hala bazı dışarıya giden mail ve dosya paylaşım uygulamalarını varsayılan ayarlara göre spamları azaltmak için blokluyor."
+msgstr ""
+"Tor hala bazı dışarıya giden mail ve dosya paylaşım uygulamalarını "
+"varsayılan ayarlara göre spamları azaltmak için engelliyor."
 
 msgctxt "ServerPage"
 msgid "Exit Policies"
@@ -3018,7 +3022,7 @@ msgstr "Seçili hizmet için klasör seç"
 
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr "Geliştirildi"
+msgstr "Tor tarafından oluşuturuldu"
 
 msgctxt "Stream"
 msgid "New"
