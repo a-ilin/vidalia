@@ -2,7 +2,7 @@
 host = http://www.transifex.net
 
 [torproject.vidalia-qt-pot]
-source_file = en/qt_en.po
+source_file = en/qt.pot
 source_lang = en
 trans.af = af/qt_af.po
 trans.ak = ak/qt_ak.po
