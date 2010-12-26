@@ -2,7 +2,7 @@
 host = http://www.transifex.net
 
 [torproject.vidalia-installer-vidalia-pot]
-source_file = en/vidalia_en.po
+source_file = templates/vidalia.pot
 source_lang = en
 trans.af = af/vidalia_af.po
 trans.ak = ak
