@@ -2,7 +2,7 @@
 host = http://www.transifex.net
 
 [torproject.vidalia-qt-pot]
-source_file = en/qt.pot
+source_file = templates/qt.pot
 source_lang = en
 trans.af = af/qt_af.po
 trans.ak = ak/qt_ak.po
@@ -126,7 +126,7 @@ trans.zh_TW = zh_TW/qt_zh_TW.po
 trans.zu = zu/qt_zu.po
 
 [torproject.vidalia-vidalia-pot]
-source_file = en/vidalia_en.po
+source_file = templates/vidalia.pot
 source_lang = en
 trans.af = af/vidalia_af.po
 trans.ak = ak/vidalia_ak.po
