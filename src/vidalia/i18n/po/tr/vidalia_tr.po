@@ -1938,7 +1938,7 @@ msgstr "Hata(%1)"
 msgctxt "MainWindow"
 msgid "Your relay is shutting down.\n"
 "Click 'Stop' again to stop your relay now."
-msgstr "Bağlantınız sonlandırılıyor.\n"
+msgstr "Bağlantınız sonlandırılıyor."
 
 msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
