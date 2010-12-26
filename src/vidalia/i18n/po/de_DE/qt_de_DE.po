@@ -1,378 +1,363 @@
-# Osama Khalid <osamak@gnu.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2010-09-09 20:54+0300\n"
-"Last-Translator: Osama Khalid <osamak@gnu.org>\n"
-"Language-Team: Arabic <>\n"
+"PO-Revision-Date: 2008-08-20 03:25+0000\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<"
-"=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 1.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
 msgid "Activate"
-msgstr "تفعيل"
+msgstr ""
 
 #: qmessagebox.h:319
 msgctxt "QApplication"
 msgid "Executable '%1' requires Qt %2, found Qt %3."
-msgstr "البرنامج '%1' يتطلّب Qt %2، تمّ إيجاد Qt %3."
+msgstr ""
 
 #: qmessagebox.h:321
 msgctxt "QApplication"
 msgid "Incompatible Qt Library Error"
-msgstr "خطأ: مكتبة Qt غير موافقة"
+msgstr ""
 
 #: qapplication.cpp:2095
 msgctxt "QApplication"
 msgid "QT_LAYOUT_DIRECTION"
-msgstr "RTL"
+msgstr ""
 
 #: qaccessibleobject.cpp:350
 msgctxt "QApplication"
 msgid "Activates the program's main window"
-msgstr "تفعيل شاشة البرنامج الرئيسية"
+msgstr ""
 
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
 msgid "OK"
-msgstr "موافق"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:528
 msgctxt "QDialogButtonBox"
 msgid "Save"
-msgstr "احفظ"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:531
 msgctxt "QDialogButtonBox"
 msgid "Open"
-msgstr "افتح"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:534
 msgctxt "QDialogButtonBox"
 msgid "Cancel"
-msgstr "ألغِ"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:537
 msgctxt "QDialogButtonBox"
 msgid "Close"
-msgstr "أغلق"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:540
 msgctxt "QDialogButtonBox"
 msgid "Apply"
-msgstr "طبّق"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:543
 msgctxt "QDialogButtonBox"
 msgid "Reset"
-msgstr "أعد الضبط"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:546
 msgctxt "QDialogButtonBox"
 msgid "Help"
-msgstr "مساعدة"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
 msgid "Don't Save"
-msgstr "لا تحفظ"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
 msgid "Discard"
-msgstr "تجاهل"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:557
 msgctxt "QDialogButtonBox"
 msgid "&Yes"
-msgstr "&نعم"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
-msgstr "نع&م للكل"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
 msgid "&No"
-msgstr "&لا"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:566
 msgctxt "QDialogButtonBox"
 msgid "N&o to All"
-msgstr "ل&ا للكل"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
 msgid "Save All"
-msgstr "احفظ الكل"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:572
 msgctxt "QDialogButtonBox"
 msgid "Abort"
-msgstr "أجهض"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:575
 msgctxt "QDialogButtonBox"
 msgid "Retry"
-msgstr "أعد المحاولة"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:578
 msgctxt "QDialogButtonBox"
 msgid "Ignore"
-msgstr "تجاهَل"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
-msgstr "استرجع الإعدادات الافتراضية"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr "أغلق دون حفظس"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
 msgid "&OK"
-msgstr "&موافق"
+msgstr ""
 
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
 msgid "Name"
-msgstr "الاسم"
+msgstr ""
 
 #: qdirmodel.cpp:424
 msgctxt "QDirModel"
 msgid "Size"
-msgstr "الحجم"
+msgstr ""
 
 #: qdirmodel.cpp:427
 msgctxt "QDirModel"
 msgid "Kind"
-msgstr "النوع"
+msgstr ""
 
 #: qdirmodel.cpp:429
 msgctxt "QDirModel"
 msgid "Type"
-msgstr "الطّراز"
+msgstr ""
 
 #: qdirmodel.cpp:435
 msgctxt "QDirModel"
 msgid "Date Modified"
-msgstr "تاريخ التعديل"
+msgstr ""
 
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
 msgid "All Files (*)"
-msgstr "جميع الملفّات (*)"
+msgstr ""
 
 #: qfiledialog.cpp:881
 msgctxt "QFileDialog"
 msgid "Directories"
-msgstr "المجلدات"
+msgstr ""
 
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
-msgstr "&فتح"
+msgstr ""
 
 #: qfiledialog.cpp:919
 msgctxt "QFileDialog"
 msgid "&Save"
-msgstr "&حفظ"
+msgstr ""
 
 #: qfiledialog.cpp:435
 msgctxt "QFileDialog"
 msgid "Open"
-msgstr "فتح"
+msgstr ""
 
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
-msgid ""
-"%1 already exists.\n"
+msgid "%1 already exists.\n"
 "Do you want to replace it?"
 msgstr ""
-"%1 موجود أصلا.\n"
-"هل ترغب بإستبداله؟"
 
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
-msgid ""
-"%1\n"
+msgid "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
 msgstr ""
-"%1\n"
-"ملف غير موجود.\n"
-"رجاءاً تأكد من صحة إسم الملف."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
-msgstr "جهاز الكمبيوتر الخاص بي"
+msgstr ""
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
 msgid "&Rename"
-msgstr "ت&غيير الإسم"
+msgstr ""
 
 #: qfiledialog.cpp:463
 msgctxt "QFileDialog"
 msgid "&Delete"
-msgstr "ح&ذف"
+msgstr ""
 
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
 msgid "Show &hidden files"
-msgstr "ع&رض الملفّات المخفية"
+msgstr ""
 
 #: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
 msgid "Back"
-msgstr "رجوع"
+msgstr ""
 
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
 msgid "Parent Directory"
-msgstr "المجلد الرئيسي"
+msgstr ""
 
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
-msgstr "عرض القائمة"
+msgstr ""
 
 #: ui_qfiledialog.h:289
 msgctxt "QFileDialog"
 msgid "Detail View"
-msgstr "عرض التفاصيل"
+msgstr ""
 
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
-msgstr "ملفات من نوع:"
+msgstr ""
 
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
 msgid "Directory:"
-msgstr "دليل:"
+msgstr ""
 
 #: qfiledialog.cpp:2476
 msgctxt "QFileDialog"
-msgid ""
-"%1\n"
+msgid "%1\n"
 "Directory not found.\n"
 "Please verify the correct directory name was given."
 msgstr ""
-"\n"
-"%1مجلد غير موجود.\n"
-"رجاءاً تأكد من صحة إسم المجلد.\n"
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
-msgid ""
-"'%1' is write protected.\n"
+msgid "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
 msgstr ""
-"'%1' محمي من الكتابة.\n"
-"هل تريد حذفه علي أي حال؟"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr "هل أنت متأكد أنك تريد حذفه '%1'؟"
+msgstr ""
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
 msgid "Could not delete directory."
-msgstr "لا تستطيع حذف الدليل."
+msgstr ""
 
 #: qfiledialog_win.cpp:128
 msgctxt "QFileDialog"
 msgid "All Files (*.*)"
-msgstr "جميع الملفّات (*.*)"
+msgstr ""
 
 #: qfiledialog.cpp:437
 msgctxt "QFileDialog"
 msgid "Save As"
-msgstr "احفظ كـ..."
+msgstr ""
 
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
 msgid "Drive"
-msgstr "السواقة"
+msgstr ""
 
 #: qfileiconprovider.cpp:383
 msgctxt "QFileDialog"
 msgid "File"
-msgstr "ملفّ"
+msgstr ""
 
 #: qfileiconprovider.cpp:412
 msgctxt "QFileDialog"
 msgid "Unknown"
-msgstr "غير معروف"
+msgstr ""
 
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
 msgid "Find Directory"
-msgstr "إيجاد الدليل"
+msgstr ""
 
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr "أظهر "
+msgstr ""
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
 msgid "Forward"
-msgstr "التالي"
+msgstr ""
 
 #: qfiledialog.cpp:2137
 msgctxt "QFileDialog"
 msgid "New Folder"
-msgstr "مجلد جديد"
+msgstr ""
 
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
 msgid "&New Folder"
-msgstr "م&جلد جديد"
+msgstr ""
 
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
-msgstr "ا&ختر"
+msgstr ""
 
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr "أزل"
+msgstr ""
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
-msgstr "اسم ال&ملف"
+msgstr ""
 
 #: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
-msgstr "ابحث في:"
+msgstr ""
 
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
-msgstr "أنشئ مجلدًا جديدًا"
+msgstr ""
 
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
-msgstr "اسم ملف غير صالح"
+msgstr ""
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
@@ -380,66 +365,63 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
-"<b>لايمكن إستعمال الاسم \"%1\".</b>حاول إستخدام اسم أخر, مع تقليل عدد المحارف "
-"أو عدم استخدام علامات التنقيط<p>"
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
 msgid "Name"
-msgstr "الاسم"
+msgstr ""
 
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
-msgstr "السّعة"
+msgstr ""
 
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
 msgid "Kind"
-msgstr "النوع"
+msgstr ""
 
 #: qfilesystemmodel.cpp:840
 msgctxt "QFileSystemModel"
 msgid "Type"
-msgstr "الطّراز"
+msgstr ""
 
 #: qfilesystemmodel.cpp:847
 msgctxt "QFileSystemModel"
 msgid "Date Modified"
-msgstr "تاريخ التعديل"
+msgstr ""
 
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr "جهاز الكمبيوتر"
+msgstr ""
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
 msgid "Computer"
-msgstr "كمبيوتر"
+msgstr ""
 
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr "%1 تيرابايت"
+msgstr ""
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr "%1 جيجابايت"
+msgstr ""
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr "%1 ميجابايت"
+msgstr ""
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr "%1 كيلو بايت"
+msgstr ""
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-msgstr "%1 بايت"
-
+msgstr ""
