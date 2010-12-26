@@ -271,9 +271,9 @@ msgid ""
 "Directory not found.\n"
 "Please verify the correct directory name was given."
 msgstr ""
-"\n"
-"%1مجلد غير موجود.\n"
-"رجاءاً تأكد من صحة إسم المجلد.\n"
+"%1\n"
+"مجلد غير موجود.\n"
+"رجاءاً تأكد من صحة إسم المجلد."
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
