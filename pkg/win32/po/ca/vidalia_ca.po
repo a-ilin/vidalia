@@ -155,8 +155,7 @@ msgstr "Afegir ${TOR_NAME} al teu menu d'inici."
 
 msgctxt "PrivoxyGroupDesc"
 msgid "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
-msgstr "Privoxy es un filtre web proxy que protegeig la teva privacitat i t'ajuda a "
-"eliminar ads, banners, i popups.\n"
+msgstr "Privoxy es un filtre web proxy que protegeig la teva privacitat i t'ajuda a eliminar ads, banners, i popups."
 
 msgctxt "PrivoxyUninstDesc"
 msgid "Remove ${PRIVOXY_DESC}."
