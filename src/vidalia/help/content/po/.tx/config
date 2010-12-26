@@ -1,0 +1,53 @@
+[torproject.vidalia-help-bridges-pot]
+file_filter = <lang>/bridges.po
+source_file = en/bridges.po
+source_lang = en
+
+[torproject.vidalia-help-links-pot]
+file_filter = <lang>/links.po
+source_file = en/links.po
+source_lang = en
+
+[torproject.vidalia-help-netview-pot]
+file_filter = <lang>/netview.po
+source_file = en/netview.po
+source_lang = en
+
+[torproject.vidalia-help-running-pot]
+file_filter = <lang>/running.po
+source_file = en/running.po
+source_lang = en
+
+[torproject.vidalia-help-troubleshooting-pot]
+file_filter = <lang>/troubleshooting.po
+source_file = en/troubleshooting.po
+source_lang = en
+
+[torproject.vidalia-help-config-pot]
+file_filter = <lang>/config.po
+source_file = en/config.po
+source_lang = en
+
+[torproject.vidalia-help-log-pot]
+file_filter = <lang>/log.po
+source_file = en/log.po
+source_lang = en
+
+[torproject.vidalia-help-index-pot]
+file_filter = <lang>/index.po
+source_file = en/index.po
+source_lang = en
+
+[torproject.vidalia-help-server-pot]
+file_filter = <lang>/server.po
+source_file = en/server.po
+source_lang = en
+
+[torproject.vidalia-help-services-pot]
+file_filter = <lang>/services.po
+source_file = en/services.po
+source_lang = en
+
+[main]
+host = http://www.transifex.net
+
