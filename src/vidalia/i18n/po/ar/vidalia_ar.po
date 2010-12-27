@@ -1,17 +1,18 @@
-# Osama Khalid <osamak@gnu.org>, 2010.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: Vidalia\n"
-"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2009-05-19 23:55+0000\n"
-"PO-Revision-Date: 2010-09-09 20:11+0300\n"
-"Last-Translator: Osama Khalid <osamak@gnu.org>\n"
-"Language-Team: Arabic <>\n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
+"POT-Creation-Date: 2009-05-19 23:56+0000\n"
+"PO-Revision-Date: 2010-12-27 16:13+0000\n"
+"Last-Translator: runasand <runa.sandvik@gmail.com>\n"
+"Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 1.1\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -21,7 +22,6 @@ msgctxt "AboutDialog"
 msgid "License"
 msgstr "الترخيص"
 
-# لا توجد تعليقات.
 msgctxt "AboutDialog"
 msgid "Vidalia 0.2.0"
 msgstr "فيداليا 0.2.0"
@@ -30,7 +30,6 @@ msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
 msgstr "تور 0.2.0.32"
 
-# لا توجد تعليقات.
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
 msgstr "4.4.2 QT "
@@ -1431,10 +1430,7 @@ msgstr "فتح رابط خارجي"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
-msgstr ""
-"فيداليا يستطيع فتح الرابط الذي حددته في مستعرض الإنترنت الافتراضي الخاص بك. "
-"إذا لم يكن متصفحك حاليا مضبوطاً لاستخدام تور فإن هذا الطلب لن يكون مجهول "
-"الهوية."
+msgstr "فيداليا يستطيع فتح الرابط الذي حددته في مستعرض الإنترنت الافتراضي الخاص بك. إذا لم يكن متصفحك حاليا مضبوطاً لاستخدام تور فإن هذا الطلب لن يكون مجهول الهوية."
 
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
@@ -1446,9 +1442,7 @@ msgstr "غير قادر على فتح الرابط"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
-msgstr ""
-"فيداليا لم يتمكن من فتح الرابط المحدد في مستعرض الإنترنت. مازال يمكنك نسخ "
-"العنوان ولصقه في المتصفح."
+msgstr "فيداليا لم يتمكن من فتح الرابط المحدد في مستعرض الإنترنت. مازال يمكنك نسخ العنوان ولصقه في المتصفح."
 
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
@@ -1704,9 +1698,7 @@ msgstr "خطأ في بدء تشغيل تور"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
-msgstr ""
-"تعذَّر على ڤيداليا تشغيل تور. تفحص إعداداتك للتأكد من صحة تحديد اسم وموضع "
-"ملف تور التنفيذي."
+msgstr "تعذَّر على ڤيداليا تشغيل تور. تفحص إعداداتك للتأكد من صحة تحديد اسم وموضع ملف تور التنفيذي."
 
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
@@ -1742,9 +1734,7 @@ msgstr "مطلوب المصادقة على الكعكات (cookies)"
 
 msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
-msgstr ""
-"برنامج تور يتطلب من فيداليا إرسال محتويات كعكة التصديق ولكن لم يتمكن فيداليا "
-"من إيجادها."
+msgstr "برنامج تور يتطلب من فيداليا إرسال محتويات كعكة التصديق ولكن لم يتمكن فيداليا من إيجادها."
 
 msgctxt "MainWindow"
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
@@ -1764,9 +1754,7 @@ msgstr "خطأ في تسجيل الأحداث"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
-msgstr ""
-"فيداليا لم يتمكن من التسجيل لبعض الأحداث. قد تكون العديد من مزايا فيداليا "
-"غير متوفرة."
+msgstr "فيداليا لم يتمكن من التسجيل لبعض الأحداث. قد تكون العديد من مزايا فيداليا غير متوفرة."
 
 msgctxt "MainWindow"
 msgid "Authentication Error"
@@ -1786,9 +1774,7 @@ msgstr "يتوفر تحديث لتور"
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
-msgstr ""
-"إصدار تور المنصب حالياً قديم أو لاينصح به بعد الآن. يرجى زيارة موقع تور "
-"لتنزيل آخر إصدار."
+msgstr "إصدار تور المنصب حالياً قديم أو لاينصح به بعد الآن. يرجى زيارة موقع تور لتنزيل آخر إصدار."
 
 msgctxt "MainWindow"
 msgid "Tor website: %1"
@@ -1888,10 +1874,7 @@ msgstr "فشل إعادة ضبط كلمة السر"
 
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
-msgstr ""
-"حاول فيداليا إعادة ضبط كلمة سر التحكم بتور ولكنه لم يكن قادراً على إعادة "
-"تشغيل برنامج تور. يرجى التحقق من مدير المهام الخاص بك للتأكد من عدم وجود "
-"عمليات تور أخرى جارية."
+msgstr "حاول فيداليا إعادة ضبط كلمة سر التحكم بتور ولكنه لم يكن قادراً على إعادة تشغيل برنامج تور. يرجى التحقق من مدير المهام الخاص بك للتأكد من عدم وجود عمليات تور أخرى جارية."
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended."
@@ -1907,10 +1890,7 @@ msgstr "يحتمل أن يكون الاتصال غير آمناً"
 
 msgctxt "MainWindow"
 msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
-msgstr ""
-"يبدو أن أحد تطبيقاتك %1 يتصل بشكل غير مشفر بالمدخل %2. أي شيء يرسل عبر هذا "
-"الاتصال يمكن أن تتم مراقبته. يرجى التحقق من إعدادات التطبيق واستخدام "
-"البروتوكولات المشفرة حصراً، مثل SSL، إن أمكن."
+msgstr "يبدو أن أحد تطبيقاتك %1 يتصل بشكل غير مشفر بالمدخل %2. أي شيء يرسل عبر هذا الاتصال يمكن أن تتم مراقبته. يرجى التحقق من إعدادات التطبيق واستخدام البروتوكولات المشفرة حصراً، مثل SSL، إن أمكن."
 
 msgctxt "MainWindow"
 msgid "Tor has automatically closed your connection in order to protect your anonymity."
@@ -1958,11 +1938,9 @@ msgid ""
 "\n"
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
-"أنت حالياً تشغل تحويلة. إيقاف هذه التحويلة سيقاطع أي اتصالات مفتوحة من "
-"العملاء.\n"
+"أنت حالياً تشغل تحويلة. إيقاف هذه التحويلة سيقاطع أي اتصالات مفتوحة من العملاء.\n"
 "\n"
-"هل تود إيقاف التحويلة ببطء لإعطاء العملاء وقتاً كافياُ للبحث عن تحويلة "
-"جديدة؟"
+"هل تود إيقاف التحويلة ببطء لإعطاء العملاء وقتاً كافياُ للبحث عن تحويلة جديدة؟"
 
 msgctxt "MainWindow"
 msgid ""
@@ -2494,9 +2472,7 @@ msgstr "80, 443"
 
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
-msgstr ""
-"اختر لتشفر طلبات الدليل و -اختيارياً- تستخدم تحويلات الجسور للوصول إلى شبكة "
-"تور"
+msgstr "اختر لتشفر طلبات الدليل و -اختيارياً- تستخدم تحويلات الجسور للوصول إلى شبكة تور"
 
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
@@ -2508,9 +2484,7 @@ msgstr "إعدادات الجسر"
 
 msgctxt "NetworkPage"
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
-msgstr ""
-"برنامج تور الذي تستخدمه حالياً لا يدعم الجسور. <br>سيبقى دليل الوصلات "
-"مشفراً."
+msgstr "برنامج تور الذي تستخدمه حالياً لا يدعم الجسور. <br>سيبقى دليل الوصلات مشفراً."
 
 msgctxt "NetworkPage"
 msgid "Add a Bridge:"
@@ -2542,9 +2516,7 @@ msgstr "<a href=\"bridges.finding\">كيف يمكنني أن أجد جسوراً
 
 msgctxt "NetworkPage"
 msgid "No new bridges are currently available. You can either wait a while and try again, or try another method of finding new bridges."
-msgstr ""
-"لا توجد جسور جديدة حالياً. يمكنك أن تنتظر قليلاً وتحاول مرة أخرى، أو أن تجرب "
-"أسلوباً آخر لإيجاد جسور جديدة."
+msgstr "لا توجد جسور جديدة حالياً. يمكنك أن تنتظر قليلاً وتحاول مرة أخرى، أو أن تجرب أسلوباً آخر لإيجاد جسور جديدة."
 
 msgctxt "NetworkPage"
 msgid "Click Help to see other methods of finding new bridges."
@@ -2704,9 +2676,7 @@ msgstr "دعم الجسور غير متوفر"
 
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
-msgstr ""
-"يجب أن تضبط إعدادات تور ليتصرف على أنه تحويلة جسر للمستخدمين المحجوبين، ولكن "
-"نسخة تور الخاصة بك لا تدعم الجسور."
+msgstr "يجب أن تضبط إعدادات تور ليتصرف على أنه تحويلة جسر للمستخدمين المحجوبين، ولكن نسخة تور الخاصة بك لا تدعم الجسور."
 
 msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
@@ -2778,9 +2748,7 @@ msgstr "إعدادات أساسية"
 
 msgctxt "ServerPage"
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
-msgstr ""
-"لوصلات الإنترنت ذات سرعة التنزيل الكبيرة وسرعة رفع صغيرة، يرجى ذكر سرعة "
-"الرفع المتاحة هنا."
+msgstr "لوصلات الإنترنت ذات سرعة التنزيل الكبيرة وسرعة رفع صغيرة، يرجى ذكر سرعة الرفع المتاحة هنا."
 
 msgctxt "ServerPage"
 msgid "Cable/DSL 256 Kbps"
@@ -2836,9 +2804,7 @@ msgstr "حد أقصى معدل عرض حزمة"
 
 msgctxt "ServerPage"
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
-msgstr ""
-"يجب أن يكون أكبر معدل عرض حزمة مساوياً أو أكبر من المعدل الوسطي لعرض الحزمة؛ "
-"و كلا القيمتين يجب أن تكونا 20 ك.بايت/ثا على الأقل."
+msgstr "يجب أن يكون أكبر معدل عرض حزمة مساوياً أو أكبر من المعدل الوسطي لعرض الحزمة؛ و كلا القيمتين يجب أن تكونا 20 ك.بايت/ثا على الأقل."
 
 msgctxt "ServerPage"
 msgid "Bandwidth Limits"
@@ -2898,15 +2864,11 @@ msgstr "عرض موضوع المساعدة حول سياسات المخرج"
 
 msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
-msgstr ""
-"ما هي موارد الإنترنت التي يجب أن يتمكن المستخدمون من الوصول إليها من "
-"تحويلتك؟"
+msgstr "ما هي موارد الإنترنت التي يجب أن يتمكن المستخدمون من الوصول إليها من تحويلتك؟"
 
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
-msgstr ""
-"تور سيستمر بحجب بعض تطبيقات البريد الصادر وتشارك الملفات بشكل تلقائي للتخفيف "
-"من السخام (spam) وإساءات الاستخدام الأخرى."
+msgstr "تور سيستمر بحجب بعض تطبيقات البريد الصادر وتشارك الملفات بشكل تلقائي للتخفيف من السخام (spam) وإساءات الاستخدام الأخرى."
 
 msgctxt "ServerPage"
 msgid "Exit Policies"
@@ -2946,9 +2908,7 @@ msgstr "تعذّر على ڤيداليا استعادة تاريخ استخدا�
 
 msgctxt "ServerPage"
 msgid "Tor returned an improperly formatted response when Vidalia requested your bridge's usage history."
-msgstr ""
-"أعاد تور استجابة منسقة بشكل غير مناسب عندما طلب فيداليا تاريخ استخدام الجسر "
-"الخاص بك."
+msgstr "أعاد تور استجابة منسقة بشكل غير مناسب عندما طلب فيداليا تاريخ استخدام الجسر الخاص بك."
 
 msgctxt "ServerPage"
 msgid "The returned response was: %1"
@@ -2980,9 +2940,7 @@ msgstr "خطأ أثناء محاولة إلغاء نشر جميع الخدمات
 
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
-msgstr ""
-"يرجى ضبط خدمة الدليل ومدخل افتراضي على الأقل لكل خدمة تريد حفظها. احذف "
-"الآخرين."
+msgstr "يرجى ضبط خدمة الدليل ومدخل افتراضي على الأقل لكل خدمة تريد حفظها. احذف الآخرين."
 
 msgctxt "ServicePage"
 msgid "Error"
@@ -3166,15 +3124,11 @@ msgstr "اختبار دعم الوصل والتشغيل العالمي"
 
 msgctxt "UpdateProcess"
 msgid "Vidalia was unable to check for available software updates because it could not find '%1'."
-msgstr ""
-"لم يتمكن فيداليا من التحقق من وجود تحديثات للبرنامج لأنه لم يتمكن من إيجاد "
-"'%1'."
+msgstr "لم يتمكن فيداليا من التحقق من وجود تحديثات للبرنامج لأنه لم يتمكن من إيجاد '%1'."
 
 msgctxt "UpdateProcess"
 msgid "Vidalia was unable to check for available software updates because Tor's update process exited unexpectedly."
-msgstr ""
-"لم يتمكن فيداليا من التحقق من وجود تحديثات للبرنامج لأن عملية تحديث تور "
-"أغلقت بشكل غير متوقع."
+msgstr "لم يتمكن فيداليا من التحقق من وجود تحديثات للبرنامج لأن عملية تحديث تور أغلقت بشكل غير متوقع."
 
 msgctxt "UpdateProgressDialog"
 msgid "Checking for available updates..."
@@ -3346,8 +3300,7 @@ msgid ""
 "\n"
 "Would you like to continue starting Vidalia?"
 msgstr ""
-"إحتمال وجود نسخة أخرى من فيداليا تعمل مسبقاً. إذا كان فعلاً لاتوجد نسخة أخرى "
-"تعمل، يمكن إختيار المتابعة على أي حال.\n"
+"إحتمال وجود نسخة أخرى من فيداليا تعمل مسبقاً. إذا كان فعلاً لاتوجد نسخة أخرى تعمل، يمكن إختيار المتابعة على أي حال.\n"
 "\n"
 "هل تريد مواصلة بدء تشغيل فيداليا؟"
 
@@ -3382,5 +3335,3 @@ msgstr "%1 ساعات"
 msgctxt "stringutil.h"
 msgid "%1 mins"
 msgstr "%1 دقائق"
-
-

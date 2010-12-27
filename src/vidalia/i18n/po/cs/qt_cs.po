@@ -1,17 +1,18 @@
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: Vidalia\n"
-"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2010-08-22 23:06+0200\n"
-"Last-Translator: Martin <martinbarta@czech-city.eu>\n"
+"PO-Revision-Date: 2010-12-27 16:03+0000\n"
+"Last-Translator: runasand <runa.sandvik@gmail.com>\n"
 "Language-Team: none\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Pootle 2.0.5\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
@@ -375,12 +376,8 @@ msgstr "Špatné jméno souboru"
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
-msgid ""
-"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
-"characters or no punctuations marks."
-msgstr ""
-"<b>Název \"%1\" nelze použít.</b><p>Zkuste použít jiný název s menším počtem "
-"znaků nebo bez zvláštních znaků."
+msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
+msgstr "<b>Název \"%1\" nelze použít.</b><p>Zkuste použít jiný název s menším počtem znaků nebo bez zvláštních znaků."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"

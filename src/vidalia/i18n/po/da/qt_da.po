@@ -1,104 +1,89 @@
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: Vidalia\n"
-"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2009-10-01 09:38+0000\n"
-"Last-Translator: Manuel Ojeda <ojeda@ojeda.dk>\n"
-"Language-Team: Danish\n"
+"PO-Revision-Date: 2010-12-27 16:08+0000\n"
+"Last-Translator: runasand <runa.sandvik@gmail.com>\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
 msgid "Activate"
 msgstr "Aktiver"
 
-# Should check this.
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qmessagebox.h:319
 msgctxt "QApplication"
 msgid "Executable '%1' requires Qt %2, found Qt %3."
 msgstr "Programfil '%1' kræver Qt %2, fundet Qt %3."
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qmessagebox.h:321
 msgctxt "QApplication"
 msgid "Incompatible Qt Library Error"
 msgstr "Ukompatibel Qt biblioteks Fejl"
 
-# Shouldn't be translated?
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qapplication.cpp:2095
 msgctxt "QApplication"
 msgid "QT_LAYOUT_DIRECTION"
 msgstr "QT_LAYOUT_DIRECTION"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qaccessibleobject.cpp:350
 msgctxt "QApplication"
 msgid "Activates the program's main window"
 msgstr "Aktiverer programmets hoved vindue"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
 msgid "OK"
 msgstr "OK"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:528
 msgctxt "QDialogButtonBox"
 msgid "Save"
 msgstr "Gem"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:531
 msgctxt "QDialogButtonBox"
 msgid "Open"
 msgstr "Åben"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:534
 msgctxt "QDialogButtonBox"
 msgid "Cancel"
 msgstr "Annuller"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:537
 msgctxt "QDialogButtonBox"
 msgid "Close"
 msgstr "Luk"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:540
 msgctxt "QDialogButtonBox"
 msgid "Apply"
 msgstr "Anvend"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:543
 msgctxt "QDialogButtonBox"
 msgid "Reset"
 msgstr "Nulstil"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:546
 msgctxt "QDialogButtonBox"
 msgid "Help"
 msgstr "Hjælp"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
 msgid "Don't Save"
 msgstr "Gem ikke"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
 msgid "Discard"
@@ -109,129 +94,106 @@ msgctxt "QDialogButtonBox"
 msgid "&Yes"
 msgstr "&Ja"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
 msgstr "Ja til &Alt"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
 msgid "&No"
 msgstr "&Nej"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:566
 msgctxt "QDialogButtonBox"
 msgid "N&o to All"
 msgstr "N&ej til Alt"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
 msgid "Save All"
 msgstr "Gem alt"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:572
 msgctxt "QDialogButtonBox"
 msgid "Abort"
 msgstr "Afbryd"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:575
 msgctxt "QDialogButtonBox"
 msgid "Retry"
 msgstr "Forsøg igen"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:578
 msgctxt "QDialogButtonBox"
 msgid "Ignore"
 msgstr "Ignorer"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
 msgstr "Gendan standarder"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
 msgstr "Luk uden at Gemme"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
 msgid "&OK"
 msgstr "&OK"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
 msgid "Name"
 msgstr "Navn"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdirmodel.cpp:424
 msgctxt "QDirModel"
 msgid "Size"
 msgstr "Størrelse"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdirmodel.cpp:427
 msgctxt "QDirModel"
 msgid "Kind"
 msgstr "Slags"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdirmodel.cpp:429
 msgctxt "QDirModel"
 msgid "Type"
 msgstr "Type"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdirmodel.cpp:435
 msgctxt "QDirModel"
 msgid "Date Modified"
 msgstr "Dato Modificeret"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
 msgid "All Files (*)"
 msgstr "Alle Filer (*)"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:881
 msgctxt "QFileDialog"
 msgid "Directories"
 msgstr "Mapper"
 
-# You should check this.
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
 msgstr "&Åben"
 
-# You should check this.
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:919
 msgctxt "QFileDialog"
 msgid "&Save"
 msgstr "&Gem"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:435
 msgctxt "QFileDialog"
 msgid "Open"
 msgstr "Åben"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
 msgid ""
@@ -241,7 +203,6 @@ msgstr ""
 "%1 findes allerede.\n"
 "Vil du overskrive den?"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
 msgid ""
@@ -253,67 +214,56 @@ msgstr ""
 "Filen blev ikke fundet.\n"
 "Bekræft venligst, at det korrekte filnavn blev givet."
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
 msgstr "Min Computer"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
 msgid "&Rename"
 msgstr "&Omdøb"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:463
 msgctxt "QFileDialog"
 msgid "&Delete"
 msgstr "&Slet"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
 msgid "Show &hidden files"
 msgstr "Vis &skjulte filer"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
 msgid "Back"
 msgstr "Tilbage"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
 msgid "Parent Directory"
 msgstr "Forrige mappe"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
 msgstr "Liste visning"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: ui_qfiledialog.h:289
 msgctxt "QFileDialog"
 msgid "Detail View"
 msgstr "Detalje visning"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
 msgstr "Filer af type:"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
 msgid "Directory:"
 msgstr "Mappe:"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:2476
 msgctxt "QFileDialog"
 msgid ""
@@ -325,7 +275,6 @@ msgstr ""
 "Mappen blev ikke fundet.\n"
 "Bekræft venligst, at det rigtige mappe navn blev givet."
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
 msgid ""
@@ -335,191 +284,156 @@ msgstr ""
 "'%1' er skrivebeskyttet.\n"
 "Vil du slette den alligevel?"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
 msgstr "Er du sikker på, at du vil slette '%1'?"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
 msgid "Could not delete directory."
 msgstr "Kunne ikke slette mappen."
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog_win.cpp:128
 msgctxt "QFileDialog"
 msgid "All Files (*.*)"
 msgstr "Alle filer (*.*)"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:437
 msgctxt "QFileDialog"
 msgid "Save As"
 msgstr "Gem som"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
 msgid "Drive"
 msgstr "Drev"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfileiconprovider.cpp:383
 msgctxt "QFileDialog"
 msgid "File"
 msgstr "Fil"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfileiconprovider.cpp:412
 msgctxt "QFileDialog"
 msgid "Unknown"
 msgstr "Ukendt"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
 msgid "Find Directory"
 msgstr "Find mappe"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
 msgstr "Vis"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
 msgid "Forward"
 msgstr "Frem"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:2137
 msgctxt "QFileDialog"
 msgid "New Folder"
 msgstr "Ny Mappe"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
 msgid "&New Folder"
 msgstr "&Ny Mappe"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
 msgstr "&Vælg"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
 msgstr "Fjern"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
 msgstr "Fil &navn:"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
 msgstr "Se i:"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
 msgstr "Opret Ny Mappe"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
 msgstr "Forkert filnavn"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
-msgid ""
-"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
-"characters or no punctuations marks."
-msgstr ""
-"<b>Navnet \"%1\" kunne ikke bruges.</b><p>Prøv at bruge et andet navn, med "
-"færre karakterer og ingen grammatiske tegn."
+msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
+msgstr "<b>Navnet \"%1\" kunne ikke bruges.</b><p>Prøv at bruge et andet navn, med færre karakterer og ingen grammatiske tegn."
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
 msgid "Name"
 msgstr "Navn"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
 msgstr "Størrelse"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
 msgid "Kind"
 msgstr "Slags"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:840
 msgctxt "QFileSystemModel"
 msgid "Type"
 msgstr "Type"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:847
 msgctxt "QFileSystemModel"
 msgid "Date Modified"
 msgstr "Dato ændret"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
 msgstr "Min Computer"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
 msgid "Computer"
 msgstr "Computer"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
 msgstr "%1 TB"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
 msgstr "%1 GB"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
 msgstr "%1 MB"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
 msgstr "%1 KB"
 
-# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
