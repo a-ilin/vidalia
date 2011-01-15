@@ -33,7 +33,7 @@ LanguageSupport::languages()
 //    languages.insert("bg",
 //      QString::fromUtf8("\320\221\321\212\320\273\320\263\320"
 //                        "\260\321\200\321\201\320\272\320\270"));
-    languages.insert("bms",   "Burmese");
+    languages.insert("my",   "Burmese");
 //    languages.insert("cs",    
 //      QString::fromUtf8("\304\215e\305\241tina"));
     languages.insert("da",    "dansk");
