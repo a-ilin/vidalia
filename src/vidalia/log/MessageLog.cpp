@@ -454,6 +454,7 @@ MessageLog::find()
 void
 MessageLog::log(tc::Severity type, const QString &message)
 {
+  setUpdatesEnabled(false);  
   /* Only add the message if it's not being filtered out */
   if (_filter & (uint)type) {
     /* Add the message to the list and scroll to it if necessary. */
@@ -472,6 +473,7 @@ MessageLog::log(tc::Severity type, const QString &message)
       _logFile << item->toString() << "\n";
     }
   }
+  setUpdatesEnabled(true);  
 }
 
 /** Displays help information about the message log. */
