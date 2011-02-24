@@ -562,15 +562,11 @@ void
 ServerPage::displayBridgeUsage()
 {
   QString info;
+  QMessageBox dlg(this);
 
   info = Vidalia::torControl()->getInfo("status/clients-seen").toString();
   if (info.isEmpty()) {
-    QMessageBox dlg(QMessageBox::Information, tr("No Recent Usage"),
-                    tr("No clients have used your relay recently."), 
-                    QMessageBox::Ok, this);
-    dlg.setInformativeText(tr("Leave your relay running so clients have "
-                              "a better chance of finding and using it."));
-    dlg.exec();
+    goto none;
   } else {
     QDateTime timeStarted;
     QHash<QString,int> countrySummary;
@@ -588,29 +584,47 @@ ServerPage::displayBridgeUsage()
     if (!timeStarted.isValid())
       goto err;
 
-    foreach (QString pair, keyvals.value("CountrySummary").split(",")) {
-      QStringList parts = pair.split("=");
-      if (parts.size() != 2)
-        goto err;
+    QStringList summary = keyvals.value("CountrySummary")
+                                 .split(",", QString::SkipEmptyParts);
+    if (summary.isEmpty()) {
+      goto none;
+    } else {
+      foreach (QString pair, summary) {
+        QStringList parts = pair.split("=");
+        if (parts.size() != 2)
+          goto err;
 
-      countrySummary.insert(parts.at(0).toUpper(), parts.at(1).toInt(&ok));
-      if (!ok)
-        goto err;
+        countrySummary.insert(parts.at(0).toUpper(), parts.at(1).toInt(&ok));
+        if (!ok)
+          goto err;
+      }
+
+      dlg.update(timeStarted, countrySummary);
+      dlg.exec();
     }
-
-    dlg.update(timeStarted, countrySummary);
-    dlg.exec();
   }
   return;
 
+none:
+  dlg.setIcon(QMessageBox::Information);
+  dlg.setWindowTitle(tr("No Recent Usage"));
+  dlg.setText(tr("No clients have used your relay recently."));
+  dlg.setInformativeText(tr("Leave your relay running so clients have "
+                            "a better chance of finding and using it."));
+  dlg.setStandardButtons(QMessageBox::Ok);
+  dlg.exec();
+  return;
+
 err:
-  QMessageBox dlg(QMessageBox::Warning, tr("Bridge History"),
-                  tr("Vidalia was unable to retrieve your bridge's usage "
-                     "history."), QMessageBox::Ok, this);
+  dlg.setIcon(QMessageBox::Warning);
+  dlg.setWindowTitle(tr("Bridge History"));
+  dlg.setText(tr("Vidalia was unable to retrieve your bridge's usage "
+                 "history."));
   dlg.setInformativeText(tr("Tor returned an improperly formatted "
                             "response when Vidalia requested your "
                             "bridge's usage history."));
   dlg.setDetailedText(tr("The returned response was: %1").arg(info));
+  dlg.setStandardButtons(QMessageBox::Ok);
   dlg.exec();
 }
 
