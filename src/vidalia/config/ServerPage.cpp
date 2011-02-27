@@ -234,6 +234,9 @@ ServerPage::serverModeChanged(bool enabled)
   ui.chkPublishBridgeAddress->setVisible(bridgeEnabled);
   ui.lblBridgeUsage->setVisible(bridgeEnabled
                                   && Vidalia::torControl()->isConnected());
+
+  ui.lineDirPort->setEnabled(!bridgeEnabled);
+  ui.chkMirrorDirectory->setEnabled(!bridgeEnabled);
 }
 
 /** Returns true if the user has changed their server settings since the
@@ -293,10 +296,14 @@ ServerPage::save(QString &errmsg)
     _settings->setPublishServerDescriptor(ui.chkPublishBridgeAddress->isChecked());
 
   /* Save the rest of the server settings. */
-  _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
   _settings->setNickname(ui.lineServerNickname->text());
   _settings->setORPort(ui.lineServerPort->text().toUInt());
-  _settings->setDirPort(ui.lineDirPort->text().toUInt());
+  if (!ui.rdoBridgeMode->isChecked()) {
+    _settings->setDirPort(ui.lineDirPort->text().toUInt());
+    _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
+  } else {
+    _settings->setDirectoryMirror(false);
+  }
   _settings->setContactInfo(ui.lineServerContact->text());
   saveBandwidthLimits();
   saveExitPolicies();
