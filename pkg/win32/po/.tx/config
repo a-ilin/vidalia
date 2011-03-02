@@ -1,11 +1,11 @@
 [main]
-host = http://www.transifex.net
+host = https://www.transifex.net
 
 [torproject.vidalia-installer-vidalia-pot]
 source_file = templates/vidalia.pot
 source_lang = en
 trans.af = af/vidalia_af.po
-trans.ak = ak
+trans.ak = ak/vidalia_ak.po
 trans.am = am/vidalia_am.po
 trans.ar = ar/vidalia_ar.po
 trans.arn = arn/vidalia_arn.po
