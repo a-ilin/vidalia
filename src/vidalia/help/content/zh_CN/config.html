@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,63 +11,138 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
-<h1>配置Vidalia和Tor</h1>
+<h1>配置 Vidalia 和 Tor</h1>
 <hr />
 
 <p>
-Vidalia可以帮助您对Vidalia和Tor的常用部分进行配置，还可以协助您配置
-<a href="server.html">Tor 服务器</a>，从而促进Tor网络的成长。
+Vidalia 允许您配置大多数 Vidalia 和 Tor 的常用部分。它也允许您设置和管理一个<a href="server.html">Tor
+中继</a>，使得您能帮助到 Tor 网络的成长。
 </p>
 
 <a name="general"/>
-<h3>一般设置</h3>
+<h3>常规设置</h3>
 <p>
-<i>一般</i>页面上的是最常见的一些修改设置。
+<i>常规</i>设置页面是一些最常用的设定。
 </p>
 <ul>
-  <li><b>Tor Executable</b>: 
-    This is the Tor executable that Vidalia will run when you select
-    <i>Start</i> from the tray menu. If you have multiple versions of Tor installed,
-    you can tell Vidalia which version you would like to run by clicking the
-    <i>Browse</i> button and navigating to the particular Tor installation you
-    want.
+  <li><b>Tor Executable</b>: This is the Tor executable that Vidalia will run when
+you select <i>Start</i> from the tray menu. If you have multiple versions of
+Tor installed, you can tell Vidalia which version you would like to run by
+clicking the <i>Browse</i> button and navigating to the particular Tor
+installation you want.
   </li>
-  <li><b>启动可选项</b>：
-  这里您可以进行设置，使得Vidalia启动时，Tor也能自动启动。
-  您也可以将Vidalia设置成系统启动时就开始运行 (<i>只针对Windows</i>)。
+  <li><b>启动选项</b>：该设定允许您让 Vidalia 在启动的同时也启动 Tor。您也可以配置 Vidalia 在系统启动时运行(<i>仅限
+Windows</i>)。
   </li>
 </ul>
 
-<a name="server"/>
-<h3>服务器设置</h3>
+<a name="network"/>
+<h3>网络设置</h3>
 <p>
-<i>
-  有关设置、管理Tor服务器的详情，请参见 <a href="server.html">此文件</a>。
-</i>
+<i>网络</i>设置页面使您可以更改 Tor 连接到网络的方式。
 </p>
+<ul>
+  <li><b>我使用代理服务器连接到网络</b>：如果您的 Internet 连接需要以 HTTP 代理方式，您可以配置 Tor
+通过您的代理服务器发送所有的目录请求和中继连接。您必须至少指定一个主机名或代理服务器的地址，并且您代理服务器的端口也必须处于监听连接状态。如果您的代理服务器要求身份验证，您也可以输入连接到代理服务器的<i>用户名</i和<i>密码</i>。或者，您可以留空这些选项。
+  </li>
+  <li><b>我的防火墙只允许我连接到指定端口</b>：如果您处于防火墙限制下或代理服务器限制您连接的端口，您可以配置 Tor
+直接从您防火墙或代理服务器允许的端口连接。仅需要输入您防火墙或代理服务器允许的端口列表，通过逗号来分隔。（例如：80,443,8080）
+  </li>
+  <li><b>My ISP blocks connections to the Tor network</b>: If your ISP (Internet
+Service Provider) blocks connections to the Tor network, Tor can attempt to
+avoid being filtered by encrypting its directory connections and connecting
+to the Tor network through relays called <i>bridges</i> (Tor 0.2.0.3-alpha
+or newer only). You can add bridge relays by specifying either their address
+and port number, or their address, port number, and fingerprint.<br/>
+
+    以下是可用网桥地址格式的例子：
+    <ul>
+      <li>
+        128.213.48.13:8080
+      </li>
+      <li>
+        128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73
+      </li>
+      <li>
+        128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73
+      </li>
+    </ul>
+    Even if you do not know any bridge relay addresses, checking this checkbox
+may still be helpful. Tor will encrypt its directory requests, which can
+defeat blocking mechanisms that try to filter Tor's requests for information
+about other relays. If connections to normal Tor relays are also blocked,
+then you will need to learn a bridge relay address somehow and add it
+here. See the help topic on <a href="bridges.html#finding">finding bridge
+relays</a> for more information on how to learn new bridge relay addresses
+and fingerprints.
+  </li>
+</ul>
+
+<a name="relay"/>
+<h3>中继设定</h3>
+<p>
+更多关于设置和管理一个 Tor 中继的细节，<i>请查看<a href="server.html">该帮助主题</a>。
+</p>
+
+<a name="appearance"/>
+<h3>外观设定</h3>
+<p>
+<i>外观</i>页的设置允许您定制 Vidalia 的外观。
+</p>
+<ul>
+  <li><b>语言</b>：Vidalia 的界面已经被志愿者们翻译成了许多种语言.当 Vidalia 第一次运行的时候,他会试着猜测您正使用哪种语言。如果
+Vidalia 猜测错误，或如果您更喜欢不同的语言，您可以从下拉菜单中选择别的语言。在改变显示语言之后,您需要重启 Vidalia 使之生效。
+  </li>
+  <li><b>风格</b>：在很多情况下，Vidalia 会默认使用您平台的默认界面风格。如果您不喜欢默认风格，可以从下拉菜单中选择您喜欢的风格。
+  </li>
+</ul>
 
 <a name="advanced"/>
-<h3>高级设置</h3>
+<h3>高级设定</h3>
 <p>
-<i>高级设置</i>主要针对较有经验的使用者。
+<i>高级</i>页面中的设置通常情况下应当需要有更多经验的用户来改变。
 </p>
 <ul>
-  <li><b>控制端口</b>：
-    <i>控制端口</i>，Vidalia通过其与Tor交流。
-	除非与本机的其它服务冲突，否则这个设置不需要更改。
+  <li><b>控制地址 &amp; 端口</b>：<i>控制端口</i>是 Vidalia 与 Tor
+通信的端口。通常无需改变，除非与您机器上的其他服务有冲突，或者您正在使用 Vidalia 控制和监视在其他机器上运行的 Tor 进程。
   </li>
-  <li><b>改变Tor的配置文件</b>:
-    通过此可选项，可让Vidalia启动时采用指定的<i>torrc</i>
-	(Tor的配置文件)。
+  <li><b>控制端口身份验证</b>：控制端口身份验证是用于限制您机器上的应用程序连接和配置您的 Tor 设备的。可用的身份验证格式如下：
+    <ul>  
+      <li>
+        <b>无</b> -- 要求无身份验证。使用该设置是<b>强烈</b>不鼓励的。任何您电脑上的应用程序或用户都可以配置您的 Tor 设备。
+      </li>
+      <li> 
+        <b>密码</b> <i>(默认)</i> -- 如果选择该方式，您可以指定一个 Tor 要求每次用户或应用程序访问控制端口的密码。如果 Vidalia
+为您启动 Tor,您可以通过勾选<i>随机生成</i>项使得 Vidalia 每次启动 Tor 随机生成一个密码。
+      </li>
+      <li>
+        <b>Cookie</b> -- 如果选择 Cookie 身份验证，Tor
+在启动时会写一个包含随机字符的文件（或<i>cookie</i>）到它的数据目录中。任何试着连接到 Tor 的控制端口的用户和应用程序都必须提供
+Cookie 的内容。
+      </li>
+    </ul>
   </li>
-  <li><b>权限</b>：
-    如果您设置了此项，Tor启动时，就可以对用户<i>setuid</i>，或对用户组<i>setgid</i>。
+  <li><b>Tor 配置文件</b><i>（可选）</i>：您可以通过该选项使得 Vidalia 启动 Tor 时使用指定的<i>torrc</i>,Tor
+的配置文件。如果您留空该项，Tor 会使用它默认的 torrc。
+  </li>
+  <li><b>Tor 数据目录</b><i>（可选）</i>：您可以指定目录让 Tor 存储数据，例如缓存 Tor 中继信息，Tor
+中继密钥，和配置文件。如果您留空该项，Tor 会使用它默认的数据目录位置。
+  </li>
+  <li><b>Permissions</b> <i>(optional, not available on Windows)</i>: If you enter
+a value for <b>Run as User</b>, Tor will <i>setuid</i> to this user when it
+starts.  If you enter a value for <b>Run as Group</b>, Tor will
+<i>setgid</i> to this group when it starts.
   </li>
 </ul>
+
+<a name="services"/>
+<h3>隐藏服务设定</h3>
+<p>
+隐藏服务允许您提供任何形式基于 TCP 的服务给他人而无需隐藏您的 IP 地址，例如，一种 HTTP 服务。
+</p>
 
 </body>
 </html>

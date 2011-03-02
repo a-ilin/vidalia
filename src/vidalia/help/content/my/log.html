@@ -1,0 +1,107 @@
+
+
+<!--
+**  $Id: log.html 4323 2010-06-26 15:46:44Z runa $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>Message Log</h1>
+<hr />
+
+message log သည္ Tor process run ေနေသာ သတင္းအခ်က္အလက္ status ကို
+ၾကည့္ရႈခြင့္ေပးသည္။ <a name="basic"/>message
+တစ္ခုခ်င္းစီတြင္<b>အမွား</b>(အေတာ္ေလး) မွ <b>Debug</b>(ပိုမိုမ်ားျပားသည္)
+အထိ စီရီထားျပီး ၎ႏွင့္ ဆက္စပ္လွ်က္ရွိေသာ <i>severity</i> ရွိၾကသည္။
+ပိုမိုသိလိုေသာ သတင္းအခ်က္အလက္မ်ားအတြက္ အကူအညီက႑ရွိ <a
+href="#severities">message severities</a> ကို ၾကည့္ပါ။<a name="severities"/>
+<h3>Message Severities</h3>
+<p>
+message ၏ severity က သင့္ကို message သည္မည္မွ် အေရးၾကီးေၾကာင္း
+ေျပာျပလိမ့္မည္။ အဆင့္ျမင့္ေသာ severity message ေတြဟာ Tor ၌ ျဖစ္ေပၚလာေသာ
+မွားယြင္းမႈ တစ္စံုတစ္ရာကို ေဖာ္ျပပါသည္။ အဆင့္နိမ့္ေသာ severity messages
+ေတြဟာ Tor operations မ်ားအတြင္း မၾကာခဏ ေပၚလာျပီး အျမဲတမ္း log လုပ္ရန္
+မလိုအပ္ေပ။
+</p>
+
+<p>
+အေရးအၾကီးဆံုးမွ စ၍ အစဥ္အတိုင္းစီထားေသာ message မ်ား:
+</p>
+<ul>
+  <li>
+    <b>Error</b>: ေတာ္ေတာ္ေလး အမွားယြင္းျဖစ္ေန၍ message ေပၚလာတဲ့အခါမွာေတာ့ Tor က
+ဆက္လက္ အလုပ္လုပ္ႏိုင္ေတာ့မွာ မဟုတ္ပါဘူး။ အဲ့ဒိလို message မ်ိဳးကို message
+log ထဲတြင္ <i>အနီ</i>ျဖင့္ မ်ဥ္းတား ျပသထားမွာ ျဖစ္ပါတယ္။
+  </li>
+  <li>
+    <b>သတိေပးခ်က္</b>: Tor တြင္ တစ္ခုခု အမွားယြင္းေၾကာင့္ ေပၚလာေသာ messages
+ေတြဟာ ပ်က္စီးေစမွာ မဟုတ္ပဲ Tor က ဆက္လက္ run ေနပါလိမ့္မယ္။ အဲ့ဒိ messages
+ေတြကို <i>အဝါေရာင္</i>ျဖင့္ မ်ဥ္းတားျပထားေပးမွာ ျဖစ္ပါတယ္။
+  </li>
+  <li>
+    <b>အသိေပးခ်က္</b>: ပံုမွန္ Tor operation အတြင္း မၾကာခဏမဟုတ္ပဲ ေပၚလာေသာ
+messages ေတြဟာ errors ေတြကို အဆံုးအျဖတ္မေပးႏိုင္ေပးမယ့္ သင္အေနနဲ႔
+ဂရုစိုက္ဖို႔ေတာ့ လိုပါတယ္။
+  </li>
+  <li>
+    <b>Info</b>: ပံုမွန္ Tor operation အတြင္း မၾကာခဏ ေပၚလာေသာ messages ေတြဟာ
+သာမန္အသံုးျပဳသူေတြကို စိတ္မဝင္စား ေစပါဘူး။
+  </li>
+  <li>
+    <b>Debug</b>:အလြန္ရွည္လ်ားေသာ message ေတြဟာ developers မ်ားကို အဓိက
+စိတ္ဝင္စားေစပါတယ္။ သင္ဘာလုပ္ရမယ္ဆိုတာ မသိရင္ေတာင္ ပံုမွန္အားျဖင့္ debug ကို
+log မလုပ္သင့္ပါဘူး။
+  </li>
+</ul>
+
+<p>
+အသံုးျပဳသူအမ်ားစုသည္ <i>Error</i>, <i>Warning</i>, ႏွင့္ <i>Notice</i>
+messages မ်ားကိုသာ log လုပ္သင့္ပါသည္။
+</p>
+
+<p>
+ျမင္ခ်င္ေသာ message ကို ေရြးခ်ယ္ရန္ ေအာက္ပါအတိုင္းျပဳလုပ္ပါ။
+<ol>
+  <li>Vidalia ၏ အေသးခ်ံဳ႕ထားေသာ menu မွ message log ကိုဖြင့္ပါ။</li>
+  <li>message log window အေပၚဘက္ရွိ <i>Settings</i> ကိုႏွိပ္ပါ။</li>
+  <li>
+    ဘယ္ဘက္ျခမ္းရွိ Message Filter group မွ ျမင္ခ်င္ေသာ message ကို check
+လုပ္ျပီးမျမင္ခ်င္ေသာ message ကို uncheck လုပ္ပါ။
+  </li>
+  <li>message အသစ္ filter ကို apply ျပဳလုပ္ရန္ <i>Save Settings</i> ကို ႏွိပ္ပါ။</li>
+</ol>
+</p>
+
+
+<a name="logfile"/>
+<h3>Logging to a File</h3>
+<p>
+Vidalia သည္လည္း message log window ထဲသို႔ log in ဝင္ျပီး log messages
+မ်ားကို ဖိုင္အျဖစ္ write လုပ္ႏိုင္ပါတယ္။ ဖိုင္ကို logging ျပဳလုပ္ျခင္းအား
+enable လုပ္ရန္ ေအာက္ပါအဆင့္မ်ားအတိုင္း လုပ္ေဆာင္ပါ:
+</p>
+
+<ol>
+  <li>Vidalia ၏ အေသးခ်ံဳ႕ထားေသာ menu မွ message log ကိုဖြင့္ပါ။</li>
+  <li>message log window အေပၚဘက္ရွိ <i>Settings</i> ကိုႏွိပ္ပါ။</li>
+  <li><i>log messages အသစ္မ်ားကို ဖိုင္အျဖစ္ အလိုအေလ်ာက္သိမ္းပါ။</i>ဆိုသည့္
+နာမည္တပ္ထားေသာ box ကို check လုပ္ပါ။ </li>
+  <li>
+    အကယ္၍ message ကို write လုပ္မယ့္ ဖိုင္ကို ေျပာင္းလဲခ်င္တယ္ဆိုလွ်င္ text box
+ထဲမွာ ဖိုင္နာမည္ႏွင့္ လမ္းေၾကာင္းေတြကို ရိုက္ထည့္ရပါမယ္။ သို႔မဟုတ္ သင္၏ log
+ဖိုင္ တည္ေနရာကို ညႊန္းဖို႔ <i>Browse</i> ကိုႏွိပ္ပါ။
+  </li>
+  <li>သင္၏ log မ်ားကို သိမ္းရန္ <i>Save Settings</i>ကို ႏွိပ္ပါ။</li>
+</ol>
+
+</body>
+</html>
+

@@ -1,3 +1,5 @@
+
+
 <!--
 **  $Id$
 ** 
@@ -9,88 +11,80 @@
 **  may be copied, modified, propagated, or distributed except according to
 **  the terms described in the LICENSE file.
 -->
-
 <html>
 <body>
 
-<h1>运行Tor</h1>
+<h1>运行 Tor</h1>
 <hr />
 
 <p>
-Vidalia可以帮助您控制Tor进程，包括启动、停止Tor，监视Tor的状态，包括意外退出。
+Vidalia 能帮助控制您的 Tor 进程使之启动或停止，同样也像监视器一样监视 Tor 的状态并且是您知道它是否异常退出。
 </p>
 
 <a name="starting"/>
-<h3>启动和停止Tor</h3>
+<h3>启动和停止 Tor</h3>
 <p>
-<i>启动</i>Tor：
+<i>启动</i> Tor，
 <ol>
-  <li>从Vidalia托盘菜单中选择<i>启动</i>，或者按<i>Ctrl+S</i>；</li>
+  <li>在 Vidalia 的托盘菜单中选择<i>启动</i>,或按<i>Ctrl+S</i></li>。
   <li>
-    Tor启动后，Vidalia托盘图标会由红色的X，变成一稞绿色的洋葱；
+    当 Tor 已经启动的时候，Vidalia 面板图标会从一个有红X的洋葱图标，变成一个绿色的洋葱。
   </li>
 </ol>
-如果Vidalia无法启动Tor，它会显示出错信息，告诉您哪里出了问题。您也可以通过<a href="log.html">消息日志</a>，来查看Tor是否有更多的信息提示。
+如果 Vidalia 未能成功启动 Tor，Vidalia会显示一个错误信息来告诉您哪里有问题。您也可以查看您的<a
+href="log.html">消息日志</a>来发现 Tor 打印了哪些运行中的错误。
 </p>
 
 <p>
-<i>停止</i>Tor：
+<i>停止</i> Tor，
 <ol>
-  <li>从Vidalia托盘菜单中选择<i>停止</i>，或者按<i>Ctrl+T</i>；</li>
+  <li>在 Vidalia 的托盘图标中选择<i>停止</i>或按<i>Ctrl+T</i></li>。
   <li>
-	Tor停止后，Vidalia托盘图标会由绿色的洋葱，变成红色的X。
+    当 Tor 停止的时候，Vidalia 面板图标会从一个绿色的洋葱变成一个有红X的洋葱。
   </li>
 </ol>
-如果Vidalia无法停止Tor，它会显示出错信息，告诉您哪里出了问题。您也可以通过<a href="log.html">消息日志</a>，来查看Tor是否有更多的信息提示。
+如果 Vidalia 无法停止 Tor,Vidalia 会显示一个错误信息来告诉您哪里出了问题。您也可以通过<a
+href="log.html">消息日志</a>来查看 Tor 是否有更多有关运行的错误。
 </p>
 
 <a name="monitoring"/>
-<h3>监视Tor的状态</h3>
+<h3>监视 Tor 的状态</h3>
 <p>
-Vidalia tells you about the status of Tor by displaying an icon in your system
-tray or dock area. The following table shows the different states indicated by
-an icon in your system's notification area:
+Vidalia 会通过显示在系统托盘或 Dock 区域的图标来告诉您 Tor 的状态。下面的表格会为您指出系统提醒区域 Tor 不同的状态。
 </p>
 <p>
 <table border="1">
 <tr>
     <td><img src="qrc:/images/32x32/tor-off.png"/></td>
     <td valign="middle">
-      Tor is stopped. Select <i>Start</i> from the Vidalia menu
-      to start Tor.
+      Tor 已经停止。请在 Vidalia 菜单中选择<i>启动</i>来启动 Tor。
     </td>
 </tr>
 <tr>
     <td><img src="qrc:/images/32x32/tor-starting.png"/></td>
     <td valign="middle">
-      Tor is starting up. You can check the 
-      <a href="log.html">message log</a> for status information about Tor
-      while it is starting.
+      Tor 正在启动中。您可以通过检查<a href="log.html">消息日志</a>获得有关 Tor 启动阶段的状态信息。
     </td>
 </tr>
 <tr>
     <td><img src="qrc:/images/32x32/tor-on.png"/></td>
     <td valign="middle">
-      Tor is running. If you want to stop Tor, select <i>Stop</i> from the
-      Vidalia menu. Tor will print informational messages to the 
-      <a href="log.html">message log</a> while it is running, if you want to 
-      see what Tor is doing.
+      Tor 正在运行。如果您想要停止 Tor，请在 Vidalia 菜单中选择<i>停止</i>。如果您想要查看 Tor 在做什么，Tor 在运行时会在<a
+href="log.html">消息日志</a>中打印消息。
     </td>
 </tr>
 <tr>
     <td><img src="qrc:/images/32x32/tor-stopping.png"/></td>
-    <td valign="middle">Tor is in the process of shutting down.</td>
+    <td valign="middle">Tor 正在关闭中。</td>
 </tr>
 </table>
 </p>
 
 <p>
-If Tor exits unexpectedly, Vidalia will change its icon to the dark onion with a
-red X and display an error message letting you know what went wrong. You can
-also check the <a href="log.html">message log</a> for details about any problems
-Tor encountered before it exited.
+如果 Tor 异常退出，Vidalia 会将图标变成一个有红X的黑色洋葱,并且显示一个错误消息,让您知道哪里有错误。您也可以通过查看<a
+href="log.html">消息日志</a>获得关于 Tor 退出前发生情况的详细信息。
 </p>
 
 </body>
-</html>		
+</html>
 

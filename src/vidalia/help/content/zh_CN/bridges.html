@@ -1,0 +1,56 @@
+
+
+<!--
+**  $Id: bridges.html 3007 2008-08-22 00:12:08Z edmanm $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>网桥中继</h1>
+<hr />
+
+<a name="about"/>
+<h3>什么是网桥中继？</h3>
+<p>
+有些因特网服务提供商（ISP们）试着利用封锁已知网桥连接来阻止用户连接到 Tor 网络。网桥中继（或简称<i>网桥</i>）是一种可以帮助这种用户连接到
+Tor 网络的中继。不像其他的 Tor 中继，网桥不会和普通中继一样列表于公共目录中。所以它们并没有一个完整的公共列表，即使你的 ISP 过滤所有已知
+Tor 中继连接，他们依然可能无法封停所有的网桥。
+</p>
+
+<a name="finding"/>
+<h3>如何寻找网桥？</h3>
+<p>
+有两种主要的方法获得网桥地址： 
+<ol>
+  <li>找一些朋友为您运行私人网桥。</li>
+  <li>使用一些公开的网桥。</li>
+</ol>
+</p>
+
+<p>
+要使用私人网桥，请您的朋友在无互联网审查的地方运行 Vidalia 和 Tor，然后点击 Vidalia 的<a
+href="server.html">网桥中继设置页面</a>中的<i>帮助受限用户</i>。这样他们应该将网桥中继页面最下面的<i>网桥地址</i>行发送给您。不同于运行一个出口中继，运行一个网桥中继仅仅只是通过
+Tor 网络接收和发送数据，所以他们应当不会有什么被滥用的抱怨。
+</p>
+
+<p>
+您可以通过访问<b>https://bridges.torproject.org</b>来获得一些公共网桥。您从该页面获得的网桥每几天会更新一次，如果您需要更多网桥地址，请定期回访该页面。另一种获得网桥地址的方式是发送一封标题和内容都是<b>get
+bridges</b>的邮件到<b>bridges@torproject.org</b>。但是，如果有攻击者想要获得更多网桥地址，我们会感到十分艰难，所以请您通过
+Gmail 帐户发送该请求。
+</p>
+
+<p>
+配置更多的网桥会使您的 Tor 连接更稳定，以免一些网桥无法访问。
+</p>
+
+</body>
+</html>
+

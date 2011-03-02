@@ -1,0 +1,109 @@
+
+
+<!--
+**  $Id: running.html 2366 2008-03-01 17:58:23Z edmanm $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>Running Tor</h1>
+<hr />
+
+<p>
+Vidalia သည္ မေမွ်ာ္လင့္ပဲ ပရိုဂရမ္ ပိတ္သြားျခင္းကို သင္အား ေပးသိျပီး Tor ၏
+status ကို ေကာင္းစြာ ေစာင့္ၾကည့္ေလ့လာရန္ Tor ကို start ႏွင့္ stop သင့္အား
+ျပဳလုပ္ေစျခင္းအားျဖင့္ Tor process ကို သင္ ထိန္းခ်ဳပ္ႏိုင္ရန္ ကူညီေပးပါသည္။ 
+</p>
+
+<a name="starting"/>
+<h3>Starting and Stopping Tor</h3>
+<p>
+Tor ကို <i>start</i>လုပ္ရန္
+<ol>
+  <li>Vidalia ၏ tray meanu မွ <i>Start</i>ကို ေရြးခ်ယ္ပါ သို႔မဟုတ္
+<i>Ctrl+S</i>ကို ႏွိပ္ပါ။</li>.
+  <li>
+    Tor စတင္လိုက္တဲ့အခ်ိန္မွာ Vidalia ၏ tray icon သည္ အနီေရာင္ X ႏွင့္ onion မွ
+အစိမ္းေရာင္ onion သို႔ ေျပာင္းလဲသြားမွာ ျဖစ္ပါတယ္။
+  </li>
+</ol>
+အကယ္၍ Vidalia သည္ Tor ကို မစတင္ႏိုင္ဘူး ဆိုလွ်င္ ဘာမွားေနတယ္ဆိုတဲ့ error
+message ကို Vidalia က ျပသေပးမွာ ျဖစ္ပါတယ္။ ဘာမွားေနတယ္ဆိုတဲ့
+အခ်က္အလက္မ်ားကို Tor က ေဖာ္ျပခဲ့လွ်င္ <a href="log.html">message
+log</a>မွာလည္း ၾကည့္ရႈႏိုင္ပါတယ္။
+</p>
+
+<p>
+Tor ကို <i>stop</i>ျပဳလုပ္ရန္
+<ol>
+  <li>Vidalia ၏ tray menu မွ <i>Stop</i>ကို ေရြးခ်ယ္ပါ သို႔မဟုတ္ <i>Ctrl+T</i>
+ႏွိပ္ပါ။</li>.
+  <li>
+    Tor ကို ရပ္တန္႔လိုက္တဲ့အခါ Vidalia ၏ tray icon သည္ အစိမ္းေရာင္ onion မွ
+အနီေရာင္ X ႏွင့္အတူ မီးခိုးေရာင္ onion အျဖစ္သို႔ ေျပာင္းလဲသြား ပါလိမ့္မယ္။
+  </li>
+</ol>
+အကယ္၍ Vidalia သည္ Tor ကို မရပ္တန္႔ႏိုင္ခဲ့လွ်င္ Vidalia သည္
+ဘာမွားေနတယ္ဆိုတဲ့ error message ကို ျပသေပးမွာ ျဖစ္ပါတယ္။ အကယ္၍ Tor က
+ဘာမွားေနတယ္ဆိုတဲ့ အခ်က္အလက္မ်ားကို ေဖာ္ျပခဲ့လွ်င္ <a href="log.html">message
+log</a> မွာလည္း ၾကည့္ရႈႏိုင္ပါေသးတယ္။
+</p>
+
+<a name="monitoring"/>
+<h3>Tor ၏ Status ကို ေစာင့္ၾကည့္ေလ့လာျခင္း</h3>
+<p>
+dock area သို႔မဟုတ္ သင္၏ system tray ထဲမွာ icon ကို ေဖာ္ျပျခင္းအားျဖင့္
+Vidalia က Tor ၏ status ေတြ အေၾကာင္း သင့္ကိုေျပာျပမွာပါ။ ေအာက္ေဖာ္ျပပါ
+ဇယားကြက္သည္ သင့္ system ၏ notification area ရွိ icon က မတူညီတဲ့
+အေျခအေနေတြကို ရည္ညႊန္းထားတဲ့ ဇယားကြက္ျဖစ္ပါတယ္:
+</p>
+<p>
+<table border="1">
+<tr>
+    <td><img src="qrc:/images/32x32/tor-off.png"/></td>
+    <td valign="middle">
+      Tor ရပ္တန္႔သြားပါျပီ။ Tor ကို စတင္ရန္ Vidalia menu မွ <i>Start</i>ကို
+ေရြးပါ။
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-starting.png"/></td>
+    <td valign="middle">
+      Tor သည္ စတင္ေနပါျပီ။ စတင္ေနတဲ့အခ်ိန္မွာပဲ Tor အေၾကာင္း အခ်က္အလက္ status
+အတြက္ <a href="log.html">message log</a>ကို စစ္ပါ။
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-on.png"/></td>
+    <td valign="middle">
+      Tor သည္ run ေနပါသည္။ အကယ္၍ Tor ကို ရပ္တန္႔ခ်င္လွ်င္ Vidalia menu မွ
+<i>Stop</i> ကိုေရြးပါ။ အကယ္၍ Tor ဘာလုပ္ေနတယ္ဆိုတာ ျမင္ခ်င္ရင္ Tor က
+အခ်က္အလက္ဆိုင္ရာ messages မ်ားကို <a href="log.html">message log</a> မွာ
+ေဖာ္ျပေပးမွာ ျဖစ္ပါတယ္။
+    </td>
+</tr>
+<tr>
+    <td><img src="qrc:/images/32x32/tor-stopping.png"/></td>
+    <td valign="middle">Tor ဟာ shut down ျပဳလုပ္ေနဆဲ အေျခအေနမွာပါ။</td>
+</tr>
+</table>
+</p>
+
+<p>
+အကယ္၍ မေမွ်ာ္လင့္ပဲ Tor က ထြက္သြားခဲ့လွ်င္ Vidalia ဟာ red X ႏွင့္ အမဲေရာင္
+onion ကိုေျပာင္းလဲသြားမွာ ျဖစ္ျပီး ဘာမွားသြားတယ္ဆိုတဲ့ error message ကို
+ျပသမွာ ျဖစ္ပါတယ္။ မထြက္ခင္မွာ Tor ဟာ ျပႆနာတစ္ခုခုႏွင့္ ၾကံဳေတြ႕တဲ့ အေသးစိတ္
+အေၾကာင္းကို <a href="log.html">message log</a> မွာ စစ္ေဆးႏိုင္ပါတယ္။
+</p>
+
+</body>
+</html>
+

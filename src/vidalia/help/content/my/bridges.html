@@ -1,0 +1,76 @@
+
+
+<!--
+**  $Id: bridges.html 3007 2008-08-22 00:12:08Z edmanm $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>Bridge Relays</h1>
+<hr />
+
+<a name="about"/>
+<h3>bridge relays ေတြဆိုတာ ဘာလဲ?</h3>
+<p>
+အခ်ိဳ႕ေသာ Internet Service Providers (ISPs) ေတြဟာ Tor relays မ်ားကို
+ဆက္သြယ္မႈအား ပိတ္ဆို႔ျခင္းအားျဖင့္ Tor ကြန္ယက္ကို အသံုးျပဳသူေတြ ခ်ိတ္ဆက္မႈမွ
+ကာကြယ္ရန္ ၾကိဳးစားၾကပါတယ္။ Bridge relays (သို႔မဟုတ္ အတိုေကာက္<i>bridges</i>
+)ေတြဟာ relays မ်ား ျဖစ္ၾကျပီး Tor ကြန္ယက္ကို ခ်ိတ္ဆက္ဖို႔ ဆင္ဆာ အျဖတ္ခံရတဲ့
+အသံုးျပဳသူေတြကို ကူညီေပးပါတယ္။ Tor relays ေတြနဲ႔ မတူတာက ပံုမွန္ relays
+မ်ားလို bridges ေတြဟာ အမ်ားသူငါဆိုင္ရာ လမ္းညႊန္စာရင္းတြင္ မပါဝင္ေပ။
+ျပီးျပည့္စံုေသာ အမ်ားသူငါဆိုင္ရာ စာရင္းဟူ၍ မရွိေပ။ အကယ္၍ သင္၏ ISP က
+၎တို႔သိေသာ Tor relays မ်ားအားလံုးကို စီစစ္လိုက္တယ္ ဆိုရင္ေတာင္ bridges
+အားလံုးကို ပိတ္ဆို႔ဖို႔ေတာ့ မျဖစ္ႏိုင္ေပ။
+</p>
+
+<a name="finding"/>
+<h3>bridge relay ကိုဘယ္လိုရွာေဖြရမလဲ?</h3>
+<p>
+bridge လိပ္စာႏွင့္ပတ္သက္ျပီး ေလ့လာရန္ အဓိက နည္းလမ္း ႏွစ္သြယ္ရွိပါတယ္။ : 
+<ol>
+  <li>သင့္အတြက္ သီးသန္႔ bridges မ်ားကို run ရန္ သူငယ္ခ်င္းအခ်ိဳ႕ရွာပါ။</li>
+  <li>အမ်ားသူငါဆိုင္ရာ bridges အခ်ိဳ႕ကို သံုးပါ။</li>
+</ol>
+</p>
+
+<p>
+သီးသန္႔ bridges မ်ားကို သံုးရန္ အင္တာနက္ ဆင္ဆာမျဖတ္ထားေသာ နယ္နမိတ္ထဲမွာ
+Vidalia ႏွင့္ Tor ကို သူငယ္ခ်င္းမ်ားကို run ခိုင္းပါ။ျပီးလွ်င္ Vidalia ၏ <a
+href="server.html">Relay settings page</a> မွာ <i>ဆင္ဆာျဖတ္ေတာက္ခံထားရေသာ
+အသံုးျပဳသူမ်ားကို ကူညီပါ</i> ဆိုတာကို ႏွိပ္ပါ။ ထို႔ေနာက္ Relay page ၏
+ေအာက္ေျခရွိ <i>Bridge address</i> လိုင္းကို သင့္ထံသို႔ သီးသန္႔ေပးပို႔
+ခိုင္းရပါမယ္။ ရွိျပီးသား relay ႏွင့္ run ပံုခ်င္း မတူသည္မွာ bridge relay သည္
+Tor ကြန္ယက္၏ အသြားအျပန္လမ္းေၾကာင္းတြင္ အခ်က္အလက္မ်ား ျဖတ္သန္းရံုမွ်သာ run
+ျခင္းေၾကာင့္ျဖစ္သည္။ ထို႔ေၾကာင့္ ေစာဒကတက္မႈ တစ္စံုတစ္ရာကို operator
+ျမင္ေအာင္ မျပသင့္ေပ။
+</p>
+
+<p>
+အမ်ားသူငါဆိုင္ရာ bridge လိပ္စာမ်ားကို <b>https://bridges.torproject.org</b>
+ကိုသြားေရာက္၍ ရွာေဖြႏိုင္သည္။ ၎စာမ်က္ႏွာမွ သင္ရရွိေသာ အေျဖမ်ားသည္
+ေန႔စဉ္နဲ႔အမွ် ေျပာင္းလဲ ေနလိမ့္မည္။ အကယ္၍ bridge လိပ္စာ မ်ားကို သင္ပိုမို
+လိုအပ္တယ္ဆိုရင္ အခါအားေလ်ာ္စြာ ျပန္လည္စစ္ေဆးပါ။ အမ်ားသူငါဆိုင္ရာ bridge
+လိပ္စာမ်ားကို ရွာေဖြရန္ အျခားေသာ နည္းလမ္းမွာ ေမးလ္၏ စာကိုယ္တြင္ <b>get
+bridges</b> ဟုထည့္သြင္းျပီး <b>bridges@torproject.org</b>
+သို႔ေပးပို႔ႏိုင္ပါတယ္။ ဘယ္လိုပဲျဖစ္ျဖစ္ တိုက္ခုိက္သူေတြ bridge လိပ္စာမ်ားကို
+ေလ့လာဖို႔ ခက္ခဲေအာင္ ကၽြန္ေတာ္တို႔က ျပဳလုပ္ႏိုင္ပါတယ္။ Gmail အေကာင့္မွ
+ေတာင္းဆိုမႈမ်ားကိုေတာ့ မျဖစ္မေန ေပးပို႔ရမွာပါ။
+</p>
+
+<p>
+အကယ္၍ အခ်ိဳ႕ေသာ bridges မ်ားသည္ မေရာက္ရွိႏိုင္ျဖစ္ခဲ့လွ်င္ bridge လိပ္စာ
+တစ္ခုထက္ပိုမို ျပင္ဆင္ထည့္သြင္းထားျခင္းသည္ Tor သို႔ခ်ိတ္ဆက္မႈကို ပိုမို
+တည္ျငိမ္ေစမွာ ျဖစ္ပါတယ္။ 
+</p>
+
+</body>
+</html>
+
