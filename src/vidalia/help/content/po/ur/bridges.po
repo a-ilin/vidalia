@@ -1,28 +1,17 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed by
-#   the Vidalia Project at http://www.vidalia-project.net/. No part of
-#   Vidalia, including this file, may be copied, modified, propagated, or
-#   distributed except according to the terms described in the LICENSE
-#   file.
-# 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-03-02 09:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Language: ur\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
@@ -43,13 +32,13 @@ msgstr ""
 #: en/bridges.html:22
 msgid ""
 "Some Internet Service Providers (ISPs) attempt to prevent users from "
-"accessing the Tor network by blocking connections to known Tor "
-"relays. Bridge relays (or <i>bridges</i> for short) are relays that help "
-"these censored users access the Tor network. Unlike other Tor relays, "
-"bridges are not listed in the same public directories as normal "
-"relays. Since there is no complete public list of them, even if your ISP is "
-"filtering connections to all the known Tor relays, they probably won't be "
-"able to block all the bridges."
+"accessing the Tor network by blocking connections to known Tor relays. "
+"Bridge relays (or <i>bridges</i> for short) are relays that help these "
+"censored users access the Tor network. Unlike other Tor relays, bridges are "
+"not listed in the same public directories as normal relays. Since there is "
+"no complete public list of them, even if your ISP is filtering connections "
+"to all the known Tor relays, they probably won't be able to block all the "
+"bridges."
 msgstr ""
 
 #. type: Content of: <html><body>
@@ -82,9 +71,9 @@ msgstr ""
 msgid ""
 "To use private bridges, ask your friends to run Vidalia and Tor in an "
 "uncensored area of the Internet, and then click on <i>Help censored "
-"users</i> in Vidalia's <a href=\"server.html\">Relay settings page</a>. Then "
-"they should privately send you the <i>Bridge address</i> line at the bottom "
-"of their Relay page. Unlike running an exit relay, running a bridge relay "
+"users</i> in Vidalia's <a href=\"server.html\">Relay settings page</a>. Then"
+" they should privately send you the <i>Bridge address</i> line at the bottom"
+" of their Relay page. Unlike running an exit relay, running a bridge relay "
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""

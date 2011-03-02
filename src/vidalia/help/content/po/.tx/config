@@ -49,5 +49,5 @@ source_file = templates/services.pot
 source_lang = en
 
 [main]
-host = http://www.transifex.net
+host = https://www.transifex.net
 
