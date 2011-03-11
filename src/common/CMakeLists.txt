@@ -21,7 +21,6 @@ set(common_SRCS
   stringutil.cpp
   TorSocket.cpp
   TorSslSocket.cpp
-  ZlibByteArray.cpp
 )
 qt4_wrap_cpp(common_SRCS 
   TorSocket.h
@@ -44,8 +43,4 @@ target_link_libraries(common
 if(OPENSSL_LIBRARIES)
   target_link_libraries(common ${OPENSSL_LIBRARIES})
 endif(OPENSSL_LIBRARIES)
-if (APPLE)
-  include(FindZLIB)
-  target_link_libraries(common ${ZLIB_LIBRARIES})
-endif(APPLE)
 
