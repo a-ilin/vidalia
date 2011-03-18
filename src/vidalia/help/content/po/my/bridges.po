@@ -1,28 +1,17 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed by
-#   the Vidalia Project at http://www.vidalia-project.net/. No part of
-#   Vidalia, including this file, may be copied, modified, propagated, or
-#   distributed except according to the terms described in the LICENSE
-#   file.
-# 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-03-18 09:08+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Language: my\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
@@ -43,19 +32,19 @@ msgstr "bridge relays ေတြဆိုတာ ဘာလဲ?"
 #: en/bridges.html:22
 msgid ""
 "Some Internet Service Providers (ISPs) attempt to prevent users from "
-"accessing the Tor network by blocking connections to known Tor "
-"relays. Bridge relays (or <i>bridges</i> for short) are relays that help "
-"these censored users access the Tor network. Unlike other Tor relays, "
-"bridges are not listed in the same public directories as normal "
-"relays. Since there is no complete public list of them, even if your ISP is "
-"filtering connections to all the known Tor relays, they probably won't be "
-"able to block all the bridges."
+"accessing the Tor network by blocking connections to known Tor relays. "
+"Bridge relays (or <i>bridges</i> for short) are relays that help these "
+"censored users access the Tor network. Unlike other Tor relays, bridges are "
+"not listed in the same public directories as normal relays. Since there is "
+"no complete public list of them, even if your ISP is filtering connections "
+"to all the known Tor relays, they probably won't be able to block all the "
+"bridges."
 msgstr ""
 "အခ်ိဳ႕ေသာ Internet Service Providers (ISPs) ေတြဟာ Tor relays မ်ားကို "
-"ဆက္သြယ္မႈအား ပိတ္ဆို႔ျခင္းအားျဖင့္ Tor ကြန္ယက္ကို အသံုးျပဳသူေတြ ခ်ိတ္ဆက္မႈမွ "
-"ကာကြယ္ရန္ ၾကိဳးစားၾကပါတယ္။ Bridge relays (သို႔မဟုတ္ အတိုေကာက္<i>bridges</i> "
-")ေတြဟာ relays မ်ား ျဖစ္ၾကျပီး Tor ကြန္ယက္ကို ခ်ိတ္ဆက္ဖို႔ ဆင္ဆာ အျဖတ္ခံရတဲ့ "
-"အသံုးျပဳသူေတြကို ကူညီေပးပါတယ္။ Tor relays ေတြနဲ႔ မတူတာက ပံုမွန္ relays "
+"ဆက္သြယ္မႈအား ပိတ္ဆို႔ျခင္းအားျဖင့္ Tor ကြန္ယက္ကို အသံုးျပဳသူေတြ ခ်ိတ္ဆက္မႈမွ"
+" ကာကြယ္ရန္ ၾကိဳးစားၾကပါတယ္။ Bridge relays (သို႔မဟုတ္ အတိုေကာက္<i>bridges</i>"
+" )ေတြဟာ relays မ်ား ျဖစ္ၾကျပီး Tor ကြန္ယက္ကို ခ်ိတ္ဆက္ဖို႔ ဆင္ဆာ အျဖတ္ခံရတဲ့"
+" အသံုးျပဳသူေတြကို ကူညီေပးပါတယ္။ Tor relays ေတြနဲ႔ မတူတာက ပံုမွန္ relays "
 "မ်ားလို bridges ေတြဟာ အမ်ားသူငါဆိုင္ရာ လမ္းညႊန္စာရင္းတြင္ မပါဝင္ေပ။ "
 "ျပီးျပည့္စံုေသာ အမ်ားသူငါဆိုင္ရာ စာရင္းဟူ၍ မရွိေပ။ အကယ္၍ သင္၏ ISP က "
 "၎တို႔သိေသာ Tor relays မ်ားအားလံုးကို စီစစ္လိုက္တယ္ ဆိုရင္ေတာင္ bridges "
@@ -74,7 +63,8 @@ msgstr "bridge relay ကိုဘယ္လိုရွာေဖြရမလဲ?"
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
-msgstr "bridge လိပ္စာႏွင့္ပတ္သက္ျပီး ေလ့လာရန္ အဓိက နည္းလမ္း ႏွစ္သြယ္ရွိပါတယ္။ :"
+msgstr ""
+"bridge လိပ္စာႏွင့္ပတ္သက္ျပီး ေလ့လာရန္ အဓိက နည္းလမ္း ႏွစ္သြယ္ရွိပါတယ္။ :"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
@@ -91,9 +81,9 @@ msgstr "အမ်ားသူငါဆိုင္ရာ bridges အခ်ိဳ
 msgid ""
 "To use private bridges, ask your friends to run Vidalia and Tor in an "
 "uncensored area of the Internet, and then click on <i>Help censored "
-"users</i> in Vidalia's <a href=\"server.html\">Relay settings page</a>. Then "
-"they should privately send you the <i>Bridge address</i> line at the bottom "
-"of their Relay page. Unlike running an exit relay, running a bridge relay "
+"users</i> in Vidalia's <a href=\"server.html\">Relay settings page</a>. Then"
+" they should privately send you the <i>Bridge address</i> line at the bottom"
+" of their Relay page. Unlike running an exit relay, running a bridge relay "
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""
@@ -102,8 +92,8 @@ msgstr ""
 "href=\"server.html\">Relay settings page</a> မွာ <i>ဆင္ဆာျဖတ္ေတာက္ခံထားရေသာ "
 "အသံုးျပဳသူမ်ားကို ကူညီပါ</i> ဆိုတာကို ႏွိပ္ပါ။ ထို႔ေနာက္ Relay page ၏ "
 "ေအာက္ေျခရွိ <i>Bridge address</i> လိုင္းကို သင့္ထံသို႔ သီးသန္႔ေပးပို႔ "
-"ခိုင္းရပါမယ္။ ရွိျပီးသား relay ႏွင့္ run ပံုခ်င္း မတူသည္မွာ bridge relay သည္ "
-"Tor ကြန္ယက္၏ အသြားအျပန္လမ္းေၾကာင္းတြင္ အခ်က္အလက္မ်ား ျဖတ္သန္းရံုမွ်သာ run "
+"ခိုင္းရပါမယ္။ ရွိျပီးသား relay ႏွင့္ run ပံုခ်င္း မတူသည္မွာ bridge relay သည္"
+" Tor ကြန္ယက္၏ အသြားအျပန္လမ္းေၾကာင္းတြင္ အခ်က္အလက္မ်ား ျဖတ္သန္းရံုမွ်သာ run "
 "ျခင္းေၾကာင့္ျဖစ္သည္။ ထို႔ေၾကာင့္ ေစာဒကတက္မႈ တစ္စံုတစ္ရာကို operator "
 "ျမင္ေအာင္ မျပသင့္ေပ။"
 
@@ -125,8 +115,8 @@ msgstr ""
 "လိုအပ္တယ္ဆိုရင္ အခါအားေလ်ာ္စြာ ျပန္လည္စစ္ေဆးပါ။ အမ်ားသူငါဆိုင္ရာ bridge "
 "လိပ္စာမ်ားကို ရွာေဖြရန္ အျခားေသာ နည္းလမ္းမွာ ေမးလ္၏ စာကိုယ္တြင္ <b>get "
 "bridges</b> ဟုထည့္သြင္းျပီး <b>bridges@torproject.org</b> "
-"သို႔ေပးပို႔ႏိုင္ပါတယ္။ ဘယ္လိုပဲျဖစ္ျဖစ္ တိုက္ခုိက္သူေတြ bridge လိပ္စာမ်ားကို "
-"ေလ့လာဖို႔ ခက္ခဲေအာင္ ကၽြန္ေတာ္တို႔က ျပဳလုပ္ႏိုင္ပါတယ္။ Gmail အေကာင့္မွ "
+"သို႔ေပးပို႔ႏိုင္ပါတယ္။ ဘယ္လိုပဲျဖစ္ျဖစ္ တိုက္ခုိက္သူေတြ bridge လိပ္စာမ်ားကို"
+" ေလ့လာဖို႔ ခက္ခဲေအာင္ ကၽြန္ေတာ္တို႔က ျပဳလုပ္ႏိုင္ပါတယ္။ Gmail အေကာင့္မွ "
 "ေတာင္းဆိုမႈမ်ားကိုေတာ့ မျဖစ္မေန ေပးပို႔ရမွာပါ။"
 
 #. type: Content of: <html><body><p>

@@ -1,0 +1,73 @@
+
+
+<!--
+**  $Id: bridges.html 3007 2008-08-22 00:12:08Z edmanm $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+<html>
+<body>
+
+<h1>Desvios de Ponte</h1>
+<hr />
+
+<a name="about"/>
+<h3>O que são desvios de ponte?</h3>
+<p>
+Alguns Provedores de Internet (ISPs, do inglês Internet Service Providers)
+tentam impedir usuários de acessar a rede Tor através do bloqueio de
+conexões com desvios do Tor já conhecidos. Desvios de ponte (ou
+<i>pontes</i>, na abreviação) são desvios que ajudam tais usuários
+censurados a acessar a rede Tor. Diferentemente de outros desvios do Tor,
+pontes não são listadas nos mesmos diretórios publicos que desvios
+comuns. Uma vez que não há lista pública completa deles, mesmo que o seu ISP
+esteja filtrando todas as conexões conhecidas de desvios do Tor, eles
+dificilmente serão capazes de bloquear todas as pontes.
+</p>
+
+<a name="finding"/>
+<h3>Como eu encontro um desvio de ponte?</h3>
+<p>
+Existem dois modos principais de descobrir um endereço de ponte: 
+<ol>
+  <li>Fazer com que amigos mantenham pontes particulares para você</li>
+  <li>Usar algumas das pontes públicas</li>
+</ol>
+</p>
+
+<p>
+Para usar pontes particulares, peça aos seus amigos que executem o Vidalia e
+o Tor em uma área não censurada da Internet, e cliquem em <i>Ajudar usuários
+censurados</i> na <ahref="server.html">Página de Configurações de
+Desvios</a>. Depois eles devem te enviar de maneira privada o <i>endereço de
+Ponte</i> indicado na linha na base da página de Desvio. Diferentemente de
+executar um desvio de saída, executar um desvio de ponte simplesmente passa
+dados de e para a rede Tor, então não deveria expor o operador a quaisquer
+reclamações de abuso.
+</p>
+
+<p>
+Voce pode encontrar endereços de pontes públicas acessando
+<b>https://bridges.torproject.org</b>. As respostas que você encontra nesta
+página irão mudar periodicamente, então verifique novamente em intervalos de
+alguns dias se precisar de mais pontes. Outro modo de se encontrar endereços
+de pontes públicas é enviando um e-mail para <b>bridges@torproject.org</b
+com a frase <b>get bridges</b>  apenas, no corpo do mail. Entretanto, para
+podermos tornar mais difícil para um invasor aprender muitos endereços de
+ponte, você deve enviar esse pedido através de uma conta Gmail.
+</p>
+
+<p>
+Configurar mais de um endereço de ponte fará da sua conexão mais estável,
+caso a ligação com alguma das pontes se perca.
+</p>
+
+</body>
+</html>
+

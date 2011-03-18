@@ -1,29 +1,17 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed by
-#   the Vidalia Project at http://www.vidalia-project.net/. No part of
-#   Vidalia, including this file, may be copied, modified, propagated, or
-#   distributed except according to the terms described in the LICENSE
-#   file.
-# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: 2010-11-04 15:28+0200\n"
-"Last-Translator: jonchil <abcd666@gmail.com>\n"
+"PO-Revision-Date: 2011-03-04 19:03+0000\n"
+"Last-Translator: snakeyi <snakeyi0624@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.5\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
@@ -44,17 +32,14 @@ msgstr "什么是网桥中继？"
 #: en/bridges.html:22
 msgid ""
 "Some Internet Service Providers (ISPs) attempt to prevent users from "
-"accessing the Tor network by blocking connections to known Tor "
-"relays. Bridge relays (or <i>bridges</i> for short) are relays that help "
-"these censored users access the Tor network. Unlike other Tor relays, "
-"bridges are not listed in the same public directories as normal "
-"relays. Since there is no complete public list of them, even if your ISP is "
-"filtering connections to all the known Tor relays, they probably won't be "
-"able to block all the bridges."
+"accessing the Tor network by blocking connections to known Tor relays. "
+"Bridge relays (or <i>bridges</i> for short) are relays that help these "
+"censored users access the Tor network. Unlike other Tor relays, bridges are "
+"not listed in the same public directories as normal relays. Since there is "
+"no complete public list of them, even if your ISP is filtering connections "
+"to all the known Tor relays, they probably won't be able to block all the "
+"bridges."
 msgstr ""
-"有些因特网服务提供商（ISP们）试着利用封锁已知网桥连接来阻止用户连接到 Tor 网络。网桥中继（或简称<i>网桥</i>）是一种可以帮助这种用户连接到 "
-"Tor 网络的中继。不像其他的 Tor 中继，网桥不会和普通中继一样列表于公共目录中。所以它们并没有一个完整的公共列表，即使你的 ISP 过滤所有已知 "
-"Tor 中继连接，他们依然可能无法封停所有的网桥。"
 
 #. type: Content of: <html><body>
 #: en/bridges.html:31
@@ -64,37 +49,34 @@ msgstr "<a name=\"finding\"/>"
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:32
 msgid "How do I find a bridge relay?"
-msgstr "如何寻找网桥？"
+msgstr "我怎么找到一个网桥中继"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
-msgstr "有两种主要的方法获得网桥地址："
+msgstr ""
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
 msgid "Get some friends to run private bridges for you"
-msgstr "找一些朋友为您运行私人网桥。"
+msgstr ""
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:37
 msgid "Use some of the public bridges"
-msgstr "使用一些公开的网桥。"
+msgstr "使用一些公开的网桥"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:42
 msgid ""
 "To use private bridges, ask your friends to run Vidalia and Tor in an "
 "uncensored area of the Internet, and then click on <i>Help censored "
-"users</i> in Vidalia's <a href=\"server.html\">Relay settings page</a>. Then "
-"they should privately send you the <i>Bridge address</i> line at the bottom "
-"of their Relay page. Unlike running an exit relay, running a bridge relay "
+"users</i> in Vidalia's <a href=\"server.html\">Relay settings page</a>. Then"
+" they should privately send you the <i>Bridge address</i> line at the bottom"
+" of their Relay page. Unlike running an exit relay, running a bridge relay "
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""
-"要使用私人网桥，请您的朋友在无互联网审查的地方运行 Vidalia 和 Tor，然后点击 Vidalia 的<a href=\"server.html\">"
-"网桥中继设置页面</a>中的<i>帮助受限用户</i>。这样他们应该将网桥中继页面最下面的<i>网桥地址</i>行发送给您。不同于运行一个出口中继，运行"
-"一个网桥中继仅仅只是通过 Tor 网络接收和发送数据，所以他们应当不会有什么被滥用的抱怨。"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:52
@@ -108,13 +90,10 @@ msgid ""
 "attacker to learn lots of bridge addresses, you must send this request from "
 "a Gmail account."
 msgstr ""
-"您可以通过访问<b>https://bridges.torproject.org</b>来获得一些公共网桥。您从该页面获得的网桥每几天会更新一次，如果您"
-"需要更多网桥地址，请定期回访该页面。另一种获得网桥地址的方式是发送一封标题和内容都是<b>get bridges</b>的邮件到<b>bridges@t"
-"orproject.org</b>。但是，如果有攻击者想要获得更多网桥地址，我们会感到十分艰难，所以请您通过 Gmail 帐户发送该请求。"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:63
 msgid ""
 "Configuring more than one bridge address will make your Tor connection more "
 "stable, in case some of the bridges become unreachable."
-msgstr "配置更多的网桥会使您的 Tor 连接更稳定，以免一些网桥无法访问。"
+msgstr ""

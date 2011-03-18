@@ -12,11 +12,11 @@
 ### Start config ###
 
 # Location of the translated po files. Do not add the trailing slash. 
-translated=""
+translated="/home/runa/tor/vidaliahelp/po"
 
 # Location of the original and translated html files. Do not add the
 # trailing slash.
-html=""
+html="/home/runa/tor/vidaliahelp/"
 
 ### End config ###
 
@@ -25,6 +25,11 @@ po=`find $translated -type f -name \*.po`
 
 # For every po found, create and/or update the translated manpage.
 for file in $po ; do
+
+	# Validate input and write results to a log file
+	validate_script="/home/runa/tor/translation/tools/validate.py"
+	validate_log="/home/runa/tor/validate/vidaliahelp-validate.log"
+	python "$validate_script" -i "$file" -l "$validate_log"
 
 	# Get the basename of the file we are dealing with.
 	pofile=`basename $file`
@@ -43,7 +48,7 @@ for file in $po ; do
 	# files deleted, convert the po to a temp file first. If this
 	# file was actually written, rename it.
 
-	# Convert translated po to xml.
+	# Convert translated po to html.
 	po4a-translate -f xhtml -m "$html/en/$htmlfile" -p "$file" -l "$html/$lang/tmp-$htmlfile" --master-charset utf-8 -L utf-8
 
 	# Check to see if the file was written. If yes, rename it.
