@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Tor Project\n"
 "Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
-"POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2010-12-27 16:09+0000\n"
+"POT-Creation-Date: 2011-03-09 13:05+0000\n"
+"PO-Revision-Date: 2011-03-09 13:17+0000\n"
 "Last-Translator: runasand <runa.sandvik@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -34,28 +34,13 @@ msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
 msgstr ""
 
-msgctxt "AboutDialog"
-msgid "Vidalia"
-msgstr "વિડાલિઆ"
-
-msgctxt "AboutDialog"
-msgid "Tor"
-msgstr "ટોર"
-
-msgctxt "AboutDialog"
-msgid "Qt"
-msgstr "Qt"
-
-msgctxt "AboutDialog"
-msgid "version"
-msgstr "આવૃત્તિ"
-
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
 msgstr "'%1' એ યોગ્ય આઇપી સરનામું નથી."
 
 msgctxt "AdvancedPage"
-msgid "You selected 'Password' authentication, but did not specify a password."
+msgid ""
+"You selected 'Password' authentication, but did not specify a password."
 msgstr "તમે ગુપ્તાન્ક ચકાસણી પસંદ કરી છે, પરન્તુ ગુપ્તાંક આપ્યો નથી"
 
 msgctxt "AdvancedPage"
@@ -92,10 +77,6 @@ msgstr ""
 
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
-msgstr ""
-
-msgctxt "AdvancedPage"
-msgid "Control Port"
 msgstr ""
 
 msgctxt "AdvancedPage"
@@ -152,6 +133,62 @@ msgstr ""
 
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Tor Control"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Use TCP connection (ControlPort)"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Path:"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Use Unix domain socket (ControlSocket)"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Edit current torrc"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "NOTE: this will edit the currently loaded torrc"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "ControlSocket path doesn't exist."
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid ""
+"The specified Tor configuration file location contains characters that "
+"cannot be represented in your system's current 8-bit character encoding."
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid ""
+"The specified Tor data directory location contains characters that cannot be"
+" represented in your system's current 8-bit character encoding."
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Warning"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "You changed torrc path, would you like to restart Tor?"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Tor Configuration File (torrc);;All Files (*)"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Select a file to use for Tor socket path"
 msgstr ""
 
 msgctxt "AdvancedPage"
@@ -398,7 +435,9 @@ msgid "Remember my password"
 msgstr ""
 
 msgctxt "ControlPasswordInputDialog"
-msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password:"
+msgid ""
+"Vidalia has connected to a running Tor process that requires a password. "
+"Please enter your control password:"
 msgstr ""
 
 msgctxt "ControlSocket"
@@ -1114,6 +1153,10 @@ msgid "Zimbabwe"
 msgstr ""
 
 msgctxt "CountryInfo"
+msgid "Zaire"
+msgstr ""
+
+msgctxt "CountryInfo"
 msgid "Albania"
 msgstr ""
 
@@ -1209,6 +1252,62 @@ msgctxt "CountryInfo"
 msgid "Taiwan"
 msgstr ""
 
+msgctxt "CrashReportDialog"
+msgid "Submit a Crash Report"
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid "Vidalia encountered an error and needed to close"
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid ""
+"A crash report has been created that you can automatically send to the "
+"Vidalia developers to help identify and fix the problem. The submitted "
+"report does not contain any personally identifying information, but your "
+"connection to the crash reporting server may not be anonymous."
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid ""
+"Please also describe what you were doing before the application crashed "
+"(optional):"
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid "Send my crash report to the Vidalia developers"
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid "Restart Vidalia"
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid "Don't Restart"
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid "Unable to restart Vidalia"
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid ""
+"We were unable to automatically restart Vidalia. Please restart Vidalia "
+"manually."
+msgstr ""
+
+msgctxt "CrashReportUploader"
+msgid "Connecting..."
+msgstr ""
+
+msgctxt "CrashReportUploader"
+msgid "Sending crash report..."
+msgstr ""
+
+msgctxt "CrashReportUploader"
+msgid "Receiving response..."
+msgstr ""
+
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
 msgstr ""
@@ -1223,10 +1322,6 @@ msgstr ""
 
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
-msgstr ""
-
-msgctxt "GeneralPage"
-msgid "The proxy arguments specified are not properly formatted."
 msgstr ""
 
 msgctxt "GeneralPage"
@@ -1426,7 +1521,10 @@ msgid "Opening External Link"
 msgstr ""
 
 msgctxt "HelpTextBrowser"
-msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
+msgid ""
+"Vidalia can open the link you selected in your default Web browser. If your "
+"browser is not currently configured to use Tor then the request will not be "
+"anonymous."
 msgstr ""
 
 msgctxt "HelpTextBrowser"
@@ -1438,7 +1536,9 @@ msgid "Unable to Open Link"
 msgstr ""
 
 msgctxt "HelpTextBrowser"
-msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
+msgid ""
+"Vidalia was unable to open the selected link in your Web browser. You can "
+"still copy the URL and paste it into your browser."
 msgstr ""
 
 msgctxt "HelpTextBrowser"
@@ -1478,6 +1578,30 @@ msgid "Error"
 msgstr ""
 
 msgctxt "LogEvent"
+msgid "Unknown"
+msgstr ""
+
+msgctxt "LogTreeItem"
+msgid "Debug"
+msgstr ""
+
+msgctxt "LogTreeItem"
+msgid "Info"
+msgstr ""
+
+msgctxt "LogTreeItem"
+msgid "Notice"
+msgstr ""
+
+msgctxt "LogTreeItem"
+msgid "Warning"
+msgstr ""
+
+msgctxt "LogTreeItem"
+msgid "Error"
+msgstr ""
+
+msgctxt "LogTreeItem"
 msgid "Unknown"
 msgstr ""
 
@@ -1694,7 +1818,9 @@ msgid "Error Starting Tor"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
+msgid ""
+"Vidalia was unable to start Tor. Check your settings to ensure the correct "
+"name and location of your Tor executable is specified."
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1730,7 +1856,9 @@ msgid "Cookie Authentication Required"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
+msgid ""
+"The Tor software requires Vidalia to send the contents of an authentication "
+"cookie, but Vidalia was unable to find one."
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1750,7 +1878,9 @@ msgid "Error Registering for Events"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
+msgid ""
+"Vidalia was unable to register for some events. Many of Vidalia's features "
+"may be unavailable."
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1770,7 +1900,9 @@ msgid "Tor Update Available"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
+msgid ""
+"The currently installed version of Tor is out of date or no longer "
+"recommended. Please visit the Tor website to download the latest version."
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1778,7 +1910,9 @@ msgid "Tor website: %1"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "All subsequent connections will appear to be different than your old connections."
+msgid ""
+"All subsequent connections will appear to be different than your old "
+"connections."
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1870,15 +2004,21 @@ msgid "Password Reset Failed"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
+msgid ""
+"Vidalia tried to reset Tor's control password, but was not able to restart "
+"the Tor software. Please check your Task Manager to ensure there are no "
+"other Tor processes running."
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "The currently installed version of Tor is out of date or no longer recommended."
+msgid ""
+"The currently installed version of Tor is out of date or no longer "
+"recommended."
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "Would you like to check if a newer package is available for installation?"
+msgid ""
+"Would you like to check if a newer package is available for installation?"
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1886,11 +2026,9 @@ msgid "Potentially Unsafe Connection"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Tor has automatically closed your connection in order to protect your anonymity."
+msgid ""
+"Tor has automatically closed your connection in order to protect your "
+"anonymity."
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1902,7 +2040,9 @@ msgid "Your software is up to date"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "There are no new Tor software packages available for your computer at this time."
+msgid ""
+"There are no new Tor software packages available for your computer at this "
+"time."
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1915,6 +2055,19 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "The following error occurred:"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid ""
+"One of your applications%1appears to be making a potentially unencrypted and"
+" unsafe connection to port %2."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid ""
+"Anything sent over this connection could be monitored. Please check your "
+"application's configuration and use only encrypted protocols, such as SSL, "
+"if possible."
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1947,26 +2100,6 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Vidalia"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "File"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "About Vidalia"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Home"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Check For Updates"
 msgstr ""
 
 msgctxt "MessageLog"
@@ -2210,10 +2343,6 @@ msgid "messages"
 msgstr ""
 
 msgctxt "MessageLog"
-msgid "Always Save New Log Messages"
-msgstr ""
-
-msgctxt "MessageLog"
 msgid "Browse"
 msgstr ""
 
@@ -2223,6 +2352,22 @@ msgstr ""
 
 msgctxt "MessageLog"
 msgid "Automatically save new log messages to a file"
+msgstr ""
+
+msgctxt "MessageLog"
+msgid "Basic"
+msgstr ""
+
+msgctxt "MessageLog"
+msgid "Tor Status"
+msgstr ""
+
+msgctxt "MessageLog"
+msgid "Advanced"
+msgstr ""
+
+msgctxt "MessageLog"
+msgid "Always Save New Log Messages"
 msgstr ""
 
 msgctxt "MessageLog"
@@ -2381,11 +2526,15 @@ msgid "Copy (Ctrl+C)"
 msgstr ""
 
 msgctxt "NetworkPage"
-msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
+msgid ""
+"You must specify both an IP address or hostname and a port number to "
+"configure Tor to use a proxy to access the Internet."
 msgstr ""
 
 msgctxt "NetworkPage"
-msgid "You must specify one or more ports to which your firewall allows you to connect."
+msgid ""
+"You must specify one or more ports to which your firewall allows you to "
+"connect."
 msgstr ""
 
 msgctxt "NetworkPage"
@@ -2405,15 +2554,7 @@ msgid "Proxy Settings"
 msgstr ""
 
 msgctxt "NetworkPage"
-msgid "HTTP Proxy:"
-msgstr ""
-
-msgctxt "NetworkPage"
 msgid "Username:"
-msgstr ""
-
-msgctxt "NetworkPage"
-msgid "Use this proxy for HTTPS also"
 msgstr ""
 
 msgctxt "NetworkPage"
@@ -2445,7 +2586,9 @@ msgid "80, 443"
 msgstr ""
 
 msgctxt "NetworkPage"
-msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
+msgid ""
+"Check to encrypt directory requests and, optionally, use bridge relays to "
+"access the Tor network"
 msgstr ""
 
 msgctxt "NetworkPage"
@@ -2457,15 +2600,7 @@ msgid "Bridge Settings"
 msgstr ""
 
 msgctxt "NetworkPage"
-msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
-msgstr ""
-
-msgctxt "NetworkPage"
 msgid "Add a Bridge:"
-msgstr ""
-
-msgctxt "NetworkPage"
-msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
 msgstr ""
 
 msgctxt "NetworkPage"
@@ -2489,11 +2624,41 @@ msgid "<a href=\"bridges.finding\">How can I find bridges?</a>"
 msgstr ""
 
 msgctxt "NetworkPage"
-msgid "No new bridges are currently available. You can either wait a while and try again, or try another method of finding new bridges."
+msgid ""
+"No new bridges are currently available. You can either wait a while and try "
+"again, or try another method of finding new bridges."
 msgstr ""
 
 msgctxt "NetworkPage"
 msgid "Click Help to see other methods of finding new bridges."
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "Address:"
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "Type:"
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "You must select the proxy type."
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "SOCKS 4"
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "SOCKS 5"
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "HTTP"
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "HTTP / HTTPS"
 msgstr ""
 
 msgctxt "Policy"
@@ -2649,11 +2814,15 @@ msgid "Bridge Support Unavailable"
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
+msgid ""
+"You have configured Tor to act as a bridge relay for censored users, but "
+"your version of Tor does not support bridges."
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
+msgid ""
+"Please upgrade your Tor software or configure Tor to act as a normal Tor "
+"relay."
 msgstr ""
 
 msgctxt "ServerPage"
@@ -2721,7 +2890,9 @@ msgid "Basic Settings"
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
+msgid ""
+"For Internet connections with fast download speed but slow upload, please "
+"list your upload speed here."
 msgstr ""
 
 msgctxt "ServerPage"
@@ -2777,7 +2948,9 @@ msgid "Peak bandwidth rate limit"
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
+msgid ""
+"Your maximum bandwidth rate must be greater than or equal to your average "
+"bandwidth rate. Both values must be at least 20 KB/s."
 msgstr ""
 
 msgctxt "ServerPage"
@@ -2837,11 +3010,14 @@ msgid "Show help topic on exit policies"
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "What Internet resources should users be able to access from your relay?"
+msgid ""
+"What Internet resources should users be able to access from your relay?"
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
+msgid ""
+"Tor will still block some outgoing mail and file sharing applications by "
+"default to reduce spam and other abuse."
 msgstr ""
 
 msgctxt "ServerPage"
@@ -2853,7 +3029,8 @@ msgid "Let others access your bridge by giving them this line:"
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "This is the identity of your bridge relay that you can give to other people"
+msgid ""
+"This is the identity of your bridge relay that you can give to other people"
 msgstr ""
 
 msgctxt "ServerPage"
@@ -2869,7 +3046,9 @@ msgid "No clients have used your relay recently."
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "Leave your relay running so clients have a better chance of finding and using it."
+msgid ""
+"Leave your relay running so clients have a better chance of finding and "
+"using it."
 msgstr ""
 
 msgctxt "ServerPage"
@@ -2881,7 +3060,9 @@ msgid "Vidalia was unable to retrieve your bridge's usage history."
 msgstr ""
 
 msgctxt "ServerPage"
-msgid "Tor returned an improperly formatted response when Vidalia requested your bridge's usage history."
+msgid ""
+"Tor returned an improperly formatted response when Vidalia requested your "
+"bridge's usage history."
 msgstr ""
 
 msgctxt "ServerPage"
@@ -2894,6 +3075,14 @@ msgstr ""
 
 msgctxt "ServerPage"
 msgid "<a href=\"#bridgeUsage\">Who has used my bridge?</a>"
+msgstr ""
+
+msgctxt "ServerPage"
+msgid "<a href=\"#bridgeHelp\">What's this?</a>"
+msgstr ""
+
+msgctxt "ServerPage"
+msgid "Automatically distribute my bridge address"
 msgstr ""
 
 msgctxt "ServerPage"
@@ -2911,7 +3100,9 @@ msgid "Error while trying to unpublish all services"
 msgstr ""
 
 msgctxt "ServicePage"
-msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
+msgid ""
+"Please configure at least a service directory and a virtual port for each "
+"service you want to save. Remove the other ones."
 msgstr ""
 
 msgctxt "ServicePage"
@@ -2986,6 +3177,251 @@ msgctxt "ServicePage"
 msgid "Created by Tor"
 msgstr ""
 
+msgctxt "StatusEventWidget"
+msgid "Copy to Clipboard"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "The Tor Software is Running"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "You are currently running version \"%1\" of the Tor software."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "The Tor Software is not Running"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Click \"Start Tor\" in the Vidalia Control Panel to restart the Tor "
+"software. If Tor exited unexpectedly, select the \"Advanced\" tab above for "
+"details about any errors encountered."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"You are currently running version \"%1\" of the Tor software, which is no "
+"longer recommended. Please upgrade to the most recent version of the "
+"software, which may contain important security, reliability and performance "
+"fixes."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"You are currently running version \"%1\" of the Tor software, which may no "
+"longer work with the current Tor network. Please upgrade to the most recent "
+"version of the software, which may contain important security, reliability "
+"and performance fixes."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Your Tor Software is Out-of-date"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Connected to the Tor Network"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"We were able to successfully establish a connection to the Tor network. You "
+"can now configure your applications to use the Internet anonymously."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Tor Software Error"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"The Tor software encountered an internal bug. Please report the following "
+"error message to the Tor developers at bugs.torproject.org: \"%1\""
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Tor has determined that your computer's clock may be set to %1 seconds in "
+"the past compared to the source \"%2\". If your clock is not correct, Tor "
+"will not be able to function. Please verify your computer displays the "
+"correct time."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Tor has determined that your computer's clock may be set to %1 seconds in "
+"the future compared to the source \"%2\". If your clock is not correct, Tor "
+"will not be able to function. Please verify your computer displays the "
+"correct time."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Your Computer's Clock is Potentially Incorrect"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"One of the applications on your computer may have attempted to make an "
+"unencrypted connection through Tor to port %1. Sending unencrypted "
+"information over the Tor network is dangerous and not recommended. For your "
+"protection, Tor has automatically closed this connection."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"One of the applications on your computer may have attempted to make an "
+"unencrypted connection through Tor to port %1. Sending unencrypted "
+"information over the Tor network is dangerous and not recommended."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Potentially Dangerous Connection!"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"One of your applications established a connection through Tor to \"%1\" "
+"using a protocol that may leak information about your destination. Please "
+"ensure you configure your applications to use only SOCKS4a or SOCKS5 with "
+"remote hostname resolution."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Unknown SOCKS Protocol"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"One of your applications tried to establish a connection through Tor using a"
+" protocol that Tor does not understand. Please ensure you configure your "
+"applications to use only SOCKS4a or SOCKS5 with remote hostname resolution."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Invalid Destination Hostname"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"One of your applications tried to establish a connection through Tor to "
+"\"%1\", which Tor does not recognize as a valid hostname. Please check your "
+"application's configuration."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "External IP Address Changed"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Tor has determined your relay's public IP address is currently %1%2. If that"
+" is not correct, please consider setting the 'Address' option in your "
+"relay's configuration."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "DNS Hijacking Detected"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Tor detected that your DNS provider is providing false responses for domains"
+" that do not exist. Some ISPs and other DNS providers, such as OpenDNS, are "
+"known to do this in order to display their own search or advertising pages."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Tor detected that your DNS provider is providing false responses for well "
+"known domains. Since clients rely on Tor network relays to provide accurate "
+"DNS repsonses, your relay will not be configured as an exit relay."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Checking Server Port Reachability"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Tor is trying to determine if your relay's server port is reachable from the"
+" Tor network by connecting to itself at %1:%2. This test could take several "
+"minutes."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Server Port Reachability Test Successful!"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Your relay's server port is reachable from the Tor network!"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Server Port Reachability Test Failed"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Your relay's server port is not reachable by other Tor clients. This can "
+"happen if you are behind a router or firewall that requires you to set up "
+"port forwarding. If %1:%2 is not your correct IP address and server port, "
+"please check your relay's configuration."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Checking Directory Port Reachability"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Tor is trying to determine if your relay's directory port is reachable from "
+"the Tor network by connecting to itself at %1:%2. This test could take "
+"several minutes."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Directory Port Reachability Test Successful!"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Your relay's directory port is reachable from the Tor network!"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Directory Port Reachability Test Failed"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Your relay's directory port is not reachable by other Tor clients. This can "
+"happen if you are behind a router or firewall that requires you to set up "
+"port forwarding. If %1:%2 is not your correct IP address and directory port,"
+" please check your relay's configuration."
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Relay Descriptor Rejected"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Your relay's descriptor, which enables clients to connect to your relay, was"
+" rejected by the directory server at %1:%2. The reason given was: %3"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid "Your Relay is Online"
+msgstr ""
+
+msgctxt "StatusEventWidget"
+msgid ""
+"Your relay is now online and available for Tor clients to use. You should "
+"see an increase in network traffic shown by the Bandwidth Graph within a few"
+" hours as more clients learn about your relay. Thank you for contributing to"
+" the Tor network!"
+msgstr ""
+
 msgctxt "Stream"
 msgid "New"
 msgstr ""
@@ -3036,6 +3472,68 @@ msgstr ""
 
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Editing torrc"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid ""
+"Save settings. If unchecked it will only apply settings to the current Tor "
+"instance."
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Cut"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Copy"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Paste"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Undo"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Redo"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Select All"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Apply all"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Apply selection only"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Error connecting to Tor"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Selection is empty. Please select some text, or check \"Apply all\""
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Error at line %1: \"%2\""
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Error"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "An error ocurred while opening torrc file"
 msgstr ""
 
 msgctxt "UPNPControl"
@@ -3095,11 +3593,15 @@ msgid "Testing Universal Plug & Play Support"
 msgstr ""
 
 msgctxt "UpdateProcess"
-msgid "Vidalia was unable to check for available software updates because it could not find '%1'."
+msgid ""
+"Vidalia was unable to check for available software updates because it could "
+"not find '%1'."
 msgstr ""
 
 msgctxt "UpdateProcess"
-msgid "Vidalia was unable to check for available software updates because Tor's update process exited unexpectedly."
+msgid ""
+"Vidalia was unable to check for available software updates because Tor's "
+"update process exited unexpectedly."
 msgstr ""
 
 msgctxt "UpdateProgressDialog"
@@ -3160,6 +3662,14 @@ msgstr ""
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Version"
+msgstr ""
+
+msgctxt "UploadProgressDialog"
+msgid "Uploading Crash Report"
+msgstr ""
+
+msgctxt "UploadProgressDialog"
+msgid "Unable to send report: %1"
 msgstr ""
 
 msgctxt "VMessageBox"

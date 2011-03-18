@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: The Tor Project\n"
 "Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2010-12-27 16:04+0000\n"
-"Last-Translator: runasand <runa.sandvik@gmail.com>\n"
+"PO-Revision-Date: 2011-03-14 23:27+0000\n"
+"Last-Translator: Evropi <yannanth@gmail.com>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
 msgid "Activate"
-msgstr "Ενεργοποίησε"
+msgstr "Ενεργοποίηση"
 
 #: qmessagebox.h:319
 msgctxt "QApplication"
@@ -42,7 +42,7 @@ msgstr "Ενεργοποιεί το κύριο παράθυρο του προγ�
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
 msgid "OK"
-msgstr "Εντάξει"
+msgstr "ΟΚ"
 
 #: qdialogbuttonbox.cpp:528
 msgctxt "QDialogButtonBox"
@@ -97,7 +97,7 @@ msgstr "%Ναι"
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
-msgstr "Ναι σε %όλα"
+msgstr "Ναι σε %Όλα"
 
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
@@ -112,7 +112,7 @@ msgstr "&Όχι σε όλα"
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
 msgid "Save All"
-msgstr "Αποθήκευση όλων"
+msgstr "Αποθήκευση Όλων"
 
 #: qdialogbuttonbox.cpp:572
 msgctxt "QDialogButtonBox"
@@ -137,12 +137,12 @@ msgstr "Επαναφορά προεπιλεγμένων"
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr "Κλείσιμο Χωρίς Αποθήκευση"
+msgstr "Κλείσιμο χωρίς Αποθήκευση"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
 msgid "&OK"
-msgstr "&Εντάξει"
+msgstr "&ΟΚ"
 
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
@@ -182,7 +182,7 @@ msgstr "Κατάλογοι"
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
-msgstr "%Άνοιξε"
+msgstr "&Άνοιγμα"
 
 #: qfiledialog.cpp:919
 msgctxt "QFileDialog"
@@ -192,7 +192,7 @@ msgstr "&Αποθήκευση"
 #: qfiledialog.cpp:435
 msgctxt "QFileDialog"
 msgid "Open"
-msgstr "Άνοιξε"
+msgstr "Άνοιγμα"
 
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
@@ -272,8 +272,8 @@ msgid ""
 "Please verify the correct directory name was given."
 msgstr ""
 "%1\n"
-"Καταλογος δεν βρέθηκε.\n"
-"Παρακαλώ βεβαιώστε ότι δόθηκε το σωστό όνομα καταλόγου."
+"Ο καταλογος δεν βρέθηκε.\n"
+"Παρακαλούμε βεβαιώστε ότι δόθηκε το σωστό όνομα καταλόγου."
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
@@ -287,7 +287,7 @@ msgstr ""
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr "Ειστε σίγουροι ότι θέλετε να διαγράψετε το %1?"
+msgstr "Είστε σίγουροι ότι θέλετε να διαγράψετε το %1?"
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
@@ -322,12 +322,12 @@ msgstr "Άγνωστο"
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
 msgid "Find Directory"
-msgstr "Έυρεση Καταλόγου"
+msgstr "Εύρεση Φακέλου"
 
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr "Εμφάνησε"
+msgstr "Εμφάνιση"
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
@@ -337,37 +337,37 @@ msgstr "Μπροστά"
 #: qfiledialog.cpp:2137
 msgctxt "QFileDialog"
 msgid "New Folder"
-msgstr "Νέος φάκελος"
+msgstr "Νέος Φάκελος"
 
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
 msgid "&New Folder"
-msgstr "&Νέος φάκελος"
+msgstr "&Νέος Φάκελος"
 
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
-msgstr "&Επέλεξε"
+msgstr "&Επιλογή"
 
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr "Απομάκρυνση"
+msgstr "Αφαίρεση"
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
-msgstr "&Όνομα αρχείου:"
+msgstr "Όνομα &αρχείου:"
 
 #: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
-msgstr "Έυρεση σε:"
+msgstr "Εύρεση σε:"
 
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
-msgstr "Δημιουργία νέου καταλόγου"
+msgstr "Δημιουργία Νέου Φακέλου"
 
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
@@ -376,8 +376,12 @@ msgstr "Μη έγκυρο όνομα αρχείου"
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
-msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
-msgstr "<b>Το όνομα %1 δε μπορεί να χρησιμοποιηθεί.</b><p>Δοκίμασε να δώσεις ένα άλλο όνομα με λιγότερους χαρακτήρες ή/και χωρίς σημεία στίξης."
+msgid ""
+"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer"
+" characters or no punctuations marks."
+msgstr ""
+"<b>Το όνομα %1 δε μπορεί να χρησιμοποιηθεί.</b><p>Δοκιμάστε να δώσετε άλλο "
+"όνομα με λιγότερους χαρακτήρες ή/και χωρίς σημεία στίξης."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
@@ -417,24 +421,24 @@ msgstr "Υπολογιστής"
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr "%1 Τεραμπάϊτ (1024gb)"
+msgstr "%1 τεραμπάιτ (1024 GB)"
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr "%1 Γίγαμπάϊτ (1024mb)"
+msgstr "%1 γιγαμπάιτ (1024 MB)"
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr "%1 Μέγκαμπάϊτ (1024kb)"
+msgstr "%1 μεγκαμπάιτ (1024 KB)"
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr "%1 Κίλομπάϊτ (1024byte)"
+msgstr "%1 κιλομπάιτ (1024 bytes)"
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-msgstr "%1 Μπάϊτ (8 bit)"
+msgstr "%1 μπάιτ (8 bits)"

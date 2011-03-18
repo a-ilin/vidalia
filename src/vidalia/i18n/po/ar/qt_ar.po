@@ -1,18 +1,18 @@
-# Osama Khalid <osamak@gnu.org>, 2010.
+# 
 msgid ""
 msgstr ""
-"Project-Id-Version: Vidalia\n"
-"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2010-09-09 20:54+0300\n"
-"Last-Translator: Osama Khalid <osamak@gnu.org>\n"
-"Language-Team: Arabic <>\n"
+"PO-Revision-Date: 2011-03-13 19:49+0000\n"
+"Last-Translator: OsamaK <osamak@gnu.org>\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n>=3 && n<"
-"=10 ? 3 : n>=11 && n<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 1.1\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
@@ -137,7 +137,7 @@ msgstr "استرجع الإعدادات الافتراضية"
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr "أغلق دون حفظس"
+msgstr "أغلق دون حفظ"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
@@ -182,17 +182,17 @@ msgstr "المجلدات"
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
-msgstr "&فتح"
+msgstr "ا&فتح"
 
 #: qfiledialog.cpp:919
 msgctxt "QFileDialog"
 msgid "&Save"
-msgstr "&حفظ"
+msgstr "ا&حفظ"
 
 #: qfiledialog.cpp:435
 msgctxt "QFileDialog"
 msgid "Open"
-msgstr "فتح"
+msgstr "افتح"
 
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
@@ -200,8 +200,8 @@ msgid ""
 "%1 already exists.\n"
 "Do you want to replace it?"
 msgstr ""
-"%1 موجود أصلا.\n"
-"هل ترغب بإستبداله؟"
+"%1 موجود فعلا.\n"
+"هل ترغب باستبداله؟"
 
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
@@ -212,32 +212,32 @@ msgid ""
 msgstr ""
 "%1\n"
 "ملف غير موجود.\n"
-"رجاءاً تأكد من صحة إسم الملف."
+"رجاءاً تأكد من صحة سم الملف."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
-msgstr "جهاز الكمبيوتر الخاص بي"
+msgstr "جهاز الكمبيوتر"
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
 msgid "&Rename"
-msgstr "ت&غيير الإسم"
+msgstr "أ&عد التسمية"
 
 #: qfiledialog.cpp:463
 msgctxt "QFileDialog"
 msgid "&Delete"
-msgstr "ح&ذف"
+msgstr "اح&ذف"
 
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
 msgid "Show &hidden files"
-msgstr "ع&رض الملفّات المخفية"
+msgstr "اع&رض الملفّات المخفية"
 
 #: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
 msgid "Back"
-msgstr "رجوع"
+msgstr "ارجع"
 
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
@@ -377,11 +377,11 @@ msgstr "اسم ملف غير صالح"
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
 msgid ""
-"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
-"characters or no punctuations marks."
+"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer"
+" characters or no punctuations marks."
 msgstr ""
-"<b>لايمكن إستعمال الاسم \"%1\".</b>حاول إستخدام اسم أخر, مع تقليل عدد المحارف "
-"أو عدم استخدام علامات التنقيط<p>"
+"<b>لايمكن إستعمال الاسم \"%1\".</b>حاول استخدام اسم أخر مع تقليل عدد المحارف"
+" أو دون استخدام علامات التنقيط<p>"
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
@@ -442,4 +442,3 @@ msgstr "%1 كيلو بايت"
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
 msgstr "%1 بايت"
-
