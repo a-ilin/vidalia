@@ -27,6 +27,10 @@
 /* Win32 Specific includes and defines */
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#ifdef WIN2K
+#  define __inline static inline
+#  include <wspiapi.h>
+#endif
 #include <io.h>
 /*#include <IPHlpApi.h>*/
 #define snprintf _snprintf

@@ -83,6 +83,15 @@ where to find Qt as in the following example:
 You would replace "C:\Qt\4.3.2\bin" in the previous command with the actual
 path to your Qt installation's qmake.exe binary.
 
+If you are trying to build Vidalia for Windows 2000 and earlier, you should
+download Windows SDK, copy wspiapi.h header to MinGW include directory and
+build vidalia running:
+
+        cmake -DWIN2K ..
+
+Note: the header as it is in the SDK needs a "_inline" to be replaced to 
+"__inline" for it to build properly.
+
 
 Windows with Visual Studio
 --------------------------

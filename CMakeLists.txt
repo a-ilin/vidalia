@@ -90,6 +90,9 @@ if (APPLE)
   endif(OSX_FORCE_32BIT)
 endif(APPLE)
 
+## Define if compiled with Windows 2k support
+option(WIN2K "Enable Windows 2k support." OFF)
+
 ## UPnP support is currently optional (enabled by default)
 option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." ON)
 

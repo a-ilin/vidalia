@@ -42,5 +42,7 @@
 
 #cmakedefine USE_GEOIP
 
+#cmakedefine WIN2K
+
 #endif
 
