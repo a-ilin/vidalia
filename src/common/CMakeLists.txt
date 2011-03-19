@@ -20,11 +20,9 @@ set(common_SRCS
   procutil.cpp
   stringutil.cpp
   TorSocket.cpp
-  TorSslSocket.cpp
 )
 qt4_wrap_cpp(common_SRCS 
   TorSocket.h
-  TorSslSocket.h
 )
 
 if(WIN32)
@@ -39,8 +37,4 @@ target_link_libraries(common
   ${QT_QTCORE_LIBRARY}
   ${QT_QTNETWORK_LIBRARY}
 )
-
-if(OPENSSL_LIBRARIES)
-  target_link_libraries(common ${OPENSSL_LIBRARIES})
-endif(OPENSSL_LIBRARIES)
 

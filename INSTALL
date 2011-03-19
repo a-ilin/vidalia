@@ -179,10 +179,6 @@ You can customize your Vidalia build by supplying arguments and values to the
 `cmake` commands above. Each of the configuration options can be specified on
 the command line and follows the format "-D <var>:<type>=<value>
 
-  -DUSE_QSSLSOCKET=0 
-  
-      Disable building Vidalia with SSL support.
-
   -DUSE_MINIUPNPC=0
     
     Disable UPnP support in Vidalia.
@@ -207,7 +203,8 @@ the command line and follows the format "-D <var>:<type>=<value>
 
   -DOPENSSL_LIBRARY_DIR=/path/to/openssl
   
-    Specifies the location of OpenSSL's libraries.
+    Specifies the location of OpenSSL's libraries for building installer on 
+    Windows.
 
   -DCMAKE_INSTALL_PREFIX=/usr/local
   
