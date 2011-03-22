@@ -1,0 +1,108 @@
+
+# /
+/CMakeCache.txt
+/CMakeFiles
+/*.cmake
+/config.h
+/Makefile
+
+# /doc/
+/doc/CMakeFiles
+/doc/Doxyfile
+/doc/Makefile
+/doc/vidalia.1
+/doc/*.cmake
+
+# /pkg/
+/pkg/CMakeFiles
+/pkg/*.cmake
+/pkg/Makefile
+
+# /pkg/osx/
+/pkg/osx/buildmpkg.sh
+/pkg/osx/builddmg.sh
+/pkg/osx/VidaliaDesc.plist
+/pkg/osx/VidaliaInfo.plist
+/pkg/osx/VidaliaBundleDesc.plist
+/pkg/osx/VidaliaBundleInfo.plist
+
+# /pkg/rpm/
+/pkg/rpm/vidalia.spec
+
+# /pkg/win32/
+/pkg/win32/vidalia.nsi
+/pkg/win32/vidalia-bundle.nsi
+
+# /src/
+/src/CMakeFiles
+/src/Makefile
+/src/*.cmake
+
+# /src/common/
+/src/common/CMakeFiles
+/src/common/Makefile
+/src/common/libcommon.a
+/src/common/*.cmake
+/src/common/moc_*.cxx
+
+# /src/torcontrol/
+/src/torcontrol/CMakeFiles
+/src/torcontrol/Makefile
+/src/torcontrol/*.cmake
+/src/torcontrol/moc_*.cxx
+/src/torcontrol/libtorcontrol.a
+
+# /src/vidalia/
+/src/vidalia/CMakeFiles
+/src/vidalia/Makefile
+/src/vidalia/vidalia.h
+/src/vidalia/vidalia
+/src/vidalia/Vidalia.app
+/src/vidalia/vidalia.exe
+/src/vidalia/*.cmake
+/src/vidalia/*.obj
+/src/vidalia/moc_*.cxx
+/src/vidalia/ui_*.h
+/src/vidalia/qrc_*.cxx
+
+# /src/vidalia/i18n/
+/src/vidalia/i18n/CMakeFiles
+/src/vidalia/i18n/Makefile
+/src/vidalia/i18n/*.cmake
+/src/vidalia/i18n/*.qm
+
+# /src/vidalia/res/
+/src/vidalia/res/vidalia_win.rc
+
+# /src/vidalia/res/128x128/
+/src/vidalia/res/128x128/vidalia_win.rc
+/src/vidalia/res/128x128/Thumbs.db
+
+# /src/vidalia/res/16x16/
+/src/vidalia/res/16x16/vidalia_win.rc
+/src/vidalia/res/16x16/Thumbs.db
+
+# /src/vidalia/res/22x22/
+/src/vidalia/res/22x22/vidalia_win.rc
+/src/vidalia/res/22x22/Thumbs.db
+
+# /src/vidalia/res/32x32/
+/src/vidalia/res/32x32/vidalia_win.rc
+/src/vidalia/res/32x32/Thumbs.db
+
+# /src/vidalia/res/48x48/
+/src/vidalia/res/48x48/vidalia_win.rc
+/src/vidalia/res/48x48/Thumbs.db
+
+# /src/vidalia/res/flags/
+/src/vidalia/res/flags/vidalia_win.rc
+/src/vidalia/res/flags/Thumbs.db
+
+# /src/vidalia/res/icons/
+/src/vidalia/res/icons/vidalia_win.rc
+/src/vidalia/res/icons/Thumbs.db
+
+# /src/vidalia/res/map/
+/src/vidalia/res/map/vidalia_win.rc
+/src/vidalia/res/map/Thumbs.db
+
