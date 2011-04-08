@@ -49,6 +49,7 @@ private slots:
   void saveTorrc();
 
 private:
+  void loadToolBar();
   /** Loads the contents of the torrc file that Tor has loaded */
   void loadTorrc();
   /** Parses the options edited and sets them through SETCONF 

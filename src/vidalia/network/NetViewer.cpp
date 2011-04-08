@@ -20,6 +20,7 @@
 #include "VMessageBox.h"
 
 #include <QMessageBox>
+#include <QToolBar>
 #include <QHeaderView>
 #include <QCoreApplication>
 
@@ -41,7 +42,7 @@
  * \param parent The parent widget of this NetViewer object.\
  */
 NetViewer::NetViewer(QWidget *parent)
-  : VidaliaWindow("NetViewer", parent)
+  : VidaliaTab(tr("Network Map"), "", parent)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -51,8 +52,8 @@ NetViewer::NetViewer(QWidget *parent)
 #endif
 
   /* Pressing 'Esc' or 'Ctrl+W' will close the window */
-  ui.actionClose->setShortcut(QString("Esc"));
-  Vidalia::createShortcut("Ctrl+W", this, ui.actionClose, SLOT(trigger()));
+//  ui.actionClose->setShortcut(QString("Esc"));
+//  Vidalia::createShortcut("Ctrl+W", this, ui.actionClose, SLOT(trigger()));
 
   /* Get the TorControl object */
   _torControl = Vidalia::torControl();
@@ -99,7 +100,6 @@ NetViewer::NetViewer(QWidget *parent)
 #endif
   ui.gridLayout->addWidget(_map);
 
-
   /* Connect zoom buttons to TorMapWidget zoom slots */
   connect(ui.actionZoomIn, SIGNAL(triggered()), this, SLOT(zoomIn()));
   connect(ui.actionZoomOut, SIGNAL(triggered()), this, SLOT(zoomOut()));
@@ -130,6 +130,17 @@ NetViewer::NetViewer(QWidget *parent)
           _torControl, SLOT(closeStream(StreamId)));
 
   setupGeoIpResolver();
+
+  QToolBar *tb = new QToolBar();
+  tb->addAction(ui.actionRefresh);
+  tb->addAction(ui.actionHelp);
+  tb->addAction(ui.actionZoomIn);
+  tb->addAction(ui.actionZoomOut);
+  tb->addAction(ui.actionZoomToFit);
+  tb->addAction(ui.actionZoomFullScreen);
+
+  tb->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+  ui.horizontalLayout->addWidget(tb);
 }
 
 /** Called when the user changes the UI translation. */
@@ -137,6 +148,7 @@ void
 NetViewer::retranslateUi()
 {
   ui.retranslateUi(this);
+  setTitle(tr("Network Map"));
   ui.treeRouterList->retranslateUi();
   ui.treeCircuitList->retranslateUi();
 

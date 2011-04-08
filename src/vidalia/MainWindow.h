@@ -20,16 +20,10 @@
 #include "ui_MainWindow.h"
 
 #include "VidaliaWindow.h"
-#include "HelperProcess.h"
-#include "AboutDialog.h"
-#include "MessageLog.h"
-#include "BandwidthGraph.h"
+#include "StatusTab.h"
 #include "ConfigDialog.h"
-#include "HelpBrowser.h"
+#include "MessageLog.h"
 #include "NetViewer.h"
-
-#include "TorControl.h"
-
 #if defined(USE_AUTOUPDATE)
 #include "UpdateProcess.h"
 #include "UpdateProgressDialog.h"
@@ -37,6 +31,8 @@
 #if defined(USE_MINIUPNPC)
 #include "UPNPControl.h"
 #endif
+
+#include "TorControl.h"
 
 #include <QMainWindow>
 #include <QTimer>
@@ -64,11 +60,6 @@ private slots:
   /** Respond to a double-click on the tray icon by opening the Control Panel
    * window. */
   void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
-  /** Displays the help browser and displays the most recently viewed help
-   * topic. */
-  void showHelpDialog();
-  /** Called when a child window requests the given help <b>topic</b>. */
-  void showHelpDialog(const QString &topic);
   /** Called when the user selects "Start" from the menu. */
   void start();
   /** Called when the user changes a setting that needs Tor restarting */
@@ -107,26 +98,6 @@ private slots:
   /** Terminate the Tor process if it is being run under Vidalia, disconnect
    * all TorControl signals, and exit Vidalia. */
   void aboutToQuit();
-  /** Creates and displays Vidalia's About dialog. */
-  void showAboutDialog();
-  /** Creates and displays the Configuration dialog with the current page set
-   * to <b>page</b>. */
-  void showConfigDialog(ConfigDialog::Page page = ConfigDialog::General);
-  /** Displays the Configuration dialog, set to the Server page. */
-  void showServerConfigDialog();
-  /** Called when the "show on startup" checkbox is toggled. */
-  void toggleShowOnStartup(bool checked);
-  /** Called when the web browser or IM client have stopped */
-  void onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus);
-  /** Called periodically to check if the browser is running. If it is not,
-   * exit Vidalia cleanly */
-  void onCheckForBrowser();
-  /** Called web the web browser failed to start */
-  void onBrowserFailed(QString errmsg);
-  /** Called web the IM client failed to start */
-  void onIMFailed(QString errmsg);
-  /** Called when the proxy server fails to start */
-  void onProxyFailed(QString errmsg);
 
   /** Called when Tor has successfully established a circuit. */
   void circuitEstablished();
@@ -142,6 +113,30 @@ private slots:
   void dangerousTorVersion(tc::TorVersionStatus reason,
                            const QString &version,
                            const QStringList &recommended);
+  void handleCloseTab(int index);
+  /** Creates and displays the Configuration dialog with the current page set
+   * to <b>page</b>. */
+  void showConfigDialog(ConfigDialog::Page page = ConfigDialog::General);
+  /** Displays the Message Log tab */
+  void showMessageLogTab();
+  /** Displays the General Tor Status tab */
+  void showStatusTab();
+  /** Displays the Bandwidth graph tab */
+  void showBandwithTab();
+  /** Displays the Network map tab */
+  void showNetViewerTab();
+  /** Creates and displays Vidalia's About dialog. */
+  void showAboutDialog();
+  /** Displays the help browser and displays the most recently viewed help
+   * topic. */
+  void showHelpDialog();
+  /** Called when a child window requests the given help <b>topic</b>. */
+  void showHelpDialog(const QString &topic);
+  
+  /** Adds a new tab to the MainWindow */
+  void addTab(VidaliaTab *tab);
+  /** Deletes the tab at index if it exists and it isn't the Status tab */
+  void delTab(int index = -1);
 
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
@@ -166,6 +161,7 @@ private slots:
   void installUpdatesFailed(const QString &errmsg);
 #endif
 
+
 #if defined(USE_MINIUPNPC)
   /** Called when a UPnP error occurs. */
   void upnpError(UPNPControl::UPNPError error);
@@ -182,6 +178,9 @@ private:
     Authenticated,  /**< Vidalia has authenticated to Tor. */
     CircuitEstablished /**< Tor has built a circuit. */
   };
+
+  void createGUI();
+  void createConnections();
   /** Create the actions on the tray menu or menubar */
   void createActions();
   /** Creates a tray icon with a context menu and adds it to the system
@@ -189,19 +188,15 @@ private:
   void createTrayIcon();
   /** Create the tray popup menu and it's submenus */
   QMenu* createTrayMenu();
-  /** Creates a default menubar on Mac */
+  /** Creates a menubar */
   void createMenuBar();
+  /** Creates a toolbar */
+  void createToolBar();
   /** Sets the current tray or dock icon image to <b>iconFile</b>. */
   void setTrayIcon(const QString &iconFile);
   /** Updates the UI to reflect Tor's current <b>status</b>. Returns the
    * previously set TorStatus value. */
   TorStatus updateTorStatus(TorStatus status);
-  /** Start a web browser when given the directory containing the executable and profile */
-  void launchBrowserFromDirectory();
-  /** Starts the web browser, if appropriately configured */
-  void startSubprocesses();
-  /** Starts the proxy server, if appropriately configured */
-  void startProxy();
   /** Converts a TorStatus enum value to a string for debug logging purposes. */
   QString toString(TorStatus status);
   /** Authenticates Vidalia to Tor's control port. */
@@ -234,22 +229,8 @@ private:
   bool _delayedShutdownStarted;
   /** Set to true if Vidalia started its own Tor process. */
   bool _isVidaliaRunningTor;
-  /** A MessageLog object which handles logging Tor messages */
-  MessageLog* _messageLog;
-  /** A BandwidthGraph object which handles monitoring Tor bandwidth usage */
-  BandwidthGraph* _bandwidthGraph;
-  /** A NetViewer object which displays the Tor network graphically */
-  NetViewer* _netViewer;
-  /** A ConfigDialog object which lets the user configure Tor and Vidalia */
-  ConfigDialog* _configDialog;
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
-  /** A HelperProcess object that manages the web browser */
-  HelperProcess* _browserProcess;
-  /** A HelperProcess object that manages the IM client */
-  HelperProcess* _imProcess;
-  /** A HelperProcess object that manages the proxy server */
-  HelperProcess* _proxyProcess;
   /** Remembers the control password between when we start Tor with a hash of
    * the password and when we need to provide the password itself. */
   QString _controlPassword;
@@ -270,24 +251,30 @@ private:
   /** Set to true if Vidalia should restart Tor after a software upgrade. */
   bool _restartTorAfterUpgrade;
 #endif
-  /** The menubar (Mac OS X only). */
-  QMenuBar *_menuBar;
 
   /** Defines the actions for the tray menu */
-  QAction* _actionShowControlPanel;
-  QAction* _actionStartStopTor;
-  QAction* _actionShowConfig;
-  QAction* _actionShowAbout;
-  QAction* _actionExit;
-  QAction* _actionShowBandwidth;
-  QAction* _actionShowMessageLog;
-  QAction* _actionShowHelp;
-  QAction* _actionShowNetworkMap;
-  QAction* _actionNewIdentity;
+  QAction *_actionShowControlPanel;
+  QAction *_actionStartStopTor;
+  QAction *_actionStartTor;
+  QAction *_actionStopTor;
+  QAction *_actionRestartTor;
+  QAction *_actionNewIdentity;
+  QAction *_actionStatus;
+  QAction *_actionNetworkMap;
+  QAction *_actionMessageLog;
+  QAction *_actionBandwidthGraph;
+  QAction *_actionConfigure;
+  QAction *_actionVidaliaHelp;
+  QAction *_actionAbout;
+  QAction *_actionExit;
 
   Ui::MainWindow ui; /**< Qt Designer generated object. */
+
+  StatusTab _statusTab; /**< Status tab that displays the load progress and a short log */
+  MessageLog *_messageLog; /**< Message log that displays a more detailed log from Tor */
+  NetViewer _netViewer; /**< Network map that draws circuits */
+  QStringList _tabMap; /**< Map to handle opened tabs */
 };
 
 #endif
-
 

@@ -17,7 +17,7 @@
 #define _BWGRAPH_H
 
 #include "ui_BandwidthGraph.h"
-#include "VidaliaWindow.h"
+#include "VidaliaTab.h"
 #include "VidaliaSettings.h"
 #include "TorControl.h"
 
@@ -28,17 +28,13 @@
 #define REFRESH_RATE    1000
 
 
-class BandwidthGraph : public VidaliaWindow
+class BandwidthGraph : public VidaliaTab
 {
   Q_OBJECT
 
 public:
   /** Default constructor */
-  BandwidthGraph(QWidget *parent = 0, Qt::WFlags flags = 0);
-
-public slots:
-  /** Overloaded QWidget.show */
-  void showWindow();
+  BandwidthGraph(QStatusBar *st = 0, QWidget *parent = 0);
 
 protected:
   /** Called when the user changes the UI translation. */
@@ -68,6 +64,8 @@ private:
   TorControl* _torControl;
   /** A VidaliaSettings object that handles getting/saving settings */
   VidaliaSettings* _settings;
+
+  QStatusBar *_statusBar;
   
   /** Qt Designer generated object */
   Ui::BandwidthGraph ui;

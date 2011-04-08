@@ -18,7 +18,7 @@
 
 #include "config.h"
 #include "ui_NetViewer.h"
-#include "VidaliaWindow.h"
+#include "VidaliaTab.h"
 #include "GeoIpResolver.h"
 
 #if defined(USE_MARBLE)
@@ -38,7 +38,7 @@
 class QDateTime;
 
 
-class NetViewer : public VidaliaWindow
+class NetViewer : public VidaliaTab
 {
   Q_OBJECT
 

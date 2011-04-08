@@ -38,8 +38,9 @@
 
 
 /** Default constructor */
-BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
-  : VidaliaWindow("BandwidthGraph", parent, flags)
+BandwidthGraph::BandwidthGraph(QStatusBar *st, QWidget *parent)
+  : VidaliaTab(tr("Bandwidth Graph"), "BandwidthGraph", parent),
+    _statusBar(st)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -50,8 +51,8 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
           this, SLOT(updateGraph(quint64,quint64)));
 
   /* Pressing 'Esc' or 'Ctrl+W' will close the window */
-  setShortcut("Esc", SLOT(close()));
-  setShortcut("Ctrl+W", SLOT(close()));
+//  setShortcut("Esc", SLOT(close()));
+//  setShortcut("Ctrl+W", SLOT(close()));
 
   /* Bind events to actions */
   createActions();
@@ -81,6 +82,7 @@ void
 BandwidthGraph::retranslateUi()
 {
   ui.retranslateUi(this);
+  setTitle(tr("Bandwidth Graph"));
 }
 
 /** Binds events to actions. */
@@ -151,9 +153,10 @@ void
 BandwidthGraph::reset()
 {
   /* Set to current time */
-  ui.statusbar->showMessage(tr("Since:") + " " + 
-          QDateTime::currentDateTime()
-          .toString(DATETIME_FMT));
+  if(_statusBar && _onTop)
+    _statusBar->showMessage(tr("Since:") + " " + 
+            QDateTime::currentDateTime()
+            .toString(DATETIME_FMT));
   /* Reset the graph */
   ui.frmGraph->resetGraph();
 }
@@ -253,15 +256,5 @@ BandwidthGraph::setOpacity(int value)
 #else
   Q_UNUSED(newValue);
 #endif
-}
-
-/** Overloads the default show() slot so we can set opacity. */
-void
-BandwidthGraph::showWindow()
-{
-  /* Load saved settings */
-  loadSettings();
-  /* Show the window */
-  VidaliaWindow::showWindow();
 }
 

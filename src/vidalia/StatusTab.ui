@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StatusTab</class>
+ <widget class="QWidget" name="StatusTab">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>513</width>
+    <height>421</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true"/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="grpStatus">
+     <property name="title">
+      <string>Status</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblTorStatusImg">
+          <property name="text">
+           <string notr="true"/>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="lblTorStatus">
+          <property name="text">
+           <string notr="true">Tor is not running</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblStartupProgress">
+          <property name="text">
+           <string notr="true">Starting Tor</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QProgressBar" name="progressBar">
+          <property name="maximum">
+           <number>130</number>
+          </property>
+          <property name="value">
+           <number>24</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QGroupBox" name="grpLog">
+     <property name="title">
+      <string>Message Log</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="StatusEventWidget" name="listNotifications">
+        <property name="contextMenuPolicy">
+         <enum>Qt::CustomContextMenu</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="showDropIndicator" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alternatingRowColors">
+         <bool>true</bool>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::ExtendedSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="indentation">
+         <number>0</number>
+        </property>
+        <property name="rootIsDecorated">
+         <bool>false</bool>
+        </property>
+        <property name="itemsExpandable">
+         <bool>false</bool>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="headerShowSortIndicator" stdset="0">
+         <bool>true</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Tor Status</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QCheckBox" name="chkShowOnStartup">
+     <property name="text">
+      <string>Show on startup</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>StatusEventWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>StatusEventWidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkShowOnStartup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>StatusTab</receiver>
+   <slot>toggleShowOnStartup(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>256</x>
+     <y>368</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>toggleShowOnStartup(bool)</slot>
+ </slots>
+</ui>

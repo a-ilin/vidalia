@@ -26,6 +26,8 @@
 #include <QMessageBox>
 #include <QClipboard>
 
+#include <QToolBar>
+
 /* Message log settings */
 #define SETTING_MSG_FILTER          "MessageFilter"
 #define SETTING_MAX_MSG_COUNT       "MaxMsgCount"
@@ -54,8 +56,9 @@
  * \param parent The parent widget of this MessageLog object.
  * \param flags Any desired window creation flags.
  */
-MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
-: VidaliaWindow("MessageLog", parent, flags)
+MessageLog::MessageLog(QStatusBar *st, QWidget *parent)
+: VidaliaTab(tr("Message Log"), "MessageLog", parent),
+  _statusBar(st)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -77,7 +80,8 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   /* Sort in ascending chronological order */
   ui.listMessages->sortItems(LogTreeWidget::TimeColumn,
                              Qt::AscendingOrder);
-  ui.listNotifications->sortItems(0, Qt::AscendingOrder);
+
+  ui.frmSettings->setVisible(false);
 }
 
 /** Default Destructor. Simply frees up any memory allocated for member
@@ -121,6 +125,19 @@ MessageLog::createActions()
   connect(ui.btnBrowse, SIGNAL(clicked()),
           this, SLOT(browse()));
 
+	QToolBar *tb = new QToolBar(tr("toolbar"));
+	tb->addAction(ui.actionSave_All);
+	tb->addAction(ui.actionSave_Selected);
+	tb->addAction(ui.actionCopy);
+	tb->addAction(ui.actionSelect_All);
+	tb->addAction(ui.actionFind);
+	tb->addAction(ui.actionClear);
+	tb->addAction(ui.actionSettings);
+	tb->addAction(ui.actionHelp);
+
+  tb->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+  ui.verticalLayout->insertWidget(0, tb);
+
 #if defined(Q_WS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
 #endif
@@ -152,6 +169,7 @@ void
 MessageLog::retranslateUi()
 {
   ui.retranslateUi(this);
+  setTitle(tr("Message Log"));
   setToolTips();
 }
 
@@ -164,7 +182,6 @@ MessageLog::loadSettings()
                                 DEFAULT_MAX_MSG_COUNT).toUInt();
   ui.spnbxMaxCount->setValue(maxMsgCount);
   ui.listMessages->setMaximumMessageCount(maxMsgCount);
-  ui.listNotifications->setMaximumItemCount(maxMsgCount);
 
   /* Set whether or not logging to file is enabled */
   _enableLogging = getSetting(SETTING_ENABLE_LOGFILE,
@@ -262,7 +279,6 @@ MessageLog::saveSettings()
   /* Update the maximum displayed item count */
   saveSetting(SETTING_MAX_MSG_COUNT, ui.spnbxMaxCount->value());
   ui.listMessages->setMaximumMessageCount(ui.spnbxMaxCount->value());
-  ui.listNotifications->setMaximumItemCount(ui.spnbxMaxCount->value());
 
   /* Save message filter and refilter the list */
   uint filter = 0;
@@ -351,29 +367,20 @@ MessageLog::save(const QStringList &messages)
 void
 MessageLog::saveSelected()
 {
-  if (ui.tabWidget->currentIndex() == 0)
-    save(ui.listNotifications->selectedEvents());
-  else
-    save(ui.listMessages->selectedMessages());
+  save(ui.listMessages->selectedMessages());
 }
 
 /** Saves all shown messages to a file. */
 void
 MessageLog::saveAll()
 {
-  if (ui.tabWidget->currentIndex() == 0)
-    save(ui.listNotifications->allEvents());
-  else
-    save(ui.listMessages->allMessages());
+  save(ui.listMessages->allMessages());
 }
 
 void
 MessageLog::selectAll()
 {
-  if (ui.tabWidget->currentIndex() == 0)
-    ui.listNotifications->selectAll();
-  else
-    ui.listMessages->selectAll();
+  ui.listMessages->selectAll();
 }
 
 /** Copies contents of currently selected messages to the 'clipboard'. */
@@ -382,10 +389,7 @@ MessageLog::copy()
 {
   QString contents;
 
-  if (ui.tabWidget->currentIndex() == 0)
-    contents = ui.listNotifications->selectedEvents().join("\n");
-  else
-    contents = ui.listMessages->selectedMessages().join("\n");
+  contents = ui.listMessages->selectedMessages().join("\n");
 
   if (!contents.isEmpty()) {
     /* Copy the selected messages to the clipboard */
@@ -398,10 +402,7 @@ MessageLog::copy()
 void
 MessageLog::clear()
 {
-  if (ui.tabWidget->currentIndex() == 0)
-    ui.listNotifications->clear();
-  else
-    ui.listMessages->clearMessages();
+  ui.listMessages->clearMessages();
 }
 
 /** Prompts the user for a search string. If the search string is not found in
@@ -421,18 +422,10 @@ MessageLog::find()
     QTreeWidgetItem *firstItem = 0;
 
     /* Pick the right tree widget to search based on the current tab */
-    if (ui.tabWidget->currentIndex() == 0) {
-      QList<StatusEventItem *> results = ui.listNotifications->find(text, true);
-      if (results.size() > 0) {
-        tree = ui.listNotifications;
-        firstItem = dynamic_cast<QTreeWidgetItem *>(results.at(0));
-      }
-    } else {
-      QList<LogTreeItem *> results = ui.listMessages->find(text, true);
-      if (results.size() > 0) {
-        tree = ui.listMessages;
-        firstItem = dynamic_cast<QTreeWidgetItem *>(results.at(0));
-      }
+    QList<LogTreeItem *> results = ui.listMessages->find(text, true);
+    if (results.size() > 0) {
+      tree = ui.listMessages;
+      firstItem = dynamic_cast<QTreeWidgetItem *>(results.at(0));
     }
 
     if (! firstItem) {
@@ -461,11 +454,13 @@ MessageLog::log(tc::Severity type, const QString &message)
 
     /* This is a workaround to force Qt to update the statusbar text (if any
      * is currently displayed) to reflect the new message added. */
-    QString currStatusTip = ui.statusbar->currentMessage();
-    if (!currStatusTip.isEmpty()) {
-      currStatusTip = ui.listMessages->statusTip();
-      ui.statusbar->showMessage(currStatusTip);
-    }
+    QString currStatusTip;
+    if(_statusBar && _onTop)
+      currStatusTip = _statusBar->currentMessage();
+      if (!currStatusTip.isEmpty()) {
+        currStatusTip = ui.listMessages->statusTip();
+        _statusBar->showMessage(currStatusTip);
+      }
 
     /* If we're saving log messages to a file, go ahead and do that now */
     if (_enableLogging) {

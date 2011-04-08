@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>ServicePage</class>
- <widget class="QWidget" name="ServicePage" >
-  <property name="geometry" >
+ <widget class="QWidget" name="ServicePage">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,133 +10,137 @@
     <height>400</height>
    </rect>
   </property>
-  <property name="minimumSize" >
+  <property name="minimumSize">
    <size>
     <width>600</width>
     <height>400</height>
    </size>
   </property>
-  <property name="windowTitle" >
-   <string>Form</string>
+  <property name="windowTitle">
+   <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" >
+  <layout class="QVBoxLayout">
    <item>
-    <widget class="QGroupBox" name="groupBox" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Fixed" hsizetype="Preferred" >
+    <widget class="QGroupBox" name="groupBox">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="title" >
+     <property name="title">
       <string>Provided Hidden Services</string>
      </property>
-     <layout class="QGridLayout" >
-      <item rowspan="5" row="0" column="0" >
-       <widget class="QTableWidget" name="serviceWidget" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+     <layout class="QGridLayout">
+      <item row="0" column="0" rowspan="5">
+       <widget class="QTableWidget" name="serviceWidget">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="selectionMode" >
+        <property name="selectionMode">
          <enum>QAbstractItemView::SingleSelection</enum>
         </property>
-        <property name="selectionBehavior" >
+        <property name="selectionBehavior">
          <enum>QAbstractItemView::SelectRows</enum>
         </property>
-        <property name="textElideMode" >
+        <property name="textElideMode">
          <enum>Qt::ElideLeft</enum>
         </property>
-        <property name="showGrid" >
+        <property name="showGrid">
          <bool>true</bool>
         </property>
         <column>
-         <property name="text" >
+         <property name="text">
           <string>Onion Address</string>
          </property>
         </column>
         <column>
-         <property name="text" >
+         <property name="text">
           <string>Virtual Port</string>
          </property>
         </column>
         <column>
-         <property name="text" >
+         <property name="text">
           <string>Target</string>
          </property>
         </column>
         <column>
-         <property name="text" >
+         <property name="text">
           <string>Directory Path</string>
          </property>
         </column>
         <column>
-         <property name="text" >
+         <property name="text">
           <string>Enabled</string>
          </property>
         </column>
        </widget>
       </item>
-      <item row="0" column="1" >
-       <widget class="QToolButton" name="addButton" >
-        <property name="toolTip" >
+      <item row="0" column="1">
+       <widget class="QToolButton" name="addButton">
+        <property name="toolTip">
          <string>Add new service to list</string>
         </property>
-        <property name="text" >
+        <property name="text">
          <string/>
         </property>
-        <property name="icon" >
-         <iconset resource="../res/vidalia.qrc" >:/images/22x22/list-add.png</iconset>
+        <property name="icon">
+         <iconset resource="../res/vidalia.qrc">
+          <normaloff>:/images/22x22/list-add.png</normaloff>:/images/22x22/list-add.png</iconset>
         </property>
        </widget>
       </item>
-      <item row="1" column="1" >
-       <widget class="QToolButton" name="removeButton" >
-        <property name="toolTip" >
+      <item row="1" column="1">
+       <widget class="QToolButton" name="removeButton">
+        <property name="toolTip">
          <string>Remove selected service from list</string>
         </property>
-        <property name="text" >
+        <property name="text">
          <string/>
         </property>
-        <property name="icon" >
-         <iconset resource="../res/vidalia.qrc" >:/images/22x22/list-remove.png</iconset>
+        <property name="icon">
+         <iconset resource="../res/vidalia.qrc">
+          <normaloff>:/images/22x22/list-remove.png</normaloff>:/images/22x22/list-remove.png</iconset>
         </property>
        </widget>
       </item>
-      <item row="2" column="1" >
-       <widget class="QToolButton" name="copyButton" >
-        <property name="toolTip" >
+      <item row="2" column="1">
+       <widget class="QToolButton" name="copyButton">
+        <property name="toolTip">
          <string>Copy onion address of selected service to clipboard</string>
         </property>
-        <property name="text" >
+        <property name="text">
          <string/>
         </property>
-        <property name="icon" >
-         <iconset resource="../res/vidalia.qrc" >:/images/22x22/edit-copy.png</iconset>
+        <property name="icon">
+         <iconset resource="../res/vidalia.qrc">
+          <normaloff>:/images/22x22/edit-copy.png</normaloff>:/images/22x22/edit-copy.png</iconset>
         </property>
        </widget>
       </item>
-      <item row="3" column="1" >
-       <widget class="QToolButton" name="browseButton" >
-        <property name="toolTip" >
+      <item row="3" column="1">
+       <widget class="QToolButton" name="browseButton">
+        <property name="toolTip">
          <string>Browse in local file system and choose directory for selected service</string>
         </property>
-        <property name="text" >
+        <property name="text">
          <string/>
         </property>
-        <property name="icon" >
-         <iconset resource="../res/vidalia.qrc" >:/images/22x22/folder.png</iconset>
+        <property name="icon">
+         <iconset resource="../res/vidalia.qrc">
+          <normaloff>:/images/22x22/folder.png</normaloff>:/images/22x22/folder.png</iconset>
         </property>
        </widget>
       </item>
-      <item row="4" column="1" >
+      <item row="4" column="1">
        <spacer>
-        <property name="orientation" >
+        <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>21</width>
           <height>46</height>
@@ -148,10 +153,10 @@
    </item>
    <item>
     <spacer>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
        <height>141</height>
@@ -161,6 +166,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../res/vidalia.qrc"/>
+ </resources>
  <connections/>
 </ui>

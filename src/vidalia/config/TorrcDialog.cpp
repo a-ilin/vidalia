@@ -19,6 +19,7 @@
 #include "Vidalia.h"
 
 #include <QMessageBox>
+#include <QToolBar>
 
 void
 TorHighlighter::highlightBlock(const QString &text)
@@ -43,6 +44,8 @@ TorrcDialog::TorrcDialog(QWidget *parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
+  loadToolBar();
+
   TorHighlighter *highlighter = new TorHighlighter(ui.teditTorrc);
 
   /* Retrieve the global TorControl instance */
@@ -59,6 +62,21 @@ TorrcDialog::TorrcDialog(QWidget *parent)
 TorrcDialog::~TorrcDialog()
 {
 
+}
+
+void
+TorrcDialog::loadToolBar()
+{
+  QToolBar *tb = new QToolBar(this);
+  tb->addAction(ui.actionCut);
+  tb->addAction(ui.actionCopy);
+  tb->addAction(ui.actionPaste);
+  tb->addAction(ui.actionUndo);
+  tb->addAction(ui.actionRedo);
+  tb->addAction(ui.actionSelect_All);
+
+  tb->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+  ui.verticalLayout->insertWidget(0, tb);
 }
 
 /** Gives a shallow parse phase to the settings to catch most errors 

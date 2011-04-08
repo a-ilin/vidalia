@@ -97,10 +97,6 @@ TorControl::TorControl(ControlMethod::Method method)
 /** Default destructor */
 TorControl::~TorControl()
 {
-  /* Disconnect the control socket */
-  if (isConnected()) {
-    disconnect();
-  }
   /* If we started our own Tor, stop it now */
   if (isVidaliaRunningTor()) {
     stop();

@@ -19,158 +19,11 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="1" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
       <widget class="QTextEdit" name="teditTorrc"/>
      </item>
-     <item row="5" column="0">
-      <widget class="QCheckBox" name="chkSave">
-       <property name="text">
-        <string>Save settings. If unchecked it will only apply settings to the current Tor instance.</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QPushButton" name="btnCut">
-         <property name="text">
-          <string>Cut</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../res/vidalia.qrc">
-           <normaloff>:/images/22x22/editcut.png</normaloff>:/images/22x22/editcut.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnCopy">
-         <property name="text">
-          <string>Copy</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../res/vidalia.qrc">
-           <normaloff>:/images/22x22/edit-copy.png</normaloff>:/images/22x22/edit-copy.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnPaste">
-         <property name="text">
-          <string>Paste</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../res/vidalia.qrc">
-           <normaloff>:/images/22x22/editpaste.png</normaloff>:/images/22x22/editpaste.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnUndo">
-         <property name="text">
-          <string>Undo</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../res/vidalia.qrc">
-           <normaloff>:/images/22x22/edit_undo.png</normaloff>:/images/22x22/edit_undo.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnRedo">
-         <property name="text">
-          <string>Redo</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../res/vidalia.qrc">
-           <normaloff>:/images/22x22/edit_redo.png</normaloff>:/images/22x22/edit_redo.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnSelectAll">
-         <property name="text">
-          <string>Select All</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../res/vidalia.qrc">
-           <normaloff>:/images/22x22/edit_select_all.png</normaloff>:/images/22x22/edit_select_all.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" >
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-     <item row="3" column="0">
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QRadioButton" name="rdoAll">
@@ -191,6 +44,16 @@
        </item>
       </layout>
      </item>
+     <item>
+      <widget class="QCheckBox" name="chkSave">
+       <property name="text">
+        <string>Save settings. If unchecked it will only apply settings to the current Tor instance.</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="0">
@@ -204,6 +67,78 @@
     </widget>
    </item>
   </layout>
+  <action name="actionCut">
+   <property name="icon">
+    <iconset resource="../res/vidalia.qrc">
+     <normaloff>:/images/22x22/editcut.png</normaloff>:/images/22x22/editcut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="../res/vidalia.qrc">
+     <normaloff>:/images/22x22/edit-copy.png</normaloff>:/images/22x22/edit-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="../res/vidalia.qrc">
+     <normaloff>:/images/22x22/editpaste.png</normaloff>:/images/22x22/editpaste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="../res/vidalia.qrc">
+     <normaloff>:/images/22x22/edit_undo.png</normaloff>:/images/22x22/edit_undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="../res/vidalia.qrc">
+     <normaloff>:/images/22x22/edit_redo.png</normaloff>:/images/22x22/edit_redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
+   </property>
+  </action>
+  <action name="actionSelect_All">
+   <property name="icon">
+    <iconset resource="../res/vidalia.qrc">
+     <normaloff>:/images/22x22/edit_select_all.png</normaloff>:/images/22x22/edit_select_all.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="../res/vidalia.qrc"/>
@@ -226,8 +161,8 @@
    </hints>
   </connection>
   <connection>
-   <sender>btnUndo</sender>
-   <signal>clicked()</signal>
+   <sender>actionUndo</sender>
+   <signal>triggered()</signal>
    <receiver>teditTorrc</receiver>
    <slot>undo()</slot>
    <hints>
@@ -242,8 +177,8 @@
    </hints>
   </connection>
   <connection>
-   <sender>btnRedo</sender>
-   <signal>clicked()</signal>
+   <sender>actionRedo</sender>
+   <signal>triggered()</signal>
    <receiver>teditTorrc</receiver>
    <slot>redo()</slot>
    <hints>
@@ -258,8 +193,8 @@
    </hints>
   </connection>
   <connection>
-   <sender>btnSelectAll</sender>
-   <signal>clicked()</signal>
+   <sender>actionSelect_All</sender>
+   <signal>triggered()</signal>
    <receiver>teditTorrc</receiver>
    <slot>selectAll()</slot>
    <hints>
@@ -274,8 +209,8 @@
    </hints>
   </connection>
   <connection>
-   <sender>btnCopy</sender>
-   <signal>clicked()</signal>
+   <sender>actionCopy</sender>
+   <signal>triggered()</signal>
    <receiver>teditTorrc</receiver>
    <slot>copy()</slot>
    <hints>
@@ -290,8 +225,8 @@
    </hints>
   </connection>
   <connection>
-   <sender>btnPaste</sender>
-   <signal>clicked()</signal>
+   <sender>actionPaste</sender>
+   <signal>triggered()</signal>
    <receiver>teditTorrc</receiver>
    <slot>paste()</slot>
    <hints>
@@ -306,8 +241,8 @@
    </hints>
   </connection>
   <connection>
-   <sender>btnCut</sender>
-   <signal>clicked()</signal>
+   <sender>actionCut</sender>
+   <signal>triggered()</signal>
    <receiver>teditTorrc</receiver>
    <slot>cut()</slot>
    <hints>

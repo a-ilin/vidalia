@@ -33,9 +33,9 @@ public:
     General = 0,  /** General configuration page. */
     Network,      /** Network configuration page. */
     Server,       /** Server configuration page. */
+    Service,      /** Service Configuration page */
     Appearance,   /** Appearance configuration page. */
-    Advanced,     /** Advanced configuration page. */
-    Service       /** Service Configuration page */
+    Advanced      /** Advanced configuration page. */
   };
 
   /** Default Constructor */

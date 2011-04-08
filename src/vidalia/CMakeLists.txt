@@ -151,35 +151,63 @@ if (USE_MINIUPNPC)
   )
 endif(USE_MINIUPNPC)
 
-## Help browser sources
+## Main Vidalia sources
 set(vidalia_SRCS ${vidalia_SRCS}
-  help/browser/HelpBrowser.cpp
-  help/browser/HelpTextBrowser.cpp
+  main.cpp
+  Vidalia.cpp
+  LanguageSupport.cpp
+  VTabWidget.cpp
+  MainWindow.cpp
+  VidaliaWindow.cpp
+  VMessageBox.cpp
+  ControlPasswordInputDialog.cpp
+  VidaliaTab.cpp
+  StatusTab.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  help/browser/HelpBrowser.h
-  help/browser/HelpTextBrowser.h
+  Vidalia.h
+  VTabWidget.h
+  MainWindow.h
+  VidaliaWindow.h
+  VMessageBox.h
+  ControlPasswordInputDialog.h
+  VidaliaTab.h
+  StatusTab.h
 )
 
-## Message log sources
-set(vidalia_SRCS ${vidalia_SRCS}
-  log/LogFile.cpp
-  log/LogHeaderView.cpp
-  log/LogMessageColumnDelegate.cpp
-  log/LogTreeItem.cpp
-  log/LogTreeWidget.cpp
-  log/MessageLog.cpp
-  log/StatusEventItem.cpp
-  log/StatusEventItemDelegate.cpp
-  log/StatusEventWidget.cpp
+if (USE_MINIUPNPC)
+  qt4_wrap_ui(vidalia_SRCS config/UPNPTestDialog.ui)
+endif(USE_MINIUPNPC)
+
+## Specify all the Qt Designer .ui files
+qt4_wrap_ui(vidalia_SRCS
+  ControlPasswordInputDialog.ui
+  StatusTab.ui
+  MainWindow.ui
+  about/AboutDialog.ui
+  about/LicenseDialog.ui
+  bwgraph/BandwidthGraph.ui
+  config/AdvancedPage.ui
+  config/AppearancePage.ui
+  config/BridgeDownloaderProgressDialog.ui
+  config/BridgeUsageDialog.ui
+  config/ConfigDialog.ui
+  config/GeneralPage.ui
+  config/NetworkPage.ui
+  config/ServerPage.ui
+  config/ServicePage.ui
+  config/TorrcDialog.ui
+  log/MessageLog.ui
+  help/browser/HelpBrowser.ui
+  network/NetViewer.ui
+  network/RouterInfoDialog.ui
 )
-qt4_wrap_cpp(vidalia_SRCS
-  log/LogFile.h
-  log/LogHeaderView.h
-  log/LogTreeWidget.h
-  log/MessageLog.h
-  log/StatusEventItemDelegate.h
-  log/StatusEventWidget.h
+
+## Add the resource files (icons, etc.)
+qt4_add_resources(vidalia_SRCS
+  res/vidalia.qrc
+  help/content/content.qrc
+  ${CMAKE_CURRENT_BINARY_DIR}/i18n/vidalia_i18n.qrc
 )
 
 ## Network map sources
@@ -235,112 +263,35 @@ if (USE_GEOIP)
   )
 endif(USE_GEOIP)
 
-## Main Vidalia sources
+## Help browser sources
 set(vidalia_SRCS ${vidalia_SRCS}
-  main.cpp
-  Vidalia.cpp
-  LanguageSupport.cpp
-  MainWindow.cpp
-  VClickLabel.cpp
-  VidaliaWindow.cpp
-  VMessageBox.cpp
-  HelperProcess.cpp
-  ControlPasswordInputDialog.cpp
+  help/browser/HelpBrowser.cpp
+  help/browser/HelpTextBrowser.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  Vidalia.h
-  MainWindow.h
-  VClickLabel.h
-  VidaliaWindow.h
-  VMessageBox.h
-  HelperProcess.h
-  ControlPasswordInputDialog.h
-)
-if (USE_BREAKPAD)
-  set(vidalia_SRCS ${vidalia_SRCS}
-    CrashReporter.cpp
-  )
-endif(USE_BREAKPAD)
-
-## Specify all the Qt Designer .ui files
-qt4_wrap_ui(vidalia_SRCS
-  ControlPasswordInputDialog.ui
-  MainWindow.ui
-  about/AboutDialog.ui
-  about/LicenseDialog.ui
-  bwgraph/BandwidthGraph.ui
-  config/AdvancedPage.ui
-  config/AppearancePage.ui
-  config/BridgeDownloaderProgressDialog.ui
-  config/BridgeUsageDialog.ui
-  config/ConfigDialog.ui
-  config/GeneralPage.ui
-  config/NetworkPage.ui
-  config/ServerPage.ui
-  config/ServicePage.ui
-  config/TorrcDialog.ui
-  help/browser/HelpBrowser.ui
-  log/MessageLog.ui
-  network/NetViewer.ui
-  network/RouterInfoDialog.ui
+  help/browser/HelpBrowser.h
+  help/browser/HelpTextBrowser.h
 )
 
-if (USE_MINIUPNPC)
-  qt4_wrap_ui(vidalia_SRCS config/UPNPTestDialog.ui)
-endif(USE_MINIUPNPC)
-
-if (USE_AUTOUPDATE)
-  set(vidalia_SRCS ${vidalia_SRCS}
-    PackageInfo.cpp
-    UpdateProcess.cpp
-    UpdateProgressDialog.cpp
-    UpdatesAvailableDialog.cpp
-  )
-  qt4_wrap_cpp(vidalia_SRCS
-    UpdateProcess.h
-    UpdateProgressDialog.h
-    UpdatesAvailableDialog.h
-  )
-  qt4_wrap_ui(vidalia_SRCS
-    UpdateProgressDialog.ui
-    UpdatesAvailableDialog.ui
-  )
-endif(USE_AUTOUPDATE)
-
-## Add the resource files (icons, etc.)
-qt4_add_resources(vidalia_SRCS
-  res/vidalia.qrc
-  help/content/content.qrc
-  ${CMAKE_CURRENT_BINARY_DIR}/i18n/vidalia_i18n.qrc
+## Message log sources
+set(vidalia_SRCS ${vidalia_SRCS}
+  log/LogFile.cpp
+  log/LogHeaderView.cpp
+  log/LogMessageColumnDelegate.cpp
+  log/LogTreeItem.cpp
+  log/LogTreeWidget.cpp
+  log/MessageLog.cpp
+  log/StatusEventItem.cpp
+  log/StatusEventItemDelegate.cpp
+  log/StatusEventWidget.cpp
 )
-
-## Specify the map data Marble will need
-set(marble_DATA
-  landcolors.leg
-  seacolors.leg
-  maps/earth/bluemarble/bluemarble.dgml
-  maps/earth/citylights/citylights.dgml
-  maps/earth/srtm/srtm.dgml
-  maps/earth/srtm/srtm.jpg
-  mwdbii/DATELINE.PNT
-  mwdbii/PAUST.PNT
-  mwdbii/PBORDER.PNT
-  mwdbii/PCANPROV.PNT
-  mwdbii/PCOAST.PNT
-  mwdbii/PDIFFBORDER.PNT
-  mwdbii/PGLACIER.PNT
-  mwdbii/PISLAND.PNT
-  mwdbii/PLAKE.PNT
-  mwdbii/PLAKEISLAND.PNT
-  mwdbii/PMEXICO.PNT
-  mwdbii/PUSA48.DIFF.PNT
-  mwdbii/PUSA48.PNT
-  mwdbii/RIVER.PNT
-  placemarks/baseplacemarks.cache
-  placemarks/boundaryplacemarks.cache
-  placemarks/elevplacemarks.cache
-  stars/stars.dat
-  svg/worldmap.svg
+qt4_wrap_cpp(vidalia_SRCS
+  log/LogFile.h
+  log/LogHeaderView.h
+  log/LogTreeWidget.h
+  log/MessageLog.h
+  log/StatusEventItemDelegate.h
+  log/StatusEventWidget.h
 )
 
 ## Set the appropriate executable target for the current platform

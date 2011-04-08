@@ -17,7 +17,7 @@
 #define _MESSAGELOG_H
 
 #include "ui_MessageLog.h"
-#include "VidaliaWindow.h"
+#include "VidaliaTab.h"
 #include "LogFile.h"
 #include "TorControl.h"
 #include "VidaliaSettings.h"
@@ -25,13 +25,13 @@
 class LogTreeItem;
 class QStringList;
 
-class MessageLog : public VidaliaWindow
+class MessageLog : public VidaliaTab
 {
   Q_OBJECT
 
 public:
   /** Default constructor **/
-  MessageLog(QWidget *parent = 0, Qt::WFlags flags = 0);
+  MessageLog(QStatusBar *st = 0, QWidget *parent = 0);
   /** Default destructor **/
   ~MessageLog();
   
@@ -89,6 +89,8 @@ private:
   bool _enableLogging;  
   /* The log file used to store log messages. */
   LogFile _logFile;
+
+  QStatusBar *_statusBar;
 
   /** Qt Designer generatated QObject **/
   Ui::MessageLog ui;

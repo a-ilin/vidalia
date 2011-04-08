@@ -16,7 +16,6 @@
 #include "TorSettings.h"
 #include "ServiceSettings.h"
 #include "ExitPolicy.h"
-#include "HelpBrowser.h"
 
 #include "TorControl.h"
 
