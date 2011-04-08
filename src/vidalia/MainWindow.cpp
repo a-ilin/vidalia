@@ -383,6 +383,24 @@ MainWindow::createConnections()
   connect(UPNPControl::instance(), SIGNAL(error(UPNPControl::UPNPError)),
           this, SLOT(upnpError(UPNPControl::UPNPError)));
 #endif
+  /* Create a new HelperProcess object, used to start the web browser */
+  _browserProcess = new HelperProcess(this);
+  connect(_browserProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+           this, SLOT(onSubprocessFinished(int, QProcess::ExitStatus)));
+  connect(_browserProcess, SIGNAL(startFailed(QString)),
+           this, SLOT(onBrowserFailed(QString)));
+
+  /* Create a new HelperProcess object, used to start the IM client */
+  _imProcess = new HelperProcess(this);
+  connect(_imProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+           this, SLOT(onSubprocessFinished(int, QProcess::ExitStatus)));
+  connect(_imProcess, SIGNAL(startFailed(QString)),
+           this, SLOT(onIMFailed(QString)));
+
+  /* Create a new HelperProcess object, used to start the proxy server */
+  _proxyProcess = new HelperProcess(this);
+  connect(_proxyProcess, SIGNAL(startFailed(QString)),
+           this, SLOT(onProxyFailed(QString)));
 }
 
 /** Called when the application is closing, by selecting "Exit" from the tray
@@ -431,6 +449,10 @@ MainWindow::running()
     start();
   }
 
+  /* Start the proxy server, if configured */
+  if (settings.runProxyAtStart())
+    startProxy();
+
 #if defined(USE_AUTOUPDATE)
   if (settings.isAutoUpdateEnabled()) {
     QDateTime lastCheckedAt = settings.lastCheckedForUpdates();
@@ -476,8 +498,32 @@ MainWindow::aboutToQuit()
   ServerSettings settings(_torControl);
   settings.cleanupPortForwarding();
 
+  if (_proxyProcess->state() != QProcess::NotRunning) {
+    /* Close the proxy server (Polipo ignores the WM_CLOSE event sent by
+     * terminate() so we have to kill() it) */
+    _proxyProcess->kill();
+  }
+
   /* Kill the browser and IM client if using the new launcher */
   VidaliaSettings vidalia_settings;
+
+  if (! vidalia_settings.getBrowserDirectory().isEmpty()) {
+    /* Disconnect the finished signals so that we won't try to exit Vidalia again */
+    QObject::disconnect(_browserProcess, SIGNAL(finished(int, QProcess::ExitStatus)), 0, 0);
+    QObject::disconnect(_imProcess, SIGNAL(finished(int, QProcess::ExitStatus)), 0, 0);
+
+    /* Use QProcess terminate function */
+    if (_browserProcess->state() == QProcess::Running)
+      _browserProcess->terminate();
+
+#if defined(Q_OS_WIN)
+    /* Kill any processes which might have been forked off */
+    win32_end_process_by_filename(vidalia_settings.getBrowserExecutable());
+#endif
+
+    if (_imProcess->state() == QProcess::Running)
+      _imProcess->terminate();    
+  }
 
   /* Disconnect all of the TorControl object's signals */
   QObject::disconnect(_torControl, 0, 0, 0);
@@ -1009,6 +1055,7 @@ MainWindow::circuitEstablished()
   // TODO: fix hardcoded total length
   setStartupProgress(130,
                      tr("Connected to the Tor network!"));
+  startSubprocesses();
 
 #if defined(USE_AUTOUPDATE)
   VidaliaSettings settings;
@@ -1721,4 +1768,193 @@ MainWindow::installUpdatesFailed(const QString &errmsg)
 }
 
 #endif
+
+/** Called when browser or IM client have exited */
+void
+MainWindow::onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus)
+{
+  Q_UNUSED(exitCode)
+  Q_UNUSED(exitStatus)
+
+  /* Get path to browser and IM client */
+  VidaliaSettings settings;
+  QString browserExecutable = settings.getBrowserExecutable();
+  QString browserDirectory = settings.getBrowserDirectory();
+  QString imExecutable = settings.getIMExecutable();
+
+  /* A subprocess is finished if it successfully exited or was never asked to start */
+  bool browserDone = (browserExecutable.isEmpty()
+                        && browserDirectory.isEmpty())
+                        || _browserProcess->isDone();
+  bool imDone = imExecutable.isEmpty() || _imProcess->isDone();
+
+  /* Exit if both subprocesses are finished */
+  if (browserDone && imDone) {
+    if (browserDirectory.isEmpty()) {
+      /* We are using the standard launcher, exit immediately */
+      vApp->quit();
+    } else {
+      /* We are using the alternate launcher, wait until the browser has really died */
+      QTimer *browserWatcher = new QTimer(this);
+      connect(browserWatcher, SIGNAL(timeout()), this, SLOT(onCheckForBrowser()));
+      browserWatcher->start(2000);
+    }
+  }
+}
+
+/** Called periodically to check if the browser is running. If it is not,
+ * exit Vidalia cleanly */
+void
+MainWindow::onCheckForBrowser()
+{
+/* This only works on Windows for now */
+#if defined(Q_OS_WIN)
+
+  VidaliaSettings settings;
+  QString browserDirectoryFilename = settings.getBrowserExecutable();
+
+  /* Get list of running processes */
+  QHash<qint64, QString> procList = win32_process_list();
+
+  /* On old versions of Windows win32_process_list() will return
+     an empty list. In this case, just keep Vidalia open */
+  if (procList.isEmpty()) {
+    return;
+  }
+
+  /* Loop over all processes or until we find <browserDirectoryFilename> */
+  QHashIterator<qint64, QString> i(procList);
+  while (i.hasNext()) {
+    i.next();
+    if (i.value().toLower() == browserDirectoryFilename) {
+      /* The browser is still running, so Vidalia should keep running too */
+      return;
+    }
+  }
+
+  /* The browser isn't running, exit Vidalia */
+  vApp->quit();
+#endif  
+}
+
+/** Called when the web browser failed to start, for example, because the path
+ * specified to the web browser executable didn't lead to an executable. */
+void
+MainWindow::onBrowserFailed(QString errmsg)
+{
+  Q_UNUSED(errmsg);
+ 
+  /* Display an error message and see if the user wants some help */
+  VMessageBox::warning(this, tr("Error starting web browser"),
+              tr("Vidalia was unable to start the configured web browser"),
+              VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
+}
+
+/** Called when the IM client failed to start, for example, because the path
+ * specified to the IM client executable didn't lead to an executable. */
+void
+MainWindow::onIMFailed(QString errmsg)
+{
+  Q_UNUSED(errmsg);
+ 
+  /* Display an error message and see if the user wants some help */
+  VMessageBox::warning(this, tr("Error starting IM client"),
+              tr("Vidalia was unable to start the configured IM client"),
+              VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
+}
+
+/** Starts the proxy server, if appropriately configured */
+void
+MainWindow::startProxy()
+{
+  VidaliaSettings settings;
+  QString executable = settings.getProxyExecutable();
+  _proxyProcess->start(executable, settings.getProxyExecutableArguments());
+}
+
+/** Called when the proxy server fails to start, for example, because
+ * the path specified didn't lead to an executable. */
+void
+MainWindow::onProxyFailed(QString errmsg)
+{
+  Q_UNUSED(errmsg);
+ 
+  /* Display an error message and see if the user wants some help */
+  VMessageBox::warning(this, tr("Error starting proxy server"),
+              tr("Vidalia was unable to start the configured proxy server"),
+              VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
+}
+
+/** Start a web browser when given the directory containing the executable and profile */
+void
+MainWindow::launchBrowserFromDirectory()
+{
+  VidaliaSettings settings;
+
+  QString browserDirectory = settings.getBrowserDirectory();
+  QString browserDirectoryFilename = settings.getBrowserExecutable();
+
+  /* Set TZ=UTC (to stop leaking timezone information) and
+   * MOZ_NO_REMOTE=1 (to allow multiple instances of Firefox */
+  QStringList env = QProcess::systemEnvironment();
+  env << "TZ=UTC";
+  env << "MOZ_NO_REMOTE=1";
+  _browserProcess->setEnvironment(env);
+
+  /* The browser is in <browserDirectory>/App/Firefox/<browserDirectoryFilename> */
+  QString browserExecutable =
+    QDir::toNativeSeparators(browserDirectory + "/App/Firefox/" + browserDirectoryFilename);
+  /* The profile is in <browserDirectory>/Data/profile */
+  QString profileDir =
+    QDir::toNativeSeparators(browserDirectory + "/Data/profile");
+
+  /* Copy the profile directory if it's not already there */
+  QDir browserDirObj = QDir(browserDirectory);
+
+  /* Copy the profile directory if it's not already there */
+  if (!browserDirObj.exists("Data/profile")) {
+    browserDirObj.mkdir("Data/profile");
+    copy_dir(browserDirectory + "/App/DefaultData/profile", browserDirectory + "/Data/profile");
+  }
+
+  /* Copy the plugins directory if it's not already there */
+  if (!browserDirObj.exists("Data/plugins")) {
+    browserDirObj.mkdir("Data/plugins");
+    copy_dir(browserDirectory + "/App/DefaultData/plugins", browserDirectory + "/Data/plugins");
+  }
+
+  /* Build the command line arguments */
+  QStringList commandLine;
+  // Is this better or worse than MOZ_NO_REMOTE?
+  //commandLine << "-no-remote";
+  commandLine << "-profile";
+  commandLine << profileDir;
+
+  /* Launch the browser */
+  _browserProcess->start(browserExecutable, commandLine);
+}
+
+/** Starts the web browser and IM client, if appropriately configured */
+void
+MainWindow::startSubprocesses()
+{
+  VidaliaSettings settings;
+  QString subprocess;
+
+  /* Launch the web browser */
+  if (!(subprocess = settings.getBrowserDirectory()).isEmpty()) {
+    /* The user has set BrowserDirectory; use this */
+    launchBrowserFromDirectory();
+  } else if (!(subprocess = settings.getBrowserExecutable()).isEmpty()) {
+    /* BrowserDirectory is not set, but BrowserExecutable is; use this */
+    _browserProcess->setEnvironment(QProcess::systemEnvironment() << "TZ=UTC");
+    _browserProcess->start(subprocess, QStringList());
+  }
+
+  /* Launch the IM client */
+  subprocess = settings.getIMExecutable();
+
+  if (!subprocess.isEmpty())
+    _imProcess->start(subprocess, QStringList());
+}
 

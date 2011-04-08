@@ -163,6 +163,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   ControlPasswordInputDialog.cpp
   VidaliaTab.cpp
   StatusTab.cpp
+  HelperProcess.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   Vidalia.h
@@ -173,6 +174,7 @@ qt4_wrap_cpp(vidalia_SRCS
   ControlPasswordInputDialog.h
   VidaliaTab.h
   StatusTab.h
+  HelperProcess.h
 )
 
 if (USE_MINIUPNPC)
