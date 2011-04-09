@@ -32,16 +32,6 @@ public:
    */
   ControlPasswordInputDialog(QWidget *parent = 0);
 
-  /** Returns the password entered in the dialog. If the dialog was dismissed
-   * with the "Cancel" button, then the returned QString will be empty.
-   */
-  QString password() const;
-
-  /** Returns true if the "Remember my password" checkbox was checked at the
-   * time the dialog was dismissed.
-   */
-  bool isSavePasswordChecked() const;
-
   /** If <b>enabled</b> is true, then the "Reset" button will be visible on
    * the password input dialog. Otherwise, the "Reset" button will be hidden.
    */
@@ -59,11 +49,6 @@ protected slots:
    * returned as the dialog's result code.
    */
   void clicked(QAbstractButton *button);
-
-  /** Called when the user changes the password QLineEdit. If the password is
-   * empty, then the "Ok" button will be disabled. Otherwise, it is enabled.
-   */
-  void passwordEdited(const QString &text);
 
 protected:
   /** Adjusts the size of the input dialog when it is displayed. */

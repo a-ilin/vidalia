@@ -27,17 +27,11 @@ ControlPasswordInputDialog::ControlPasswordInputDialog(QWidget *parent)
   setAttribute(Qt::WA_DeleteOnClose, false);
 
   ui.buttonBox->setStandardButtons(QDialogButtonBox::Ok
-                                     | QDialogButtonBox::Cancel
                                      | QDialogButtonBox::Reset
                                      | QDialogButtonBox::Help);
 
   connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton*)),
           this, SLOT(clicked(QAbstractButton*)));
-  connect(ui.linePassword, SIGNAL(textEdited(QString)),
-          this, SLOT(passwordEdited(QString)));
-
-  /* The dialog starts with an empty password field */
-  passwordEdited(QString());
 }
 
 void
@@ -46,30 +40,14 @@ ControlPasswordInputDialog::setResetEnabled(bool enabled)
   if (enabled) {
     ui.buttonBox->setStandardButtons(ui.buttonBox->standardButtons()
                                       | QDialogButtonBox::Reset);
+    ui.lblOptionOne->setVisible(false);
+    ui.lblOptionTwo->setVisible(true);
   } else {
     ui.buttonBox->setStandardButtons(ui.buttonBox->standardButtons()
                                       & ~QDialogButtonBox::Reset);
+    ui.lblOptionOne->setVisible(true);
+    ui.lblOptionTwo->setVisible(false);
   }
-}
-
-QString
-ControlPasswordInputDialog::password() const
-{
-  return ui.linePassword->text();
-}
-
-bool
-ControlPasswordInputDialog::isSavePasswordChecked() const
-{
-  return ui.chkSavePassword->isChecked();
-}
-
-void
-ControlPasswordInputDialog::passwordEdited(const QString &text)
-{
-  QPushButton *okButton = ui.buttonBox->button(QDialogButtonBox::Ok);
-  if (okButton)
-    okButton->setEnabled(! text.isEmpty());
 }
 
 void
@@ -96,7 +74,7 @@ void
 ControlPasswordInputDialog::setVisible(bool visible)
 {
   if (visible)
-    resize(minimumSizeHint());
+    adjustSize();
   QDialog::setVisible(visible);
 }
 

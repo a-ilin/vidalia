@@ -865,43 +865,18 @@ MainWindow::authenticationFailed(QString errmsg)
 #endif
 
     int ret = dlg.exec();
-    if (ret == QDialogButtonBox::Ok) {
-      if (dlg.isSavePasswordChecked()) {
-        TorSettings settings;
-        settings.setAuthenticationMethod(TorSettings::PasswordAuth);
-        settings.setUseRandomPassword(false);
-        settings.setControlPassword(dlg.password());
-        _useSavedPassword = true;
-      } else {
-        _controlPassword = dlg.password();
-        _useSavedPassword = false;
-      }
-      retry = true;
-    } else if (ret == QDialogButtonBox::Reset) {
+    if (ret == QDialogButtonBox::Reset) {
       if (! process_kill(torPid)) {
         VMessageBox::warning(this,
           tr("Password Reset Failed"),
-          p(tr("Vidalia tried to reset Tor's control password, but was not "
-               "able to restart the Tor software. Please check your Task "
-               "Manager to ensure there are no other Tor processes running.")),
+          p(tr("Vidalia tried to restart Tor, but was not "
+               "able to. Please check your Task Manager to "
+               "ensure there are no other Tor processes running.")),
                VMessageBox::Ok|VMessageBox::Default);
       } else {
         retry = true;
       }
     }
-  } else {
-    /* Something else went wrong */
-    int ret = VMessageBox::warning(this, 
-                tr("Authentication Error"),
-                p(tr("Vidalia was unable to authenticate to the Tor software. "
-                     "(%1)").arg(errmsg)) + 
-                p(tr("Please check your control port authentication "
-                     "settings.")),
-                VMessageBox::ShowSettings|VMessageBox::Default,
-                VMessageBox::Cancel|VMessageBox::Escape);
-    
-    if (ret == VMessageBox::ShowSettings)
-      showConfigDialog(ConfigDialog::Advanced);
   }
   
   if (_torControl->isRunning())
