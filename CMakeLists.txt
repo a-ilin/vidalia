@@ -13,8 +13,8 @@
 
 set(VER_MAJOR   "0")
 set(VER_MINOR   "2")
-set(VER_PATCH   "11")
-set(VERSION     "${VER_MAJOR}.${VER_MINOR}.${VER_PATCH}-svn")
+set(VER_PATCH   "12")
+set(VERSION     "${VER_MAJOR}.${VER_MINOR}.${VER_PATCH}")
 message(STATUS  "Configuring Vidalia ${VERSION}")
 project(Vidalia)
 

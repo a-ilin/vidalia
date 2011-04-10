@@ -1,3 +1,47 @@
+0.2.12  10-Apr-2011
+  o Vidalia's SVN repository has been migrated to Git. All branches but
+    master have been archived for later review, since SVN trunk had changed
+    significantly; they should be reviewed later to determine whether
+    they can and should still be merged. All \version $Id$ headers have been 
+    removed since Git does not support $Id$.
+  o As part of the move, Vidalia's Trac is now at:
+      https://trac.torproject.org/
+    All Trac numbers in Vidalia 0.2.12 and beyond refer to the new Trac
+    entries. The old Trac is archived for posterity at:
+      https://trac-vidalia.torproject.org/projects/vidalia
+  o Add support for Tor's ControlSocket as an alternative to ControlPort. It 
+    can be used for Linux maintainers to build a better default interaction 
+    between Tor and Vidalia by just setting the right permissions and file 
+    owner on the socket file for the connection. Using ControlSocket means 
+    you don't need to worry about authentication methods with ControlPort. 
+    Resolves bug 2091.
+  o Add a way to edit arbitrary torrc entries while Tor is running. Now
+    Vidalia users have more flexibility for configuring Tor. This change
+    doesn't replace editing torrc directly, because on some systems
+    (like Debian) Tor can't write to its torrc file. Resolves bug 2083.
+  o Remove Vidalia's direct dependency on OpenSSL. This dependency had
+    caused Vidalia to fail to run on FreeBSD (due to a bug in the FreeBSD
+    ports collection) and Fedora 14 (due to an incompatibility between
+    OpenSSL and Fedora's SELinux configuration). Resolves bug 2287 and
+    2611.
+  o Restore compatibility with Windows 2000. An update to the MiniUPnPc
+    library had introduced an unnecessary dependency on a system library
+    not included in Windows 2000. Fixes bug 2612.
+  o Fix how the advanced message log window displays message updates when
+    messages are coming in too quickly, for example when you're listening
+    to debug-level messages from Tor. Fixes bug 2093.
+  o Add a what's this? link to the bridge option to explain in a more verbose 
+    fashion what being a bridge involves. Resolves bug 1995.
+  o Prompt users to restart Tor after changing the path to torrc. Fixes bug
+    2086.
+  o Disable the directory port configuration field when configuring a
+    bridge. A bridge does not need to operate a separate directory port,
+    and operating one can make a bridge easier to detect. Fixes bug 2431.
+  o When Vidalia asks Tor for a bridge's usage history before anyone has
+    used it, correctly report that no clients have used the bridge recently.
+    Previously, it would incorrectly warn that it was unable to retrieve the
+    bridge's usage history. Fixes bug 2186.
+
 0.2.10  26-Aug-2010
   o Drop remote GeoIP lookups. Instead, the default behavior now is to use
     the country-level GeoIP database that ships with Tor to map an IP
