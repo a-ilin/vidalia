@@ -10,7 +10,6 @@
 
 /*
 ** \file IpValidator.cpp
-** \version $Id$
 ** \brief Validates an entered IP address
 */
 

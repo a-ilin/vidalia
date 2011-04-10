@@ -10,7 +10,6 @@
 
 /*
 ** \file ControlCommand.h
-** \version $Id$
 ** \brief A command sent to Tor's control interface
 */
 

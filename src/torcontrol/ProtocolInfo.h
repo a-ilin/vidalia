@@ -10,7 +10,6 @@
 
 /*
 ** \file ProtocolInfo.h
-** \version $Id$
 ** \brief Container for information in a PROTOCOLINFO reply from Tor
 */
 

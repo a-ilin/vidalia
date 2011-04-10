@@ -10,7 +10,6 @@
 
 /*
 ** \file NetViewer.h
-** \version $Id$
 ** \brief Displays a map of the Tor network and the user's circuits
 */
 

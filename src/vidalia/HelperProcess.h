@@ -34,7 +34,6 @@
 
 /*
 ** \file HelperProcess.h
-** \version $Id$ 
 ** \brief Invokes a web browser process (originally by Steven. J. Murdoch)
 */
 

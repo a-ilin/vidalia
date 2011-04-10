@@ -10,7 +10,6 @@
 
 /* 
 ** \file UPNPTestDialog.h
-** \version $Id$
 ** \brief Dialog that displays the progress of a UPnP configuration test
 */
 

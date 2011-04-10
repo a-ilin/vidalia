@@ -10,7 +10,6 @@
 
 /*
 ** \file MessageLog.h
-** \version $Id$
 ** \brief Displays log messages and message log settings
 */
 

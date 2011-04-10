@@ -10,7 +10,6 @@
 
 /*
 ** \file GeoIpResolver.cpp
-** \version $Id$
 ** \brief Retrieves GeoIP information either from Tor or from a local
 ** database and returns the result.
 */

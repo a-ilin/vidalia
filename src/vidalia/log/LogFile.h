@@ -10,7 +10,6 @@
 
 /*
 ** \file LogFile.h
-** \version $Id$ 
 ** \brief Logs messages from Tor to a file
 */
 

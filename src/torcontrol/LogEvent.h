@@ -10,7 +10,6 @@
 
 /*
 ** \file LogEvent.h
-** \version $Id$
 ** \brief Event dispatched containing a log message from Tor
 */
 

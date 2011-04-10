@@ -10,7 +10,6 @@
 
 /*
 ** \file AbstractTorSettings.cpp
-** \version $Id$
 ** \brief Manages settings that need to be SETCONF'ed to Tor
 */
 

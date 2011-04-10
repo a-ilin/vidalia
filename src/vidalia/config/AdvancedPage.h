@@ -10,7 +10,6 @@
 
 /*
 ** \file AdvancedPage.h
-** \version $Id$
 ** \brief Advanced Tor and Vidalia configuration options
 */
 

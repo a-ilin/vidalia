@@ -10,7 +10,6 @@
 
 /*
 ** \file BridgeDownloaderProgressDialog.cpp
-** \version $Id$
 ** \brief Displays the progress of a request for bridge addresses
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file vsettings.h
-** \version $Id$
 ** \brief Stores and retrieves settings from Vidalia's configuration file.
 */
 

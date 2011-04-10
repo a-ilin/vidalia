@@ -10,7 +10,6 @@
 
 /*
 ** \file TorControl.cpp
-** \version $Id$
 ** \brief Object for interacting with the Tor process and control interface
 */
 

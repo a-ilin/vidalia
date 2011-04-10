@@ -10,7 +10,6 @@
 
 /*
 ** \file main.cpp
-** \version $Id$
 ** \brief Main Vidalia entry point
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file GeoIpRecord.h
-** \version $Id$
 ** \brief Associates an IP with a geographic location
 */
 

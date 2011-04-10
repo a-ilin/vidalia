@@ -10,7 +10,6 @@
 
 /*
 ** \file HelpBrowser.cpp
-** \version $Id$
 ** \brief Displays a list of help topics and content
 */
 

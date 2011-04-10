@@ -10,7 +10,6 @@
 
 /* 
 ** \file BootstrapStatus.h
-** \version $Id$
 ** \brief Describes the Tor software's current bootstrap status
 */
 

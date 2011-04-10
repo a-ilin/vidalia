@@ -10,7 +10,6 @@
 
 /*
 ** \file ServerSettings.cpp
-** \version $Id$
 ** \brief Settings for running a Tor server
 */
 

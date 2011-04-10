@@ -10,7 +10,6 @@
 
 /*
 ** \file Policy.h
-** \version $Id$
 ** \brief Exit policy parsing
 */
 

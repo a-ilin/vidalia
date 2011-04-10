@@ -10,7 +10,6 @@
 
 /*
 ** \file ServerPage.cpp
-** \version $Id$
 ** \brief Tor server configuration options
 */
 

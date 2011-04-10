@@ -10,7 +10,6 @@
 
 /*
 ** \file Policy.cpp
-** \version $Id$
 ** \brief Exit policy parsing
 */
 

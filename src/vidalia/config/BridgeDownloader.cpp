@@ -10,7 +10,6 @@
 
 /*
 ** \file BridgeDownloader.cpp
-** \version $Id$
 ** \brief Downloads a list of new bridge addresses via HTTPS
 */
 

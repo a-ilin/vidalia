@@ -10,7 +10,6 @@
 
 /*
 ** \file RouterListItem.cpp
-** \version $Id$
 ** \brief Item representing a single router and status in a RouterListWidget
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file net.cpp
-** \version $Id$
 ** \brief Common network I/O and utility functions
 */
 

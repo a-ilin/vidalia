@@ -10,7 +10,6 @@
 
 /*
 ** \file HelpBrowser.h
-** \version $Id$ 
 ** \brief Displays a list of help topics and content
 */
 

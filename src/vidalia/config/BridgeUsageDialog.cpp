@@ -10,7 +10,6 @@
 
 /*
 ** \file BridgeUsageDialog.cpp
-** \version $Id$
 ** \brief Displays a summary of bridge usage information, including client
 ** geographic location history.
 */

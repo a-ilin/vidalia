@@ -10,7 +10,6 @@
 
 /* 
 ** \file AddressMap.cpp
-** \version $Id: bandwidthevent.h 1563 2006-12-26 06:06:04Z edmanm $
 ** \brief Stores a list of address mappings and their expiration times
 */
 

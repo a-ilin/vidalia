@@ -10,7 +10,6 @@
 
 /*
 ** \file LicenseDialog.cpp
-** \version $Id$
 ** \brief Displays HTML-formatted license information for Vidalia and related
 ** software.
 */

@@ -10,7 +10,6 @@
 
 /*
 ** \file procutil.cpp
-** \version $Id$
 ** \brief Process information and pidfile functions 
 */
 

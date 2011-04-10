@@ -10,7 +10,6 @@
 
 /*
 ** \file Vidalia.cpp
-** \version $Id$
 ** \brief Main Vidalia QApplication object
 */
 

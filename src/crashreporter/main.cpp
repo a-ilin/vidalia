@@ -10,7 +10,6 @@
 
 /*
 ** \file main.cpp
-** \version $Id$
 ** \brief Application that is run after Vidalia crashes and asks the
 ** user if they would like to submit the crash report.
 */

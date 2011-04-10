@@ -46,7 +46,6 @@
 
 /*
 ** \file crypto.cpp
-** \version $Id$
 ** \brief Provides support for pseuodrandom number generation.
 */
 

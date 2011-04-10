@@ -10,7 +10,6 @@
 
 /*
 ** \file AboutDialog.h
-** \version $Id$
 ** \brief Displays information about Vidalia, Tor, and Qt
 */
 

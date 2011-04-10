@@ -10,7 +10,6 @@
 
 /*
 ** \file GeoIpRecord.cpp
-** \version $Id$
 ** \brief Associates an IP with a geographic location
 */
 

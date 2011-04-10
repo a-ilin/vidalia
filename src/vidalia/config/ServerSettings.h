@@ -10,7 +10,6 @@
 
 /*
 ** \file ServerSettings.h
-** \version $Id$
 ** \brief Settings for running a Tor server
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file VSettings.cpp
-** \version $Id$
 ** \brief Stores and retrieves settings from Vidalia's configuration file. 
 */
 

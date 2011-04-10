@@ -10,7 +10,6 @@
 
 /*
 ** \file ConfigPageStack.cpp
-** \version $Id$
 ** \brief A collection of configuration pages
 */
 

@@ -10,7 +10,6 @@
 
 /* 
 ** \file UPNPControl.cpp
-** \version $Id$
 ** \brief Singleton object for interacting with UPNP device
 */
 

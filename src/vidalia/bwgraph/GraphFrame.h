@@ -10,7 +10,6 @@
 
 /*
 ** \file GraphFrame.h
-** \version $Id$
 ** \brief Graphs a series of send and receive data points
 */
 

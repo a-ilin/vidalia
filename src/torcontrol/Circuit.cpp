@@ -10,7 +10,6 @@
 
 /* 
 ** \file Circuit.cpp
-** \version $Id$
 ** \brief Object representing a Tor circuit
 */
 

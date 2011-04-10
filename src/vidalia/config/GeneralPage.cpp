@@ -10,7 +10,6 @@
 
 /*
 ** \file GeneralPage.cpp
-** \version $Id$
 ** \brief General Tor and Vidalia configuration options
 */
 

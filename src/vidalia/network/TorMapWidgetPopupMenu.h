@@ -10,7 +10,6 @@
 
 /*
 ** \file TorMapWidgetPopupMenu.h
-** \version $Id$
 ** \brief Popup menu displayed when the user mouse clicks on a map placemark
 */
 

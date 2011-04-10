@@ -10,7 +10,6 @@
 
 /*
 ** \file HelpTextBrowser.h
-** \version $Id$ 
 ** \brief Displays an HTML-based help document
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file Log.h
-** \version $Id$
 ** \brief Debug message logging
 */
 

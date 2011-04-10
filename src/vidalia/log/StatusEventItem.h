@@ -10,7 +10,6 @@
 
 /*
 ** \file StatusEventItem.cpp
-** \version $Id$
 ** \brief Represents a single status event item in a StatusEventWidget
 */
 

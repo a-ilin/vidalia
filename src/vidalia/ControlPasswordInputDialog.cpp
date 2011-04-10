@@ -10,7 +10,6 @@
 
 /*
 ** \file ControlPasswordInputDialog.cpp
-** \version $Id$
 ** \brief Prompts the user to enter their control port password, and gives
 ** them the option to save or attempt to reset it.
 */

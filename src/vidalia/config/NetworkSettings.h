@@ -10,7 +10,6 @@
 
 /*
 ** \file NetworkSettings.h
-** \version $Id$
 ** \brief Settings for configuring an HTTP/HTTPS proxy or bridges
 */
 

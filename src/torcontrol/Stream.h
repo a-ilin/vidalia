@@ -10,7 +10,6 @@
 
 /* 
 ** \file Stream.h
-** \version $Id$
 ** \brief Object representing a Tor stream
 */
 

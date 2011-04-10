@@ -10,7 +10,6 @@
 
 /* 
 ** \file UPNPControl.h
-** \version $Id$
 ** \brief Singleton object for interacting with UPNP device
 */
 

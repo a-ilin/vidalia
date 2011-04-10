@@ -10,7 +10,6 @@
 
 /* 
 ** \file BootstrapStatus.cpp
-** \version $Id$
 ** \brief  Describes the Tor software's current bootstrapping status
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file ServerPage.h
-** \version $Id$
 ** \brief Tor server configuration options
 */
 

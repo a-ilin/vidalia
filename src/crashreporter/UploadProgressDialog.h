@@ -10,7 +10,6 @@
 
 /*
 ** \file UploadProgressDialog.cpp
-** \version $Id$
 ** \brief Displays the progress of uploading a crash report to the server
 */
 

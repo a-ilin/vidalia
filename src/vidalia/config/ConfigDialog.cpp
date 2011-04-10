@@ -10,7 +10,6 @@
 
 /* 
 ** \file ConfigDialog.cpp
-** \version $Id$
 ** \brief Contains a series of Vidalia and Tor configuration pages
 */
 

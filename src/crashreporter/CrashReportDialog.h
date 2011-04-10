@@ -10,7 +10,6 @@
 
 /*
 ** \file CrashReportDialog.h
-** \version $Id$
 ** \brief Dialog that asks the user whether they would like to
 ** submit the crash report, along with optional additional details
 ** about what they were doing at the time of the crash.

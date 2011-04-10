@@ -10,7 +10,6 @@
 
 /*
 ** \file CountryInfo.cpp
-** \version $Id$
 ** \brief Provides a method to look up a localized country name given its
 ** ISO 3166 2-letter country code.
 */

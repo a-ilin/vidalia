@@ -10,7 +10,6 @@
 
 /*
 ** \file RouterInfoDialog.cpp
-** \version $Id$
 ** \brief Displays detailed information about a particular router
 */
 

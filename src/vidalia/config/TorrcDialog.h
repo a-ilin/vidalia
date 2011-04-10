@@ -10,7 +10,6 @@
 
 /*
 ** \file TorrcDialog.h
-** \version $Id$
 ** \brief Torrc Dialog, contains the dialog for displaying and editing the torrc
 */
 

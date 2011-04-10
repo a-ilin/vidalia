@@ -10,7 +10,6 @@
 
 /*
 ** \file LogMessageColumnDelegate.cpp
-** \version $Id$
 ** \brief Delegate responsible for rendering the log message column
 */
 

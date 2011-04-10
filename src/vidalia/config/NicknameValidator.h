@@ -10,7 +10,6 @@
 
 /*
 ** \file NicknameValidator.h
-** \version $Id$
 ** \brief Validates that a server nickname contains only valid characters
 */
 

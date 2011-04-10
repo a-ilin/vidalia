@@ -10,7 +10,6 @@
 
 /*
 ** \file VMessageBox.h
-** \version $Id$
 ** \brief Provides a custom Vidalia mesage box
 */
 

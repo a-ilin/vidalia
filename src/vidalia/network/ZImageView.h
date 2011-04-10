@@ -10,7 +10,6 @@
 
 /*
 ** \file ZImageView.h
-** \version $Id$
 ** \brief Displays an image and allows zooming and panning
 */
 

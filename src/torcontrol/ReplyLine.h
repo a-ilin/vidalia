@@ -10,7 +10,6 @@
 
 /* 
 ** \file ReplyLine.h
-** \version $Id$
 ** \brief Reply from a previous control command sent to Tor
 */
 

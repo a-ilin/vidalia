@@ -10,7 +10,6 @@
 
 /*
 ** \file ConfigPage.h
-** \version $Id$
 ** \brief Pure-virtual class for a configuration page
 */
 

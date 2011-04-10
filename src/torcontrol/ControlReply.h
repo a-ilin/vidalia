@@ -10,7 +10,6 @@
 
 /*
 ** \file ControlReply.h
-** \version $Id$
 ** \brief A response from Tor's control interface
 */
 

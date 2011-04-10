@@ -10,7 +10,6 @@
 
 /*
 ** \file Log.cpp
-** \version $Id$
 ** \brief Debug message logging
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file TorEvents.h
-** \version $Id$
 ** \brief Parses and dispatches events from Tor
 */
 

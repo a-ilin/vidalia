@@ -10,7 +10,6 @@
 
 /*
 ** \file CircuitListWidget.cpp
-** \version $Id$
 ** \brief Collection of Tor circuits as CircuitItems
 */
 

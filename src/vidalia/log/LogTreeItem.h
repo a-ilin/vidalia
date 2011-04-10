@@ -10,7 +10,6 @@
 
 /*
 ** \file LogTreeItem.h
-** \version $Id$ 
 ** \brief Item representing a single message in the message log
 */
 

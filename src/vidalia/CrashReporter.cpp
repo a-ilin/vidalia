@@ -39,7 +39,6 @@
 
 /*
 ** \file CrashReporter.h
-** \version $Id$
 ** \brief General routines to install a Breakpad-based exception handler and
 ** set options related to launching the crash reporting application.
 */

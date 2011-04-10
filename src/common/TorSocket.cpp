@@ -10,7 +10,6 @@
 
 /*
 ** \file TorSocket.cpp
-** \version $Id$
 ** \brief A QTcpSocket that makes requests over Tor
 */
 

@@ -10,7 +10,6 @@
 
 /* 
 ** \file tcglobal.cpp
-** \version $Id$
 ** \brief Provides common methods and constants used by the torcontrol library
 */
 

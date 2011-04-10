@@ -10,7 +10,6 @@
 
 /*
 ** \file PackageInfo.cpp
-** \version $Id$
 ** \brief Contains information about a single available updated software
 ** package.
 */

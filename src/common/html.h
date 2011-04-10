@@ -10,7 +10,6 @@
 
 /*
 ** \file html.h
-** \version $Id$
 ** \brief HTML formatting functions
 */
 

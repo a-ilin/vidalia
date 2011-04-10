@@ -10,7 +10,6 @@
 
 /*
 ** \file IpValidator.h
-** \version $Id$
 ** \brief Validates an entered IP address
 */
 

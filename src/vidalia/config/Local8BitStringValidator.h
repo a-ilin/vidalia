@@ -10,7 +10,6 @@
 
 /*
 ** \file Local8BitStringValidator.h
-** \version $Id$
 ** \brief Validates that a given string contains only characters capable of
 ** being represented in the current local 8-bit character encoding.
 */

@@ -10,7 +10,6 @@
 
 /*
 ** \file ConfigPageStack.h
-** \version $Id$
 ** \brief A collection of configuration pages
 */
 

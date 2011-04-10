@@ -10,7 +10,6 @@
 
 /*
 ** \file UpdatesAvailableDialog.h
-** \version $Id$
 ** \brief Displays a list of available updates and details, such as release
 ** notes. The user can choose to either install the updates now or later, or
 ** skip the updates entirely.

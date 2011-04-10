@@ -10,7 +10,6 @@
 
 /*
 ** \file VClickLabel.cpp
-** \version $Id$
 ** \brief Custom widget to create a clickable label with both an image and text.
 */
 

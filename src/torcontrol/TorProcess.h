@@ -10,7 +10,6 @@
 
 /* 
 ** \file TorProcess.h
-** \version $Id$
 ** \brief Starts and stops a Tor process
 */
 

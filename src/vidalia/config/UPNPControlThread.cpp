@@ -10,7 +10,6 @@
 
 /* 
 ** \file UPNPControlThread.cpp
-** \version $Id$
 ** \brief Thread for configuring UPnP in the background
 */
 

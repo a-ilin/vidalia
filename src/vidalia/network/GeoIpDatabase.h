@@ -10,7 +10,6 @@
 
 /*
 ** \file GeoIpDatabase.h
-** \version $Id$
 ** \brief Interface to a local MaxMind GeoIP database.
 */
 

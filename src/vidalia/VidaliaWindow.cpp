@@ -10,7 +10,6 @@
 
 /*
 ** \file VidaliaWindow.cpp
-** \version $Id$
 ** \brief Common superclass for all Vidalia windows
 */
 

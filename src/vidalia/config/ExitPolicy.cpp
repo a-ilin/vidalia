@@ -10,7 +10,6 @@
 
 /*
 ** \file ExitPolicy.cpp
-** \version $Id$
 ** \brief Collection of Policy objects representing an exit policy 
 */
 

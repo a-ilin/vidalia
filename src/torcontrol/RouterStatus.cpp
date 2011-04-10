@@ -10,7 +10,6 @@
 
 /* 
 ** \file RouterStatus.cpp
-** \version $Id$
 ** \brief Parses a blob of router status text from Tor
 */
 

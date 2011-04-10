@@ -10,7 +10,6 @@
 
 /* 
 ** \file ProtocolInfo.cpp
-** \version $Id$
 ** \brief Container for information in a PROTOCOLINFO reply from Tor
 */
 

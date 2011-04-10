@@ -10,7 +10,6 @@
 
 /*
 ** \file SendCommandEvent.h
-** \version $Id$
 ** \brief An event posted to a socket living in another thread, indicating
 ** that it should send the given control command.
 */

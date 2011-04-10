@@ -10,7 +10,6 @@
 
 /*
 ** \file StatusEventItemDelegate.h
-** \version $Id$
 ** \brief Handles custom painting of items in a StatusEventWidget
 */
 

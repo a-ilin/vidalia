@@ -10,7 +10,6 @@
 
 /*
 ** \file VidaliaSettings.cpp
-** \version $Id$
 ** \brief General Vidalia settings, such as language and interface style
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file html.cpp
-** \version $Id$
 ** \brief HTML formatting functions
 */
 

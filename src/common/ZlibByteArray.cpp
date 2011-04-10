@@ -46,7 +46,6 @@
 
 /*
 ** \file ZlibByteArray.cpp
-** \version $Id$
 ** \brief Wrapper around QByteArray that adds compression capabilities
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file LanguageSupport.cpp
-** \version $Id$
 ** \brief Contains languages supported by Vidalia
 */
 

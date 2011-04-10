@@ -10,7 +10,6 @@
 
 /* 
 ** \file TorProcess.cpp
-** \version $Id$
 ** \brief Starts and stops a Tor process
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file StreamItem.h
-** \version $Id$
 ** \brief Item representing a stream through Tor and its status
 */
 

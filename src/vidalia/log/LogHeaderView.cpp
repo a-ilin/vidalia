@@ -10,7 +10,6 @@
 
 /*
 ** \file LogHeaderView.cpp
-** \version $Id$
 ** \brief Header for the message log QTreeView
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file LogTreeWidget.cpp
-** \version $Id$
 ** \brief Contains a collection of log messages as LogTreeItems
 */
 

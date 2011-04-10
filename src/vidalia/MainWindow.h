@@ -10,7 +10,6 @@
 
 /*
 ** \file MainWindow.h
-** \version $Id$
 ** \brief Main window. Creates tray menu and child windows
 */
 

@@ -10,7 +10,6 @@
 
 /*
 ** \file LanguageSupport.h
-** \version $Id$
 ** \brief Contains languages supported by Vidalia
 */
 

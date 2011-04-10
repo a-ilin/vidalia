@@ -10,7 +10,6 @@
 
 /*
 ** \file BandwidthGraph.h
-** \version $Id$
 ** \brief Displays a graph of Tor's bandwidth usage
 */
 

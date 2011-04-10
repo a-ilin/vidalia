@@ -10,7 +10,6 @@
 
 /*
 ** \file TorSignal.cpp
-** \version $Id$
 ** \brief Sends a signal to Tor's control interface
 */
 

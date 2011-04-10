@@ -10,7 +10,6 @@
 
 /*
 ** \file DomainValidator.cpp
-** \version $Id$
 ** \brief Validates that a given domain name is (probably) valid
 */
 

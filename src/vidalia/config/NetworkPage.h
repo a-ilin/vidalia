@@ -10,7 +10,6 @@
 
 /*
 ** \file NetworkPage.h
-** \version $Id$
 ** \brief Network and firewall configuration options
 */
 

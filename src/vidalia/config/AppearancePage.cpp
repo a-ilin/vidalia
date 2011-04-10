@@ -10,7 +10,6 @@
 
 /*
 ** \file AppearancePage.cpp
-** \version $Id$
 ** \brief Displays Vidalia language and style settings
 */
 

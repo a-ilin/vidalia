@@ -10,7 +10,6 @@
 
 /*
 ** \file ControlReply.cpp
-** \version $Id$
 ** \brief A response from Tor's control interface
 */
 

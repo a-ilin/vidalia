@@ -10,7 +10,6 @@
 
 /*
 ** \file CrashReportUploader.h
-** \version $Id$
 ** \brief Uploads a minidump file and any extra information to a crash
 ** reporting server.
 */

@@ -10,7 +10,6 @@
 
 /*
 ** \file TorrcDialog.cpp
-** \version $Id$
 ** \brief Torrc Dialog, contains the dialog for displaying and editing the torrc
 **
 ** Implements the dialog for editing the torrc file inside Vidalia 

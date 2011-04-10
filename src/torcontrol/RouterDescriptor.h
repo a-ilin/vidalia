@@ -10,7 +10,6 @@
 
 /* 
 ** \file RouterDescriptor.h
-** \version $Id$
 ** \brief Parses a blob of router descriptor text from Tor
 */
 

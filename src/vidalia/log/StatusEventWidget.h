@@ -10,7 +10,6 @@
 
 /*
 ** \file StatusEventWidget.h
-** \version $Id$
 ** \brief Displays information on Tor status events
 */
 

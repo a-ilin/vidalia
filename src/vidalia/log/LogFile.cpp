@@ -10,7 +10,6 @@
 
 /*
 ** \file LogFile.cpp
-** \version $Id$
 ** \brief Logs messages from Tor to a file
 */
 

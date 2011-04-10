@@ -10,7 +10,6 @@
 
 /*
 ** \file NetworkPage.cpp
-** \version $Id$
 ** \brief Network and firewall configuration options
 */
 

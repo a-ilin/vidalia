@@ -10,7 +10,6 @@
 
 /*
 ** \file win32.cpp
-** \version $Id$ 
 ** \brief Win32-specific functions
 */
 
