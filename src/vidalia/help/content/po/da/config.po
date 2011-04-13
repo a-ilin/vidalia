@@ -1,33 +1,22 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed
-#   by the Vidalia Project at http://www.vidalia-project.net/. No part
-#   of Vidalia, including this file, may be copied, modified,
-#   propagated, or distributed except according to the terms described
-#   in the LICENSE file.
-# 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2011-03-22 16:41+0000\n"
+"Last-Translator: aputsiaq <aputtu@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "Konfigurerer Vidalia og Tor"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,31 +25,43 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"Vidalia lader dig konfigurere nogle af de aspekter som hyppigst ændres i "
+"Vidalia og Tor. Det lader dig også opsætte og håndtere et <a "
+"href=\"server.html\">Tor-relæ</a>, så du kan hjælpe Tor-netværket med at "
+"gro."
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<a name=\"general\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "Generelle indstillinger"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
-msgid "Settings on the <i>General</i> page are the most commonly modified settings."
+msgid ""
+"Settings on the <i>General</i> page are the most commonly modified settings."
 msgstr ""
+"Indstillinger på siden <i>Generelt</i> er de indstillinger som hyppigst "
+"ændres."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
 msgid ""
-"<b>Tor Executable</b>: This is the Tor executable that Vidalia will run when "
-"you select <i>Start</i> from the tray menu. If you have multiple versions of "
-"Tor installed, you can tell Vidalia which version you would like to run by "
-"clicking the <i>Browse</i> button and navigating to the particular Tor "
+"<b>Tor Executable</b>: This is the Tor executable that Vidalia will run when"
+" you select <i>Start</i> from the tray menu. If you have multiple versions "
+"of Tor installed, you can tell Vidalia which version you would like to run "
+"by clicking the <i>Browse</i> button and navigating to the particular Tor "
 "installation you want."
 msgstr ""
+"<b>Tor-eksekverbar</b>: Dette er den eksekverbare Tor som Vidalia vil køre "
+"når du vælger <i>Start</i> fra bakkemenuen. Hvis du har flere versioner af "
+"Tor installeret, så kan du fortælle Vidalia hvilken version du vil køre ved "
+"at klikke på <i>Gennemse</i>-knappen og navigere til den særlige Tor-"
+"installation du foretrækker."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:39
@@ -69,22 +70,25 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"<b>Opstartsvalg:</b> Med denne indstilling kan du få Vidalia til automatisk "
+"at starte Tor når Vidalia starter. Du kan også konfigurere Vidalia til at "
+"køre når dit system starter <i>(kun Windows).</i>"
 
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<a name=\"network\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "Netværksindstillinger"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
 msgid ""
-"The <i>Network</i> settings page lets you change how Tor connects to the Tor "
-"network."
+"The <i>Network</i> settings page lets you change how Tor connects to the Tor"
+" network."
 msgstr ""
 
 #. type: Content of: <html><body><ul><li>
@@ -106,8 +110,8 @@ msgid ""
 "a restrictive firewall or proxy that limits the ports you are able to "
 "connect to, you can configure Tor to connect directly only to relays "
 "listening on the ports allowed by your firewall or proxy. Simply enter a "
-"list of ports permitted by your firewall or proxy, separated by "
-"commas. (<i>Example: 80,443,8080</i>)"
+"list of ports permitted by your firewall or proxy, separated by commas. "
+"(<i>Example: 80,443,8080</i>)"
 msgstr ""
 
 #. type: Content of: <html><body><ul><li>
@@ -117,39 +121,39 @@ msgid ""
 "Service Provider) blocks connections to the Tor network, Tor can attempt to "
 "avoid being filtered by encrypting its directory connections and connecting "
 "to the Tor network through relays called <i>bridges</i> (Tor 0.2.0.3-alpha "
-"or newer only). You can add bridge relays by specifying either their address "
-"and port number, or their address, port number, and fingerprint."
+"or newer only). You can add bridge relays by specifying either their address"
+" and port number, or their address, port number, and fingerprint."
 msgstr ""
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
 msgid "Below are examples of valid bridge address formats:"
-msgstr ""
+msgstr "Nedenfor er eksempler på gyldige bro-adresseformater:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:80
 msgid "128.213.48.13:8080"
-msgstr ""
+msgstr "128.213.48.13:8080"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:83
 msgid "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
-msgstr ""
+msgstr "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:86
 msgid "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
-msgstr ""
+msgstr "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
 msgid ""
 "Even if you do not know any bridge relay addresses, checking this checkbox "
 "may still be helpful. Tor will encrypt its directory requests, which can "
-"defeat blocking mechanisms that try to filter Tor's requests for information "
-"about other relays. If connections to normal Tor relays are also blocked, "
-"then you will need to learn a bridge relay address somehow and add it "
-"here. See the help topic on <a href=\"bridges.html#finding\">finding bridge "
+"defeat blocking mechanisms that try to filter Tor's requests for information"
+" about other relays. If connections to normal Tor relays are also blocked, "
+"then you will need to learn a bridge relay address somehow and add it here. "
+"See the help topic on <a href=\"bridges.html#finding\">finding bridge "
 "relays</a> for more information on how to learn new bridge relay addresses "
 "and fingerprints."
 msgstr ""
@@ -157,29 +161,29 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:100
 msgid "<a name=\"relay\"/>"
-msgstr ""
+msgstr "<a name=\"relay\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:101
 msgid "Relay Settings"
-msgstr ""
+msgstr "Indstillinger for relæ"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:103
 msgid ""
-"<i> See <a href=\"server.html\">this help topic</a> for detailed information "
-"about setting up and managing a Tor relay.  </i>"
+"<i> See <a href=\"server.html\">this help topic</a> for detailed information"
+" about setting up and managing a Tor relay.  </i>"
 msgstr ""
 
 #. type: Content of: <html><body>
 #: en/config.html:109
 msgid "<a name=\"appearance\"/>"
-msgstr ""
+msgstr "<a name=\"appearance\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:110
 msgid "Appearance Settings"
-msgstr ""
+msgstr "Indstillinger for udseende"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:112
@@ -191,12 +195,12 @@ msgstr ""
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:116
 msgid ""
-"<b>Language</b>: Vidalia's interface has been translated into many languages "
-"by helpful volunteers. When Vidalia is first run, it will try to guess which "
-"language your computer is currently using. If Vidalia guesses incorrectly, "
-"or if you prefer a different language, you can choose another language from "
-"the dropdown box. You will need to restart Vidalia after changing the "
-"displayed language for the changes to take effect."
+"<b>Language</b>: Vidalia's interface has been translated into many languages"
+" by helpful volunteers. When Vidalia is first run, it will try to guess "
+"which language your computer is currently using. If Vidalia guesses "
+"incorrectly, or if you prefer a different language, you can choose another "
+"language from the dropdown box. You will need to restart Vidalia after "
+"changing the displayed language for the changes to take effect."
 msgstr ""
 
 #. type: Content of: <html><body><ul><li>
@@ -227,8 +231,8 @@ msgstr ""
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:138
 msgid ""
-"<b>Control Address &amp; Port</b>: The <i>Control Port</i> is the port which "
-"Vidalia uses to talk to Tor.  This doesn't need to be changed unless you "
+"<b>Control Address &amp; Port</b>: The <i>Control Port</i> is the port which"
+" Vidalia uses to talk to Tor.  This doesn't need to be changed unless you "
 "have a conflict with another service on your machine, or if you are using "
 "Vidalia to control and monitor a Tor process running on another machine."
 msgstr ""
@@ -255,15 +259,15 @@ msgid ""
 "<b>Password</b> <i>(Default)</i> -- If this method is selected, you can "
 "specify a password that Tor will require each time a user or application "
 "connects to Tor's control port. If Vidalia starts Tor for you, you can have "
-"Vidalia randomly generate a new password each time it starts Tor by checking "
-"the <i>Randomly Generate</i> checkbox."
+"Vidalia randomly generate a new password each time it starts Tor by checking"
+" the <i>Randomly Generate</i> checkbox."
 msgstr ""
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:162
 msgid ""
-"<b>Cookie</b> -- If cookie authentication is selected, Tor will write a file "
-"(or, <i>cookie</i>) containing random bytes to its data directory when it "
+"<b>Cookie</b> -- If cookie authentication is selected, Tor will write a file"
+" (or, <i>cookie</i>) containing random bytes to its data directory when it "
 "starts. Any user or application that tries to connect to Tor's control port "
 "must be able to provide the contents of this cookie."
 msgstr ""
@@ -289,9 +293,9 @@ msgstr ""
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:181
 msgid ""
-"<b>Permissions</b> <i>(optional, not available on Windows)</i>: If you enter "
-"a value for <b>Run as User</b>, Tor will <i>setuid</i> to this user when it "
-"starts.  If you enter a value for <b>Run as Group</b>, Tor will "
+"<b>Permissions</b> <i>(optional, not available on Windows)</i>: If you enter"
+" a value for <b>Run as User</b>, Tor will <i>setuid</i> to this user when it"
+" starts.  If you enter a value for <b>Run as Group</b>, Tor will "
 "<i>setgid</i> to this group when it starts."
 msgstr ""
 
@@ -308,6 +312,6 @@ msgstr ""
 #. type: Content of: <html><body><p>
 #: en/config.html:192
 msgid ""
-"Hidden services allow you to provide any kind of TCP-based service, e.g.  an "
-"HTTP service, to others without revealing your IP address."
+"Hidden services allow you to provide any kind of TCP-based service, e.g.  an"
+" HTTP service, to others without revealing your IP address."
 msgstr ""

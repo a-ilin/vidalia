@@ -1,49 +1,49 @@
-[torproject.vidalia-help-bridges-pot]
+[torproject.2-vidalia-help-bridges-pot]
 file_filter = <lang>/bridges.po
 source_file = templates/bridges.pot
 source_lang = en
 
-[torproject.vidalia-help-links-pot]
+[torproject.3-vidalia-help-links-pot]
 file_filter = <lang>/links.po
 source_file = templates/links.pot
 source_lang = en
 
-[torproject.vidalia-help-netview-pot]
+[torproject.3-vidalia-help-netview-pot]
 file_filter = <lang>/netview.po
 source_file = templates/netview.pot
 source_lang = en
 
-[torproject.vidalia-help-running-pot]
+[torproject.2-vidalia-help-running-pot]
 file_filter = <lang>/running.po
 source_file = templates/running.pot
 source_lang = en
 
-[torproject.vidalia-help-troubleshooting-pot]
+[torproject.2-vidalia-help-troubleshooting-pot]
 file_filter = <lang>/troubleshooting.po
 source_file = templates/troubleshooting.pot
 source_lang = en
 
-[torproject.vidalia-help-config-pot]
+[torproject.3-vidalia-help-config-pot]
 file_filter = <lang>/config.po
 source_file = templates/config.pot
 source_lang = en
 
-[torproject.vidalia-help-log-pot]
+[torproject.3-vidalia-help-log-pot]
 file_filter = <lang>/log.po
 source_file = templates/log.pot
 source_lang = en
 
-[torproject.vidalia-help-index-pot]
+[torproject.3-vidalia-help-index-pot]
 file_filter = <lang>/index.po
 source_file = templates/index.pot
 source_lang = en
 
-[torproject.vidalia-help-server-pot]
+[torproject.3-vidalia-help-server-pot]
 file_filter = <lang>/server.po
 source_file = templates/server.pot
 source_lang = en
 
-[torproject.vidalia-help-services-pot]
+[torproject.3-vidalia-help-services-pot]
 file_filter = <lang>/services.po
 source_file = templates/services.pot
 source_lang = en
