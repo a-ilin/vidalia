@@ -16,10 +16,7 @@
 #ifndef _BRIDGEDOWNLOADER_H
 #define _BRIDGEDOWNLOADER_H
 
-#include <QHttp>
-#include <QSslError>
-#include <QStringList>
-
+#include <QtNetwork>
 
 class BridgeDownloader : public QObject
 {
@@ -65,7 +62,7 @@ signals:
    * have been read so far. Note that <b>total</b> may be 0 if the expected
    * total size of the response is not known.
    */
-  void downloadProgress(int done, int total);
+  void downloadProgress(qint64 done, qint64 total);
 
   /** Emitted when the status of the bridge request changes. <b>status</b>
    * describes the new current state of the request.
@@ -98,14 +95,14 @@ private slots:
    * signal is ignored since it is the result of a close() or abort()
    * request.
    */
-  void httpsRequestFinished(int id, bool error);
+  void httpsRequestFinished(QNetworkReply *reply);
 
   /** Called when the HTTPS connection encounters one or more
    * <b>sslErrors</b>. Currently the errors are just logged and
    * bridgeRequestFailed() is <i>not</i> emitted, since QHttp will also
    * emit 
    */
-  void sslErrors(const QList<QSslError> &sslErrors);
+  void sslErrors(QNetworkReply *, const QList<QSslError> &sslErrors);
 
 private:
   /** Initiates an HTTPS connection to bridges.torproject.org to start
@@ -115,10 +112,10 @@ private:
 
   /** Used to connect to the bridge database, send an HTTPS request for
    * new bridge addresses and then read the response. */
-  QHttp* _https;
+  QNetworkAccessManager* _https;
   
-  /** Unique numeric identifier of the current bridge request. */
-  int _requestId;
+  /** Identifier of the current bridge request */
+  QNetworkReply *_reply;
 };
 
 #endif

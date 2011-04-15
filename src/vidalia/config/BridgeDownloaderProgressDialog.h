@@ -39,7 +39,7 @@ public slots:
    * <b>maximum</b> steps. If <b>value</b> and <b>maximum</b> are both 0,
    * then a "busy" progress bar is displayed.
    */
-  void setDownloadProgress(int value, int maximum);
+  void setDownloadProgress(qint64 value, qint64 maximum);
 
   /** Called when the bridge download completes successfully and discards 
    * the progress dialog with an Accept result code. <b>bridges</b>
