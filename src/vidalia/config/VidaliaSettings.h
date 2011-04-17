@@ -130,6 +130,13 @@ public:
   QString pluginPath() const;
   /** Sets the path where the plugins live */
   void setPluginPath(const QString &path);
+
+  /** Get the icon preference */
+  QString getIconPref() const;
+
+  /** Set the icon preference */
+  void setIconPref(const QString &iconPref);
+>>>>>>> 4df4ee1... Implement Icon Preference (appearance setting) in OSX (see #2163)
 };
 
 #endif

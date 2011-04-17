@@ -43,6 +43,10 @@
 
 #include <QtGui>
 
+#ifdef Q_WS_MAC
+#include <Carbon/Carbon.h>
+#endif
+
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_CONTROL_PANEL  ":/images/16x16/system-run.png"
 #define IMG_MESSAGELOG     ":/images/16x16/format-justify-fill.png"
@@ -115,6 +119,16 @@ MainWindow::MainWindow()
   _status = Unset;
   _isVidaliaRunningTor = false;
   updateTorStatus(Stopped);
+
+#if defined(Q_WS_MAC)
+  /* Display OSX dock icon if icon preference is not set to "Tray Only" */
+  if (settings.getIconPref() != "Tray") {
+    ProcessSerialNumber psn = { 0, kCurrentProcess };
+    TransformProcessType(&psn, kProcessTransformToForegroundApplication);
+  }
+  /* Vidalia launched in background (LSUIElement=true). Bring to foreground. */
+  VidaliaWindow::setVisible(true);
+#endif
 }
 
 /** Destructor */
@@ -1420,9 +1434,16 @@ void
 MainWindow::setTrayIcon(const QString &iconFile)
 {
 #if defined(Q_WS_MAC)
+  VidaliaSettings settings;
   QApplication::setWindowIcon(QPixmap(iconFile));
-#endif
+
+  /* only display tray icon if icon preference is not set to "Dock Only" */
+  if (settings.getIconPref() != "Dock")
+    _trayIcon.setIcon(QIcon(iconFile));
+#else
+  /* always display tray icon for other platforms */
   _trayIcon.setIcon(QIcon(iconFile));
+#endif
 }
 
 /** Converts a TorStatus enum value to a string for debug logging purposes. */

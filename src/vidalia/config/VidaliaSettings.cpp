@@ -46,6 +46,7 @@
 #define VIDALIA_REG_KEY        "Vidalia" 
 #endif
 
+#define SETTING_ICON_PREF	"IconPref"
 
 /** Default Constructor */
 VidaliaSettings::VidaliaSettings()
@@ -84,6 +85,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_USE_LOCAL_GEOIP_DATABASE, false);
   setDefault(SETTING_LOCAL_GEOIP_DATABASE, "");
   setDefault(SETTING_PLUGIN_PATH, vApp->dataDirectory());
+  setDefault(SETTING_ICON_PREF, "Both");
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -333,4 +335,18 @@ void
 VidaliaSettings::setPluginPath(const QString &path)
 {
   setValue(SETTING_PLUGIN_PATH, path);
+}
+
+/** Get the icon preference */
+QString
+VidaliaSettings::getIconPref() const
+{
+  return value(SETTING_ICON_PREF).toString();
+}
+
+/** Set the icon preference */
+void
+VidaliaSettings::setIconPref(const QString &iconPref)
+{
+  setValue(SETTING_ICON_PREF, iconPref);
 }

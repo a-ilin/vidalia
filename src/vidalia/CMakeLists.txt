@@ -336,6 +336,9 @@ if (APPLE)
   set(CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}/)
   add_executable(${vidalia_BIN} MACOSX_BUNDLE ${vidalia_SRCS})
 
+  ## Specify location of custom Info.plist file
+  set_target_properties(${vidalia_BIN} PROPERTIES MACOSX_BUNDLE_INFO_PLIST ../pkg/osx/MacOSXBundleInfo.plist.in)
+
   ## Get the location of the app bundle for the current configuration
   get_target_property(VIDALIA_EXECUTABLE ${vidalia_BIN} LOCATION)
   get_filename_component(MACOSX_BUNDLE_DIRECTORY ${VIDALIA_EXECUTABLE} PATH)
