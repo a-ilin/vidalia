@@ -1014,8 +1014,20 @@ MainWindow::start()
     }
   }
 
-  /* Make sure the torrc we want to use really exists. */
   QString torrc = settings.getTorrc();
+
+  if(settings.bootstrap()) {
+    QString boottorrc = settings.bootstrapFrom();
+    vNotice(tr("Bootstrapping torrc from %1 to %2")
+        .arg(boottorrc).arg(torrc));
+    if(QFileInfo(boottorrc).exists()) {
+      if(QFile::copy(boottorrc, torrc)) {
+        settings.setBootstrap(false);
+      }
+    }
+  }
+
+  /* Make sure the torrc we want to use really exists. */
   if (!torrc.isEmpty()) {
     if (!QFileInfo(torrc).exists())
       touch_file(torrc, true);

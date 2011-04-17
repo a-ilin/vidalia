@@ -118,6 +118,15 @@ public:
    * "tor --hash-password foo". */
   static QString hashPassword(const QString &password);
 
+  /** Returns true if Vidalia needs to bootstrap the torrc file */
+  bool bootstrap() const;
+  /** Enables or disables bootstrap */
+  void setBootstrap(bool enabled);
+  /** Returns the path of the bootstrap torrc file */
+  QString bootstrapFrom() const;
+  /** Sets the location of the bootstrap torrc file */
+  void setBootstrapFrom(const QString &from);
+
 private:
   /** Returns the AuthenticationMethod enum value for the string
    * description of the authentication method given in <b>authMethod</b>. */
