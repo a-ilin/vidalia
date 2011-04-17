@@ -1,28 +1,17 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed
-#   by the Vidalia Project at http://www.vidalia-project.net/. No part
-#   of Vidalia, including this file, may be copied, modified,
-#   propagated, or distributed except according to the terms described
-#   in the LICENSE file.
-# 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-04-12 15:28+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Language: sco\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
@@ -70,8 +59,8 @@ msgstr ""
 #: en/netview.html:38
 msgid ""
 "The network map consists of a map of the world, with red pinpoints "
-"indicating the geographic location of relays in the Tor network. Green lines "
-"are drawn between relays to indicate the path of circuits that your Tor "
+"indicating the geographic location of relays in the Tor network. Green lines"
+" are drawn between relays to indicate the path of circuits that your Tor "
 "client has created through the Tor network."
 msgstr ""
 
@@ -96,12 +85,12 @@ msgstr ""
 #: en/netview.html:55
 msgid ""
 "In the middle of the dialog, below the network map, you will see a list of "
-"your current circuits, as well as any application traffic currently on those "
-"circuits. When the network map first loads, you will probably see a "
+"your current circuits, as well as any application traffic currently on those"
+" circuits. When the network map first loads, you will probably see a "
 "connection to geoip.vidalia-project.net, which occurs when Vidalia is "
 "looking up geographic information for the list of Tor relays. It is "
-"important to note that this request is done through Tor, so your location is "
-"not revealed to the GeoIP relay. The results of the lookups will be cached "
+"important to note that this request is done through Tor, so your location is"
+" not revealed to the GeoIP relay. The results of the lookups will be cached "
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
 
@@ -178,8 +167,8 @@ msgstr ""
 msgid ""
 "The relay details panel at the right side of the screen gives you details "
 "about the relay or relays currently selected in the <a "
-"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream "
-"in the list of your current circuits and streams, this panel will show you "
+"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream"
+" in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
 

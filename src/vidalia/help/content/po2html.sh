@@ -12,11 +12,11 @@
 ### Start config ###
 
 # Location of the translated po files. Do not add the trailing slash. 
-translated="/home/runa/tor/vidaliahelp/po"
+translated="/home/runa/tor/vidalia/src/vidalia/help/content/po"
 
 # Location of the original and translated html files. Do not add the
 # trailing slash.
-html="/home/runa/tor/vidaliahelp/"
+html="/home/runa/tor/vidalia/src/vidalia/help/content"
 
 ### End config ###
 

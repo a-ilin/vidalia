@@ -1,57 +1,42 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed
-#   by the Vidalia Project at http://www.vidalia-project.net/. No part
-#   of Vidalia, including this file, may be copied, modified,
-#   propagated, or distributed except according to the terms described
-#   in the LICENSE file.
-# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-11-14 07:13+0200\n"
-"Last-Translator: jonchil <abcd666@gmail.com>\n"
+"PO-Revision-Date: 2011-04-12 15:29+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.5\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
 msgid "Network Viewer"
-msgstr "网络查看器"
+msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:20
 msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
-msgstr "网络查看器使您可以查看 Tor 网络的中继和您经由的位置。"
+msgstr ""
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
 msgid "<a name=\"overview\"/>"
-msgstr "<a name=\"overview\"/>"
+msgstr ""
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:26
 msgid "Overview"
-msgstr "概述"
+msgstr ""
 
-# multiply streams不知如何翻译，专业术语
-# by Jonchil
 #. type: Content of: <html><body><p>
 #: en/netview.html:28
-#, fuzzy
 msgid ""
 "When you want to communicate anonymously through Tor (say, connecting to a "
 "website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections "
@@ -59,28 +44,25 @@ msgid ""
 "then sent as a <i>stream</i> through that circuit. For efficiency, multiple "
 "streams may share the same circuit."
 msgstr ""
-"当您想要通过 Tor 和匿名者交流时（说话，连接到网站），Tor 通过网络中继创建一个加密了连接的通路，或<i>回路</i>。您的应用程序是通过该回路作"
-"为<i>流</i>来发送的。为了提高效率，多媒体流也可能会共享同一个回路。"
 
 #. type: Content of: <html><body>
 #: en/netview.html:35
 msgid "<a name=\"netmap\"/>"
-msgstr "<a name=\"netmap\"/>"
+msgstr ""
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:36
 msgid "Network Map"
-msgstr "网络地图"
+msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:38
 msgid ""
 "The network map consists of a map of the world, with red pinpoints "
-"indicating the geographic location of relays in the Tor network. Green lines "
-"are drawn between relays to indicate the path of circuits that your Tor "
+"indicating the geographic location of relays in the Tor network. Green lines"
+" are drawn between relays to indicate the path of circuits that your Tor "
 "client has created through the Tor network."
 msgstr ""
-"网络地图是由世界地图，和红点指明的 Tor 网络地图上中继的地理位置组成的。绿色线条连接中继用以指明 Tor 客户端通过 Tor 网络创建回路的路径。"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:44
@@ -89,7 +71,7 @@ msgid ""
 "<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the "
 "map by clicking on the map and then dragging it in whatever direction you "
 "would like to move the map."
-msgstr "您可以通过点击工具栏上的<b>缩小</b>和<b>放大</b>按钮来放缩地图。您也可以通过点击地图并且拖拽到您想要移动的目标上。"
+msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:50
@@ -98,37 +80,29 @@ msgid ""
 "address of the relay in a GeoIP database, created by MaxMind and located at "
 "geoip.vidalia-project.net."
 msgstr ""
-"Tor 中继的地理位置决定于 GeoIP 数据库中中继的 IP 地址，由 MaxMind 创建并位于geoip.vidalia-project.net。"
 
-# 最后一句，翻译不通顺
-# by Jonchil
 #. type: Content of: <html><body><p>
 #: en/netview.html:55
-#, fuzzy
 msgid ""
 "In the middle of the dialog, below the network map, you will see a list of "
-"your current circuits, as well as any application traffic currently on those "
-"circuits. When the network map first loads, you will probably see a "
+"your current circuits, as well as any application traffic currently on those"
+" circuits. When the network map first loads, you will probably see a "
 "connection to geoip.vidalia-project.net, which occurs when Vidalia is "
 "looking up geographic information for the list of Tor relays. It is "
-"important to note that this request is done through Tor, so your location is "
-"not revealed to the GeoIP relay. The results of the lookups will be cached "
+"important to note that this request is done through Tor, so your location is"
+" not revealed to the GeoIP relay. The results of the lookups will be cached "
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
-"在对话框中间，位于网络地图下方的位置，您可以看到一个当前回路列表，任何应用程序也直接经由该回路。当网络地图第一次载入时，您应当可以看到一个到geoip"
-".vidalia-project.net的连接，该连接发生在当 Vidalia 为 Tor "
-"中继列表搜索地理位置信息的时候。很重要需要您注意的一点是该请求是通过 Tor 完成的，所以您的位置不会透露给 GeoIP "
-"中继。该搜索结果将会在本地捕捉以求降低载入到 Vidalia GeoIP 中继。"
 
 #. type: Content of: <html><body>
 #: en/netview.html:66
 msgid "<a name=\"relaylist\"/>"
-msgstr "<a name=\"relaylist\"/>"
+msgstr ""
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:67
 msgid "Relay Status"
-msgstr "中继状态"
+msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:69
@@ -136,119 +110,111 @@ msgid ""
 "On the left side of the network view, you will see a list of relays in the "
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
 "The following table summarizes the possible relay status icons:"
-msgstr "在网络查看器的左边，您将会看到一个在 Tor 网络中的中继列表。每个中继下面是一个指示中继状态的图标。下面的表格总结了中继状态图标。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
 msgid "The relay is offline or simply not responding."
-msgstr "中继离线或未回应。"
+msgstr ""
 
-# hibernating不好翻译，本意是休眠之意，这里暂时取字面意思
-# by Jonchil
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:84
-#, fuzzy
 msgid ""
 "The relay is <i>hibernating</i>, meaning it is online, but has used up as "
 "much bandwidth as the operator is willing to allow for a given time period."
-msgstr "中继<i>正在休眠</i>，意思是中继在线，但已经用尽宽带，因为操作员希望允许在指定时间段内运行。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:92
 msgid "The relay is online, but has shown only minimal throughput."
-msgstr "中继在线，但显示了很小的数据流量。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:98
 msgid "The relay is online and has shown a throughput &gt;= 20 KB/s."
-msgstr "中继在线并且显示流量&gt;= 20 KB/s。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:104
 msgid "The relay is online and has shown a throughput &gt;= 60 KB/s."
-msgstr "中继在线并且显示流量&gt;= 60 KB/s。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:110
 msgid "The relay is online and has shown a throughput &gt;= 400 KB/s."
-msgstr "中继在线并且显示流量&gt;= 400 KB/s。"
+msgstr ""
 
-# 第二行over后不知如何连接翻译
-# by Jonchil
 #. type: Content of: <html><body><p>
 #: en/netview.html:116
-#, fuzzy
 msgid ""
 "All bandwidth values are estimates based on the minimum of either the "
 "maximum bandwidth sustained input or output over any ten second period in "
 "the past day."
-msgstr "所有的宽带值都是基于最小或最大宽带的输入输出值"
+msgstr ""
 
 #. type: Content of: <html><body>
 #: en/netview.html:122
 msgid "<a name=\"details\"/>"
-msgstr "<a name=\"details\"/>"
+msgstr ""
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:123
 msgid "Relay Details"
-msgstr "中继细节"
+msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:125
 msgid ""
 "The relay details panel at the right side of the screen gives you details "
 "about the relay or relays currently selected in the <a "
-"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream "
-"in the list of your current circuits and streams, this panel will show you "
+"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream"
+" in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
-"在屏幕右边的终极细节面板向您提供了关于中继或当前在<a href=\"#relaylist\">中继列表</a>中选择的细节。如果您在当前回路或流中选择了一"
-"个回路或流，该面板将会向您展示关于每个通过回路发送信息的细节。"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:132
 msgid ""
 "The fields that you may see in the panel are as follows (<i>Note</i>: not "
 "all of these fields will always be present):"
-msgstr "面板中您能看的项目如下（<i>注意</i>：不是所有的项目都会显示出来的）："
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:138
 msgid "<b>Location</b>"
-msgstr "<b>位置</b>"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:139
 msgid "The geographic location of this Tor relay."
-msgstr "Tor 中继的地理位置。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:142
 msgid "<b>IP Address</b>"
-msgstr "<b>IP 地址</b>"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:143
 msgid "IP address at which this Tor relay can be reached."
-msgstr "该 Tor 中继可能连接到的 IP 地址。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:146
 msgid "<b>Platform</b>"
-msgstr "<b>平台</b>"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:148
 msgid ""
 "Operating system information and Tor version on which this relay is "
 "currently running."
-msgstr "当前正在运行中继平台的操作系统信息和 Tor 版本。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:153
 msgid "<b>Bandwidth</b>"
-msgstr "<b>宽带</b>"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:155
@@ -260,21 +226,21 @@ msgstr ""
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:160
 msgid "<b>Uptime</b>"
-msgstr "<b>运行时间</b>"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:162
 msgid ""
 "Length of time this relay has been available, which can be used to help "
 "estimate this relay's stability."
-msgstr "宽带已经运行的时间，可以帮助评估该中继的稳定性。"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:167
 msgid "<b>Last Updated</b>"
-msgstr "<b>最后更新</b>"
+msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:168
 msgid "Date this relay's information was last updated."
-msgstr "该中继的信息最后更新的日期。"
+msgstr ""

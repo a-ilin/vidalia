@@ -1649,7 +1649,7 @@ MainWindow::warnDangerousPort(quint16 port, bool rejected)
       application = " ";
   }
 
-  QString text = tr("One of your applications%1appears to be making a "
+  QString text = tr("One of your applications %1 appears to be making a "
                     "potentially unencrypted and unsafe connection to port %2.")
                     .arg(application).arg(port);
 
