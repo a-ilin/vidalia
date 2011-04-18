@@ -3197,7 +3197,7 @@ msgstr ""
 
 msgctxt "ServerPage"
 msgid "<a href=\"#bridgeUsage\">Who has used my bridge?</a>"
-msgstr "<a href=#bridgeUsage\">Wer hat meine Brücke genuzt?</a>"
+msgstr "<a href=\"#bridgeUsage\">Wer hat meine Brücke genuzt?</a>"
 
 msgctxt "ServerPage"
 msgid "<a href=\"#bridgeHelp\">What's this?</a>"

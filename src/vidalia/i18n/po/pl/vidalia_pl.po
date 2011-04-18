@@ -2674,11 +2674,11 @@ msgstr "Znajdź węzeł-most"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How else can I find bridges?</a>"
-msgstr "<a href=\\\"bridges.finding\\\">Jak jeszcze mogę znaleźć węzły-mosty?</a>"
+msgstr "<a href=\"bridges.finding\">Jak jeszcze mogę znaleźć węzły-mosty?</a>"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How can I find bridges?</a>"
-msgstr "<a href=\\\"bridges.finding\\\">Jak mogę znaleźć węzły-mosty?</a>"
+msgstr "<a href=\"bridges.finding\">Jak mogę znaleźć węzły-mosty?</a>"
 
 msgctxt "NetworkPage"
 msgid ""
