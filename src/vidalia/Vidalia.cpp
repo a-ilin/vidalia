@@ -252,6 +252,12 @@ Vidalia::parseArguments(QStringList args)
     if (arg.startsWith("-")) {
       arg = arg.mid((arg.startsWith("--") ? 2 : 1));
     }
+    /* Argument names do not include equal sign. Assume value follows. */
+    if (arg.indexOf("=") > -1) {
+      value = arg.right(arg.length() - (arg.indexOf("=")+1));
+      arg = arg.left(arg.indexOf("="));
+    }
+    else
     /* Check if it takes a value and there is one on the command-line */
     if (i < args.size()-1 && argNeedsValue(arg)) {
       value = args.at(++i);
@@ -265,6 +271,16 @@ Vidalia::parseArguments(QStringList args)
 bool
 Vidalia::validateArguments(QString &errmsg)
 {
+  /* Check for missing parameter values */
+  QMapIterator<QString, QString> _i(_args);
+  QString tmp;
+  while(_i.hasNext()) {
+    _i.next();
+    if(argNeedsValue(_i.key()) && (_i.value() == "")) {
+      errmsg = tr("Value required for parameter :") + _i.key();
+      return false;
+    }
+  }
   /* Check for a language that Vidalia recognizes. */
   if (_args.contains(ARG_LANGUAGE) &&
       !LanguageSupport::isValidLanguageCode(_args.value(ARG_LANGUAGE))) {

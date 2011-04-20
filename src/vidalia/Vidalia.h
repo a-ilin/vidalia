@@ -54,7 +54,7 @@ public:
   ~Vidalia();
 
   /** Validates that all arguments were well-formed. */
-  static bool validateArguments(QString &errmsg);
+  bool validateArguments(QString &errmsg);
   /** Displays usage information for command-line args. */
   static void showUsageMessageBox();
   /** Returns true if the user wants to see usage information. */
