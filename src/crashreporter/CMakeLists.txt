@@ -57,6 +57,7 @@ target_link_libraries(crashreporter
   ${QT_QTCORE_LIBRARY}
   ${QT_QTGUI_LIBRARY}
   ${QT_QTNETWORK_LIBRARY}
+  ${BREAKPAD_LIBRARY}
   common
 )
 if (WIN32)
