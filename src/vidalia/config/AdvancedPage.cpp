@@ -165,7 +165,8 @@ AdvancedPage::save(QString &errmsg)
 
   /* Only remember the torrc and datadir values if Vidalia started Tor, or
    * if the user changed the displayed values. */
-  if (Vidalia::torControl()->isVidaliaRunningTor()) {
+  if (Vidalia::torControl()->isVidaliaRunningTor() or
+      not Vidalia::torControl()->isRunning()) {
     QString torrc = ui.lineTorConfig->text();
     if (torrc != _settings->getTorrc()) {
       _settings->setTorrc(torrc);

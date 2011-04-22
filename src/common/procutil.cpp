@@ -21,6 +21,11 @@
 #include <QFileInfo>
 #include <QTextStream>
 #include <QApplication>
+#include <QProcess>
+
+#if !defined(Q_OS_WIN)
+#include <signal.h>
+#endif
 
 
 /** Returns the PID of the current process. */
@@ -104,13 +109,9 @@ read_pidfile(const QString &pidFileName, QString *errmsg)
 }
 
 QHash<qint64, QString>
-process_list()
+process_list(quint16 port)
 {
-#if defined(Q_OS_WIN32)
-  return win32_process_list();
-#else
-  return QHash<qint64, QString>();
-#endif
+  return universal_process_list(port);
 }
 
 bool
@@ -127,7 +128,60 @@ process_kill(qint64 pid)
 
   return (ret != FALSE);
 #else
+  if(!kill(pid, 15))
+    return true;
   return false;
 #endif
 }
 
+QHash<qint64, QString>
+universal_process_list(quint16 port)
+{
+  QHash<qint64, QString> pl;
+
+  QProcess ps;
+  QStringList args;
+#if defined(Q_OS_LINUX)
+  args << "-npl";
+#else
+  args << "-no";
+#endif
+
+  ps.start("netstat", args, QIODevice::ReadOnly);
+  while(!ps.waitForFinished());
+
+  QString flt = QString("127.0.0.1:%1").arg(port);
+  QStringList lines = QString(ps.readAllStandardOutput()).split("\n");
+  QStringList filtered = lines.filter(flt);
+
+#if defined(Q_OS_WIN)
+  filtered = filtered.filter("LISTENING");
+#endif
+
+  if(filtered.length() == 0)
+    return QHash<qint64, QString>();
+
+  qint64 pid = 0;
+  QString proc = "";
+#if defined(Q_OS_LINUX)
+  foreach(QString line, lines) {
+    QStringList items = line.trimmed().split(" ");
+    if(items.length() < 1)
+      continue;
+    items = items.last().trimmed().split("/");
+    if(items.length() < 2)
+      continue;
+
+    pid = items[0].toLong();
+    proc = items[1];
+
+    pl.insert(pid, proc);
+  }
+#else
+  pid = filtered[0].split(" ").last().trimmed().toLong();
+  proc = "tor";
+  pl.insert(pid, proc);
+#endif
+
+  return pl;
+}

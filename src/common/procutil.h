@@ -45,7 +45,8 @@ qint64 read_pidfile(const QString &pidfile, QString *errmsg = 0);
 
 /** Return a list of all currently running PIDs and their associated process
  * names. */
-QHash<qint64, QString> process_list();
+QHash<qint64, QString> process_list(quint16 port = 0);
+QHash<qint64, QString> universal_process_list(quint16 port);
 
 /** Attempt to kill process <b>pid</b>. Return true if the specified process
  * was successfully terminated. Otherwise, return false. */

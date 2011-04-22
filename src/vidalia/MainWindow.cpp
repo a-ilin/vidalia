@@ -851,18 +851,16 @@ MainWindow::authenticationFailed(QString errmsg)
 
     qint64 torPid = 0;
 
-#if defined(Q_OS_WIN32)
-    QHash<qint64, QString> procs = process_list();
+    TorSettings settings;
+    QHash<qint64, QString> procs = process_list(settings.getControlPort());
     foreach (qint64 pid, procs.keys()) {
-      if (! procs.value(pid).compare("tor.exe", Qt::CaseInsensitive)) {
+      if (! procs.value(pid).compare("tor", Qt::CaseInsensitive)) {
         torPid = pid;
         break;
       }
     }
+    
     dlg.setResetEnabled(torPid > 0);
-#else
-    dlg.setResetEnabled(false);
-#endif
 
     int ret = dlg.exec();
     if (ret == QDialogButtonBox::Reset) {
