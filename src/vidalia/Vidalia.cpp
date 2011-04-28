@@ -509,5 +509,14 @@ Vidalia::loadDefaultCaCertificates() const
   if (! QSslSocket::addDefaultCaCertificates(":/pki/EquifaxSecureCA.crt"))
     vWarn("Failed to add the Equifax Secure CA certificate to the default CA "
           "certificate database.");
+  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertCA.crt"))
+    vWarn("Failed to add the DigiCert Global CA certificate to the default CA "
+          "certificate database.");
+  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertCA2.crt"))
+    vWarn("Failed to add the DigiCert Assured CA certificate to the default CA "
+          "certificate database.");
+  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertCA3.crt"))
+    vWarn("Failed to add the DigiCert High Assurance CA certificate to the default CA "
+          "certificate database.");
 }
 

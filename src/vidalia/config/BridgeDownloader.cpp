@@ -18,7 +18,6 @@
 
 #define BRIDGEDB_HOST  "bridges.torproject.org"
 #define BRIDGEDB_PORT  443
-#define BRIDGEDB_SHA1  "a7e70f8a648fe04a9677f13eedf6f91b5f7f2e25"
 
 BridgeDownloader::BridgeDownloader(QObject *parent)
   : QObject(parent)
@@ -147,10 +146,4 @@ BridgeDownloader::sslErrors(QNetworkReply *reply, const QList<QSslError> &sslErr
     errorStrings << errorString;
     vWarn("  SSL Error: %1").arg(errorString);
   }
-
-  // Check if the certificate is the one we expect
-  if(_reply->sslConfiguration().peerCertificate().digest(QCryptographicHash::Sha1)==QByteArray::fromHex(BRIDGEDB_SHA1)) {
-    _reply->ignoreSslErrors();
-  } else
-    vWarn("There's been a problem with the certificate.");
 }
