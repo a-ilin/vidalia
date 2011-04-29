@@ -512,10 +512,10 @@ Vidalia::loadDefaultCaCertificates() const
   if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertCA.crt"))
     vWarn("Failed to add the DigiCert Global CA certificate to the default CA "
           "certificate database.");
-  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertCA2.crt"))
+  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertAssuredCA.crt"))
     vWarn("Failed to add the DigiCert Assured CA certificate to the default CA "
           "certificate database.");
-  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertCA3.crt"))
+  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertHighAssuranceCA.crt"))
     vWarn("Failed to add the DigiCert High Assurance CA certificate to the default CA "
           "certificate database.");
 }
