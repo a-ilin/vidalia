@@ -69,7 +69,9 @@ RouterListItem::update(const RouterDescriptor &rd)
     statusIcon = QIcon(IMG_NODE_SLEEPING);
     setToolTip(STATUS_COLUMN, tr("Hibernating"));
   } else {
-    _statusValue = (qint64)_rd->observedBandwidth();
+    _statusValue = (qint64)qMin(_rd->observedBandwidth(), 
+                                qMin(_rd->averageBandwidth(),
+                                     _rd->burstBandwidth()));
     if (_statusValue >= 400*1024) {
       statusIcon = QIcon(IMG_NODE_HIGH_BW);
     } else if (_statusValue >= 60*1024) {
