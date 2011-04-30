@@ -89,6 +89,8 @@ ServerPage::ServerPage(QWidget *parent)
                          this, SLOT(customRateChanged()));
   connect(ui.rdoClientMode, SIGNAL(toggled(bool)),
                       this, SLOT(serverModeChanged(bool)));
+  connect(ui.rdoNonExitMode, SIGNAL(toggled(bool)),
+                      this, SLOT(serverModeChanged(bool)));
   connect(ui.rdoServerMode, SIGNAL(toggled(bool)),
                       this, SLOT(serverModeChanged(bool)));
   connect(ui.rdoBridgeMode, SIGNAL(toggled(bool)),
@@ -217,10 +219,12 @@ ServerPage::serverModeChanged(bool enabled)
 {
   Q_UNUSED(enabled);
   bool bridgeEnabled = ui.rdoBridgeMode->isChecked();
+  bool relayEnabled = ui.rdoServerMode->isChecked() ||
+                      ui.rdoNonExitMode->isChecked();
   
   /* Show the tab menu only if the user is running a normal relay or a bridge
    * relay. */
-  ui.tabsMenu->setVisible(ui.rdoServerMode->isChecked() || bridgeEnabled);
+  ui.tabsMenu->setVisible(relayEnabled || bridgeEnabled);
   
   /* Disable the Exit Policies tab when bridge relay mode is selected */
   ui.tabsMenu->setTabEnabled(2, !bridgeEnabled);
@@ -236,6 +240,13 @@ ServerPage::serverModeChanged(bool enabled)
 
   ui.lineDirPort->setEnabled(!bridgeEnabled);
   ui.chkMirrorDirectory->setEnabled(!bridgeEnabled);
+
+  ui.chkWebsites->setEnabled(!ui.rdoNonExitMode->isChecked());
+  ui.chkSecWebsites->setEnabled(!ui.rdoNonExitMode->isChecked());
+  ui.chkMail->setEnabled(!ui.rdoNonExitMode->isChecked());
+  ui.chkIRC->setEnabled(!ui.rdoNonExitMode->isChecked());
+  ui.chkIM->setEnabled(!ui.rdoNonExitMode->isChecked());
+  ui.chkMisc->setEnabled(!ui.rdoNonExitMode->isChecked());
 }
 
 /** Returns true if the user has changed their server settings since the
@@ -270,7 +281,9 @@ ServerPage::save(QString &errmsg)
   /* Force the bandwidth rate limits to validate */
   customRateChanged();
   
-  if (ui.rdoServerMode->isChecked() || ui.rdoBridgeMode->isChecked()) {
+  if (ui.rdoServerMode->isChecked() || 
+      ui.rdoNonExitMode->isChecked() ||
+      ui.rdoBridgeMode->isChecked()) {
     /* A server must have an ORPort and a nickname */
     if (ui.lineServerPort->text().isEmpty() ||
         ui.lineServerNickname->text().isEmpty()) {
@@ -289,7 +302,9 @@ ServerPage::save(QString &errmsg)
   /* "Server" is enabled whether we're a bridge or normal relay. "Bridge" is
    * only enabled if we're a bridge (obviously). */
   _settings->setServerEnabled(ui.rdoServerMode->isChecked()
+                                || ui.rdoNonExitMode->isChecked()
                                 || ui.rdoBridgeMode->isChecked());
+  _settings->setNonExitEnabled(ui.rdoNonExitMode->isChecked());
   _settings->setBridgeEnabled(ui.rdoBridgeMode->isChecked());
   if (ui.rdoBridgeMode->isChecked())
     _settings->setPublishServerDescriptor(ui.chkPublishBridgeAddress->isChecked());
@@ -320,6 +335,8 @@ ServerPage::load()
 {
   if (_settings->isBridgeEnabled())
     ui.rdoBridgeMode->setChecked(true);
+  else if (_settings->isNonExitEnabled())
+    ui.rdoNonExitMode->setChecked(true);
   else if (_settings->isServerEnabled())
     ui.rdoServerMode->setChecked(true);
   else
@@ -460,41 +477,46 @@ ServerPage::loadExitPolicies()
 void
 ServerPage::saveExitPolicies()
 {
-  ExitPolicy exitPolicy;
-  bool rejectUnchecked = ui.chkMisc->isChecked();
-  
-  /* If misc is checked, then reject unchecked items and leave the default exit
-   * policy alone. Else, accept only checked items and end with reject *:*,
-   * replacing the default exit policy. */
-  if (ui.chkWebsites->isChecked() && !rejectUnchecked) {
-    exitPolicy.addAcceptedPorts(PORTS_HTTP);
-  } else if (!ui.chkWebsites->isChecked() && rejectUnchecked) {
-    exitPolicy.addRejectedPorts(PORTS_HTTP);
+  ExitPolicy *exitPolicy;
+  if(ui.rdoNonExitMode->isChecked()) {
+    exitPolicy = new ExitPolicy(ExitPolicy::Middleman);
+  } else {
+    exitPolicy = new ExitPolicy();
+    bool rejectUnchecked = ui.chkMisc->isChecked();
+    
+    /* If misc is checked, then reject unchecked items and leave the default exit
+    * policy alone. Else, accept only checked items and end with reject *:*,
+    * replacing the default exit policy. */
+    if (ui.chkWebsites->isChecked() && !rejectUnchecked) {
+      exitPolicy->addAcceptedPorts(PORTS_HTTP);
+    } else if (!ui.chkWebsites->isChecked() && rejectUnchecked) {
+      exitPolicy->addRejectedPorts(PORTS_HTTP);
+    }
+    if (ui.chkSecWebsites->isChecked() && !rejectUnchecked) {
+      exitPolicy->addAcceptedPorts(PORTS_HTTPS);
+    } else if (!ui.chkSecWebsites->isChecked() && rejectUnchecked) {
+      exitPolicy->addRejectedPorts(PORTS_HTTPS);
+    }
+    if (ui.chkMail->isChecked() && !rejectUnchecked) {
+      exitPolicy->addAcceptedPorts(PORTS_MAIL);
+    } else if (!ui.chkMail->isChecked() && rejectUnchecked) {
+      exitPolicy->addRejectedPorts(PORTS_MAIL);
+    }
+    if (ui.chkIRC->isChecked() && !rejectUnchecked) {
+      exitPolicy->addAcceptedPorts(PORTS_IRC);
+    } else if (!ui.chkIRC->isChecked() && rejectUnchecked) {
+      exitPolicy->addRejectedPorts(PORTS_IRC);
+    }
+    if (ui.chkIM->isChecked() && !rejectUnchecked) {
+      exitPolicy->addAcceptedPorts(PORTS_IM);
+    } else if (!ui.chkIM->isChecked() && rejectUnchecked) {
+      exitPolicy->addRejectedPorts(PORTS_IM);
+    }
+    if (!ui.chkMisc->isChecked()) {
+      exitPolicy->addPolicy(Policy(Policy::RejectAll));
+    }
   }
-  if (ui.chkSecWebsites->isChecked() && !rejectUnchecked) {
-    exitPolicy.addAcceptedPorts(PORTS_HTTPS);
-  } else if (!ui.chkSecWebsites->isChecked() && rejectUnchecked) {
-    exitPolicy.addRejectedPorts(PORTS_HTTPS);
-  }
-  if (ui.chkMail->isChecked() && !rejectUnchecked) {
-    exitPolicy.addAcceptedPorts(PORTS_MAIL);
-  } else if (!ui.chkMail->isChecked() && rejectUnchecked) {
-    exitPolicy.addRejectedPorts(PORTS_MAIL);
-  }
-  if (ui.chkIRC->isChecked() && !rejectUnchecked) {
-    exitPolicy.addAcceptedPorts(PORTS_IRC);
-  } else if (!ui.chkIRC->isChecked() && rejectUnchecked) {
-    exitPolicy.addRejectedPorts(PORTS_IRC);
-  }
-  if (ui.chkIM->isChecked() && !rejectUnchecked) {
-    exitPolicy.addAcceptedPorts(PORTS_IM);
-  } else if (!ui.chkIM->isChecked() && rejectUnchecked) {
-    exitPolicy.addRejectedPorts(PORTS_IM);
-  }
-  if (!ui.chkMisc->isChecked()) {
-    exitPolicy.addPolicy(Policy(Policy::RejectAll));
-  }
-  _settings->setExitPolicy(exitPolicy);
+  _settings->setExitPolicy(*exitPolicy);
 }
 
 /** Called when the user selects a new value from the rate combo box. */
