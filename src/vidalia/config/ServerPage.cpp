@@ -226,9 +226,6 @@ ServerPage::serverModeChanged(bool enabled)
    * relay. */
   ui.tabsMenu->setVisible(relayEnabled || bridgeEnabled);
   
-  /* Disable the Exit Policies tab when bridge relay mode is selected */
-  ui.tabsMenu->setTabEnabled(2, !bridgeEnabled);
-  
   /* Display the widgets that show the user their bridge identity if bridge
    * relay mode is selected. */
   ui.lblYourBridgeRelayIs->setVisible(bridgeEnabled);
@@ -241,12 +238,12 @@ ServerPage::serverModeChanged(bool enabled)
   ui.lineDirPort->setEnabled(!bridgeEnabled);
   ui.chkMirrorDirectory->setEnabled(!bridgeEnabled);
 
-  ui.chkWebsites->setEnabled(!ui.rdoNonExitMode->isChecked());
-  ui.chkSecWebsites->setEnabled(!ui.rdoNonExitMode->isChecked());
-  ui.chkMail->setEnabled(!ui.rdoNonExitMode->isChecked());
-  ui.chkIRC->setEnabled(!ui.rdoNonExitMode->isChecked());
-  ui.chkIM->setEnabled(!ui.rdoNonExitMode->isChecked());
-  ui.chkMisc->setEnabled(!ui.rdoNonExitMode->isChecked());
+  ui.chkWebsites->setEnabled(!bridgeEnabled and !ui.rdoNonExitMode->isChecked());
+  ui.chkSecWebsites->setEnabled(!bridgeEnabled and !ui.rdoNonExitMode->isChecked());
+  ui.chkMail->setEnabled(!bridgeEnabled and !ui.rdoNonExitMode->isChecked());
+  ui.chkIRC->setEnabled(!bridgeEnabled and !ui.rdoNonExitMode->isChecked());
+  ui.chkIM->setEnabled(!bridgeEnabled and !ui.rdoNonExitMode->isChecked());
+  ui.chkMisc->setEnabled(!bridgeEnabled and !ui.rdoNonExitMode->isChecked());
 }
 
 /** Returns true if the user has changed their server settings since the
