@@ -19,17 +19,12 @@ include_directories(
 set(crashreporter_SRCS
   main.cpp
   CrashReportDialog.cpp
-  CrashReportUploader.cpp
-  UploadProgressDialog.cpp
 )
 qt4_wrap_cpp(crashreporter_SRCS
   CrashReportDialog.h
-  CrashReportUploader.h
-  UploadProgressDialog.h
 )
 qt4_wrap_ui(crashreporter_SRCS
   CrashReportDialog.ui
-  UploadProgressDialog.ui
 )
 qt4_add_resources(crashreporter_SRCS
   res/CrashReporter.qrc
