@@ -65,6 +65,8 @@ private slots:
   void start();
   /** Called when the user changes a setting that needs Tor restarting */
   void restart();
+  /** Called when the user wants to reload Tor's config */
+  void sighup();
   /** Called when the Tor process fails to start. */
   void startFailed(QString errmsg);
   /** Called when the Tor process has successfully started. */
@@ -285,6 +287,7 @@ private:
   QAction *_actionStartTor;
   QAction *_actionStopTor;
   QAction *_actionRestartTor;
+  QAction *_actionReloadConfig;
   QAction *_actionNewIdentity;
   QAction *_actionStatus;
   QAction *_actionNetworkMap;

@@ -135,6 +135,7 @@ MainWindow::createActions()
   _actionStartTor = new QAction(QIcon(IMG_START_TOR_16), tr("Start"), this);
   _actionStopTor = new QAction(QIcon(IMG_STOP_TOR_16), tr("Stop"), this);
   _actionRestartTor = new QAction(tr("Restart"), this);
+  _actionReloadConfig = new QAction(tr("Reload Tor's config"), this);
   _actionNewIdentity = new QAction(QIcon(IMG_IDENTITY), tr("New Identity"), this);
   _actionStatus = new QAction(QIcon(IMG_CONTROL_PANEL), tr("Status"), this);
   _actionNetworkMap = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
@@ -158,6 +159,9 @@ MainWindow::createMenuBar()
   torMenu->addAction(_actionStartTor);
   torMenu->addAction(_actionStopTor);
   torMenu->addAction(_actionRestartTor);
+#if !defined(Q_WS_WIN)
+  torMenu->addAction(_actionReloadConfig);
+#endif
 
   QMenu *actionsMenu = menu->addMenu(tr("Actions"));
   actionsMenu->addAction(_actionNewIdentity);
@@ -277,6 +281,7 @@ MainWindow::retranslateUi()
   _actionStartTor->setText(tr("Start"));
   _actionStopTor->setText(tr("Stop"));
   _actionRestartTor->setText(tr("Restart"));
+  _actionReloadConfig->setText(tr("Reload Tor's config"));
   _actionConfigure->setText(tr("Settings"));
 
   if (_status == Stopped) {
@@ -310,6 +315,7 @@ MainWindow::createConnections()
   connect(_actionExit, SIGNAL(triggered()), this, SLOT(close()));
   connect(_actionStartTor, SIGNAL(triggered()), this, SLOT(start()));
   connect(_actionRestartTor, SIGNAL(triggered()), this, SLOT(restart()));
+  connect(_actionReloadConfig, SIGNAL(triggered()), this, SLOT(sighup()));
   connect(_actionStopTor, SIGNAL(triggered()), this, SLOT(stop()));
   connect(_actionShowControlPanel, SIGNAL(triggered()), this, SLOT(show()));
   connect(_actionNewIdentity, SIGNAL(triggered()), this, SLOT(newIdentity()));
@@ -1387,6 +1393,22 @@ MainWindow::restart()
 {
   if(_torControl->stop()) {
     start();
+  }
+}
+
+/** Sends a sighup signal to Tor on platforms other than Windows */
+void
+MainWindow::sighup()
+{
+  bool rc;
+  QString errmsg;
+  rc = _torControl->signal(TorSignal::Reload, &errmsg);
+
+  if (!rc) {
+    int response = VMessageBox::warning(this, tr("Error reloading configuration"),
+                     p(tr("Vidalia was unable to reload Tor's configuration.")) 
+                       + p(errmsg),
+                     VMessageBox::Ok);
   }
 }
 
