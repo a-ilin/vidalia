@@ -1,7 +1,8 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>GeneralPage</class>
- <widget class="QWidget" name="GeneralPage" >
-  <property name="geometry" >
+ <widget class="QWidget" name="GeneralPage">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
@@ -9,63 +10,63 @@
     <height>402</height>
    </rect>
   </property>
-  <property name="sizePolicy" >
-   <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="contextMenuPolicy" >
+  <property name="contextMenuPolicy">
    <enum>Qt::NoContextMenu</enum>
   </property>
-  <layout class="QVBoxLayout" >
-   <property name="spacing" >
+  <layout class="QVBoxLayout">
+   <property name="spacing">
     <number>6</number>
    </property>
    <item>
-    <widget class="QCheckBox" name="chkRunVidaliaAtSystemStartup" >
-     <property name="text" >
+    <widget class="QCheckBox" name="chkRunVidaliaAtSystemStartup">
+     <property name="text">
       <string>Start Vidalia when my system starts</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="Line" name="lineHorizontalSeparator" >
-     <property name="orientation" >
+    <widget class="Line" name="lineHorizontalSeparator">
+     <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="grpTorLocation" >
-     <property name="minimumSize" >
+    <widget class="QGroupBox" name="grpTorLocation">
+     <property name="minimumSize">
       <size>
        <width>0</width>
        <height>0</height>
       </size>
      </property>
-     <property name="contextMenuPolicy" >
+     <property name="contextMenuPolicy">
       <enum>Qt::NoContextMenu</enum>
      </property>
-     <property name="title" >
+     <property name="title">
       <string>Tor</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout" >
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <widget class="QCheckBox" name="chkRunTorAtVidaliaStartup" >
-        <property name="text" >
-         <string>Start the Tor software when Vidalia starts</string>
+       <widget class="QCheckBox" name="chkRunTorAtVidaliaStartup">
+        <property name="text">
+         <string>Connect to Tor automatically</string>
         </property>
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" >
+       <layout class="QHBoxLayout">
         <item>
-         <widget class="QLineEdit" name="lineTorExecutable" />
+         <widget class="QLineEdit" name="lineTorExecutable"/>
         </item>
         <item>
-         <widget class="QPushButton" name="btnBrowseTorExecutable" >
-          <property name="text" >
+         <widget class="QPushButton" name="btnBrowseTorExecutable">
+          <property name="text">
            <string>Browse</string>
           </property>
          </widget>
@@ -76,48 +77,48 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="grpProxyExecutable" >
-     <property name="sizePolicy" >
-      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+    <widget class="QGroupBox" name="grpProxyExecutable">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="minimumSize" >
+     <property name="minimumSize">
       <size>
        <width>0</width>
        <height>0</height>
       </size>
      </property>
-     <property name="title" >
+     <property name="title">
       <string>Proxy Application (optional)</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2" >
+     <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QCheckBox" name="chkRunProxyAtTorStartup" >
-        <property name="text" >
+       <widget class="QCheckBox" name="chkRunProxyAtTorStartup">
+        <property name="text">
          <string>Start a proxy application when Tor starts</string>
         </property>
-        <property name="checked" >
+        <property name="checked">
          <bool>true</bool>
         </property>
        </widget>
       </item>
       <item>
-       <layout class="QHBoxLayout" >
+       <layout class="QHBoxLayout">
         <item>
-         <widget class="QLineEdit" name="lineProxyExecutable" >
-          <property name="enabled" >
+         <widget class="QLineEdit" name="lineProxyExecutable">
+          <property name="enabled">
            <bool>true</bool>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="btnBrowseProxyExecutable" >
-          <property name="enabled" >
+         <widget class="QPushButton" name="btnBrowseProxyExecutable">
+          <property name="enabled">
            <bool>true</bool>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Browse</string>
           </property>
          </widget>
@@ -125,13 +126,13 @@
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" >
+       <layout class="QHBoxLayout">
         <item>
-         <widget class="QLabel" name="lblProxyExecutableArguments" >
-          <property name="enabled" >
+         <widget class="QLabel" name="lblProxyExecutableArguments">
+          <property name="enabled">
            <bool>true</bool>
           </property>
-          <property name="text" >
+          <property name="text">
            <string>Proxy Application Arguments:</string>
           </property>
          </widget>
@@ -139,8 +140,8 @@
        </layout>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineProxyExecutableArguments" >
-        <property name="enabled" >
+       <widget class="QLineEdit" name="lineProxyExecutableArguments">
+        <property name="enabled">
          <bool>true</bool>
         </property>
        </widget>
@@ -149,21 +150,21 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="grpSoftwareUpdates" >
-     <property name="title" >
+    <widget class="QGroupBox" name="grpSoftwareUpdates">
+     <property name="title">
       <string>Software Updates</string>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout" >
+     <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QCheckBox" name="chkAutoUpdates" >
-        <property name="text" >
+       <widget class="QCheckBox" name="chkAutoUpdates">
+        <property name="text">
          <string>Check for new software updates automatically</string>
         </property>
        </widget>
       </item>
       <item>
-       <spacer name="horizontalSpacer_2" >
-        <property name="orientation" >
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
         <property name="sizeHint" >
@@ -188,8 +189,8 @@
        </spacer>
       </item>
       <item>
-       <widget class="QPushButton" name="btnUpdateNow" >
-        <property name="text" >
+       <widget class="QPushButton" name="btnUpdateNow">
+        <property name="text">
          <string>Check Now</string>
         </property>
        </widget>
