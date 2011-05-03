@@ -46,7 +46,7 @@ BridgeDownloaderProgressDialog::setStatus(const QString &status)
 }
 
 void
-BridgeDownloaderProgressDialog::setDownloadProgress(int done, int total)
+BridgeDownloaderProgressDialog::setDownloadProgress(qint64 done, qint64 total)
 {
   ui.progressBar->setRange(0, total);
   ui.progressBar->setValue(done);

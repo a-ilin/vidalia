@@ -310,6 +310,9 @@
   </qresource>
   <qresource prefix="/pki">
     <file>EquifaxSecureCA.crt</file>
+    <file>DigiCertCA.crt</file>
+    <file>DigiCertAssuredCA.crt</file>
+    <file>DigiCertHighAssuranceCA.crt</file>
   </qresource>
   <qresource prefix="/geoip">
     <file>country-coordinates.csv</file>
