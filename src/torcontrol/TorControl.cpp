@@ -131,10 +131,18 @@ bool
 TorControl::stop(QString *errmsg)
 {
   bool rc = false;
-  if (_controlConn->isConnected())
-    rc = signal(TorSignal::Halt, errmsg);
-  if (!rc)
-    rc = _torProcess->stop(errmsg);
+
+  if (!isVidaliaRunningTor()) {
+    *errmsg = tr("Vidalia has not started Tor. "
+        "You need to stop Tor through the interface you started it.");
+    return rc;
+  } else {
+    if (_controlConn->isConnected())
+      rc = signal(TorSignal::Halt, errmsg);
+    if (!rc)
+      rc = _torProcess->stop(errmsg);
+  }
+
   return rc;
 }
 
