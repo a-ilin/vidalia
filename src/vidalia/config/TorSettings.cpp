@@ -42,6 +42,8 @@
 #define SETTING_USE_RANDOM_PASSWORD "UseRandomPassword"
 #define SETTING_WARN_PLAINTEXT_PORTS    "WarnPlaintextPorts"
 #define SETTING_REJECT_PLAINTEXT_PORTS  "RejectPlaintextPorts"
+#define SETTING_BOOTSTRAP            "Bootstrap"
+#define SETTING_BOOTSTRAP_FROM       "BootstrapFrom"
 
 /** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
@@ -88,6 +90,8 @@ TorSettings::TorSettings(TorControl *torControl)
   setDefault(SETTING_WARN_PLAINTEXT_PORTS, QList<QVariant>() << 23 << 109 
                                                              << 110 << 143);
   setDefault(SETTING_REJECT_PLAINTEXT_PORTS, QList<QVariant>());
+  setDefault(SETTING_BOOTSTRAP, false);
+  setDefault(SETTING_BOOTSTRAP_FROM, "");
 }
 
 /** Applies any changes to Tor's control port or authentication settings. */
@@ -423,3 +427,26 @@ TorSettings::hashPassword(const QString &password)
                            .arg(base16_encode(key));
 }
 
+void
+TorSettings::setBootstrap(bool enabled)
+{
+  setValue(SETTING_BOOTSTRAP, enabled);
+}
+
+bool
+TorSettings::bootstrap() const
+{
+  return value(SETTING_BOOTSTRAP).toBool();
+}
+
+void
+TorSettings::setBootstrapFrom(const QString &from)
+{
+  setValue(SETTING_BOOTSTRAP_FROM, from);
+}
+
+QString
+TorSettings::bootstrapFrom() const
+{
+  return QDir::convertSeparators(value(SETTING_BOOTSTRAP_FROM).toString());
+}
