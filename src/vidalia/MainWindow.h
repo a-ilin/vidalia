@@ -24,6 +24,7 @@
 #include "ConfigDialog.h"
 #include "MessageLog.h"
 #include "NetViewer.h"
+#include "BandwidthGraph.h"
 #include "HelperProcess.h"
 #if defined(USE_AUTOUPDATE)
 #include "UpdateProcess.h"
@@ -304,6 +305,7 @@ private:
   MessageLog *_messageLog; /**< Message log that displays a more detailed log from Tor */
   NetViewer _netViewer; /**< Network map that draws circuits */
   QStringList _tabMap; /**< Map to handle opened tabs */
+  BandwidthGraph *_graph; /**< Graph that draws bandwidth usage */
 };
 
 #endif

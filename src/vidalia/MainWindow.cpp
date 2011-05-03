@@ -23,7 +23,6 @@
 #include "VMessageBox.h"
 #include "TorSettings.h"
 #include "ServerSettings.h"
-#include "BandwidthGraph.h"
 #include "AboutDialog.h"
 #include "HelpBrowser.h"
 #ifdef USE_AUTOUPDATE
@@ -122,6 +121,7 @@ MainWindow::createGUI()
   // We need to create this tab at the beggining
   // and we must specify the statusBar
   _messageLog = new MessageLog(this->statusBar());
+  _graph = new BandwidthGraph(this->statusBar());
 
   addTab(&_statusTab);
   ui.tabWidget->pinTab(0);
@@ -1544,7 +1544,11 @@ MainWindow::delTab(int index)
     index = ui.tabWidget->currentIndex();
 
   VidaliaTab *tab = qobject_cast<VidaliaTab*>(ui.tabWidget->widget(index));
-  if(tab != _messageLog && tab != &_statusTab && tab != &_netViewer) {
+  // if it isn't one of the tabs that's supposed to be open at every moment
+  if (tab != _messageLog && 
+      tab != &_statusTab && 
+      tab != &_netViewer &&
+      tab != _graph) {
     QObject::disconnect(ui.tabWidget->widget(index), 0, 0, 0);
     tab->deleteLater();
   }
@@ -1568,8 +1572,7 @@ MainWindow::showMessageLogTab()
 void 
 MainWindow::showBandwithTab()
 {
-  BandwidthGraph *graph = new BandwidthGraph(this->statusBar());
-  addTab(graph);
+  addTab(_graph);
 }
 
 /** Creates and displays Vidalia's About dialog. */
