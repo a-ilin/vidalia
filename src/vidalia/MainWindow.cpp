@@ -1536,7 +1536,10 @@ MainWindow::addTab(VidaliaTab *tab)
   if(_tabMap.contains(tab->getTitle())) {
     ui.tabWidget->setCurrentIndex(_tabMap.indexOf(tab->getTitle()));
     /** Exception for tabs that need to be always created */
-    if(tab != _messageLog && tab != &_statusTab && tab != &_netViewer)
+    if (tab != _messageLog && 
+        tab != &_statusTab && 
+        tab != &_netViewer &&
+        tab != _graph)
       tab->deleteLater();
     return;
   }
