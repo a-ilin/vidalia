@@ -389,8 +389,8 @@ NetworkPage::findBridges()
 
   connect(_bridgeDownloader, SIGNAL(statusChanged(QString)),
           dlg, SLOT(setStatus(QString)));
-  connect(_bridgeDownloader, SIGNAL(downloadProgress(int, int)),
-          dlg, SLOT(setDownloadProgress(int, int)));
+  connect(_bridgeDownloader, SIGNAL(downloadProgress(qint64, qint64)),
+          dlg, SLOT(setDownloadProgress(qint64, qint64)));
   connect(_bridgeDownloader, SIGNAL(bridgeRequestFailed(QString)),
           dlg, SLOT(bridgeRequestFailed(QString)));
   connect(_bridgeDownloader, SIGNAL(bridgeRequestFinished(QStringList)),

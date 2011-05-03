@@ -16,34 +16,25 @@
 #include "BridgeDownloader.h"
 #include "Vidalia.h"
 
-#include <QSslSocket>
-
 #define BRIDGEDB_HOST  "bridges.torproject.org"
 #define BRIDGEDB_PORT  443
 
-
 BridgeDownloader::BridgeDownloader(QObject *parent)
-  : QObject(parent),
-    _requestId(0)
+  : QObject(parent)
 {
-  _https = new QHttp(BRIDGEDB_HOST,  QHttp::ConnectionModeHttps,
-                     BRIDGEDB_PORT, this);
+  _https = new QNetworkAccessManager();
 
-  connect(_https, SIGNAL(stateChanged(int)),
-          this, SLOT(httpsStateChanged(int)));
-  connect(_https, SIGNAL(requestFinished(int, bool)),
-          this, SLOT(httpsRequestFinished(int, bool)));
-  connect(_https, SIGNAL(dataReadProgress(int, int)),
-          this, SIGNAL(downloadProgress(int, int)));
-  connect(_https, SIGNAL(sslErrors(QList<QSslError>)),
-          this, SLOT(sslErrors(QList<QSslError>)));  
+  connect(_https, SIGNAL(finished(QNetworkReply *)),
+          this, SLOT(httpsRequestFinished(QNetworkReply *)));
+  connect(_https, SIGNAL(sslErrors(QNetworkReply *, QList<QSslError>)),
+          this, SLOT(sslErrors(QNetworkReply *, QList<QSslError>)));  
 }
 
 void
 BridgeDownloader::setProxy(const QString &host, int port,
                            const QString &username, const QString &password)
 {
-  _https->setProxy(host, port, username, password);
+  _https->setProxy(QNetworkProxy(QNetworkProxy::HttpProxy, host, port, username, password));
 }
 
 bool
@@ -82,16 +73,18 @@ BridgeDownloader::startHttpsDownload()
   emit statusChanged(tr("Starting HTTPS bridge request..."));
   emit downloadProgress(0, 0);
 
-  _requestId = _https->get("/?format=plain");
-  vInfo("Sending an HTTPS bridge request to %1:%2 (id %3).").arg(BRIDGEDB_HOST)
-                                                            .arg(BRIDGEDB_PORT)
-                                                            .arg(_requestId);
+  _reply = _https->get(QNetworkRequest(QUrl("https://bridges.torproject.org/?format=plain")));
+  connect(_reply, SIGNAL(downloadProgress(qint64, qint64)),
+          this, SIGNAL(downloadProgress(qint64, qint64)));
+  vInfo("Sending an HTTPS bridge request to %1:%2.").arg(BRIDGEDB_HOST)
+                                                    .arg(BRIDGEDB_PORT);
 }
 
 void
 BridgeDownloader::cancelBridgeRequest()
 {
-  _https->abort();
+  _reply->close();
+  disconnect(_reply, 0, 0, 0);
 }
 
 void
@@ -117,20 +110,16 @@ BridgeDownloader::httpsStateChanged(int state)
 }
 
 void
-BridgeDownloader::httpsRequestFinished(int id, bool error)
+BridgeDownloader::httpsRequestFinished(QNetworkReply *reply)
 {
-  if (id != _requestId)
-    return;
-
-  if (error) {
-    QString errorString = _https->errorString();
-    vWarn("Bridge request failed (id %1): %2").arg(id).arg(errorString);
+  if (reply->error() != QNetworkReply::NoError) {
+    QString errorString = reply->errorString();
+    vWarn("Bridge request failed: %2").arg(errorString);
   
     emit bridgeRequestFailed(errorString);
   } else {
-    QByteArray response = _https->readAll();
-    vInfo("Bridge request complete (id %1): received %2 bytes.").arg(id)
-                                                   .arg(response.size());
+    QByteArray response = reply->readAll();
+    vInfo("Bridge request complete: received %2 bytes.").arg(response.size());
 
     QStringList bridges, lines = QString(response).split("\n");
     foreach (QString line, lines) {
@@ -140,22 +129,21 @@ BridgeDownloader::httpsRequestFinished(int id, bool error)
     }
     emit bridgeRequestFinished(bridges);
   }
-  _https->close();
+  _reply->close();
+  disconnect(_reply,0,0,0);
 }
 
 void
-BridgeDownloader::sslErrors(const QList<QSslError> &sslErrors)
+BridgeDownloader::sslErrors(QNetworkReply *reply, const QList<QSslError> &sslErrors)
 {
   QString errorString;
   QStringList errorStrings;
 
-  vWarn("%1 SSL error(s) when requesting bridge information (id %2):")
-                                                      .arg(sslErrors.size())
-                                                      .arg(_requestId);
+  vWarn("%1 SSL error(s) when requesting bridge information:")
+                                                      .arg(sslErrors.size());
   foreach (QSslError sslError, sslErrors) {
     errorString = sslError.errorString();
     errorStrings << errorString;
     vWarn("  SSL Error: %1").arg(errorString);
   }
 }
-
