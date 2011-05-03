@@ -42,6 +42,12 @@ public:
   /** Returns true if Tor is configured to act as a bridge node. */
   bool isBridgeEnabled();
 
+  /** Sets to <b>enabled</b> whether Tor should be a non-exit node when acting
+   * as a server. */
+  void setNonExitEnabled(bool enable);
+  /** Returns true if Tor is configured to act as a non-exit node. */
+  bool isNonExitEnabled();
+
   /** Sets the server's ORPort value. */
   void setORPort(quint16 orPort);
   /** Gets the server's ORPort value. */

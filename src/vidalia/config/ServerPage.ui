@@ -22,9 +22,16 @@
     </widget>
    </item>
    <item>
+    <widget class="QRadioButton" name="rdoNonExitMode">
+     <property name="text">
+      <string>Relay traffic inside the Tor network (non-exit relay)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QRadioButton" name="rdoServerMode">
      <property name="text">
-      <string>Relay traffic for the Tor network</string>
+      <string>Relay traffic for the Tor network (exit relay)</string>
      </property>
     </widget>
    </item>

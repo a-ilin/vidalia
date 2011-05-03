@@ -43,6 +43,7 @@
 #define SETTING_BANDWIDTH_RATE  "BandwidthRate"
 #define SETTING_BANDWIDTH_BURST "BandwidthBurst"
 #define SETTING_BRIDGE_RELAY    "BridgeRelay"
+#define SETTING_NONEXIT_RELAY   "NonExitRelay"
 #define SETTING_ENABLE_UPNP     "EnableUPnP"
 #define SETTING_RELAY_BANDWIDTH_RATE   "RelayBandwidthRate"
 #define SETTING_RELAY_BANDWIDTH_BURST  "RelayBandwidthBurst"
@@ -71,7 +72,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_BANDWIDTH_BURST,       10485760);
   setDefault(SETTING_RELAY_BANDWIDTH_BURST, 10485760);
   setDefault(SETTING_EXITPOLICY,
-    ExitPolicy(ExitPolicy::Default).toString());
+    ExitPolicy(ExitPolicy::Middleman).toString());
   setDefault(SETTING_ENABLE_UPNP, false); 
   setDefault(SETTING_BRIDGE_RELAY, false);
   setDefault(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
@@ -256,6 +257,21 @@ bool
 ServerSettings::isBridgeEnabled()
 {
   return value(SETTING_BRIDGE_RELAY).toBool() && isServerEnabled();
+}
+
+/** Sets to <b>enabled</b> whether Tor should be a non-exit node when acting as
+ * a server. */
+void
+ServerSettings::setNonExitEnabled(bool enabled)
+{
+  setValue(SETTING_NONEXIT_RELAY, enabled);
+}
+
+/** Returns true if Tor is configured to act as a non-exit node. */
+bool
+ServerSettings::isNonExitEnabled()
+{
+  return value(SETTING_NONEXIT_RELAY).toBool() && isServerEnabled();
 }
 
 /** Sets the server's ORPort. */
