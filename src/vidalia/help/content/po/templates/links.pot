@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-05-05 20:17+0200\n"
+"POT-Creation-Date: 2011-05-05 20:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,72 +25,64 @@ msgstr ""
 
 #. type: Content of: <html><body><h1>
 #: links.html:16
-#, no-wrap
 msgid "Helpful Links"
 msgstr ""
 
 #. type: Content of: <html><body><h3>
 #: links.html:19
-#, no-wrap
 msgid "Vidalia"
 msgstr ""
 
 #. type: Content of: <html><body><table><tr><td>
 #: links.html:22 links.html:30 links.html:42 links.html:49 links.html:57
-#, no-wrap
 msgid "&nbsp;&nbsp;&nbsp;"
 msgstr ""
 
 #. type: Content of: <html><body><table><tr><td>
 #: links.html:23 links.html:43
-#, no-wrap
 msgid "Homepage"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td><a>
-#: links.html:26
-#, no-wrap
-msgid "     https://www.torproject.org/vidalia/"
+#. type: Content of: <html><body><table><tr><td>
+#: links.html:25
+msgid ""
+"<a href=\"https://www.torproject.org/vidalia/\"> "
+"https://www.torproject.org/vidalia/</a>"
 msgstr ""
 
 #. type: Content of: <html><body><table><tr><td>
 #: links.html:31 links.html:58
-#, no-wrap
 msgid "Wiki and Bugtracker"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td><a>
-#: links.html:34
-#, no-wrap
-msgid "     http://trac.torproject.org/"
+#. type: Content of: <html><body><table><tr><td>
+#: links.html:33
+msgid "<a href=\"http://trac.torproject.org/\"> http://trac.torproject.org/</a>"
 msgstr ""
 
 #. type: Content of: <html><body><h3>
 #: links.html:39
-#, no-wrap
 msgid "Tor"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td><a>
+#. type: Content of: <html><body><table><tr><td>
 #: links.html:45
-#, no-wrap
-msgid "https://www.torproject.org/"
+msgid "<a href=\"https://www.torproject.org/\">https://www.torproject.org/</a>"
 msgstr ""
 
 #. type: Content of: <html><body><table><tr><td>
 #: links.html:50
-#, no-wrap
 msgid "FAQ"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td><a>
-#: links.html:53
-#, no-wrap
-msgid "      https://www.torproject.org/docs/faq.html"
+#. type: Content of: <html><body><table><tr><td>
+#: links.html:52
+msgid ""
+"<a href=\"https://www.torproject.org/docs/faq.html\"> "
+"https://www.torproject.org/docs/faq.html</a>"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td><a>
-#: links.html:61
-#, no-wrap
-msgid "      https://trac.torproject.org/"
+#. type: Content of: <html><body><table><tr><td>
+#: links.html:60
+msgid "<a href=\"https://trac.torproject.org/\"> https://trac.torproject.org/</a>"
 msgstr ""
