@@ -5,8 +5,8 @@
 ##  the LICENSE file, found in the top level directory of this
 ##  distribution. If you did not receive the LICENSE file with this
 ##  file, you may obtain it from the Vidalia source package distributed
-##  by the Vidalia Project at http://www.vidalia-project.net/. No part
-##  of Vidalia, including this file, may be copied, modified,
+##  by the Vidalia Project at http://www.torproject.org/projects/vidalia.html.
+##  No part of Vidalia, including this file, may be copied, modified,
 ##  propagated, or distributed except according to the terms described
 ##  in the LICENSE file.
 ##
@@ -14,97 +14,83 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-06-26 16:59+0200\n"
+"POT-Creation-Date: 2011-05-05 20:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
-#. type: Content of: <html><body><h1>
-#: en/links.html:16
+#. type: h1
+#: FIXME:0
+#, no-wrap
 msgid "Helpful Links"
 msgstr ""
 
-#. type: Content of: <html><body><h3>
-#: en/links.html:19
+#. type: h3
+#: FIXME:0
+#, no-wrap
 msgid "Vidalia"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:22 en/links.html:30 en/links.html:38 en/links.html:50 en/links.html:57 en/links.html:65 en/links.html:73
+#. type: td
+#: FIXME:0 FIXME:0 FIXME:0 FIXME:0 FIXME:0
+#, no-wrap
 msgid "&nbsp;&nbsp;&nbsp;"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:23 en/links.html:51
+#. type: td
+#: FIXME:0 FIXME:0
+#, no-wrap
 msgid "Homepage"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:25
-msgid ""
-"<a href=\"https://www.torproject.org/vidalia/\"> "
-"https://www.torproject.org/vidalia/</a>"
+#. type: a
+#: FIXME:0
+#, no-wrap
+msgid "https://www.torproject.org/vidalia/"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:31 en/links.html:66
-msgid "Wiki"
+#. type: td
+#: FIXME:0 FIXME:0
+#, no-wrap
+msgid "Wiki and Bugtracker"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:33
-msgid ""
-"<a href=\"http://trac.vidalia-project.net/wiki\"> "
-"http://trac.vidalia-project.net/wiki</a>"
+#. type: a
+#: FIXME:0
+#, no-wrap
+msgid "http://trac.torproject.org/"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:39 en/links.html:74
-msgid "Bugtracker"
-msgstr ""
-
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:41
-msgid ""
-"<a href=\"http://trac.vidalia-project.net/report\"> "
-"http://trac.vidalia-project.net/report</a>"
-msgstr ""
-
-#. type: Content of: <html><body><h3>
-#: en/links.html:47
+#. type: h3
+#: FIXME:0
+#, no-wrap
 msgid "Tor"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:53
-msgid "<a href=\"https://www.torproject.org/\">https://www.torproject.org/</a>"
+#. type: a
+#: FIXME:0
+#, no-wrap
+msgid "https://www.torproject.org/"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:58
+#. type: td
+#: FIXME:0
+#, no-wrap
 msgid "FAQ"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:60
-msgid ""
-"<a href=\"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ\"> "
-"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ</a>"
+#. type: a
+#: FIXME:0
+#, no-wrap
+msgid "https://www.torproject.org/docs/faq.html"
 msgstr ""
 
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:68
-msgid ""
-"<a href=\"https://wiki.torproject.org/noreply/TheOnionRouter\"> "
-"https://wiki.torproject.org/noreply/TheOnionRouter</a>"
-msgstr ""
-
-#. type: Content of: <html><body><table><tr><td>
-#: en/links.html:76
-msgid ""
-"<a href=\"https://bugs.torproject.org/flyspray/\"> "
-"https://bugs.torproject.org/flyspray</a>"
+#. type: a
+#: FIXME:0
+#, no-wrap
+msgid "https://trac.torproject.org/"
 msgstr ""
