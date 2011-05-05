@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-05-05 20:03+0200\n"
+"POT-Creation-Date: 2011-05-05 20:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,74 +23,74 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. type: h1
-#: FIXME:0
+#. type: Content of: <html><body><h1>
+#: links.html:16
 #, no-wrap
 msgid "Helpful Links"
 msgstr ""
 
-#. type: h3
-#: FIXME:0
+#. type: Content of: <html><body><h3>
+#: links.html:19
 #, no-wrap
 msgid "Vidalia"
 msgstr ""
 
-#. type: td
-#: FIXME:0 FIXME:0 FIXME:0 FIXME:0 FIXME:0
+#. type: Content of: <html><body><table><tr><td>
+#: links.html:22 links.html:30 links.html:42 links.html:49 links.html:57
 #, no-wrap
 msgid "&nbsp;&nbsp;&nbsp;"
 msgstr ""
 
-#. type: td
-#: FIXME:0 FIXME:0
+#. type: Content of: <html><body><table><tr><td>
+#: links.html:23 links.html:43
 #, no-wrap
 msgid "Homepage"
 msgstr ""
 
-#. type: a
-#: FIXME:0
+#. type: Content of: <html><body><table><tr><td><a>
+#: links.html:26
 #, no-wrap
-msgid "https://www.torproject.org/vidalia/"
+msgid "     https://www.torproject.org/vidalia/"
 msgstr ""
 
-#. type: td
-#: FIXME:0 FIXME:0
+#. type: Content of: <html><body><table><tr><td>
+#: links.html:31 links.html:58
 #, no-wrap
 msgid "Wiki and Bugtracker"
 msgstr ""
 
-#. type: a
-#: FIXME:0
+#. type: Content of: <html><body><table><tr><td><a>
+#: links.html:34
 #, no-wrap
-msgid "http://trac.torproject.org/"
+msgid "     http://trac.torproject.org/"
 msgstr ""
 
-#. type: h3
-#: FIXME:0
+#. type: Content of: <html><body><h3>
+#: links.html:39
 #, no-wrap
 msgid "Tor"
 msgstr ""
 
-#. type: a
-#: FIXME:0
+#. type: Content of: <html><body><table><tr><td><a>
+#: links.html:45
 #, no-wrap
 msgid "https://www.torproject.org/"
 msgstr ""
 
-#. type: td
-#: FIXME:0
+#. type: Content of: <html><body><table><tr><td>
+#: links.html:50
 #, no-wrap
 msgid "FAQ"
 msgstr ""
 
-#. type: a
-#: FIXME:0
+#. type: Content of: <html><body><table><tr><td><a>
+#: links.html:53
 #, no-wrap
-msgid "https://www.torproject.org/docs/faq.html"
+msgid "      https://www.torproject.org/docs/faq.html"
 msgstr ""
 
-#. type: a
-#: FIXME:0
+#. type: Content of: <html><body><table><tr><td><a>
+#: links.html:61
 #, no-wrap
-msgid "https://trac.torproject.org/"
+msgid "      https://trac.torproject.org/"
 msgstr ""
