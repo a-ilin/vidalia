@@ -110,8 +110,11 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
 
     /* If the router is online, then show the uptime and bandwidth stats. */
     if (!rd.offline()) {
+      qint64 minBandwidth = (qint64)qMin(rd.observedBandwidth(), 
+                                qMin(rd.averageBandwidth(),
+                                     rd.burstBandwidth()));
       html.append(trow(tcol(b(tr("Bandwidth:")))  + 
-                       tcol(string_format_bandwidth(rd.observedBandwidth()))));
+                       tcol(string_format_bandwidth(minBandwidth))));
       html.append(trow(tcol(b(tr("Uptime:")))   + 
                        tcol(string_format_uptime(
                               adjustUptime(rd.uptime(), rd.published())))));
