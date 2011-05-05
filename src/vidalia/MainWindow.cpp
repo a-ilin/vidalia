@@ -1648,17 +1648,17 @@ MainWindow::warnDangerousPort(quint16 port, bool rejected)
   QString application;
   switch (port) {
     case  23:
-     application = tr(", probably Telnet, ");
+     application = tr("(probably Telnet)");
      break;
 
     case 109:
     case 110:
     case 143:
-      application = tr(", probably an email client, "); 
+      application = tr("(probably an email client)"); 
       break;
 
     default:
-      application = " ";
+      application = "";
   }
 
   QString text = tr("One of your applications %1 appears to be making a "
