@@ -22,34 +22,6 @@
 #include <QTextStream>
 #include <QTextCodec>
 
-
-/** Open the minidump file  given by <b>fileName</b> and read its entire
- * contents into a QByteArray. Returns the contents of the minidump file
- * on success. If an error occurs, this returns a default-constructed
- * QByteArray and sets <b>errorMessage</b> to a string describing the error
- * ecountered.
- */
-QByteArray
-read_minidump_file(const QString &fileName, QString &errorMessage)
-{
-  QByteArray md;
-  QFile mdFile(fileName);
-
-  if (! mdFile.open(QIODevice::ReadOnly)) {
-    errorMessage = mdFile.errorString();
-    return QByteArray();
-  }
-  while (! mdFile.atEnd()) {
-    md.append(mdFile.readAll());
-    if (mdFile.error() != QFile::NoError) {
-      errorMessage = mdFile.errorString();
-      return QByteArray();
-    }
-  }
-  mdFile.close();
-  return md;
-}
-
 /** Read the crash dump annotations file given by <b>fileName</b> and parse
  * each line into a Key=Value pair. Returns a QHash containing the keys
  * mapped to their values on success. If a file or parse error occurs, this
@@ -94,7 +66,6 @@ main(int argc, char *argv[])
   QFileInfo minidumpFile, extraInfoFile;
   QString minidumpFilePath, extraInfoFilePath, errorMessage;
   QHash<QString,QString> annotations;
-  QByteArray minidump;
 
   if (argc < 2) {
     errorMessage = "No minidump file specified.";
@@ -131,14 +102,6 @@ main(int argc, char *argv[])
     goto err;
   }
 
-  /* Read the minidump file's contents */
-  minidump = read_minidump_file(minidumpFilePath, errorMessage);
-  if (minidump.isNull()) {
-    errorMessage = QString("Unable to read minidump file '%1': %2")
-                                             .arg(minidumpFilePath)
-                                             .arg(errorMessage);
-    goto err;
-  }
   /* Read and parse the crash annotations file */
   annotations = read_annotations_file(extraInfoFilePath, errorMessage);
   if (annotations.isEmpty()) {
@@ -149,8 +112,8 @@ main(int argc, char *argv[])
   }
 
   /* Display the crash reporting dialog */
-  crashDialog.setMinidump(minidumpFile.baseName(), minidump);
   crashDialog.setCrashAnnotations(annotations);
+  crashDialog.setMinidumpFiles(minidumpFilePath, extraInfoFilePath);
   crashDialog.show();
   return app.exec();
 
@@ -171,8 +134,8 @@ err:
     "help diagnose the problem, but was unable to do so. Please report "
     "this problem, along with what you were doing before Vidalia crashed, "
     "to the developers at:</p><p>"
-    "<a href=\"https://trac.vidalia-project.net/wiki/ReportingBugs\">"
-    "https://trac.vidalia-project.net/wiki/ReportingBugs</a></p> "
+    "<a href=\"https://trac.torproject.org/projects/tor/newticket\">"
+    "https://trac.torproject.org/projects/tor/newticket</a></p> "
     "<p>Click \"Show Details\" below for information about the problem "
     "encountered.");
 

@@ -43,8 +43,5 @@ if (WIN32)
     message(FATAL_ERROR
             "Breakpad support on Windows currently requires Visual Studio.")
   endif(MSVC)
-else(WIN32)
-  message(FATAL_ERROR
-          "Breakpad support is not currently available on your platform.")
 endif(WIN32)
 

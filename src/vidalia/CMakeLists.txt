@@ -467,7 +467,7 @@ if (USE_MINIUPNPC)
   target_link_libraries(${vidalia_BIN} miniupnpc)
 endif(USE_MINIUPNPC)
 if (USE_BREAKPAD)
-  target_link_libraries(${vidalia_BIN} ${BREAKPAD_LIBRARIES})
+  target_link_libraries(${vidalia_BIN} ${BREAKPAD_LIBRARY})
 endif(USE_BREAKPAD)
 if (USE_MARBLE)
   target_link_libraries(${vidalia_BIN}

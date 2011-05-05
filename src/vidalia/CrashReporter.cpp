@@ -50,8 +50,12 @@
 #include <client/windows/handler/exception_handler.h>
 #elif defined(Q_OS_MAC)
 #include <client/mac/handler/exception_handler.h>
+#include <sys/wait.h>
+#include <fcntl.h>
 #elif defined(Q_OS_LINUX)
 #include <client/linux/handler/exception_handler.h>
+#include <sys/wait.h>
+#include <fcntl.h>
 #elif defined(Q_OS_SOLARIS)
 #include <client/solaris/handler/exception_handler.h>
 #endif
@@ -225,7 +229,10 @@ write_extra_dump_info(const _char_t *path, const _char_t *id, time_t crashTime)
   if (hFile == INVALID_HANDLE_VALUE)
     return false;
 #else
-  /* TODO: Implement for non-Windowses */
+  _file_handle_t hFile = creat(extraInfoPath, S_IRUSR | S_IWUSR);
+  if(hFile == -1) {
+    return false;
+  }
 #endif
   
   char crashTimeString[24], startupTimeString[24];
@@ -241,8 +248,7 @@ write_extra_dump_info(const _char_t *path, const _char_t *id, time_t crashTime)
 #if defined(Q_OS_WIN32)
   CloseHandle(hFile);
 #else
-  /* TODO: Implement for non-Windowses */
-  /* close(hFile); */
+  close(hFile);
 #endif
   return true;
 }
@@ -270,6 +276,7 @@ minidump_callback(const _char_t *path,    // Path to the minidump file
    * restart, and any necessary restart arguments. */
   write_extra_dump_info(path, id, time(NULL));
 
+#if defined(Q_OS_WIN32)
   /* Format the command line used to launch the crash reporter */
   _char_t commandLine[MAX_CMD_LEN] = TEXT("");
   append_string(commandLine, TEXT("\""), MAX_CMD_LEN);
@@ -283,7 +290,6 @@ minidump_callback(const _char_t *path,    // Path to the minidump file
     return false;
 
   /* Launch the crash reporter with the name and location of the minidump */
-#if defined(Q_OS_WIN32)
   PROCESS_INFORMATION pi;
   STARTUPINFOW si;
 
@@ -302,8 +308,29 @@ minidump_callback(const _char_t *path,    // Path to the minidump file
   TerminateProcess(GetCurrentProcess(), 1);
   return true;
 #else
-  /* TODO: Implement for non-Windowses */
-  return false;
+  /* Format the command line used to launch the crash reporter */
+  _char_t args[MAX_CMD_LEN] = TEXT("");
+  size_t len;
+
+  append_string(args, path, MAX_CMD_LEN);
+  append_string(args, PATH_SEPARATOR, MAX_CMD_LEN);
+  append_string(args, id, MAX_CMD_LEN);
+  len = append_string(args, TEXT(".dmp"), MAX_CMD_LEN);
+  if (len >= MAX_CMD_LEN)
+    return false;
+
+  char *nargs[] = {crashReporterExecutable, args, NULL};
+
+  pid_t p = fork(), ret;
+  int status;
+  if(p == 0) {
+    execv(crashReporterExecutable, nargs);
+  } else {
+    ret = wait(&status);
+    if(ret == -1)
+      return false;
+  }
+  return true;
 #endif
 }
 

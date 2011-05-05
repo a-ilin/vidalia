@@ -16,8 +16,6 @@
 */
 
 #include "CrashReportDialog.h"
-#include "CrashReportUploader.h"
-#include "UploadProgressDialog.h"
 
 #include "stringutil.h"
 
@@ -48,57 +46,17 @@ CrashReportDialog::setCrashAnnotations(const QHash<QString,QString> &annotations
 }
 
 void
-CrashReportDialog::setMinidump(const QString &id, const QByteArray &minidump)
+CrashReportDialog::setMinidumpFiles(const QString &minidump, const QString &annotations)
 {
-  _minidump = minidump;
-  _minidumpId = id;
-}
+  _minidumpPath = minidump;
+  _annotationsPath = annotations;
 
-void
-CrashReportDialog::submitCrashReport()
-{
-  CrashReportUploader *uploader = new CrashReportUploader();
-  UploadProgressDialog *progressDialog = new UploadProgressDialog(this);
-  QMap<QString,QString> parameters;
-
-  connect(uploader, SIGNAL(statusChanged(QString)),
-          progressDialog, SLOT(setStatus(QString)));
-  connect(uploader, SIGNAL(uploadProgress(int, int)),
-          progressDialog, SLOT(setUploadProgress(int, int)));
-  connect(uploader, SIGNAL(uploadFinished()),
-          progressDialog, SLOT(accept()));
-  connect(uploader, SIGNAL(uploadFailed(QString)),
-          progressDialog, SLOT(uploadFailed(QString)));
-
-  /* Set up the form fields that will be uploaded with the minidump */
-  QString comments = ui.textDetails->toPlainText();
-  if (! comments.isEmpty())
-    parameters.insert("Comments", comments);
-  parameters.insert("ProductName", "Vidalia");
-  parameters.insert("Vendor", "Vidalia");
-  parameters.insert("Version", _annotations.value("BuildVersion"));
-  parameters.insert("CrashTime", _annotations.value("CrashTime"));
-  parameters.insert("StartupTime", _annotations.value("StartupTime"));
-
-  /* Start the upload (returns immediately) */
-  uploader->uploadMinidump(QUrl("https://crashes.vidalia-project.net/submit"),
-                           _minidumpId, _minidump, parameters);
-
-  /* Displays a modal progress dialog showing the progress of the upload. This
-   * will return when either the upload completes or the user hits "Cancel". */
-  if (progressDialog->exec() == QDialog::Rejected)
-    uploader->cancel(); /* User clicked "Cancel" */
-
-  delete uploader;
+  ui.textDetails->setPlainText(QString("%1\n%2\n").arg(_minidumpPath).arg(_annotationsPath));
 }
 
 void
 CrashReportDialog::accept()
 {
-  /* Upload the crash report, unless the user opted out */
-  if (ui.chkSubmitCrashReport->isChecked())
-    submitCrashReport();
-
   /* Attempt to restart Vidalia with the saved arguments */
   QString exe  = _annotations.value("RestartExecutable");
   QString args = _annotations.value("RestartExecutableArgs");
@@ -113,16 +71,5 @@ CrashReportDialog::accept()
 
   /* Close the dialog */
   QDialog::accept();
-}
-
-void
-CrashReportDialog::reject()
-{
-  /* Upload the crash report, unless the user opted out */
-  if (ui.chkSubmitCrashReport->isChecked())
-    submitCrashReport();
-
-  /* Close this dialog without restarting Vidalia */
-  QDialog::reject();
 }
 

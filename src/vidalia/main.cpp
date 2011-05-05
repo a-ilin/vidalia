@@ -43,6 +43,8 @@ setup_crash_reporter()
   QString crashReporter = Vidalia::applicationDirPath() + "\\crashreporter.exe";
 #elif defined(Q_OS_MAC)
   QString crashReporter = Vidalia::applicationDirPath() + "/CrashReporter.app";
+#else
+  QString crashReporter = Vidalia::applicationDirPath() + "/crashreporter";
 #endif
   if (! QFileInfo(crashReporter).isExecutable()) {
     vWarn("Unable to find crash reporting application. Crash reporting will "
