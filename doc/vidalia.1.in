@@ -45,7 +45,7 @@ of available language codes.
 .SH SEE ALSO
 .BR tor (1)
 
-.BR http://www.vidalia-project.net/
+.BR http://www.torproject.org/projects/vidalia.html
 
 .SH AUTHORS
 Matt Edman <edmanm@vidalia-project.net>
