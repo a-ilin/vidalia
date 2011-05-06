@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Tor Project\n"
 "Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
-"POT-Creation-Date: 2011-03-09 13:05+0000\n"
-"PO-Revision-Date: 2011-03-22 16:13+0000\n"
+"POT-Creation-Date: 2011-05-03 14:28+0000\n"
+"PO-Revision-Date: 2011-05-06 19:59+0000\n"
 "Last-Translator: runasand <runa.sandvik@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -234,10 +234,6 @@ msgid "Show Settings"
 msgstr "显示设定"
 
 msgctxt "BandwidthGraph"
-msgid "Tor Bandwidth Usage"
-msgstr "Tor 带宽使用"
-
-msgctxt "BandwidthGraph"
 msgid "Reset"
 msgstr "复位设定"
 
@@ -276,6 +272,10 @@ msgstr "保存"
 msgctxt "BandwidthGraph"
 msgid "Cancel"
 msgstr "取消"
+
+msgctxt "BandwidthGraph"
+msgid "Bandwidth Graph"
+msgstr ""
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
@@ -430,18 +430,27 @@ msgid "Control socket is not connected."
 msgstr "控制接口当前未连接。"
 
 msgctxt "ControlPasswordInputDialog"
-msgid "Password Required"
-msgstr "需要密码"
-
-msgctxt "ControlPasswordInputDialog"
-msgid "Remember my password"
-msgstr "记住我的密码"
+msgid "Problem connecting to Tor"
+msgstr ""
 
 msgctxt "ControlPasswordInputDialog"
 msgid ""
-"Vidalia has connected to a running Tor process that requires a password. "
-"Please enter your control password:"
-msgstr "Vidalia 已经连接至一个运行中的需要密码的 Tor 进程。请输入您的控制密码："
+"Tor is already running, but Vidalia can't connect to it.\n"
+"\n"
+"This can happen when something else (such as another active Vidalia process, or a Vidalia process that crashed) launched Tor."
+msgstr ""
+
+msgctxt "ControlPasswordInputDialog"
+msgid ""
+"You will need to shut down the Tor process before Vidalia can launch a new "
+"one."
+msgstr ""
+
+msgctxt "ControlPasswordInputDialog"
+msgid ""
+"Vidalia can try to restart Tor for you.  Doing so will close all currently "
+"active connections through your Tor process."
+msgstr ""
 
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
@@ -1336,10 +1345,6 @@ msgid "Browse"
 msgstr "浏览"
 
 msgctxt "GeneralPage"
-msgid "Start the Tor software when Vidalia starts"
-msgstr "Vidalia 启动时运行 Tor 软件"
-
-msgctxt "GeneralPage"
 msgid "Tor"
 msgstr "Tor"
 
@@ -1366,6 +1371,10 @@ msgstr "自动检查软件更新"
 msgctxt "GeneralPage"
 msgid "Check Now"
 msgstr "现在检查"
+
+msgctxt "GeneralPage"
+msgid "Connect to Tor automatically"
+msgstr ""
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1649,44 +1658,12 @@ msgid "New Identity"
 msgstr "更换身份"
 
 msgctxt "MainWindow"
-msgid "Ctrl+T"
-msgstr "Ctrl+T"
-
-msgctxt "MainWindow"
-msgid "Ctrl+B"
-msgstr "Ctrl+B"
-
-msgctxt "MainWindow"
-msgid "Ctrl+L"
-msgstr "Ctrl+L"
-
-msgctxt "MainWindow"
-msgid "Ctrl+N"
-msgstr "Ctrl+N"
-
-msgctxt "MainWindow"
-msgid "Ctrl+?"
-msgstr "Ctrl+?"
-
-msgctxt "MainWindow"
-msgid "Ctrl+I"
-msgstr "Ctrl+I"
-
-msgctxt "MainWindow"
-msgid "Ctrl+P"
-msgstr "Ctrl+P"
-
-msgctxt "MainWindow"
 msgid "Tor"
 msgstr "Tor"
 
 msgctxt "MainWindow"
 msgid "View"
 msgstr "查看"
-
-msgctxt "MainWindow"
-msgid "Vidalia Help"
-msgstr "Vidalia 帮助"
 
 msgctxt "MainWindow"
 msgid "Error starting web browser"
@@ -1801,10 +1778,6 @@ msgid "Tor is shutting down"
 msgstr "正在关闭 Tor"
 
 msgctxt "MainWindow"
-msgid "Stop Tor Now"
-msgstr "立刻停止 Tor"
-
-msgctxt "MainWindow"
 msgid "Stop Tor"
 msgstr "停止 Tor"
 
@@ -1887,18 +1860,6 @@ msgid ""
 msgstr "Vidalia 无法注册某些事件，可能造成 Vidalia 的很多功能不可用。"
 
 msgctxt "MainWindow"
-msgid "Authentication Error"
-msgstr "认证出错"
-
-msgctxt "MainWindow"
-msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr "Vidalia无法通过Tor软件的认证。(%1)"
-
-msgctxt "MainWindow"
-msgid "Please check your control port authentication settings."
-msgstr "请检查控制端口验证设定."
-
-msgctxt "MainWindow"
 msgid "Tor Update Available"
 msgstr "有可用的 Tor 更新"
 
@@ -1939,79 +1900,8 @@ msgid "Status"
 msgstr "状态"
 
 msgctxt "MainWindow"
-msgid "Vidalia Shortcuts"
-msgstr "Vidalia 快捷方式"
-
-msgctxt "MainWindow"
-msgid "Setup Relaying"
-msgstr "设置中继服务器"
-
-msgctxt "MainWindow"
-msgid "Set up a relay and help the network grow"
-msgstr "创建中继节点帮助Tor网络成长"
-
-msgctxt "MainWindow"
-msgid "View the Network"
-msgstr "查看网络地图"
-
-msgctxt "MainWindow"
-msgid "View a map of the Tor network"
-msgstr "查看 Tor 网络的分布图"
-
-msgctxt "MainWindow"
-msgid "Use a New Identity"
-msgstr "更换身份"
-
-msgctxt "MainWindow"
-msgid "Make subsequent connections appear new"
-msgstr "创建一个新的网络连接"
-
-msgctxt "MainWindow"
-msgid "View recent bandwidth usage"
-msgstr "浏览最近的带宽使用情况"
-
-msgctxt "MainWindow"
-msgid "View log message history"
-msgstr "浏览日志记录"
-
-msgctxt "MainWindow"
-msgid "View help documentation"
-msgstr "查看帮助文档"
-
-msgctxt "MainWindow"
-msgid "Configure Vidalia"
-msgstr "配置 Vidalia"
-
-msgctxt "MainWindow"
-msgid "View version and license information"
-msgstr "查看版本和授权信息"
-
-msgctxt "MainWindow"
-msgid "Exit Vidalia"
-msgstr "退出 Vidalia"
-
-msgctxt "MainWindow"
-msgid "Show this window on startup"
-msgstr "启动时显示此窗口"
-
-msgctxt "MainWindow"
-msgid "Hide"
-msgstr "隐藏"
-
-msgctxt "MainWindow"
-msgid "Hide this window"
-msgstr "隐藏此窗口"
-
-msgctxt "MainWindow"
 msgid "Password Reset Failed"
 msgstr "重置密码失败"
-
-msgctxt "MainWindow"
-msgid ""
-"Vidalia tried to reset Tor's control password, but was not able to restart "
-"the Tor software. Please check your Task Manager to ensure there are no "
-"other Tor processes running."
-msgstr "Vidalia尝试重置Tor的控制密码，但无法重新启动Tor。请检查任务管理器确保没有其他的Tor进程运行。"
 
 msgctxt "MainWindow"
 msgid ""
@@ -2074,16 +1964,32 @@ msgid ""
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "failed (%1)"
-msgstr "失败（%1）"
+msgid "toolBar"
+msgstr ""
 
 msgctxt "MainWindow"
-msgid ""
-"Your relay is shutting down.\n"
-"Click 'Stop' again to stop your relay now."
+msgid "Start"
 msgstr ""
-"正在关闭您的中继服务。\n"
-"再次单击'停止'立刻关闭中继。"
+
+msgctxt "MainWindow"
+msgid "Stop"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Restart"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Reload Tor's config"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Actions"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Bootstrapping torrc from %1 to %2"
+msgstr ""
 
 msgctxt "MainWindow"
 msgid ""
@@ -2106,12 +2012,38 @@ msgstr ""
 "请检查消息日志获取最近的警告及错误信息。"
 
 msgctxt "MainWindow"
+msgid ""
+"Vidalia tried to restart Tor, but was not able to. Please check your Task "
+"Manager to ensure there are no other Tor processes running."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "failed (%1)"
+msgstr "失败（%1）"
+
+msgctxt "MainWindow"
 msgid ", probably Telnet,"
 msgstr "，也许是Telnet程序，"
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
 msgstr "，也许是Email客户端，"
+
+msgctxt "MainWindow"
+msgid ""
+"Your relay is shutting down.\n"
+"Click 'Stop' again to stop your relay now."
+msgstr ""
+"正在关闭您的中继服务。\n"
+"再次单击'停止'立刻关闭中继。"
+
+msgctxt "MainWindow"
+msgid "Error reloading configuration"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Vidalia was unable to reload Tor's configuration."
+msgstr ""
 
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
@@ -2366,20 +2298,12 @@ msgid "Automatically save new log messages to a file"
 msgstr "自动保存新的消息内容至文件"
 
 msgctxt "MessageLog"
-msgid "Basic"
-msgstr ""
-
-msgctxt "MessageLog"
-msgid "Tor Status"
-msgstr ""
-
-msgctxt "MessageLog"
-msgid "Advanced"
-msgstr ""
-
-msgctxt "MessageLog"
 msgid "Always Save New Log Messages"
 msgstr "总是保存新消息"
+
+msgctxt "MessageLog"
+msgid "toolbar"
+msgstr ""
 
 msgctxt "MessageLog"
 msgid ""
@@ -2424,10 +2348,6 @@ msgstr ""
 "无法写入文件%1\n"
 "\n"
 "%2。"
-
-msgctxt "NetViewer"
-msgid "Tor Network Map"
-msgstr "Tor 网络地图"
 
 msgctxt "NetViewer"
 msgid "Refresh"
@@ -2528,6 +2448,22 @@ msgstr "全屏查看网络地图"
 msgctxt "NetViewer"
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
+
+msgctxt "NetViewer"
+msgid "Network Map"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Relay"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Connection"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Status"
+msgstr ""
 
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
@@ -2854,10 +2790,6 @@ msgid "Run as a client only"
 msgstr "仅运行客户端功能"
 
 msgctxt "ServerPage"
-msgid "Relay traffic for the Tor network"
-msgstr "Tor 网络中继"
-
-msgctxt "ServerPage"
 msgid "Relay Port:"
 msgstr "中继端口:"
 
@@ -3104,6 +3036,14 @@ msgid "Automatically distribute my bridge address"
 msgstr ""
 
 msgctxt "ServerPage"
+msgid "Relay traffic inside the Tor network (non-exit relay)"
+msgstr ""
+
+msgctxt "ServerPage"
+msgid "Relay traffic for the Tor network (exit relay)"
+msgstr ""
+
+msgctxt "ServerPage"
 msgid "Mirror the Relay Directory"
 msgstr "镜像中继目录"
 
@@ -3148,10 +3088,6 @@ msgstr "目标可必须包含地址:端口、地址或端口。"
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
 msgstr "此目录已被其他服务占用。"
-
-msgctxt "ServicePage"
-msgid "Form"
-msgstr "表单"
 
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
@@ -3442,6 +3378,22 @@ msgid ""
 " the Tor network!"
 msgstr ""
 
+msgctxt "StatusTab"
+msgid "Status"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Message Log"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Tor Status"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Show on startup"
+msgstr ""
+
 msgctxt "Stream"
 msgid "New"
 msgstr "新建"
@@ -3477,6 +3429,12 @@ msgstr "重新映射"
 msgctxt "Stream"
 msgid "Unknown"
 msgstr "未知"
+
+msgctxt "TorControl"
+msgid ""
+"Vidalia has not started Tor. You need to stop Tor through the interface you "
+"started it."
+msgstr ""
 
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
@@ -3554,6 +3512,30 @@ msgstr ""
 
 msgctxt "TorrcDialog"
 msgid "An error ocurred while opening torrc file"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+X"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+C"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+V"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+Z"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+Shift+Z"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+A"
 msgstr ""
 
 msgctxt "UPNPControl"

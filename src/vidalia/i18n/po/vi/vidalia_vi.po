@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Tor Project\n"
 "Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
-"POT-Creation-Date: 2011-03-09 13:05+0000\n"
-"PO-Revision-Date: 2011-03-22 16:13+0000\n"
+"POT-Creation-Date: 2011-05-03 14:28+0000\n"
+"PO-Revision-Date: 2011-05-06 19:54+0000\n"
 "Last-Translator: runasand <runa.sandvik@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -231,10 +231,6 @@ msgid "Show Settings"
 msgstr "Hiện những Thiết lập"
 
 msgctxt "BandwidthGraph"
-msgid "Tor Bandwidth Usage"
-msgstr "Cách dùng Tor Bandwidth"
-
-msgctxt "BandwidthGraph"
 msgid "Reset"
 msgstr "Đặt lại"
 
@@ -273,6 +269,10 @@ msgstr "Lưu"
 msgctxt "BandwidthGraph"
 msgid "Cancel"
 msgstr "Thôi"
+
+msgctxt "BandwidthGraph"
+msgid "Bandwidth Graph"
+msgstr ""
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
@@ -427,17 +427,26 @@ msgid "Control socket is not connected."
 msgstr "Socket kiểm soát không được kết nối."
 
 msgctxt "ControlPasswordInputDialog"
-msgid "Password Required"
-msgstr "Mật khẩu bắt buộc"
-
-msgctxt "ControlPasswordInputDialog"
-msgid "Remember my password"
-msgstr "Ghi nhớ mật khẩu của tôi"
+msgid "Problem connecting to Tor"
+msgstr ""
 
 msgctxt "ControlPasswordInputDialog"
 msgid ""
-"Vidalia has connected to a running Tor process that requires a password. "
-"Please enter your control password:"
+"Tor is already running, but Vidalia can't connect to it.\n"
+"\n"
+"This can happen when something else (such as another active Vidalia process, or a Vidalia process that crashed) launched Tor."
+msgstr ""
+
+msgctxt "ControlPasswordInputDialog"
+msgid ""
+"You will need to shut down the Tor process before Vidalia can launch a new "
+"one."
+msgstr ""
+
+msgctxt "ControlPasswordInputDialog"
+msgid ""
+"Vidalia can try to restart Tor for you.  Doing so will close all currently "
+"active connections through your Tor process."
 msgstr ""
 
 msgctxt "ControlSocket"
@@ -1333,10 +1342,6 @@ msgid "Browse"
 msgstr "Trình duyệt"
 
 msgctxt "GeneralPage"
-msgid "Start the Tor software when Vidalia starts"
-msgstr "Bắt đầu phần mềm Tor khi bắt đầu Vidalia"
-
-msgctxt "GeneralPage"
 msgid "Tor"
 msgstr "The-onion-router"
 
@@ -1362,6 +1367,10 @@ msgstr ""
 
 msgctxt "GeneralPage"
 msgid "Check Now"
+msgstr ""
+
+msgctxt "GeneralPage"
+msgid "Connect to Tor automatically"
 msgstr ""
 
 msgctxt "GraphFrame"
@@ -1651,44 +1660,12 @@ msgid "New Identity"
 msgstr "Giám định Mới"
 
 msgctxt "MainWindow"
-msgid "Ctrl+T"
-msgstr "Ctrl+T"
-
-msgctxt "MainWindow"
-msgid "Ctrl+B"
-msgstr "Ctrl+B"
-
-msgctxt "MainWindow"
-msgid "Ctrl+L"
-msgstr "Ctrl+L"
-
-msgctxt "MainWindow"
-msgid "Ctrl+N"
-msgstr "Ctrl+N"
-
-msgctxt "MainWindow"
-msgid "Ctrl+?"
-msgstr "Ctrl+?"
-
-msgctxt "MainWindow"
-msgid "Ctrl+I"
-msgstr "Ctrl+I"
-
-msgctxt "MainWindow"
-msgid "Ctrl+P"
-msgstr "Ctrl+P"
-
-msgctxt "MainWindow"
 msgid "Tor"
 msgstr "Tor"
 
 msgctxt "MainWindow"
 msgid "View"
 msgstr "Xem"
-
-msgctxt "MainWindow"
-msgid "Vidalia Help"
-msgstr "Vidalia Trợ giúp"
 
 msgctxt "MainWindow"
 msgid "Error starting web browser"
@@ -1803,10 +1780,6 @@ msgid "Tor is shutting down"
 msgstr "Tor là tắt"
 
 msgctxt "MainWindow"
-msgid "Stop Tor Now"
-msgstr "Dừng Tor Now"
-
-msgctxt "MainWindow"
 msgid "Stop Tor"
 msgstr "Dừng Tor"
 
@@ -1895,19 +1868,6 @@ msgstr ""
 "của Vidalia có thể không có sẵn."
 
 msgctxt "MainWindow"
-msgid "Authentication Error"
-msgstr "Lỗi xác thực"
-
-msgctxt "MainWindow"
-msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr "Vidalia không thể xác nhận phần mềm Tor. (% 1)"
-
-msgctxt "MainWindow"
-msgid "Please check your control port authentication settings."
-msgstr ""
-"Vui lòng kiểm tra các thiết lập xác thực cổng truy nhập điều khiển của bạn."
-
-msgctxt "MainWindow"
 msgid "Tor Update Available"
 msgstr "Có sẵn Cập nhật Tor "
 
@@ -1951,82 +1911,8 @@ msgid "Status"
 msgstr "Tình trạng"
 
 msgctxt "MainWindow"
-msgid "Vidalia Shortcuts"
-msgstr "đường tắt Vidalia"
-
-msgctxt "MainWindow"
-msgid "Setup Relaying"
-msgstr "Thiết lập tiếp nhận"
-
-msgctxt "MainWindow"
-msgid "Set up a relay and help the network grow"
-msgstr "Thiết lập một chuyển tiếp và giúp phát triển mạng lưới"
-
-msgctxt "MainWindow"
-msgid "View the Network"
-msgstr "Xem các mạng"
-
-msgctxt "MainWindow"
-msgid "View a map of the Tor network"
-msgstr "Xem một bản đồ của mạng Tor"
-
-msgctxt "MainWindow"
-msgid "Use a New Identity"
-msgstr "Sử dụng một Identity mới"
-
-msgctxt "MainWindow"
-msgid "Make subsequent connections appear new"
-msgstr "Làm cho các kết nối tiếp theo tro*? tha`nh mới"
-
-msgctxt "MainWindow"
-msgid "View recent bandwidth usage"
-msgstr "Xem băng thông sử dụng gần đây"
-
-msgctxt "MainWindow"
-msgid "View log message history"
-msgstr "Xem lịch sử tin đăng nhập "
-
-msgctxt "MainWindow"
-msgid "View help documentation"
-msgstr "Xem tài liệu trợ giúp"
-
-msgctxt "MainWindow"
-msgid "Configure Vidalia"
-msgstr "Cấu hình Vidalia"
-
-msgctxt "MainWindow"
-msgid "View version and license information"
-msgstr "Xem thông tin về phiên bản và giấy phép"
-
-msgctxt "MainWindow"
-msgid "Exit Vidalia"
-msgstr "Thoát khỏi Vidalia"
-
-msgctxt "MainWindow"
-msgid "Show this window on startup"
-msgstr "Hiển thị cửa sổ này lu'c khởi động"
-
-msgctxt "MainWindow"
-msgid "Hide"
-msgstr "giấu"
-
-msgctxt "MainWindow"
-msgid "Hide this window"
-msgstr "Ẩn cửa sổ này"
-
-msgctxt "MainWindow"
 msgid "Password Reset Failed"
 msgstr "Đặt lại mật khẩu bị lỗi"
-
-msgctxt "MainWindow"
-msgid ""
-"Vidalia tried to reset Tor's control password, but was not able to restart "
-"the Tor software. Please check your Task Manager to ensure there are no "
-"other Tor processes running."
-msgstr ""
-"Vidalia đã thu*? đặt lại mật khẩu điều khiển Tor, nhưng đã không thể khởi "
-"động lại phần mềm Tor. Vui lòng kiểm tra quản lý công việc của bạn để đảm "
-"bảo không có tiến trình Tor khác đang chạy."
 
 msgctxt "MainWindow"
 msgid ""
@@ -2089,13 +1975,31 @@ msgid ""
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "failed (%1)"
+msgid "toolBar"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid ""
-"Your relay is shutting down.\n"
-"Click 'Stop' again to stop your relay now."
+msgid "Start"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Stop"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Restart"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Reload Tor's config"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Actions"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Bootstrapping torrc from %1 to %2"
 msgstr ""
 
 msgctxt "MainWindow"
@@ -2113,11 +2017,35 @@ msgid ""
 msgstr ""
 
 msgctxt "MainWindow"
+msgid ""
+"Vidalia tried to restart Tor, but was not able to. Please check your Task "
+"Manager to ensure there are no other Tor processes running."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "failed (%1)"
+msgstr ""
+
+msgctxt "MainWindow"
 msgid ", probably Telnet,"
 msgstr ""
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid ""
+"Your relay is shutting down.\n"
+"Click 'Stop' again to stop your relay now."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Error reloading configuration"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Vidalia was unable to reload Tor's configuration."
 msgstr ""
 
 msgctxt "MessageLog"
@@ -2377,20 +2305,12 @@ msgid "Automatically save new log messages to a file"
 msgstr "Tự động lưu các tin nhắn đăng nhập mới vào một tập tin"
 
 msgctxt "MessageLog"
-msgid "Basic"
-msgstr ""
-
-msgctxt "MessageLog"
-msgid "Tor Status"
-msgstr ""
-
-msgctxt "MessageLog"
-msgid "Advanced"
-msgstr ""
-
-msgctxt "MessageLog"
 msgid "Always Save New Log Messages"
 msgstr "Luôn luôn Đăng Lưu Thông điệp mới"
+
+msgctxt "MessageLog"
+msgid "toolbar"
+msgstr ""
 
 msgctxt "MessageLog"
 msgid ""
@@ -2430,10 +2350,6 @@ msgid ""
 "\n"
 "%2."
 msgstr ""
-
-msgctxt "NetViewer"
-msgid "Tor Network Map"
-msgstr "Bản đồ  mạng Tor"
 
 msgctxt "NetViewer"
 msgid "Refresh"
@@ -2533,6 +2449,22 @@ msgstr ""
 
 msgctxt "NetViewer"
 msgid "Ctrl+F"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Network Map"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Relay"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Connection"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Status"
 msgstr ""
 
 msgctxt "NetworkPage"
@@ -2874,10 +2806,6 @@ msgid "Run as a client only"
 msgstr "Chạy chi? như một khách hàng"
 
 msgctxt "ServerPage"
-msgid "Relay traffic for the Tor network"
-msgstr "Tiếp sức giao thông cho mạng Tor"
-
-msgctxt "ServerPage"
 msgid "Relay Port:"
 msgstr "Cổng tiếp sức:"
 
@@ -3135,6 +3063,14 @@ msgid "Automatically distribute my bridge address"
 msgstr ""
 
 msgctxt "ServerPage"
+msgid "Relay traffic inside the Tor network (non-exit relay)"
+msgstr ""
+
+msgctxt "ServerPage"
+msgid "Relay traffic for the Tor network (exit relay)"
+msgstr ""
+
+msgctxt "ServerPage"
 msgid "Mirror the Relay Directory"
 msgstr ""
 
@@ -3179,10 +3115,6 @@ msgstr "Mục tiêu chỉ có thể chứa các địa chỉ: cổng, địa ch�
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
 msgstr "Thư mục đã được sử dụng bởi dịch vụ khác."
-
-msgctxt "ServicePage"
-msgid "Form"
-msgstr "Mẫu"
 
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
@@ -3475,6 +3407,22 @@ msgid ""
 " the Tor network!"
 msgstr ""
 
+msgctxt "StatusTab"
+msgid "Status"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Message Log"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Tor Status"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Show on startup"
+msgstr ""
+
 msgctxt "Stream"
 msgid "New"
 msgstr "Mới"
@@ -3510,6 +3458,12 @@ msgstr "Thiết kế  la.i"
 msgctxt "Stream"
 msgid "Unknown"
 msgstr "Không biết"
+
+msgctxt "TorControl"
+msgid ""
+"Vidalia has not started Tor. You need to stop Tor through the interface you "
+"started it."
+msgstr ""
 
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
@@ -3587,6 +3541,30 @@ msgstr ""
 
 msgctxt "TorrcDialog"
 msgid "An error ocurred while opening torrc file"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+X"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+C"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+V"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+Z"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+Shift+Z"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+A"
 msgstr ""
 
 msgctxt "UPNPControl"
