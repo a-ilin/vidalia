@@ -28,7 +28,7 @@ for file in $po ; do
 
 	# Validate input and write results to a log file
 	validate_script="/home/runa/tor/translation/tools/validate.py"
-	validate_log="/home/runa/tor/validate/vidaliahelp-validate.log"
+	validate_log="validate.log"
 	python "$validate_script" -i "$file" -l "$validate_log"
 
 	# Get the basename of the file we are dealing with.
