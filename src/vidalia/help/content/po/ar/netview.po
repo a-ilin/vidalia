@@ -1,30 +1,17 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed
-#   by the Vidalia Project at http://www.torproject.org/projects/vidalia.html.
-#   No part of Vidalia, including this file, may be copied, modified,
-#   propagated, or distributed except according to the terms described
-#   in the LICENSE file.
-# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-02 18:34+0200\n"
-"Last-Translator: shadi <shadi@35point5.com>\n"
+"PO-Revision-Date: 2011-05-06 15:22+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Pootle 2.0.5\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
@@ -79,13 +66,13 @@ msgstr "خريطة الشبكة"
 #: en/netview.html:38
 msgid ""
 "The network map consists of a map of the world, with red pinpoints "
-"indicating the geographic location of relays in the Tor network. Green lines "
-"are drawn between relays to indicate the path of circuits that your Tor "
+"indicating the geographic location of relays in the Tor network. Green lines"
+" are drawn between relays to indicate the path of circuits that your Tor "
 "client has created through the Tor network."
 msgstr ""
 "خريطة الشبكة تتكون من خريطة العالم, مع بروز باللون الأحمر يشير إلى الموقع "
-"الجغرافي للمرحّلات في شبكة تور. يتم رسم خطوط خضراء بين المرحّلات للإشارة إلى "
-"مسار الدوائر التي أنشأها عميل تور خاصتك من خلال شبكة تور."
+"الجغرافي للمرحّلات في شبكة تور. يتم رسم خطوط خضراء بين المرحّلات للإشارة إلى"
+" مسار الدوائر التي أنشأها عميل تور خاصتك من خلال شبكة تور."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:44
@@ -114,22 +101,22 @@ msgstr ""
 #: en/netview.html:55
 msgid ""
 "In the middle of the dialog, below the network map, you will see a list of "
-"your current circuits, as well as any application traffic currently on those "
-"circuits. When the network map first loads, you will probably see a "
+"your current circuits, as well as any application traffic currently on those"
+" circuits. When the network map first loads, you will probably see a "
 "connection to geoip.vidalia-project.net, which occurs when Vidalia is "
 "looking up geographic information for the list of Tor relays. It is "
-"important to note that this request is done through Tor, so your location is "
-"not revealed to the GeoIP relay. The results of the lookups will be cached "
+"important to note that this request is done through Tor, so your location is"
+" not revealed to the GeoIP relay. The results of the lookups will be cached "
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
 "في منتصف صندوق الحوار, أسقل خريطة الشبكة, سترى قائمة من الدوائر الحالية "
 "بالاضافة الى أي حركة مرور حاليا للتطبيق على تلك الدوائر. عند تحميل خريطة "
 "الشبكة لأول مرة, فإنك على الاغلب سترى اتصال الى geoip.vidalia-project.net, "
-"الذي يحدث عندما يقوم فيداليا بالبحث عن معلومات جغرافية لقائمة مرحلات تور. من "
-"المهم ملاحظة أن هذا الطلب تم من خلال تور, بحيث لا يتم كشف موقعك لمرحل "
-"الموقع الجغرافي لعنوان بروتوكول الانترنت (GeoIP).نتائج عمليات البحث سوف تكون "
-"محلية مؤقتا من اجل الحد من الحمل على مرحلات الموقع الجغرافي لعنوان بروتوكول "
-"الانترنت (GeoIP) لفيداليا."
+"الذي يحدث عندما يقوم فيداليا بالبحث عن معلومات جغرافية لقائمة مرحلات تور. من"
+" المهم ملاحظة أن هذا الطلب تم من خلال تور, بحيث لا يتم كشف موقعك لمرحل "
+"الموقع الجغرافي لعنوان بروتوكول الانترنت (GeoIP).نتائج عمليات البحث سوف تكون"
+" محلية مؤقتا من اجل الحد من الحمل على مرحلات الموقع الجغرافي لعنوان بروتوكول"
+" الانترنت (GeoIP) لفيداليا."
 
 #. type: Content of: <html><body>
 #: en/netview.html:66
@@ -148,8 +135,8 @@ msgid ""
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
 "The following table summarizes the possible relay status icons:"
 msgstr ""
-"على الجانب الأيسر من الخريطة، سترى قائمة المرحلات في شبكة تور. بجانب كل مرحل "
-"هو رمز يشير إلى حالة المرحل. يلخص الجدول التالي رموز حالة المرحّل الممكنة:"
+"على الجانب الأيسر من الخريطة، سترى قائمة المرحلات في شبكة تور. بجانب كل مرحل"
+" هو رمز يشير إلى حالة المرحل. يلخص الجدول التالي رموز حالة المرحّل الممكنة:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
@@ -211,8 +198,8 @@ msgstr "تفاصيل المرحّل"
 msgid ""
 "The relay details panel at the right side of the screen gives you details "
 "about the relay or relays currently selected in the <a "
-"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream "
-"in the list of your current circuits and streams, this panel will show you "
+"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream"
+" in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
 "تظهر لوحة تفاصيل المرحّل على الجانب الايمن من الشاشة تعطيك تفاصيل حول "
@@ -227,8 +214,8 @@ msgid ""
 "The fields that you may see in the panel are as follows (<i>Note</i>: not "
 "all of these fields will always be present):"
 msgstr ""
-"الحقول التي قد تراها في اللوحة هي كما يلي (<i>ملاحظة</i>: ليست كل هذه الحقول "
-"موجودة دائما):"
+"الحقول التي قد تراها في اللوحة هي كما يلي (<i>ملاحظة</i>: ليست كل هذه الحقول"
+" موجودة دائما):"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:138
@@ -249,8 +236,8 @@ msgstr "<b>عنوان بروتوكول الانترنت (IP)</b>"
 #: en/netview.html:143
 msgid "IP address at which this Tor relay can be reached."
 msgstr ""
-"عنوان بروتوكول الإنترنت (IP) الذي يمكن ان يقوم مرحّل تور هذا من الوصول إليه. "
-""
+"عنوان بروتوكول الإنترنت (IP) الذي يمكن ان يقوم مرحّل تور هذا من الوصول إليه."
+" "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:146
@@ -289,8 +276,8 @@ msgid ""
 "Length of time this relay has been available, which can be used to help "
 "estimate this relay's stability."
 msgstr ""
-"طول الوقت الذي كان فيه المرحّل متوفرا, والذي يمكن استخدامه للمساعدة في تقدير "
-"إستقرار هذا المرحّل."
+"طول الوقت الذي كان فيه المرحّل متوفرا, والذي يمكن استخدامه للمساعدة في تقدير"
+" إستقرار هذا المرحّل."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:167

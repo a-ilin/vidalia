@@ -34,7 +34,7 @@ msgid ""
 "Select a help topic from the tree on the left or click on the Search button "
 "above the list of topics to search through all available help topics."
 msgstr ""
-"Выберите раздел помощи из дерева слева или используйте кнопку \\\"Поиск\\\" (над "
+"Выберите раздел помощи из дерева слева или используйте кнопку \"Поиск\" (над "
 "списком разделов) для поиска во всех доступных разделах сразу."
 
 #. type: Content of: <html><body><p>
