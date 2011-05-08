@@ -3,9 +3,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: The Tor Project\n"
 "Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
-"POT-Creation-Date: 2011-03-09 13:05+0000\n"
-"PO-Revision-Date: 2011-03-22 16:13+0000\n"
-"Last-Translator: Evropi <yannanth@gmail.com>\n"
+"POT-Creation-Date: 2011-05-03 14:28+0000\n"
+"PO-Revision-Date: 2011-05-06 20:00+0000\n"
+"Last-Translator: runasand <runa.sandvik@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -234,10 +234,6 @@ msgid "Show Settings"
 msgstr "Εμφάνιση ρυθμίσεων"
 
 msgctxt "BandwidthGraph"
-msgid "Tor Bandwidth Usage"
-msgstr "Χρήση Ευρούς Ζώνης Tor"
-
-msgctxt "BandwidthGraph"
 msgid "Reset"
 msgstr "Μηδενισμός"
 
@@ -276,6 +272,10 @@ msgstr "Αποθήκευση"
 msgctxt "BandwidthGraph"
 msgid "Cancel"
 msgstr "Άκυρο"
+
+msgctxt "BandwidthGraph"
+msgid "Bandwidth Graph"
+msgstr ""
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
@@ -430,17 +430,26 @@ msgid "Control socket is not connected."
 msgstr "Η υποδοχή ελέγχου δεν είναι συνδεδεμένη."
 
 msgctxt "ControlPasswordInputDialog"
-msgid "Password Required"
-msgstr "Απαιτείται κωδικός"
-
-msgctxt "ControlPasswordInputDialog"
-msgid "Remember my password"
-msgstr "Απομνημόνευση Κωδικού"
+msgid "Problem connecting to Tor"
+msgstr ""
 
 msgctxt "ControlPasswordInputDialog"
 msgid ""
-"Vidalia has connected to a running Tor process that requires a password. "
-"Please enter your control password:"
+"Tor is already running, but Vidalia can't connect to it.\n"
+"\n"
+"This can happen when something else (such as another active Vidalia process, or a Vidalia process that crashed) launched Tor."
+msgstr ""
+
+msgctxt "ControlPasswordInputDialog"
+msgid ""
+"You will need to shut down the Tor process before Vidalia can launch a new "
+"one."
+msgstr ""
+
+msgctxt "ControlPasswordInputDialog"
+msgid ""
+"Vidalia can try to restart Tor for you.  Doing so will close all currently "
+"active connections through your Tor process."
 msgstr ""
 
 msgctxt "ControlSocket"
@@ -1338,10 +1347,6 @@ msgid "Browse"
 msgstr "Περιήγηση"
 
 msgctxt "GeneralPage"
-msgid "Start the Tor software when Vidalia starts"
-msgstr "Εκκίνηση του λογισμικού Tor όταν εκκινεί το Vidalia"
-
-msgctxt "GeneralPage"
 msgid "Tor"
 msgstr "Tor"
 
@@ -1369,6 +1374,10 @@ msgstr "Αυτόματος έλεγχος για ενημερώσεις λογι
 msgctxt "GeneralPage"
 msgid "Check Now"
 msgstr "Έλεγχος Τώρα"
+
+msgctxt "GeneralPage"
+msgid "Connect to Tor automatically"
+msgstr ""
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1658,44 +1667,12 @@ msgid "New Identity"
 msgstr "Νέα Ταυτότητα"
 
 msgctxt "MainWindow"
-msgid "Ctrl+T"
-msgstr "Ctrl+T"
-
-msgctxt "MainWindow"
-msgid "Ctrl+B"
-msgstr "Ctrl+B"
-
-msgctxt "MainWindow"
-msgid "Ctrl+L"
-msgstr "Ctrl+L"
-
-msgctxt "MainWindow"
-msgid "Ctrl+N"
-msgstr "Ctrl+N"
-
-msgctxt "MainWindow"
-msgid "Ctrl+?"
-msgstr "Ctrl+?"
-
-msgctxt "MainWindow"
-msgid "Ctrl+I"
-msgstr "Ctrl+I"
-
-msgctxt "MainWindow"
-msgid "Ctrl+P"
-msgstr "Ctrl+P"
-
-msgctxt "MainWindow"
 msgid "Tor"
 msgstr "Tor"
 
 msgctxt "MainWindow"
 msgid "View"
 msgstr "Εμφάνιση"
-
-msgctxt "MainWindow"
-msgid "Vidalia Help"
-msgstr "Βοήθεια για το Vidalia"
 
 msgctxt "MainWindow"
 msgid "Error starting web browser"
@@ -1813,10 +1790,6 @@ msgid "Tor is shutting down"
 msgstr "Το Tor τερματίζει"
 
 msgctxt "MainWindow"
-msgid "Stop Tor Now"
-msgstr "Διακοπή του Tor Τώρα"
-
-msgctxt "MainWindow"
 msgid "Stop Tor"
 msgstr "Διακοπή Tor"
 
@@ -1905,18 +1878,6 @@ msgstr ""
 "του Vidalia ίσως δεν είναι διαθέσιμες."
 
 msgctxt "MainWindow"
-msgid "Authentication Error"
-msgstr "Σφάλμα Επαλήθευσης"
-
-msgctxt "MainWindow"
-msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr "Το Vidalia δεν μπόρεσε να εξακριβώσει το λογισμικό Tor . (%1)"
-
-msgctxt "MainWindow"
-msgid "Please check your control port authentication settings."
-msgstr "Ελέγξτε τις ρυθμίσεις ελέγχου της θύρα εξακρίβωσης."
-
-msgctxt "MainWindow"
 msgid "Tor Update Available"
 msgstr "Υπάρχει διαθέσιμη ενημέρωση για το Tor"
 
@@ -1961,83 +1922,8 @@ msgid "Status"
 msgstr "Κατάσταση"
 
 msgctxt "MainWindow"
-msgid "Vidalia Shortcuts"
-msgstr "Συντομεύσεις πληκτρολογίου για το Vidalia"
-
-msgctxt "MainWindow"
-msgid "Setup Relaying"
-msgstr "Εγκατάσταση/Ρύθμιση Ενδιάμεσου"
-
-msgctxt "MainWindow"
-msgid "Set up a relay and help the network grow"
-msgstr "Ρυθμίστε έναν ενδιάμεσο και βοηθήστε στην ανάπτυξη του δικτύου."
-
-msgctxt "MainWindow"
-msgid "View the Network"
-msgstr "Εμφάνιση του Δικτύου"
-
-msgctxt "MainWindow"
-msgid "View a map of the Tor network"
-msgstr "Εμφάνιση ενός χάρτη του δικτύου Tor"
-
-msgctxt "MainWindow"
-msgid "Use a New Identity"
-msgstr "Χρήση Νέας Ταυτότητας"
-
-msgctxt "MainWindow"
-msgid "Make subsequent connections appear new"
-msgstr "Οι επόμενες συνδέσεις να εμφανίζονται νέες"
-
-msgctxt "MainWindow"
-msgid "View recent bandwidth usage"
-msgstr "Εμφάνιση πρόσφατης χρήσης του εύρους ζώνης"
-
-msgctxt "MainWindow"
-msgid "View log message history"
-msgstr "Εμφάνιση του ιστορικού καταγραφών μηνυμάτων"
-
-msgctxt "MainWindow"
-msgid "View help documentation"
-msgstr "Εμφάνιση βοηθητικής τεκμηρίωσης"
-
-msgctxt "MainWindow"
-msgid "Configure Vidalia"
-msgstr "Ρύθμιση του Vidalia"
-
-msgctxt "MainWindow"
-msgid "View version and license information"
-msgstr "Εμφάνιση της έκδοσης και αδειοδοτικών πληροφοριών"
-
-msgctxt "MainWindow"
-msgid "Exit Vidalia"
-msgstr "Έξοδος του Vidalia"
-
-msgctxt "MainWindow"
-msgid "Show this window on startup"
-msgstr "Εμφάνιση αυτού του παραθύρου κατά την εκκίνηση"
-
-msgctxt "MainWindow"
-msgid "Hide"
-msgstr "Απόκρυψη"
-
-msgctxt "MainWindow"
-msgid "Hide this window"
-msgstr "Απόκρυψη αυτού του παραθύρου"
-
-msgctxt "MainWindow"
 msgid "Password Reset Failed"
 msgstr "Ο μηδενισμός του κωδικού απέτυχε"
-
-msgctxt "MainWindow"
-msgid ""
-"Vidalia tried to reset Tor's control password, but was not able to restart "
-"the Tor software. Please check your Task Manager to ensure there are no "
-"other Tor processes running."
-msgstr ""
-"Το Vidalia προσπάθησε να επαναφέρει τον αρχικό κωδικό για τις ρυθμίσεις του "
-"Tor, αλλά δεν μπόρεσε να επανεκκινήσει το Tor. Παρακαλούμε ελέγξτε στη "
-"διαχείριση εργασιών του συστήματος ότι δεν εκτελείται κάποια άλλη υπηρεσία "
-"του Tor."
 
 msgctxt "MainWindow"
 msgid ""
@@ -2100,13 +1986,31 @@ msgid ""
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "failed (%1)"
+msgid "toolBar"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid ""
-"Your relay is shutting down.\n"
-"Click 'Stop' again to stop your relay now."
+msgid "Start"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Stop"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Restart"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Reload Tor's config"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Actions"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Bootstrapping torrc from %1 to %2"
 msgstr ""
 
 msgctxt "MainWindow"
@@ -2124,11 +2028,35 @@ msgid ""
 msgstr ""
 
 msgctxt "MainWindow"
+msgid ""
+"Vidalia tried to restart Tor, but was not able to. Please check your Task "
+"Manager to ensure there are no other Tor processes running."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "failed (%1)"
+msgstr ""
+
+msgctxt "MainWindow"
 msgid ", probably Telnet,"
 msgstr ""
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid ""
+"Your relay is shutting down.\n"
+"Click 'Stop' again to stop your relay now."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Error reloading configuration"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Vidalia was unable to reload Tor's configuration."
 msgstr ""
 
 msgctxt "MessageLog"
@@ -2395,20 +2323,12 @@ msgid "Automatically save new log messages to a file"
 msgstr "Αυτόματη αποθήκευση νέων μηνυμάτων καταγραφής σε αρχείο"
 
 msgctxt "MessageLog"
-msgid "Basic"
-msgstr ""
-
-msgctxt "MessageLog"
-msgid "Tor Status"
-msgstr ""
-
-msgctxt "MessageLog"
-msgid "Advanced"
-msgstr ""
-
-msgctxt "MessageLog"
 msgid "Always Save New Log Messages"
 msgstr "Πάντα να αποθηκεύεις τα νέα αρχεία καταγραφής μηνυμάτων"
+
+msgctxt "MessageLog"
+msgid "toolbar"
+msgstr ""
 
 msgctxt "MessageLog"
 msgid ""
@@ -2448,10 +2368,6 @@ msgid ""
 "\n"
 "%2."
 msgstr ""
-
-msgctxt "NetViewer"
-msgid "Tor Network Map"
-msgstr "Χάρτης δικτύου Tor"
 
 msgctxt "NetViewer"
 msgid "Refresh"
@@ -2552,6 +2468,22 @@ msgstr ""
 msgctxt "NetViewer"
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
+
+msgctxt "NetViewer"
+msgid "Network Map"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Relay"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Connection"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Status"
+msgstr ""
 
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
@@ -2899,10 +2831,6 @@ msgid "Run as a client only"
 msgstr "Εκτέλεση μόνο σαν πελάτης"
 
 msgctxt "ServerPage"
-msgid "Relay traffic for the Tor network"
-msgstr "Αναμετάδωσε κίνηση για το δίκτυο του Tor"
-
-msgctxt "ServerPage"
 msgid "Relay Port:"
 msgstr "Θύρα σταθμού:"
 
@@ -3165,6 +3093,14 @@ msgid "Automatically distribute my bridge address"
 msgstr ""
 
 msgctxt "ServerPage"
+msgid "Relay traffic inside the Tor network (non-exit relay)"
+msgstr ""
+
+msgctxt "ServerPage"
+msgid "Relay traffic for the Tor network (exit relay)"
+msgstr ""
+
+msgctxt "ServerPage"
 msgid "Mirror the Relay Directory"
 msgstr ""
 
@@ -3215,10 +3151,6 @@ msgstr ""
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
 msgstr "Ο φάκελος χρησιμοποιήτε ήδη από άλλη υπηρεσία."
-
-msgctxt "ServicePage"
-msgid "Form"
-msgstr "Φόρμα"
 
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
@@ -3513,6 +3445,22 @@ msgid ""
 " the Tor network!"
 msgstr ""
 
+msgctxt "StatusTab"
+msgid "Status"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Message Log"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Tor Status"
+msgstr ""
+
+msgctxt "StatusTab"
+msgid "Show on startup"
+msgstr ""
+
 msgctxt "Stream"
 msgid "New"
 msgstr "Νέο"
@@ -3548,6 +3496,12 @@ msgstr "''Ανα-χαρτογραφημένο\""
 msgctxt "Stream"
 msgid "Unknown"
 msgstr "Άγνωστο"
+
+msgctxt "TorControl"
+msgid ""
+"Vidalia has not started Tor. You need to stop Tor through the interface you "
+"started it."
+msgstr ""
 
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
@@ -3625,6 +3579,30 @@ msgstr ""
 
 msgctxt "TorrcDialog"
 msgid "An error ocurred while opening torrc file"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+X"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+C"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+V"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+Z"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+Shift+Z"
+msgstr ""
+
+msgctxt "TorrcDialog"
+msgid "Ctrl+A"
 msgstr ""
 
 msgctxt "UPNPControl"
