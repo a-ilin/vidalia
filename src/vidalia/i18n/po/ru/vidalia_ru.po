@@ -1961,7 +1961,7 @@ msgstr "Ярлыки Vidalia"
 
 msgctxt "MainWindow"
 msgid "Setup Relaying"
-msgstr "Настройка сервера\n"
+msgstr "Настройка сервера"
 
 msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
