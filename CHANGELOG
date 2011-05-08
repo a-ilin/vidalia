@@ -2,33 +2,34 @@
   o Vidalia has got a new GUI. Instead of separate dialogs, each functionality
     is organized in tabs arranged in a common main window. This new tab
     organization will give Vidalia a generic way of organizing the GUI plug-ins
-    that will be available in later releases. Ticket #2939.
+    that will be available in later releases. Resolves bug 2939.
   o When a Tor instance is already running and Vidalia doesn't know the control
     password, don't ask for the it but rather explain the situation and display
-    the few possible choices the user has. Ticket #2132.
+    the few possible choices the user has. Resolves bug 2132.
   o Add an option for setting up a non-exit relay to the Sharing configuration
     panel. This is meant to clarify what an exit policy and an exit relay are.
-    Ticket #2644.
+    Resolves bug 2644.
   o Add a way to reload Tor's configuration without having to stop it. Tor can
     reload its configuration while it is running, Vidalia now provides a menu
     option for that, so, for example, relay operators won't be affected by the
-    fact that their relay was down for a while. Ticket #2724.
+    fact that their relay was down for a while. Resolves bug 2724.
   o Reintegrate Breakpad, and make available in other platforms other than
-    Windows. Ticket #2105.
+    Windows. Resolves bug 2105.
   o Fix bandwidth assigned to relays on the Network Map. A lot of relays are
     displaying an erroneous bandwidth and since they are ordered by that value
     in the Network Map, it leads to confusion. Vidalia now specifies the
     bandwidth as the minimum of the three possible values (burst, average and
-    observed). Ticket #2744.
+    observed). Fixes bug 2744.
   o Minor change to the checkbox for starting Tor when Vidalia starts. It was
-    suggested that the way the phrasing was done was missleading. Ticket #2806.
+    suggested that the way the phrasing was done was missleading. Resolves bug
+    2806.
   o Add a way to bootstrap Tor's torrc file (copy the torrc to a given directory
     before Vidalia starts) so that packages such as Bridge-by-default portable
     bundles for OSX don't violate the directory structure of the operative
-    system. Ticket #2821.
+    system. Fixes bug 2821.
   o Add the proper CA Certificates so that the "Find Bridges" button works
-    again. Ticket #2835.
-  o Update the useful links help page. Ticket #2809.
+    again. Fixes bug 2835.
+  o Update the useful links help page. Fixes bug 2809.
 
 0.2.12  10-Apr-2011
   o Vidalia's SVN repository has been migrated to Git. All branches but
