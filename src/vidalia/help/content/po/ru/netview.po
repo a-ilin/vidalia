@@ -1,30 +1,17 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed
-#   by the Vidalia Project at http://www.torproject.org/projects/vidalia.html.
-#   No part of Vidalia, including this file, may be copied, modified,
-#   propagated, or distributed except according to the terms described
-#   in the LICENSE file.
-# 
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-09-24 08:48+0200\n"
-"Last-Translator: euneko <euneko@mail.ru>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ru\n"
+"PO-Revision-Date: 2011-05-06 15:22+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Russian (http://www.transifex.net/projects/p/torproject/team/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Pootle 2.0.5\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
@@ -37,8 +24,8 @@ msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
 msgstr ""
-"Обзор сети позволяет просмотреть ретрансляторы в сети Tor и куда расходуется "
-"ваш трафик."
+"Обзор сети позволяет просмотреть ретрансляторы в сети Tor и куда расходуется"
+" ваш трафик."
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
@@ -78,8 +65,8 @@ msgstr "Карта сети."
 #: en/netview.html:38
 msgid ""
 "The network map consists of a map of the world, with red pinpoints "
-"indicating the geographic location of relays in the Tor network. Green lines "
-"are drawn between relays to indicate the path of circuits that your Tor "
+"indicating the geographic location of relays in the Tor network. Green lines"
+" are drawn between relays to indicate the path of circuits that your Tor "
 "client has created through the Tor network."
 msgstr ""
 "Карта сети содержит карту мира, красным отмечено географическое место "
@@ -114,22 +101,22 @@ msgstr ""
 #: en/netview.html:55
 msgid ""
 "In the middle of the dialog, below the network map, you will see a list of "
-"your current circuits, as well as any application traffic currently on those "
-"circuits. When the network map first loads, you will probably see a "
+"your current circuits, as well as any application traffic currently on those"
+" circuits. When the network map first loads, you will probably see a "
 "connection to geoip.vidalia-project.net, which occurs when Vidalia is "
 "looking up geographic information for the list of Tor relays. It is "
-"important to note that this request is done through Tor, so your location is "
-"not revealed to the GeoIP relay. The results of the lookups will be cached "
+"important to note that this request is done through Tor, so your location is"
+" not revealed to the GeoIP relay. The results of the lookups will be cached "
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
 "В середине диалога, ниже по карте сети, вы увидите список ваших текущих "
 "схем, а также любой трафик приложения в настоящее время на этих схемах. "
-"Когда карта сети загружается в первый раз, вы вероятно увидите подключение к "
-"geoip.vidalia-project.net, которое возникает, когда Vidalia просматривает "
+"Когда карта сети загружается в первый раз, вы вероятно увидите подключение к"
+" geoip.vidalia-project.net, которое возникает, когда Vidalia просматривает "
 "информацию, для получения списка серверов. Важно отметить, что этот запрос "
 "выполняется через Tor, так что ваше местоположение не раскрывается для "
-"ретранслятора GeoIP. Результаты поиска будут кэшироваться локально, для того "
-"чтоб уменьшить нагрузку на ретрансляторы GeoIP ."
+"ретранслятора GeoIP. Результаты поиска будут кэшироваться локально, для того"
+" чтоб уменьшить нагрузку на ретрансляторы GeoIP ."
 
 #. type: Content of: <html><body>
 #: en/netview.html:66
@@ -150,8 +137,8 @@ msgid ""
 msgstr ""
 "В левой части просмотрщика сети ,вы увидите список ретрансляторов в сети "
 "Tor.Следующая за каждым ретранслятором иконка указывает на статус "
-"ретранслятора.ниже таблица кратко описывает возможные статусы ретрансляторов "
-"на иконках."
+"ретранслятора.ниже таблица кратко описывает возможные статусы ретрансляторов"
+" на иконках."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
@@ -219,15 +206,15 @@ msgstr "Подробности ретранслятора"
 msgid ""
 "The relay details panel at the right side of the screen gives you details "
 "about the relay or relays currently selected in the <a "
-"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream "
-"in the list of your current circuits and streams, this panel will show you "
+"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream"
+" in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
 "Панель подробностей ретранслятора в правой части экрана предоставит вам "
 "информацию о вашем ретрансляторе или выбранном из <a "
-"href=\"#relaylist\">список ретрансляторов</a>.Если вы выбрали схему цепи или "
-"поток из списка ваших текущих схем цепочек и потоков, эта панель покажет вам "
-"подробную информацию о каждом ретрансляторе, через который трафик в "
+"href=\"#relaylist\">список ретрансляторов</a>.Если вы выбрали схему цепи или"
+" поток из списка ваших текущих схем цепочек и потоков, эта панель покажет "
+"вам подробную информацию о каждом ретрансляторе, через который трафик в "
 "настоящее время отправлен."
 
 #. type: Content of: <html><body><p>
@@ -236,8 +223,8 @@ msgid ""
 "The fields that you may see in the panel are as follows (<i>Note</i>: not "
 "all of these fields will always be present):"
 msgstr ""
-"Поля, которые вы можете увидеть в панели являются (<i>Примечание</i>: не все "
-"эти поля всегда будут присутствовать):"
+"Поля, которые вы можете увидеть в панели являются (<i>Примечание</i>: не все"
+" эти поля всегда будут присутствовать):"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:138
@@ -284,8 +271,8 @@ msgid ""
 "Estimated maximum amount of bandwidth that the directory relays have seen "
 "this relay handle recently."
 msgstr ""
-"Расчетная максимальная сумма пропускной способности, зафиксированная на этом "
-"ретрансляторе в последнее время."
+"Расчетная максимальная сумма пропускной способности, зафиксированная на этом"
+" ретрансляторе в последнее время."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:160

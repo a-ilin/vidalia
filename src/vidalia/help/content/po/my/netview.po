@@ -1,28 +1,17 @@
 # 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed
-#   by the Vidalia Project at http://www.torproject.org/projects/vidalia.html.
-#   No part of Vidalia, including this file, may be copied, modified,
-#   propagated, or distributed except according to the terms described
-#   in the LICENSE file.
-# 
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Project-Id-Version: The Tor Project\n"
+"Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-05-06 15:22+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Language: my\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
@@ -80,8 +69,8 @@ msgstr "ကြန္ယက္ေျမပံု"
 #: en/netview.html:38
 msgid ""
 "The network map consists of a map of the world, with red pinpoints "
-"indicating the geographic location of relays in the Tor network. Green lines "
-"are drawn between relays to indicate the path of circuits that your Tor "
+"indicating the geographic location of relays in the Tor network. Green lines"
+" are drawn between relays to indicate the path of circuits that your Tor "
 "client has created through the Tor network."
 msgstr ""
 "ကြန္ယက္ေျမပံုတြင္ အနီေရာင္ pinpoints မ်ားျဖင့္ ရည္ညႊန္းထားေသာ Tor "
@@ -110,27 +99,27 @@ msgid ""
 "geoip.vidalia-project.net."
 msgstr ""
 "GeoIP database ထဲက relay ၏ IP လိပ္စာမ်ားကို ၾကည့္ျခင္းအားျဖင့္ Tor relay "
-"တစ္ခု၏ ပထဝီဆိုင္ရာ တည္ေနရာကို ဆံုးျဖတ္ႏိုင္ပါသည္။ ၎ကို MaxMind က ဖန္တီးထားတာ "
-"ျဖစ္ျပီး geoip.vidalia-project.net မွာတည္ရွိပါတယ္။"
+"တစ္ခု၏ ပထဝီဆိုင္ရာ တည္ေနရာကို ဆံုးျဖတ္ႏိုင္ပါသည္။ ၎ကို MaxMind က ဖန္တီးထားတာ"
+" ျဖစ္ျပီး geoip.vidalia-project.net မွာတည္ရွိပါတယ္။"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:55
 msgid ""
 "In the middle of the dialog, below the network map, you will see a list of "
-"your current circuits, as well as any application traffic currently on those "
-"circuits. When the network map first loads, you will probably see a "
+"your current circuits, as well as any application traffic currently on those"
+" circuits. When the network map first loads, you will probably see a "
 "connection to geoip.vidalia-project.net, which occurs when Vidalia is "
 "looking up geographic information for the list of Tor relays. It is "
-"important to note that this request is done through Tor, so your location is "
-"not revealed to the GeoIP relay. The results of the lookups will be cached "
+"important to note that this request is done through Tor, so your location is"
+" not revealed to the GeoIP relay. The results of the lookups will be cached "
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
 "ကြန္ယက္ေျမပံု၏ ေအာက္ဘက္ ဒိုင္ယာေလာ့ခ္၏ အလယ္တြင္ အဲ့ဒိ circuits မ်ားေပၚရွိ "
 "လတ္တေလာ application လမ္းေၾကာင္းမ်ား ကဲ့သို႔ပင္ သင္၏ လက္ရွိ circuits မ်ား "
 "စာရင္းကို ျမင္ေတြ႕ႏိုင္ပါတယ္။ ကြန္ယက္ ေျမပံု ပထမဆံုး စတင္တဲ့အခါမွာ Tor "
 "relays မ်ား၏ စာရင္းအတြက္ ပထဝီဆိုင္ရာ သတင္းအခ်က္အလက္မ်ားကို Vidalia "
-"ၾကည့္တဲ့ခါ ေတြ႕ရမယ့္ geoip.vidalia-project.net ကို ခ်ိတ္ဆက္မႈအား ျမင္ရမွာပါ။ "
-"အေရးတၾကီး သိရမွာက Tor ကိုျဖတ္၍ ျပီးသြားတယ္ဆိုတာပါပဲ။ ထို႔ေၾကာင့္ GeoIP "
+"ၾကည့္တဲ့ခါ ေတြ႕ရမယ့္ geoip.vidalia-project.net ကို ခ်ိတ္ဆက္မႈအား ျမင္ရမွာပါ။"
+" အေရးတၾကီး သိရမွာက Tor ကိုျဖတ္၍ ျပီးသြားတယ္ဆိုတာပါပဲ။ ထို႔ေၾကာင့္ GeoIP "
 "relay သို႔ သင့္တည္ေနရာကို ထုတ္ေဖာ္ေျပာမွာ မဟုတ္ပါဘူး။ ၾကည့္ရႈျခင္း၏ "
 "ရလဒ္ကေတာ့ Vidalia ၏ GeoIP relays မ်ားေပၚမွာ load လုပ္တာကို ေလွ်ာ့ခ်ရန္ "
 "အလို႔ငွာ local မွာပဲ ဖမ္းယူေပးထားမွာ ျဖစ္ပါတယ္။"
@@ -154,8 +143,8 @@ msgid ""
 msgstr ""
 "network view ၏ ဘယ္ဘက္ျခမ္းတြင္ Tor ကြန္ယက္ထဲရွိ relays မ်ား စာရင္းကို "
 "သင္ျမင္ေတြ႕ရမွာ ျဖစ္ပါတယ္။ ေနာက္တစ္ခုကေတာ့ relay တစ္ခုခ်င္းစီဟာ relay ၏ "
-"status ကို ညႊန္းတဲ့ icon ျဖစ္ပါတယ္။ ေအာက္ေဖာ္ျပပါ ဇယားကြက္ကေတာ့ relay status "
-"icons မ်ားရဲ႕ ျဖစ္ႏိုင္ေျခရွိတဲ့ အႏွစ္ခ်ဳပ္ ဇယားကြက္ ျဖစ္ပါတယ္:"
+"status ကို ညႊန္းတဲ့ icon ျဖစ္ပါတယ္။ ေအာက္ေဖာ္ျပပါ ဇယားကြက္ကေတာ့ relay status"
+" icons မ်ားရဲ႕ ျဖစ္ႏိုင္ေျခရွိတဲ့ အႏွစ္ခ်ဳပ္ ဇယားကြက္ ျဖစ္ပါတယ္:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
@@ -220,8 +209,8 @@ msgstr "Relay အေသးစိတ္မ်ား"
 msgid ""
 "The relay details panel at the right side of the screen gives you details "
 "about the relay or relays currently selected in the <a "
-"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream "
-"in the list of your current circuits and streams, this panel will show you "
+"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream"
+" in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
 "screen ၏ ညာဘက္ျခမ္းမွာရွိတဲ့ relay အေသးစိတ္ panel သည္ relay အေၾကာင္း "
