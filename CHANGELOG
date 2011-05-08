@@ -3,12 +3,9 @@
     is organized in tabs arranged in a common main window. This new tab
     organization will give Vidalia a generic way of organizing the GUI plug-ins
     that will be available in later releases. Ticket #2939.
-  o Change the password prompt to just inform the user of that there is another
-    Tor running and Vidalia doesn't know the control password, and list what are
-    his or her possibilities. The password prompt is more trouble to users than
-    it is of a solution to the problem.  So the idea of this new approach is to
-    just inform the user, and try to kill the Tor instance that's causing the
-    issue.  Ticket #2132.
+  o When a Tor instance is already running and Vidalia doesn't know the control
+    password, don't ask for the it but rather explain the situation and display
+    the few possible choices the user has. Ticket #2132.
   o Add an option for setting up a non-exit relay to the Sharing configuration
     panel. This is meant to clarify what an exit policy and an exit relay are.
     Ticket #2644.
