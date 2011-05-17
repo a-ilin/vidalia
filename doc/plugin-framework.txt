@@ -1,0 +1,153 @@
+Plugin Framework specification
+
+1. Directory structure:
+
+  Each plugin will live inside its own directory, separated from all the
+  other plugins.
+  The directory will contain the following:
+    info.xml      *
+    <file>.js     **
+    <subdir>/     ***
+
+    * The plugin description will live inside an XML file named info.xml,
+    its specification will be specified later.
+
+    ** Each source code file that the plugin uses will have a "js"
+    extension. The plugin may contain any other kind of files, along with
+    other source code files.
+
+    *** The plugin may contain any sort of directory dispositions. The
+    developer can reference files within subdirectories freely. The main
+    file can live anywhere within the plugin directory, as long as its
+    relative path is specified correctly in the info.xml file.
+
+2. Definition file:
+
+  The definition file for a plugin will be a XML file with the following DTD:
+
+  <!DOCTYPE VidaliaPlugin [
+    <!ENTITY name (#CDATA)>
+    <!ENTITY date (#CDATA)>
+    <!ENTITY author (#CDATA)>
+    <!ENTITY type (EMPTY)>
+      <!ATTLIST type persistent CDATA "false">
+      <!ATTLIST type gui CDATA "false">
+    <!ENTITY files (file+)>
+      <!ENTITY file (#CDATA)>
+    <!ENTITY namespace (#CDATA)>
+  ]>
+
+  Short description:
+  - Name, date and author are self explanatory.
+  - Type: 
+    - Persistent: A plugin is persistent if it starts when Vidalia starts,
+    and it doesn't matter if the GUI (if it has one) is visible or not, the
+    plugin code is in execution.
+    - GUI: True if the plugin has a GUI.
+  - Files: Plugins may contain several source code files. The different
+  functions that must be implemented for it to work may be divided into
+  several files, or just one. Whatever the case may be, the files that the
+  plugin engine has to load must be specified in here. The plugin may use
+  other files, which don't need to be listed.
+  - Namespace: Each plugin will have its own namespace to avoid function
+  name collisions (the main functions will be named the same)
+
+3. Plugin functions:
+
+  Each plugin must implement the following functions:
+    start() : void
+    stop() : void
+    buildGUI() : VidaliaTab *
+
+  If the plugin isn't a GUI one, a default implementation will be added
+  that returns QScriptValue::NullValue.
+  Plugins may use several different files to implement its functionality.
+  To include files within other files use:
+
+    include("path/to/file.js") 
+  
+  This will be implemented by Vidalia's engine, it's not a native include
+  call. Another possibility would be to just list the file in the info.xml
+  file, and the engine will load it automatically and in order.
+
+4. Building an interface for a class to be used in a plugin:
+
+  To provide any class to be used in a plugin, there are two main parts to
+  implement: the constructor, and the prototype:
+    - Constructor: each constructable object in a plugin need to have
+    	a static constructor function implemented with the following
+    	signature:
+
+    	QScriptValue f(QScriptContext *, QScriptEngine *)
+
+    - Prototype: A prototype is a wrapper for a metatype's methods. This
+    	methods are what will be visible inside the plugin for a given
+    	object.
+
+  The prototype class must inherit from QObject and QScriptable.
+  All types used in the plugin must be handled this way, and must be
+  declared as a Qt Metatype. Each interface must handle the metatype
+  declaration.
+
+5. Settings:
+
+  For specifying where the plugins live, there will be a new item in
+  Vidalia's configuration file: PluginPath. Which will contain the absolute
+  path of the plugins.
+
+6. Plugin engine:
+
+  All plugins will leave in the same environment (QScriptEngine). When
+  Vidalia starts, it starts the plugin engine.
+  Here's a bit of pseudo-code to get an idea of the loading process.
+
+  6.1. Startup:
+
+    foreach provided_class:                              (1)
+      load_prototype                                     (2)
+      load_constructor                                   (3)
+
+    scan_plugin_directory                                (4)
+    foreach directory:
+      info = load_info_file                              (5)
+      wrapper = plugin_wrapper(info)                     (6)
+      if info.persistent:
+        wrapper.start()                                  (7)
+      if info.gui:
+        plugin_menu.addAction(wrapper.menu_action())     (8)
+
+    (1) This loop will be probably hardcoded, since there isn't any way to
+    iterate through every class that we want to provide for the plugins.
+    (2) First we need to load the prototype for the given metatype.
+    (3) Then we can add a constructor for the metatype as a function of the
+    global script engine interpreter.
+    (4) Scan the PluginPath for directories that contain the info.xml
+    file.
+    (5) Interpret the info file to see what kind of plugin we are dealing
+    with.
+    (6) A plugin wrapper is an object that abstracts the actual calls to
+    the methods we know the plugin must implement with its corresponding
+    namespace.
+    (7) If it's a persistent plugin, then start it.
+    (8) If it's a gui plugin, add the entry to the plugin menu. If the
+    plugin is also persistent, then the menu action will be linked to
+    a show() function instead of the start(), since the plugin will be
+    already loaded.
+
+  6.2. Quit:
+
+    foreach plugin:
+      wrapper.stop()
+
+7. Things to consider:
+
+  - Will the fact that all the plugins live in the same environment affect
+  	in terms of security? or at least the workflow of each individual
+  	plugin?
+    Possible solution: One instance of QScriptEngine for each plugin (kind
+    of a sandbox). But what will be the performance drawbacks to this?
+  - Is there the need to connect signals emitted from the plugin to
+  	Vidalia? If so, this seems to be a nice implementation:
+  	http://gitorious.org/qtscriptsignalhandler
+  - Do we want to have all files listed in the info.xml file too? May be we
+  	can use that to have some kind of sanity check.
