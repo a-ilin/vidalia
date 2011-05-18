@@ -1403,7 +1403,7 @@ MainWindow::toString(TorStatus status)
 void
 MainWindow::restart()
 {
-  if(_torControl->stop()) {
+  if(stop()) {
     start();
   }
 }
