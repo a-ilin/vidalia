@@ -126,7 +126,7 @@ private slots:
   /** Displays the General Tor Status tab */
   void showStatusTab();
   /** Displays the Bandwidth graph tab */
-  void showBandwithTab();
+  void showBandwidthTab();
   /** Displays the Network map tab */
   void showNetViewerTab();
   /** Creates and displays Vidalia's About dialog. */

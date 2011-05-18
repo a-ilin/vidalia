@@ -322,7 +322,7 @@ MainWindow::createConnections()
 
   connect(_actionMessageLog, SIGNAL(triggered()), this, SLOT(showMessageLogTab()));
   connect(_actionConfigure, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
-  connect(_actionBandwidthGraph, SIGNAL(triggered()), this, SLOT(showBandwithTab()));
+  connect(_actionBandwidthGraph, SIGNAL(triggered()), this, SLOT(showBandwidthTab()));
   connect(_actionAbout, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
   connect(_actionVidaliaHelp, SIGNAL(triggered()), this, SLOT(showHelpDialog()));
   connect(_actionStatus, SIGNAL(triggered()), this, SLOT(showStatusTab()));
@@ -1585,7 +1585,7 @@ MainWindow::showMessageLogTab()
 }
 
 void 
-MainWindow::showBandwithTab()
+MainWindow::showBandwidthTab()
 {
   addTab(_graph);
 }
