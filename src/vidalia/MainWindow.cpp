@@ -269,7 +269,7 @@ void
 MainWindow::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
   if (reason == QSystemTrayIcon::DoubleClick)
-    setVisible(true);
+    setVisible(!isVisible());
 }
 
 void
