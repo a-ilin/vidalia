@@ -1550,6 +1550,8 @@ MainWindow::addTab(VidaliaTab *tab)
   _tabMap << tab->getTitle();
   connect(tab, SIGNAL(helpRequested(QString)),
           this, SLOT(showHelpDialog(QString)));
+  if(!isVisible())
+    setVisible(true);
 }
 
 void
