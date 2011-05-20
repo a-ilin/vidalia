@@ -102,6 +102,11 @@ MainWindow::MainWindow()
 
   createGUI();
   createConnections();
+
+  /* Start with Tor initially stopped */
+  _status = Unset;
+  _isVidaliaRunningTor = false;
+  updateTorStatus(Stopped);
 }
 
 /** Destructor */
@@ -132,8 +137,6 @@ void
 MainWindow::createActions()
 {
   _actionShowControlPanel = new QAction(QIcon(IMG_CONTROL_PANEL), tr("Control Panel"), this);
-  _actionStartTor = new QAction(QIcon(IMG_START_TOR_16), tr("Start"), this);
-  _actionStopTor = new QAction(QIcon(IMG_STOP_TOR_16), tr("Stop"), this);
   _actionRestartTor = new QAction(tr("Restart"), this);
   _actionReloadConfig = new QAction(tr("Reload Tor's config"), this);
   _actionNewIdentity = new QAction(QIcon(IMG_IDENTITY), tr("New Identity"), this);
@@ -156,8 +159,7 @@ MainWindow::createMenuBar()
   menu->clear();
 
   QMenu *torMenu = menu->addMenu(tr("Tor"));
-  torMenu->addAction(_actionStartTor);
-  torMenu->addAction(_actionStopTor);
+  torMenu->addAction(_actionStartStopTor);
   torMenu->addAction(_actionRestartTor);
 #if !defined(Q_WS_WIN)
   torMenu->addAction(_actionReloadConfig);
@@ -278,8 +280,6 @@ MainWindow::retranslateUi()
   updateTorStatus(_status);
 
   _actionShowControlPanel->setText(tr("Control Panel"));
-  _actionStartTor->setText(tr("Start"));
-  _actionStopTor->setText(tr("Stop"));
   _actionRestartTor->setText(tr("Restart"));
   _actionReloadConfig->setText(tr("Reload Tor's config"));
   _actionConfigure->setText(tr("Settings"));
@@ -313,10 +313,9 @@ void
 MainWindow::createConnections()
 {
   connect(_actionExit, SIGNAL(triggered()), this, SLOT(close()));
-  connect(_actionStartTor, SIGNAL(triggered()), this, SLOT(start()));
+  connect(_actionStartStopTor, SIGNAL(triggered()), this, SLOT(start()));
   connect(_actionRestartTor, SIGNAL(triggered()), this, SLOT(restart()));
   connect(_actionReloadConfig, SIGNAL(triggered()), this, SLOT(sighup()));
-  connect(_actionStopTor, SIGNAL(triggered()), this, SLOT(stop()));
   connect(_actionShowControlPanel, SIGNAL(triggered()), this, SLOT(show()));
   connect(_actionNewIdentity, SIGNAL(triggered()), this, SLOT(newIdentity()));
 
@@ -1307,10 +1306,12 @@ MainWindow::updateTorStatus(TorStatus status)
       actionText = tr("Start Tor");
       trayIconFile = IMG_TOR_STOPPED;
       statusIconFile = IMG_TOR_STOPPED_48;
+      _actionRestartTor->setEnabled(false);
+      _actionReloadConfig->setEnabled(false);
+      _actionStartStopTor->setEnabled(true);
       _actionStartStopTor->setEnabled(true);
       _actionStartStopTor->setIcon(QIcon(IMG_START_TOR_16));
       _actionStartStopTor->setText(actionText);
-      _actionStartTor->setEnabled(true);
 
       /* XXX: This might need to be smarter if we ever start connecting other
        * slots to these triggered() and clicked() signals. */
@@ -1318,8 +1319,8 @@ MainWindow::updateTorStatus(TorStatus status)
       connect(_actionStartStopTor, SIGNAL(triggered()), this, SLOT(start()));
       setStartupProgressVisible(false);
   } else if (status == Stopping) {
-      _actionStopTor->setEnabled(false);
       _actionRestartTor->setEnabled(false);
+      _actionReloadConfig->setEnabled(false);
       if (_delayedShutdownStarted) {
         statusText = tr("Your relay is shutting down.\n" 
                         "Click 'Stop' again to stop your relay now.");
@@ -1332,6 +1333,8 @@ MainWindow::updateTorStatus(TorStatus status)
 //      ui.btnStartStopTor->setStatusTip(tr("Stop Tor Now"));
   } else if (status == Started) {
       actionText = tr("Stop Tor");
+      _actionRestartTor->setEnabled(true);
+      _actionReloadConfig->setEnabled(true);
       _actionStartStopTor->setEnabled(true);
       _actionStartStopTor->setIcon(QIcon(IMG_STOP_TOR_16));
       _actionStartStopTor->setText(actionText);
@@ -1345,7 +1348,8 @@ MainWindow::updateTorStatus(TorStatus status)
       trayIconFile = IMG_TOR_STARTING;
       statusIconFile = IMG_TOR_STARTING_48;
       _actionStartStopTor->setEnabled(false);
-      _actionStartTor->setEnabled(false);
+      _actionRestartTor->setEnabled(false);
+      _actionReloadConfig->setEnabled(false);
       setStartupProgressVisible(true);
       setStartupProgress(STARTUP_PROGRESS_STARTING, statusText);
   } else if (status == CircuitEstablished) {

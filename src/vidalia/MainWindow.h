@@ -285,8 +285,6 @@ private:
   /** Defines the actions for the tray menu */
   QAction *_actionShowControlPanel;
   QAction *_actionStartStopTor;
-  QAction *_actionStartTor;
-  QAction *_actionStopTor;
   QAction *_actionRestartTor;
   QAction *_actionReloadConfig;
   QAction *_actionNewIdentity;
