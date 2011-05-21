@@ -165,16 +165,18 @@ AdvancedPage::save(QString &errmsg)
 
   /* Only remember the torrc and datadir values if Vidalia started Tor, or
    * if the user changed the displayed values. */
-  if (Vidalia::torControl()->isVidaliaRunningTor() or
-      not Vidalia::torControl()->isRunning()) {
+  if (Vidalia::torControl()->isVidaliaRunningTor() or 
+      !Vidalia::torControl()->isConnected()) {
     QString torrc = ui.lineTorConfig->text();
     if (torrc != _settings->getTorrc()) {
       _settings->setTorrc(torrc);
-      QMessageBox::StandardButtons res = QMessageBox::question(this, tr("Warning"), 
-          tr("You changed torrc path, would you like to restart Tor?"),
-          QMessageBox::Yes | QMessageBox::No);
-      if(res == QMessageBox::Yes)
-        emit restartTor();
+      if(Vidalia::torControl()->isConnected()) {
+        QMessageBox::StandardButtons res = QMessageBox::question(this, tr("Warning"), 
+            tr("You changed torrc path, would you like to restart Tor?"),
+            QMessageBox::Yes | QMessageBox::No);
+        if(res == QMessageBox::Yes)
+          emit restartTor();
+      }
     }
 
     QString dataDir = ui.lineTorDataDirectory->text();
