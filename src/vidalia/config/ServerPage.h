@@ -120,6 +120,12 @@ private:
 
   /** Qt Designer generated object */
   Ui::ServerPage ui;
+
+  /** Used to store the dirport value and if the user wants to mirror the
+   * directory so that they can be emptied when selecting being a bridge and
+   * re-added when selecting relay */
+  QString _tmpDirPort;
+  bool _tmpMirror;
 };
 
 #endif

@@ -121,6 +121,9 @@ ServerPage::ServerPage(QWidget *parent)
   ui.chkEnableUpnp->setVisible(false);
   ui.btnTestUpnp->setVisible(false);
 #endif
+
+  _tmpDirPort = "9030";
+  _tmpMirror = true;
 }
 
 /** Destructor */
@@ -235,12 +238,28 @@ ServerPage::serverModeChanged(bool enabled)
   ui.lblBridgeUsage->setVisible(bridgeEnabled
                                   && Vidalia::torControl()->isConnected());
 
-  ui.lineDirPort->setEnabled(!bridgeEnabled);
+  if(bridgeEnabled) {
+    if(ui.lineDirPort->text().length() != 0) {
+      _tmpDirPort = ui.lineDirPort->text();
+      _tmpMirror = ui.chkMirrorDirectory->isChecked();
+    }
+    ui.lineDirPort->clear();
+    ui.chkMirrorDirectory->setChecked(false);
+  } else {
+    ui.lineDirPort->setText(_tmpDirPort);
+    ui.chkMirrorDirectory->setChecked(_tmpMirror);
+  }
+
   ui.chkMirrorDirectory->setEnabled(!bridgeEnabled);
 
   /* Disable the Exit Policies tab when bridge or non-exit relay mode is 
    * selected */
   ui.tabsMenu->setTabEnabled(2, !bridgeEnabled and !ui.rdoNonExitMode->isChecked());
+
+  if(ui.chkMirrorDirectory->isChecked()) {
+    ui.lblDirPort->setEnabled(!bridgeEnabled);
+    ui.lineDirPort->setEnabled(!bridgeEnabled);
+  }
 }
 
 /** Returns true if the user has changed their server settings since the
