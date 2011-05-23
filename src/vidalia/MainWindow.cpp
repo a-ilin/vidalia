@@ -25,6 +25,7 @@
 #include "ServerSettings.h"
 #include "AboutDialog.h"
 #include "HelpBrowser.h"
+#include "VAttachButton.h"
 #ifdef USE_AUTOUPDATE
 #include "UpdatesAvailableDialog.h"
 #endif
@@ -112,6 +113,8 @@ MainWindow::MainWindow()
   _status = Unset;
   _isVidaliaRunningTor = false;
   updateTorStatus(Stopped);
+
+  setAcceptDrops(true);
 }
 
 /** Destructor */
@@ -1497,6 +1500,44 @@ MainWindow::handleCloseTab(int index)
 }
 
 void
+MainWindow::attachTab()
+{
+  qWarning() << "ATTACHHHHHHHHHH";
+}
+
+void
+MainWindow::dettachTab()
+{
+  VAttachButton *but = qobject_cast<VAttachButton *>(sender());
+  VidaliaTab *tab = but->getTab();
+  int index = ui.tabWidget->indexOf(tab);
+
+  ui.tabWidget->removeTab(index);
+  tab->setParent(0);
+  tab->show();
+
+  QString key = _tabMap.at(index);
+  _tabMap.removeAll(key);
+  _dettachedTabMap << key;
+}
+
+void
+MainWindow::handleAttachedClose()
+{
+  VidaliaTab *tab = qobject_cast<VidaliaTab *>(sender());
+  int index = ui.tabWidget->indexOf(tab);
+  qWarning() << index;
+  if(index < 0) {
+    qWarning() << "DETACHEEEEDDDDDDDDDDDDD";
+    tab->setParent(ui.tabWidget);
+    addTab(tab);
+    delTab(ui.tabWidget->currentIndex());
+  } else {
+    qWarning() << "ATTACHEEEEEDDDD";
+  }
+}
+
+void
 MainWindow::addTab(VidaliaTab *tab)
 {
   /** If the tab's already open, display it and delete the
@@ -1518,8 +1559,22 @@ MainWindow::addTab(VidaliaTab *tab)
     return;
   }
 
+  VAttachButton *atb = new VAttachButton();
+
   ui.tabWidget->addTab(tab, tab->getTitle());
-  ui.tabWidget->setCurrentIndex(ui.tabWidget->count() - 1);
+  int pos = ui.tabWidget->count() - 1;
+  ui.tabWidget->setCurrentIndex(pos);
+
+  atb->setTab(tab);
+  ui.tabWidget->setTabButton(pos, QTabBar::LeftSide, atb);
+
+  connect(tab, SIGNAL(closeTab()),
+          this, SLOT(handleAttachedClose()));
+
+  connect(atb, SIGNAL(attachTab()),
+          this, SLOT(attachTab()));
+  connect(atb, SIGNAL(dettachTab()),
+          this, SLOT(dettachTab()));
   /** The new tab is added to the last position */
   _tabMap << tab->getTitle();
   connect(tab, SIGNAL(helpRequested(QString)),

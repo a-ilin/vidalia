@@ -60,6 +60,10 @@ protected:
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
 
+//  void dropEvent(QDropEvent *de);
+//  void dragMoveEvent(QDragMoveEvent *de);
+//  void dragEnterEvent(QDragEnterEvent *event);
+
 private slots:
   /** Respond to a double-click on the tray icon by opening the Control Panel
    * window. */
@@ -146,6 +150,9 @@ private slots:
   void addTab(VidaliaTab *tab);
   /** Deletes the tab at index if it exists and it isn't the Status tab */
   void delTab(int index = -1);
+
+  void attachTab();
+  void dettachTab();
 
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
@@ -283,6 +290,7 @@ private:
   MessageLog *_messageLog; /**< Message log that displays a more detailed log from Tor */
   NetViewer _netViewer; /**< Network map that draws circuits */
   QStringList _tabMap; /**< Map to handle opened tabs */
+  QStringList _dettachedTabMap;
   BandwidthGraph *_graph; /**< Graph that draws bandwidth usage */
 
   PluginEngine *_engine;

@@ -176,6 +176,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   Vidalia.cpp
   LanguageSupport.cpp
   VTabWidget.cpp
+  VAttachButton.cpp
   MainWindow.cpp
   VidaliaWindow.cpp
   VMessageBox.cpp
@@ -187,6 +188,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
 qt4_wrap_cpp(vidalia_SRCS
   Vidalia.h
   VTabWidget.h
+  VAttachButton.h
   MainWindow.h
   VidaliaWindow.h
   VMessageBox.h

@@ -1,5 +1,3 @@
-#include <QTabBar>
-
 #include "VTabWidget.h"
 #include "VidaliaTab.h"
 
@@ -50,3 +48,10 @@ VTabWidget::retranslateUi()
     setTabText(i, qobject_cast<VidaliaTab *>(widget(i))->getTitle());
   }
 }
+
+void 
+VTabWidget::setTabButton(int pos, QTabBar::ButtonPosition butpos, QWidget *w)
+{
+  tabBar()->setTabButton(pos, butpos, w);
+}
+

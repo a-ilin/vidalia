@@ -17,6 +17,7 @@
 #define _VTABWIDGET_H
 
 #include <QTabWidget>
+#include <QTabBar>
 
 class VTabWidget : public QTabWidget
 {
@@ -30,6 +31,8 @@ public:
 
   /** Makes the tab at position unclosable */
   void pinTab(int position);
+
+  void setTabButton(int pos, QTabBar::ButtonPosition butpos, QWidget *w);
 
 protected:
   void changeEvent(QEvent *e);

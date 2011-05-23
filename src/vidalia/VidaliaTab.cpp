@@ -64,3 +64,21 @@ VidaliaTab::setOnTop(bool top)
 {
   _onTop = top;
 }
+
+void 
+VidaliaTab::closeEvent(QCloseEvent *event)
+{
+  event->ignore();
+  emit closeTab();
+}
+
+//void 
+//VidaliaTab::mouseMoveEvent(QMouseEvent *event)
+//{
+//  QDrag *dr = new QDrag(this);
+//  QMimeData *data = new QMimeData();
+//  qWarning() << "THIS" << this;
+//  data->setData(tr("vidalia/pointer"), QByteArray().setNum((int)this));
+//  dr->setMimeData(data);
+//  dr->start();
+//}

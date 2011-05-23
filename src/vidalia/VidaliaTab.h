@@ -51,6 +51,8 @@ signals:
    * <b>topic</b>. */
   void helpRequested(const QString &topic);
 
+  void closeTab();
+
 protected:
   /** Reimplement the windows' changeEvent() method to check if the event
    * is a QEvent::LanguageChange event. If so, call retranslateUi(), which
@@ -58,6 +60,10 @@ protected:
   virtual void changeEvent(QEvent *e);
   /** Called when the user wants to change the currently visible language. */
   virtual void retranslateUi();
+
+  virtual void closeEvent(QCloseEvent *event);
+
+//  virtual void mouseMoveEvent(QMouseEvent *event);
 
   bool _onTop; /**< True if the current tab is the one being displayed */
 
