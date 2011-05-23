@@ -152,7 +152,7 @@ private slots:
   void delTab(int index = -1);
 
   void attachTab();
-  void dettachTab();
+  void detachTab();
 
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
@@ -290,7 +290,7 @@ private:
   MessageLog *_messageLog; /**< Message log that displays a more detailed log from Tor */
   NetViewer _netViewer; /**< Network map that draws circuits */
   QStringList _tabMap; /**< Map to handle opened tabs */
-  QStringList _dettachedTabMap;
+  QStringList _detachedTabMap;
   BandwidthGraph *_graph; /**< Graph that draws bandwidth usage */
 
   PluginEngine *_engine;

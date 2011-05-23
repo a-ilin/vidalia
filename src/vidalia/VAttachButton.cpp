@@ -30,7 +30,7 @@ void
 VAttachButton::toggleAttach()
 {
   if(_attached) {
-    emit dettachTab();
+    emit detachTab();
   } else {
     emit attachTab();
   }

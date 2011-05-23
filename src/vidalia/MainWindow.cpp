@@ -1506,7 +1506,7 @@ MainWindow::attachTab()
 }
 
 void
-MainWindow::dettachTab()
+MainWindow::detachTab()
 {
   VAttachButton *but = qobject_cast<VAttachButton *>(sender());
   VidaliaTab *tab = but->getTab();
@@ -1518,7 +1518,7 @@ MainWindow::dettachTab()
 
   QString key = _tabMap.at(index);
   _tabMap.removeAll(key);
-  _dettachedTabMap << key;
+  _detachedTabMap << key;
 }
 
 void
@@ -1573,8 +1573,8 @@ MainWindow::addTab(VidaliaTab *tab)
 
   connect(atb, SIGNAL(attachTab()),
           this, SLOT(attachTab()));
-  connect(atb, SIGNAL(dettachTab()),
-          this, SLOT(dettachTab()));
+  connect(atb, SIGNAL(detachTab()),
+          this, SLOT(detachTab()));
   /** The new tab is added to the last position */
   _tabMap << tab->getTitle();
   connect(tab, SIGNAL(helpRequested(QString)),

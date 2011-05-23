@@ -17,7 +17,7 @@ class VAttachButton : public QPushButton {
 
   signals:
     void attachTab();
-    void dettachTab();
+    void detachTab();
 
   public slots:
     void toggleAttach();
