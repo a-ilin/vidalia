@@ -1556,11 +1556,27 @@ MainWindow::handleAttachedClose()
   qWarning() << index;
   if(index < 0) {
     qWarning() << "DETACHEEEEDDDDDDDDDDDDD";
-    tab->setParent(ui.tabWidget);
+    QAction *act = 0;
+    foreach(QAction *tmpAct, _reattachMenu.actions()) {
+      if(tmpAct->parent() == tab) {
+        act = tmpAct;
+        break;
+      }
+    }
+
+    if(act != 0)
+      _reattachMenu.removeAction(act);
 
     _detachedTabMap.removeAll(tab->getTitle());
 
+    tab->setParent(ui.tabWidget);
     addTab(tab);
+
+    if(_reattachMenu.actions().size() < 1) {
+      _reattachMenu.addAction(_dummy);
+      _dummy->setEnabled(false);
+    }
+
     delTab(ui.tabWidget->currentIndex());
   } else {
     qWarning() << "ATTACHEEEEEDDDD";
