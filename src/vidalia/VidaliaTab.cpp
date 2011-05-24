@@ -77,7 +77,6 @@ VidaliaTab::closeEvent(QCloseEvent *event)
 //{
 //  QDrag *dr = new QDrag(this);
 //  QMimeData *data = new QMimeData();
-//  qWarning() << "THIS" << this;
 //  data->setData(tr("vidalia/pointer"), QByteArray().setNum((int)this));
 //  dr->setMimeData(data);
 //  dr->start();

@@ -1513,10 +1513,8 @@ MainWindow::handleCloseTab(int index)
 void
 MainWindow::attachTab()
 {
-  qWarning() << "ATTACHHHHHHHHHH";
   QAction *act = qobject_cast<QAction *>(sender());
   VidaliaTab *tab = qobject_cast<VidaliaTab *>(act->parent());
-  qWarning() << tab;
   _detachedTabMap.removeAll(tab->getTitle());
   tab->setParent(ui.tabWidget);
   addTab(tab);
@@ -1553,9 +1551,7 @@ MainWindow::handleAttachedClose()
 {
   VidaliaTab *tab = qobject_cast<VidaliaTab *>(sender());
   int index = ui.tabWidget->indexOf(tab);
-  qWarning() << index;
   if(index < 0) {
-    qWarning() << "DETACHEEEEDDDDDDDDDDDDD";
     QAction *act = 0;
     foreach(QAction *tmpAct, _reattachMenu.actions()) {
       if(tmpAct->parent() == tab) {
@@ -1578,8 +1574,6 @@ MainWindow::handleAttachedClose()
     }
 
     delTab(ui.tabWidget->currentIndex());
-  } else {
-    qWarning() << "ATTACHEEEEEDDDD";
   }
 }
 
