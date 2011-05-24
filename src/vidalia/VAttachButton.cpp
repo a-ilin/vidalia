@@ -1,11 +1,15 @@
 #include "VAttachButton.h"
 
+#define IMG_DETACH  ":/images/16x16/detach-arrow.png"
+
 VAttachButton::VAttachButton(QWidget *parent) :
   QPushButton(parent)
 {
   _tab = 0;
   _attached = true;
-  setText(QString("X"));
+  setIcon(QIcon(IMG_DETACH));
+  setFlat(true);
+  resize(16,16);
 }
 
 VAttachButton::~VAttachButton()

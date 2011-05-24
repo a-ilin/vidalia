@@ -27,6 +27,7 @@
     <file>16x16/utilities-log-viewer.png</file>
     <file>16x16/utilities-system-monitor.png</file>
     <file>16x16/view-media-artist.png</file>
+    <file>16x16/detach-arrow.png</file>
   </qresource>
   <qresource prefix="/images">
     <file>22x22/edit_undo.png</file>
