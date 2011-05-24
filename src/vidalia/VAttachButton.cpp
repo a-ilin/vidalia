@@ -10,7 +10,7 @@ VAttachButton::VAttachButton(QWidget *parent) :
 
 VAttachButton::~VAttachButton()
 {
-  disconnect(0,0,0,0);
+  disconnect(this,0,0,0);
 }
 
 void 

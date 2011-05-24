@@ -106,6 +106,8 @@ MainWindow::MainWindow()
 
   _engine = new PluginEngine();
 
+  _dummy = new QAction(tr("No dettached tabs"), this);
+
   createGUI();
   createConnections();
 
@@ -164,6 +166,8 @@ MainWindow::createActions()
 void
 MainWindow::createMenuBar()
 {
+  _reattachMenu.setTitle(tr("Reattach tabs"));
+
   QMenuBar *menu = menuBar();
   menu->clear();
 
@@ -191,6 +195,11 @@ MainWindow::createMenuBar()
   }
   pluginsMenu->addSeparator();
   pluginsMenu->addAction(_actionDebugDialog);
+
+  menu->addMenu(&_reattachMenu);
+  _dummy->setText(tr("No detached tabs"));
+  _reattachMenu.addAction(_dummy);
+  _dummy->setEnabled(false);
 
   QMenu *helpMenu = menu->addMenu(tr("Help"));
   helpMenu->addAction(_actionVidaliaHelp);
@@ -225,6 +234,8 @@ MainWindow::createTrayMenu()
   menu->addAction(_actionNewIdentity);
   menu->addSeparator();
   menu->addAction(_actionShowControlPanel);
+
+  menu->addMenu(&_reattachMenu);
   
 #if !defined(Q_WS_MAC)
   /* These aren't added to the dock menu on Mac, since they are in the
@@ -1503,6 +1514,17 @@ void
 MainWindow::attachTab()
 {
   qWarning() << "ATTACHHHHHHHHHH";
+  QAction *act = qobject_cast<QAction *>(sender());
+  VidaliaTab *tab = qobject_cast<VidaliaTab *>(act->parent());
+  qWarning() << tab;
+  _detachedTabMap.removeAll(tab->getTitle());
+  tab->setParent(ui.tabWidget);
+  addTab(tab);
+  _reattachMenu.removeAction(act);
+  if(_reattachMenu.actions().size() < 1) {
+    _reattachMenu.addAction(_dummy);
+    _dummy->setEnabled(false);
+  }
 }
 
 void
@@ -1519,6 +1541,11 @@ MainWindow::detachTab()
   QString key = _tabMap.at(index);
   _tabMap.removeAll(key);
   _detachedTabMap << key;
+
+  QAction *act = new QAction(tab->getTitle(), tab);
+  connect(act, SIGNAL(triggered()), this, SLOT(attachTab()));
+  _reattachMenu.addAction(act);
+  _reattachMenu.removeAction(_dummy);
 }
 
 void
@@ -1530,6 +1557,9 @@ MainWindow::handleAttachedClose()
   if(index < 0) {
     qWarning() << "DETACHEEEEDDDDDDDDDDDDD";
     tab->setParent(ui.tabWidget);
+
+    _detachedTabMap.removeAll(tab->getTitle());
+
     addTab(tab);
     delTab(ui.tabWidget->currentIndex());
   } else {

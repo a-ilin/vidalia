@@ -284,6 +284,9 @@ private:
   QAction *_actionExit;
   QAction *_actionDebugDialog;
 
+  QMenu _reattachMenu;
+  QAction *_dummy;
+
   Ui::MainWindow ui; /**< Qt Designer generated object. */
 
   StatusTab _statusTab; /**< Status tab that displays the load progress and a short log */
