@@ -115,8 +115,6 @@ MainWindow::MainWindow()
   _status = Unset;
   _isVidaliaRunningTor = false;
   updateTorStatus(Stopped);
-
-  setAcceptDrops(true);
 }
 
 /** Destructor */
@@ -197,7 +195,6 @@ MainWindow::createMenuBar()
   pluginsMenu->addAction(_actionDebugDialog);
 
   menu->addMenu(&_reattachMenu);
-  _dummy->setText(tr("No detached tabs"));
   _reattachMenu.addAction(_dummy);
   _dummy->setEnabled(false);
 
