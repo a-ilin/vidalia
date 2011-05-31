@@ -236,6 +236,7 @@ ServerPage::serverModeChanged(bool enabled)
                                   && Vidalia::torControl()->isConnected());
 
   ui.lineDirPort->setEnabled(!bridgeEnabled);
+  ui.lblDirPort->setEnabled(!bridgeEnabled);
   ui.chkMirrorDirectory->setEnabled(!bridgeEnabled);
 
   /* Disable the Exit Policies tab when bridge or non-exit relay mode is 
