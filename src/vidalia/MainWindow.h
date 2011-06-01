@@ -36,6 +36,8 @@
 
 #include "TorControl.h"
 
+#include "PluginEngine.h"
+
 #include <QMainWindow>
 #include <QTimer>
 #include <QSystemTrayIcon>
@@ -141,6 +143,9 @@ private slots:
   void addTab(VidaliaTab *tab);
   /** Deletes the tab at index if it exists and it isn't the Status tab */
   void delTab(int index = -1);
+
+  /** Handles adding a new tab corresponding to a plugin */
+  void showPluginTab();
 
   /** Called when the web browser or IM client have stopped */
   void onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus);
@@ -304,6 +309,8 @@ private:
   NetViewer _netViewer; /**< Network map that draws circuits */
   QStringList _tabMap; /**< Map to handle opened tabs */
   BandwidthGraph *_graph; /**< Graph that draws bandwidth usage */
+
+  PluginEngine *_engine;
 };
 
 #endif

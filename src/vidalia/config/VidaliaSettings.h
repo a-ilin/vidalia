@@ -125,6 +125,11 @@ public:
   QString localGeoIpDatabase() const;
   /** Sets the file to use as a local GeoIP database. */
   void setLocalGeoIpDatabase(const QString &databaseFile);
+
+  /** Returns the path where the plugins live */
+  QString pluginPath() const;
+  /** Sets the path where the plugins live */
+  void setPluginPath(const QString &path);
 };
 
 #endif

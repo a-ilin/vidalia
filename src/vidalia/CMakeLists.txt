@@ -20,6 +20,8 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
   ${CMAKE_CURRENT_SOURCE_DIR}/log
   ${CMAKE_CURRENT_SOURCE_DIR}/network
+  ${CMAKE_CURRENT_SOURCE_DIR}/plugin
+  ${CMAKE_CURRENT_SOURCE_DIR}/plugin/prototypes
   ${MARBLE_INCLUDE_DIR}
 )
 
@@ -79,6 +81,17 @@ set(vidalia_SRCS ${vidalia_SRCS}
 qt4_wrap_cpp(vidalia_SRCS
   bwgraph/BandwidthGraph.h
   bwgraph/GraphFrame.h
+)
+## Plugin framework sources
+set(vidalia_SRCS ${vidalia_SRCS}
+  plugin/PluginEngine.cpp
+  plugin/PluginWrapper.cpp
+  plugin/prototypes/VidaliaTabPrototype.cpp
+)
+qt4_wrap_cpp(vidalia_SRCS
+  plugin/PluginEngine.h
+  plugin/PluginWrapper.h
+  plugin/prototypes/VidaliaTabPrototype.h
 )
 
 ## Configuration dialog sources

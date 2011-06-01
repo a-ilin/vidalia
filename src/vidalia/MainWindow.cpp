@@ -37,6 +37,8 @@
 #include "stringutil.h"
 #include "procutil.h"
 
+#include "PluginWrapper.h"
+
 #include <QtGui>
 
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
@@ -99,6 +101,8 @@ MainWindow::MainWindow()
 {
   /* Create a new TorControl object, used to communicate with Tor */
   _torControl = Vidalia::torControl(); 
+
+  _engine = new PluginEngine();
 
   createGUI();
   createConnections();
@@ -176,7 +180,11 @@ MainWindow::createMenuBar()
   viewMenu->addSeparator();
   viewMenu->addAction(_actionConfigure);
 
-//  QMenu *pluginsMenu = menu->addMenu(tr("Plugins"));
+  QMenu *pluginsMenu = menu->addMenu(tr("Plugins"));
+  foreach(QAction *action, _engine->getAllActions()) {
+    pluginsMenu->addAction(action);
+    connect(action, SIGNAL(triggered()), this, SLOT(showPluginTab()));
+  }
 
   QMenu *helpMenu = menu->addMenu(tr("Help"));
   helpMenu->addAction(_actionVidaliaHelp);
@@ -1539,6 +1547,12 @@ MainWindow::addTab(VidaliaTab *tab)
    * instanse passed */
   if(_tabMap.contains(tab->getTitle())) {
     ui.tabWidget->setCurrentIndex(_tabMap.indexOf(tab->getTitle()));
+
+    /** If we are trying to open the exact same tab twice
+     * don't do anything */
+    if(tab == ui.tabWidget->widget(_tabMap.indexOf(tab->getTitle())))
+      return;
+
     /** Exception for tabs that need to be always created */
     if (tab != _messageLog && 
         tab != &_statusTab && 
@@ -1576,6 +1590,14 @@ MainWindow::delTab(int index)
   ui.tabWidget->removeTab(index);
   QString key = _tabMap.at(index);
   _tabMap.removeAll(key);
+}
+
+void
+MainWindow::showPluginTab()
+{
+  QAction *act = qobject_cast<QAction *>(sender());
+  PluginWrapper *wrapper = qobject_cast<PluginWrapper *>(act->parent());
+  addTab(wrapper->buildGUI());
 }
 
 void
