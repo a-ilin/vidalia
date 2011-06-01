@@ -1603,7 +1603,11 @@ MainWindow::addTab(VidaliaTab *tab)
   ui.tabWidget->setCurrentIndex(pos);
 
   atb->setTab(tab);
+#if defined(Q_WS_MAC)
+  ui.tabWidget->setTabButton(pos, QTabBar::RightSide, atb);
+#else
   ui.tabWidget->setTabButton(pos, QTabBar::LeftSide, atb);
+#endif
 
   connect(tab, SIGNAL(closeTab()),
           this, SLOT(handleAttachedClose()));

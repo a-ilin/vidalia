@@ -15,6 +15,7 @@ void
 VTabWidget::pinTab(int position)
 {
   tabBar()->setTabButton(position, QTabBar::RightSide, 0);
+  tabBar()->setTabButton(position, QTabBar::LeftSide, 0);
 }
 
 void

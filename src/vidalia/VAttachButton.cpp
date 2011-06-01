@@ -24,7 +24,7 @@ VAttachButton::VAttachButton(QWidget *parent) :
   _attached = true;
   setIcon(QIcon(IMG_DETACH));
   setFlat(true);
-  resize(16,16);
+  resize(24,24);
 }
 
 VAttachButton::~VAttachButton()
