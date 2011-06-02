@@ -21,16 +21,18 @@ PluginEngine::~PluginEngine()
 void
 PluginEngine::loadAllPlugins()
 {
-  DebugDialog::pDebug("loadAllPlugins()");
+  DebugDialog::outputDebug("Loading all plugins...");
 
   VidaliaSettings settings;
   QDir path = QDir(settings.pluginPath());
 
-  qWarning() << "PluginPath" << path.absolutePath();
+  DebugDialog::outputDebug(QString("PluginPath=%1").arg(path.absolutePath()));
   
   foreach(QString pdir, path.entryList(QDir::NoDotAndDotDot|QDir::AllDirs)) {
-    qWarning() << "pdir" << pdir;
-    QFileInfo finfo(QString("%1%2%3").arg(path.absolutePath()).arg(QDir::separator()).arg(pdir));
+    QFileInfo finfo(QString("%1%2%3")
+        .arg(path.absolutePath())
+        .arg(QDir::separator())
+        .arg(pdir));
 
     if(finfo.isDir()) {
       tryLoadPlugin(finfo.filePath());
@@ -41,18 +43,22 @@ PluginEngine::loadAllPlugins()
 void
 PluginEngine::tryLoadPlugin(QDir path)
 {
-  qWarning() << "tryLoadPlugin()" << path.absolutePath();
-
   QStringList files = path.entryList();
 
-  if(!files.contains("info.xml"))
+  if(!files.contains("info.xml")) {
+    DebugDialog::outputDebug(tr("WARNING: %1 doesn't have an info file.")
+        .arg(path.absolutePath()));
     return;
+  }
   
-  PluginWrapper *wrapper = new PluginWrapper(QString("%1%2info.xml").arg(path.absolutePath()).arg(QDir::separator()), this);
+  PluginWrapper *wrapper = new PluginWrapper(QString("%1%2info.xml")
+                                            .arg(path.absolutePath())
+                                            .arg(QDir::separator()), this);
 
   // if it's persistent, start it right away
-  if(wrapper->isPersistent())
+  if(wrapper->isPersistent()) {
     wrapper->start();
+  }
 
   wrappers << wrapper;
 

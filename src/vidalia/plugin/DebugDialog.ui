@@ -18,8 +18,42 @@
     <normaloff>:/images/16x16/applications-system.png</normaloff>:/images/16x16/applications-system.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="1" rowspan="2">
-    <widget class="QTextEdit" name="textEdit"/>
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="outputTab">
+      <attribute name="title">
+       <string>Plugin Output</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTextEdit" name="tedOutput"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="syntaxTab">
+      <attribute name="title">
+       <string>Syntax Errors</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTextEdit" name="tedSyntax"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="errorTab">
+      <attribute name="title">
+       <string>Exceptions</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QTextEdit" name="tedExceptions"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
    </item>
   </layout>
  </widget>

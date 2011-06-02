@@ -38,6 +38,7 @@ class PluginWrapper : public QObject {
 
   protected:
     void processInfo(const QString &path);
+    bool checkExceptions();
 
     PluginEngine *_engine;
     QString _name, _date, _author;

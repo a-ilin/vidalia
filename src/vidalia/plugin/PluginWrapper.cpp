@@ -1,5 +1,6 @@
 #include "PluginWrapper.h"
 #include "PluginEngine.h"
+#include "DebugDialog.h"
 
 #include <QtXml>
 
@@ -12,13 +13,25 @@ PluginWrapper::PluginWrapper(const QString &info_path, PluginEngine *engine, QOb
   processInfo(info_path);
 
   foreach(QString path, _files) {
-    qWarning() << path;
+    DebugDialog::outputDebug(tr("%1: Processing...").arg(name()));
+
     QFile file(path);
     if(file.open(QIODevice::ReadOnly)) {
-      _engine->evaluate(file.readAll());
-      qWarning() << "evaluated";
+      QString contents = file.readAll();
+      QScriptSyntaxCheckResult res = QScriptEngine::checkSyntax(contents);
+      if(res.state() == QScriptSyntaxCheckResult::Valid) {
+        DebugDialog::outputDebug("Everything's ok, evaluating...");
+        _engine->evaluate(contents);
+      } else {
+        DebugDialog::syntaxDebug(tr("%4: ERROR: Line: %1 - Column: %2\n%3")
+                                .arg(res.errorLineNumber())
+                                .arg(res.errorColumnNumber())
+                                .arg(res.errorMessage())
+                                .arg(name()));
+      }
     } else 
-      qWarning() << "Error opening file";
+      DebugDialog::outputDebug(tr("%1: Error opening file %2")
+                                .arg(name()).arg(path));
   }
 }
 
@@ -27,17 +40,23 @@ PluginWrapper::~PluginWrapper() {}
 void
 PluginWrapper::processInfo(const QString &path)
 {
-  qWarning() << "processInfo()";
-
   QDomDocument info("Plugin Info");
   QFile file(path);
   if(!file.open(QIODevice::ReadOnly)) {
-    qWarning() << "Problem opening xml file";
+    DebugDialog::outputDebug(tr("%2: ERROR: Cannot open %1")
+                              .arg(path).arg(name()));
     return;
   }
 
-  if(!info.setContent(&file)) {
-    qWarning() << "Problem setting contents";
+  QString errMsg;
+  int errLine, errCol;
+
+  if(!info.setContent(&file, false, &errMsg, &errLine, &errCol)) {
+    DebugDialog::syntaxDebug(tr("%2: ERROR: Parsing %1")
+                            .arg(file.fileName()).arg(name()));
+    DebugDialog::syntaxDebug(tr("Line: %1 - Column: %2\nMessage: %3")
+                          .arg(errLine).arg(errCol).arg(errMsg));
+
     file.close();
     return;
   }
@@ -82,29 +101,55 @@ PluginWrapper::processInfo(const QString &path)
 void
 PluginWrapper::start()
 {
+  DebugDialog::outputDebug(tr("%1: Starting...").arg(name()));
   _engine->evaluate(QString("%1.start()").arg(nspace()));
+  checkExceptions();
 }
 
 void
 PluginWrapper::stop()
 {
+  DebugDialog::outputDebug(tr("%1: Stoping...").arg(name()));
   _engine->evaluate(QString("%1.stop()").arg(nspace()));
+  checkExceptions();
 }
 
 VidaliaTab *
 PluginWrapper::buildGUI()
 {
-  if(!hasGUI())
-    return NULL;
-  VidaliaTab *tab = qscriptvalue_cast<VidaliaTab *>(_engine->evaluate(QString("%1.buildGUI()").arg(nspace())));
-  if(_engine->hasUncaughtException()) {
-    qWarning() << "Exception:";
-    qWarning() << _engine->uncaughtExceptionLineNumber();
-
-    return NULL;
+  if(!hasGUI()) {
+    DebugDialog::outputDebug(tr("%1: WARNING: doesn't have a GUI, and buildGUI() was called")
+                              .arg(name()));
+    if(checkExceptions())
+      return NULL;
   }
-  qWarning() << "Casted tab:" << tab << nspace();
+
+  VidaliaTab *tab = qscriptvalue_cast<VidaliaTab *>(
+      _engine->evaluate(QString("%1.buildGUI()").arg(nspace())));
+
+  if(checkExceptions())
+    return NULL;
+
   return tab;
+}
+
+bool
+PluginWrapper::checkExceptions()
+{
+  if(_engine->hasUncaughtException()) {
+    DebugDialog::exceptDebug(tr("%2:\n*** Exception in line %1")
+                            .arg(_engine->uncaughtExceptionLineNumber())
+                            .arg(name()));
+    DebugDialog::exceptDebug(tr("*** Backtrace:"));
+    foreach(QString line, _engine->uncaughtExceptionBacktrace())
+      DebugDialog::exceptDebug(line);
+
+    _engine->clearExceptions();
+
+    return true;
+  }
+
+  return false;
 }
 
 bool 
@@ -122,6 +167,8 @@ PluginWrapper::isPersistent()
 QString 
 PluginWrapper::name() const
 {
+  if(_name.isEmpty())
+    return tr("(untitled)");
   return _name;
 }
 
@@ -173,6 +220,6 @@ PluginWrapper::emitPluginTab()
   if(tab)
     emit pluginTab(tab);
   else
-    // TODO: make this more than a console print
-    qWarning() << "Error: buildGUI() failed for plugin" << name();
+    DebugDialog::exceptDebug(tr("Error: buildGUI() failed for plugin %1")
+                            .arg(name()));
 }

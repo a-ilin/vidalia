@@ -13,11 +13,18 @@ class DebugDialog : public QDialog
     DebugDialog(QWidget *parent = 0);
     ~DebugDialog();
 
-    static void pDebug(const QString &msg);
+    void fillText(QTextEdit *tedit, QStringList buffer);
+
+    static void outputDebug(const QString &msg);
+    static void syntaxDebug(const QString &msg);
+    static void exceptDebug(const QString &msg);
+
     static void clear();
 
   private:
-    static QStringList buffer;
+    static QStringList outputBuffer;
+    static QStringList syntaxBuffer;
+    static QStringList exceptBuffer;
 
     Ui::DebugDialog ui;
 };
