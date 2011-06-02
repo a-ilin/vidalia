@@ -1,6 +1,7 @@
 #include "PluginEngine.h"
 #include "VidaliaSettings.h"
 #include "PluginWrapper.h"
+#include "DebugDialog.h"
 
 PluginEngine::PluginEngine(QObject *parent)
   : QScriptEngine(parent)
@@ -20,7 +21,7 @@ PluginEngine::~PluginEngine()
 void
 PluginEngine::loadAllPlugins()
 {
-  qWarning() << "loadAllPlugins()";
+  DebugDialog::pDebug("loadAllPlugins()");
 
   VidaliaSettings settings;
   QDir path = QDir(settings.pluginPath());

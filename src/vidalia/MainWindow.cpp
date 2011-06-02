@@ -38,6 +38,7 @@
 #include "procutil.h"
 
 #include "PluginWrapper.h"
+#include "DebugDialog.h"
 
 #include <QtGui>
 
@@ -153,6 +154,7 @@ MainWindow::createActions()
   _actionAbout = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
   _actionStartStopTor = new QAction(QIcon(IMG_START_TOR_16), tr("Start Tor"), this);
   _actionExit = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
+  _actionDebugDialog = new QAction(tr("Debug output"), this);
 }
 
 /** Creates the menu bar */
@@ -184,6 +186,8 @@ MainWindow::createMenuBar()
   foreach(QAction *action, _engine->getAllActions()) {
     pluginsMenu->addAction(action);
   }
+  pluginsMenu->addSeparator();
+  pluginsMenu->addAction(_actionDebugDialog);
 
   QMenu *helpMenu = menu->addMenu(tr("Help"));
   helpMenu->addAction(_actionVidaliaHelp);
@@ -333,6 +337,8 @@ MainWindow::createConnections()
   connect(_actionVidaliaHelp, SIGNAL(triggered()), this, SLOT(showHelpDialog()));
   connect(_actionStatus, SIGNAL(triggered()), this, SLOT(showStatusTab()));
   connect(_actionNetworkMap, SIGNAL(triggered()), this, SLOT(showNetViewerTab()));
+
+  connect(_actionDebugDialog, SIGNAL(triggered()), this, SLOT(showDebugDialog()));
 
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
@@ -1642,6 +1648,13 @@ void
 MainWindow::showNetViewerTab()
 {
   addTab(&_netViewer);
+}
+
+void
+MainWindow::showDebugDialog()
+{
+  DebugDialog dlg;
+  dlg.exec();
 }
 
 #if defined(USE_MINIUPNPC)

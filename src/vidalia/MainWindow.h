@@ -138,6 +138,9 @@ private slots:
   void showHelpDialog();
   /** Called when a child window requests the given help <b>topic</b>. */
   void showHelpDialog(const QString &topic);
+
+  /** Displays the debug output dialog for plugins */
+  void showDebugDialog();
   
   /** Adds a new tab to the MainWindow */
   void addTab(VidaliaTab *tab);
@@ -301,6 +304,7 @@ private:
   QAction *_actionVidaliaHelp;
   QAction *_actionAbout;
   QAction *_actionExit;
+  QAction *_actionDebugDialog;
 
   Ui::MainWindow ui; /**< Qt Designer generated object. */
 

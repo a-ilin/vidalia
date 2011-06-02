@@ -86,11 +86,13 @@ qt4_wrap_cpp(vidalia_SRCS
 set(vidalia_SRCS ${vidalia_SRCS}
   plugin/PluginEngine.cpp
   plugin/PluginWrapper.cpp
+  plugin/DebugDialog.cpp
   plugin/prototypes/VidaliaTabPrototype.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   plugin/PluginEngine.h
   plugin/PluginWrapper.h
+  plugin/DebugDialog.h
   plugin/prototypes/VidaliaTabPrototype.h
 )
 
@@ -216,6 +218,7 @@ qt4_wrap_ui(vidalia_SRCS
   help/browser/HelpBrowser.ui
   network/NetViewer.ui
   network/RouterInfoDialog.ui
+  plugin/DebugDialog.ui
 )
 
 ## Add the resource files (icons, etc.)
