@@ -25,10 +25,16 @@ class PluginWrapper : public QObject {
 
     QAction *menuAction();
 
+  signals:
+    void pluginTab(VidaliaTab *);
+
   public slots:
     void start();
     void stop();
     VidaliaTab *buildGUI();
+
+  private slots:
+    void emitPluginTab();
 
   protected:
     void processInfo(const QString &path);

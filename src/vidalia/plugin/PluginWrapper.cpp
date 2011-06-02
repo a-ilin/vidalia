@@ -100,6 +100,8 @@ PluginWrapper::buildGUI()
   if(_engine->hasUncaughtException()) {
     qWarning() << "Exception:";
     qWarning() << _engine->uncaughtExceptionLineNumber();
+
+    return NULL;
   }
   qWarning() << "Casted tab:" << tab << nspace();
   return tab;
@@ -150,8 +152,27 @@ PluginWrapper::files() const
 QAction *
 PluginWrapper::menuAction()
 {
+  _action = new QAction(_name, this);
+
   if(hasGUI()) {
-    _action = new QAction(_name, this);
+    connect(_action, SIGNAL(triggered()), this, SLOT(emitPluginTab()));
   }
+
+  // if it hasn't been started yet
+  if(!isPersistent()) {
+    connect(_action, SIGNAL(triggered()), this, SLOT(start()));
+  }
+
   return _action;
+}
+
+void
+PluginWrapper::emitPluginTab()
+{
+  VidaliaTab *tab = buildGUI();
+  if(tab)
+    emit pluginTab(tab);
+  else
+    // TODO: make this more than a console print
+    qWarning() << "Error: buildGUI() failed for plugin" << name();
 }

@@ -144,8 +144,8 @@ private slots:
   /** Deletes the tab at index if it exists and it isn't the Status tab */
   void delTab(int index = -1);
 
-  /** Handles adding a new tab corresponding to a plugin */
-  void showPluginTab();
+//  /** Handles adding a new tab corresponding to a plugin */
+//  void showPluginTab();
 
   /** Called when the web browser or IM client have stopped */
   void onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus);

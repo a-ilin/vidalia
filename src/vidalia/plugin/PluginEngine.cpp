@@ -5,19 +5,17 @@
 PluginEngine::PluginEngine(QObject *parent)
   : QScriptEngine(parent)
 {
-  // load prototypes
-  VidaliaTabPrototype vtabproto;
-  QScriptValue vtabscript = newQObject(&vtabproto, QScriptEngine::ScriptOwnership);
-  setDefaultPrototype(qMetaTypeId<VidaliaTab *>(), vtabscript);
-
-  // load constructors
-  QScriptValue vtabctor = newFunction(VidaliaTabPrototype::constructor, vtabscript);
-  globalObject().setProperty("VidaliaTab", vtabctor);
+  ADD_CLASS("VidaliaTab", VidaliaTabPrototype, VidaliaTab *, 
+      VidaliaTabPrototype::constructor)
 
   loadAllPlugins();
 }
 
-PluginEngine::~PluginEngine() {}
+PluginEngine::~PluginEngine() 
+{
+  foreach(PluginWrapper *wrapper, wrappers)
+    wrapper->stop();
+}
 
 void
 PluginEngine::loadAllPlugins()
@@ -50,7 +48,14 @@ PluginEngine::tryLoadPlugin(QDir path)
     return;
   
   PluginWrapper *wrapper = new PluginWrapper(QString("%1%2info.xml").arg(path.absolutePath()).arg(QDir::separator()), this);
+
+  // if it's persistent, start it right away
+  if(wrapper->isPersistent())
+    wrapper->start();
+
   wrappers << wrapper;
+
+  connect(wrapper, SIGNAL(pluginTab(VidaliaTab *)), this, SIGNAL(pluginTab(VidaliaTab *)));
 }
 
 QList<QAction *>

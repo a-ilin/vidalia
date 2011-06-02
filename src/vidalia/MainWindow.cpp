@@ -183,7 +183,6 @@ MainWindow::createMenuBar()
   QMenu *pluginsMenu = menu->addMenu(tr("Plugins"));
   foreach(QAction *action, _engine->getAllActions()) {
     pluginsMenu->addAction(action);
-    connect(action, SIGNAL(triggered()), this, SLOT(showPluginTab()));
   }
 
   QMenu *helpMenu = menu->addMenu(tr("Help"));
@@ -414,6 +413,9 @@ MainWindow::createConnections()
   _proxyProcess = new HelperProcess(this);
   connect(_proxyProcess, SIGNAL(startFailed(QString)),
            this, SLOT(onProxyFailed(QString)));
+
+  connect(_engine, SIGNAL(pluginTab(VidaliaTab *)), 
+          this, SLOT(addTab(VidaliaTab *)));
 }
 
 /** Called when the application is closing, by selecting "Exit" from the tray
@@ -1590,14 +1592,6 @@ MainWindow::delTab(int index)
   ui.tabWidget->removeTab(index);
   QString key = _tabMap.at(index);
   _tabMap.removeAll(key);
-}
-
-void
-MainWindow::showPluginTab()
-{
-  QAction *act = qobject_cast<QAction *>(sender());
-  PluginWrapper *wrapper = qobject_cast<PluginWrapper *>(act->parent());
-  addTab(wrapper->buildGUI());
 }
 
 void
