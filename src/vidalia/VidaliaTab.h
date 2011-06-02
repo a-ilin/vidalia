@@ -63,8 +63,6 @@ protected:
 
   virtual void closeEvent(QCloseEvent *event);
 
-//  virtual void mouseMoveEvent(QMouseEvent *event);
-
   bool _onTop; /**< True if the current tab is the one being displayed */
 
 private:
