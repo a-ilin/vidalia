@@ -590,6 +590,9 @@ ServerPage::displayBridgeUsage()
     if (!timeStarted.isValid())
       goto err;
 
+    // Default is LocalTime, force UTC
+    timeStarted.setTimeSpec(Qt::UTC);
+
     QStringList summary = keyvals.value("CountrySummary")
                                  .split(",", QString::SkipEmptyParts);
     if (summary.isEmpty()) {
