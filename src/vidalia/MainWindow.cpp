@@ -1945,7 +1945,7 @@ MainWindow::launchBrowserFromDirectory()
   /* Build the command line arguments */
   QStringList commandLine;
   // Is this better or worse than MOZ_NO_REMOTE?
-  //commandLine << "-no-remote";
+  commandLine << "-no-remote";
   commandLine << "-profile";
   commandLine << profileDir;
 
