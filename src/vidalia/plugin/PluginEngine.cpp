@@ -6,10 +6,17 @@
 PluginEngine::PluginEngine(QObject *parent)
   : QScriptEngine(parent)
 {
-  ADD_CLASS(VidaliaTabPrototype)
+  ADD_PROTOTYPE(VidaliaTabPrototype)
+  MAKE_CREATABLE(VidaliaTabPrototype)
+  ADD_PROTOTYPE(HelperProcessPrototype)
+  MAKE_CREATABLE(HelperProcessPrototype)
+//  ADD_PROTOTYPE(TorControlPrototype)
 
   globalObject().setProperty("include", newFunction(includeScript));
   globalObject().setProperty("importExtension", newFunction(importExtension));
+
+  VidaliaSettings settings;
+  globalObject().setProperty("pluginPath", QScriptValue(settings.pluginPath()));
 
   DebugDialog::outputDebug("Available extensions:");
   foreach(QString ext, availableExtensions())

@@ -5,14 +5,17 @@
 #include <QtScript>
 
 #include "VidaliaTabPrototype.h"
+#include "HelperProcessPrototype.h"
+//#include "TorControlPrototype.h"
 
 class PluginWrapper;
 
-#define ADD_CLASS(protoType) \
+#define ADD_PROTOTYPE(protoType) \
   QScriptValue __script##protoType = newQObject(new protoType); \
   setDefaultPrototype(protoType::metaTypeId(), __script##protoType); \
-  globalObject().setProperty(protoType::name(), newFunction(protoType::constructor, __script##protoType));
 
+#define MAKE_CREATABLE(protoType) \
+  globalObject().setProperty(protoType::name(), newFunction(protoType::constructor, __script##protoType));
 
 class PluginEngine : public QScriptEngine {
   Q_OBJECT

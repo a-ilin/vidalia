@@ -16,9 +16,11 @@
 #ifndef _TORCONTROLPROTO_H
 #define _TORCONTROLPROTO_H
 
+#include <QtGui>
 #include <QtScript>
 
 #include "TorControl.h"
+#include "ProtocolInfo.h"
 
 class TorControlPrototype : public QObject, QScriptable
 {
@@ -26,6 +28,9 @@ class TorControlPrototype : public QObject, QScriptable
   
 public:
   TorControlPrototype();
+
+  static int metaTypeId();
+  static QString name();
 
   /** Start the Tor process */
   Q_INVOKABLE void start(const QString &tor, const QStringList &args);
@@ -344,6 +349,8 @@ signals:
    */
   void serverDescriptorAccepted();
 };
+
+Q_DECLARE_METATYPE(TorControl *);
 
 #endif
 

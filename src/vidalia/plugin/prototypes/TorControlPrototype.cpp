@@ -3,6 +3,17 @@
 TorControlPrototype::TorControlPrototype()
   : QObject(), QScriptable() {}
 
+int 
+TorControlPrototype::metaTypeId() {
+  return qMetaTypeId<TorControl *>();
+}
+
+QString
+TorControlPrototype::name() {
+  return QString("TorControl");
+}
+
+
 void 
 TorControlPrototype::start(const QString &tor, const QStringList &args)
 {
@@ -13,7 +24,7 @@ TorControlPrototype::start(const QString &tor, const QStringList &args)
 }
 
 bool 
-TorControlPrototype::stop(QString *errmsg = 0)
+TorControlPrototype::stop(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -85,7 +96,7 @@ TorControlPrototype::isConnected()
 }
 
 bool 
-TorControlPrototype::authenticate(const QByteArray cookie, QString *errmsg = 0)
+TorControlPrototype::authenticate(const QByteArray cookie, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -94,7 +105,7 @@ TorControlPrototype::authenticate(const QByteArray cookie, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::authenticate(const QString &password = QString(), QString *errmsg = 0)
+TorControlPrototype::authenticate(const QString &password, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -103,7 +114,7 @@ TorControlPrototype::authenticate(const QString &password = QString(), QString *
 }
 
 ProtocolInfo 
-TorControlPrototype::protocolInfo(QString *errmsg = 0)
+TorControlPrototype::protocolInfo(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -112,7 +123,7 @@ TorControlPrototype::protocolInfo(QString *errmsg = 0)
 }
 
 BootstrapStatus 
-TorControlPrototype::bootstrapStatus(QString *errmsg = 0)
+TorControlPrototype::bootstrapStatus(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -130,7 +141,7 @@ TorControlPrototype::isCircuitEstablished()
 }
 
 bool 
-TorControlPrototype::getInfo(QHash<QString,QString> &map, QString *errmsg = 0)
+TorControlPrototype::getInfo(QHash<QString,QString> &map, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -139,7 +150,7 @@ TorControlPrototype::getInfo(QHash<QString,QString> &map, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::getInfo(QString key, QString &val, QString *errmsg = 0)
+TorControlPrototype::getInfo(QString key, QString &val, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -148,7 +159,7 @@ TorControlPrototype::getInfo(QString key, QString &val, QString *errmsg = 0)
 }
 
 QVariantMap 
-TorControlPrototype::getInfo(const QStringList &keys, QString *errmsg = 0)
+TorControlPrototype::getInfo(const QStringList &keys, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -157,7 +168,7 @@ TorControlPrototype::getInfo(const QStringList &keys, QString *errmsg = 0)
 }
 
 QVariant 
-TorControlPrototype::getInfo(const QString &key, QString *errmsg = 0)
+TorControlPrototype::getInfo(const QString &key, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -166,7 +177,7 @@ TorControlPrototype::getInfo(const QString &key, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::signal(TorSignal::Signal sig, QString *errmsg = 0)
+TorControlPrototype::signal(TorSignal::Signal sig, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -175,7 +186,7 @@ TorControlPrototype::signal(TorSignal::Signal sig, QString *errmsg = 0)
 }
 
 QHostAddress 
-TorControlPrototype::getSocksAddress(QString *errmsg = 0)
+TorControlPrototype::getSocksAddress(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -184,7 +195,7 @@ TorControlPrototype::getSocksAddress(QString *errmsg = 0)
 }
 
 QStringList 
-TorControlPrototype::getSocksAddressList(QString *errmsg = 0)
+TorControlPrototype::getSocksAddressList(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -193,7 +204,7 @@ TorControlPrototype::getSocksAddressList(QString *errmsg = 0)
 }
 
 quint16 
-TorControlPrototype::getSocksPort(QString *errmsg = 0)
+TorControlPrototype::getSocksPort(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -201,8 +212,8 @@ TorControlPrototype::getSocksPort(QString *errmsg = 0)
     return obj->getSocksPort(errmsg);
 }
 
-QList
-TorControlPrototype::<quint16> getSocksPortList(QString *errmsg = 0)
+QList<quint16> 
+TorControlPrototype::getSocksPortList(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -229,7 +240,7 @@ TorControlPrototype::getTorVersion()
 }
 
 bool 
-TorControlPrototype::setEvent(TorEvents::Event e, bool add = true, bool set = true, QString *errmsg = 0)
+TorControlPrototype::setEvent(TorEvents::Event e, bool add, bool set, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -238,7 +249,7 @@ TorControlPrototype::setEvent(TorEvents::Event e, bool add = true, bool set = tr
 }
 
 bool 
-TorControlPrototype::setEvents(QString *errmsg = 0)
+TorControlPrototype::setEvents(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -247,7 +258,7 @@ TorControlPrototype::setEvents(QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::setConf(QHash<QString,QString> map, QString *errmsg = 0)
+TorControlPrototype::setConf(QHash<QString,QString> map, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -256,7 +267,7 @@ TorControlPrototype::setConf(QHash<QString,QString> map, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::setConf(QString key, QString value, QString *errmsg = 0)
+TorControlPrototype::setConf(QString key, QString value, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -265,7 +276,7 @@ TorControlPrototype::setConf(QString key, QString value, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::setConf(QString keyAndValue, QString *errmsg = 0)
+TorControlPrototype::setConf(QString keyAndValue, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -274,7 +285,7 @@ TorControlPrototype::setConf(QString keyAndValue, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::getConf(QHash<QString,QString> &map, QString *errmsg = 0)
+TorControlPrototype::getConf(QHash<QString,QString> &map, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -283,7 +294,7 @@ TorControlPrototype::getConf(QHash<QString,QString> &map, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::getConf(QHash<QString,QStringList> &map, QString *errmsg = 0)
+TorControlPrototype::getConf(QHash<QString,QStringList> &map, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -292,7 +303,7 @@ TorControlPrototype::getConf(QHash<QString,QStringList> &map, QString *errmsg = 
 }
 
 bool 
-TorControlPrototype::getConf(QString key, QString &value, QString *errmsg = 0)
+TorControlPrototype::getConf(QString key, QString &value, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -301,7 +312,7 @@ TorControlPrototype::getConf(QString key, QString &value, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::getConf(QString key, QStringList &value, QString *errmsg = 0)
+TorControlPrototype::getConf(QString key, QStringList &value, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -310,7 +321,7 @@ TorControlPrototype::getConf(QString key, QStringList &value, QString *errmsg = 
 }
 
 QVariantMap 
-TorControlPrototype::getConf(const QStringList &keys, QString *errmsg = 0)
+TorControlPrototype::getConf(const QStringList &keys, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -319,7 +330,7 @@ TorControlPrototype::getConf(const QStringList &keys, QString *errmsg = 0)
 }
 
 QVariant 
-TorControlPrototype::getConf(const QString &key, QString *errmsg = 0)
+TorControlPrototype::getConf(const QString &key, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -328,7 +339,7 @@ TorControlPrototype::getConf(const QString &key, QString *errmsg = 0)
 }
 
 QString 
-TorControlPrototype::getHiddenServiceConf(const QString &key, QString *errmsg = 0)
+TorControlPrototype::getHiddenServiceConf(const QString &key, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -337,7 +348,7 @@ TorControlPrototype::getHiddenServiceConf(const QString &key, QString *errmsg = 
 }
 
 bool 
-TorControlPrototype::saveConf(QString *errmsg = 0)
+TorControlPrototype::saveConf(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -346,7 +357,7 @@ TorControlPrototype::saveConf(QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::resetConf(QStringList keys, QString *errmsg = 0)
+TorControlPrototype::resetConf(QStringList keys, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -355,7 +366,7 @@ TorControlPrototype::resetConf(QStringList keys, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::resetConf(QString key, QString *errmsg = 0)
+TorControlPrototype::resetConf(QString key, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -364,7 +375,7 @@ TorControlPrototype::resetConf(QString key, QString *errmsg = 0)
 }
 
 QStringList 
-TorControlPrototype::getRouterDescriptorText(const QString &id, QString *errmsg = 0)
+TorControlPrototype::getRouterDescriptorText(const QString &id, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -373,7 +384,7 @@ TorControlPrototype::getRouterDescriptorText(const QString &id, QString *errmsg 
 }
 
 RouterDescriptor 
-TorControlPrototype::getRouterDescriptor(const QString &id, QString *errmsg = 0)
+TorControlPrototype::getRouterDescriptor(const QString &id, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -382,7 +393,7 @@ TorControlPrototype::getRouterDescriptor(const QString &id, QString *errmsg = 0)
 }
 
 RouterStatus 
-TorControlPrototype::getRouterStatus(const QString &id, QString *errmsg = 0)
+TorControlPrototype::getRouterStatus(const QString &id, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -391,7 +402,7 @@ TorControlPrototype::getRouterStatus(const QString &id, QString *errmsg = 0)
 }
 
 NetworkStatus 
-TorControlPrototype::getNetworkStatus(QString *errmsg = 0)
+TorControlPrototype::getNetworkStatus(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -400,7 +411,7 @@ TorControlPrototype::getNetworkStatus(QString *errmsg = 0)
 }
 
 DescriptorAnnotations 
-TorControlPrototype::getDescriptorAnnotations(const QString &id, QString *errmsg = 0)
+TorControlPrototype::getDescriptorAnnotations(const QString &id, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -409,7 +420,7 @@ TorControlPrototype::getDescriptorAnnotations(const QString &id, QString *errmsg
 }
 
 CircuitList 
-TorControlPrototype::getCircuits(QString *errmsg = 0)
+TorControlPrototype::getCircuits(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -418,7 +429,7 @@ TorControlPrototype::getCircuits(QString *errmsg = 0)
 }
 
 StreamList 
-TorControlPrototype::getStreams(QString *errmsg = 0)
+TorControlPrototype::getStreams(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -427,7 +438,7 @@ TorControlPrototype::getStreams(QString *errmsg = 0)
 }
 
 AddressMap 
-TorControlPrototype::getAddressMap(AddressMap::AddressMapType type = AddressMap::AddressMapAll, QString *errmsg = 0)
+TorControlPrototype::getAddressMap(AddressMap::AddressMapType type, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -436,7 +447,7 @@ TorControlPrototype::getAddressMap(AddressMap::AddressMapType type = AddressMap:
 }
 
 QString 
-TorControlPrototype::ipToCountry(const QHostAddress &ip, QString *errmsg = 0)
+TorControlPrototype::ipToCountry(const QHostAddress &ip, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -445,7 +456,7 @@ TorControlPrototype::ipToCountry(const QHostAddress &ip, QString *errmsg = 0)
 }
 
 bool 
-TorControlPrototype::closeCircuit(const CircuitId &circId, bool ifUnused = false, QString *errmsg = 0)
+TorControlPrototype::closeCircuit(const CircuitId &circId, bool ifUnused, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
@@ -454,7 +465,7 @@ TorControlPrototype::closeCircuit(const CircuitId &circId, bool ifUnused = false
 }
 
 bool 
-TorControlPrototype::closeStream(const StreamId &streamId, QString *errmsg = 0)
+TorControlPrototype::closeStream(const StreamId &streamId, QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
