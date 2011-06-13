@@ -8,12 +8,11 @@
 
 class PluginWrapper;
 
-#define ADD_CLASS(name, protoType, absType, ctor) \
-  protoType __proto; \
-  QScriptValue __script = newQObject(&__proto, QScriptEngine::ScriptOwnership); \
-  setDefaultPrototype(qMetaTypeId<absType>(), __script); \
-  QScriptValue __ctor = newFunction(ctor, __script); \
-  globalObject().setProperty(name, __ctor);
+#define ADD_CLASS(protoType) \
+  QScriptValue __script##protoType = newQObject(new protoType); \
+  setDefaultPrototype(protoType::metaTypeId(), __script##protoType); \
+  globalObject().setProperty(protoType::name(), newFunction(protoType::constructor, __script##protoType));
+
 
 class PluginEngine : public QScriptEngine {
   Q_OBJECT
@@ -28,6 +27,10 @@ class PluginEngine : public QScriptEngine {
     void pluginTab(VidaliaTab *);
 
   protected:
+    static QScriptValue importExtension(QScriptContext *context, QScriptEngine *engine);
+    static bool loadFile(QString fileName, QScriptEngine *engine);
+    static QScriptValue includeScript(QScriptContext *context, QScriptEngine *engine);
+
     void loadAllPlugins();
     void tryLoadPlugin(QDir path);
 
