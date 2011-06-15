@@ -3,6 +3,8 @@
 #include "PluginWrapper.h"
 #include "DebugDialog.h"
 
+#include "Vidalia.h"
+
 PluginEngine::PluginEngine(QObject *parent)
   : QScriptEngine(parent)
 {
@@ -10,10 +12,13 @@ PluginEngine::PluginEngine(QObject *parent)
   MAKE_CREATABLE(VidaliaTabPrototype)
   ADD_PROTOTYPE(HelperProcessPrototype)
   MAKE_CREATABLE(HelperProcessPrototype)
-//  ADD_PROTOTYPE(TorControlPrototype)
+  ADD_PROTOTYPE(TorControlPrototype)
+
+  globalObject().setProperty("torControl", newQObject(Vidalia::torControl()));
 
   globalObject().setProperty("include", newFunction(includeScript));
   globalObject().setProperty("importExtension", newFunction(importExtension));
+  globalObject().setProperty("vdebug", newFunction(vdebug));
 
   VidaliaSettings settings;
   globalObject().setProperty("pluginPath", QScriptValue(settings.pluginPath()));
@@ -162,4 +167,19 @@ PluginEngine::loadFile(QString fileName, QScriptEngine *engine)
         return false;
     }
     return true;
+}
+
+QScriptValue
+PluginEngine::vdebug(QScriptContext *context, QScriptEngine *engine)
+{
+  QString result;
+  for(int i = 0; i<context->argumentCount(); i++) {
+    if(i>0)
+      result.append(" ");
+    result.append(context->argument(i).toString());
+  }
+
+  qWarning() << result;
+
+  return engine->undefinedValue();
 }

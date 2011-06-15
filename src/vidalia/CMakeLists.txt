@@ -89,6 +89,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   plugin/DebugDialog.cpp
   plugin/prototypes/VidaliaTabPrototype.cpp
   plugin/prototypes/HelperProcessPrototype.cpp
+  plugin/prototypes/TorControlPrototype.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   plugin/PluginEngine.h
@@ -96,6 +97,7 @@ qt4_wrap_cpp(vidalia_SRCS
   plugin/DebugDialog.h
   plugin/prototypes/VidaliaTabPrototype.h
   plugin/prototypes/HelperProcessPrototype.h
+  plugin/prototypes/TorControlPrototype.h
 )
 
 ## Configuration dialog sources

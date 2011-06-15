@@ -6,7 +6,7 @@
 
 #include "VidaliaTabPrototype.h"
 #include "HelperProcessPrototype.h"
-//#include "TorControlPrototype.h"
+#include "TorControlPrototype.h"
 
 class PluginWrapper;
 
@@ -33,6 +33,7 @@ class PluginEngine : public QScriptEngine {
     static QScriptValue importExtension(QScriptContext *context, QScriptEngine *engine);
     static bool loadFile(QString fileName, QScriptEngine *engine);
     static QScriptValue includeScript(QScriptContext *context, QScriptEngine *engine);
+    static QScriptValue vdebug(QScriptContext *context, QScriptEngine *engine);
 
     void loadAllPlugins();
     void tryLoadPlugin(QDir path);

@@ -1,5 +1,55 @@
 #include "TorControlPrototype.h"
 
+#define GET_AND_CALL(type, func, res) \
+  type obj = qscriptvalue_cast<type>(thisObject()); \
+  if(obj) \
+    res = obj->func;
+
+#define MERGE2(result, errmsg) \
+  QVariant(QList<QVariant>() << result << errmsg);
+
+#define DEF_TYPE0(type, retType, func, call) \
+retType \
+type##Prototype::func \
+{ \
+  type *obj = qscriptvalue_cast<type *>(thisObject()); \
+  if(obj) \
+    return obj->call; \
+}
+
+#define DEF_TYPE1(type, resType, func, call) \
+QVariant \
+type##Prototype::func \
+{ \
+  resType res; \
+  QString errmsg; \
+\
+  type *obj = qscriptvalue_cast<type *>(thisObject()); \
+  if(obj) \
+    res = obj->call; \
+  QList<QVariant> vals; \
+  vals << res << QVariant(errmsg); \
+\
+  return vals; \
+}
+
+#define DEF_TYPE2(type, resType, ansType, func, call) \
+QVariant \
+type##Prototype::func \
+{ \
+  resType res; \
+  ansType ans; \
+  QString errmsg; \
+\
+  type *obj = qscriptvalue_cast<type *>(thisObject()); \
+  if(obj) \
+    res = obj->call; \
+  QList<QVariant> vals; \
+  vals << QVariant(ans) << res << QVariant(errmsg); \
+\
+  return vals; \
+}
+
 TorControlPrototype::TorControlPrototype()
   : QObject(), QScriptable() {}
 
@@ -13,187 +63,120 @@ TorControlPrototype::name() {
   return QString("TorControl");
 }
 
+DEF_TYPE0(TorControl, void, 
+    start(const QString &tor, const QStringList &args),
+    start(tor, args))
 
-void 
-TorControlPrototype::start(const QString &tor, const QStringList &args)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, bool,
+    stop(),
+    stop(&errmsg))
 
-  if(obj)
-    obj->start(tor, args);
-}
+DEF_TYPE0(TorControl, bool,
+    isRunning(),
+    isRunning())
 
-bool 
-TorControlPrototype::stop(QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE0(TorControl, bool,
+    isVidaliaRunningTor(),
+    isVidaliaRunningTor())
 
-  if(obj)
-    return obj->stop(errmsg);
-}
+DEF_TYPE0(TorControl, void,
+    closeTorStdout(),
+    closeTorStdout())
 
-bool 
-TorControlPrototype::isRunning()
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE0(TorControl, void,
+    connect(const QHostAddress &address, quint16 port),
+    connect(address, port))
 
-  if(obj)
-    return obj->isRunning();
-}
+DEF_TYPE0(TorControl, void,
+    connect(const QString &path),
+    connect(path))
 
-bool 
-TorControlPrototype::isVidaliaRunningTor()
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE0(TorControl, void,
+    disconnect(),
+    disconnect())
 
-  if(obj)
-    return obj->isVidaliaRunningTor();
-}
+DEF_TYPE0(TorControl, bool,
+    isConnected(),
+    isConnected())
 
-void 
-TorControlPrototype::closeTorStdout()
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, bool,
+    authenticate(const QByteArray cookie),
+    authenticate(cookie, &errmsg))
 
-  if(obj)
-    obj->closeTorStdout();
-}
+DEF_TYPE1(TorControl, bool,
+    authenticate(const QString &password),
+    authenticate(password, &errmsg))
 
-void 
-TorControlPrototype::connect(const QHostAddress &address, quint16 port)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+// TODO: make a QVariant for this two
+//QVariant
+//TorControlPrototype::protocolInfo()
+//{
+//  ProtocolInfo info;
+//  QString errmsg;
 
-  if(obj)
-    obj->connect(address, port);
-}
+//  GET_AND_CALL(TorControl *, protocolInfo(&errmsg), info)
 
-void 
-TorControlPrototype::connect(const QString &path)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+//  return MERGE2(info, errmsg);
+//}
 
-  if(obj)
-    obj->connect(path);
-}
+//BootstrapStatus 
+//TorControlPrototype::bootstrapStatus(QString *errmsg)
+//{
+//  BootstrapStatus status;
+//  QString errmsg;
 
-void 
-TorControlPrototype::disconnect()
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+//  GET_AND_CALL(TorControl *, protocolInfo(&errmsg), status)
 
-  if(obj)
-    obj->disconnect();
-}
+//  return MERGE2(status, errmsg);
+//}
 
-bool 
-TorControlPrototype::isConnected()
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE0(TorControl, bool,
+    isCircuitEstablished(),
+    isCircuitEstablished())
 
-  if(obj)
-    return obj->isConnected();
-}
+DEF_TYPE1(TorControl, bool,
+  getInfo(QHash<QString,QString> &map),
+  getInfo(map, &errmsg))
 
-bool 
-TorControlPrototype::authenticate(const QByteArray cookie, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+// TODO: this one may be useless
+//QVariant
+//TorControlPrototype::getInfo(QString key)
+//{
+//  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+//  QString val, *errmsg = new QString();
+//  bool res = false;
+//  QList<QVariant> vals;
 
-  if(obj)
-    return obj->authenticate(cookie, errmsg);
-}
+//  if(obj)
+//    res = obj->getInfo(key, val, errmsg);
 
-bool 
-TorControlPrototype::authenticate(const QString &password, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+//  vals.append(QVariant(res));
+//  vals.append(QVariant(val));
+//  vals.append(QVariant(*errmsg));
 
-  if(obj)
-    return obj->authenticate(password, errmsg);
-}
+//  return QVariant(vals);
+//}
 
-ProtocolInfo 
-TorControlPrototype::protocolInfo(QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+// TODO: There is no StringList, this may be useless
+//DEF_TYPE1(TorControl, QVariantMap,
+//  getInfo(const QStringList &keys),
+//  getInfo(keys, &errmsg))
 
-  if(obj)
-    return obj->protocolInfo(errmsg);
-}
+DEF_TYPE1(TorControl, QVariant,
+    getInfo(const QString &key),
+    getInfo(key, &errmsg))
 
-BootstrapStatus 
-TorControlPrototype::bootstrapStatus(QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, bool,
+  signal(TorSignal::Signal sig),
+  signal(sig, &errmsg))
 
-  if(obj)
-    return obj->bootstrapStatus(errmsg);
-}
+// TODO: QVariant don't like QHostAddress
+//DEF_TYPE1(TorControl, QHostAddress,
+//    getSocksAddress(),
+//    getSocksAddress(&errmsg))
 
-bool 
-TorControlPrototype::isCircuitEstablished()
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->isCircuitEstablished();
-}
-
-bool 
-TorControlPrototype::getInfo(QHash<QString,QString> &map, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->getInfo(map, errmsg);
-}
-
-bool 
-TorControlPrototype::getInfo(QString key, QString &val, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->getInfo(key, val, errmsg);
-}
-
-QVariantMap 
-TorControlPrototype::getInfo(const QStringList &keys, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->getInfo(keys, errmsg);
-}
-
-QVariant 
-TorControlPrototype::getInfo(const QString &key, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->getInfo(key, errmsg);
-}
-
-bool 
-TorControlPrototype::signal(TorSignal::Signal sig, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->signal(sig, errmsg);
-}
-
-QHostAddress 
-TorControlPrototype::getSocksAddress(QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->getSocksAddress(errmsg);
-}
-
+// TODO: make it a QVariant(QList<QVariant>() << QVariant(QString) <<
+// QVariant(QString) ...
 QStringList 
 TorControlPrototype::getSocksAddressList(QString *errmsg)
 {
@@ -203,87 +186,53 @@ TorControlPrototype::getSocksAddressList(QString *errmsg)
     return obj->getSocksAddressList(errmsg);
 }
 
-quint16 
-TorControlPrototype::getSocksPort(QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, quint16,
+    getSocksPort(),
+    getSocksPort(&errmsg))
 
-  if(obj)
-    return obj->getSocksPort(errmsg);
-}
-
+// TODO: same as getSocksAddressList but with quint16
 QList<quint16> 
 TorControlPrototype::getSocksPortList(QString *errmsg)
 {
   TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
   if(obj)
-    return obj->quint16> getSocksPortList(errmsg);
+    return obj->getSocksPortList(errmsg);
 }
 
-QString 
-TorControlPrototype::getTorVersionString()
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE0(TorControl, QString,
+    getTorVersionString(),
+    getTorVersionString())
 
-  if(obj)
-    return obj->getTorVersionString();
-}
+DEF_TYPE0(TorControl, quint32,
+    getTorVersion(),
+    getTorVersion())
 
-quint32 
-TorControlPrototype::getTorVersion()
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, bool,
+    setEvent(TorEvents::Event e, bool add, bool set),
+    setEvent(e, add, set, &errmsg))
 
-  if(obj)
-    return obj->getTorVersion();
-}
+DEF_TYPE1(TorControl, bool,
+    setEvents(),
+    setEvents(&errmsg))
 
-bool 
-TorControlPrototype::setEvent(TorEvents::Event e, bool add, bool set, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, bool,
+    setConf(QHash<QString,QString> map),
+    setConf(map, &errmsg))
 
-  if(obj)
-    return obj->setEvent(e, add, set, errmsg);
-}
+DEF_TYPE1(TorControl, bool,
+    setConf(QString key, QString value),
+    setConf(key, value, &errmsg))
 
-bool 
-TorControlPrototype::setEvents(QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, bool,
+    setConf(QString keyAndValue),
+    setConf(keyAndValue, &errmsg))
 
-  if(obj)
-    return obj->setEvents(errmsg);
-}
-
-bool 
-TorControlPrototype::setConf(QHash<QString,QString> map, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->setConf(map, errmsg);
-}
-
-bool 
-TorControlPrototype::setConf(QString key, QString value, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    returb obj->setConf(key, value, errmsg);
-}
-
-bool 
-TorControlPrototype::setConf(QString keyAndValue, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->setConf(keyAndValue, errmsg);
-}
-
+// TODO: macros don't like template variables
+// do this one by hand
+//DEF_TYPE2(TorControl, bool, QHash<QString,QString>,
+//    getConf(QHash<QString,QString> &map),
+//    getConf(map, &errmsg))
 bool 
 TorControlPrototype::getConf(QHash<QString,QString> &map, QString *errmsg)
 {
@@ -293,6 +242,7 @@ TorControlPrototype::getConf(QHash<QString,QString> &map, QString *errmsg)
     return obj->getConf(map, errmsg);
 }
 
+// TODO: this one too
 bool 
 TorControlPrototype::getConf(QHash<QString,QStringList> &map, QString *errmsg)
 {
@@ -302,15 +252,11 @@ TorControlPrototype::getConf(QHash<QString,QStringList> &map, QString *errmsg)
     return obj->getConf(map, errmsg);
 }
 
-bool 
-TorControlPrototype::getConf(QString key, QString &value, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE2(TorControl, bool, QString,
+    getConf(QString key),
+    getConf(key, ans, &errmsg))
 
-  if(obj)
-    return obj->getConf(key, value, errmsg);
-}
-
+// TODO: same as the last one with StringList
 bool 
 TorControlPrototype::getConf(QString key, QStringList &value, QString *errmsg)
 {
@@ -320,6 +266,7 @@ TorControlPrototype::getConf(QString key, QStringList &value, QString *errmsg)
     return obj->getConf(key, value, errmsg);
 }
 
+// TODO: idem
 QVariantMap 
 TorControlPrototype::getConf(const QStringList &keys, QString *errmsg)
 {
@@ -329,33 +276,25 @@ TorControlPrototype::getConf(const QStringList &keys, QString *errmsg)
     return obj->getConf(keys, errmsg);
 }
 
-QVariant 
-TorControlPrototype::getConf(const QString &key, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+// TODO: possibly useless
+//QVariant 
+//TorControlPrototype::getConf(const QString &key, QString *errmsg)
+//{
+//  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
 
-  if(obj)
-    return obj->getConf(key, errmsg);
-}
+//  if(obj)
+//    return obj->getConf(key, errmsg);
+//}
 
-QString 
-TorControlPrototype::getHiddenServiceConf(const QString &key, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, QString,
+    getHiddenServiceConf(const QString &key),
+    getHiddenServiceConf(key, &errmsg))
 
-  if(obj)
-    return obj->getHiddenServiceConf(key, errmsg);
-}
+DEF_TYPE1(TorControl, bool,
+    saveConf(),
+    saveConf(&errmsg))
 
-bool 
-TorControlPrototype::saveConf(QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
-
-  if(obj)
-    return obj->saveConf(errmsg);
-}
-
+// TODO: another stringlist one
 bool 
 TorControlPrototype::resetConf(QStringList keys, QString *errmsg)
 {
@@ -365,15 +304,11 @@ TorControlPrototype::resetConf(QStringList keys, QString *errmsg)
     return obj->resetConf(keys, errmsg);
 }
 
-bool 
-TorControlPrototype::resetConf(QString key, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, bool,
+    resetConf(QString key),
+    resetConf(key, &errmsg))
 
-  if(obj)
-    return obj->resetConf(key, errmsg);
-}
-
+// TODO: you know
 QStringList 
 TorControlPrototype::getRouterDescriptorText(const QString &id, QString *errmsg)
 {
@@ -383,6 +318,7 @@ TorControlPrototype::getRouterDescriptorText(const QString &id, QString *errmsg)
     return obj->getRouterDescriptorText(id, errmsg);
 }
 
+// TODO: QVariantize RouterDescriptor
 RouterDescriptor 
 TorControlPrototype::getRouterDescriptor(const QString &id, QString *errmsg)
 {
@@ -392,6 +328,7 @@ TorControlPrototype::getRouterDescriptor(const QString &id, QString *errmsg)
     return obj->getRouterDescriptor(id, errmsg);
 }
 
+// TODO: QVariantize RouterStatus
 RouterStatus 
 TorControlPrototype::getRouterStatus(const QString &id, QString *errmsg)
 {
@@ -401,6 +338,7 @@ TorControlPrototype::getRouterStatus(const QString &id, QString *errmsg)
     return obj->getRouterStatus(id, errmsg);
 }
 
+// TODO: QVariantize NetworkStatus
 NetworkStatus 
 TorControlPrototype::getNetworkStatus(QString *errmsg)
 {
@@ -410,6 +348,7 @@ TorControlPrototype::getNetworkStatus(QString *errmsg)
     return obj->getNetworkStatus(errmsg);
 }
 
+// TODO: QVariantize DescriptorAnnotations
 DescriptorAnnotations 
 TorControlPrototype::getDescriptorAnnotations(const QString &id, QString *errmsg)
 {
@@ -419,6 +358,7 @@ TorControlPrototype::getDescriptorAnnotations(const QString &id, QString *errmsg
     return obj->getDescriptorAnnotations(id, errmsg);
 }
 
+// TODO: QVariantize CircuitList
 CircuitList 
 TorControlPrototype::getCircuits(QString *errmsg)
 {
@@ -428,6 +368,7 @@ TorControlPrototype::getCircuits(QString *errmsg)
     return obj->getCircuits(errmsg);
 }
 
+// TODO: QVariantize StreamList
 StreamList 
 TorControlPrototype::getStreams(QString *errmsg)
 {
@@ -437,6 +378,7 @@ TorControlPrototype::getStreams(QString *errmsg)
     return obj->getStreams(errmsg);
 }
 
+// TODO: QVariantize AddressMap
 AddressMap 
 TorControlPrototype::getAddressMap(AddressMap::AddressMapType type, QString *errmsg)
 {
@@ -446,15 +388,11 @@ TorControlPrototype::getAddressMap(AddressMap::AddressMapType type, QString *err
     return obj->getAddressMap(type, errmsg);
 }
 
-QString 
-TorControlPrototype::ipToCountry(const QHostAddress &ip, QString *errmsg)
-{
-  TorControl *obj = qscriptvalue_cast<TorControl *>(thisObject());
+DEF_TYPE1(TorControl, QString,
+    ipToCountry(const QHostAddress &ip),
+    ipToCountry(ip, &errmsg))
 
-  if(obj)
-    return obj->ipToCountry(ip, errmsg);
-}
-
+// TODO: migrate CircuitId
 bool 
 TorControlPrototype::closeCircuit(const CircuitId &circId, bool ifUnused, QString *errmsg)
 {
@@ -464,6 +402,7 @@ TorControlPrototype::closeCircuit(const CircuitId &circId, bool ifUnused, QStrin
     return obj->closeCircuit(circId, ifUnused, errmsg);
 }
 
+// TODO: migrate StreamId
 bool 
 TorControlPrototype::closeStream(const StreamId &streamId, QString *errmsg)
 {

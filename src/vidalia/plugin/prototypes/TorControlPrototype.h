@@ -35,7 +35,7 @@ public:
   /** Start the Tor process */
   Q_INVOKABLE void start(const QString &tor, const QStringList &args);
   /** Stop the Tor process */
-  Q_INVOKABLE bool stop(QString *errmsg = 0);
+  Q_INVOKABLE QVariant stop();
   /** Detect if the Tor process is running */
   Q_INVOKABLE bool isRunning();
   /** Detects if the Tor process is running under Vidalia. */
@@ -52,46 +52,46 @@ public:
   /** Check if we're connected to Tor's control socket */
   Q_INVOKABLE bool isConnected();
   /** Sends an authentication cookie to Tor. */
-  Q_INVOKABLE bool authenticate(const QByteArray cookie, QString *errmsg = 0);
+  Q_INVOKABLE QVariant authenticate(const QByteArray cookie);
   /** Sends an authentication password to Tor. */
-  Q_INVOKABLE bool authenticate(const QString &password = QString(), QString *errmsg = 0);
+  Q_INVOKABLE QVariant authenticate(const QString &password = QString());
   
   /** Sends a PROTOCOLINFO command to Tor and parses the response. */
-  Q_INVOKABLE ProtocolInfo protocolInfo(QString *errmsg = 0);
+//  Q_INVOKABLE QVariant protocolInfo();
 
   /** Returns the Tor software's current bootstrap phase and status. */
-  Q_INVOKABLE BootstrapStatus bootstrapStatus(QString *errmsg = 0);
+//  Q_INVOKABLE BootstrapStatus bootstrapStatus(QString *errmsg = 0);
 
   /** Returns true if Tor either has an open circuit or (on Tor >= 
    * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
   Q_INVOKABLE bool isCircuitEstablished();
 
   /** Sends a GETINFO message to Tor based on the given keys */
-  Q_INVOKABLE bool getInfo(QHash<QString,QString> &map, QString *errmsg = 0);
+  Q_INVOKABLE QVariant getInfo(QHash<QString,QString> &map);
   /** Sends a GETINFO message for a single info value to Tor */
-  Q_INVOKABLE bool getInfo(QString key, QString &val, QString *errmsg = 0);
+//  Q_INVOKABLE QVariant getInfo(QString key);
 
   /** Sends a GETINFO message to Tor using the given list of <b>keys</b> and
    * returns a QVariantMap containing the specified keys and their values as
    * returned by Tor. Returns a default constructed QVariantMap on failure. */
-  Q_INVOKABLE QVariantMap getInfo(const QStringList &keys, QString *errmsg = 0);
+//  Q_INVOKABLE QVariantMap getInfo(const QStringList &keys, QString *errmsg = 0);
   /** Sends a GETINFO message to Tor with a single <b>key</b> and returns a
    * QVariant containing the value returned by Tor. Returns a default
    * constructed QVariant on failure. */
-  Q_INVOKABLE QVariant getInfo(const QString &key, QString *errmsg = 0);
+  Q_INVOKABLE QVariant getInfo(const QString &key);
 
   /** Sends a signal to Tor */
-  Q_INVOKABLE bool signal(TorSignal::Signal sig, QString *errmsg = 0);
+  Q_INVOKABLE QVariant signal(TorSignal::Signal sig);
  
   /** Returns an address on which Tor is listening for application
    * requests. If none are available, a null QHostAddress is returned. */
-  Q_INVOKABLE QHostAddress getSocksAddress(QString *errmsg = 0);
+//  Q_INVOKABLE QVariant getSocksAddress();
   /** Returns a (possibly empty) list of all currently configured 
    * SocksListenAddress entries. */
   Q_INVOKABLE QStringList getSocksAddressList(QString *errmsg = 0);
   /** Returns a valid SOCKS port for Tor, or 0 if Tor is not accepting
    * application requests. */
-  Q_INVOKABLE quint16 getSocksPort(QString *errmsg = 0);
+  Q_INVOKABLE QVariant getSocksPort();
   /** Returns a list of all currently configured SOCKS ports. If Tor is not
    * accepting any application connections, an empty list will be returned. */
   Q_INVOKABLE QList<quint16> getSocksPortList(QString *errmsg = 0);
@@ -104,24 +104,23 @@ public:
   /** Sets an event and its handler. If add is true, then the event is added,
    * otherwise it is removed. If set is true, then the given event will be
    * registered with Tor. */
-  Q_INVOKABLE bool setEvent(TorEvents::Event e, bool add = true, bool set = true,
-                QString *errmsg = 0);
+  Q_INVOKABLE QVariant setEvent(TorEvents::Event e, bool add = true, bool set = true);
   /** Register events of interest with Tor */
-  Q_INVOKABLE bool setEvents(QString *errmsg = 0);
+  Q_INVOKABLE QVariant setEvents();
 
   /** Sets each configuration key in <b>map</b> to the value associated with its key. */
-  Q_INVOKABLE bool setConf(QHash<QString,QString> map, QString *errmsg = 0);
+  Q_INVOKABLE QVariant setConf(QHash<QString,QString> map);
   /** Sets a single configuration key to the given value. */
-  Q_INVOKABLE bool setConf(QString key, QString value, QString *errmsg = 0);
+  Q_INVOKABLE QVariant setConf(QString key, QString value);
   /** Sets a single configuration string that is formatted <key=escaped value>. */
-  Q_INVOKABLE bool setConf(QString keyAndValue, QString *errmsg = 0);
+  Q_INVOKABLE QVariant setConf(QString keyAndValue);
   /** Gets values for a set of configuration keys, each of which has a single
    * value. */
-  Q_INVOKABLE bool getConf(QHash<QString,QString> &map, QString *errmsg = 0);
+  Q_INVOKABLE bool getConf(QHash<QString,QString> &map, QString *errmsg);
   /** Gets a set of configuration keyvalues and stores them in <b>map</b>. */
   Q_INVOKABLE bool getConf(QHash<QString,QStringList> &map, QString *errmsg = 0);
   /** Gets a single configuration value for <b>key</b>. */
-  Q_INVOKABLE bool getConf(QString key, QString &value, QString *errmsg = 0);
+  Q_INVOKABLE QVariant getConf(QString key);
   /** Gets a list of configuration values for <b>key</b>. */
   Q_INVOKABLE bool getConf(QString key, QStringList &value, QString *errmsg = 0);
 
@@ -132,17 +131,17 @@ public:
   /** Sends a GETCONF message to Tor with a single <b>key</b> and returns a
    * QVariant containing the value returned by Tor. Returns a default
    * constructed QVariant on failure. */
-  Q_INVOKABLE QVariant getConf(const QString &key, QString *errmsg = 0);
+//  Q_INVOKABLE QVariant getConf(const QString &key, QString *errmsg = 0);
   /** Sends a GETCONF message to Tor with the single key and returns a QString
    * containing the value returned by Tor */
-  Q_INVOKABLE QString getHiddenServiceConf(const QString &key, QString *errmsg = 0);
+  Q_INVOKABLE QVariant getHiddenServiceConf(const QString &key);
   
   /** Asks Tor to save the current configuration to its torrc */
-  Q_INVOKABLE bool saveConf(QString *errmsg = 0);
+  Q_INVOKABLE QVariant saveConf();
   /** Tells Tor to reset the given configuration keys back to defaults. */
   Q_INVOKABLE bool resetConf(QStringList keys, QString *errmsg = 0);
   /** Tells Tor to reset a configuration key back to its default value. */
-  Q_INVOKABLE bool resetConf(QString key, QString *errmsg = 0);
+  Q_INVOKABLE QVariant resetConf(QString key);
 
   /** Returns an unparsed router descriptor for the router whose fingerprint
    * matches <b>id</b>. The returned text can later be parsed by the
@@ -183,7 +182,7 @@ public:
    * Returns a default-constructed QString on failure or if a country code
    * is not known for <b>ip</b>. On failure, <b>errmsg</b> will be set if
    * it's not NULL. */
-  Q_INVOKABLE QString ipToCountry(const QHostAddress &ip, QString *errmsg = 0);
+  Q_INVOKABLE QVariant ipToCountry(const QHostAddress &ip);
 
 public slots:
   /** Closes the circuit specified by <b>circId</b>. If <b>ifUnused</b> is
