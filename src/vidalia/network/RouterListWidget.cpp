@@ -152,6 +152,40 @@ RouterListWidget::clearRouters()
   setStatusTip(tr("%1 relays online").arg(0));
 }
 
+/** Called when the search of a router is triggered by the signal
+ * textChanged from the search field. */
+void
+RouterListWidget::onRouterSearch(const QString routerNickname)
+{
+  if (!currentIndex().data().toString().toLower().startsWith(routerNickname.toLower()))
+  {
+    searchNextRouter(routerNickname);
+  } else {
+    /* If item at currentIndex() isn't visible, make it visible. */
+    scrollToItem(itemFromIndex(currentIndex()));
+  }
+}
+
+/** Selects the following router whose name starts by routerNickname. */
+void
+RouterListWidget::searchNextRouter(const QString routerNickname)
+{
+  /* currentIndex().row() = -1 if no item is selected. */
+  int startIndex = currentIndex().row() + 1;
+  /* Search for a router whose name start with routerNickname. Case-insensitive search. */
+  QModelIndexList qmIndList = model()->match(model()->index(startIndex, NameColumn), 
+                                             Qt::DisplayRole, 
+                                             QVariant(routerNickname),
+                                             1,
+                                             (Qt::MatchStartsWith | Qt::MatchWrap));
+  if (qmIndList.count() > 0) {
+    setCurrentIndex(qmIndList.at(0));
+    /* If item at currentIndex() was already selected but not visible, 
+     * make it visible. */
+    scrollToItem(itemFromIndex(currentIndex()));
+  }
+}
+
 /** Called when the user selects a router from the list. This will search the
  * list for a router whose names starts with the key pressed. */
 void

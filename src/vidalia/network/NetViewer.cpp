@@ -128,6 +128,10 @@ NetViewer::NetViewer(QWidget *parent)
           _torControl, SLOT(closeCircuit(CircuitId)));
   connect(ui.treeCircuitList, SIGNAL(closeStream(StreamId)),
           _torControl, SLOT(closeStream(StreamId)));
+  connect(ui.lineRouterSearch, SIGNAL(returnPressed()),
+          this, SLOT(onRouterSearch()));
+  connect(ui.lineRouterSearch, SIGNAL(textChanged(QString)),
+          ui.treeRouterList, SLOT(onRouterSearch(QString)));
 
   setupGeoIpResolver();
 
@@ -244,6 +248,14 @@ NetViewer::clear()
   ui.treeRouterList->clearRouters();
   ui.treeCircuitList->clearCircuits();
   ui.textRouterInfo->clear();
+}
+
+/** Called when the search of a router is triggered by the signal 
+ * returnPressed from the search field. */
+void
+NetViewer::onRouterSearch()
+{
+  ui.treeRouterList->searchNextRouter(ui.lineRouterSearch->text());
 }
 
 /** Loads a list of all current address mappings. */

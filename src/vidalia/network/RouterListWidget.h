@@ -54,6 +54,8 @@ public:
   void deselectAll();
   /** Called when the user changes the UI translation. */
   void retranslateUi();
+  /** Selects the following router whose name starts by routerNickname. */
+  void searchNextRouter(const QString routerNickname);
 
 signals:
   /** Emitted when the user selects a router from the list. */
@@ -64,6 +66,9 @@ signals:
 public slots:
   /** Clears the list of router items. */
   void clearRouters();
+  /** Called when the search of a router is triggered by the signal 
+   * textChanged from the search field. */
+  void onRouterSearch(const QString routerNickname);
 
 private slots:
   /** Called when the user clicks on an item in the list. */

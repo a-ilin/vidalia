@@ -101,6 +101,9 @@ private slots:
   /** Called when the user clicks "Full Screen" or presses Escape on the map.
    * Toggles the map between normal and a full screen viewing modes. */
   void toggleFullScreen();
+  /** Called when the search of a router is triggered by the signal 
+   * returnPressed from the search field. */
+  void onRouterSearch();
 
 private:
   /** */
