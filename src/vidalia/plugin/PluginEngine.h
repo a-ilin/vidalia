@@ -3,6 +3,7 @@
 
 #include <QtGui>
 #include <QtScript>
+#include <QScriptEngineDebugger>
 
 #include "VidaliaTabPrototype.h"
 #include "HelperProcessPrototype.h"
@@ -34,11 +35,14 @@ class PluginEngine : public QScriptEngine {
     static bool loadFile(QString fileName, QScriptEngine *engine);
     static QScriptValue includeScript(QScriptContext *context, QScriptEngine *engine);
     static QScriptValue vdebug(QScriptContext *context, QScriptEngine *engine);
+    static QScriptValue findWidget(QScriptContext *context, QScriptEngine *engine);
 
     void loadAllPlugins();
     void tryLoadPlugin(QDir path);
 
     QList<PluginWrapper *> wrappers;
+
+    QScriptEngineDebugger debugger;
 };
 
 #endif

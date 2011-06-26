@@ -19,6 +19,8 @@ class HelperProcessPrototype : public QObject, public QScriptable
     Q_INVOKABLE void start(const QString &app, const QString &args);
     Q_INVOKABLE void start(const QString &app, const QStringList &args);
     Q_INVOKABLE bool isDone() const;
+    Q_INVOKABLE QStringList systemEnvironment();
+    Q_INVOKABLE void setEnvironment(const QStringList &env);
 };
 
 Q_DECLARE_METATYPE(HelperProcess *);

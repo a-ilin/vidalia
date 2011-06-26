@@ -15,10 +15,12 @@ PluginEngine::PluginEngine(QObject *parent)
   ADD_PROTOTYPE(TorControlPrototype)
 
   globalObject().setProperty("torControl", newQObject(Vidalia::torControl()));
+  globalObject().setProperty("vidaliaApp", newQObject(vApp));
 
   globalObject().setProperty("include", newFunction(includeScript));
   globalObject().setProperty("importExtension", newFunction(importExtension));
   globalObject().setProperty("vdebug", newFunction(vdebug));
+  globalObject().setProperty("findWidget", newFunction(findWidget));
 
   VidaliaSettings settings;
   globalObject().setProperty("pluginPath", QScriptValue(settings.pluginPath()));
@@ -28,6 +30,9 @@ PluginEngine::PluginEngine(QObject *parent)
     DebugDialog::outputDebug(QString("  %1").arg(ext));
 
   loadAllPlugins();
+
+//  debugger.attachTo(this);
+//  debugger.standardWindow()->show();
 }
 
 PluginEngine::~PluginEngine() 
@@ -182,4 +187,25 @@ PluginEngine::vdebug(QScriptContext *context, QScriptEngine *engine)
   qWarning() << result;
 
   return engine->undefinedValue();
+}
+
+QScriptValue
+PluginEngine::findWidget(QScriptContext *context, QScriptEngine *engine) {
+  if(context->argumentCount() != 2)
+    return context->throwError(QString("findWidget called with the wrong argument count. Expected 2."));
+
+  QWidget *widget = qscriptvalue_cast<QWidget *>(context->argument(0));
+  QString name = context->argument(1).toString();
+
+  QObjectList list = widget->children();
+  QScriptValue ret = engine->nullValue();
+
+  for(int i = 0; i < list.length(); i++) {
+    if(list[i]->objectName() == name) {
+      ret = QScriptValue(i);
+      break;
+    }
+  }
+
+  return ret;
 }

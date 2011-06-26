@@ -47,3 +47,17 @@ HelperProcessPrototype::isDone() const
     return obj->isDone();
 }
 
+QStringList
+HelperProcessPrototype::systemEnvironment()
+{
+  return HelperProcess::systemEnvironment();
+}
+
+void
+HelperProcessPrototype::setEnvironment(const QStringList &env)
+{
+  HelperProcess *obj = qscriptvalue_cast<HelperProcess *>(thisObject());
+
+  if(obj)
+    obj->setEnvironment(env);
+}

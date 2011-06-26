@@ -147,21 +147,6 @@ private slots:
   /** Deletes the tab at index if it exists and it isn't the Status tab */
   void delTab(int index = -1);
 
-//  /** Handles adding a new tab corresponding to a plugin */
-//  void showPluginTab();
-
-  /** Called when the web browser or IM client have stopped */
-  void onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus);
-  /** Called periodically to check if the browser is running. If it is not,
-   * exit Vidalia cleanly */
-  void onCheckForBrowser();
-  /** Called web the web browser failed to start */
-  void onBrowserFailed(QString errmsg);
-  /** Called web the IM client failed to start */
-  void onIMFailed(QString errmsg);
-  /** Called when the proxy server fails to start */
-  void onProxyFailed(QString errmsg);
-
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
    * settings page. */
@@ -263,20 +248,6 @@ private:
   bool _useSavedPassword;
   /** The Vidalia icon that sits in the tray. */
   QSystemTrayIcon _trayIcon;
-
-  /** Start a web browser when given the directory containing the executable and profile */
-  void launchBrowserFromDirectory();
-  /** Starts the web browser, if appropriately configured */
-  void startSubprocesses();
-  /** Starts the proxy server, if appropriately configured */
-  void startProxy();
-
-  /** A HelperProcess object that manages the web browser */
-  HelperProcess* _browserProcess;
-  /** A HelperProcess object that manages the IM client */
-  HelperProcess* _imProcess;
-  /** A HelperProcess object that manages the proxy server */
-  HelperProcess* _proxyProcess;
 
 #if defined(USE_AUTOUPDATE)
   /** Timer used to remind us to check for software updates. */
