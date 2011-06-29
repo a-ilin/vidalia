@@ -528,8 +528,8 @@ MainWindow::start()
 
   /* Check if Tor is already running separately */
   if(settings.getControlMethod() == ControlMethod::Port) {
-    if (net_test_connect(settings.getControlAddress(),
-                        settings.getControlPort())) {
+    if(!settings.autoControlPort() && net_test_connect(settings.getControlAddress(),
+                                                       settings.getControlPort())) {
       started();
       return;
     }
@@ -562,14 +562,21 @@ MainWindow::start()
 
   /* Specify Tor's data directory, if different from the default */
   QString dataDirectory = settings.getDataDirectory();
+  QString expDataDirectory = expand_filename(dataDirectory);
   if (!dataDirectory.isEmpty())
-    args << "DataDirectory" << expand_filename(dataDirectory);
+    args << "DataDirectory" << expDataDirectory;
   
   if(settings.getControlMethod() == ControlMethod::Port) {
-    /* Add the intended control port value */
-    quint16 controlPort = settings.getControlPort();
-    if (controlPort)
-      args << "ControlPort" << QString::number(controlPort);
+    if(settings.autoControlPort()) {
+      args << "ControlPort" << "auto";
+      args << "SocksPort" << "auto";
+      args << "ControlPortWriteToFile" << QString("%1/port.conf").arg(expDataDirectory);
+    } else {
+      /* Add the intended control port value */
+      quint16 controlPort = settings.getControlPort();
+      if (controlPort)
+        args << "ControlPort" << QString::number(controlPort);
+    }
   } else {
     QString path = settings.getSocketPath();
     args << "ControlSocket" << path;
@@ -622,12 +629,35 @@ MainWindow::started()
   _delayedShutdownStarted = false;
   /* Remember whether we started Tor or not */
   _isVidaliaRunningTor = _torControl->isVidaliaRunningTor();
-  /* Try to connect to Tor's control port */
-  if(settings.getControlMethod() == ControlMethod::Port)
-    _torControl->connect(settings.getControlAddress(),
-                        settings.getControlPort());
-  else
-    _torControl->connect(settings.getSocketPath());
+
+  if(settings.autoControlPort()) {
+    QString dataDirectory = settings.getDataDirectory();
+    QFile file(QString("%1/port.conf").arg(expand_filename(dataDirectory)));
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+      return;
+
+    QTextStream in(&file);
+    if(!in.atEnd()) {
+      QString line = in.readLine();
+      QStringList parts = line.split("=");
+      if(parts.size() != 2) return;
+      if(parts[0].trimmed() != "PORT") return;
+
+      QStringList addrPort = parts[1].split(":");
+      if(addrPort.size() != 2) return;
+
+      QHostAddress addr(addrPort.at(0));
+      quint16 port = addrPort.at(1).toInt();
+      _torControl->connect(addr, port);
+    }
+  } else {
+    /* Try to connect to Tor's control port */
+    if(settings.getControlMethod() == ControlMethod::Port)
+      _torControl->connect(settings.getControlAddress(),
+                          settings.getControlPort());
+    else
+      _torControl->connect(settings.getSocketPath());
+  }
   setStartupProgress(STARTUP_PROGRESS_CONNECTING, tr("Connecting to Tor"));
 }
 

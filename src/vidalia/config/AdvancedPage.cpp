@@ -64,6 +64,7 @@ AdvancedPage::AdvancedPage(QWidget *parent)
           this, SLOT(displayTorrcDialog()));
   connect(ui.rdoControlPort, SIGNAL(toggled(bool)), this, SLOT(toggleControl(bool)));
   connect(ui.btnBrowseSocketPath, SIGNAL(clicked()), this, SLOT(browseSocketPath()));
+  connect(ui.chkAuto, SIGNAL(toggled(bool)), this, SLOT(toggleAuto(bool)));
 
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
@@ -187,6 +188,7 @@ AdvancedPage::save(QString &errmsg)
   _settings->setControlAddress(controlAddress);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
   _settings->setSocketPath(ui.lineSocketPath->text());
+  _settings->setAutoControlPort(ui.chkAuto->isChecked());
 
   _settings->setAuthenticationMethod(authMethod);
   _settings->setUseRandomPassword(ui.chkRandomPassword->isChecked());
@@ -212,6 +214,7 @@ AdvancedPage::load()
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
   ui.lineTorConfig->setText(_settings->getTorrc());
   ui.lineTorDataDirectory->setText(_settings->getDataDirectory());
+  ui.chkAuto->setChecked(_settings->autoControlPort());
 
   ui.cmbAuthMethod->setCurrentIndex(
     authMethodToIndex(_settings->getAuthenticationMethod()));
@@ -401,4 +404,13 @@ AdvancedPage::toggleControl(bool)
     ui.btnBrowseSocketPath->setEnabled(true);
 #endif
   }
+}
+
+void
+AdvancedPage::toggleAuto(bool)
+{
+  ui.lblAddress->setEnabled(!ui.chkAuto->isChecked());
+  ui.lineControlAddress->setEnabled(!ui.chkAuto->isChecked());
+  ui.label->setEnabled(!ui.chkAuto->isChecked());
+  ui.lineControlPort->setEnabled(!ui.chkAuto->isChecked());
 }
