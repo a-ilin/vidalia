@@ -1,3 +1,18 @@
+/*
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If you
+**  did not receive the LICENSE file with this file, you may obtain it from the
+**  Vidalia source package distributed by the Vidalia Project at
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
+**  including this file, may be copied, modified, propagated, or distributed 
+**  except according to the terms described in the LICENSE file.
+*/
+
+/*
+** \file PluginEngine.h
+** \brief Engine that handles all plugin related features
+*/
+
 #ifndef PLUGINENGINE_H
 #define PLUGINENGINE_H
 
@@ -32,8 +47,8 @@ class PluginEngine : public QScriptEngine {
 
   protected:
     static QScriptValue importExtension(QScriptContext *context, QScriptEngine *engine);
-    static bool loadFile(QString fileName, QScriptEngine *engine);
-    static QScriptValue includeScript(QScriptContext *context, QScriptEngine *engine);
+//    static bool loadFile(QString fileName, QScriptEngine *engine);
+//    static QScriptValue includeScript(QScriptContext *context, QScriptEngine *engine);
     static QScriptValue vdebug(QScriptContext *context, QScriptEngine *engine);
     static QScriptValue findWidget(QScriptContext *context, QScriptEngine *engine);
 

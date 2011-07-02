@@ -1,3 +1,18 @@
+/*
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If you
+**  did not receive the LICENSE file with this file, you may obtain it from the
+**  Vidalia source package distributed by the Vidalia Project at
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
+**  including this file, may be copied, modified, propagated, or distributed 
+**  except according to the terms described in the LICENSE file.
+*/
+
+/*
+** \file PluginEngine.cpp
+** \brief Engine that handles all plugin related features
+*/
+
 #include "PluginEngine.h"
 #include "VidaliaSettings.h"
 #include "PluginWrapper.h"
@@ -17,7 +32,7 @@ PluginEngine::PluginEngine(QObject *parent)
   globalObject().setProperty("torControl", newQObject(Vidalia::torControl()));
   globalObject().setProperty("vidaliaApp", newQObject(vApp));
 
-  globalObject().setProperty("include", newFunction(includeScript));
+//  globalObject().setProperty("include", newFunction(includeScript));
   globalObject().setProperty("importExtension", newFunction(importExtension));
   globalObject().setProperty("vdebug", newFunction(vdebug));
   globalObject().setProperty("findWidget", newFunction(findWidget));
@@ -30,9 +45,6 @@ PluginEngine::PluginEngine(QObject *parent)
     DebugDialog::outputDebug(QString("  %1").arg(ext));
 
   loadAllPlugins();
-
-//  debugger.attachTo(this);
-//  debugger.standardWindow()->show();
 }
 
 PluginEngine::~PluginEngine() 
@@ -104,75 +116,54 @@ PluginEngine::importExtension(QScriptContext *context, QScriptEngine *engine)
     return engine->importExtension(context->argument(0).toString());
 }
 
-QScriptValue 
-PluginEngine::includeScript(QScriptContext *context, QScriptEngine *engine)
-{
-  QString currentFileName = engine->globalObject().property("qs").property("script").property("absoluteFilePath").toString();
-  QFileInfo currentFileInfo(currentFileName);
-  QString path = currentFileInfo.path();
-  QString importFile = context->argument(0).toString();
-  QFileInfo importInfo(importFile);
-  if (importInfo.isRelative()) {
-      importFile =  path + "/" + importInfo.filePath();
-  }
-  if (!loadFile(importFile, engine)) {
-      return context->throwError(QString("Failed to resolve include: %1").arg(importFile));
-  }
-  return engine->toScriptValue(true);
-}
+//QScriptValue 
+//PluginEngine::includeScript(QScriptContext *context, QScriptEngine *engine)
+//{
+//  VidaliaSettings settings;
+//  QString path = settings.pluginPath();
+//  QString importFile = context->argument(0).toString();
+//  QFileInfo importInfo(importFile);
+//  if (importInfo.isRelative()) {
+//      importFile =  path + "/" + importInfo.filePath();
+//  }
 
-bool 
-PluginEngine::loadFile(QString fileName, QScriptEngine *engine)
-{
-    // avoid loading files more than once
-    static QSet<QString> loadedFiles;
-    QFileInfo fileInfo(fileName);
-    QString absoluteFileName = fileInfo.absoluteFilePath();
-    QString absolutePath = fileInfo.absolutePath();
-    QString canonicalFileName = fileInfo.canonicalFilePath();
-    if (loadedFiles.contains(canonicalFileName)) {
-        return true;
-    }
-    loadedFiles.insert(canonicalFileName);
-    QString path = fileInfo.path();
+//  if (!loadFile(importFile, engine)) {
+//      return context->throwError(QString("Failed to resolve include: %1").arg(importFile));
+//  }
+//  return engine->toScriptValue(true);
+//}
 
-    // load the file
-    QFile file(fileName);
-    if (file.open(QFile::ReadOnly)) {
-        QTextStream stream(&file);
-        QString contents = stream.readAll();
-        file.close();
+//bool 
+//PluginEngine::loadFile(QString fileName, QScriptEngine *engine)
+//{
+//    static QSet<QString> loadedFiles;
+//    QFileInfo fileInfo(fileName);
+//    QString absoluteFileName = fileInfo.absoluteFilePath();
+//    QString absolutePath = fileInfo.absolutePath();
+//    QString canonicalFileName = fileInfo.canonicalFilePath();
+//    if (loadedFiles.contains(canonicalFileName)) {
+//        return true;
+//    }
+//    loadedFiles.insert(canonicalFileName);
+//    QString path = fileInfo.path();
 
-        int endlineIndex = contents.indexOf('\n');
-        QString line = contents.left(endlineIndex);
-        int lineNumber = 1;
+//    QFile file(fileName);
+//    if (file.open(QFile::ReadOnly)) {
+//        QTextStream stream(&file);
+//        QString contents = stream.readAll();
+//        file.close();
 
-        // strip off #!/usr/bin/env qscript line
-        if (line.startsWith("#!")) {
-            contents.remove(0, endlineIndex+1);
-            ++lineNumber;
-        }
-
-        // set qt.script.absoluteFilePath
-        QScriptValue script = engine->globalObject().property("qs").property("script");
-        QScriptValue oldFilePathValue = script.property("absoluteFilePath");
-        QScriptValue oldPathValue = script.property("absolutePath");
-        script.setProperty("absoluteFilePath", engine->toScriptValue(absoluteFileName));
-        script.setProperty("absolutePath", engine->toScriptValue(absolutePath));
-
-        QScriptValue r = engine->evaluate(contents, fileName, lineNumber);
-        if (engine->hasUncaughtException()) {
-            QStringList backtrace = engine->uncaughtExceptionBacktrace();
-            qDebug() << QString("    %1\n%2\n\n").arg(r.toString()).arg(backtrace.join("\n"));
-            return true;
-        }
-        script.setProperty("absoluteFilePath", oldFilePathValue); // if we come from includeScript(), or whereever
-        script.setProperty("absolutePath", oldPathValue); // if we come from includeScript(), or whereever
-    } else {
-        return false;
-    }
-    return true;
-}
+//        QScriptValue r = engine->evaluate(contents);
+//        if (engine->hasUncaughtException()) {
+//            QStringList backtrace = engine->uncaughtExceptionBacktrace();
+//            qDebug() << QString("    %1\n%2\n\n").arg(r.toString()).arg(backtrace.join("\n"));
+//            return true;
+//        }
+//    } else {
+//        return false;
+//    }
+//    return true;
+//}
 
 QScriptValue
 PluginEngine::vdebug(QScriptContext *context, QScriptEngine *engine)
@@ -184,13 +175,14 @@ PluginEngine::vdebug(QScriptContext *context, QScriptEngine *engine)
     result.append(context->argument(i).toString());
   }
 
-  qWarning() << result;
+  vInfo(result);
 
   return engine->undefinedValue();
 }
 
 QScriptValue
-PluginEngine::findWidget(QScriptContext *context, QScriptEngine *engine) {
+PluginEngine::findWidget(QScriptContext *context, QScriptEngine *engine)
+{
   if(context->argumentCount() != 2)
     return context->throwError(QString("findWidget called with the wrong argument count. Expected 2."));
 
