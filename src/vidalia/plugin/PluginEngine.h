@@ -57,7 +57,7 @@ class PluginEngine : public QScriptEngine {
 
     QList<PluginWrapper *> wrappers;
 
-    QScriptEngineDebugger debugger;
+//    QScriptEngineDebugger debugger;
 };
 
 #endif
