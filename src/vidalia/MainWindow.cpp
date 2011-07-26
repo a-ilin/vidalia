@@ -118,7 +118,10 @@ MainWindow::MainWindow()
 }
 
 /** Destructor */
-MainWindow::~MainWindow() {}
+MainWindow::~MainWindow()
+{
+  delete _engine;
+}
 
 /** Calls the different methods that will handle the GUI "creation".
  * It's called once at the MainWindow creation. */

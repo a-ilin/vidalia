@@ -78,3 +78,14 @@ HelperProcessPrototype::setEnvironment(const QStringList &env)
   if(obj)
     obj->setEnvironment(env);
 }
+
+HelperProcess::ProcessState
+HelperProcessPrototype::state()
+{
+  HelperProcess *obj = qscriptvalue_cast<HelperProcess *>(thisObject());
+
+  if(obj)
+    return obj->state();
+
+  return HelperProcess::NotRunning;
+}

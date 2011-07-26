@@ -16,6 +16,7 @@
 #include "PluginWrapper.h"
 #include "PluginEngine.h"
 #include "DebugDialog.h"
+#include "Vidalia.h"
 
 #include <QtXml>
 
@@ -156,8 +157,10 @@ PluginWrapper::checkExceptions()
                             .arg(_engine->uncaughtExceptionLineNumber())
                             .arg(name()));
     DebugDialog::exceptDebug(tr("*** Backtrace:"));
-    foreach(QString line, _engine->uncaughtExceptionBacktrace())
+    foreach(QString line, _engine->uncaughtExceptionBacktrace()) {
+      vInfo(line);
       DebugDialog::exceptDebug(line);
+    }
 
     _engine->clearExceptions();
 
