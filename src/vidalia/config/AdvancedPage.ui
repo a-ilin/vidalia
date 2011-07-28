@@ -240,7 +240,7 @@
           </property>
          </widget>
         </item>
-        <item row="3" column="2">
+        <item row="2" column="2">
          <widget class="QCheckBox" name="chkAuto">
           <property name="text">
            <string>Configure ControlPort automatically</string>

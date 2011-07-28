@@ -185,8 +185,10 @@ AdvancedPage::save(QString &errmsg)
       _settings->setDataDirectory(dataDir);
   }
 
-  _settings->setControlAddress(controlAddress);
-  _settings->setControlPort(ui.lineControlPort->text().toUShort());
+  if(!ui.chkAuto->isChecked()) {
+    _settings->setControlAddress(controlAddress);
+    _settings->setControlPort(ui.lineControlPort->text().toUShort());
+  }
   _settings->setSocketPath(ui.lineSocketPath->text());
   _settings->setAutoControlPort(ui.chkAuto->isChecked());
 
@@ -394,6 +396,7 @@ AdvancedPage::toggleControl(bool)
     ui.lblPath->setEnabled(false);
     ui.lineSocketPath->setEnabled(false);
     ui.btnBrowseSocketPath->setEnabled(false);
+    ui.chkAuto->setEnabled(true);
   } else {
 #if !defined(Q_OS_WIN32)
     ui.lblAddress->setEnabled(false);
@@ -402,6 +405,7 @@ AdvancedPage::toggleControl(bool)
     ui.lblPath->setEnabled(true);
     ui.lineSocketPath->setEnabled(true);
     ui.btnBrowseSocketPath->setEnabled(true);
+    ui.chkAuto->setEnabled(false);
 #endif
   }
 }
@@ -409,8 +413,8 @@ AdvancedPage::toggleControl(bool)
 void
 AdvancedPage::toggleAuto(bool)
 {
-  ui.lblAddress->setEnabled(!ui.chkAuto->isChecked());
-  ui.lineControlAddress->setEnabled(!ui.chkAuto->isChecked());
-  ui.label->setEnabled(!ui.chkAuto->isChecked());
-  ui.lineControlPort->setEnabled(!ui.chkAuto->isChecked());
+  ui.lblAddress->setVisible(!ui.chkAuto->isChecked());
+  ui.lineControlAddress->setVisible(!ui.chkAuto->isChecked());
+  ui.label->setVisible(!ui.chkAuto->isChecked());
+  ui.lineControlPort->setVisible(!ui.chkAuto->isChecked());
 }
