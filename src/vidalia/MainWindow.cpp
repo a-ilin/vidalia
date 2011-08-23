@@ -596,6 +596,7 @@ MainWindow::start()
       }
       args << "HashedControlPassword"
            << TorSettings::hashPassword(_controlPassword);
+
       break;
     case TorSettings::CookieAuth:
       args << "CookieAuthentication"  << "1";
@@ -633,8 +634,20 @@ MainWindow::started()
   if(settings.autoControlPort()) {
     QString dataDirectory = settings.getDataDirectory();
     QFile file(QString("%1/port.conf").arg(expand_filename(dataDirectory)));
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    int tries = 0, maxtries = 5;
+    while((!file.open(QIODevice::ReadOnly | QIODevice::Text)) and
+          (tries++ < maxtries)) {
+      vWarn(QString("This is try number: %1.").arg(tries));
+      sleep(1);
+    }
+
+    if(tries >= maxtries) {
+      vWarn("Couldn't read port.conf file");
+      connectFailed(QString("Vidalia can't find out how to talk to Tor because it can't access this file: %1\n\nHere's the last error message:\n %2")
+                    .arg(file.fileName())
+                    .arg(file.errorString()));
       return;
+    }
 
     QTextStream in(&file);
     if(!in.atEnd()) {
@@ -650,6 +663,8 @@ MainWindow::started()
       quint16 port = addrPort.at(1).toInt();
       _torControl->connect(addr, port);
     }
+
+    file.close();
   } else {
     /* Try to connect to Tor's control port */
     if(settings.getControlMethod() == ControlMethod::Port)
@@ -1220,6 +1235,10 @@ MainWindow::authenticate()
       TorSettings settings;
       _controlPassword = settings.getControlPassword();
     }
+
+    qputenv("TOR_CONTROL_PASSWD",
+            _controlPassword.toAscii().toHex());
+
     return _torControl->authenticate(_controlPassword);
   }
   /* No authentication. Send an empty password. */
