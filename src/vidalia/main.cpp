@@ -204,10 +204,12 @@ main(int argc, char *argv[])
   Vidalia::setQuitOnLastWindowClosed(false);
 
   /* Create an instance of the main window  */
-  MainWindow mainWin;
+  MainWindow *mainWin = new MainWindow();
 
   /* Run Vidalia */
   int ret = vidalia.run();
+
+  delete mainWin;;
 
   /* Vidalia exited, so cleanup our pidfile and return */
   QFile::remove(pidfile);
