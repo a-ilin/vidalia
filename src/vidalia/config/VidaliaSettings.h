@@ -33,6 +33,12 @@ class VidaliaSettings : public VSettings
   Q_OBJECT
 
 public:
+  enum IconPosition {
+    Tray,
+    Dock,
+    Both,
+  };
+
   /** Default constructor. */
   VidaliaSettings();
 
@@ -132,11 +138,12 @@ public:
   void setPluginPath(const QString &path);
 
   /** Get the icon preference */
-  QString getIconPref() const;
+  IconPosition getIconPref();
 
   /** Set the icon preference */
-  void setIconPref(const QString &iconPref);
->>>>>>> 4df4ee1... Implement Icon Preference (appearance setting) in OSX (see #2163)
+  void setIconPref(const IconPosition iconPref);
+  QString toString(const IconPosition iconPref);
+  IconPosition fromString(QString iconPref);
 };
 
 #endif

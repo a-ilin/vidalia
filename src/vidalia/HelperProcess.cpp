@@ -45,6 +45,9 @@
 #include <QString>
 #include <QFileInfo>
 
+#ifdef Q_WS_MAC 
+#include <Carbon/Carbon.h> 
+#endif 
 
 /** Default constructor */
 HelperProcess::HelperProcess(QObject *parent)
@@ -131,3 +134,17 @@ HelperProcess::isDone() const
   return state() == NotRunning;
 }
 
+void
+HelperProcess::toForeground()
+{
+#if defined(Q_WS_MAC) 
+  ProcessSerialNumber psn;
+  OSStatus st;
+
+  do {
+    st = GetProcessForPID(pid(), &psn);
+  } while(st == -600);
+
+  SetFrontProcess(&psn);
+#endif 
+}

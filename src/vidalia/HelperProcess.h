@@ -58,6 +58,8 @@ public:
   void start(const QString &app, const QStringList &args);
   /** Returns true iff process is not running. */
   bool isDone() const;
+  /** Bring process to foreground */
+  void toForeground();
 
 signals:
   /** Invoked when start() fails. */

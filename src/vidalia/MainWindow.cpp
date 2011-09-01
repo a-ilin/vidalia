@@ -122,7 +122,7 @@ MainWindow::MainWindow()
 
 #if defined(Q_WS_MAC)
   /* Display OSX dock icon if icon preference is not set to "Tray Only" */
-  if (settings.getIconPref() != "Tray") {
+  if (settings.getIconPref() != VidaliaSettings::Tray) {
     ProcessSerialNumber psn = { 0, kCurrentProcess };
     TransformProcessType(&psn, kProcessTransformToForegroundApplication);
   }
@@ -1438,7 +1438,7 @@ MainWindow::setTrayIcon(const QString &iconFile)
   QApplication::setWindowIcon(QPixmap(iconFile));
 
   /* only display tray icon if icon preference is not set to "Dock Only" */
-  if (settings.getIconPref() != "Dock")
+  if (settings.getIconPref() != VidaliaSettings::Dock)
     _trayIcon.setIcon(QIcon(iconFile));
 #else
   /* always display tray icon for other platforms */
