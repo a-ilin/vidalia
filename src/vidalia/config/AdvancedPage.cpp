@@ -121,6 +121,16 @@ AdvancedPage::save(QString &errmsg)
   QHostAddress controlAddress(ui.lineControlAddress->text());
   QString path(ui.lineSocketPath->text());
 
+  if(ui.chkAuto->isChecked()) {
+    if(ui.lineTorDataDirectory->text().isEmpty()) {
+      errmsg = tr("You've checked the autoconfiguration option for the ControlPort, but"
+                  " provided no Data Directory. Please add one, or uncheck the"
+                  " \"Configure ControlPort automatically\" option.");
+      return false;
+    }
+    _settings->setAutoControlPort(true);
+  }
+
   /* Validate the control settings */
   if(ui.rdoControlPort->isChecked()) {
     if (controlAddress.isNull()) {
@@ -190,7 +200,6 @@ AdvancedPage::save(QString &errmsg)
     _settings->setControlPort(ui.lineControlPort->text().toUShort());
   }
   _settings->setSocketPath(ui.lineSocketPath->text());
-  _settings->setAutoControlPort(ui.chkAuto->isChecked());
 
   _settings->setAuthenticationMethod(authMethod);
   _settings->setUseRandomPassword(ui.chkRandomPassword->isChecked());
@@ -233,6 +242,10 @@ AdvancedPage::load()
   ui.chkUseService->setChecked(s.isInstalled());
 #endif
 #endif
+  if(Vidalia::torControl()->getTorVersion() < 0x2021a) { // 0x2021a == 0.2.2.26
+    ui.chkAuto->setChecked(false);
+    ui.chkAuto->setVisible(false);
+  }
 }
 
 /** Called when the user selects a different authentication method from the
