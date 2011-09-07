@@ -75,6 +75,9 @@ private slots:
    * a more advanced way */
   void displayTorrcDialog();
 
+  /** Called when the user checks "Configure ControlPort automatically" */
+  void toggleAuto(bool);
+
 private:
   /** Returns the authentication method for the given <b>index</b>. */
   TorSettings::AuthenticationMethod indexToAuthMethod(int index);

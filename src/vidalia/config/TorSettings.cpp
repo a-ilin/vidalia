@@ -44,6 +44,7 @@
 #define SETTING_REJECT_PLAINTEXT_PORTS  "RejectPlaintextPorts"
 #define SETTING_BOOTSTRAP            "Bootstrap"
 #define SETTING_BOOTSTRAP_FROM       "BootstrapFrom"
+#define SETTING_AUTOCONTROL          "AutoControl"
 
 /** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
@@ -92,6 +93,7 @@ TorSettings::TorSettings(TorControl *torControl)
   setDefault(SETTING_REJECT_PLAINTEXT_PORTS, QList<QVariant>());
   setDefault(SETTING_BOOTSTRAP, false);
   setDefault(SETTING_BOOTSTRAP_FROM, "");
+  setDefault(SETTING_AUTOCONTROL, true);
 }
 
 /** Applies any changes to Tor's control port or authentication settings. */
@@ -449,4 +451,16 @@ QString
 TorSettings::bootstrapFrom() const
 {
   return QDir::convertSeparators(value(SETTING_BOOTSTRAP_FROM).toString());
+}
+
+bool 
+TorSettings::autoControlPort() const
+{
+  return value(SETTING_AUTOCONTROL).toBool();
+}
+
+void 
+TorSettings::setAutoControlPort(const bool autoControl)
+{
+  setValue(SETTING_AUTOCONTROL, autoControl);
 }

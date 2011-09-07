@@ -72,6 +72,13 @@ public:
   /** Get the current control method */
   ControlMethod::Method getControlMethod() const;
 
+  /** Returns true if Vidalia will get the ControlPort automatically from
+   * Tor */
+  bool autoControlPort() const;
+
+  /** Sets whether Vidalia should get the ControlPort from Tor */
+  void setAutoControlPort(const bool auto);
+
   /** Set the control method */
   void setControlMethod(ControlMethod::Method method);
 

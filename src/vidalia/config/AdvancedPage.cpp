@@ -64,6 +64,7 @@ AdvancedPage::AdvancedPage(QWidget *parent)
           this, SLOT(displayTorrcDialog()));
   connect(ui.rdoControlPort, SIGNAL(toggled(bool)), this, SLOT(toggleControl(bool)));
   connect(ui.btnBrowseSocketPath, SIGNAL(clicked()), this, SLOT(browseSocketPath()));
+  connect(ui.chkAuto, SIGNAL(toggled(bool)), this, SLOT(toggleAuto(bool)));
 
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
@@ -119,6 +120,16 @@ AdvancedPage::save(QString &errmsg)
 {
   QHostAddress controlAddress(ui.lineControlAddress->text());
   QString path(ui.lineSocketPath->text());
+
+  if(ui.chkAuto->isChecked()) {
+    if(ui.lineTorDataDirectory->text().isEmpty()) {
+      errmsg = tr("You've checked the autoconfiguration option for the ControlPort, but"
+                  " provided no Data Directory. Please add one, or uncheck the"
+                  " \"Configure ControlPort automatically\" option.");
+      return false;
+    }
+    _settings->setAutoControlPort(true);
+  }
 
   /* Validate the control settings */
   if(ui.rdoControlPort->isChecked()) {
@@ -184,8 +195,10 @@ AdvancedPage::save(QString &errmsg)
       _settings->setDataDirectory(dataDir);
   }
 
-  _settings->setControlAddress(controlAddress);
-  _settings->setControlPort(ui.lineControlPort->text().toUShort());
+  if(!ui.chkAuto->isChecked()) {
+    _settings->setControlAddress(controlAddress);
+    _settings->setControlPort(ui.lineControlPort->text().toUShort());
+  }
   _settings->setSocketPath(ui.lineSocketPath->text());
 
   _settings->setAuthenticationMethod(authMethod);
@@ -212,6 +225,7 @@ AdvancedPage::load()
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
   ui.lineTorConfig->setText(_settings->getTorrc());
   ui.lineTorDataDirectory->setText(_settings->getDataDirectory());
+  ui.chkAuto->setChecked(_settings->autoControlPort());
 
   ui.cmbAuthMethod->setCurrentIndex(
     authMethodToIndex(_settings->getAuthenticationMethod()));
@@ -228,6 +242,10 @@ AdvancedPage::load()
   ui.chkUseService->setChecked(s.isInstalled());
 #endif
 #endif
+  if(Vidalia::torControl()->getTorVersion() < 0x2021a) { // 0x2021a == 0.2.2.26
+    ui.chkAuto->setChecked(false);
+    ui.chkAuto->setVisible(false);
+  }
 }
 
 /** Called when the user selects a different authentication method from the
@@ -391,6 +409,7 @@ AdvancedPage::toggleControl(bool)
     ui.lblPath->setEnabled(false);
     ui.lineSocketPath->setEnabled(false);
     ui.btnBrowseSocketPath->setEnabled(false);
+    ui.chkAuto->setEnabled(true);
   } else {
 #if !defined(Q_OS_WIN32)
     ui.lblAddress->setEnabled(false);
@@ -399,6 +418,16 @@ AdvancedPage::toggleControl(bool)
     ui.lblPath->setEnabled(true);
     ui.lineSocketPath->setEnabled(true);
     ui.btnBrowseSocketPath->setEnabled(true);
+    ui.chkAuto->setEnabled(false);
 #endif
   }
+}
+
+void
+AdvancedPage::toggleAuto(bool)
+{
+  ui.lblAddress->setVisible(!ui.chkAuto->isChecked());
+  ui.lineControlAddress->setVisible(!ui.chkAuto->isChecked());
+  ui.label->setVisible(!ui.chkAuto->isChecked());
+  ui.lineControlPort->setVisible(!ui.chkAuto->isChecked());
 }
