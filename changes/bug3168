@@ -1,0 +1,2 @@
+  o Fix wrong behavior when trying to connect to an already running
+    tor instance. Fixes bug 3168.

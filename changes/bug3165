@@ -1,0 +1,2 @@
+  o Make the main window visible when opening a tab through the system
+    tray menu. Fixes bug 3165.

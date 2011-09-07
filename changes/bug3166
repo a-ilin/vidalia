@@ -1,0 +1,2 @@
+  o Fixes wrong spelling in the method showBandwidthTab inside
+    MainWindow. Resolves ticket 3166.

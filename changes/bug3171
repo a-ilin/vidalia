@@ -1,0 +1,2 @@
+  o Prevent restarting Tor when it hasn't been started yet. Fixes bug
+    3171.

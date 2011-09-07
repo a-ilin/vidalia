@@ -1,0 +1,2 @@
+  o Display the message "Connected to the Tor network!" centered in
+    the main window. Fixes bug 3147.
