@@ -88,6 +88,10 @@ private slots:
   void disconnected();
   /** Called when Vidalia has successfully authenticated to Tor. */
   void authenticated();
+  /** Called when authenticated() detects that you can do auth with a cookie */
+  bool tryCookie(const ProtocolInfo &pi);
+  /** Called when cookie auth fails or when it's the only method configured */
+  bool tryHashed();
   /** Called when Vidalia fails to authenticate to Tor. The failure reason is
    * specified in <b>errmsg</b>. */
   void authenticationFailed(QString errmsg);

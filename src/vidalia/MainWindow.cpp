@@ -1204,8 +1204,9 @@ MainWindow::authenticate()
 
   authMethod = settings.getAuthenticationMethod(); 
   pi = _torControl->protocolInfo();
+  QStringList authMethods;
   if (!pi.isEmpty()) {
-    QStringList authMethods = pi.authMethods();
+    authMethods = pi.authMethods();
     if (authMethods.contains("COOKIE"))
       authMethod = TorSettings::CookieAuth;
     else if (authMethods.contains("HASHEDPASSWORD"))
@@ -1213,47 +1214,19 @@ MainWindow::authenticate()
     else if (authMethods.contains("NULL"))
       authMethod = TorSettings::NullAuth;
   }
-  
+
   if (authMethod == TorSettings::CookieAuth) {
-    /* Try to load an auth cookie and send it to Tor */
-    QByteArray cookie = loadControlCookie(pi.cookieAuthFile());
-    while (cookie.isEmpty()) {
-      /* Prompt the user to find their control_auth_cookie */
-      int ret = VMessageBox::question(this,
-                  tr("Cookie Authentication Required"),
-                  p(tr("The Tor software requires Vidalia to send the "
-                       "contents of an authentication cookie, but Vidalia "
-                       "was unable to find one."))
-                  + p(tr("Would you like to browse for the file "
-                         "'control_auth_cookie' yourself?")),
-                VMessageBox::Browse|VMessageBox::Default,
-                VMessageBox::Cancel|VMessageBox::Escape);
-      
-      if (ret == VMessageBox::Cancel)
+    if(!tryCookie(pi)) {
+      if(authMethods.contains("HASHEDPASSWORD") and !tryHashed()) {
         goto cancel;
-      QString cookieDir = QFileDialog::getOpenFileName(this,
-                            tr("Data Directory"),
-                            settings.getDataDirectory(),
-                            tr("Control Cookie (control_auth_cookie)"));
-      if (cookieDir.isEmpty())
-        goto cancel;
-      cookieDir = QFileInfo(cookieDir).absolutePath();
-      cookie = loadControlCookie(cookieDir);
+      } else {
+        return true;
+      }
+    } else {
+      return true;
     }
-    vNotice("Authenticating using 'cookie' authentication.");
-    return _torControl->authenticate(cookie);
   } else if (authMethod == TorSettings::PasswordAuth) {
-    /* Get the control password and send it to Tor */
-    vNotice("Authenticating using 'hashed password' authentication.");
-    if (_useSavedPassword) {
-      TorSettings settings;
-      _controlPassword = settings.getControlPassword();
-    }
-
-    qputenv("TOR_CONTROL_PASSWD",
-            _controlPassword.toAscii().toHex());
-
-    return _torControl->authenticate(_controlPassword);
+    return tryHashed();
   }
   /* No authentication. Send an empty password. */
   vNotice("Authenticating using 'null' authentication.");
@@ -1266,6 +1239,55 @@ cancel:
   else
     disconnect();
   return false;
+}
+
+bool
+MainWindow::tryCookie(const ProtocolInfo &pi)
+{
+  TorSettings settings;
+  /* Try to load an auth cookie and send it to Tor */
+  QByteArray cookie = loadControlCookie(pi.cookieAuthFile());
+  while (cookie.isEmpty()) {
+    /* Prompt the user to find their control_auth_cookie */
+    int ret = VMessageBox::question(this,
+                                    tr("Cookie Authentication Required"),
+                                    p(tr("The Tor software requires Vidalia to send the "
+                                         "contents of an authentication cookie, but Vidalia "
+                                         "was unable to find one."))
+                                    + p(tr("Would you like to browse for the file "
+                                           "'control_auth_cookie' yourself?")),
+                                    VMessageBox::Browse|VMessageBox::Default,
+                                    VMessageBox::Cancel|VMessageBox::Escape);
+      
+    if (ret == VMessageBox::Cancel)
+      return false;
+    QString cookieDir = QFileDialog::getOpenFileName(this,
+                                                     tr("Data Directory"),
+                                                     settings.getDataDirectory(),
+                                                     tr("Control Cookie (control_auth_cookie)"));
+    if (cookieDir.isEmpty())
+      return false;
+    cookieDir = QFileInfo(cookieDir).absolutePath();
+    cookie = loadControlCookie(cookieDir);
+  }
+  vNotice("Authenticating using 'cookie' authentication.");
+  return _torControl->authenticate(cookie);
+}
+
+bool
+MainWindow::tryHashed()
+{
+  /* Get the control password and send it to Tor */
+  vNotice("Authenticating using 'hashed password' authentication.");
+  if (_useSavedPassword) {
+    TorSettings settings;
+    _controlPassword = settings.getControlPassword();
+  }
+
+  qputenv("TOR_CONTROL_PASSWD",
+          _controlPassword.toAscii().toHex());
+
+  return _torControl->authenticate(_controlPassword);
 }
 
 /** Checks the status of the current version of Tor to see if it's old,
