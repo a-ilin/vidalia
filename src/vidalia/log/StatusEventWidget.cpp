@@ -186,7 +186,7 @@ StatusEventWidget::find(const QString &text, bool highlight)
       continue;
 
     if (item->title().contains(text, Qt::CaseInsensitive)
-          || item->description().contains(text, Qt::CaseInsensitive)) {
+        || item->description().contains(text, Qt::CaseInsensitive)) {
       items.append(item);
       if (highlight)
         item->setSelected(true);
@@ -217,7 +217,7 @@ StatusEventWidget::addNotification(const QPixmap &icon,
 
   // Create the new notification item
   StatusEventItem *item = new StatusEventItem(this);
-  item->setTimestamp(QTime::currentTime());
+  item->setTimestamp(QDateTime::currentDateTime());
   item->setIcon(icon);
   item->setTitle(title);
   item->setDescription(description);
