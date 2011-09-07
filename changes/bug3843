@@ -1,0 +1,2 @@
+  o Check tor version and that settings are sanitized before trying to
+    use the port autoconfiguration feature. Fixes bug 3843.
