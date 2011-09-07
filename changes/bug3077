@@ -6,7 +6,7 @@
     break backwards compatibility for people that aren't using Vidalia
     inside Tor Browser Bundle.
   o Check tor version and that settings are sanitized before trying to
-    use the port autoconfiguration feature.
+    use the port autoconfiguration feature. Fixes bug 3843.
   o Provide the necessary fields (Control password, ControlPort) to let 
     TorButton NEWNYM. Vidalia provides these in env vars when it launches
     the Firefox instance. Resolves bug 2659.
