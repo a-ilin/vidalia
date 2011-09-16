@@ -1,0 +1,2 @@
+  o Draw the bandwidth graph curves based on the local maximum, not
+    the global maximum. Fixes bug 2188.

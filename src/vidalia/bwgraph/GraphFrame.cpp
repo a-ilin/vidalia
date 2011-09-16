@@ -15,7 +15,7 @@
 
 #include "GraphFrame.h"
 
-#include <QtGlobal>
+#include <QtGui>
 
 
 /** Default contructor */
@@ -31,7 +31,8 @@ GraphFrame::GraphFrame(QWidget *parent)
   /* Initialize graph values */
   _recvData->prepend(0);
   _sendData->prepend(0);
-  _maxPoints = getNumPoints();  
+  _maxPoints = getNumPoints();
+  _maxPosition = 0;
   _showRecv = true;
   _showSend = true;
   _maxValue = MIN_SCALE;
@@ -51,9 +52,7 @@ GraphFrame::~GraphFrame()
 int
 GraphFrame::getNumPoints()
 {
-  QDesktopWidget *desktop = QApplication::desktop();
-  int width = desktop->width();
-  return width;
+  return size().width() - _scaleWidth;
 }
 
 /** Adds new data points to the graph. */
@@ -66,6 +65,18 @@ GraphFrame::addPoints(qreal recv, qreal send)
     _recvData->removeLast();
   }
 
+  /* Update the displayed maximum */
+  if (_maxPosition >= _maxPoints) {
+    _maxValue = MIN_SCALE;
+    foreach(qreal send, *_sendData)
+      if(send > _maxValue)
+        _maxValue = send;
+    foreach(qreal recv, *_recvData)
+      if(recv > _maxValue)
+        _maxValue = recv;
+    _maxPosition = 0;
+  }
+
   /* Add the points to their respective lists */
   _sendData->prepend(send);
   _recvData->prepend(recv);
@@ -74,9 +85,23 @@ GraphFrame::addPoints(qreal recv, qreal send)
   _totalSend += send;
   _totalRecv += recv;
   
+  bool maxUpdated = false;
   /* Check for a new maximum value */
-  if (send > _maxValue) _maxValue = send;
-  if (recv > _maxValue) _maxValue = recv;
+  if (send > _maxValue) {
+    _maxValue = send;
+    maxUpdated = true;
+  }
+
+  if (recv > _maxValue) {
+    _maxValue = recv;
+    maxUpdated = true;
+  }
+
+  if (maxUpdated) {
+    _maxPosition = 0;
+  } else {
+    _maxPosition++;
+  }
 
   this->update();
 }
@@ -318,3 +343,9 @@ GraphFrame::paintScale()
   _painter->drawLine(_scaleWidth, top, _scaleWidth, bottom);
 }
 
+void
+GraphFrame::resizeEvent(QResizeEvent *ev)
+{
+  _maxPoints = ev->size().width() - _scaleWidth;
+  _maxPoints /= SCROLL_STEP;
+}

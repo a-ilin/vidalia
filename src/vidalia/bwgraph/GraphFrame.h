@@ -89,6 +89,8 @@ private:
   /** Paints an integral using the supplied data. */
   void paintIntegral(QVector<QPointF> points, QColor color, qreal alpha = 1.0);
 
+  void resizeEvent(QResizeEvent *ev);
+
   /** Style with which the bandwidth data will be graphed. */
   GraphStyle _graphStyle;
   /** A QPainter object that handles drawing the various graph elements. */
@@ -101,6 +103,8 @@ private:
   QRect _rec;
   /** The maximum data value plotted. */
   qreal _maxValue;
+  /** The position of the local maximum in the displayed bandwidth */
+  int _maxPosition;
   /** The maximum number of points to store. */
   int _maxPoints;
   /** The total data sent/recv. */
