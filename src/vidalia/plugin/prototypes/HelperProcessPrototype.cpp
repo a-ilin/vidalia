@@ -89,3 +89,12 @@ HelperProcessPrototype::state()
 
   return HelperProcess::NotRunning;
 }
+
+void
+HelperProcessPrototype::toForeground()
+{
+  HelperProcess *obj = qscriptvalue_cast<HelperProcess *>(thisObject());
+
+  if(obj)
+    obj->toForeground();
+}

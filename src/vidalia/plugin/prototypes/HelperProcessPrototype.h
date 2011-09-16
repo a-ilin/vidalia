@@ -22,6 +22,7 @@ class HelperProcessPrototype : public QObject, public QScriptable
     Q_INVOKABLE QStringList systemEnvironment();
     Q_INVOKABLE void setEnvironment(const QStringList &env);
     Q_INVOKABLE QProcess::ProcessState state();
+    Q_INVOKABLE void toForeground();
 };
 
 Q_DECLARE_METATYPE(HelperProcess *);
