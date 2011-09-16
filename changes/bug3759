@@ -1,0 +1,3 @@
+  o Change the parameter for ordering the entries in the Basic Log
+    list from currentTime to currentDateTime to avoid missplacing
+    entries from different days.

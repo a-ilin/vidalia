@@ -15,7 +15,7 @@
 
 #include "StatusEventItem.h"
 
-#include <QTime>
+#include <QDateTime>
 #include <QPixmap>
 #include <QString>
 
@@ -25,15 +25,15 @@ StatusEventItem::StatusEventItem(QTreeWidget *parent)
 }
 
 void
-StatusEventItem::setTimestamp(const QTime &timestamp)
+StatusEventItem::setTimestamp(const QDateTime &timestamp)
 {
   setData(0, TimestampRole, timestamp);
 }
 
-QTime
+QDateTime
 StatusEventItem::timestamp() const
 {
-  return data(0, TimestampRole).toTime();
+  return data(0, TimestampRole).toDateTime();
 }
 
 void
@@ -101,8 +101,8 @@ StatusEventItem::toString() const
 bool
 StatusEventItem::operator<(const QTreeWidgetItem &other) const
 {
-  QTime a = data(0, TimestampRole).toTime();
-  QTime b = other.data(0, TimestampRole).toTime();
+  QDateTime a = data(0, TimestampRole).toDateTime();
+  QDateTime b = other.data(0, TimestampRole).toDateTime();
 
   return (a < b);
 }

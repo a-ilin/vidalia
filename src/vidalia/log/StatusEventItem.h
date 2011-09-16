@@ -18,7 +18,7 @@
 
 #include <QTreeWidgetItem>
 
-class QTime;
+class QDateTime;
 class QPixmap;
 class QString;
 
@@ -44,12 +44,12 @@ public:
   /** Sets the <b>timestamp</b> at which this status event occurred.
    * \sa timestamp()
    */
-  void setTimestamp(const QTime &timestamp);
+  void setTimestamp(const QDateTime &timestamp);
 
   /** Returns the timestamp at which this status event occurred.
    * \sa setTimestamp()
    */
-  QTime timestamp() const;
+  QDateTime timestamp() const;
 
   /** Sets the icon to be drawn along with this status event to <b>pixmap</b>.
    * \sa icon()
