@@ -36,6 +36,7 @@ PluginEngine::PluginEngine(QObject *parent)
   globalObject().setProperty("importExtension", newFunction(importExtension));
   globalObject().setProperty("vdebug", newFunction(vdebug));
   globalObject().setProperty("findWidget", newFunction(findWidget));
+  globalObject().setProperty("sleep", newFunction(sleep));
 
   VidaliaSettings settings;
   globalObject().setProperty("pluginPath", QScriptValue(settings.pluginPath()));
@@ -200,4 +201,21 @@ PluginEngine::findWidget(QScriptContext *context, QScriptEngine *engine)
   }
 
   return ret;
+}
+
+QScriptValue
+PluginEngine::sleep(QScriptContext *context, QScriptEngine *engine)
+{
+  if(context->argumentCount() != 1)
+    return context->throwError(QString("sleep must be called with 1 parameter."));
+
+  int s = context->argument(1).toInt32();
+
+#if defined(Q_WS_WIN)
+  Sleep(s*1000);
+#else
+  !::sleep(s);
+#endif
+
+  return engine->nullValue();
 }

@@ -121,6 +121,7 @@ MainWindow::MainWindow()
   updateTorStatus(Stopped);
 
 #if defined(Q_WS_MAC)
+  VidaliaSettings settings;
   /* Display OSX dock icon if icon preference is not set to "Tray Only" */
   if (settings.getIconPref() != VidaliaSettings::Tray) {
     ProcessSerialNumber psn = { 0, kCurrentProcess };
@@ -661,7 +662,11 @@ MainWindow::started()
     while((!file.open(QIODevice::ReadOnly | QIODevice::Text)) and
           (tries++ < maxtries)) {
       vWarn(QString("This is try number: %1.").arg(tries));
+#if defined(Q_WS_WIN)
+      Sleep(1000);
+#else
       sleep(1);
+#endif
     }
 
     if(tries >= maxtries) {
