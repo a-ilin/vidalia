@@ -672,7 +672,7 @@ MainWindow::started()
     if(tries >= maxtries) {
       vWarn("Couldn't read port.conf file");
       if(_torControl->isRunning()) {
-        connectFailed(tr("Vidalia can't find out how to talk to Tor because it can't access this file: %1\n\nHere's the last error message:\n%2")
+        connectFailed(tr("Vidalia can't find out how to talk to Tor because it can't access this file: %1\n\nHere's the last error message:\n %2")
                       .arg(file.fileName())
                       .arg(file.errorString()));
       } else {
