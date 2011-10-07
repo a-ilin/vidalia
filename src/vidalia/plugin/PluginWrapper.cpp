@@ -38,6 +38,7 @@ PluginWrapper::PluginWrapper(const QString &info_path, PluginEngine *engine, QOb
       if(res.state() == QScriptSyntaxCheckResult::Valid) {
         DebugDialog::outputDebug("Everything's ok, evaluating...");
         _engine->evaluate(contents);
+        checkExceptions();
       } else {
         DebugDialog::syntaxDebug(tr("%4: ERROR: Line: %1 - Column: %2\n%3")
                                 .arg(res.errorLineNumber())
@@ -154,8 +155,8 @@ PluginWrapper::checkExceptions()
 {
   if(_engine->hasUncaughtException()) {
     DebugDialog::exceptDebug(tr("%2:\n*** Exception in line %1")
-                            .arg(_engine->uncaughtExceptionLineNumber())
-                            .arg(name()));
+                             .arg(_engine->uncaughtExceptionLineNumber())
+                             .arg(_engine->uncaughtException().toString()));
     DebugDialog::exceptDebug(tr("*** Backtrace:"));
     foreach(QString line, _engine->uncaughtExceptionBacktrace()) {
       vInfo(line);
