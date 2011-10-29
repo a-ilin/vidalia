@@ -15,65 +15,7 @@ set(VIDALIA_APP_BUNDLE_ROOT ${Vidalia_BINARY_DIR}/src/vidalia/Vidalia.app)
 get_target_property(VIDALIA_EXECUTABLE Vidalia LOCATION)
 add_custom_target(dist-osx-libraries DEPENDS Vidalia)
 if (QT_USE_FRAMEWORKS)
-  vidalia_install_qt4_framework(QtCore
-    TARGET dist-osx-libraries NAME QtCore
-    LIBRARY ${QT_QTCORE_LIBRARY_RELEASE}/QtCore
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-  )
-  vidalia_install_qt4_framework(QtGui
-    TARGET dist-osx-libraries NAME QtGui
-    LIBRARY ${QT_QTGUI_LIBRARY_RELEASE}/QtGui
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-    DEPENDS_FRAMEWORKS ${QtCore}
-  )
-  vidalia_install_qt4_framework(QtNetwork
-    TARGET dist-osx-libraries NAME QtNetwork
-    LIBRARY ${QT_QTNETWORK_LIBRARY_RELEASE}/QtNetwork
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-    DEPENDS_FRAMEWORKS ${QtCore}
-  )
-  vidalia_install_qt4_framework(QtXml
-    TARGET dist-osx-libraries NAME QtXml
-    LIBRARY ${QT_QTXML_LIBRARY_RELEASE}/QtXml
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-    DEPENDS_FRAMEWORKS ${QtCore}
-  )
-  vidalia_install_qt4_framework(QtScript
-    TARGET dist-osx-libraries NAME QtScript
-    LIBRARY ${QT_QTSCRIPT_LIBRARY_RELEASE}/QtScript
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-    DEPENDS_FRAMEWORKS ${QtCore}
-  )
-  vidalia_install_name_tool(${VIDALIA_EXECUTABLE}
-    TARGET dist-osx-libraries
-    FRAMEWORKS ${QtCore} ${QtGui} ${QtNetwork} ${QtXml}
-  )
   if (USE_MARBLE)
-    vidalia_install_qt4_framework(QtSvg
-      TARGET dist-osx-libraries NAME QtSvg
-      LIBRARY ${QT_QTSVG_LIBRARY_RELEASE}/QtSvg
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui}
-    )
-    vidalia_install_qt4_framework(QtDBus
-      TARGET dist-osx-libraries NAME QtDBus
-      LIBRARY ${QT_QTDBUS_LIBRARY_RELEASE}/QtDBus
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore} ${QtXml}
-    )
-    vidalia_install_qt4_framework(QtPhonon
-      TARGET dist-osx-libraries NAME phonon
-      LIBRARY ${QT_PHONON_LIBRARY_RELEASE}/phonon
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui} ${QtXml} ${QtDBus}
-    )
-    vidalia_install_qt4_framework(QtWebKit
-      TARGET dist-osx-libraries NAME QtWebKit
-      LIBRARY ${QT_QTWEBKIT_LIBRARY_RELEASE}/QtWebKit
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui} ${QtNetwork} ${QtXml} ${QtDBus}
-                         ${QtPhonon}
-    )
     vidalia_install_dylib(MarbleWidget
       TARGET dist-osx-libraries
       LIBRARY ${MARBLEWIDGET_LIBRARY}
@@ -83,7 +25,6 @@ if (QT_USE_FRAMEWORKS)
     )
     vidalia_install_name_tool(${VIDALIA_EXECUTABLE}
       TARGET dist-osx-libraries
-      FRAMEWORKS ${QtSvg} ${QtDBus} ${QtScript} ${QtWebKit}
       LIBRARIES ${MARBLEWIDGET_LIBRARY}
     )
   endif(USE_MARBLE)
@@ -96,6 +37,7 @@ else(OSX_FAT_BINARY)
 endif(OSX_FAT_BINARY)
 
 add_custom_target(dist-osx
+  COMMAND ${QT_BINARY_DIR}/macdeployqt ${VIDALIA_APP_BUNDLE_ROOT}
   COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/pkg-dmg
     --source ${VIDALIA_APP_BUNDLE_ROOT}
     --target ${Vidalia_BINARY_DIR}/vidalia-${VERSION}-${DMG_ARCH}.dmg
@@ -131,6 +73,7 @@ if (TOR_SOURCE_DIR)
 
   set(bundle_DMG "vidalia-bundle-${TOR_VERSION}-${VERSION}-${DMG_ARCH}.dmg")
   add_custom_target(dist-osx-bundle
+    COMMAND ${QT_BINARY_DIR}/macdeployqt ${VIDALIA_APP_BUNDLE_ROOT}
     COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/pkg-dmg
       --source ${VIDALIA_APP_BUNDLE_ROOT}
       --target ${Vidalia_BINARY_DIR}/${bundle_DMG}
