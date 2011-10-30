@@ -317,6 +317,13 @@ NetworkPage::save(QString &errmsg)
   }
   settings.setReachablePorts(reachablePorts);
 
+  if (ui.chkUseBridges->isChecked()) {
+    if (ui.listBridges->count() < 1) {
+      errmsg = tr("You must specify one or more briges.");
+      return false;
+    }
+  }
+
   /* Save the bridge settings */
   settings.setUseBridges(ui.chkUseBridges->isChecked());
   for (int i = 0; i < ui.listBridges->count(); i++)
