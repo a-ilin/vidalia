@@ -142,14 +142,10 @@ msgstr ""
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
 msgid ""
-"Even if you do not know any bridge relay addresses, checking this checkbox "
-"may still be helpful. Tor will encrypt its directory requests, which can "
-"defeat blocking mechanisms that try to filter Tor's requests for information "
-"about other relays. If connections to normal Tor relays are also blocked, "
-"then you will need to learn a bridge relay address somehow and add it "
-"here. See the help topic on <a href=\"bridges.html#finding\">finding bridge "
-"relays</a> for more information on how to learn new bridge relay addresses "
-"and fingerprints."
+"If connections to normal Tor relays are blocked, then you will need to "
+"learn a bridge relay address somehow and add it here. See the help topic on "
+"<a href=\"bridges.html#finding\">finding bridge relays</a> for more "
+"information on how to learn new bridge relay addresses and fingerprints."
 msgstr ""
 
 #. type: Content of: <html><body>
