@@ -172,6 +172,44 @@ endmacro(VIDALIA_GET_TOR_VERSION)
 if (APPLE)
   include(${Vidalia_SOURCE_DIR}/cmake/ParseArgumentsMacro.cmake)
 
+  macro(VIDALIA_COPY_PLUGINS)
+    parse_arguments(COPY_PLUGINS "DIR;APP_BUNDLE;FRAMEWORKS;COMPONENTS;TARGET" "" ${ARGN})
+
+    set(outdir "${COPY_PLUGINS_APP_BUNDLE}/Contents/MacOS/script/")
+    foreach(component ${COPY_PLUGINS_COMPONENTS})
+      add_custom_command(TARGET ${COPY_PLUGINS_TARGET}
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${outdir}
+        COMMAND cp
+          ${COPY_PLUGINS_DIR}/libqtscript_${component}.dylib 
+          ${outdir}/libqtscript_${component}.dylib
+      )      
+    endforeach(component)
+  endmacro(VIDALIA_COPY_PLUGINS)
+  
+  macro(VIDALIA_DO_PLUGINS)
+    parse_arguments(DO_PLUGINS "DIR;APP_BUNDLE;FRAMEWORKS;COMPONENTS;TARGET" "" ${ARGN})
+ 
+    set(outdir "${DO_PLUGINS_APP_BUNDLE}/Contents/MacOS/script/")
+    
+    foreach(component ${DO_PLUGINS_COMPONENTS})
+      foreach(framework ${DO_PLUGINS_FRAMEWORKS})
+         add_custom_command(TARGET ${DO_PLUGINS_TARGET}
+           COMMAND install_name_tool -change
+             ${framework}.framework/Versions/4/${framework}
+             @executable_path/../Frameworks/${framework}.framework/Versions/4/${framework} 
+             ${outdir}/libqtscript_${component}.dylib
+         )
+      endforeach(framework)
+      add_custom_command(TARGET ${DO_PLUGINS_TARGET}
+        COMMAND install_name_tool -id
+          @executable_path/script/libqtscript_${component}.dylib 
+          ${outdir}/libqtscript_${component}.dylib
+      )
+    endforeach(component)
+
+    
+  endmacro(VIDALIA_DO_PLUGINS)
+
   ## Calls the install_name_tool utility to change the dependent shared
   ## library or framework install name to the corresponding library or
   ## framework that was previously installed in the .app bundle using

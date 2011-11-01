@@ -15,6 +15,19 @@ set(VIDALIA_APP_BUNDLE_ROOT ${Vidalia_BINARY_DIR}/src/vidalia/Vidalia.app)
 get_target_property(VIDALIA_EXECUTABLE Vidalia LOCATION)
 add_custom_target(dist-osx-libraries DEPENDS Vidalia)
 if (QT_USE_FRAMEWORKS)
+  vidalia_copy_plugins(
+    TARGET dist-osx-libraries
+    DIR ${SCRIPT_DIR}
+    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+    COMPONENTS core gui network uitools xml
+  )
+  vidalia_do_plugins(
+    TARGET dist-osx-libraries
+    DIR ${SCRIPT_DIR}
+    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+    FRAMEWORKS QtGui QtCore QtScript QtNetwork QtXml
+    COMPONENTS core gui network uitools xml
+  )
   if (USE_MARBLE)
     vidalia_install_dylib(MarbleWidget
       TARGET dist-osx-libraries
@@ -60,7 +73,7 @@ add_custom_target(dist-osx
 )
 add_dependencies(dist-osx dist-osx-libraries)
 
-if (TOR_SOURCE_DIR)
+if (TOR_SOURCE_DIR AND SCRIPT_DIR)
   get_filename_component(TOR_SOURCE_DIR ${TOR_SOURCE_DIR} ABSOLUTE)
 
   ## Determine Tor's version string used to build the .dmg filename
@@ -109,21 +122,21 @@ if (TOR_SOURCE_DIR)
     VERBATIM
   )
   add_dependencies(dist-osx-split-bundle dist-osx-bundle)
-else(TOR_SOURCE_DIR)
+else(TOR_SOURCE_DIR AND SCRIPT_DIR)
   message("-- Skipping dist-osx-bundle build target")
   add_custom_target(dist-osx-bundle
     COMMAND ${CMAKE_COMMAND} -E echo
       "!! The dist-osx-bundle target is not configured."
     COMMAND ${CMAKE_COMMAND} -E echo
-      "!! You must set the -DTOR_SOURCE_DIR CMake variables."
+      "!! You must set the -DTOR_SOURCE_DIR and -DSCRIPT_DIR CMake variables."
     COMMAND ${CMAKE_COMMAND} -E echo "!! Quitting."
   )
   add_custom_target(dist-osx-split-bundle
     COMMAND ${CMAKE_COMMAND} -E echo
       "!! The dist-osx-split-bundle target is not configured. Quitting."
     COMMAND ${CMAKE_COMMAND} -E echo
-      "!! You must set the -DTOR_SOURCE_DIR CMake variables."
+      "!! You must set the -DTOR_SOURCE_DIR and -DSCRIPT_DIR CMake variables."
     COMMAND ${CMAKE_COMMAND} -E echo "!! Quitting."
   )
-endif(TOR_SOURCE_DIR)
+endif(TOR_SOURCE_DIR AND SCRIPT_DIR)
 
