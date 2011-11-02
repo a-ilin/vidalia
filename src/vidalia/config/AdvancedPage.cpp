@@ -198,6 +198,7 @@ AdvancedPage::save(QString &errmsg)
   if(!ui.chkAuto->isChecked()) {
     _settings->setControlAddress(controlAddress);
     _settings->setControlPort(ui.lineControlPort->text().toUShort());
+    _settings->setAutoControlPort(false);
   }
   _settings->setSocketPath(ui.lineSocketPath->text());
 
