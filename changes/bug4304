@@ -1,0 +1,2 @@
+  o Check that the authentication-cookie file length is exactly 32
+    bytes long. Fixes bug 4304.

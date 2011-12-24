@@ -1289,6 +1289,11 @@ MainWindow::tryCookie(const ProtocolInfo &pi)
     cookieDir = QFileInfo(cookieDir).absolutePath();
     cookie = loadControlCookie(cookieDir);
   }
+  if(cookie.size() != 32) {
+    vWarn(QString("Cookie length has to be exactly 32 bytes long. Found %s bytes")
+          .arg(cookie.size()));
+    return false;
+  }
   vNotice("Authenticating using 'cookie' authentication.");
   return _torControl->authenticate(cookie);
 }
