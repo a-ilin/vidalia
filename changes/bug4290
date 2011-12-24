@@ -1,0 +1,3 @@
+  o Do not allow users to check the "My ISP blocks..." checkbox
+    without entering any bridges. Also updates the
+    documentation. Fixes bug 4290.
