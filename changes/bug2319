@@ -1,0 +1,2 @@
+  o Make the default data directory in windows be located in the Local
+    AppData instead of the Roaming one. Fixes bug 2319.

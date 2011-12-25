@@ -86,7 +86,7 @@ QString
 win32_app_data_folder()
 {
   return win32_get_folder_location(
-      CSIDL_APPDATA, QDir::homePath() + "\\Application Data");
+      CSIDL_LOCAL_APPDATA, QDir::homePath() + "\\Application Data");
 }
 
 /** Returns the value in keyName at keyLocation. 
