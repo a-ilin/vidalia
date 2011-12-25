@@ -100,8 +100,8 @@ ServerSettings::confValues()
                          : "0"));
   /* Server Exit Policy */
   conf.insert(SETTING_EXITPOLICY, 
-    (isBridgeEnabled() ? "reject *:*"
-                       : localValue(SETTING_EXITPOLICY).toString()));
+    ((isBridgeEnabled() || isNonExitEnabled()) ? "reject *:*"
+                        : localValue(SETTING_EXITPOLICY).toString()));
   
   /* Server bandwidth settings */
   conf.insert((torVersion >= 0x020001 ? SETTING_RELAY_BANDWIDTH_RATE 

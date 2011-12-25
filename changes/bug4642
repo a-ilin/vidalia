@@ -1,0 +1,2 @@
+  o Make the non exit relay option backward compatible with Vidalia <
+    0.2.14 so that it doesn't confuse users. Fixes bug 4642.

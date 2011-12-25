@@ -351,11 +351,17 @@ ServerPage::load()
 {
   if (_settings->isBridgeEnabled())
     ui.rdoBridgeMode->setChecked(true);
-  else if (_settings->isNonExitEnabled())
-    ui.rdoNonExitMode->setChecked(true);
-  else if (_settings->isServerEnabled())
-    ui.rdoServerMode->setChecked(true);
-  else
+  else if (_settings->isNonExitEnabled()) {
+    if(_settings->getExitPolicy().toString() != "reject *:*")
+      ui.rdoServerMode->setChecked(true);
+    else
+      ui.rdoNonExitMode->setChecked(true);
+  } else if (_settings->isServerEnabled()) {
+    if(_settings->getExitPolicy().toString() == "reject *:*")
+      ui.rdoNonExitMode->setChecked(true);
+    else
+      ui.rdoServerMode->setChecked(true);
+  } else
     ui.rdoClientMode->setChecked(true);
 
   ui.lineServerNickname->setText(_settings->getNickname());
