@@ -55,7 +55,7 @@ add_custom_target(dist-osx
     --source ${VIDALIA_APP_BUNDLE_ROOT}
     --target ${Vidalia_BINARY_DIR}/vidalia-${VERSION}-${DMG_ARCH}.dmg
     --sourcefile --volname "Vidalia ${VERSION}"
-    --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/Vidalia.icns
+    --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/vidalia.icns
     --symlink "/Applications:/Drag to here"
     --mkdir /.background
     --copy ${CMAKE_CURRENT_SOURCE_DIR}/background.png:/.background/
@@ -91,7 +91,7 @@ if (TOR_SOURCE_DIR AND SCRIPT_DIR)
       --source ${VIDALIA_APP_BUNDLE_ROOT}
       --target ${Vidalia_BINARY_DIR}/${bundle_DMG}
       --sourcefile --volname "Vidalia Bundle ${VERSION}"
-      --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/Vidalia.icns
+      --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/vidalia.icns
       --symlink "/Applications:/Drag to here"
       --mkdir /.background
       --copy ${CMAKE_CURRENT_SOURCE_DIR}/bundle-background.png:/.background/
