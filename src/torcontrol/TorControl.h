@@ -401,6 +401,7 @@ private:
 /* The slots below simply relay signals from the appropriate member objects */
 private slots:
   void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
+  void getBootstrapPhase();
   void onDisconnected();
   void onLogStdout(const QString &severity, const QString &message);
   void onAuthenticated();

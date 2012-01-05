@@ -213,6 +213,33 @@ TorControl::disconnect()
     _controlConn->disconnect();
 }
 
+void
+TorControl::getBootstrapPhase()
+{
+  ControlCommand cmd("GETINFO", "status/bootstrap-phase");
+  ControlReply reply;
+  QString str;
+
+  if (!send(cmd, reply, &str)) {
+    return;
+  }
+
+  bool ok;
+  QHash<QString, QString> args;
+  args = string_parse_keyvals(reply.getMessage(), &ok);
+
+  if(!ok)
+    return;
+
+  tc::Severity severity = tc::severityFromString(args.value("status/bootstrap-phase"));
+  BootstrapStatus status
+    = BootstrapStatus(severity,
+                      BootstrapStatus::statusFromString(args.value("TAG")),
+                      args.value("PROGRESS").toInt(),
+                      args.value("SUMMARY"));
+  emit bootstrapStatusChanged(status);
+}
+
 /** Emits a signal that the control socket disconnected from Tor */
 void
 TorControl::onDisconnected()
@@ -312,6 +339,8 @@ TorControl::onAuthenticated()
   useFeature("VERBOSE_NAMES");
   /* We want to use extended events in all async events */
   useFeature("EXTENDED_EVENTS");
+
+  getBootstrapPhase();
 
   emit authenticated();
 }
