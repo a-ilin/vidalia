@@ -1,0 +1,3 @@
+  o Vidalia only validates IPv4 bridge lines. IPv6 bridges are now
+    available, and there will be pluggable transport bridge lines. So
+    the validation is now delegated to Tor through SETCONF.
