@@ -387,9 +387,6 @@ NetworkPage::bridgeRequestFinished(const QStringList &bridges)
   QString normalized;
 
   foreach (QString bridge, bridges) {
-    if (! validateBridge(bridge, &normalized))
-      continue;
-
     QString address = normalized.split(" ").at(0);
     if (ui.listBridges->findItems(address, Qt::MatchContains).isEmpty()) {
       ui.listBridges->addItem(normalized);
