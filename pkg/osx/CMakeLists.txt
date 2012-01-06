@@ -1,12 +1,12 @@
 ##
 ##  $Id$
-## 
+##
 ##  This file is part of Vidalia, and is subject to the license terms in the
-##  LICENSE file, found in the top level directory of this distribution. If 
+##  LICENSE file, found in the top level directory of this distribution. If
 ##  you did not receive the LICENSE file with this file, you may obtain it
 ##  from the Vidalia source package distributed by the Vidalia Project at
-##  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-##  including this file, may be copied, modified, propagated, or distributed 
+##  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+##  including this file, may be copied, modified, propagated, or distributed
 ##  except according to the terms described in the LICENSE file.
 ##
 
@@ -15,65 +15,20 @@ set(VIDALIA_APP_BUNDLE_ROOT ${Vidalia_BINARY_DIR}/src/vidalia/Vidalia.app)
 get_target_property(VIDALIA_EXECUTABLE Vidalia LOCATION)
 add_custom_target(dist-osx-libraries DEPENDS Vidalia)
 if (QT_USE_FRAMEWORKS)
-  vidalia_install_qt4_framework(QtCore
-    TARGET dist-osx-libraries NAME QtCore
-    LIBRARY ${QT_QTCORE_LIBRARY_RELEASE}/QtCore
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-  )
-  vidalia_install_qt4_framework(QtGui
-    TARGET dist-osx-libraries NAME QtGui
-    LIBRARY ${QT_QTGUI_LIBRARY_RELEASE}/QtGui
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-    DEPENDS_FRAMEWORKS ${QtCore}
-  )
-  vidalia_install_qt4_framework(QtNetwork
-    TARGET dist-osx-libraries NAME QtNetwork
-    LIBRARY ${QT_QTNETWORK_LIBRARY_RELEASE}/QtNetwork
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-    DEPENDS_FRAMEWORKS ${QtCore}
-  )
-  vidalia_install_qt4_framework(QtXml
-    TARGET dist-osx-libraries NAME QtXml
-    LIBRARY ${QT_QTXML_LIBRARY_RELEASE}/QtXml
-    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-    DEPENDS_FRAMEWORKS ${QtCore}
-  )
-  vidalia_install_name_tool(${VIDALIA_EXECUTABLE}
+  vidalia_copy_plugins(
     TARGET dist-osx-libraries
-    FRAMEWORKS ${QtCore} ${QtGui} ${QtNetwork} ${QtXml}
+    DIR ${SCRIPT_DIR}
+    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+    COMPONENTS core gui network uitools xml
+  )
+  vidalia_do_plugins(
+    TARGET dist-osx-libraries
+    DIR ${SCRIPT_DIR}
+    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+    FRAMEWORKS QtGui QtCore QtScript QtNetwork QtXml
+    COMPONENTS core gui network uitools xml
   )
   if (USE_MARBLE)
-    vidalia_install_qt4_framework(QtSvg
-      TARGET dist-osx-libraries NAME QtSvg
-      LIBRARY ${QT_QTSVG_LIBRARY_RELEASE}/QtSvg
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui}
-    )
-    vidalia_install_qt4_framework(QtScript
-      TARGET dist-osx-libraries NAME QtScript
-      LIBRARY ${QT_QTSCRIPT_LIBRARY_RELEASE}/QtScript
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore}
-    )
-    vidalia_install_qt4_framework(QtDBus
-      TARGET dist-osx-libraries NAME QtDBus
-      LIBRARY ${QT_QTDBUS_LIBRARY_RELEASE}/QtDBus
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore} ${QtXml}
-    )
-    vidalia_install_qt4_framework(QtPhonon
-      TARGET dist-osx-libraries NAME phonon
-      LIBRARY ${QT_PHONON_LIBRARY_RELEASE}/phonon
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui} ${QtXml} ${QtDBus}
-    )
-    vidalia_install_qt4_framework(QtWebKit
-      TARGET dist-osx-libraries NAME QtWebKit
-      LIBRARY ${QT_QTWEBKIT_LIBRARY_RELEASE}/QtWebKit
-      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
-      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui} ${QtNetwork} ${QtXml} ${QtDBus}
-                         ${QtPhonon}
-    )
     vidalia_install_dylib(MarbleWidget
       TARGET dist-osx-libraries
       LIBRARY ${MARBLEWIDGET_LIBRARY}
@@ -83,7 +38,6 @@ if (QT_USE_FRAMEWORKS)
     )
     vidalia_install_name_tool(${VIDALIA_EXECUTABLE}
       TARGET dist-osx-libraries
-      FRAMEWORKS ${QtSvg} ${QtDBus} ${QtScript} ${QtWebKit}
       LIBRARIES ${MARBLEWIDGET_LIBRARY}
     )
   endif(USE_MARBLE)
@@ -96,11 +50,12 @@ else(OSX_FAT_BINARY)
 endif(OSX_FAT_BINARY)
 
 add_custom_target(dist-osx
+  COMMAND ${QT_BINARY_DIR}/macdeployqt ${VIDALIA_APP_BUNDLE_ROOT}
   COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/pkg-dmg
     --source ${VIDALIA_APP_BUNDLE_ROOT}
     --target ${Vidalia_BINARY_DIR}/vidalia-${VERSION}-${DMG_ARCH}.dmg
     --sourcefile --volname "Vidalia ${VERSION}"
-    --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/Vidalia.icns
+    --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/vidalia.icns
     --symlink "/Applications:/Drag to here"
     --mkdir /.background
     --copy ${CMAKE_CURRENT_SOURCE_DIR}/background.png:/.background/
@@ -118,10 +73,8 @@ add_custom_target(dist-osx
 )
 add_dependencies(dist-osx dist-osx-libraries)
 
-if (TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
+if (TOR_SOURCE_DIR AND SCRIPT_DIR)
   get_filename_component(TOR_SOURCE_DIR ${TOR_SOURCE_DIR} ABSOLUTE)
-  get_filename_component(POLIPO_SOURCE_DIR ${POLIPO_SOURCE_DIR} ABSOLUTE)
-  get_filename_component(TORBUTTON_XPI ${TORBUTTON_XPI} ABSOLUTE)
 
   ## Determine Tor's version string used to build the .dmg filename
   vidalia_get_tor_version(TOR_VERSION "${TOR_SOURCE_DIR}/src/or/tor")
@@ -131,26 +84,14 @@ if (TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
     message(FATAL_ERROR "Unable to determine version of ${TOR_SOURCE_DIR}/src/or/tor")
   endif(TOR_VERSION)
 
-  ## Configure the Torbutton installation script file
-  get_filename_component(TORBUTTON_XPI_FILENAME ${TORBUTTON_XPI} NAME)
-  configure_file(
-    ${CMAKE_CURRENT_SOURCE_DIR}/InstallTorbutton.scpt.in
-    ${CMAKE_CURRENT_BINARY_DIR}/InstallTorbutton.scpt
-  )
-
   set(bundle_DMG "vidalia-bundle-${TOR_VERSION}-${VERSION}-${DMG_ARCH}.dmg")
   add_custom_target(dist-osx-bundle
-    COMMAND osacompile
-      -o "${CMAKE_CURRENT_BINARY_DIR}/Install Torbutton for Firefox.app"
-          ${CMAKE_CURRENT_BINARY_DIR}/InstallTorbutton.scpt
-    COMMAND ${CMAKE_COMMAND} -E copy
-      ${TORBUTTON_XPI}
-      "${CMAKE_CURRENT_BINARY_DIR}/Install Torbutton for Firefox.app/"
+    COMMAND ${QT_BINARY_DIR}/macdeployqt ${VIDALIA_APP_BUNDLE_ROOT}
     COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/pkg-dmg
       --source ${VIDALIA_APP_BUNDLE_ROOT}
       --target ${Vidalia_BINARY_DIR}/${bundle_DMG}
       --sourcefile --volname "Vidalia Bundle ${VERSION}"
-      --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/Vidalia.icns
+      --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/vidalia.icns
       --symlink "/Applications:/Drag to here"
       --mkdir /.background
       --copy ${CMAKE_CURRENT_SOURCE_DIR}/bundle-background.png:/.background/
@@ -169,36 +110,33 @@ if (TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
       --copy ${TOR_SOURCE_DIR}/src/tools/tor-resolve:/Vidalia.app/Contents/MacOS/
       --copy ${TOR_SOURCE_DIR}/src/config/geoip:/Vidalia.app/share/tor/
       --copy ${TOR_SOURCE_DIR}/src/config/torrc.sample:/Vidalia.app/Contents/Resources/
-      --copy ${POLIPO_SOURCE_DIR}/polipo:/Vidalia.app/Contents/MacOS/
-      --copy ${CMAKE_CURRENT_SOURCE_DIR}/polipo.conf:/Vidalia.app/Contents/Resources/
-      --copy "${CMAKE_CURRENT_BINARY_DIR}/Install Torbutton for Firefox.app:/"
     COMMENT "Creating ${bundle_DMG}"
     VERBATIM
   )
   add_dependencies(dist-osx-bundle dist-osx-libraries)
 
   add_custom_target(dist-osx-split-bundle
-    COMMAND hdiutil segment -segmentSize 1.5m 
+    COMMAND hdiutil segment -segmentSize 1.5m
       -o "${Vidalia_BINARY_DIR}/split-${bundle_DMG}" "${Vidalia_BINARY_DIR}/${bundle_DMG}"
     COMMENT "Creating split-${bundle_DMG}"
     VERBATIM
   )
   add_dependencies(dist-osx-split-bundle dist-osx-bundle)
-else(TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
+else(TOR_SOURCE_DIR AND SCRIPT_DIR)
   message("-- Skipping dist-osx-bundle build target")
   add_custom_target(dist-osx-bundle
     COMMAND ${CMAKE_COMMAND} -E echo
       "!! The dist-osx-bundle target is not configured."
     COMMAND ${CMAKE_COMMAND} -E echo
-      "!! You must set the -DTOR_SOURCE_DIR,-DPOLIPO_SOURCE_DIR and -DTORBUTTON_XPI CMake variables."
+      "!! You must set the -DTOR_SOURCE_DIR and -DSCRIPT_DIR CMake variables."
     COMMAND ${CMAKE_COMMAND} -E echo "!! Quitting."
   )
   add_custom_target(dist-osx-split-bundle
     COMMAND ${CMAKE_COMMAND} -E echo
       "!! The dist-osx-split-bundle target is not configured. Quitting."
     COMMAND ${CMAKE_COMMAND} -E echo
-      "!! You must set the -DTOR_SOURCE_DIR, -DPOLIPO_SOURCE_DIR and -DTORBUTTON_XPI CMake variables."
+      "!! You must set the -DTOR_SOURCE_DIR and -DSCRIPT_DIR CMake variables."
     COMMAND ${CMAKE_COMMAND} -E echo "!! Quitting."
   )
-endif(TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
+endif(TOR_SOURCE_DIR AND SCRIPT_DIR)
 
