@@ -264,6 +264,27 @@ MainWindow::createTrayMenu()
   return menu;
 }
 
+/** Called when tor detects a problem with the system clock */
+void
+MainWindow::clockSkewed(int skew, const QString &source)
+{
+  if (source.startsWith("OR:", Qt::CaseInsensitive)) {
+    // Tor versions 0.2.1.19 and earlier, and 0.2.2.1 and earlier, throw
+    // this message a little too liberally in this case.
+    quint32 torVersion = Vidalia::torControl()->getTorVersion();
+    if (torVersion <= 0x00020113)
+      return;
+    QString str = Vidalia::torControl()->getTorVersionString();
+    if (str.startsWith("0.2.2.") && torVersion <= 0x00020201)
+      return;
+  }
+
+  _trayIcon.showMessage(tr("Your clock is wrong"),
+                        tr("Your computer's clock is wrong, tor may not work as "
+                           "expected. Please check the Message Log for more information."));
+}
+
+
 /** Creates a tray icon with a context menu and adds it to the system
  * notification area. On Mac, we also set up an application menubar. */
 void
@@ -385,6 +406,8 @@ MainWindow::createConnections()
   connect(_torControl, SIGNAL(authenticated()), this, SLOT(authenticated()));
   connect(_torControl, SIGNAL(authenticationFailed(QString)),
           this, SLOT(authenticationFailed(QString)));
+  connect(_torControl, SIGNAL(clockSkewed(int, QString)),
+          this, SLOT(clockSkewed(int, QString)));
 
   _torControl->setEvent(TorEvents::GeneralStatus);
   connect(_torControl, SIGNAL(dangerousTorVersion(tc::TorVersionStatus,

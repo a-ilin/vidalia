@@ -159,6 +159,9 @@ private slots:
   /** Called when trying to close a tab that has been detached */
   void handleAttachedClose();
 
+  /** Called when tor detects a problem with the system clock */
+  void clockSkewed(int skew, const QString &source);
+
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
    * settings page. */
