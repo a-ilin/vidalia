@@ -78,6 +78,9 @@ private slots:
   /** Called when the user checks "Configure ControlPort automatically" */
   void toggleAuto(bool);
 
+  /** Called when the user checks "Randomly Generate" checkbox */
+  void displayWarning(bool);
+
 private:
   /** Returns the authentication method for the given <b>index</b>. */
   TorSettings::AuthenticationMethod indexToAuthMethod(int index);
