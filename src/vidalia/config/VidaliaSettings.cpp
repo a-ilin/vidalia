@@ -40,6 +40,7 @@
 #define SETTING_USE_LOCAL_GEOIP_DATABASE  "UseLocalGeoIpDatabase"
 #define SETTING_LOCAL_GEOIP_DATABASE "LocalGeoIpDatabase"
 #define SETTING_PLUGIN_PATH         "PluginPath"
+#define SETTING_SKIP_VERSION_CHECK  "SkipVersionCheck"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -87,6 +88,7 @@ VidaliaSettings::VidaliaSettings()
 
   setDefault(SETTING_PLUGIN_PATH, vApp->dataDirectory());
   setDefault(SETTING_ICON_PREF, Both);
+  setDefault(SETTING_SKIP_VERSION_CHECK, false);
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -369,4 +371,10 @@ VidaliaSettings::fromString(QString iconPref)
   if(iconPref == "Tray") return Tray;
 
   return Both;
+}
+
+bool
+VidaliaSettings::skipVersionCheck() const
+{
+  return value(SETTING_SKIP_VERSION_CHECK).toBool();
 }

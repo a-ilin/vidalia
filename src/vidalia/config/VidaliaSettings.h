@@ -144,6 +144,9 @@ public:
   void setIconPref(const IconPosition iconPref);
   QString toString(const IconPosition iconPref);
   IconPosition fromString(QString iconPref);
+
+  /** Returns true if Vidalia should skip the version check for tor */
+  bool skipVersionCheck() const;
 };
 
 #endif
