@@ -33,9 +33,8 @@ public:
     NoProxy = -1, /**< Have Tor connect directly to the Internet. */
     Socks4Proxy = 0, /**< Use a SOCKS 4 proxy for OR connections. */
     Socks5Proxy = 1, /**< Use a SOCKS 5 proxy for OR connections. */
-    HttpProxy = 2, /**< Use an HTTP proxy for non-tunneled dir fetches. */
-    HttpHttpsProxy = 3, /**< Use HTTP proxy for both dir and OR connections. */
-    ProxyTypeMax = 3
+    HttpHttpsProxy = 2, /**< Use HTTP proxy for both dir and OR connections. */
+    ProxyTypeMax = 2
   };
 
 public:

@@ -310,7 +310,6 @@ NetworkPage::load()
     proxyType = NetworkSettings::NoProxy;
     ui.chkUseProxy->setChecked(false);
   }
-  ui.cmboProxyType->addItem(tr("HTTP"), NetworkSettings::HttpProxy);
   ui.cmboProxyType->addItem(tr("HTTP / HTTPS"),
                             NetworkSettings::HttpHttpsProxy);
 
