@@ -105,6 +105,8 @@ void qt_mac_set_dock_menu(QMenu *menu);
 MainWindow::MainWindow()
 : VidaliaWindow("MainWindow")
 {
+  _startedWithPrevious = false;
+
   /* Create a new TorControl object, used to communicate with Tor */
   _torControl = Vidalia::torControl(); 
 
@@ -592,8 +594,20 @@ MainWindow::start()
   
   if(settings.getControlMethod() == ControlMethod::Port) {
     if(settings.autoControlPort()) {
-      args << "ControlPort" << "auto";
-      args << "SocksPort" << "auto";
+      QString control_str = "auto";
+      QString socks_str = "auto";
+
+      if(!_previousControlPort.isEmpty()) {
+        control_str = _previousControlPort;
+        _startedWithPrevious = true;
+      }
+      if(!_previousSocksPort.isEmpty()) {
+        socks_str = _previousSocksPort;
+        _startedWithPrevious = true;
+      }
+
+      args << "ControlPort" << control_str;
+      args << "SocksPort" << socks_str;
       args << "ControlPortWriteToFile" << QString("%1/port.conf").arg(expDataDirectory);
     } else {
       /* Add the intended control port value */
@@ -806,6 +820,15 @@ MainWindow::startFailed(QString errmsg)
    * that Qt gives us in this instance is almost always "Unknown Error". That
    * will make users sad. */
   Q_UNUSED(errmsg);
+
+  if(_startedWithPrevious) {
+    _startedWithPrevious = false;
+    _previousControlPort = "";
+    _previousSocksPort = "";
+    vWarn("Retrying with new ports");
+    start();
+    return;
+  }
  
   updateTorStatus(Stopped);
 
@@ -833,6 +856,29 @@ void
 MainWindow::connected()
 {
   authenticate();
+
+  TorSettings settings;
+  if(settings.autoControlPort()) {
+    // We want to remember the ports if it's on auto
+    QString control_str = "", socks_str = "";
+    if(_torControl->getInfo("net/listeners/control", control_str)) {
+      QStringList control_parts = control_str.split(":");
+      if(control_parts.size() > 1)
+        control_str = control_parts[1];
+    }
+    if(_torControl->getInfo("net/listeners/socks", socks_str)) {
+      QStringList socks_parts = socks_str.split(":");
+      if(socks_parts.size() > 1)
+        socks_str = socks_parts[1];
+    }
+    
+    _previousControlPort = control_str;
+    _previousSocksPort = socks_str;
+  } else {
+    // Otherwise we want to clear the remembered ports
+    _previousControlPort = "";
+    _previousSocksPort = "";
+  }
 }
 
 /** Called when the connection to the control socket fails. The reason will be
