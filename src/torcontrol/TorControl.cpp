@@ -914,7 +914,14 @@ bool
 TorControl::saveConf(QString *errmsg)
 {
   ControlCommand cmd("SAVECONF");
-  return send(cmd, errmsg);
+  bool ret = send(cmd, errmsg);
+
+  if(!ret) {
+    QString err;
+    setConf("__ReloadTorrcOnSIGHUP", "0", &err);
+  }
+
+  return ret;
 }
 
 /** Tells Tor to reset the given configuration keys back to defaults. */
