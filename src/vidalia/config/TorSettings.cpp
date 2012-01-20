@@ -59,6 +59,7 @@
 #define TOR_ARG_DATA_DIRECTORY  "DataDirectory"
 #define TOR_ARG_HASHED_PASSWORD "HashedControlPassword"
 #define TOR_ARG_COOKIE_AUTH     "CookieAuthentication"
+#define TOR_ARG_SOCKSPORT       "SocksPort"
 
 /** Generate random control passwords of 16 characters */
 #define PASSWORD_LEN    16
@@ -105,6 +106,11 @@ TorSettings::apply(QString *errmsg)
 
   conf.insert(SETTING_CONTROL_PORT,
               localValue(SETTING_CONTROL_PORT).toString());
+
+  if(localValue(SETTING_AUTOCONTROL).toBool())
+    conf.insert(TOR_ARG_SOCKSPORT, "auto");
+  else
+    conf.insert(TOR_ARG_SOCKSPORT, "9050");
   
   AuthenticationMethod authMethod = 
     toAuthenticationMethod(localValue(SETTING_AUTH_METHOD).toString());
