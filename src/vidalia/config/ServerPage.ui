@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>639</width>
-    <height>538</height>
+    <width>658</width>
+    <height>578</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -77,7 +77,7 @@
          </sizepolicy>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="ServerConfig">
          <attribute name="title">
@@ -507,6 +507,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           </item>
           <item>
            <widget class="QFrame" name="frmCustomRate">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
@@ -529,6 +535,16 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                 </size>
                </property>
               </spacer>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</string>
+               </property>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
              </item>
              <item row="1" column="0">
               <layout class="QHBoxLayout">
@@ -661,16 +677,6 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                 </layout>
                </item>
               </layout>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_8">
-               <property name="text">
-                <string>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</string>
-               </property>
-               <property name="wordWrap">
-                <bool>true</bool>
-               </property>
-              </widget>
              </item>
             </layout>
            </widget>
