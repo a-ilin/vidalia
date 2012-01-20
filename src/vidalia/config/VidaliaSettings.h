@@ -20,6 +20,8 @@
 
 #include <QDateTime>
 
+/** Public setting keys */
+#define SETTING_REMEMBER_SHUTDOWN   "RememberShutdown"
 
 /** Handles saving and restoring Vidalia's settings, such as the
  * location of Tor, the control port, etc.
@@ -144,6 +146,12 @@ public:
   void setIconPref(const IconPosition iconPref);
   QString toString(const IconPosition iconPref);
   IconPosition fromString(QString iconPref);
+
+  /** Returns true if Vidalia should not ask if the user wants to shutdown 
+   *  tor gracefully */
+  bool rememberShutdown();
+  /** Sets RememberShutdown to val */
+  void setRememberShutdown(bool val);
 };
 
 #endif

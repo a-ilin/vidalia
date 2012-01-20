@@ -87,6 +87,7 @@ VidaliaSettings::VidaliaSettings()
 
   setDefault(SETTING_PLUGIN_PATH, vApp->dataDirectory());
   setDefault(SETTING_ICON_PREF, Both);
+  setDefault(SETTING_REMEMBER_SHUTDOWN, false);
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -369,4 +370,16 @@ VidaliaSettings::fromString(QString iconPref)
   if(iconPref == "Tray") return Tray;
 
   return Both;
+}
+
+bool
+VidaliaSettings::rememberShutdown()
+{
+  return value(SETTING_REMEMBER_SHUTDOWN).toBool();
+}
+
+void
+VidaliaSettings::setRememberShutdown(bool val)
+{
+  setValue(SETTING_REMEMBER_SHUTDOWN, val);
 }

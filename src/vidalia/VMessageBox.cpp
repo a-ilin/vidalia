@@ -17,11 +17,19 @@
 
 #include "html.h"
 
+#include <QGridLayout>
+#include <QCheckBox>
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 /** Default constructor. */
 VMessageBox::VMessageBox(QWidget *parent)
   : QMessageBox(parent)
 {
+  _chkRemember = new QCheckBox("");
+  QGridLayout *gl = qobject_cast<QGridLayout *>(layout());
+  gl->addWidget(_chkRemember, gl->rowCount() - 2, 1);
+  _chkRemember->setVisible(false);
 }
 
 /** Returns the button (0, 1, or 2) that is OR-ed with QMessageBox::Default,
@@ -113,15 +121,45 @@ VMessageBox::critical(QWidget *parent, QString caption, QString text,
  * QMessageBox::Escape, respectively. */
 int
 VMessageBox::question(QWidget *parent, QString caption, QString text,
-                      int button0, int button1, int button2)
+                      int button0, int button1, int button2, 
+                      QString remember, VSettings *settings, QString key)
 {
-  int ret = QMessageBox::question(parent, caption, p(text),
-              VMessageBox::buttonText(button0), 
-              VMessageBox::buttonText(button1), 
-              VMessageBox::buttonText(button2),
-              VMessageBox::defaultButton(button0, button1, button2), 
-              VMessageBox::escapeButton(button0, button1, button2));
-  return VMessageBox::selected(ret, button0, button1, button2);
+  VMessageBox messageBox(parent);
+
+  messageBox.setIcon(QMessageBox::Question);
+  messageBox.setWindowTitle(caption);
+  messageBox.setText(text);
+  messageBox.setStandardButtons(QMessageBox::NoButton);
+
+  if(settings) {
+    messageBox._chkRemember->setVisible(true);
+    messageBox._chkRemember->setText(remember);
+  }
+
+  QString myButton0Text = VMessageBox::buttonText(button0);
+  if (myButton0Text.isEmpty())
+    myButton0Text = QDialogButtonBox::tr("OK");
+  messageBox.addButton(myButton0Text, QMessageBox::ActionRole);
+
+  if (!VMessageBox::buttonText(button1).isEmpty())
+    messageBox.addButton(VMessageBox::buttonText(button1), QMessageBox::ActionRole);
+
+  if (!VMessageBox::buttonText(button2).isEmpty())
+    messageBox.addButton(VMessageBox::buttonText(button2), QMessageBox::ActionRole);
+
+  const QList<QAbstractButton *> &buttonList = messageBox.buttons();
+  messageBox.setDefaultButton(qobject_cast<QPushButton *>(buttonList
+                                                          .value(VMessageBox::defaultButton(button0, 
+                                                                                            button1, 
+                                                                                            button2))));
+  messageBox.setEscapeButton(buttonList.value(VMessageBox::escapeButton(button0, button1, button2)));
+  int ret = messageBox.exec();
+
+  if(!settings)
+    return ret;
+  settings->setValue(key, messageBox._chkRemember->checkState() == Qt::Checked);
+
+  return ret;
 }
 
 /** Displays an information message box with the given caption, message text, and
@@ -157,4 +195,3 @@ VMessageBox::warning(QWidget *parent, QString caption, QString text,
               VMessageBox::escapeButton(button0, button1, button2));
   return VMessageBox::selected(ret, button0, button1, button2);
 }
-

@@ -717,12 +717,15 @@ MainWindow::stop()
   QString errmsg;
   TorStatus prevStatus;
   bool rc;
+  VidaliaSettings settings;
 
   /* If we're running a server, give users the option of terminating
    * gracefully so clients have time to find new servers. */
   if (server.isServerEnabled() && !_delayedShutdownStarted) {
     /* Ask the user if they want to shutdown nicely. */
-    int response = VMessageBox::question(this, tr("Relaying is Enabled"),
+    int response = VMessageBox::Yes;
+    if(!settings.rememberShutdown()) {
+      response = VMessageBox::question(this, tr("Relaying is Enabled"),
                      tr("You are currently running a relay. "
                         "Terminating your relay will interrupt any "
                         "open connections from clients.\n\n"
@@ -730,7 +733,9 @@ MainWindow::stop()
                         "give clients time to find a new relay?"),
                         VMessageBox::Yes|VMessageBox::Default, 
                         VMessageBox::No, 
-                        VMessageBox::Cancel|VMessageBox::Escape);
+                        VMessageBox::Cancel|VMessageBox::Escape,
+                        "Remember this answer", &settings, SETTING_REMEMBER_SHUTDOWN);
+    }
     if (response == VMessageBox::Yes)
       _delayedShutdownStarted = true;
     else if (response == VMessageBox::Cancel)
