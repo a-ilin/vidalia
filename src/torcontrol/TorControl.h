@@ -209,6 +209,9 @@ public:
    * it's not NULL. */
   QString ipToCountry(const QHostAddress &ip, QString *errmsg = 0);
 
+  /** Takes ownership of the tor process it's communicating to */
+  bool takeOwnership(QString *errmsg);
+
 public slots:
   /** Closes the circuit specified by <b>circId</b>. If <b>ifUnused</b> is
    * true, then the circuit will not be closed unless it is unused. */

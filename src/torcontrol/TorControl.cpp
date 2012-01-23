@@ -1131,3 +1131,10 @@ TorControl::ipToCountry(const QHostAddress &ip, QString *errmsg)
   return QString();
 }
 
+/** Takes ownership of the tor process it's communicating to */
+bool
+TorControl::takeOwnership(QString *errmsg)
+{
+  ControlCommand cmd("TAKEOWNERSHIP");
+  return send(cmd, errmsg);
+}
