@@ -1,0 +1,2 @@
+  o Remember the previously used random socks/control ports so Firefox
+    keeps working after restarting tor. Fixes bug 4031.

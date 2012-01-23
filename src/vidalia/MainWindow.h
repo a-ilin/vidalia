@@ -305,6 +305,10 @@ private:
   PluginEngine *_engine;
   QStringList _tabMap; /**< Map to handle opened tabs */
   QStringList _detachedTabMap; /**< Map to handle detached tabs */
+  
+  bool _startedWithPrevious; /**< True if Vidalia tried to start Tor with the previous ports */
+  QString _previousControlPort; /**< Holds the previous controlport used */
+  QString _previousSocksPort; /**< Holds the previous socksport used */
 };
 
 #endif
