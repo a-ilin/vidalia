@@ -617,9 +617,13 @@ MainWindow::start()
   
   if(settings.getControlMethod() == ControlMethod::Port) {
     if(settings.autoControlPort()) {
+      QString portconf = QString("%1/port.conf").arg(expDataDirectory);
+      if(!QFile::remove(portconf))
+        vWarn(QString("Unable to remove %s, may be it didn't existed.").arg(portconf));
+
       args << "ControlPort" << "auto";
       args << "SocksPort" << "auto";
-      args << "ControlPortWriteToFile" << QString("%1/port.conf").arg(expDataDirectory);
+      args << "ControlPortWriteToFile" << portconf;
     } else {
       /* Add the intended control port value */
       quint16 controlPort = settings.getControlPort();
