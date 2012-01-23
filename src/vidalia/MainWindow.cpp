@@ -193,6 +193,8 @@ MainWindow::createMenuBar()
 #if !defined(Q_WS_WIN)
   torMenu->addAction(_actionReloadConfig);
 #endif
+  torMenu->addSeparator();
+  torMenu->addAction(_actionExit);
 
   QMenu *actionsMenu = menu->addMenu(tr("Actions"));
   actionsMenu->addAction(_actionNewIdentity);
