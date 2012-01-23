@@ -1,0 +1,2 @@
+  o Explicitly disable SocksPort auto by setting it to its default
+    (9050). Fixes bug 4598.
