@@ -1,0 +1,2 @@
+  o Displays a warning to notify users that the passphrase will be
+    stored as plaintext. Fixes bug 3064.

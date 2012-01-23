@@ -60,6 +60,8 @@ AdvancedPage::AdvancedPage(QWidget *parent)
           this, SLOT(authMethodChanged(int)));
   connect(ui.chkRandomPassword, SIGNAL(toggled(bool)),
           ui.linePassword, SLOT(setDisabled(bool)));
+  connect(ui.chkRandomPassword, SIGNAL(toggled(bool)),
+          this, SLOT(displayWarning(bool)));
   connect(ui.btnEditTorConfig, SIGNAL(clicked()),
           this, SLOT(displayTorrcDialog()));
   connect(ui.rdoControlPort, SIGNAL(toggled(bool)), this, SLOT(toggleControl(bool)));
@@ -257,6 +259,7 @@ AdvancedPage::authMethodChanged(int index)
   bool usePassword = (indexToAuthMethod(index) == TorSettings::PasswordAuth);
   ui.linePassword->setEnabled(usePassword && !ui.chkRandomPassword->isChecked());
   ui.chkRandomPassword->setEnabled(usePassword);
+  ui.lblWarn->setVisible((ui.chkRandomPassword->checkState() == Qt::Unchecked) and usePassword);
 }
 
 /** Returns the authentication method for the given <b>index</b>. */
@@ -431,4 +434,12 @@ AdvancedPage::toggleAuto(bool)
   ui.lineControlAddress->setVisible(!ui.chkAuto->isChecked());
   ui.label->setVisible(!ui.chkAuto->isChecked());
   ui.lineControlPort->setVisible(!ui.chkAuto->isChecked());
+}
+
+void
+AdvancedPage::displayWarning(bool checked)
+{
+  ui.lblWarn->setVisible(!checked and 
+                         indexToAuthMethod(ui.cmbAuthMethod->currentIndex()) == 
+                         TorSettings::PasswordAuth);
 }
