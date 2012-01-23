@@ -26,8 +26,6 @@
 #define SETTING_PROXY_PASSWORD      "ProxyPassword"
 
 /* Tor's proxy options */
-#define SETTING_HTTP_PROXY          "HttpProxy"
-#define SETTING_HTTP_PROXY_AUTH     "HttpProxyAuthenticator"
 #define SETTING_HTTPS_PROXY         "HttpsProxy"
 #define SETTING_HTTPS_PROXY_AUTH    "HttpsProxyAuthenticator"
 #define SETTING_SOCKS4_PROXY        "Socks4Proxy"
@@ -90,9 +88,6 @@ NetworkSettings::apply(QString *errmsg)
     case Socks5Proxy:
       socks5 = addr;
       break;
-    case HttpProxy:
-      http = addr;
-      break;
     case HttpHttpsProxy:
       http = addr;
       https = http;
@@ -107,9 +102,7 @@ NetworkSettings::apply(QString *errmsg)
     conf.insert(SETTING_SOCKS5_PASSWORD, pass);
   }
 
-  conf.insert(SETTING_HTTP_PROXY, http);
   conf.insert(SETTING_HTTPS_PROXY, https);
-  conf.insert(SETTING_HTTP_PROXY_AUTH, auth);
   conf.insert(SETTING_HTTPS_PROXY_AUTH, auth);
 
   if (getUseBridges()) {
@@ -305,9 +298,6 @@ NetworkSettings::proxyTypeToString(ProxyType type)
     case Socks5Proxy:
       ret = "socks5";
       break;
-    case HttpProxy:
-      ret = "http";
-      break;
     case HttpHttpsProxy:
       ret = "httphttps";
       break;
@@ -330,8 +320,6 @@ NetworkSettings::proxyTypeFromString(const QString &type)
     return Socks4Proxy;
   if (str == "socks5")
     return Socks5Proxy;
-  if (str == "http")
-    return HttpProxy;
   if (str == "httphttps")
     return HttpHttpsProxy;
 
