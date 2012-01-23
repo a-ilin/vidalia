@@ -19,6 +19,9 @@
 #include <QMessageBox>
 #include <QString>
 
+#include "VSettings.h"
+
+class QCheckBox;
 
 class VMessageBox : public QMessageBox
 {
@@ -72,8 +75,10 @@ public:
    * button, OR the Button enum value with QMessageBox::Default or
    * QMessageBox::Escape, respectively. */
   static int question(QWidget *parent, QString caption, QString text,
-                         int button0, int button1 = NoButton, 
-                         int button2 = NoButton);
+                        int button0, int button1 = NoButton, 
+                        int button2 = NoButton,
+                        QString remember = QString(), VSettings *settings = 0, 
+                        QString key = QString());
   
   /** Converts a Button enum value to a translated string. */
   static QString buttonText(int button);
@@ -87,6 +92,8 @@ private:
   static int escapeButton(int button0, int button1, int button2);
   /** Returns the Button enum value from the given return value. */
   static int selected(int ret, int button0, int button1, int button2);
+
+  QCheckBox *_chkRemember;
 };
 
 #endif

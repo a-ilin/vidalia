@@ -147,14 +147,16 @@ public:
   QString toString(const IconPosition iconPref);
   IconPosition fromString(QString iconPref);
 
+<<<<<<< HEAD
   /** Returns true if Vidalia should skip the version check for tor */
   bool skipVersionCheck() const;
-
+=======
   /** Returns true if Vidalia should not ask if the user wants to shutdown 
    *  tor gracefully */
   bool rememberShutdown();
   /** Sets RememberShutdown to val */
   void setRememberShutdown(bool val);
+>>>>>>> bug4577_remember
 };
 
 #endif

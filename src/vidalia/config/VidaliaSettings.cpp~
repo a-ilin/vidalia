@@ -88,8 +88,11 @@ VidaliaSettings::VidaliaSettings()
 
   setDefault(SETTING_PLUGIN_PATH, vApp->dataDirectory());
   setDefault(SETTING_ICON_PREF, Both);
+<<<<<<< HEAD
   setDefault(SETTING_SKIP_VERSION_CHECK, false);
+=======
   setDefault(SETTING_REMEMBER_SHUTDOWN, false);
+>>>>>>> bug4577_remember
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -375,12 +378,11 @@ VidaliaSettings::fromString(QString iconPref)
 }
 
 bool
+<<<<<<< HEAD
 VidaliaSettings::skipVersionCheck() const
 {
   return value(SETTING_SKIP_VERSION_CHECK).toBool();
-}
-
-bool
+=======
 VidaliaSettings::rememberShutdown()
 {
   return value(SETTING_REMEMBER_SHUTDOWN).toBool();
@@ -390,4 +392,5 @@ void
 VidaliaSettings::setRememberShutdown(bool val)
 {
   setValue(SETTING_REMEMBER_SHUTDOWN, val);
+>>>>>>> bug4577_remember
 }
