@@ -1,0 +1,3 @@
+  o Removes the option to have only HTTPProxy since it does not work
+    any more as it used to do with older tor versions. Users should
+    use HTTP/HTTPSProxy instead. Fixes bug 4724.
