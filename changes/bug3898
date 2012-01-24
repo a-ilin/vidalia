@@ -1,3 +1,0 @@
-  o Try Cookie authentication if available in tor based on
-    ProtocolInfo. If that fails, fall back to HashedPassword if
-    supported. Fixes bug 3898.

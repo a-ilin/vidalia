@@ -1,3 +1,0 @@
-  o Improve dist-osx* targets to be able to distribute qtscript
-    extensions properly, and also handle deploying Qt with the
-    macdeployqt tool instead of a macro.

@@ -1,4 +1,0 @@
-  o Add a plugin framework based on QtScript. This gives the abbility
-    to create extensions for Vidalia with all Qt's functionality and
-    interfaces to interact with tor and with Vidalia itself. Resolves
-    ticket 3215

@@ -1,3 +1,0 @@
-  o Uses TAKEOWNERSHIP and __OwningControllerProcess to avoid leaving
-    tor running in background if Vidalia exits unexpectedly. Fixes bug
-    3463.

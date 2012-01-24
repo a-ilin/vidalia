@@ -1,3 +1,102 @@
+0.3.1   24-Jan-2012
+  o Draw the bandwidth graph curves based on the local maximum, not
+    the global maximum. Fixes bug 2188.
+  o Make the default data directory in windows be located in the Local
+    AppData instead of the Roaming one. Fixes bug 2319.
+  o Displays a warning to notify users that the passphrase will be
+    stored as plaintext. Fixes bug 3064.
+  o Add a way to use the autoconfiguration for ControlPort and SocksPort.
+    Tor can now autoconfigure Control and Socks Ports when the default ones
+    are in use. This makes it easier to run several different instances of
+    TBB at the same time. Resolves bug 3077.
+  o Make the AutoPort setting default to false, so that it doesn't
+    break backwards compatibility for people that aren't using Vidalia
+    inside Tor Browser Bundle.
+  o Check tor version and that settings are sanitized before trying to
+    use the port autoconfiguration feature. Fixes bug 3843.
+  o Provide the necessary fields (Control password, ControlPort) to let 
+    TorButton NEWNYM. Vidalia provides these in env vars when it launches
+    the Firefox instance. Resolves bug 2659.
+  o Add an option in the Tor menu to exit the application. Fixes bug
+    3146.
+  o Display the message "Connected to the Tor network!" centered in
+    the main window. Fixes bug 3147.
+  o Explicitly notifies the user that her clock is wrong and tor will
+    probably malfuntion because of it. Fixes bug 3156.
+  o Make the main window visible when opening a tab through the system
+    tray menu. Fixes bug 3165.
+  o Fixes wrong spelling in the method showBandwidthTab inside
+    MainWindow. Resolves ticket 3166.
+  o Fix wrong behavior when trying to connect to an already running
+    tor instance. Fixes bug 3168.
+  o Prevent restarting Tor when it hasn't been started yet. Fixes bug
+    3171.
+  o Make Vidalia hide its main window when the tray icon is
+    doubleclicked. Resolves ticket 3194.
+  o Display time statistics for bridges in UTC time, rather than local
+    time. Fixes bug 3342.
+  o Uses TAKEOWNERSHIP and __OwningControllerProcess to avoid leaving
+    tor running in background if Vidalia exits unexpectedly. Fixes bug
+    3463.
+  o Change the parameter for ordering the entries in the Basic Log
+    list from currentTime to currentDateTime to avoid missplacing
+    entries from different days.
+  o Check tor version and that settings are sanitized before trying to
+    use the port autoconfiguration feature. Fixes bug 3843.
+  o Try Cookie authentication if available in tor based on
+    ProtocolInfo. If that fails, fall back to HashedPassword if
+    supported. Fixes bug 3898.
+  o Remember the previously used random socks/control ports so Firefox
+    keeps working after restarting tor. Fixes bug 4031.
+  o Attempt to remove port.conf file before using it to avoid a race
+    condition between tor and Vidalia. Fixes bug 4048.
+  o Do not allow users to check the "My ISP blocks..." checkbox
+    without entering any bridges. Also updates the
+    documentation. Fixes bug 4290.
+  o Check that the authentication-cookie file length is exactly 32
+    bytes long. Fixes bug 4304.
+  o Explicitly disable ControlPort auto. Fixes bug 4379.
+  o Adds a checkbox to remember the answer of a VMessageBox::question
+    easily. It is used to remember how the user wants to terminate tor
+    when running a relay. Fixes bug 4577.
+  o Explicitly disable SocksPort auto by setting it to its default
+    (9050). Fixes bug 4598.
+  o Make the non exit relay option backward compatible with Vidalia <
+    0.2.14 so that it doesn't confuse users. Fixes bug 4642.
+  o Sets the preferred size for the GUI layout so it doesn't squeeze
+    widges when the size isn't big enough. Fixes bug 4656.
+  o Removes the option to have only HTTPProxy since it does not work
+    any more as it used to do with older tor versions. Users should
+    use HTTP/HTTPSProxy instead. Fixes bug 4724.
+  o Add a hidden configuration option called SkipVersionCheck so
+    systems like Tails can force Vidalia to skip checking tor's
+    version. Resolves ticket 4736.
+  o When Tor has cached enough information it bootstraps faster than
+    what takes Vidalia connect to it, so Vidalia does not see the
+    event to update the progress bar. Now Vidalia explicitly asks for
+    bootstrap-phase when it connects to Tor, and updates the progress
+    to what is actually happening instead of hanging in
+    "Authenticating to Tor". Fixes bug 4827.
+  o Sets __ReloadTorrcOnSIGHUP to 0 if SAVECONF failed, which means
+    the user can't write the torrc file. Fixes bug 4833.
+  o Provide a way to hide Dock or System Tray icons in OSX. Resolves
+    ticket 2163.
+  o Improve search in the router list from the Network Map with a
+    search field. Resolves ticket 3144.
+  o Add a plugin framework based on QtScript. This gives the abbility
+    to create extensions for Vidalia with all Qt's functionality and
+    interfaces to interact with tor and with Vidalia itself. Resolves
+    ticket 3215
+  o Add a way to detach a tab from Vidalia's main window. This will
+    provide more flexibility with plugins that might be intended to be
+    displayed apart from Vidalia.
+  o Vidalia only validates IPv4 bridge lines. IPv6 bridges are now
+    available, and there will be pluggable transport bridge lines. So
+    the validation is now delegated to Tor through SETCONF.
+  o Improve dist-osx* targets to be able to distribute qtscript
+    extensions properly, and also handle deploying Qt with the
+    macdeployqt tool instead of a macro.
+
 0.3.0   06-May-2011
   o Vidalia has got a new GUI. Instead of separate dialogs, each functionality
     is organized in tabs arranged in a common main window. This new tab

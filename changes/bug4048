@@ -1,2 +1,0 @@
-  o Attempt to remove port.conf file before using it to avoid a race
-    condition between tor and Vidalia. Fixes bug 4048.

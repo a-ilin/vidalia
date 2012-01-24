@@ -1,2 +1,0 @@
-  o Display time statistics for bridges in UTC time, rather than local
-    time. Fixes bug 3342.

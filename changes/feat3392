@@ -1,3 +1,0 @@
-  o Add a way to detach a tab from Vidalia's main window. This will
-    provide more flexibility with plugins that might be intended to be
-    displayed apart from Vidalia.

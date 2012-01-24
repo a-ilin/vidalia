@@ -1,2 +1,0 @@
-  o Sets __ReloadTorrcOnSIGHUP to 0 if SAVECONF failed, which means
-    the user can't write the torrc file. Fixes bug 4833.

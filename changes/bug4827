@@ -1,6 +1,0 @@
-  o When Tor has cached enough information it bootstraps faster than
-    what takes Vidalia connect to it, so Vidalia does not see the
-    event to update the progress bar. Now Vidalia explicitly asks for
-    bootstrap-phase when it connects to Tor, and updates the progress
-    to what is actually happening instead of hanging in
-    "Authenticating to Tor". Fixes bug 4827.

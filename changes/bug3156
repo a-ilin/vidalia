@@ -1,2 +1,0 @@
-  o Explicitly notifies the user that her clock is wrong and tor will
-    probably malfuntion because of it. Fixes bug 3156.

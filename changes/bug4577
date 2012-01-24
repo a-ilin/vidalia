@@ -1,3 +1,0 @@
-  o Adds a checkbox to remember the answer of a VMessageBox::question
-    easily. It is used to remember how the user wants to terminate tor
-    when running a relay. Fixes bug 4577.

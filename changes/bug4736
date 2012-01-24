@@ -1,3 +1,0 @@
-  o Add a hidden configuration option called SkipVersionCheck so
-    systems like Tails can force Vidalia to skip checking tor's
-    version. Resolves ticket 4736.

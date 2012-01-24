@@ -1,2 +1,0 @@
-  o Sets the preferred size for the GUI layout so it doesn't squeeze
-    widges when the size isn't big enough. Fixes bug 4656.
