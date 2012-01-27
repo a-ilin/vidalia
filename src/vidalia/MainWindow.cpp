@@ -621,7 +621,7 @@ MainWindow::start()
     if(settings.autoControlPort()) {
       QString portconf = QString("%1/port.conf").arg(expDataDirectory);
       if(!QFile::remove(portconf))
-        vWarn(QString("Unable to remove %s, may be it didn't existed.").arg(portconf));
+        vWarn(QString("Unable to remove %1, may be it didn't existed.").arg(portconf));
 
       QString control_str = "auto";
       QString socks_str = "auto";
@@ -892,7 +892,7 @@ void
 MainWindow::connected()
 {
   authenticate();
-  if(!_torControl->isVidaliaRunningTor()) {
+  if(_torControl->isVidaliaRunningTor()) {
     QString err;
     if(!_torControl->takeOwnership(&err))
       vWarn(err);
@@ -1377,7 +1377,7 @@ MainWindow::tryCookie(const ProtocolInfo &pi)
     cookie = loadControlCookie(cookieDir);
   }
   if(cookie.size() != 32) {
-    vWarn(QString("Cookie length has to be exactly 32 bytes long. Found %s bytes")
+    vWarn(QString("Cookie length has to be exactly 32 bytes long. Found %1 bytes")
           .arg(cookie.size()));
     return false;
   }
