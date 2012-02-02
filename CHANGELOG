@@ -1,4 +1,4 @@
-0.3.1   24-Jan-2012
+0.3.1   29-Jan-2012
   o Draw the bandwidth graph curves based on the local maximum, not
     the global maximum. Fixes bug 2188.
   o Make the default data directory in windows be located in the Local
@@ -79,8 +79,6 @@
     "Authenticating to Tor". Fixes bug 4827.
   o Sets __ReloadTorrcOnSIGHUP to 0 if SAVECONF failed, which means
     the user can't write the torrc file. Fixes bug 4833.
-  o Provide a way to hide Dock or System Tray icons in OSX. Resolves
-    ticket 2163.
   o Improve search in the router list from the Network Map with a
     search field. Resolves ticket 3144.
   o Add a plugin framework based on QtScript. This gives the abbility
