@@ -19,7 +19,6 @@
 #include "ServerPage.h"
 #include "AdvancedPage.h"
 #include "AppearancePage.h"
-#include "ServicePage.h"
 #include "VMessageBox.h"
 #include "ServerSettings.h"
 #include "NetworkSettings.h"
@@ -83,10 +82,6 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.stackPages->add(new ServerPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVER),
                                       tr("Sharing"), "Sharing", grp));
-
-  ui.stackPages->add(new ServicePage(ui.stackPages),
-                     createPageAction(QIcon(IMAGE_SERVICE),
-                                      tr("Services"), "Services", grp));
 
   ui.stackPages->add(new AppearancePage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_APPEARANCE),
@@ -277,8 +272,6 @@ ConfigDialog::help()
       help("config.appearance"); break;
     case Advanced:
       help("config.advanced"); break;
-    case Service:
-      help("config.services"); break;
     default:
       help("config.general"); break;
   }
