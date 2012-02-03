@@ -157,6 +157,8 @@ public:
    * QVariant containing the value returned by Tor. Returns a default
    * constructed QVariant on failure. */
   QVariant getConf(const QString &key, QString *errmsg = 0);
+  /** Loads the contents as if they were read from disk as the torrc */
+  bool loadConf(const QString &contents, QString *errmsg = 0);
   /** Sends a GETCONF message to Tor with the single key and returns a QString
    * containing the value returned by Tor */
   QString getHiddenServiceConf(const QString &key, QString *errmsg = 0);

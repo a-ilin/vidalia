@@ -893,6 +893,17 @@ TorControl::getConf(const QString &key, QString *errmsg)
   return map.value(key);
 }
 
+/** Loads the contents as if they were read from disk as the torrc */
+bool
+TorControl::loadConf(const QString &contents, QString *errmsg)
+{
+  ControlCommand cmd("+LOADCONF");
+  ControlReply reply;
+  
+  cmd.addArgument(contents + ".");
+  return send(cmd, reply, errmsg);
+}
+
 /** Sends a GETCONF message to Tor with the single key and returns a QString
  * containing the value returned by Tor */
 QString
