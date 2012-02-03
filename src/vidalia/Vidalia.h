@@ -21,6 +21,7 @@
 #include "TorSettings.h"
 #include "Log.h"
 #include "TorControl.h"
+#include "Torrc.h"
 
 #include <QApplication>
 #include <QMap>
@@ -74,6 +75,9 @@ public:
 
   /** Returns Vidalia's main TorControl object. */
   static TorControl* torControl() { return _torControl; }
+
+  /** Returns Vidalia's main TorControl object. */
+  static Torrc* torrc() { return _torrc; }
   
   /** Returns the location Vidalia uses for its data files. */
   static QString dataDirectory();
@@ -156,6 +160,7 @@ private:
   static QString _style;               /**< The current GUI style.           */
   static QString _language;            /**< The current language.            */
   static TorControl* _torControl;      /**< Vidalia's main TorControl object.*/
+  static Torrc* _torrc;      /**< Vidalia's main Torrc object.     */
   static Log _log; /**< Logs debugging messages to file or stdout. */
   static QList<QTranslator *> _translators; /**< List of installed translators. */
 };
