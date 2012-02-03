@@ -17,6 +17,7 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/about
   ${CMAKE_CURRENT_SOURCE_DIR}/bwgraph
   ${CMAKE_CURRENT_SOURCE_DIR}/config
+  ${CMAKE_CURRENT_SOURCE_DIR}/config/torrc
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
   ${CMAKE_CURRENT_SOURCE_DIR}/log
   ${CMAKE_CURRENT_SOURCE_DIR}/network
@@ -126,6 +127,8 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/TorSettings.cpp
   config/VidaliaSettings.cpp
   config/VSettings.cpp
+  config/torrc/TorrcParser.cpp
+  config/torrc/Torrc.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   config/AbstractTorSettings.h
