@@ -47,7 +47,7 @@ public:
   void setExecutable(const QString &torExecutable);
  
   /** Gets the location of Tor's data directory. */
-  QString getDataDirectory() const;
+  QString getDataDirectory();
   /** Sets the location to use for Tor's data directory. */
   void setDataDirectory(const QString &dataDir);
   
