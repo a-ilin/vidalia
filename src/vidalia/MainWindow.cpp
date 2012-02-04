@@ -620,8 +620,6 @@ MainWindow::start()
   /* Specify Tor's data directory, if different from the default */
   QString dataDirectory = settings.getDataDirectory();
   QString expDataDirectory = expand_filename(dataDirectory);
-  if (!dataDirectory.isEmpty())
-    args << "DataDirectory" << expDataDirectory;
   
   if(settings.getControlMethod() == ControlMethod::Port) {
     if(settings.autoControlPort()) {
@@ -629,30 +627,15 @@ MainWindow::start()
       if(!QFile::remove(portconf))
         vWarn(QString("Unable to remove %1, may be it didn't existed.").arg(portconf));
 
-      QString control_str = "auto";
-      QString socks_str = "auto";
-
       if(!_previousControlPort.isEmpty()) {
-        control_str = _previousControlPort;
+        Vidalia::torrc()->setValue("ControlPort", _previousControlPort);
         _startedWithPrevious = true;
       }
       if(!_previousSocksPort.isEmpty()) {
-        socks_str = _previousSocksPort;
+        Vidalia::torrc()->setValue("ControlPort", _previousSocksPort);
         _startedWithPrevious = true;
       }
-
-      args << "ControlPort" << control_str;
-      args << "SocksPort" << socks_str;
-      args << "ControlPortWriteToFile" << QString("%1/port.conf").arg(expDataDirectory);
-    } else {
-      /* Add the intended control port value */
-      quint16 controlPort = settings.getControlPort();
-      if (controlPort)
-        args << "ControlPort" << QString::number(controlPort);
     }
-  } else {
-    QString path = settings.getSocketPath();
-    args << "ControlSocket" << path;
   }
 
   args << "__OwningControllerProcess" << QString::number(QCoreApplication::applicationPid());
@@ -664,20 +647,15 @@ MainWindow::start()
         if (settings.useRandomPassword()) {
           _controlPassword = TorSettings::randomPassword();
           _useSavedPassword = false;
-        } else {
-          _controlPassword = settings.getControlPassword();
+          Vidalia::torrc()->setValue("HashedControlPassword",
+                                     TorSettings::hashPassword(_controlPassword));
+          Vidalia::torrc()->apply(Vidalia::torControl(), new QString());
+        } else
           _useSavedPassword = true;
-        }
       }
-      args << "HashedControlPassword"
-           << TorSettings::hashPassword(_controlPassword);
-
-      break;
-    case TorSettings::CookieAuth:
-      args << "CookieAuthentication"  << "1";
       break;
     default:
-      args << "CookieAuthentication"  << "0";
+      break;
   }
 
   /* This doesn't get set to false until Tor is actually up and running, so we
@@ -753,9 +731,15 @@ MainWindow::started()
     /* Try to connect to Tor's control port */
     if(settings.getControlMethod() == ControlMethod::Port)
       _torControl->connect(settings.getControlAddress(),
-                          settings.getControlPort());
+                           settings.getControlPort());
     else
       _torControl->connect(settings.getSocketPath());
+  }
+  // If we used the previous ports, set the *Port to auto again
+  if(_startedWithPrevious) {
+    Vidalia::torrc()->setValue("ControlPort", "auto");
+    Vidalia::torrc()->setValue("SocksPort", "auto");
+    Vidalia::torrc()->apply(Vidalia::torControl());
   }
   setStartupProgress(STARTUP_PROGRESS_CONNECTING, tr("Connecting to Tor"));
 }
@@ -867,6 +851,9 @@ MainWindow::startFailed(QString errmsg)
     _startedWithPrevious = false;
     _previousControlPort = "";
     _previousSocksPort = "";
+    Vidalia::torrc()->setValue("ControlPort", "auto");
+    Vidalia::torrc()->setValue("SocksPort", "auto");
+    Vidalia::torrc()->apply(Vidalia::torControl());
     vWarn("Retrying with new ports");
     start();
     return;
@@ -1666,6 +1653,8 @@ MainWindow::showConfigDialog(ConfigDialog::Page page)
   ConfigDialog *configDialog = new ConfigDialog();
   connect(configDialog, SIGNAL(helpRequested(QString)),
           this, SLOT(showHelpDialog(QString)));
+  connect(configDialog, SIGNAL(restartTor()),
+          this, SLOT(restart()));
   configDialog->showWindow(page);
 }
 
