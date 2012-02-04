@@ -103,3 +103,17 @@ VSettings::allSettings() const
   return settings;
 }
 
+QVariant
+VSettings::volatileValue(const QString &key,
+                         const QVariant &defaultVal)
+{
+  if(_volatileSettings.count(key) == 0)
+    return defaultVal;
+  return _volatileSettings.value(key);
+}
+
+void
+VSettings::setVolatileValue(const QString &key, const QVariant &val)
+{
+  _volatileSettings.insert(key, val);
+}

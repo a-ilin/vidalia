@@ -57,9 +57,16 @@ protected:
    * point. */
   QMap<QString, QVariant> allSettings() const;
 
+  virtual QVariant volatileValue(const QString &key,
+                                 const QVariant &defaultVal = QVariant());
+  virtual void setVolatileValue(const QString &key, const QVariant &val);
+
 private:
   /** Association of setting key names to default setting values. */
-  QHash<QString, QVariant> _defaults; 
+  QHash<QString, QVariant> _defaults;
+
+  /** Stores values that last as long as Vidalia lives as a process */
+  QMap<QString, QVariant> _volatileSettings;
 };
 
 #endif
