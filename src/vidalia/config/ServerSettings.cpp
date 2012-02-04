@@ -20,6 +20,7 @@
 #ifdef USE_MINIUPNPC
 #include "UPNPControl.h"
 #endif
+#include "Vidalia.h"
 
 #include "net.h"
 #include "stringutil.h"
@@ -78,75 +79,65 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
 }
 
-/** Returns a QHash of Tor-recognizable configuratin keys to their current
- * values. */
-QHash<QString, QString>
-ServerSettings::confValues()
-{
-  QHash<QString, QString> conf;
-  quint32 torVersion = torControl()->getTorVersion();
-
-  /* Server Nickname */
-  conf.insert(SETTING_NICKNAME,
-    (isServerEnabled() ? localValue(SETTING_NICKNAME).toString()
-                       : ""));
-  /* Server ORPort */
-  conf.insert(SETTING_ORPORT,
-    (isServerEnabled() ? localValue(SETTING_ORPORT).toString()
-                       : "0"));
-  /* Server DirPort */
-  conf.insert(SETTING_DIRPORT, 
-    (isDirectoryMirror() ? localValue(SETTING_DIRPORT).toString() 
-                         : "0"));
-  /* Server Exit Policy */
-  conf.insert(SETTING_EXITPOLICY, 
-    ((isBridgeEnabled() || isNonExitEnabled()) ? "reject *:*"
-                        : localValue(SETTING_EXITPOLICY).toString()));
-  
-  /* Server bandwidth settings */
-  conf.insert((torVersion >= 0x020001 ? SETTING_RELAY_BANDWIDTH_RATE 
-                                      : SETTING_BANDWIDTH_RATE),
-    QString::number(localValue(SETTING_BANDWIDTH_RATE).toUInt()) + " bytes");
-  conf.insert((torVersion >= 0x020001 ? SETTING_RELAY_BANDWIDTH_BURST
-                                      : SETTING_BANDWIDTH_BURST),
-    QString::number(localValue(SETTING_BANDWIDTH_BURST).toUInt()) + " bytes");
-    
-  /* Server Contact Information */
-  QString contact = 
-    localValue(SETTING_CONTACT).toString().trimmed();
-  QString defaultContact = defaultValue(SETTING_CONTACT).toString();
-  if ((contact == defaultContact) ||
-      (contact == scrub_email_addr(defaultContact))) {
-    /* Only set the contact info if they put something non-default there */
-    contact = "";
-  }
-  conf.insert(SETTING_CONTACT, scrub_email_addr(contact));
-  
-  /* Set if we're a bridge relay */
-  if (isBridgeEnabled()) {
-    conf.insert(SETTING_BRIDGE_RELAY, "1");
-    conf.insert(SETTING_PUBLISH_SERVER_DESCRIPTOR,
-                publishServerDescriptor() ? "1" : "0");
-  } else {
-    conf.insert(SETTING_BRIDGE_RELAY, "0");
-    conf.insert(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
-  }
-  return conf;
-}
-
 /** Applies the current server configuration settings to Tor. If <b>errmsg</b>
  * is specified and an error occurs while applying the settings, it will be 
  * set to a string describing the error. */
 bool
 ServerSettings::apply(QString *errmsg)
 {
-  bool rc;
+  Torrc *torrc = Vidalia::torrc();
 
   configurePortForwarding();
 
-  if (isServerEnabled()) {
-    rc = torControl()->setConf(confValues(), errmsg);
-  } else { 
+  if (volatileValue(SETTING_ENABLED).toBool()) {
+    quint32 torVersion = torControl()->getTorVersion();
+
+    /* Server Nickname */
+    torrc->setValue(SETTING_NICKNAME,
+                volatileValue(SETTING_NICKNAME).toString());
+    /* Server ORPort */
+    torrc->setValue(SETTING_ORPORT,
+                volatileValue(SETTING_ORPORT).toString());
+    /* Server DirPort */
+    torrc->setValue(SETTING_DIRPORT, 
+                volatileValue(SETTING_DIRPORT).toString());
+    /* Server Exit Policy */
+    torrc->clear(QStringList() << SETTING_EXITPOLICY);
+    if(volatileValue(SETTING_BRIDGE_RELAY).toBool() || 
+       volatileValue(SETTING_NONEXIT_RELAY).toBool()) {
+      torrc->setValue(SETTING_EXITPOLICY, "reject *:*");
+    } else {
+      torrc->setValue(SETTING_EXITPOLICY, volatileValue(SETTING_EXITPOLICY).toString());
+    }
+    /* Server bandwidth settings */
+    torrc->setValue((torVersion >= 0x020001 ? SETTING_RELAY_BANDWIDTH_RATE 
+                 : SETTING_BANDWIDTH_RATE),
+                QString::number(volatileValue(SETTING_BANDWIDTH_RATE).toUInt()) + " bytes");
+    torrc->setValue((torVersion >= 0x020001 ? SETTING_RELAY_BANDWIDTH_BURST
+                 : SETTING_BANDWIDTH_BURST),
+                QString::number(volatileValue(SETTING_BANDWIDTH_BURST).toUInt()) + " bytes");
+    
+    /* Server Contact Information */
+    QString contact = 
+      volatileValue(SETTING_CONTACT).toString().trimmed();
+    QString defaultContact = defaultValue(SETTING_CONTACT).toString();
+    if ((contact == defaultContact) ||
+        (contact == scrub_email_addr(defaultContact))) {
+      /* Only set the contact info if they put something non-default there */
+      contact = "";
+    }
+    torrc->setValue(SETTING_CONTACT, scrub_email_addr(contact));
+  
+    /* Set if we're a bridge relay */
+    if (volatileValue(SETTING_BRIDGE_RELAY).toBool()) {
+      torrc->setValue(SETTING_BRIDGE_RELAY, "1");
+      torrc->setValue(SETTING_PUBLISH_SERVER_DESCRIPTOR,
+                  publishServerDescriptor() ? "1" : "0");
+    } else {
+      torrc->setValue(SETTING_BRIDGE_RELAY, "0");
+      torrc->setValue(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
+    }
+  } else {
     QStringList resetKeys;
     quint32 torVersion = torControl()->getTorVersion();
     resetKeys << SETTING_ORPORT 
@@ -163,9 +154,9 @@ ServerSettings::apply(QString *errmsg)
       resetKeys << SETTING_BANDWIDTH_RATE
                 << SETTING_BANDWIDTH_BURST;
     }
-    rc = torControl()->resetConf(resetKeys, errmsg);
+    torrc->clear(resetKeys);
   }
-  return rc;
+  return torrc->apply(torControl(), errmsg);
 }
 
 /* TODO: We should call this periodically, in case the router gets rebooted or forgets its UPnP settings */
@@ -227,7 +218,7 @@ ServerSettings::torValue(const QString &key) const
 void
 ServerSettings::setServerEnabled(bool enable)
 {
-  setValue(SETTING_ENABLED, enable);
+  setVolatileValue(SETTING_ENABLED, enable);
 }
 
 /** Returns true if Tor is currently configured to run as a Tor server. If Tor
@@ -241,7 +232,11 @@ ServerSettings::isServerEnabled()
     if (torControl()->getConf(SETTING_ORPORT, orPort))
       return (orPort.toUInt() > 0);
   }
-  return localValue(SETTING_ENABLED).toBool();
+
+  with_torrc_value(SETTING_ORPORT) {
+    return ret.at(0).toUInt() > 0;
+  }
+  return false;
 }
 
 /** Sets to <b>enabled</b> whether Tor should be a bridge node when acting as
@@ -249,14 +244,17 @@ ServerSettings::isServerEnabled()
 void
 ServerSettings::setBridgeEnabled(bool enabled)
 {
-  setValue(SETTING_BRIDGE_RELAY, enabled);
+  setVolatileValue(SETTING_BRIDGE_RELAY, enabled);
 }
 
 /** Returns true if Tor is configured to act as a bridge node. */
 bool
 ServerSettings::isBridgeEnabled()
 {
-  return value(SETTING_BRIDGE_RELAY).toBool() && isServerEnabled();
+  with_torrc_value(SETTING_BRIDGE_RELAY) {
+    return (ret.at(0) == "1") && isServerEnabled();
+  }
+  return false;
 }
 
 /** Sets to <b>enabled</b> whether Tor should be a non-exit node when acting as
@@ -264,56 +262,77 @@ ServerSettings::isBridgeEnabled()
 void
 ServerSettings::setNonExitEnabled(bool enabled)
 {
-  setValue(SETTING_NONEXIT_RELAY, enabled);
+  setVolatileValue(SETTING_NONEXIT_RELAY, enabled);
 }
 
 /** Returns true if Tor is configured to act as a non-exit node. */
 bool
 ServerSettings::isNonExitEnabled()
 {
-  return value(SETTING_NONEXIT_RELAY).toBool() && isServerEnabled();
+  with_torrc_value(SETTING_EXITPOLICY) {
+    return ret.size() == 1 and ret.at(0) == "reject *:*" and isServerEnabled();
+  }
+  return false;
 }
 
 /** Sets the server's ORPort. */
 void
 ServerSettings::setORPort(quint16 orPort)
 {
-  setValue(SETTING_ORPORT, orPort);
+  setVolatileValue(SETTING_ORPORT, orPort);
 }
 
 /** Gets the server's current ORPort setting. */
 quint16
 ServerSettings::getORPort()
 {
-  return (quint16)value(SETTING_ORPORT).toUInt();
+  quint16 val = 0;
+  with_torrc_value(SETTING_ORPORT) {
+    val = (quint16)ret.at(0).toUInt();
+  } else {
+    val = (quint16)defaultValue(SETTING_ORPORT).toUInt();
+  }
+
+  return val;
 }
 
 /** Sets the server's current DirPort. */
 void
 ServerSettings::setDirPort(quint16 dirPort)
 {
-  setValue(SETTING_DIRPORT, dirPort);
+  setVolatileValue(SETTING_DIRPORT, dirPort);
 }
 
 /** Gets the server's current DirPort. */
 quint16
 ServerSettings::getDirPort()
 {
-  return (quint16)value(SETTING_DIRPORT).toUInt();
+  quint16 val = 0;
+  with_torrc_value(SETTING_DIRPORT) {
+    val = (quint16)ret.at(0).toUInt();
+  } else {
+    val = (quint16)defaultValue(SETTING_DIRPORT).toUInt();
+  }
+  return val;
 }
 
 /** Sets the server's nickname. */
 void
 ServerSettings::setNickname(QString nickname)
 {
-  setValue(SETTING_NICKNAME, nickname);
+  setVolatileValue(SETTING_NICKNAME, nickname);
 }
 
 /** Gets the server's nickname. */
 QString
 ServerSettings::getNickname()
 {
-  QString nickname = value(SETTING_NICKNAME).toString();
+  QString nickname = "<Unnamed>";
+  with_torrc_value(SETTING_NICKNAME) {
+    nickname = ret.at(0);
+  } else {
+    nickname = defaultValue(SETTING_NICKNAME).toString();
+  }
   /* Ensure the nickname contains only valid characters and is not too long. */
   return ensure_valid_chars(nickname, 
                             VALID_NICKNAME_CHARS).left(MAX_NICKNAME_LEN);
@@ -323,70 +342,97 @@ ServerSettings::getNickname()
 void
 ServerSettings::setContactInfo(QString contact)
 {
-  setValue(SETTING_CONTACT, contact);
+  setVolatileValue(SETTING_CONTACT, contact);
 }
 
 /** Gets the server's contact information. */
 QString
 ServerSettings::getContactInfo()
 {
-  return value(SETTING_CONTACT).toString();
+  QString contact;
+  with_torrc_value(SETTING_CONTACT) {
+    contact = ret.at(0);
+  } else {
+    contact = defaultValue(SETTING_CONTACT).toString();
+  }
+  return contact;
 }
 
 /** Returns whether this server will act as a directory mirror or not. */
 bool
 ServerSettings::isDirectoryMirror()
 {
-  return localValue(SETTING_DIRMIRROR).toBool();
+  return getDirPort() > 0;
 }
 
 /** Sets whether this server will act as a directory mirror. */
 void
 ServerSettings::setDirectoryMirror(bool mirror)
 {
-  setValue(SETTING_DIRMIRROR, mirror);
+  setVolatileValue(SETTING_DIRMIRROR, mirror);
 }
 
 /** Returns the exit policy for this server. */
 ExitPolicy
 ServerSettings::getExitPolicy()
 {
-  return ExitPolicy(value(SETTING_EXITPOLICY).toString());
+  QString val = "";
+  with_torrc_value(SETTING_EXITPOLICY) {
+    foreach(QString ep, ret) {
+      val = ep + "," + val;
+    }
+  } else {
+    val = defaultValue(SETTING_EXITPOLICY).toString();
+  }
+  return ExitPolicy(val);
 }
 
 /** Sets the exit policy for this server. */
 void
 ServerSettings::setExitPolicy(ExitPolicy &exitPolicy)
 {
-  setValue(SETTING_EXITPOLICY, exitPolicy.toString());
+  setVolatileValue(SETTING_EXITPOLICY, exitPolicy.toString());
 }
 
 /** Returns the long-term average bandwidth rate (in KB/s) for this server. */
 quint32
 ServerSettings::getBandwidthAvgRate()
 {
-  return value(SETTING_BANDWIDTH_RATE).toUInt();
+  quint32 val = 0;
+  with_torrc_value(SETTING_BANDWIDTH_RATE) {
+    val = ret.at(0).trimmed().split(" ").at(0).toUInt();
+  } else {
+    val = defaultValue(SETTING_BANDWIDTH_RATE).toUInt();
+  }
+
+  return val;
 }
 
 /** Sets the long-term average bandwidth rate (in KB/s) for this server. */
 void
 ServerSettings::setBandwidthAvgRate(quint32 rate)
 {
-  setValue(SETTING_BANDWIDTH_RATE, rate);
+  setVolatileValue(SETTING_BANDWIDTH_RATE, rate);
 }
 
 /** Returns the maximum bandwidth burst rate (in KB/s) for this server. */
 quint32
 ServerSettings::getBandwidthBurstRate()
 {
-  return value(SETTING_BANDWIDTH_BURST).toUInt();
+  quint32 val = 0;
+  with_torrc_value(SETTING_BANDWIDTH_BURST) {
+    val = ret.at(0).trimmed().split(" ").at(0).toUInt();
+  } else {
+    val = defaultValue(SETTING_BANDWIDTH_BURST).toUInt();
+  }
+  return val;
 }
 
 /** Sets the maximum bandwidth burst rate (in KB/s) for this server. */
 void
 ServerSettings::setBandwidthBurstRate(quint32 rate)
 {
-  setValue(SETTING_BANDWIDTH_BURST, rate);
+  setVolatileValue(SETTING_BANDWIDTH_BURST, rate);
 }
 
 /** Sets whether the user's server descriptor will be published or not.
@@ -396,18 +442,20 @@ ServerSettings::setBandwidthBurstRate(quint32 rate)
 void
 ServerSettings::setPublishServerDescriptor(bool publish)
 {
-  if (publish)
-    setValue(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
-  else
-    setValue(SETTING_PUBLISH_SERVER_DESCRIPTOR, "0");
+  setVolatileValue(SETTING_PUBLISH_SERVER_DESCRIPTOR, publish?"1":"0");
 }
 
 /** Returns true if the user's server descriptor will be published to the
  * appropriate authorities. */
 bool
-ServerSettings::publishServerDescriptor() const
+ServerSettings::publishServerDescriptor()
 {
-  return (value(SETTING_PUBLISH_SERVER_DESCRIPTOR).toString() != "0"); 
+  with_torrc_value(SETTING_PUBLISH_SERVER_DESCRIPTOR) {
+    return ret.at(0) != "0";
+  } else {
+    return defaultValue(SETTING_PUBLISH_SERVER_DESCRIPTOR).toBool();
+  }
+  return false;
 }
 
 /** Returns true if UPnP support is available and enabled. */

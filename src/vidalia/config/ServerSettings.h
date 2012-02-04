@@ -94,7 +94,7 @@ public:
   void setPublishServerDescriptor(bool publish);
   /** Returns true if the user's server descriptor will be published to
    * the appropriate authorities. */
-  bool publishServerDescriptor() const;
+  bool publishServerDescriptor();
 
   /** Configure port forwarding. */
   void configurePortForwarding();
@@ -111,10 +111,6 @@ protected:
    * Currently this just translates BandwidthFoo to RelayBandwidthFoo when
    * appropriate. */
   virtual QVariant torValue(const QString &key) const;
-
-private:
-  /** Returns Tor-recognizable configuration keys and current values. */
-  QHash<QString,QString> confValues();
 };
 
 #endif
