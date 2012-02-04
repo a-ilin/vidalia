@@ -199,10 +199,8 @@ ConfigDialog::saveChanges()
       return;
     }
   }
-  if (Vidalia::torControl()->isConnected())
-    applyChanges();
-  else
-    close();
+
+  applyChanges();
 }
 
 /** Called after Vidalia has authenticated to Tor and applies any changes
@@ -238,8 +236,7 @@ ConfigDialog::applyChanges()
     }
     appliedChanges = true;
   }
-  if (appliedChanges)
-    saveConf();      
+
   close();
 }
 
