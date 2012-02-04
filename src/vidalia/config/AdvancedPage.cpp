@@ -193,8 +193,7 @@ AdvancedPage::save(QString &errmsg)
     }
 
     QString dataDir = ui.lineTorDataDirectory->text();
-    if (dataDir != _settings->getDataDirectory())
-      _settings->setDataDirectory(dataDir);
+    _settings->setDataDirectory(dataDir);
   }
 
   if(!ui.chkAuto->isChecked()) {
@@ -434,6 +433,7 @@ AdvancedPage::toggleAuto(bool)
   ui.lineControlAddress->setVisible(!ui.chkAuto->isChecked());
   ui.label->setVisible(!ui.chkAuto->isChecked());
   ui.lineControlPort->setVisible(!ui.chkAuto->isChecked());
+  ui.lineControlPort->setText("9051");
 }
 
 void
