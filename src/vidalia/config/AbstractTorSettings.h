@@ -19,6 +19,10 @@
 #include "VSettings.h"
 #include "TorControl.h"
 
+#define with_torrc_value(VAL) \
+  QStringList ret = Vidalia::torrc()->value((VAL)); \
+  if(ret.size() > 0)
+
 class AbstractTorSettings : public VSettings
 {
   Q_OBJECT
@@ -55,6 +59,8 @@ protected:
   /** Saves the value <b>val</b> for the setting <b>key</b> to the local
    * settings file. */
   virtual void setValue(const QString &key, const QVariant &value);
+
+  virtual void setVolatileValue(const QString &key, const QVariant &value);
   
   /** Returns true if the given QVariant contains an empty value, depending on
    * the data type. For example, 0 is considered an empty integer and "" is
