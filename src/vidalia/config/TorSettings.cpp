@@ -30,6 +30,7 @@
 #define SETTING_TOR_EXECUTABLE      "TorExecutable"
 #define SETTING_TORRC               "Torrc"
 #define SETTING_CONTROL_ADDR        "ControlAddr"
+#define SETTING_DEFAULTS_TORRC      "DefaultsTorrc"
 #define SETTING_CONTROL_PORT        "ControlPort"
 #define SETTING_SOCKET_PATH         "ControlSocket"
 #define SETTING_CONTROL_METHOD      "ControlMethod"
@@ -81,6 +82,7 @@ TorSettings::TorSettings(TorControl *torControl)
 #endif
 
   setDefault(SETTING_TORRC,         Vidalia::dataDirectory() + "/torrc");
+  setDefault(SETTING_DEFAULTS_TORRC,Vidalia::dataDirectory() + "/defaults_torrc");
   setDefault(SETTING_CONTROL_ADDR,  "127.0.0.1");
   setDefault(SETTING_CONTROL_PORT,  9051);
   setDefault(SETTING_AUTH_METHOD,   toString(DEFAULT_AUTH_METHOD));
@@ -194,6 +196,26 @@ void
 TorSettings::setTorrc(const QString &torrc)
 {
   setValue(SETTING_TORRC, torrc);
+}
+
+/** Returns the defaults torrc that will be used when starting Tor. */
+QString
+TorSettings::getDefaultsTorrc() const
+{
+  QString torrc;
+  // TorControl *tc = torControl();
+  // if (tc && tc->isConnected() && tc->getInfo("config-file", torrc))
+  //   return QDir::convertSeparators(torrc);
+  return QDir::convertSeparators(localValue(SETTING_DEFAULTS_TORRC).toString());
+}
+
+/** Sets the defaults torrc that will be used when starting Tor.
+ * \param torrc The defaults torrc to use. 
+ */
+void
+TorSettings::setDefaultsTorrc(const QString &torrc)
+{
+  setValue(SETTING_DEFAULTS_TORRC, torrc);
 }
 
 /** Get the address or hostname used to connect to Tor */

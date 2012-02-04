@@ -576,7 +576,6 @@ MainWindow::start()
     }
   }
 
-
   /* Check if Tor is already running separately */
   if(settings.getControlMethod() == ControlMethod::Port) {
     if(!settings.autoControlPort() && net_test_connect(settings.getControlAddress(),
@@ -592,6 +591,7 @@ MainWindow::start()
   }
 
   QString torrc = settings.getTorrc();
+  QString torrc_defaults = settings.getDefaultsTorrc();
 
   if(settings.bootstrap()) {
     QString boottorrc = settings.bootstrapFrom();
@@ -601,6 +601,12 @@ MainWindow::start()
       if(QFile::copy(boottorrc, torrc)) {
         settings.setBootstrap(false);
       }
+    }
+  }
+  
+  if(_torControl->getTorVersion() >= 0x020309) {
+    if (!torrc_defaults.isEmpty()) {
+      args << "--defaults-torrc" << torrc_defaults;
     }
   }
 

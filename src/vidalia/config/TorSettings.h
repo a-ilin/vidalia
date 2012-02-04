@@ -55,6 +55,11 @@ public:
   QString getTorrc() const;
   /** Sets the torrc to use when starting Tor. */
   void setTorrc(const QString &torrc);
+
+  /** Gets the defaults torrc to use when starting Tor. */
+  QString getDefaultsTorrc() const;
+  /** Sets the defaults torrc to use when starting Tor. */
+  void setDefaultsTorrc(const QString &torrc);
   
   /** Get Tor's control interface address. */
   QHostAddress getControlAddress() const;
