@@ -21,6 +21,8 @@
 #include "Vidalia.h"
 #include "BridgeDownloader.h"
 
+class NetworkSettings;
+
 #include <QPoint>
 
 
@@ -31,7 +33,9 @@ class NetworkPage : public ConfigPage
 public:
   /** Default Constructor */
   NetworkPage(QWidget *parent = 0);
-  
+  /** Defaults Destructor */
+  ~NetworkPage();
+
   /** Saves the changes on this page */
   bool save(QString &errmsg);
   /** Loads the settings for this page */
@@ -87,6 +91,8 @@ private:
 
   /** Qt Designer generated object */
   Ui::NetworkPage ui;
+
+  NetworkSettings *_settings;
 };
 
 #endif
