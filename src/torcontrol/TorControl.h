@@ -168,6 +168,8 @@ public:
   /** Tells Tor to reset a configuration key back to its default value. */
   bool resetConf(QString key, QString *errmsg = 0);
 
+  /** Returns true if UseMicrodescriptors is enabled */
+  bool useMicrodescriptors(QString *errmsg = 0);
   /** Returns an unparsed router descriptor for the router whose fingerprint
    * matches <b>id</b>. The returned text can later be parsed by the
    * RouterDescriptor class. If <b>id</b> is invalid, then an empty
