@@ -35,22 +35,6 @@ public:
   TorMapWidgetPopupMenu(TorMapWidget *widget);
 
 public slots:
-  /** Called when the user clicks on one or more map features located at mouse
-   * position <b>pos</b>. <b>button</b> specifies the mouse button clicked.
-   * A popup menu will be displayed depending on which mouse button was
-   * clicked.
-   *
-   * \sa featureLeftClicked
-   */
-  void featureClicked(const QPoint &pos, Qt::MouseButton button);
-
-signals:
-  /** Emitted when the user selects the router placemark whose fingerprint
-   * is <b>id</b>.
-   */
-  void displayRouterInfo(const QString &id);
-
-protected:
   /** Called when the user left-clicks on one or more placemarks at mouse
    * position <b>pos</b>. If only one relay placemark exists at <b>pos</b>,
    * then the displayRouterInfo() signal will be emitted. Otherwise, a
@@ -58,7 +42,13 @@ protected:
    *
    * \sa featureLeftClicked
    */
-  virtual void featureLeftClicked(const QPoint &pos);
+  void featureLeftClicked(int x, int y);
+
+signals:
+  /** Emitted when the user selects the router placemark whose fingerprint
+   * is <b>id</b>.
+   */
+  void displayRouterInfo(const QString &id);
 
 private slots:
   /** Called when the user selects a relay from the popup menu used to

@@ -260,12 +260,10 @@ qt4_wrap_cpp(vidalia_SRCS
 if (USE_MARBLE)
   set(vidalia_SRCS ${vidalia_SRCS}
     network/TorMapWidget.cpp
-    network/TorMapWidgetInputHandler.cpp
     network/TorMapWidgetPopupMenu.cpp
   )
   qt4_wrap_cpp(vidalia_SRCS
     network/TorMapWidget.h
-    network/TorMapWidgetInputHandler.h
     network/TorMapWidgetPopupMenu.h
   )
 else(USE_MARBLE)

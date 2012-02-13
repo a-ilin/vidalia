@@ -14,11 +14,15 @@
 */
 
 #include "TorMapWidget.h"
-#include "TorMapWidgetInputHandler.h"
 #include "TorMapWidgetPopupMenu.h"
 #include "Vidalia.h"
 
 #include <MarbleModel.h>
+#include <MarbleWidgetInputHandler.h>
+#include <GeoDataPlacemark.h>
+#include <GeoDataTreeModel.h>
+#include <GeoDataDocument.h>
+#include <GeoDataFolder.h>
 #include <HttpDownloadManager.h>
 
 #include <QStringList>
@@ -26,8 +30,8 @@
 using namespace Marble;
 
 /** QPens to use for drawing different map elements */
-#define CIRCUIT_NORMAL_PEN      QPen(Qt::blue,  2.0)
-#define CIRCUIT_SELECTED_PEN    QPen(Qt::green, 3.0)
+#define CIRCUIT_NORMAL_PEN      QPen(QBrush(QColor(0,51,102)),  2.0)
+#define CIRCUIT_SELECTED_PEN    QPen(QBrush(QColor(65,146,75)), 3.0)
 
 
 /** Default constructor */
@@ -42,22 +46,24 @@ TorMapWidget::TorMapWidget(QWidget *parent)
 
   model()->downloadManager()->setDownloadEnabled(false);
 
-  TorMapWidgetInputHandler *handler = new TorMapWidgetInputHandler();
+  _document = new Marble::GeoDataDocument();
+  _folder = new Marble::GeoDataFolder();
+  model()->treeModel()->addDocument(_document);
+  model()->treeModel()->addFeature(_document, _folder);
+
   TorMapWidgetPopupMenu *popupMenu  = new TorMapWidgetPopupMenu(this);
 
-  connect(handler, SIGNAL(featureClicked(QPoint,Qt::MouseButton)),
-          popupMenu, SLOT(featureClicked(QPoint,Qt::MouseButton)));
+  // Properly disable all right click menus
+  inputHandler()->setMouseButtonPopupEnabled(Qt::RightButton, false);
+
+  // Hack to disable Marble's menus
+  disconnect(inputHandler(), SIGNAL(lmbRequest(int,int)), 
+             0,0);
+
+  connect(inputHandler(), SIGNAL(lmbRequest(int,int)),
+          popupMenu, SLOT(featureLeftClicked(int,int)));
   connect(popupMenu, SIGNAL(displayRouterInfo(QString)),
           this, SIGNAL(displayRouterInfo(QString)));
-
-  /* We can't call setInputHandler() until MarbleWidget has called its
-   * internal _q_initGui() method, which doesn't happen until a
-   * QTimer::singleShot(0, this, SLOT(_q_initGui())) timer set in its
-   * constructor times out. So force that event to process now. */ 
-  vApp->processEvents(QEventLoop::ExcludeUserInputEvents
-                        | QEventLoop::ExcludeSocketNotifiers);
-
-  setInputHandler(handler);
 }
 
 /** Destructor */
@@ -70,38 +76,23 @@ TorMapWidget::~TorMapWidget()
 void
 TorMapWidget::addRouter(const RouterDescriptor &desc, const GeoIpRecord &geoip)
 {
-  QString kml;
   qreal lon = geoip.longitude();
   qreal lat = geoip.latitude();
   quint64 bw;
-  
+
   bw = qMin(desc.averageBandwidth(), desc.burstBandwidth());
   bw = qMin(bw, desc.observedBandwidth());
 
-  kml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-             "<kml xmlns=\"http://earth.google.com/kml/2.0\">"
-             "<Document>"
-             "  <Style id=\"normalPlacemark\">"
-             "    <IconStyle><Icon><href>:/images/icons/placemark-relay.png</href></Icon></IconStyle>"
-             "  </Style>"
-             );
-
-  kml.append("<Placemark>");
-  kml.append("<styleUrl>#normalPlacemark</styleUrl>");
-  kml.append(QString("<name>%1</name>").arg(desc.name()));
-  kml.append(QString("<description>%1</description>").arg(desc.id()));
-  kml.append(QString("<role>1</role>"));
-  kml.append(QString("<address>%1</address>").arg(geoip.toString()));
-  kml.append(QString("<CountryNameCode>%1</CountryNameCode>").arg(geoip.country()));
-  kml.append(QString("<pop>%1</pop>").arg(10 * bw));
-  kml.append(QString("<Point>"
-                     "  <coordinates>%1,%2</coordinates>"
-                     "</Point>").arg(lon).arg(lat));
-  kml.append("</Placemark>");
-  kml.append("</Document></kml>");
-
   QString id = desc.id();
-  addPlacemarkData(kml, id);
+
+  GeoDataPlacemark *pm = new GeoDataPlacemark(desc.name());
+  pm->setDescription(desc.id());
+  pm->setRole("1");
+  pm->setAddress(geoip.toString());
+  pm->setCountryCode(geoip.country());
+  pm->setPopularity(10 * bw);
+  pm->setCoordinate(lon, lat, 0.0, GeoDataCoordinates::Degree);
+  model()->treeModel()->addFeature(_folder, pm);
   _routers.insert(id, GeoDataCoordinates(lon, lat, 0.0,
                                          GeoDataCoordinates::Degree));
 }
@@ -154,19 +145,6 @@ TorMapWidget::removeCircuit(const CircuitId &circid)
   repaint();
 }
 
-/** Selects and highlights the router on the map. */
-void
-TorMapWidget::selectRouter(const QString &id)
-{
-#if 0
-  if (_routers.contains(id)) {
-    QPair<QPointF, bool> *routerPair = _routers.value(id);
-    routerPair->second = true;
-  }
-  repaint();
-#endif
-}
-
 /** Selects and highlights the circuit with the id <b>circid</b> 
  * on the map. */
 void
@@ -184,13 +162,6 @@ TorMapWidget::selectCircuit(const CircuitId &circid)
 void
 TorMapWidget::deselectAll()
 {
-#if 0
-  /* Deselect all router points */
-  foreach (QString router, _routers.keys()) {
-    QPair<QPointF,bool> *routerPair = _routers.value(router);
-    routerPair->second = false;
-  }
-#endif
   /* Deselect all circuit paths */
   foreach (CircuitGeoPath *path, _circuits.values()) {
     path->second = false;
@@ -204,7 +175,7 @@ void
 TorMapWidget::clear()
 {
   foreach (QString id, _routers.keys()) {
-    removePlacemarkKey(id);
+    model()->removeGeoData(id);
   }
 
   foreach (CircuitId circid, _circuits.keys()) {
@@ -234,18 +205,10 @@ TorMapWidget::zoomToFit()
 void
 TorMapWidget::zoomToCircuit(const CircuitId &circid)
 {
-#if 0
   if (_circuits.contains(circid)) {
-    QPair<QPainterPath*,bool> *pair = _circuits.value(circid);
-    QRectF rect = ((QPainterPath *)pair->first)->boundingRect();
-    if (!rect.isNull()) {
-      float zoomLevel = 1.0 - qMax(rect.height()/float(MAP_HEIGHT),
-                                   rect.width()/float(MAP_WIDTH));
-
-      zoom(rect.center().toPoint(), zoomLevel+0.2);
-    }
+    CircuitGeoPath *pair = _circuits.value(circid);
+    centerOn(pair->first.latLonAltBox(), true);
   }
-#endif
 }
 
 /** Zooms in on the router with the given <b>id</b>. */
@@ -257,7 +220,7 @@ TorMapWidget::zoomToRouter(const QString &id)
     GeoDataCoordinates coords = _routers.value(id);
     coords.geoCoordinates(lon, lat, GeoDataPoint::Degree);
 
-    zoomView(maximumZoom());
+    zoomView(zoomFromDistance(1000));
     centerOn(lon, lat, true);
   }
 }

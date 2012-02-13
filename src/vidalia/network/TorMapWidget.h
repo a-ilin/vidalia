@@ -33,6 +33,8 @@
 
 typedef QPair<Marble::GeoDataLineString, bool> CircuitGeoPath;
 
+class Marble::GeoDataDocument;
+class Marble::GeoDataFolder;
 
 class TorMapWidget : public Marble::MarbleWidget
 {
@@ -48,8 +50,6 @@ public:
   void addRouter(const RouterDescriptor &desc, const GeoIpRecord &geoip);
   /** Plots the given circuit on the map. */
   void addCircuit(const CircuitId &circid, const QStringList &path);
-  /** Selects and hightlights a router on the map. */
-  void selectRouter(const QString &id);
   /** Selects and highlights a circuit on the map. */
   void selectCircuit(const CircuitId &circid);
 
@@ -82,6 +82,9 @@ private:
   QHash<QString, Marble::GeoDataCoordinates> _routers;
   /** Stores circuit information */
   QHash<CircuitId, CircuitGeoPath*> _circuits;
+
+  Marble::GeoDataDocument *_document;
+  Marble::GeoDataFolder *_folder;
 };
 
 #endif
