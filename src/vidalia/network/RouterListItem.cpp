@@ -102,6 +102,8 @@ RouterListItem::setLocation(const GeoIpRecord &geoip)
 
   if (_rd)
     _rd->setLocation(geoip.toString());
+
+  _location = geoip;
   _countryCode = geoip.countryCode();
 }
 
