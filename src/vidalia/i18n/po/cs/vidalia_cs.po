@@ -1,11 +1,14 @@
 # 
+# Translators:
+#   <johnathan.smith1968@gmail.com>, 2012.
+# runasand <runa.sandvik@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: The Tor Project\n"
 "Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2011-05-03 14:28+0000\n"
-"PO-Revision-Date: 2011-05-06 19:55+0000\n"
-"Last-Translator: runasand <runa.sandvik@gmail.com>\n"
+"PO-Revision-Date: 2012-02-14 10:03+0000\n"
+"Last-Translator: Johnathan.Smith <johnathan.smith1968@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,7 +68,7 @@ msgstr "Nelze vytvořit %1 [%2]"
 
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
-msgstr ""
+msgstr "Vyberte adresář který bude Tor využívat pro data."
 
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
@@ -101,7 +104,7 @@ msgstr "Heslo"
 
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
-msgstr ""
+msgstr "Náhodně vygenerované."
 
 msgctxt "AdvancedPage"
 msgid ":"
@@ -113,11 +116,11 @@ msgstr "Tor Konfigurační soubor"
 
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "Spusťte Tor s konkrétním konfiguračním souborem (torrc)"
 
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "Zadejte cestu k vašemu konfiguračnímu souboru."
 
 msgctxt "AdvancedPage"
 msgid "Browse"
@@ -129,59 +132,59 @@ msgstr "Adresář dat"
 
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "Ukládejte data z Toru v tomto adresáři"
 
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "Vyberte adresář který bude Tor používat pro ukládání dat"
 
 msgctxt "AdvancedPage"
 msgid "Tor Control"
-msgstr ""
+msgstr "Kontrola Tor"
 
 msgctxt "AdvancedPage"
 msgid "Use TCP connection (ControlPort)"
-msgstr ""
+msgstr "Použijte připojení TCP (ControlPort)"
 
 msgctxt "AdvancedPage"
 msgid "Path:"
-msgstr ""
+msgstr "Cesta:"
 
 msgctxt "AdvancedPage"
 msgid "Use Unix domain socket (ControlSocket)"
-msgstr ""
+msgstr "Použijte Unixový doménový socket (ControlSocket)"
 
 msgctxt "AdvancedPage"
 msgid "Edit current torrc"
-msgstr ""
+msgstr "Upravte aktuální torrc"
 
 msgctxt "AdvancedPage"
 msgid "NOTE: this will edit the currently loaded torrc"
-msgstr ""
+msgstr "Poznámka: toto upraví aktuálně načtený torrc"
 
 msgctxt "AdvancedPage"
 msgid "ControlSocket path doesn't exist."
-msgstr ""
+msgstr "Cesta k ControlSocket neexistuje"
 
 msgctxt "AdvancedPage"
 msgid ""
 "The specified Tor configuration file location contains characters that "
 "cannot be represented in your system's current 8-bit character encoding."
-msgstr ""
+msgstr "Vybraný konfigurační soubor Tor obsahuje znaky které nemůžou být zobrazeny ve vašem systému aktuálním 8-bitovým kódováním."
 
 msgctxt "AdvancedPage"
 msgid ""
 "The specified Tor data directory location contains characters that cannot be"
 " represented in your system's current 8-bit character encoding."
-msgstr ""
+msgstr "Vybraná složka s daty Tor obsahuje znaky které nemůžou být zobrazeny ve vašem systému aktuálním 8-bitovým kódováním."
 
 msgctxt "AdvancedPage"
 msgid "Warning"
-msgstr ""
+msgstr "Varování"
 
 msgctxt "AdvancedPage"
 msgid "You changed torrc path, would you like to restart Tor?"
-msgstr ""
+msgstr "Změnili jste cesta k torrc, chcete Tor restartovat?"
 
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File (torrc);;All Files (*)"
@@ -272,35 +275,35 @@ msgstr "Zrušit"
 
 msgctxt "BandwidthGraph"
 msgid "Bandwidth Graph"
-msgstr ""
+msgstr "Graf připojení"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
-msgstr ""
+msgstr "Začínám požadavek na HTTPS bridge ..."
 
 msgctxt "BridgeDownloader"
 msgid "Connecting to %1:%2..."
-msgstr ""
+msgstr "Připojuji se %1:%2..."
 
 msgctxt "BridgeDownloader"
 msgid "Sending an HTTPS request for bridges..."
-msgstr ""
+msgstr "Posílám požadavek na HTTPS bridges..."
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
-msgstr ""
+msgstr "Stahuji list bridges"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr ""
+msgstr "Stahuji Bridges"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
-msgstr ""
+msgstr "Nemohu stáhnout bridges: %1"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Retrying bridge request..."
-msgstr ""
+msgstr "Znovu posílám požadavek na bridge"
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
@@ -308,19 +311,19 @@ msgstr "Země"
 
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr ""
+msgstr "# Klienti"
 
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr ""
+msgstr "Klienti z těchto zemí vás použili k přenosu od %1"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr ""
+msgstr "Souhrn využití bridge"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "Souhrn klienta"
 
 msgctxt "Circuit"
 msgid "New"
@@ -364,11 +367,11 @@ msgstr "Nahled na data okruh"
 
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
-msgstr ""
+msgstr "Uzavření okruh (Del)"
 
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
-msgstr ""
+msgstr "Uzavřený stream (Del)"
 
 msgctxt "ConfigDialog"
 msgid "General"
@@ -384,7 +387,7 @@ msgstr "Sdílení"
 
 msgctxt "ConfigDialog"
 msgid "Services"
-msgstr ""
+msgstr "Služby"
 
 msgctxt "ConfigDialog"
 msgid "Appearance"
@@ -428,26 +431,26 @@ msgstr "Kontrolni socket neni detekovan"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Problem connecting to Tor"
-msgstr ""
+msgstr "Problém s připojením k Tor"
 
 msgctxt "ControlPasswordInputDialog"
 msgid ""
 "Tor is already running, but Vidalia can't connect to it.\n"
 "\n"
 "This can happen when something else (such as another active Vidalia process, or a Vidalia process that crashed) launched Tor."
-msgstr ""
+msgstr "Tor běží, ale Vidalia se k němu nemůže připojit.\n\nTo se může stát pokud(nějaký jiný aktivní Vidalia proces je spuštěn, nebo pokud Vidali proces spadnul) zapínáte Tor."
 
 msgctxt "ControlPasswordInputDialog"
 msgid ""
 "You will need to shut down the Tor process before Vidalia can launch a new "
 "one."
-msgstr ""
+msgstr "Musíte nejprve ukončit proces Tor aby mohla Vidalia zapnout nový."
 
 msgctxt "ControlPasswordInputDialog"
 msgid ""
 "Vidalia can try to restart Tor for you.  Doing so will close all currently "
 "active connections through your Tor process."
-msgstr ""
+msgstr "Vidalia může zkusit restartovat Tor .  Během tohoto procesu bude všechno aktivní připojení přes Tor ukončeno."
 
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
@@ -479,7 +482,7 @@ msgstr "Angola"
 
 msgctxt "CountryInfo"
 msgid "Antigua & Barbuda"
-msgstr ""
+msgstr "Antigua & Barbuda"
 
 msgctxt "CountryInfo"
 msgid "Argentina"
@@ -507,7 +510,7 @@ msgstr "Bangladéš"
 
 msgctxt "CountryInfo"
 msgid "Barbados"
-msgstr ""
+msgstr "Barbados"
 
 msgctxt "CountryInfo"
 msgid "Belarus"
@@ -519,11 +522,11 @@ msgstr "Belgie"
 
 msgctxt "CountryInfo"
 msgid "Belize"
-msgstr ""
+msgstr "Belize"
 
 msgctxt "CountryInfo"
 msgid "Bhutan"
-msgstr ""
+msgstr "Bhutan"
 
 msgctxt "CountryInfo"
 msgid "Bolivia"
@@ -535,7 +538,7 @@ msgstr "Bosna a Hercegovina"
 
 msgctxt "CountryInfo"
 msgid "Botswana"
-msgstr ""
+msgstr "Botswana"
 
 msgctxt "CountryInfo"
 msgid "Brazil"
@@ -543,7 +546,7 @@ msgstr "Brazílie"
 
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "Brunei Darussalam"
 
 msgctxt "CountryInfo"
 msgid "Bulgaria"
@@ -551,11 +554,11 @@ msgstr "Bulharsko"
 
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
-msgstr ""
+msgstr "Burkina Faso"
 
 msgctxt "CountryInfo"
 msgid "Burundi"
-msgstr ""
+msgstr "Burundi"
 
 msgctxt "CountryInfo"
 msgid "Cambodia"
@@ -571,7 +574,7 @@ msgstr "Kanada"
 
 msgctxt "CountryInfo"
 msgid "Cape Verde"
-msgstr ""
+msgstr "Cape Verde"
 
 msgctxt "CountryInfo"
 msgid "Central African Republic"
@@ -611,7 +614,7 @@ msgstr "Kosta Rika"
 
 msgctxt "CountryInfo"
 msgid "Cote dâIvoire"
-msgstr ""
+msgstr "Cote dâIvoire"
 
 msgctxt "CountryInfo"
 msgid "Croatia"
@@ -639,7 +642,7 @@ msgstr "O aplikaci"
 
 msgctxt "CountryInfo"
 msgid "Dominica"
-msgstr ""
+msgstr "Dominica"
 
 msgctxt "CountryInfo"
 msgid "Dominican Republic"
@@ -655,15 +658,15 @@ msgstr "Egypt"
 
 msgctxt "CountryInfo"
 msgid "El Salvador"
-msgstr ""
+msgstr "El Salvador"
 
 msgctxt "CountryInfo"
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "Equatorial Guinea"
 
 msgctxt "CountryInfo"
 msgid "Eritrea"
-msgstr ""
+msgstr "Eritrea"
 
 msgctxt "CountryInfo"
 msgid "Estonia"
@@ -675,15 +678,15 @@ msgstr "Francie"
 
 msgctxt "CountryInfo"
 msgid "Gabon"
-msgstr ""
+msgstr "Gabon"
 
 msgctxt "CountryInfo"
 msgid "Gambia"
-msgstr ""
+msgstr "Gambia"
 
 msgctxt "CountryInfo"
 msgid "Georgia"
-msgstr ""
+msgstr "Georgia"
 
 msgctxt "CountryInfo"
 msgid "Germany"
@@ -691,15 +694,15 @@ msgstr "Německo"
 
 msgctxt "CountryInfo"
 msgid "Ghana"
-msgstr ""
+msgstr "Ghana"
 
 msgctxt "CountryInfo"
 msgid "Grenada"
-msgstr ""
+msgstr "Grenada"
 
 msgctxt "CountryInfo"
 msgid "Guatemala"
-msgstr ""
+msgstr "Guatemala"
 
 msgctxt "CountryInfo"
 msgid "Guinea"
@@ -707,147 +710,147 @@ msgstr "Guinea"
 
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "Guinea-Bissau"
 
 msgctxt "CountryInfo"
 msgid "Guyana"
-msgstr ""
+msgstr "Guyana"
 
 msgctxt "CountryInfo"
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hong Kong"
 
 msgctxt "CountryInfo"
 msgid "Haiti"
-msgstr ""
+msgstr "Haiti"
 
 msgctxt "CountryInfo"
 msgid "Honduras"
-msgstr ""
+msgstr "Honduras"
 
 msgctxt "CountryInfo"
 msgid "Israel"
-msgstr ""
+msgstr "Israel"
 
 msgctxt "CountryInfo"
 msgid "Italy"
-msgstr ""
+msgstr "Italy"
 
 msgctxt "CountryInfo"
 msgid "Jamaica"
-msgstr ""
+msgstr "Jamaica"
 
 msgctxt "CountryInfo"
 msgid "Japan"
-msgstr ""
+msgstr "Japan"
 
 msgctxt "CountryInfo"
 msgid "Jordan"
-msgstr ""
+msgstr "Jordan"
 
 msgctxt "CountryInfo"
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Kazakhstan"
 
 msgctxt "CountryInfo"
 msgid "Kenya"
-msgstr ""
+msgstr "Kenya"
 
 msgctxt "CountryInfo"
 msgid "Kiribati"
-msgstr ""
+msgstr "Kiribati"
 
 msgctxt "CountryInfo"
 msgid "Kuwait"
-msgstr ""
+msgstr "Kuwait"
 
 msgctxt "CountryInfo"
 msgid "Kyrgyzstan"
-msgstr ""
+msgstr "Kyrgyzstan"
 
 msgctxt "CountryInfo"
 msgid "Laos"
-msgstr ""
+msgstr "Laos"
 
 msgctxt "CountryInfo"
 msgid "Latvia"
-msgstr ""
+msgstr "Latvia"
 
 msgctxt "CountryInfo"
 msgid "Lebanon"
-msgstr ""
+msgstr "Lebanon"
 
 msgctxt "CountryInfo"
 msgid "Lesotho"
-msgstr ""
+msgstr "Lesotho"
 
 msgctxt "CountryInfo"
 msgid "Liberia"
-msgstr ""
+msgstr "Liberia"
 
 msgctxt "CountryInfo"
 msgid "Liechtenstein"
-msgstr ""
+msgstr "Liechtenstein"
 
 msgctxt "CountryInfo"
 msgid "Lithuania"
-msgstr ""
+msgstr "Lithuania"
 
 msgctxt "CountryInfo"
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxembourg"
 
 msgctxt "CountryInfo"
 msgid "Macedonia"
-msgstr ""
+msgstr "Macedonia"
 
 msgctxt "CountryInfo"
 msgid "Madagascar"
-msgstr ""
+msgstr "Madagascar"
 
 msgctxt "CountryInfo"
 msgid "Malawi"
-msgstr ""
+msgstr "Malawi"
 
 msgctxt "CountryInfo"
 msgid "Malaysia"
-msgstr ""
+msgstr "Malaysia"
 
 msgctxt "CountryInfo"
 msgid "Mali"
-msgstr ""
+msgstr "Mali"
 
 msgctxt "CountryInfo"
 msgid "Malta"
-msgstr ""
+msgstr "Malta"
 
 msgctxt "CountryInfo"
 msgid "Marshall Islands"
-msgstr ""
+msgstr "Marshall Islands"
 
 msgctxt "CountryInfo"
 msgid "Mauritania"
-msgstr ""
+msgstr "Mauritania"
 
 msgctxt "CountryInfo"
 msgid "Mauritius"
-msgstr ""
+msgstr "Mauritius"
 
 msgctxt "CountryInfo"
 msgid "Micronesia"
-msgstr ""
+msgstr "Micronesia"
 
 msgctxt "CountryInfo"
 msgid "Moldova"
-msgstr ""
+msgstr "Moldova"
 
 msgctxt "CountryInfo"
 msgid "Monaco"
-msgstr ""
+msgstr "Monaco"
 
 msgctxt "CountryInfo"
 msgid "Mongolia"
-msgstr ""
+msgstr "Mongolia"
 
 msgctxt "CountryInfo"
 msgid "Montenegro"
@@ -1227,47 +1230,47 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Iraq"
-msgstr ""
+msgstr "Iraq"
 
 msgctxt "CountryInfo"
 msgid "Ireland"
-msgstr ""
+msgstr "Ireland"
 
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "Korea, North"
 
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "Korea, South"
 
 msgctxt "CountryInfo"
 msgid "Libya"
-msgstr ""
+msgstr "Libya"
 
 msgctxt "CountryInfo"
 msgid "Maldives"
-msgstr ""
+msgstr "Maldives"
 
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "Mexico"
 
 msgctxt "CountryInfo"
 msgid "Myanmar"
-msgstr ""
+msgstr "Myanmar"
 
 msgctxt "CountryInfo"
 msgid "Taiwan"
-msgstr ""
+msgstr "Taiwan"
 
 msgctxt "CrashReportDialog"
 msgid "Submit a Crash Report"
-msgstr ""
+msgstr "Pošlete crash report o pádu programu"
 
 msgctxt "CrashReportDialog"
 msgid "Vidalia encountered an error and needed to close"
-msgstr ""
+msgstr "Vidalia narazila na problém a je potřeba ji ukončit"
 
 msgctxt "CrashReportDialog"
 msgid ""
@@ -1275,47 +1278,47 @@ msgid ""
 "Vidalia developers to help identify and fix the problem. The submitted "
 "report does not contain any personally identifying information, but your "
 "connection to the crash reporting server may not be anonymous."
-msgstr ""
+msgstr "Crash report o pádu programu byl můžete automaticky poslat vývojářům z Vidalia, toto slouží k nalezení příčiny a řešení problému. Poslaný crash report neobsahuje žádné osobní údaje, ale vaše připojení k serveru při odesílání nemusí  být anonymní."
 
 msgctxt "CrashReportDialog"
 msgid ""
 "Please also describe what you were doing before the application crashed "
 "(optional):"
-msgstr ""
+msgstr "Popište prosím co vše jste dělali před pádem aplikace (volitelné):"
 
 msgctxt "CrashReportDialog"
 msgid "Send my crash report to the Vidalia developers"
-msgstr ""
+msgstr "Poslat můj crash report vývojářům z Vidalia"
 
 msgctxt "CrashReportDialog"
 msgid "Restart Vidalia"
-msgstr ""
+msgstr "Restartovat Vidalia"
 
 msgctxt "CrashReportDialog"
 msgid "Don't Restart"
-msgstr ""
+msgstr "Nerestartovat Vidalia"
 
 msgctxt "CrashReportDialog"
 msgid "Unable to restart Vidalia"
-msgstr ""
+msgstr "Není možné restarovat Vidalia"
 
 msgctxt "CrashReportDialog"
 msgid ""
 "We were unable to automatically restart Vidalia. Please restart Vidalia "
 "manually."
-msgstr ""
+msgstr "Nemůžeme automaticky restartovat Vidalia. Restartujte ji prosím manuálně."
 
 msgctxt "CrashReportUploader"
 msgid "Connecting..."
-msgstr ""
+msgstr "Připojuji se..."
 
 msgctxt "CrashReportUploader"
 msgid "Sending crash report..."
-msgstr ""
+msgstr "Posílám crash report..."
 
 msgctxt "CrashReportUploader"
 msgid "Receiving response..."
-msgstr ""
+msgstr "Přijímám odpověď...."
 
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
@@ -1359,19 +1362,19 @@ msgstr ""
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
-msgstr ""
+msgstr "Aktualizace softwaru"
 
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
-msgstr ""
+msgstr "Kontroluj nové aktualizace automaticky"
 
 msgctxt "GeneralPage"
 msgid "Check Now"
-msgstr ""
+msgstr "Zkontroluj teď"
 
 msgctxt "GeneralPage"
 msgid "Connect to Tor automatically"
-msgstr ""
+msgstr "Připoj se k Tor automaticky"
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1391,11 +1394,11 @@ msgstr "%1 GB"
 
 msgctxt "GraphFrame"
 msgid "Recv:"
-msgstr ""
+msgstr "Příjmuté:"
 
 msgctxt "GraphFrame"
 msgid "Sent:"
-msgstr ""
+msgstr "Odeslané:"
 
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
@@ -1523,48 +1526,48 @@ msgstr "Najdi dokument"
 
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents:"
-msgstr ""
+msgstr "Nastala chyba při načítání nápovědy:"
 
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "Otevírám externí odkaz"
 
 msgctxt "HelpTextBrowser"
 msgid ""
 "Vidalia can open the link you selected in your default Web browser. If your "
 "browser is not currently configured to use Tor then the request will not be "
 "anonymous."
-msgstr ""
+msgstr "Vidali může otevřít váš odkaz ve vašem primárním webovém prohlížeči. Avšak pokud není aktuálně nastaven pro používání Tor, váš požadavek na prohlížení nemusí být anonymní."
 
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Chcete aby Vidalia otevřela odkaz ve vašem webovém prohlížeči?"
 
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Nemůžeme otevřít odkaz"
 
 msgctxt "HelpTextBrowser"
 msgid ""
 "Vidalia was unable to open the selected link in your Web browser. You can "
 "still copy the URL and paste it into your browser."
-msgstr ""
+msgstr "Vidalia nemůže otevřít vybraný odkaz ve vašem prohlížeči. Avšak můžete zkopírovat URL odkazu a vložit jej do vašeho prohlížeče."
 
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
-msgstr ""
+msgstr "Nastala chyba při otevíraní souboru s nápovědou:"
 
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Informace o licenci"
 
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Zásluha"
 
 msgctxt "LogEvent"
 msgid "Debug"
@@ -1592,31 +1595,31 @@ msgstr "Nezname"
 
 msgctxt "LogTreeItem"
 msgid "Debug"
-msgstr ""
+msgstr "Ladění"
 
 msgctxt "LogTreeItem"
 msgid "Info"
-msgstr ""
+msgstr "Informace"
 
 msgctxt "LogTreeItem"
 msgid "Notice"
-msgstr ""
+msgstr "Upozornění"
 
 msgctxt "LogTreeItem"
 msgid "Warning"
-msgstr ""
+msgstr "Varování"
 
 msgctxt "LogTreeItem"
 msgid "Error"
-msgstr ""
+msgstr "Chyba"
 
 msgctxt "LogTreeItem"
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámý"
 
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "Zapnout Tor"
 
 msgctxt "MainWindow"
 msgid "Exit"
@@ -1664,27 +1667,27 @@ msgstr "Nahled"
 
 msgctxt "MainWindow"
 msgid "Error starting web browser"
-msgstr ""
+msgstr "Chyba při spouštění webového prohlížeče"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
-msgstr ""
+msgstr "Vidalia nebyla schopná zapnout vámi nastavený webový prohlížeč"
 
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Chyba při startu IM klienta"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia nebyla schopná zapnout vámi nastavený IM klient"
 
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
-msgstr ""
+msgstr "Chyba při zapínání proxy serveru"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr ""
+msgstr "Vidalia nebyla schopná zapnout vámi nastavený proxy server"
 
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
@@ -1716,15 +1719,15 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "Připojuji se k síti Tor"
 
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "Navazuji na okruh Tor"
 
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Připojen k síti Tor!"
 
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
@@ -1740,19 +1743,19 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "done"
-msgstr ""
+msgstr "hotovo"
 
 msgctxt "MainWindow"
 msgid "connection refused"
-msgstr ""
+msgstr "připojení odmítnuto"
 
 msgctxt "MainWindow"
 msgid "connection timeout"
-msgstr ""
+msgstr "vypršel čas na připojení"
 
 msgctxt "MainWindow"
 msgid "read/write error"
-msgstr ""
+msgstr "chyba během čtení/zápisu"
 
 msgctxt "MainWindow"
 msgid "no route to host"
@@ -1764,7 +1767,7 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "unknown"
-msgstr ""
+msgstr "neznámý"
 
 msgctxt "MainWindow"
 msgid "Tor is not running"
@@ -1776,7 +1779,7 @@ msgstr "Tor se vypina"
 
 msgctxt "MainWindow"
 msgid "Stop Tor"
-msgstr ""
+msgstr "Zastavit Tor"
 
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
@@ -1784,7 +1787,7 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Starting Tor"
-msgstr ""
+msgstr "Spustit Tor"
 
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
@@ -1794,17 +1797,15 @@ msgctxt "MainWindow"
 msgid ""
 "Vidalia was unable to start Tor. Check your settings to ensure the correct "
 "name and location of your Tor executable is specified."
-msgstr ""
-"Vidalia nemuze spustit Tor. Ujistete se, ze vase nastaveni identifikatoru a "
-"lokality je odpovidajici."
+msgstr "Vidalia nemuze spustit Tor. Ujistete se, ze vase nastaveni identifikatoru a lokality je odpovidajici."
 
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "Připojení k Tor"
 
 msgctxt "MainWindow"
 msgid "Connection Error"
-msgstr ""
+msgstr "Chyba při připojení"
 
 msgctxt "MainWindow"
 msgid "Relaying is Enabled"
@@ -1820,7 +1821,7 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Unexpected Error"
-msgstr ""
+msgstr "Nečekaná chyba"
 
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
@@ -2827,9 +2828,7 @@ msgctxt "ServerPage"
 msgid ""
 "For Internet connections with fast download speed but slow upload, please "
 "list your upload speed here."
-msgstr ""
-"Pro pripojeni s rychlym downloadem ale pomalym uploadem zde nastav rychlost "
-"pro uploadu."
+msgstr "Pro pripojeni s rychlym downloadem ale pomalym uploadem zde nastav rychlost pro uploadu."
 
 msgctxt "ServerPage"
 msgid "Cable/DSL 256 Kbps"
@@ -2887,9 +2886,7 @@ msgctxt "ServerPage"
 msgid ""
 "Your maximum bandwidth rate must be greater than or equal to your average "
 "bandwidth rate. Both values must be at least 20 KB/s."
-msgstr ""
-"Tvoje maximalni prenosova kapacita musi byt vyssi nebo rovna prumerne. Obe "
-"hodnoty musi byt minimalne 20 KB/s (160kbps)."
+msgstr "Tvoje maximalni prenosova kapacita musi byt vyssi nebo rovna prumerne. Obe hodnoty musi byt minimalne 20 KB/s (160kbps)."
 
 msgctxt "ServerPage"
 msgid "Bandwidth Limits"
@@ -2921,9 +2918,7 @@ msgstr "Ruzne dalsi sluzby"
 
 msgctxt "ServerPage"
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
-msgstr ""
-"Porty 706, 1863, 5050, 5190, 5222, 8300 a 8888 {706, 1863, 5050, 5190, 5222,"
-" 5223, 8300 ?}"
+msgstr "Porty 706, 1863, 5050, 5190, 5222, 8300 a 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}"
 
 msgctxt "ServerPage"
 msgid "Instant Messaging (IM)"

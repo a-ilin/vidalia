@@ -1,10 +1,12 @@
 # 
+# Translators:
+# runasand <runa.sandvik@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: The Tor Project\n"
 "Report-Msgid-Bugs-To: https://trac.torproject.org/projects/tor\n"
 "POT-Creation-Date: 2011-05-03 14:28+0000\n"
-"PO-Revision-Date: 2011-05-06 20:00+0000\n"
+"PO-Revision-Date: 2012-02-14 10:04+0000\n"
 "Last-Translator: runasand <runa.sandvik@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -1794,9 +1796,7 @@ msgctxt "MainWindow"
 msgid ""
 "Vidalia was unable to start Tor. Check your settings to ensure the correct "
 "name and location of your Tor executable is specified."
-msgstr ""
-"Видалиа не успя да стартира Тор. Проверете опциите си за да проверите дали е"
-" зададено правилно местоположението на Тор."
+msgstr "Видалиа не успя да стартира Тор. Проверете опциите си за да проверите дали е зададено правилно местоположението на Тор."
 
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
