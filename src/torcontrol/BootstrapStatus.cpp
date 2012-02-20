@@ -20,13 +20,14 @@ BootstrapStatus::BootstrapStatus()
 {
   _severity = tc::UnrecognizedSeverity;
   _reason   = tc::UnrecognizedReason;
-  _status   = UnrecognizedStatus;
+  _status   = QString();
   _action   = UnrecognizedRecommendation;
   _percentComplete = -1;
 }
 
 /** Constructor. */
-BootstrapStatus::BootstrapStatus(tc::Severity severity, Status status, 
+BootstrapStatus::BootstrapStatus(tc::Severity severity, 
+                                 const QString &status, 
                                  int percentComplete,
                                  const QString &description,
                                  const QString &warning,
@@ -40,37 +41,6 @@ BootstrapStatus::BootstrapStatus(tc::Severity severity, Status status,
   _warning = warning;
   _reason = reason;
   _action = action;
-}
-
-/** Converts a string TAG value to a BootstrapStatus enum value. */
-BootstrapStatus::Status
-BootstrapStatus::statusFromString(const QString &str)
-{
-  if (!str.compare("CONN_DIR", Qt::CaseInsensitive))
-    return ConnectingToDirMirror;
-  if (!str.compare("HANDSHAKE_DIR", Qt::CaseInsensitive))
-    return HandshakingWithDirMirror;
-  if (!str.compare("ONEHOP_CREATE", Qt::CaseInsensitive))
-    return CreatingOneHopCircuit;
-  if (!str.compare("REQUESTING_STATUS", Qt::CaseInsensitive))
-    return RequestingNetworkStatus;
-  if (!str.compare("LOADING_STATUS", Qt::CaseInsensitive))
-    return LoadingNetworkStatus;
-  if (!str.compare("LOADING_KEYS", Qt::CaseInsensitive))
-    return LoadingAuthorityCertificates;
-  if (!str.compare("REQUESTING_DESCRIPTORS", Qt::CaseInsensitive))
-    return RequestingDescriptors;
-  if (!str.compare("LOADING_DESCRIPTORS", Qt::CaseInsensitive))
-    return LoadingDescriptors;
-  if (!str.compare("CONN_OR", Qt::CaseInsensitive))
-    return ConnectingToEntryGuard;
-  if (!str.compare("HANDSHAKE_OR", Qt::CaseInsensitive))
-    return HandshakingWithEntryGuard;
-  if (!str.compare("CIRCUIT_CREATE", Qt::CaseInsensitive))
-    return EstablishingCircuit;
-  if (!str.compare("DONE", Qt::CaseInsensitive))
-    return BootstrappingDone;
-  return UnrecognizedStatus;
 }
 
 /** Returns the action that the Tor software recommended be taken in response
@@ -90,7 +60,6 @@ bool
 BootstrapStatus::isValid() const
 {
   return (_severity != tc::UnrecognizedSeverity
-            && _status != UnrecognizedStatus
             && _percentComplete >= 0);
 }
 

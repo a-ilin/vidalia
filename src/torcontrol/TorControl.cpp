@@ -234,7 +234,7 @@ TorControl::getBootstrapPhase()
   tc::Severity severity = tc::severityFromString(args.value("status/bootstrap-phase"));
   BootstrapStatus status
     = BootstrapStatus(severity,
-                      BootstrapStatus::statusFromString(args.value("TAG")),
+                      args.value("TAG"),
                       args.value("PROGRESS").toInt(),
                       args.value("SUMMARY"));
   emit bootstrapStatusChanged(status);
@@ -407,7 +407,7 @@ TorControl::bootstrapStatus(QString *errmsg)
     tc::Severity severity = tc::severityFromString(str.section(' ', 0, 0));
     QHash<QString,QString> args = string_parse_keyvals(str);
     return BootstrapStatus(severity,
-              BootstrapStatus::statusFromString(args.value("TAG")),
+              args.value("TAG"),
               args.value("PROGRESS").toInt(),
               args.value("SUMMARY"),
               args.value("WARNING"),

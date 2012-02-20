@@ -1110,43 +1110,7 @@ MainWindow::bootstrapStatusChanged(const BootstrapStatus &bs)
                bs.recommendedAction() != BootstrapStatus::RecommendIgnore);
 
   QString description;
-  switch (bs.status()) {
-    case BootstrapStatus::ConnectingToDirMirror:
-      description = tr("Connecting to a relay directory");
-      break;
-    case BootstrapStatus::HandshakingWithDirMirror:
-    case BootstrapStatus::CreatingOneHopCircuit:
-      description = tr("Establishing an encrypted directory connection");
-      break;
-    case BootstrapStatus::RequestingNetworkStatus:
-      description = tr("Retrieving network status");
-      break;
-    case BootstrapStatus::LoadingNetworkStatus:
-      description = tr("Loading network status");
-      break;
-    case BootstrapStatus::LoadingAuthorityCertificates:
-      description = tr("Loading authority certificates");
-      break;
-    case BootstrapStatus::RequestingDescriptors:
-      description = tr("Requesting relay information");
-      break;
-    case BootstrapStatus::LoadingDescriptors:
-      description = tr("Loading relay information");
-      break;
-    case BootstrapStatus::ConnectingToEntryGuard:
-      description = tr("Connecting to the Tor network");
-      break;
-    case BootstrapStatus::HandshakingWithEntryGuard:
-    case BootstrapStatus::EstablishingCircuit:
-      description = tr("Establishing a Tor circuit");
-      break;
-    case BootstrapStatus::BootstrappingDone:
-      description = tr("Connected to the Tor network!");
-      warn = false; /* probably false anyway */
-      break;
-    default:
-      description = tr("Unrecognized startup status");
-  }
+  description = bs.description();
   if (warn) {
     QString reason;
     /* Is it really a good idea to translate these? */
