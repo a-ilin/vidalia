@@ -557,7 +557,6 @@ MainWindow::aboutToQuit()
   QObject::disconnect(_torControl, 0, 0, 0);
 }
 
-
 /** Attempts to start Tor. If Tor fails to start, then startFailed() will be
  * called with an error message containing the reason. */
 void 
@@ -892,34 +891,6 @@ void
 MainWindow::connected()
 {
   authenticate();
-  if(_torControl->isVidaliaRunningTor()) {
-    QString err;
-    if(!_torControl->takeOwnership(&err))
-      vWarn(err);
-  }
-
-  TorSettings settings;
-  if(settings.autoControlPort()) {
-    // We want to remember the ports if it's on auto
-    QString control_str = "", socks_str = "";
-    if(_torControl->getInfo("net/listeners/control", control_str)) {
-      QStringList control_parts = control_str.split(":");
-      if(control_parts.size() > 1)
-        control_str = control_parts[1];
-    }
-    if(_torControl->getInfo("net/listeners/socks", socks_str)) {
-      QStringList socks_parts = socks_str.split(":");
-      if(socks_parts.size() > 1)
-        socks_str = socks_parts[1];
-    }
-    
-    _previousControlPort = control_str;
-    _previousSocksPort = socks_str;
-  } else {
-    // Otherwise we want to clear the remembered ports
-    _previousControlPort = "";
-    _previousSocksPort = "";
-  }
 }
 
 /** Called when the connection to the control socket fails. The reason will be
@@ -952,6 +923,29 @@ MainWindow::connectFailed(QString errmsg)
 void
 MainWindow::authenticated()
 {
+  TorSettings settings;
+  if(settings.autoControlPort()) {
+    // We want to remember the ports if it's on auto
+    QString control_str = "", socks_str = "";
+    if(_torControl->getInfo("net/listeners/control", control_str)) {
+      QStringList control_parts = control_str.split(":");
+      if(control_parts.size() > 1)
+        control_str = control_parts[1];
+    }
+    if(_torControl->getInfo("net/listeners/socks", socks_str)) {
+      QStringList socks_parts = socks_str.split(":");
+      if(socks_parts.size() > 1)
+        socks_str = socks_parts[1];
+    }
+    
+    _previousControlPort = control_str;
+    _previousSocksPort = socks_str;
+  } else {
+    // Otherwise we want to clear the remembered ports
+    _previousControlPort = "";
+    _previousSocksPort = "";
+  }
+
   ServerSettings serverSettings(_torControl);
   QString errmsg;
 
@@ -1143,6 +1137,10 @@ MainWindow::bootstrapStatusChanged(const BootstrapStatus &bs)
     case BootstrapStatus::BootstrappingDone:
       description = tr("Connected to the Tor network!");
       warn = false; /* probably false anyway */
+      // There could be a condition where the circuitEstablished
+      // signal is not emitted, so we want to assure that the green
+      // onion appears at the end
+      circuitEstablished();
       break;
     default:
       description = tr("Unrecognized startup status");

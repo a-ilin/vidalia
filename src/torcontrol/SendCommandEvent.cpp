@@ -16,8 +16,7 @@
 
 #include "SendCommandEvent.h"
 
-#include <QMutexLocker>
-
+#include <QCoreApplication>
 
 SendCommandEvent::SendCommandEvent(const ControlCommand &cmd, SendWaiter *w)
   : QEvent(QEvent::User)
@@ -30,26 +29,16 @@ SendCommandEvent::SendCommandEvent(const ControlCommand &cmd, SendWaiter *w)
 void
 SendCommandEvent::SendWaiter::setResult(bool success, const QString &errmsg)
 {
-  _mutex.lock();
   _status = (success ? Success : Failed);
   _errmsg = errmsg;
-  _mutex.unlock();
-  _waitCond.wakeAll();
 }
 
 /** Waits for and gets the result of the send operation. */
 bool 
 SendCommandEvent::SendWaiter::getResult(QString *errmsg)
 {
-  forever {
-    _mutex.lock();
-    if (_status == Waiting) {
-      _waitCond.wait(&_mutex);
-      _mutex.unlock();
-    } else {
-      _mutex.unlock();
-      break;
-    }
+  while(_status == Waiting) {
+    QCoreApplication::processEvents();
   }
   if (errmsg) {
     *errmsg = _errmsg;
@@ -61,6 +50,5 @@ SendCommandEvent::SendWaiter::getResult(QString *errmsg)
 SendCommandEvent::SendWaiter::SenderStatus
 SendCommandEvent::SendWaiter::status()
 {
-  QMutexLocker locker(&_mutex);
   return _status;
 }
