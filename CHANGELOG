@@ -1,4 +1,4 @@
-0.3.1   14-Jan-2012
+0.3.1   27-Feb-2012
   o Draw the bandwidth graph curves based on the local maximum, not
     the global maximum. Fixes bug 2188.
   o Make the default data directory in windows be located in the Local
