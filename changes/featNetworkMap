@@ -1,0 +1,3 @@
+  o Migrate the code that handles Marble to the new library
+    interface. It works as expected with the latest Marble from the
+    upstream git repo.
