@@ -1,0 +1,6 @@
+  o Add a way to handle default settings through a file instead of
+    just the hardcoded values. Vidalia will look for a
+    vidalia.defaults.conf file in the same place the vidalia.conf file
+    is, and from it it will read the default values for each
+    configuration option or fall back to the hardcoded default if the
+    key isn't present.
