@@ -106,10 +106,11 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
     
     /* Add the IP address and router platform information */
     html.append(trow(tcol(b(tr("IP Address:"))) + tcol(rd.ip().toString())));
-    html.append(trow(tcol(b(tr("Platform:")))   + tcol(rd.platform())));
+    if(!rd.platform().isEmpty())
+      html.append(trow(tcol(b(tr("Platform:")))   + tcol(rd.platform())));
 
     /* If the router is online, then show the uptime and bandwidth stats. */
-    if (!rd.offline()) {
+    if (!rd.offline() and rd.uptime() != 0) {
       qint64 minBandwidth = (qint64)qMin(rd.observedBandwidth(), 
                                 qMin(rd.averageBandwidth(),
                                      rd.burstBandwidth()));
@@ -121,8 +122,9 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
     }
 
     /* Date the router was published */
-    html.append(trow(tcol(b(tr("Last Updated:")))  +
-                     tcol(string_format_datetime(rd.published()) + " GMT")));
+    if(!string_format_datetime(rd.published()).isEmpty())
+      html.append(trow(tcol(b(tr("Last Updated:")))  +
+                       tcol(string_format_datetime(rd.published()) + " GMT")));
 
     html.append("</table>");
 

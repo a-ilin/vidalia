@@ -73,6 +73,10 @@ public slots:
   /** Clears all known information */
   void clear();
 
+  /** Adds a router to our list of servers and retrieves geographic location
+   * information for the server. */
+  void addRouter(const RouterDescriptor &rd);
+
 protected:
   /** Called when the user changes the UI translation. */
   void retranslateUi();
@@ -105,17 +109,18 @@ private slots:
    * returnPressed from the search field. */
   void onRouterSearch();
 
+  /** Adds routers to the RouterListWidget after they have been loaded
+   *  in the internal _router list */
+  void loadNetworkStatus();
+
 private:
   /** */
   void setupGeoIpResolver();
-  /** Retrieves a list of all running routers from Tor and their descriptors,
-   * and adds them to the RouterListWidget. */
-  void loadNetworkStatus();
   /** Loads a list of address mappings from Tor. */
   void loadAddressMap();
-  /** Adds a router to our list of servers and retrieves geographic location
-   * information for the server. */
-  void addRouter(const RouterDescriptor &rd);
+  /** Retrieves a list of all running routers from Tor and their descriptors,
+   * and adds them to the _routers list. */
+  void preLoadNetworkStatus();
 
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
@@ -125,7 +130,13 @@ private:
   GeoIpResolver _geoip;
   /** Stores a list of address mappings from Tor. */
   AddressMap _addressMap;
- 
+
+  /** RouterDescriptor list that is used to load the routers in an
+   *  asyc way */
+  QList<RouterDescriptor> _routers;
+  /** Iterator to keep the loaded routers at any time */
+  QList<RouterDescriptor>::const_iterator _it;
+
   /** Widget that displays the Tor network map. */
 #if defined(USE_MARBLE)
   TorMapWidget* _map;

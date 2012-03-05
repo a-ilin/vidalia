@@ -224,12 +224,8 @@ NetViewer::refresh()
   /* Clear the data */
   clear();
 
-  /* Load router information */
-  loadNetworkStatus();
-  /* Load existing address mappings */
-  loadAddressMap();
-  /* Load Circuits and Streams information */
-  loadConnections();
+  /* Async router load */
+  preLoadNetworkStatus();
 
   /* Ok, they can refresh again. */
   ui.actionRefresh->setEnabled(true);
@@ -331,20 +327,51 @@ NetViewer::help()
 }
 
 /** Retrieves a list of all running routers from Tor and their descriptors,
- * and adds them to the RouterListWidget. */
+ * and adds them to the _router list. */
+void
+NetViewer::preLoadNetworkStatus()
+{
+  NetworkStatus networkStatus = _torControl->getNetworkStatus();
+  
+  if(_torControl->useMicrodescriptors())
+    ui.treeRouterList->hideColumn(RouterListWidget::StatusColumn);
+
+  foreach(RouterStatus rs, networkStatus) {
+    if (!rs.isRunning())
+      continue;
+    
+    RouterDescriptor rd = _torControl->getRouterDescriptor(rs.id());
+    if(_torControl->useMicrodescriptors()) {
+      rd.appendRouterStatusInfo(rs);
+    }
+    if (!rd.isEmpty())
+      _routers << rd;
+
+    QCoreApplication::processEvents();
+  }
+  
+  _it = _routers.constBegin();
+  QTimer::singleShot(200, this, SLOT(loadNetworkStatus()));
+}
+
+/** Adds routers to the RouterListWidget after they have been loaded
+ *  in the internal _router list */
 void
 NetViewer::loadNetworkStatus()
 {
-  NetworkStatus networkStatus = _torControl->getNetworkStatus();
-  foreach (RouterStatus rs, networkStatus) {
-    if (!rs.isRunning())
-      continue;
-
-    RouterDescriptor rd = _torControl->getRouterDescriptor(rs.id());
-    if (!rd.isEmpty())
-      addRouter(rd);
-
+  int count = 0, thres = 10;
+  for(; _it != _routers.constEnd() and count < thres; ++_it, ++count) {
+    addRouter((*_it));
     QCoreApplication::processEvents();
+  }
+
+  if(_it != _routers.constEnd())
+    QTimer::singleShot(10, this, SLOT(loadNetworkStatus()));
+  else {
+    /* Load existing address mappings */
+    loadAddressMap();
+    /* Load Circuits and Streams information */
+    loadConnections();
   }
 }
 
@@ -420,8 +447,8 @@ NetViewer::routerSelected(const QList<RouterDescriptor> &routers)
    *      map. But our current map sucks and you can't even tell when one is
    *      selected anyway. Worry about this when we actually get to Marble.
    */
-  if (routers.size() == 1)
-    _map->selectRouter(routers[0].id());
+  // if (routers.size() == 1)
+  //   _map->selectRouter(routers[0].id());
 }
 
 /** Called when the user selects a router on the network map. Displays a 

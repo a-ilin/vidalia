@@ -959,6 +959,20 @@ TorControl::resetConf(QString key, QString *errmsg)
   return resetConf(QStringList() << key, errmsg);
 }
 
+bool
+TorControl::useMicrodescriptors(QString *errmsg)
+{
+  if(!errmsg)
+    errmsg = new QString();
+
+  QString mdres, fetchres;
+  if(!getConf("UseMicrodescriptors", mdres, errmsg))
+    return false;
+  if(!getConf("FetchUselessDescriptors", fetchres, errmsg))
+    return false;
+  return (mdres == "1") or (mdres == "auto" and fetchres == "0");
+}
+
 /** Returns an unparsed router descriptor for the router whose fingerprint
  * matches <b>id</b>. The returned text can later be parsed by the
  * RouterDescriptor class. If <b>id</b> is invalid, then an empty
@@ -966,6 +980,9 @@ TorControl::resetConf(QString key, QString *errmsg)
 QStringList
 TorControl::getRouterDescriptorText(const QString &id, QString *errmsg)
 {
+  if(useMicrodescriptors(errmsg))
+    return getInfo("md/id/" + id, errmsg).toStringList();
+
   return getInfo("desc/id/" + id, errmsg).toStringList();
 }
 
@@ -975,7 +992,7 @@ TorControl::getRouterDescriptorText(const QString &id, QString *errmsg)
 RouterDescriptor
 TorControl::getRouterDescriptor(const QString &id, QString *errmsg)
 {
-  return RouterDescriptor(getRouterDescriptorText(id, errmsg));
+  return RouterDescriptor(getRouterDescriptorText(id, errmsg), useMicrodescriptors());
 }
 
 /** Returns the status of the router whose fingerprint matches <b>id</b>. If

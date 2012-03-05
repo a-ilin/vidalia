@@ -16,18 +16,22 @@
 message(STATUS "Looking for MaxMind GeoIP header files")
 
 set(CMAKE_INCLUDE_PATH "${CMAKE_INCLUDE_PATH} ${GEOIP_INCLUDE_DIR}")
-check_include_file("GeoIP.h" HAVE_GEOIP_H)
-check_include_file("GeoIPCity.h" HAVE_GEOIPCITY_H)
-if (HAVE_GEOIP_H AND HAVE_GEOIPCITY_H)
+find_path(GEOIP_INCLUDE_DIR
+  NAMES GeoIP.h GeoIPCity.h
+  PATHS ${GEOIP_INCLUDE_DIR}
+)
+
+if (GEOIP_INCLUDE_DIR)
   message(STATUS "Looking for MaxMind GeoIP header files - found")
-else(HAVE_GEOIP_H AND HAVE_GEOIPCITY_H)
+else(GEOIP_INCLUDE_DIR)
   message(FATAL_ERROR "Could not find one or more MaxMind GeoIP header files. If the MaxMind GeoIP library is installed, you can run CMake again and specify its location with -DGEOIP_INCLUDE_DIR=<path>")
-endif(HAVE_GEOIP_H AND HAVE_GEOIPCITY_H)
+endif(GEOIP_INCLUDE_DIR)
 
 message(STATUS "Looking for MaxMind GeoIP libraries")
-find_library(GEOIP_LIB 
-  NAMES GeoIP geoip
-  PATHS ${GEOIP_LIBRARY_DIR}
+find_file(GEOIP_LIB
+  NAMES libGeoIP.a
+  PATHS ${GEOIP_LIBRARY_DIR}/.libs/
+  HINTS ${GEOIP_LIBRARY_DIR}/.libs/
 )
 if (GEOIP_LIB)
   message(STATUS "Looking for MaxMind GeoIP libraries - found")

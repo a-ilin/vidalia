@@ -18,6 +18,7 @@
 
 #include <MarbleModel.h>
 #include <MarblePlacemarkModel.h>
+#include <MarbleWidgetInputHandler.h>
 
 #include <QChar>
 #include <QVector>
@@ -31,41 +32,29 @@ TorMapWidgetPopupMenu::TorMapWidgetPopupMenu(TorMapWidget *widget)
     _widget(widget)
 {
   _leftClickMenu = new QMenu(widget);
+
+  _widget->inputHandler()->setMouseButtonPopupEnabled(Qt::LeftButton, true);
+
   connect(_leftClickMenu, SIGNAL(triggered(QAction*)),
           this, SLOT(relaySelected(QAction*)));
 }
 
 void
-TorMapWidgetPopupMenu::featureClicked(const QPoint &pos, Qt::MouseButton btn)
+TorMapWidgetPopupMenu::featureLeftClicked(int x, int y)
 {
-  switch (btn) {
-    case Qt::LeftButton:
-      featureLeftClicked(pos);
-      break;
+  QVector<const GeoDataPlacemark*> features = _widget->whichFeatureAt(QPoint(x,y));
+  QVector<const GeoDataPlacemark*>::const_iterator it = features.constBegin();
+  QVector<const GeoDataPlacemark*>::const_iterator const itEnd = features.constEnd();
 
-    case Qt::RightButton:
-      break;
-
-    default:
-      break;
-  }
-}
-
-void
-TorMapWidgetPopupMenu::featureLeftClicked(const QPoint &pos)
-{
-  QVector<QModelIndex>::const_iterator it;
-  QVector<QModelIndex> features = _widget->model()->whichFeatureAt(pos);
   QString name, id;
   int numRelays = 0;
 
   _leftClickMenu->clear();
-  for (it = features.constBegin(); it != features.constEnd(); ++it) {
-    QChar role = (*it).data(MarblePlacemarkModel::GeoTypeRole).toChar();
-    if (role == '1') {
+  for (; it != itEnd; ++it) {
+    if ((*it)->role() == "1") {
       /* Normal Tor Relay */
-      name = (*it).data().toString();
-      id   = (*it).data(MarblePlacemarkModel::DescriptionRole).toString();
+      name = (*it)->name();
+      id   = (*it)->description();
 
       QAction *action = _leftClickMenu->addAction(name);
       action->setData(id);
@@ -76,7 +65,7 @@ TorMapWidgetPopupMenu::featureLeftClicked(const QPoint &pos)
   if (numRelays == 1)
     emit displayRouterInfo(id);
   else if (numRelays > 1)
-    _leftClickMenu->popup(_widget->mapToGlobal(pos));
+    _leftClickMenu->popup(_widget->mapToGlobal(QPoint(x,y)));
 }
 
 void

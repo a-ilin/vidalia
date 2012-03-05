@@ -22,6 +22,7 @@
 #include <QList>
 #include <QHostAddress>
 
+#include "RouterStatus.h"
 
 class RouterDescriptor
 {
@@ -29,16 +30,16 @@ class RouterDescriptor
 
 public:
   /** Possible router states. */
-  enum RouterStatus {
+  enum RouterStatusEnum {
     Online,       /**< Router is online and reachable. */
     Hibernating,  /**< Router is currently hibernating. */
     Offline       /**< Router is unresponsive. */
   };
 
   /** Default constructor. */
-  RouterDescriptor() {}
+  RouterDescriptor(bool microdesc = false) : _microdesc(microdesc) {}
   /** Constructor. */ 
-  RouterDescriptor(QStringList descriptor);
+  RouterDescriptor(QStringList descriptor, bool microdesc = false);
   
   /** Returns the router's name. */
   QString name() const { return _name; }
@@ -86,11 +87,23 @@ public:
   /** Sets the descriptors status to Offline if <b>offline</b> is true. */
   void setOffline(bool offline) { _status = (offline ? Offline : Online); }
 
+  /** Microdescriptor */
+  /** Returns the onion key for this router */
+  QString onionKey() const { return _onionKey; }
+  /** Returns this router's family */
+  QString family() const { return _family; }
+  /** Returns this router's exit policy */
+  QString exitPolicy() const { return _exitPolicy; }
+
+  /** Uses the RouterStatus information to update key elements of the
+   *  descriptor */
+  void appendRouterStatusInfo(const RouterStatus &rs);
+
 private:
   /** Parses this router's descriptor for relevant information. */
   void parseDescriptor(QStringList descriptor);
 
-  RouterStatus _status;    /**< Availability status of this router. */
+  RouterStatusEnum _status;/**< Availability status of this router. */
   QString _id;             /**< Router's descriptor ID. */
   QString _name;           /**< The router's name. */
   QString _fingerprint;    /**< Router's fingerprint. */
@@ -105,6 +118,12 @@ private:
   quint64 _burstBandwidth; /**< Burst bandwidth. */
   quint64 _observedBandwidth; /**< Observed bandwidth. */
   QString _location;       /**< Geographic location information. */
+
+  /** Microdescriptor info */
+  bool _microdesc;         /** */
+  QString _onionKey;       /** Router SSL key */
+  QString _exitPolicy;     /** Exit policy */
+  QString _family;         /** Family */
 };
 
 #endif
