@@ -167,7 +167,7 @@ MainWindow::createActions()
   _actionShowControlPanel = new QAction(QIcon(IMG_CONTROL_PANEL), tr("Control Panel"), this);
   _actionRestartTor = new QAction(tr("Restart"), this);
   _actionReloadConfig = new QAction(tr("Reload Tor's config"), this);
-  _actionNewIdentity = new QAction(QIcon(IMG_IDENTITY), tr("New Identity"), this);
+  _actionNewIdentity = new QAction(QIcon(IMG_IDENTITY), tr("New Circuit"), this);
   _actionStatus = new QAction(QIcon(IMG_CONTROL_PANEL), tr("Status"), this);
   _actionNetworkMap = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
   _actionMessageLog= new QAction(QIcon(IMG_MESSAGELOG), tr("Message Log"), this);
@@ -362,7 +362,7 @@ MainWindow::retranslateUi()
   _actionNetworkMap->setText(tr("Network Map"));
   _actionStatus->setText(tr("Status"));
   _actionVidaliaHelp->setText(tr("Help"));
-  _actionNewIdentity->setText(tr("New Identity"));
+  _actionNewIdentity->setText(tr("New Circuit"));
 
 #if !defined(Q_WS_MAC)
   _actionAbout->setText(tr("About"));
@@ -951,7 +951,7 @@ MainWindow::authenticated()
                        tr("Connecting to the Tor network"));
   }
   
-  /* Let people click on their beloved "New Identity" button */
+  /* Let people click on their beloved "New Circuit" button */
   _actionNewIdentity->setEnabled(true);
 
   /* Register for any pertinent asynchronous events. */
@@ -1616,7 +1616,7 @@ MainWindow::showConfigDialog(ConfigDialog::Page page)
   configDialog->showWindow(page);
 }
 
-/** Called when the user selects the "New Identity" action from the menu. */
+/** Called when the user selects the "New Circuit" action from the menu. */
 void
 MainWindow::newIdentity()
 {
@@ -1627,7 +1627,7 @@ MainWindow::newIdentity()
    * just use a message box. */
   if (_torControl->signal(TorSignal::NewNym, &errmsg)) {
     /* NEWNYM signal was successful */
-    QString title = tr("New Identity");
+    QString title = tr("New Circuit");
     QString message = tr("All subsequent connections will "
                          "appear to be different than your "
                          "old connections.");
