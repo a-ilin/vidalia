@@ -29,21 +29,19 @@
 
 /** Default constructor. */
 ControlConnection::ControlConnection(ControlMethod::Method method, TorEvents *events)
+  : QObject()
 {
   _events = events;
   _status = Unset;
   _sock = 0;
   _sendWaiter = new SendCommandEvent::SendWaiter();
   _method = method;
+  _connected = false;
 }
 
 /** Destructor. */
 ControlConnection::~ControlConnection()
 {
-  /* Exit the event loop */
-  exit();
-  /* Wait for the thread to finish */
-  wait();
   /* Clean up after the send waiter */
   delete _sendWaiter;
 }
@@ -52,7 +50,7 @@ ControlConnection::~ControlConnection()
 void
 ControlConnection::connect(const QHostAddress &addr, quint16 port)
 {
-  if (isRunning()) {
+  if (_connected) {
     tc::error("Bug: Tried to call ControlConnection::connect() when the "
               "control thread is already running.");
     return;
@@ -65,15 +63,14 @@ ControlConnection::connect(const QHostAddress &addr, quint16 port)
   _connectAttempt = 0;
   setStatus(Connecting);
 
-  /* Kick off the thread in which the control socket will live */
-  QThread::start();
+  run();
 }
 
 /** Connect to the specified Tor control socket interface. */
 void
 ControlConnection::connect(const QString &addr)
 {
-  if (isRunning()) {
+  if (_connected) {
     tc::error("Bug: Tried to call ControlConnection::connect() when the "
               "control thread is already running.");
     return;
@@ -83,8 +80,7 @@ ControlConnection::connect(const QString &addr)
   _connectAttempt = 0;
   setStatus(Connecting);
 
-  /* Kick off the thread in which the control socket will live */
-  QThread::start();
+  run();
 }
 
 /** Attempt to establish a connection to Tor's control interface. We will try
@@ -97,7 +93,6 @@ ControlConnection::connect()
   tc::debug("Connecting to Tor (Attempt %1 of %2)").arg(_connectAttempt)
                                                    .arg(MAX_CONNECT_ATTEMPTS);
   
-  _connMutex.lock();
   switch(_method) {
     case ControlMethod::Socket:
       _sock->connectToServer(_path);
@@ -108,15 +103,26 @@ ControlConnection::connect()
       _sock->connectToHost(_addr, _port);
     break;
   }
-  _connMutex.unlock();
 }
 
 /** Disconnect from Tor's control interface. */
 void
 ControlConnection::disconnect()
 {
+  /** If there are any messages waiting for a response, clear them. */
+  if (_sendWaiter->status() == SendCommandEvent::SendWaiter::Waiting)
+    _sendWaiter->setResult(false, tr("Control socket is not connected."));
+
+  while (!_recvQueue.isEmpty()) {
+    ReceiveWaiter *w = _recvQueue.dequeue();
+    w->setResult(false, ControlReply(), 
+                 tr("Control socket is not connected."));
+
+    QCoreApplication::processEvents(QEventLoop::AllEvents, 1000);
+  }
+
   setStatus(Disconnecting);
-  _connMutex.lock();
+
   switch(_method) {
     case ControlMethod::Socket:
       _sock->disconnectFromServer();
@@ -127,7 +133,11 @@ ControlConnection::disconnect()
       _sock->disconnectFromHost();
     break;
   }
-  _connMutex.unlock();
+
+  _sock->disconnect(this);
+  delete _sock;
+  delete _connectTimer;
+  _sock = 0;
 }
 
 /** Called when the control socket is connected. This method checks that the
@@ -136,6 +146,7 @@ void
 ControlConnection::onConnected()
 {
   setStatus(Connected);
+  _connected = true;
   emit connected();
 }
 
@@ -145,8 +156,8 @@ void
 ControlConnection::onDisconnected()
 {
   setStatus(Disconnected);
+  _connected = false;
   emit disconnected();
-  exit(0);
 }
 
 /** Called when the control socket encounters <b>error</b>. */
@@ -186,9 +197,9 @@ ControlConnection::onError(QAbstractSocket::SocketError error)
 void
 ControlConnection::cancelConnect()
 {
+  _connected = false;
   tc::warn("Control connection attempt cancelled.");
   setStatus(Disconnected);
-  exit(0);
 }
 
 /** Returns true if the control socket is connected to Tor. */
@@ -202,7 +213,6 @@ ControlConnection::isConnected()
 ControlConnection::Status
 ControlConnection::status()
 {
-  QMutexLocker locker(&_statusMutex);
   return _status;
 }
 
@@ -227,7 +237,6 @@ ControlConnection::statusString(Status status)
 void
 ControlConnection::setStatus(Status status)
 {
-  QMutexLocker locker(&_statusMutex);
   tc::debug("Control connection status changed from '%1' to '%2'")
                                        .arg(statusString(_status))
                                        .arg(statusString(status));
@@ -242,12 +251,10 @@ ControlConnection::send(const ControlCommand &cmd,
   bool result = false;
   QString errstr;
 
-  _recvMutex.lock();
   if (send(cmd, &errstr)) {
     /* Create and enqueue a new receive waiter */
     ReceiveWaiter *w = new ReceiveWaiter();
     _recvQueue.enqueue(w);
-    _recvMutex.unlock();
 
     /* Wait for and get the result, clean up, and return */
     result = w->getResult(&reply, &errstr);
@@ -257,7 +264,6 @@ ControlConnection::send(const ControlCommand &cmd,
   } else {
     tc::error("Failed to send control command (%1): %2").arg(cmd.keyword())
                                                         .arg(errstr);
-    _recvMutex.unlock();
   }
 
   if (!result && errmsg)
@@ -271,13 +277,10 @@ ControlConnection::send(const ControlCommand &cmd,
 bool
 ControlConnection::send(const ControlCommand &cmd, QString *errmsg)
 {
-  _connMutex.lock();
   if (!_sock || !_sock->isConnected()) {
-    _connMutex.unlock();
     return err(errmsg, tr("Control socket is not connected.")); 
   }
   QCoreApplication::postEvent(_sock, new SendCommandEvent(cmd, _sendWaiter));
-  _connMutex.unlock();
   
   return _sendWaiter->getResult(errmsg);
 }
@@ -286,7 +289,6 @@ ControlConnection::send(const ControlCommand &cmd, QString *errmsg)
 void
 ControlConnection::onReadyRead()
 {
-  QMutexLocker locker(&_connMutex);
   ReceiveWaiter *waiter;
   QString errmsg;
  
@@ -304,12 +306,10 @@ ControlConnection::onReadyRead()
         /* Response to a previous command */
         tc::debug("Control Reply: %1").arg(reply.toString());
         
-        _recvMutex.lock();
         if (!_recvQueue.isEmpty()) {
           waiter = _recvQueue.dequeue();
           waiter->setResult(true, reply);
         }
-        _recvMutex.unlock();
       }
     } else {
       tc::error("Unable to read control reply: %1").arg(errmsg);
@@ -323,7 +323,6 @@ void
 ControlConnection::run()
 {
   /* Create a new control socket */
-  _connMutex.lock();
   _sock = new ControlSocket(_method);
 
   _connectTimer = new QTimer();
@@ -341,33 +340,8 @@ ControlConnection::run()
   QObject::connect(_connectTimer, SIGNAL(timeout()), this, SLOT(connect()),
                    Qt::DirectConnection);
 
-  _connMutex.unlock();
-  
   /* Attempt to connect to Tor */
   connect();
-  tc::debug("Starting control connection event loop.");
-  exec();
-  tc::debug("Exited control connection event loop.");
-
-  /* Clean up the socket */
-  _connMutex.lock();
-  _sock->disconnect(this);
-  delete _sock;
-  delete _connectTimer;
-  _sock = 0;
-  _connMutex.unlock();
-
-  /* If there are any messages waiting for a response, clear them. */
-  if (_sendWaiter->status() == SendCommandEvent::SendWaiter::Waiting)
-    _sendWaiter->setResult(false, tr("Control socket is not connected."));
-
-  _recvMutex.lock();
-  while (!_recvQueue.isEmpty()) {
-    ReceiveWaiter *w = _recvQueue.dequeue();
-    w->setResult(false, ControlReply(), 
-                 tr("Control socket is not connected."));
-  }
-  _recvMutex.unlock();
 }
 
 
@@ -379,16 +353,9 @@ bool
 ControlConnection::ReceiveWaiter::getResult(ControlReply *reply, 
                                             QString *errmsg)
 {
-  forever {
-    _mutex.lock();
-    if (_status == Waiting) {
-      _waitCond.wait(&_mutex);
-      _mutex.unlock();
-    } else {
-      _mutex.unlock();
-      break;
-    }
-  }
+  while(_status == Waiting)
+    QCoreApplication::processEvents();
+
   if (errmsg) {
     *errmsg = _errmsg;
   }
@@ -402,11 +369,8 @@ ControlConnection::ReceiveWaiter::setResult(bool success,
                                             const ControlReply &reply, 
                                             const QString &errmsg)
 {
-  _mutex.lock();
   _status = (success ? Success : Failed);
-  _reply = reply; 
+  _reply = reply;
   _errmsg = errmsg;
-  _mutex.unlock();
-  _waitCond.wakeAll();
 }
 

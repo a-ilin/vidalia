@@ -29,7 +29,7 @@
 #include <QHostAddress>
 
 
-class ControlConnection : public QThread
+class ControlConnection : public QObject
 {
   Q_OBJECT
 
@@ -127,6 +127,7 @@ private:
   };
   QQueue<ReceiveWaiter *> _recvQueue; /**< Objects waiting for a reply. */
   SendCommandEvent::SendWaiter* _sendWaiter;
+  bool _connected;
 };
 
 #endif

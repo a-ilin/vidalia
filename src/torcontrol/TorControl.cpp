@@ -101,6 +101,7 @@ TorControl::~TorControl()
   if (isVidaliaRunningTor()) {
     stop();
   }
+  _controlConn->disconnect();
   delete _controlConn;
 }
 
@@ -131,6 +132,9 @@ bool
 TorControl::stop(QString *errmsg)
 {
   bool rc = false;
+
+  if(!errmsg)
+    errmsg = new QString();
 
   if (!isVidaliaRunningTor()) {
     *errmsg = tr("Vidalia has not started Tor. "
