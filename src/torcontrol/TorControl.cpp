@@ -719,7 +719,7 @@ TorControl::setEvents(QString *errmsg)
 /** Sets each configuration key in <b>map</b> to the value associated
  * with its key. */
 bool
-TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
+TorControl::setConf(QHash<QString,QString> map, QString *errmsg, ControlReply *reply)
 {
   ControlCommand cmd("SETCONF");
 
@@ -739,25 +739,28 @@ TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
         cmd.addArgument(key);
     }
   }
-  return send(cmd, errmsg);
+
+  if(not reply)
+    reply = new ControlReply();
+  return send(cmd, *reply, errmsg);
 }
 
 /** Sets a single configuration key to the given value. */
 bool
-TorControl::setConf(QString key, QString value, QString *errmsg)
+TorControl::setConf(QString key, QString value, QString *errmsg, ControlReply *reply)
 {
   QHash<QString,QString> map;
   map.insert(key, value);
-  return setConf(map, errmsg);
+  return setConf(map, errmsg, reply);
 }
 
 /** Sets a single configuration string that is formatted <key=escaped value>.*/
 bool
-TorControl::setConf(QString keyAndValue, QString *errmsg)
+TorControl::setConf(QString keyAndValue, QString *errmsg, ControlReply *reply)
 {
   QHash<QString,QString> map;
   map.insert(keyAndValue, "");
-  return setConf(map, errmsg);
+  return setConf(map, errmsg, reply);
 }
 
 /** Gets values for a set of configuration keys, each of which has a single
@@ -891,6 +894,17 @@ TorControl::getConf(const QString &key, QString *errmsg)
 {
   QVariantMap map = getConf(QStringList() << key, errmsg);
   return map.value(key);
+}
+
+/** Loads the contents as if they were read from disk as the torrc */
+bool
+TorControl::loadConf(const QString &contents, QString *errmsg)
+{
+  ControlCommand cmd("+LOADCONF");
+  ControlReply reply;
+  
+  cmd.addArgument(contents + ".");
+  return send(cmd, reply, errmsg);
 }
 
 /** Sends a GETCONF message to Tor with the single key and returns a QString

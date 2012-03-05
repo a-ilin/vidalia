@@ -1,0 +1,6 @@
+  o Implements a torrc parser and editor and uses that to take every
+    tor configuration option from the vidalia.conf file to the
+    torrc. Vidalia now just needs to know the minimal information to
+    connect to the tor process (ControlPort or ControlSocket and
+    authentication) and everything else would be handled through the
+    torrc file.

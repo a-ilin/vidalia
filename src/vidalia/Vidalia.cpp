@@ -56,6 +56,7 @@ QMap<QString, QString> Vidalia::_args; /**< List of command-line arguments.  */
 QString Vidalia::_style;               /**< The current GUI style.           */
 QString Vidalia::_language;            /**< The current language.            */
 TorControl* Vidalia::_torControl = 0;  /**< Main TorControl object.          */
+Torrc* Vidalia::_torrc = 0;            /**< Main Torrc object.               */
 Log Vidalia::_log;
 QList<QTranslator *> Vidalia::_translators;
 
@@ -124,8 +125,12 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
   /* Set the GUI style appropriately. */
   setStyle(_args.value(ARG_GUISTYLE));
 
+  TorSettings settings;
   /* Creates a TorControl object, used to talk to Tor. */
-  _torControl = new TorControl(TorSettings().getControlMethod());
+  _torControl = new TorControl(settings.getControlMethod());
+
+  /* Creates a Torrc handler */
+  _torrc = new Torrc(settings.getTorrc(), settings.getDefaultsTorrc());
 
   /* If we were built with QSslSocket support, then populate the default
    * CA certificate store. */
@@ -149,6 +154,7 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 Vidalia::~Vidalia()
 {
   delete _torControl;
+  delete _torrc;
 }
 
 /** Enters the main event loop and waits until exit() is called. The signal

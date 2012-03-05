@@ -134,11 +134,11 @@ public:
   bool setEvents(QString *errmsg = 0);
 
   /** Sets each configuration key in <b>map</b> to the value associated with its key. */
-  bool setConf(QHash<QString,QString> map, QString *errmsg = 0);
+  bool setConf(QHash<QString,QString> map, QString *errmsg = 0, ControlReply *reply = 0);
   /** Sets a single configuration key to the given value. */
-  bool setConf(QString key, QString value, QString *errmsg = 0);
+  bool setConf(QString key, QString value, QString *errmsg = 0, ControlReply *reply = 0);
   /** Sets a single configuration string that is formatted <key=escaped value>. */
-  bool setConf(QString keyAndValue, QString *errmsg = 0);
+  bool setConf(QString keyAndValue, QString *errmsg = 0, ControlReply *reply = 0);
   /** Gets values for a set of configuration keys, each of which has a single
    * value. */
   bool getConf(QHash<QString,QString> &map, QString *errmsg = 0);
@@ -157,6 +157,8 @@ public:
    * QVariant containing the value returned by Tor. Returns a default
    * constructed QVariant on failure. */
   QVariant getConf(const QString &key, QString *errmsg = 0);
+  /** Loads the contents as if they were read from disk as the torrc */
+  bool loadConf(const QString &contents, QString *errmsg = 0);
   /** Sends a GETCONF message to Tor with the single key and returns a QString
    * containing the value returned by Tor */
   QString getHiddenServiceConf(const QString &key, QString *errmsg = 0);

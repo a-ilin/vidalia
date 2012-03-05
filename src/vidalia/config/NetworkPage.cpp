@@ -39,6 +39,8 @@ NetworkPage::NetworkPage(QWidget *parent)
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
 
+  _settings = new NetworkSettings(Vidalia::torControl());
+
   connect(ui.btnAddBridge, SIGNAL(clicked()), this, SLOT(addBridge()));
   connect(ui.btnRemoveBridge, SIGNAL(clicked()), this, SLOT(removeBridge()));
   connect(ui.btnCopyBridge, SIGNAL(clicked()), 
@@ -81,6 +83,12 @@ NetworkPage::NetworkPage(QWidget *parent)
 #endif
 }
 
+/** Default destructor */
+NetworkPage::~NetworkPage()
+{
+  delete _settings;
+}
+
 /** Called when the user changes the UI translation. */
 void
 NetworkPage::retranslateUi()
@@ -94,7 +102,7 @@ NetworkPage::retranslateUi()
 bool
 NetworkPage::apply(QString &errmsg)
 {
-  return NetworkSettings(Vidalia::torControl()).apply(&errmsg);
+  return _settings->apply(&errmsg);
 }
 
 /** Returns true if the user has changed their server settings since the   *
@@ -102,7 +110,7 @@ NetworkPage::apply(QString &errmsg)
 bool
 NetworkPage::changedSinceLastApply()
 {
-  return NetworkSettings(Vidalia::torControl()).changedSinceLastApply();
+  return _settings->changedSinceLastApply();
 }
 
 /** Reverts the server configuration settings to their values at the last   *
@@ -110,8 +118,7 @@ NetworkPage::changedSinceLastApply()
 void
 NetworkPage::revert()
 {
-  NetworkSettings settings(Vidalia::torControl());
-  settings.revert();
+  _settings->revert();
 }
 
 /** Called when a link in a label is clicked. <b>url</b> is the target of
@@ -194,7 +201,6 @@ NetworkPage::bridgeSelectionChanged()
 bool
 NetworkPage::save(QString &errmsg)
 {
-  NetworkSettings settings(Vidalia::torControl());
   QString addr;
   QString user, pass;
   NetworkSettings::ProxyType proxy = NetworkSettings::NoProxy;
@@ -243,13 +249,13 @@ NetworkPage::save(QString &errmsg)
     proxy = static_cast<NetworkSettings::ProxyType>(type);
   }
 
-  settings.setProxyType(proxy);
-  settings.setProxyAddress(addr);
-  settings.setProxyUsername(user);
-  settings.setProxyPassword(pass);
+  _settings->setProxyType(proxy);
+  _settings->setProxyAddress(addr);
+  _settings->setProxyUsername(user);
+  _settings->setProxyPassword(pass);
  
   /* Save the reachable port settings */
-  settings.setFascistFirewall(ui.chkFascistFirewall->isChecked());
+  _settings->setFascistFirewall(ui.chkFascistFirewall->isChecked());
   foreach (QString portString,
            ui.lineReachablePorts->text().split(",", QString::SkipEmptyParts)) {
     quint32 port = portString.toUInt(&ok);
@@ -259,7 +265,7 @@ NetworkPage::save(QString &errmsg)
     }
     reachablePorts << (quint16)port;
   }
-  settings.setReachablePorts(reachablePorts);
+  _settings->setReachablePorts(reachablePorts);
 
   if (ui.chkUseBridges->isChecked()) {
     if (ui.listBridges->count() < 1) {
@@ -269,10 +275,10 @@ NetworkPage::save(QString &errmsg)
   }
 
   /* Save the bridge settings */
-  settings.setUseBridges(ui.chkUseBridges->isChecked());
+  _settings->setUseBridges(ui.chkUseBridges->isChecked());
   for (int i = 0; i < ui.listBridges->count(); i++)
     bridgeList << ui.listBridges->item(i)->text();
-  settings.setBridgeList(bridgeList);
+  _settings->setBridgeList(bridgeList);
 
   return true;
 }
@@ -281,20 +287,19 @@ NetworkPage::save(QString &errmsg)
 void
 NetworkPage::load()
 {
-  NetworkSettings settings(Vidalia::torControl());
   QStringList reachablePortStrings;
   NetworkSettings::ProxyType proxyType;
 
   /* Load proxy settings */
-  proxyType = settings.getProxyType();
+  proxyType = _settings->getProxyType();
   ui.chkUseProxy->setChecked(proxyType != NetworkSettings::NoProxy);
-  QStringList proxy = settings.getProxyAddress().split(":");
+  QStringList proxy = _settings->getProxyAddress().split(":");
   if (proxy.size() >= 1)
     ui.lineProxyAddress->setText(proxy.at(0));
   if (proxy.size() >= 2)
     ui.lineProxyPort->setText(proxy.at(1));
-  ui.lineProxyUsername->setText(settings.getProxyUsername());
-  ui.lineProxyPassword->setText(settings.getProxyPassword());
+  ui.lineProxyUsername->setText(_settings->getProxyUsername());
+  ui.lineProxyPassword->setText(_settings->getProxyPassword());
 
   /* SOCKS options are only available on Tor >= 0.2.2.1-alpha, so don't show
    * them if Tor is running and its version is less than that. */
@@ -316,17 +321,17 @@ NetworkPage::load()
   ui.cmboProxyType->setCurrentIndex(ui.cmboProxyType->findData(proxyType));
 
   /* Load firewall settings */
-  ui.chkFascistFirewall->setChecked(settings.getFascistFirewall());
-  QList<quint16> reachablePorts = settings.getReachablePorts();
+  ui.chkFascistFirewall->setChecked(_settings->getFascistFirewall());
+  QList<quint16> reachablePorts = _settings->getReachablePorts();
   foreach (quint16 port, reachablePorts) {
     reachablePortStrings << QString::number(port);
   }
   ui.lineReachablePorts->setText(reachablePortStrings.join(","));
 
   /* Load bridge settings */
-  ui.chkUseBridges->setChecked(settings.getUseBridges()); 
+  ui.chkUseBridges->setChecked(_settings->getUseBridges()); 
   ui.listBridges->clear();
-  ui.listBridges->addItems(settings.getBridgeList());
+  ui.listBridges->addItems(_settings->getBridgeList());
 }
 
 /** Called when the user clicks the "Find Bridges Now" button.

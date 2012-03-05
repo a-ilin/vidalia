@@ -15,6 +15,8 @@
 
 #include "NetworkSettings.h"
 #include "TorControl.h"
+#include "Torrc.h"
+#include "Vidalia.h"
 
 #define SETTING_FASCIST_FIREWALL    "FascistFirewall"
 #define SETTING_REACHABLE_ADDRESSES "ReachableAddresses"
@@ -62,13 +64,19 @@ NetworkSettings::NetworkSettings(TorControl *torControl)
 bool
 NetworkSettings::apply(QString *errmsg)
 {
-  QMultiHash<QString, QString> conf;
   quint32 torVersion = torControl()->getTorVersion();
+  Torrc *torrc = Vidalia::torrc();
+  QStringList clearKeys;
 
-  conf.insert(SETTING_REACHABLE_ADDRESSES,
-    (getFascistFirewall() ? 
-      localValue(SETTING_REACHABLE_ADDRESSES).toStringList().join(",") : ""));
- 
+  if(volatileValue(SETTING_FASCIST_FIREWALL).toBool()) {
+    torrc->setValue(SETTING_FASCIST_FIREWALL, "1");
+    torrc->setValue(SETTING_REACHABLE_ADDRESSES,
+                    volatileValue(SETTING_REACHABLE_ADDRESSES).toStringList().join(","));
+  } else {
+    torrc->setValue(SETTING_FASCIST_FIREWALL, "0");
+    clearKeys << SETTING_REACHABLE_ADDRESSES;
+  }
+
   QString socks4, socks5, http, https;
   QString addr, user, pass, auth;
 
@@ -94,45 +102,58 @@ NetworkSettings::apply(QString *errmsg)
       break;
   }
 
-  if (torVersion >= 0x020201) {
-    /* SOCKS support was implemented in 0.2.2.1 */
-    conf.insert(SETTING_SOCKS4_PROXY, socks4);
-    conf.insert(SETTING_SOCKS5_PROXY, socks5);
-    conf.insert(SETTING_SOCKS5_USERNAME, user);
-    conf.insert(SETTING_SOCKS5_PASSWORD, pass);
+  if(getProxyType() != NoProxy) {
+    if (torVersion >= 0x020201) {
+      /* SOCKS support was implemented in 0.2.2.1 */
+      torrc->setValue(SETTING_SOCKS4_PROXY, socks4);
+      torrc->setValue(SETTING_SOCKS5_PROXY, socks5);
+      torrc->setValue(SETTING_SOCKS5_USERNAME, user);
+      torrc->setValue(SETTING_SOCKS5_PASSWORD, pass);
+    }
+    
+    torrc->setValue(SETTING_HTTPS_PROXY, https);
+    torrc->setValue(SETTING_HTTPS_PROXY_AUTH, auth);
+  } else {
+    clearKeys << SETTING_SOCKS4_PROXY
+              << SETTING_SOCKS5_PROXY
+              << SETTING_SOCKS5_USERNAME
+              << SETTING_SOCKS5_PASSWORD
+              << SETTING_HTTPS_PROXY
+              << SETTING_HTTPS_PROXY_AUTH;
   }
 
-  conf.insert(SETTING_HTTPS_PROXY, https);
-  conf.insert(SETTING_HTTPS_PROXY_AUTH, auth);
-
-  if (getUseBridges()) {
+  bool useBridges = volatileValue(SETTING_USE_BRIDGES, false).toBool();
+  if (useBridges) {
     /* We want to always enable TunnelDirConns and friends when using
      * bridge relays. */
-    conf.insert(SETTING_TUNNEL_DIR_CONNS, "1");
-    conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "1");
+    torrc->setValue(SETTING_TUNNEL_DIR_CONNS, "1");
+    torrc->setValue(SETTING_PREFER_TUNNELED_DIR_CONNS, "1");
   } else if (torVersion <= 0x020021) {
     /* TunnelDirConns is enabled by default on Tor >= 0.2.0.22-rc, so don't
      * disable it if our Tor is recent enough. */
-    conf.insert(SETTING_TUNNEL_DIR_CONNS, "0");
-    conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "0");
+    torrc->setValue(SETTING_TUNNEL_DIR_CONNS, "0");
+    torrc->setValue(SETTING_PREFER_TUNNELED_DIR_CONNS, "0");
   }
 
   if (torVersion >= 0x020003) {
     /* Do the bridge stuff only on Tor >= 0.2.0.3-alpha */
-    QStringList bridges = localValue(SETTING_BRIDGE_LIST).toStringList();
-    if (getUseBridges() && !bridges.isEmpty()) {
-      conf.insert(SETTING_USE_BRIDGES, "1");
-      conf.insert(SETTING_UPDATE_BRIDGES, "1");
+    QStringList bridges = volatileValue(SETTING_BRIDGE_LIST).toStringList();
+    if (useBridges && !bridges.isEmpty()) {
+      torrc->setValue(SETTING_USE_BRIDGES, "1");
+      torrc->setValue(SETTING_UPDATE_BRIDGES, "1");
       foreach (QString bridge, bridges) {
-        conf.insert(SETTING_BRIDGE_LIST, bridge);
+        torrc->setValue(SETTING_BRIDGE_LIST, bridge);
       }
     } else {
-      conf.insert(SETTING_USE_BRIDGES, "0");
-      conf.insert(SETTING_BRIDGE_LIST, "");
-      conf.insert(SETTING_UPDATE_BRIDGES, "0");
+      torrc->setValue(SETTING_USE_BRIDGES, "0");
+      torrc->setValue(SETTING_UPDATE_BRIDGES, "0");
+      clearKeys << SETTING_BRIDGE_LIST;
     }
   }
-  return torControl()->setConf(conf, errmsg);
+
+  torrc->clear(clearKeys);
+
+  return torrc->apply(torControl(), errmsg);
 }
 
 /** Returns true if we need to set ReachableAddresses because we're behind a
@@ -140,7 +161,12 @@ NetworkSettings::apply(QString *errmsg)
 bool
 NetworkSettings::getFascistFirewall()
 {
-  return localValue(SETTING_FASCIST_FIREWALL).toBool();
+  QStringList ret = Vidalia::torrc()->value(SETTING_FASCIST_FIREWALL);
+  bool val = false;
+
+  if(ret.size() > 0)
+    val = ret.at(0) == "1";
+  return val;
 }
 
 /** Sets to <b>fascistFirewall</b> whether Tor should only create outgoing
@@ -149,7 +175,7 @@ NetworkSettings::getFascistFirewall()
 void
 NetworkSettings::setFascistFirewall(bool fascistFirewall)
 {
-  setValue(SETTING_FASCIST_FIREWALL, fascistFirewall);
+  setVolatileValue(SETTING_FASCIST_FIREWALL, QVariant(fascistFirewall));
 }
 
 /** Returns a list of ports to be specified in ReachableAddresses. */
@@ -160,7 +186,8 @@ NetworkSettings::getReachablePorts()
   QStringList lineList;
   bool ok;
 
-  lineList = value(SETTING_REACHABLE_ADDRESSES).toStringList();
+  lineList = Vidalia::torrc()->value(SETTING_REACHABLE_ADDRESSES);
+
   foreach (QString line, lineList) {
     foreach (QString address, line.split(",", QString::SkipEmptyParts)) {
       QStringList parts = address.split(":");
@@ -184,7 +211,7 @@ NetworkSettings::setReachablePorts(const QList<quint16> &reachablePorts)
     foreach (quint16 port, reachablePorts) {
       portList << "*:" + QString::number(port);
     }
-    setValue(SETTING_REACHABLE_ADDRESSES, portList);
+    setVolatileValue(SETTING_REACHABLE_ADDRESSES, portList);
   }
 }
 
@@ -251,7 +278,11 @@ NetworkSettings::setProxyPassword(const QString &pass)
 bool
 NetworkSettings::getUseBridges()
 {
-  return value(SETTING_USE_BRIDGES).toBool();
+  QStringList ret = Vidalia::torrc()->value(SETTING_USE_BRIDGES);
+  bool val = false;
+  if(ret.size() > 0)
+    val = ret.at(0) == "1";
+  return val;
 }
 
 /** Sets to <b>useBridges</b> whether Tor should try to use bridge nodes
@@ -259,21 +290,21 @@ NetworkSettings::getUseBridges()
 void
 NetworkSettings::setUseBridges(bool useBridges)
 {
-  setValue(SETTING_USE_BRIDGES, useBridges);
+  setVolatileValue(SETTING_USE_BRIDGES, useBridges);
 }
 
 /** Returns a list of bridge nodes Tor should use. */
 QStringList
 NetworkSettings::getBridgeList()
 {
-  return value(SETTING_BRIDGE_LIST).toStringList();
+  return Vidalia::torrc()->value(SETTING_BRIDGE_LIST);
 }
 
 /** Sets to <b>bridgeList</b> the list of bridge nodes Tor should use. */
 void
 NetworkSettings::setBridgeList(const QStringList &bridgeList)
 {
-  setValue(SETTING_BRIDGE_LIST, bridgeList);
+  setVolatileValue(SETTING_BRIDGE_LIST, bridgeList);
 }
 
 /** Returns true if Tor is configured to try to tunnel its directory
@@ -281,7 +312,11 @@ NetworkSettings::setBridgeList(const QStringList &bridgeList)
 bool
 NetworkSettings::getTunnelDirConns()
 {
-  return value(SETTING_TUNNEL_DIR_CONNS).toBool();
+  QStringList ret = Vidalia::torrc()->value(SETTING_TUNNEL_DIR_CONNS);
+  bool val = true;
+  if(ret.size() > 0)
+    val = ret.at(0) == "1";
+  return val;
 }
 
 /** Converts the ProxyType <b>type</b> to a string to store in the

@@ -87,56 +87,8 @@ TorrcDialog::loadToolBar()
 bool 
 TorrcDialog::parseAndSet(QString *errmsg)
 {
-  if(!errmsg) errmsg = new QString("");
-  if(!tc || !tc->isConnected()) {
-    *errmsg = tr("Error connecting to Tor");
-    return false;
-  }
-
-  QString key, val;
-  QStringList parts, lines;
-  
-  if(ui.rdoAll->isChecked())
-    lines = ui.teditTorrc->toPlainText().split('\n', QString::SkipEmptyParts);
-  else {
-    QString tmp = ui.teditTorrc->toPlainText();
-    QTextCursor tcursor = ui.teditTorrc->textCursor();
-    int start = tcursor.selectionStart();
-    int end = tcursor.selectionEnd();
-    tmp = tmp.mid(start, end - start).trimmed();
-    if(tmp.isEmpty()) {
-      *errmsg = tr("Selection is empty. Please select some text, or check \"Apply all\"");
-      return false;
-    }
-
-    lines = tmp.split('\n', QString::SkipEmptyParts);
-  }
-  /* First pass: parsing */
-  int i = 0;
-  foreach(QString line, lines) {
-    i++;
-    line = line.trimmed();
-    if(line.startsWith("#")) continue; // Skip commentaries
-    parts = line.split(" ", QString::SkipEmptyParts);
-    if(parts.count() < 2) {
-      *errmsg = tr("Error at line %1: \"%2\"").arg(i).arg(line);
-      return false;
-    }
-  }
-  /* Second pass: setting */
-  QHash<QString,QString> settings;
-  foreach(QString line, lines) {
-    line = line.trimmed();
-    parts = line.split(" ", QString::SkipEmptyParts);
-    key = parts[0];
-    parts.removeFirst();
-    val = parts.join(" ");
-    settings.insert(key, val);
-  }
-
-  if(!tc->setConf(settings, errmsg)) return false;
-
-  return true;
+  return Vidalia::torrc()->setRawContents(ui.teditTorrc->toPlainText(), 
+                                          errmsg, Vidalia::torControl());
 }
 
 /** Loads the saved torrc file that Tor's using to the TextEdit widget for
@@ -144,20 +96,18 @@ TorrcDialog::parseAndSet(QString *errmsg)
 void 
 TorrcDialog::loadTorrc()
 {
-  if(tc && tc->isConnected()) {
-    QString text = "";
-    QFile file(tc->getInfo("config-file").toString());
-    if(file.open(QFile::ReadOnly)) {
-      QTextStream in(&file);
-      QString line = "";
-      do {
-        line = in.readLine();
-        text += line + "\n";
-      } while(!line.isNull());
-      ui.teditTorrc->setText(text);
-    } else {
-      QMessageBox::critical(this, tr("Error"), tr("An error ocurred while opening torrc file"));
-    }
+  QString text = "";
+  QFile file(Vidalia::torrc()->getTorrcPath());
+  if(file.open(QFile::ReadOnly)) {
+    QTextStream in(&file);
+    QString line = "";
+    do {
+      line = in.readLine();
+      text += line + "\n";
+    } while(!line.isNull());
+    ui.teditTorrc->setText(text);
+  } else {
+    QMessageBox::critical(this, tr("Error"), tr("An error ocurred while opening torrc file"));
   }
 }
 
@@ -167,17 +117,9 @@ void
 TorrcDialog::saveTorrc()
 {
   QString errmsg = "";
-  if(tc && tc->isConnected()) {
-    if(!parseAndSet(&errmsg)) {
-      QMessageBox::critical(this, tr("Error"), errmsg);
-      return;
-    }
-    if(ui.chkSave->isChecked()) {
-      if(!tc->saveConf(&errmsg)) {
-        QMessageBox::critical(this, tr("Error"), errmsg);
-        return;
-      }
-    }
+  if(!parseAndSet(&errmsg)) {
+    QMessageBox::critical(this, tr("Error"), errmsg);
+    return;
   }
   accept();
 }

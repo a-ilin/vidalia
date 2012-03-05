@@ -17,6 +17,7 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/about
   ${CMAKE_CURRENT_SOURCE_DIR}/bwgraph
   ${CMAKE_CURRENT_SOURCE_DIR}/config
+  ${CMAKE_CURRENT_SOURCE_DIR}/config/torrc
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
   ${CMAKE_CURRENT_SOURCE_DIR}/log
   ${CMAKE_CURRENT_SOURCE_DIR}/network
@@ -122,14 +123,12 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/PortValidator.cpp
   config/ServerPage.cpp
   config/ServerSettings.cpp
-  config/Service.cpp
-  config/ServiceList.cpp
-  config/ServicePage.cpp
   config/TorrcDialog.cpp
-  config/ServiceSettings.cpp
   config/TorSettings.cpp
   config/VidaliaSettings.cpp
   config/VSettings.cpp
+  config/torrc/TorrcParser.cpp
+  config/torrc/Torrc.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   config/AbstractTorSettings.h
@@ -150,7 +149,6 @@ qt4_wrap_cpp(vidalia_SRCS
   config/PortValidator.h
   config/ServerPage.h
   config/ServerSettings.h
-  config/ServicePage.h
   config/TorrcDialog.h
   config/TorSettings.h
   config/VidaliaSettings.h
@@ -218,7 +216,6 @@ qt4_wrap_ui(vidalia_SRCS
   config/GeneralPage.ui
   config/NetworkPage.ui
   config/ServerPage.ui
-  config/ServicePage.ui
   config/TorrcDialog.ui
   log/MessageLog.ui
   help/browser/HelpBrowser.ui

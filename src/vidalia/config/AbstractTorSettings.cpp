@@ -128,3 +128,13 @@ AbstractTorSettings::setValue(const QString &key, const QVariant &value)
   }
 }
 
+/** Saves the value <b>val</b> for the setting <b>key</b> to the local
+ * settings file. */
+void
+AbstractTorSettings::setVolatileValue(const QString &key, const QVariant &value)
+{
+  if (value != volatileValue(key)) {
+    setChanged(true);
+    VSettings::setVolatileValue(key, value);
+  }
+}

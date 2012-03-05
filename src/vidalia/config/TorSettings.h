@@ -47,7 +47,7 @@ public:
   void setExecutable(const QString &torExecutable);
  
   /** Gets the location of Tor's data directory. */
-  QString getDataDirectory() const;
+  QString getDataDirectory();
   /** Sets the location to use for Tor's data directory. */
   void setDataDirectory(const QString &dataDir);
   
@@ -55,6 +55,11 @@ public:
   QString getTorrc() const;
   /** Sets the torrc to use when starting Tor. */
   void setTorrc(const QString &torrc);
+
+  /** Gets the defaults torrc to use when starting Tor. */
+  QString getDefaultsTorrc() const;
+  /** Sets the defaults torrc to use when starting Tor. */
+  void setDefaultsTorrc(const QString &torrc);
   
   /** Get Tor's control interface address. */
   QHostAddress getControlAddress() const;
