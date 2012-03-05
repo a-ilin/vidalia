@@ -20,14 +20,23 @@
 
 /** The file in which all settings will read and written. */
 #define SETTINGS_FILE (Vidalia::dataDirectory() + "/vidalia.conf")
+#define SETTINGS_DEFAULTS_FILE (Vidalia::dataDirectory() + "/vidalia.defaults.conf")
 
 
 /** Constructor */
 VSettings::VSettings(const QString settingsGroup)
 : QSettings(SETTINGS_FILE, QSettings::IniFormat)
 {
+  _defaultSettings = new QSettings(SETTINGS_DEFAULTS_FILE,
+                                   QSettings::IniFormat);
+
   if (!settingsGroup.isEmpty())
     beginGroup(settingsGroup);
+}
+
+VSettings::~VSettings()
+{
+  delete _defaultSettings;
 }
 
 /** Returns the location of Vidalia's configuration settings file. */
@@ -70,7 +79,7 @@ VSettings::setValue(const QString &key, const QVariant &val)
 void
 VSettings::setDefault(const QString &key, const QVariant &val)
 {
-  _defaults.insert(key, val);
+  _defaults.insert(key, _defaultSettings->value(key, val));
 }
 
 /** Returns the default setting value associated with <b>key</b>. If

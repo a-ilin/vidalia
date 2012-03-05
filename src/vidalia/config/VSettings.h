@@ -29,7 +29,9 @@ public:
    * set a prefix that will be prepended to keys specified to VSettings in
    * value() and setValue(). */
   VSettings(const QString group = QString());
-
+  /** Default destructor */
+  ~VSettings();
+  
   /** Returns the location of Vidalia's configuration settings file. */
   static QString settingsFile();
   /** Returns true if Vidalia's configuration settings file already exists. */
@@ -67,6 +69,9 @@ private:
 
   /** Stores values that last as long as Vidalia lives as a process */
   QMap<QString, QVariant> _volatileSettings;
+  
+  /** Defaults stored in a settings file */
+  QSettings *_defaultSettings;
 };
 
 #endif
