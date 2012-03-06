@@ -368,7 +368,7 @@ TorEvents::handleClientStatusEvent(tc::Severity severity,
   } else if (! action.compare("BOOTSTRAP", Qt::CaseInsensitive)) {
     BootstrapStatus status
       = BootstrapStatus(severity,
-                        args.value("TAG"),
+                        BootstrapStatus::statusFromString(args.value("TAG")),
                         args.value("PROGRESS").toInt(),
                         args.value("SUMMARY"),
                         args.value("WARNING"),
