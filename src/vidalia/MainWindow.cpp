@@ -1132,7 +1132,7 @@ MainWindow::bootstrapStatusChanged(const BootstrapStatus &bs)
       warn = false; /* probably false anyway */
       break;
     default:
-      description = description = bs.description();
+      description = bs.description();
   }
   if (warn) {
     QString reason;
