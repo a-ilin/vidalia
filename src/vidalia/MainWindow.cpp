@@ -1729,6 +1729,8 @@ MainWindow::detachTab()
 
   ui.tabWidget->removeTab(index);
   tab->setParent(0);
+  QRect desk = QApplication::desktop()->screenGeometry(0);
+  tab->move(desk.center() - tab->rect().center());
   tab->show();
 
   QString key = _tabMap.at(index);
