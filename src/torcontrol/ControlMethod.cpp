@@ -37,6 +37,6 @@ ControlMethod::fromString(QString method)
 {
   if(method == QString("ControlPort"))
     return ControlMethod::Port;
-  else if(method == QString("ControlSocket"))
+  else// if(method == QString("ControlSocket"))
     return ControlMethod::Socket;
 }
