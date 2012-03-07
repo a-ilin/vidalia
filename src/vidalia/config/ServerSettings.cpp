@@ -49,7 +49,8 @@
 #define SETTING_RELAY_BANDWIDTH_RATE   "RelayBandwidthRate"
 #define SETTING_RELAY_BANDWIDTH_BURST  "RelayBandwidthBurst"
 #define SETTING_PUBLISH_SERVER_DESCRIPTOR "PublishServerDescriptor"
-
+#define SETTING_ACCOUNTING_MAX "AccountingMax"
+#define SETTING_ACCOUNTING_START "AccountingStart"
 
 /** Constructor.
  * \param torControl a TorControl object used to read and apply the server
@@ -137,6 +138,9 @@ ServerSettings::apply(QString *errmsg)
       torrc->setValue(SETTING_BRIDGE_RELAY, "0");
       torrc->setValue(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
     }
+
+    torrc->setValue(SETTING_ACCOUNTING_MAX, volatileValue(SETTING_ACCOUNTING_MAX).toString());
+    torrc->setValue(SETTING_ACCOUNTING_START, volatileValue(SETTING_ACCOUNTING_START).toString());
   } else {
     QStringList resetKeys;
     quint32 torVersion = torControl()->getTorVersion();
@@ -479,3 +483,105 @@ ServerSettings::setUpnpEnabled(bool enabled)
 #endif
 }
 
+bool
+ServerSettings::isAccountingEnabled()
+{
+  with_torrc_value(SETTING_ACCOUNTING_MAX) {
+    return true;
+  }
+
+  return false;
+}
+
+void
+ServerSettings::disableAccounting()
+{
+  Vidalia::torrc()->clear(QStringList() << SETTING_ACCOUNTING_MAX);
+}
+
+void
+ServerSettings::setAccountingMax(int amount, const QString &unit)
+{
+  setVolatileValue(SETTING_ACCOUNTING_MAX, QString("%1 %2").arg(amount).arg(unit));
+}
+
+void
+ServerSettings::setAccountingStart(const QString &dwm,
+                                   int day,
+                                   const QString &time)
+{
+  if(dwm == "month" or dwm == "week")
+    setVolatileValue(SETTING_ACCOUNTING_START,
+                     QString("%1 %2 %3").arg(dwm)
+                     .arg(day).arg(time));
+  else
+    setVolatileValue(SETTING_ACCOUNTING_START,
+                     QString("%1 %2").arg(dwm).arg(time));
+}
+
+int
+ServerSettings::accountingMaxAmount()
+{
+  with_torrc_value(SETTING_ACCOUNTING_MAX) {
+    QStringList parts = ret.at(0).split(" ");
+    if(parts.size() < 2)
+      return 0;
+    return parts.at(0).trimmed().toInt();
+  }
+  
+  return 0;
+}
+
+const QString
+ServerSettings::accountingMaxUnit()
+{
+  with_torrc_value(SETTING_ACCOUNTING_MAX) {
+    QStringList parts = ret.at(0).split(" ");
+    if(parts.size() < 2)
+      return QString();
+    return parts.at(1).trimmed();
+  }
+  
+  return QString();
+}
+
+const QString
+ServerSettings::accountingStartDwm()
+{
+  with_torrc_value(SETTING_ACCOUNTING_START) {
+    QStringList parts = ret.at(0).split(" ");
+    if(parts.size() < 2)
+      return QString();
+    return parts.at(0).trimmed();
+  }
+  
+  return QString();
+}
+
+int
+ServerSettings::accountingStartDay()
+{
+  with_torrc_value(SETTING_ACCOUNTING_START) {
+    QStringList parts = ret.at(0).split(" ");
+    if(parts.size() < 3)
+      return 1;
+    return parts.at(1).trimmed().toInt();
+  }
+  
+  return 1;
+}
+
+const QString
+ServerSettings::accountingStartTime()
+{
+  with_torrc_value(SETTING_ACCOUNTING_START) {
+    QStringList parts = ret.at(0).split(" ");
+    if(parts.size() < 2)
+      return QString();
+    if(parts.size() == 3)
+      return parts.at(2).trimmed();
+    return parts.at(1).trimmed();
+  }
+  
+  return QString();
+}

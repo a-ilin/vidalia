@@ -106,6 +106,26 @@ public:
   /** Sets whether Vidalia should try to configure port forwarding using UPnP. */
   void setUpnpEnabled(bool enabled);
 
+  /** Returns true if accounting is enabled */
+  bool isAccountingEnabled();
+  /** Disables accounting options */
+  void disableAccounting();
+  /** Sets AccountingMax to amount unit */
+  void setAccountingMax(int amount, const QString &unit);
+  /** Sets AccountingStart for dwm (day/week/month) day and time */
+  void setAccountingStart(const QString &dwm, int day, const QString &time);
+
+  /** Returns the max amount of bytes/KB/etc for accounting */
+  int accountingMaxAmount();
+  /** Returns the unit for the max amount */
+  const QString accountingMaxUnit();
+  /** Returns the configured AccountingStart (day/week/month) */
+  const QString accountingStartDwm();
+  /** Returns the day of the week/month for AccountingStart */
+  int accountingStartDay();
+  /** Returns the time of day for AccountingStart */
+  const QString accountingStartTime();
+
 protected:
   /** Virtual method called when we retrieve a server-related setting from Tor.
    * Currently this just translates BandwidthFoo to RelayBandwidthFoo when

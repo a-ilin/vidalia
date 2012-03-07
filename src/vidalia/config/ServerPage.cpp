@@ -106,6 +106,11 @@ ServerPage::ServerPage(QWidget *parent)
   connect(ui.lblWhatsThis, SIGNAL(linkActivated(QString)),
                        this, SLOT(linkActivated(QString)));
 
+  connect(ui.chkAccounting, SIGNAL(stateChanged(int)),
+          this, SLOT(toggleAccounting(int)));
+  connect(ui.cmbTime, SIGNAL(currentIndexChanged(const QString &)),
+          this, SLOT(toggleDisplayDay(const QString &)));
+
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
@@ -338,6 +343,16 @@ ServerPage::save(QString &errmsg)
   saveBandwidthLimits();
   saveExitPolicies();
 
+  if(ui.chkAccounting->checkState() != Qt::Checked)
+    _settings->disableAccounting();
+  else {
+    _settings->setAccountingMax(ui.spnAmount->value(), 
+                                ui.cmbUnit->currentText());
+    _settings->setAccountingStart(ui.cmbTime->currentText(),
+                                  ui.spnDay->value(),
+                                  ui.spnTime->text());
+  }
+
 #if defined(USE_MINIUPNPC)
   _settings->setUpnpEnabled(ui.chkEnableUpnp->isChecked());
 #endif
@@ -376,6 +391,19 @@ ServerPage::load()
   loadBandwidthLimits();
   loadExitPolicies();
   loadBridgeIdentity();
+
+  ui.chkAccounting->setCheckState(Qt::Unchecked);
+  toggleAccounting(Qt::Unchecked);
+
+  if(_settings->isAccountingEnabled()) {
+    ui.chkAccounting->setCheckState(Qt::Checked);
+    ui.spnAmount->setValue(_settings->accountingMaxAmount());
+    ui.cmbUnit->setCurrentIndex(ui.cmbUnit->findText(_settings->accountingMaxUnit()));
+    ui.cmbTime->setCurrentIndex(ui.cmbTime->findText(_settings->accountingStartDwm()));
+    if(ui.spnDay->isVisible())
+      ui.spnDay->setValue(_settings->accountingStartDay());
+    ui.spnTime->setTime(QTime::fromString(_settings->accountingStartTime(), "h:mm"));
+  }
 
 #if defined(USE_MINIUPNPC)
   ui.chkEnableUpnp->setChecked(_settings->isUpnpEnabled());
@@ -681,3 +709,44 @@ err:
   dlg.exec();
 }
 
+void
+ServerPage::toggleAccounting(int state)
+{
+  if(state == Qt::Checked) {
+    ui.lblPush->setVisible(true);
+    ui.spnAmount->setVisible(true);
+    ui.cmbUnit->setVisible(true);
+    ui.lblPer->setVisible(true);
+    ui.cmbTime->setVisible(true);
+    if(ui.cmbTime->currentText() == "month" or
+       ui.cmbTime->currentText() == "week") {
+      ui.spnDay->setVisible(true);
+      ui.lblDay->setVisible(true);
+    }
+    ui.lblAt->setVisible(true);
+    ui.spnTime->setVisible(true);
+    ui.lblTime->setVisible(true);
+  } else {
+    ui.lblPush->setVisible(false);
+    ui.spnAmount->setVisible(false);
+    ui.cmbUnit->setVisible(false);
+    ui.lblPer->setVisible(false);
+    ui.cmbTime->setVisible(false);
+    ui.spnDay->setVisible(false);
+    ui.lblDay->setVisible(false);
+    ui.lblTime->setVisible(false);
+    ui.lblAt->setVisible(false);
+    ui.spnTime->setVisible(false);
+  }
+}
+
+void
+ServerPage::toggleDisplayDay(const QString &str)
+{
+  ui.spnDay->setVisible(str == "month" or str == "week");
+  ui.spnDay->setMinimum(1);
+  if(str == "month")
+    ui.spnDay->setMaximum(28);
+  else
+    ui.spnDay->setMaximum(7);
+}

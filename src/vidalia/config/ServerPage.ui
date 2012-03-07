@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>658</width>
-    <height>578</height>
+    <width>704</width>
+    <height>688</height>
    </rect>
   </property>
   <property name="contextMenuPolicy">
@@ -547,61 +547,8 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
               </widget>
              </item>
              <item row="1" column="0">
-              <layout class="QHBoxLayout">
-               <item>
-                <layout class="QVBoxLayout">
-                 <item>
-                  <widget class="QLabel" name="label_2">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="text">
-                    <string>Average Rate</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout">
-                   <item>
-                    <widget class="QLineEdit" name="lineAvgRateLimit">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>60</width>
-                       <height>22</height>
-                      </size>
-                     </property>
-                     <property name="toolTip">
-                      <string>Long-term average bandwidth limit</string>
-                     </property>
-                     <property name="maxLength">
-                      <number>12</number>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignRight</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_6">
-                     <property name="text">
-                      <string>KB/s</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                </layout>
-               </item>
-               <item>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="2" colspan="6">
                 <layout class="QVBoxLayout">
                  <item>
                   <widget class="QLabel" name="label_5">
@@ -676,10 +623,266 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                  </item>
                 </layout>
                </item>
+               <item row="0" column="0" colspan="2">
+                <layout class="QVBoxLayout">
+                 <item>
+                  <widget class="QLabel" name="label_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>Average Rate</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout">
+                   <item>
+                    <widget class="QLineEdit" name="lineAvgRateLimit">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>60</width>
+                       <height>22</height>
+                      </size>
+                     </property>
+                     <property name="toolTip">
+                      <string>Long-term average bandwidth limit</string>
+                     </property>
+                     <property name="maxLength">
+                      <number>12</number>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_6">
+                     <property name="text">
+                      <string>KB/s</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
               </layout>
              </item>
             </layout>
            </widget>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="1" column="4">
+             <widget class="QComboBox" name="cmbTime">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <item>
+               <property name="text">
+                <string>day</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>week</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>month</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="2">
+             <widget class="QCheckBox" name="chkAccounting">
+              <property name="text">
+               <string>Enable accounting</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="9">
+             <widget class="QTimeEdit" name="spnTime">
+              <property name="maximumSize">
+               <size>
+                <width>60</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="displayFormat">
+               <string>h:mm</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="5">
+             <widget class="QLabel" name="lblAt">
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>at</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="3">
+             <widget class="QLabel" name="lblPer">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>40</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>per</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="7">
+             <widget class="QSpinBox" name="spnDay">
+              <property name="maximumSize">
+               <size>
+                <width>40</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>31</number>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QComboBox" name="cmbUnit">
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <item>
+               <property name="text">
+                <string>bytes</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>KB</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>MB</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>GB</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>TB</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="lblPush">
+              <property name="text">
+               <string>Push no more than</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="8">
+             <widget class="QLabel" name="lblTime">
+              <property name="text">
+               <string>time</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="6">
+             <widget class="QLabel" name="lblDay">
+              <property name="maximumSize">
+               <size>
+                <width>50</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>day</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="10">
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="1">
+             <widget class="QSpinBox" name="spnAmount">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>999999</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
            <spacer>

@@ -82,6 +82,11 @@ private slots:
   /** Called when the user clicks on a QLabel containing a hyperlink. */
   void linkActivated(const QString &url);
 
+  /** Called when the user toggles the Enable Accounting checkbox */
+  void toggleAccounting(int state);
+  /** Called when the user selects a new item from cmbTime */
+  void toggleDisplayDay(const QString &str);
+
 private:
   /** Index values of rate values in the bandwidth limits dropdown box. */
   enum BwRateIndex {
