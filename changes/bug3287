@@ -1,0 +1,2 @@
+  o Use consensus bandwidth for routers when microdescriptors is
+    enabled. Fixes bug 3287.
