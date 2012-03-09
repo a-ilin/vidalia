@@ -130,7 +130,7 @@ MainWindow::MainWindow()
     TransformProcessType(&psn, kProcessTransformToForegroundApplication);
   }
   /* Vidalia launched in background (LSUIElement=true). Bring to foreground. */
-  VidaliaWindow::setVisible(true);
+  VidaliaWindow::setVisible(settings.showMainWindowAtStart());
 #endif
 }
 
@@ -310,7 +310,7 @@ MainWindow::createTrayIcon()
 
   _statusTab.checkShowOnStartup(settings.showMainWindowAtStart());
   if (_statusTab.isCheckedShowOnStartup())
-    show(); 
+    show();
   _trayIcon.show();
 }
 
@@ -1820,7 +1820,7 @@ MainWindow::addTab(VidaliaTab *tab)
   _tabMap << tab->getTitle();
   connect(tab, SIGNAL(helpRequested(QString)),
           this, SLOT(showHelpDialog(QString)));
-  if(!isVisible())
+  if(!isVisible() and (tab != &_statusTab))
     setVisible(true);
 }
 
