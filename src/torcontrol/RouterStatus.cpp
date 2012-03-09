@@ -40,6 +40,8 @@ RouterStatus::RouterStatus(const QStringList &status)
   _valid = false;
   _flags = 0;
 
+  _bandwidth = 0;
+
   foreach (QString line, status) {
     if (line.startsWith("r ")) {
       QStringList parts = line.split(" ", QString::SkipEmptyParts);
@@ -82,6 +84,17 @@ RouterStatus::RouterStatus(const QStringList &status)
 
       foreach (QString flag, flags) {
         _flags |= flagValue(flag);
+      }
+    } else if (line.startsWith("w ")) {
+      /* Status flags */
+      QStringList parts = line.split(" ", QString::SkipEmptyParts);
+      parts.removeFirst(); /* Remove the "w" */
+
+      if(parts.size() > 0) {
+        QStringList bw = parts.at(0).split("=", QString::SkipEmptyParts);
+        if(bw.size() == 2) {
+          _bandwidth = (quint64)bw.at(1).toULongLong();
+        }
       }
     }
   }

@@ -67,6 +67,8 @@ public:
   Flags flags() const { return _flags; }
   /** Returns true if this router is currently listed as Running. */
   bool isRunning() const { return (flags() & Running); }
+  /** Returns the consensus bandwidth */
+  quint64 bandwidth() const { return _bandwidth; }
 
   /** Returns true if this router status object is valid. This method should
    * be called to verify that the QStringList given in this object's
@@ -89,6 +91,7 @@ private:
   quint16 _orPort;  /**< Current OR port. */
   quint16 _dirPort; /**< Current directory port. */
   Flags _flags;     /**< OR-ed field of the router's current status flags. */
+  quint64 _bandwidth; /**< Consensus bandwidth */
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(RouterStatus::Flags)

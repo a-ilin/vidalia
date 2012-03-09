@@ -333,9 +333,6 @@ NetViewer::preLoadNetworkStatus()
 {
   NetworkStatus networkStatus = _torControl->getNetworkStatus();
   
-  if(_torControl->useMicrodescriptors())
-    ui.treeRouterList->hideColumn(RouterListWidget::StatusColumn);
-
   foreach(RouterStatus rs, networkStatus) {
     if (!rs.isRunning())
       continue;
