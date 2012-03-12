@@ -1,4 +1,6 @@
-
+*~
+*.po
+\#*\#
 # /
 /CMakeCache.txt
 /CMakeFiles
