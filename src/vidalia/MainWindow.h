@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -73,13 +73,13 @@ private slots:
   /** Called when the Tor process fails to start. */
   void startFailed(QString errmsg);
   /** Called when the Tor process has successfully started. */
-  void started();
+  void connectToTor();
   /** Called when the user selects "Stop" form the menu. */
   bool stop();
   /** Called when the Tor process has exited, either expectedly or not. */
   void stopped(int errorCode, QProcess::ExitStatus exitStatus);
   /** Called when the control socket has connected to Tor. */
-  void connected();
+  //void connected();
   /** Called when the control connection fails. */
   void connectFailed(QString errmsg);
   /** Called when Vidalia wants to disconnect from a Tor it did not start. */
@@ -145,7 +145,7 @@ private slots:
 
   /** Displays the debug output dialog for plugins */
   void showDebugDialog();
-  
+
   /** Adds a new tab to the MainWindow */
   void addTab(VidaliaTab *tab);
   /** Deletes the tab at index if it exists and it isn't the Status tab */
@@ -224,7 +224,7 @@ private:
   /** Converts a TorStatus enum value to a string for debug logging purposes. */
   QString toString(TorStatus status);
   /** Authenticates Vidalia to Tor's control port. */
-  bool authenticate();
+  void authenticate();
   /** Searches for and attempts to load the control authentication cookie.
    * This assumes the cookie is named 'control_auth_cookie'. If
    * <b>cookiePath</b> is empty, this method will search some default locations
@@ -305,10 +305,12 @@ private:
   PluginEngine *_engine;
   QStringList _tabMap; /**< Map to handle opened tabs */
   QStringList _detachedTabMap; /**< Map to handle detached tabs */
-  
+
   bool _startedWithPrevious; /**< True if Vidalia tried to start Tor with the previous ports */
   QString _previousControlPort; /**< Holds the previous controlport used */
   QString _previousSocksPort; /**< Holds the previous socksport used */
+
+  bool _pressedStop; /**< True if the user has pressed the Stop Tor button */
 };
 
 #endif

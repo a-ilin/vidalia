@@ -26,7 +26,7 @@
 
 /** Default constructor */
 TorControl::TorControl(ControlMethod::Method method)
-{
+  : QObject(), _shouldContinue(true), _reason("") {
 #define RELAY_SIGNAL(src, sig) \
   QObject::connect((src), (sig), this, (sig))
 
@@ -83,6 +83,12 @@ TorControl::TorControl(ControlMethod::Method method)
   QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
                    this, SLOT(onLogStdout(QString, QString)));
 
+  QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
+                   this, SLOT(torStartFailed(QString)));
+  QObject::connect(_controlConn, SIGNAL(connectFailed(QString)),
+                   this, SLOT(torConnectFailed(QString)));
+
+
 #if defined(Q_OS_WIN32)
   _torService = new TorService(this);
   RELAY_SIGNAL(_torService, SIGNAL(started()));
@@ -127,6 +133,33 @@ TorControl::start(const QString &tor, const QStringList &args)
   }
 }
 
+/** Returns true if the process is running */
+bool
+TorControl::torStarted()
+{
+  return _torProcess->state() == QProcess::Running;
+}
+
+/** Called when starting the tor process failed */
+void
+TorControl::torStartFailed(QString errmsg)
+{
+  _shouldContinue = false;
+  _reason = tr("Start failed: %1").arg(errmsg);
+}
+
+/** Returns true if the bootstrap should continue. If it returns
+ * false, it also sets the errmsg to the last error */
+bool
+TorControl::shouldContinue(QString *errmsg)
+{
+  if(not errmsg)
+    errmsg = new QString();
+
+  *errmsg = _reason;
+  return _shouldContinue;
+}
+
 /** Stop the Tor process. */
 bool
 TorControl::stop(QString *errmsg)
@@ -157,8 +190,24 @@ TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
   if (_controlConn->status() == ControlConnection::Connecting)
     _controlConn->cancelConnect();
 
+  if (exitStatus == QProcess::CrashExit || exitCode != 0) {
+    _shouldContinue = false;
+    _reason = tr("Process finished: ExitCode=%1").arg(exitCode);
+  }
+
   emit stopped();
+  disconnect();
   emit stopped(exitCode, exitStatus);
+}
+
+/** Returns true if the tor process has finished, along with its exit
+ * code and status */
+bool
+TorControl::finished(int *exitCode, QProcess::ExitStatus *exitStatus)
+{
+  *exitCode = _torProcess->exitCode();
+  *exitStatus = _torProcess->exitStatus();
+  return _torProcess->state() == QProcess::NotRunning;
 }
 
 /** Detects if the Tor process is running under Vidalia. Returns true if
@@ -209,6 +258,14 @@ TorControl::connect(const QString &path)
   _controlConn->connect(path);
 }
 
+/** Called when the connection to tor has failed */
+void
+TorControl::torConnectFailed(QString errmsg)
+{
+  _shouldContinue = false;
+  _reason = tr("Connection failed: %1").arg(errmsg);
+}
+
 /** Disconnect from Tor's control port */
 void
 TorControl::disconnect()
@@ -217,6 +274,7 @@ TorControl::disconnect()
     _controlConn->disconnect();
 }
 
+/** Emits the proper bootstrapStatusChanged */
 void
 TorControl::getBootstrapPhase()
 {
@@ -256,6 +314,9 @@ TorControl::onDisconnected()
   }
   /* Tor isn't running, so it has no version */
   _torVersion = QString();
+
+  _shouldContinue = false;
+  _reason = tr("Disconnected");
 
   /* Let interested parties know we lost our control connection */
   emit disconnected();
@@ -307,6 +368,9 @@ TorControl::authenticate(const QByteArray cookie, QString *errmsg)
 
   if (!send(cmd, reply, &str)) {
     emit authenticationFailed(str);
+    _shouldContinue = false;
+    _reason = str;
+
     return err(errmsg, str);
   }
   onAuthenticated();
@@ -326,6 +390,9 @@ TorControl::authenticate(const QString &password, QString *errmsg)
 
   if (!send(cmd, reply, &str)) {
     emit authenticationFailed(str);
+    _shouldContinue = false;
+    _reason = str;
+
     return err(errmsg, str);
   }
   onAuthenticated();
@@ -403,6 +470,7 @@ TorControl::useFeature(const QString &feature, QString *errmsg)
   return send(cmd, errmsg);
 }
 
+/** Returns the current BootstrapStatus */
 BootstrapStatus
 TorControl::bootstrapStatus(QString *errmsg)
 {
@@ -963,6 +1031,7 @@ TorControl::resetConf(QString key, QString *errmsg)
   return resetConf(QStringList() << key, errmsg);
 }
 
+/** Returns true if microdescriptors are used */
 bool
 TorControl::useMicrodescriptors(QString *errmsg)
 {
@@ -1131,8 +1200,8 @@ TorControl::closeStream(const StreamId &streamId, QString *errmsg)
   return send(cmd, errmsg);
 }
 
- /** Gets a list of address mappings of the type specified by <b>type</b>
-  * (defaults to <i>AddressMapAll</i>. */
+/** Gets a list of address mappings of the type specified by <b>type</b>
+ * (defaults to <i>AddressMapAll</i>. */
 AddressMap
 TorControl::getAddressMap(AddressMap::AddressMapType type, QString *errmsg)
 {
@@ -1179,4 +1248,12 @@ TorControl::takeOwnership(QString *errmsg)
 {
   ControlCommand cmd("TAKEOWNERSHIP");
   return send(cmd, errmsg);
+}
+
+/** Clear the error state for shouldContinue(errmsg) */
+void
+TorControl::clearErrState()
+{
+  _shouldContinue = true;
+  _reason = "";
 }
