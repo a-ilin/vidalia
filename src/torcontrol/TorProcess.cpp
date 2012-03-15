@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file TorProcess.cpp
 ** \brief Starts and stops a Tor process
 */
@@ -31,9 +31,9 @@ TorProcess::TorProcess(QObject *parent)
 : QProcess(parent)
 {
   openStdout();
-  connect(this, SIGNAL(readyReadStandardOutput()), 
+  connect(this, SIGNAL(readyReadStandardOutput()),
           this,   SLOT(onReadyRead()));
-  connect(this, SIGNAL(error(QProcess::ProcessError)), 
+  connect(this, SIGNAL(error(QProcess::ProcessError)),
           this,   SLOT(onError(QProcess::ProcessError)));
 }
 
@@ -53,7 +53,7 @@ TorProcess::formatArguments(const QStringList &args)
  * signal started() will be emitted. If Tor fails to start,
  * startFailed(errmsg) will be emitted, with an appropriate error message. */
 void
-TorProcess::start(const QString &app, const QStringList &args) 
+TorProcess::start(const QString &app, const QStringList &args)
 {
   QString exe = app;
 #if defined(Q_OS_WIN32)
@@ -61,12 +61,12 @@ TorProcess::start(const QString &app, const QStringList &args)
    * quoted before being passed to it. */
   exe = "\"" + exe + "\"";
 #endif
-  
+
   /* Attempt to start Tor with the given command-line arguments */
   QStringList env = QProcess::systemEnvironment();
 #if !defined(Q_OS_WIN32)
   /* Add "/usr/sbin" to an existing $PATH
-   * XXX What if they have no path? Would always just making one with 
+   * XXX What if they have no path? Would always just making one with
    *     "/usr/sbin" smart? Should we add anything else? */
   for (int i = 0; i < env.size(); i++) {
     QString envVar = env.at(i);
@@ -93,7 +93,7 @@ TorProcess::stop(QString *errmsg)
   tc::debug("Stopping the Tor process.");
   /* Tell the process to stop */
 #if defined(Q_OS_WIN32)
-  /* Tor on Windows doesn't understand a WM_CLOSE message (which is what 
+  /* Tor on Windows doesn't understand a WM_CLOSE message (which is what
    * QProcess::terminate() sends it), so we have to kill it harshly. */
   kill();
 #else
@@ -103,7 +103,7 @@ TorProcess::stop(QString *errmsg)
   if (!waitForFinished(5000)) {
     tc::error("Tor failed to stop: %1").arg(errorString());
     if (errmsg) {
-      *errmsg = 
+      *errmsg =
         tr("Process %1 failed to stop. [%2]").arg(pid()).arg(errorString());
     }
     return false;
@@ -149,7 +149,7 @@ TorProcess::onReadyRead()
 {
   int i, j;
   QString line;
-  
+
   while (canReadLine()) {
     line = readLine();
     if (!line.isEmpty()) {
@@ -171,11 +171,11 @@ TorProcess::onError(QProcess::ProcessError error)
 {
   if (error == QProcess::FailedToStart) {
     tc::error("The Tor process failed to start: %1").arg(errorString());
-    /* Tor didn't start, so let everyone know why. */
-    emit startFailed(errorString());
   } else {
     tc::error("Tor process error: %1").arg(errorString());
   }
+  /* Tor didn't start, so let everyone know why. */
+  emit startFailed(errorString());
 }
 
 /** Returns the version reported by the Tor executable specified in
