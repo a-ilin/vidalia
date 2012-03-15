@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -64,7 +64,7 @@ GeoIpResolver::resolveUsingLocalDatabase(const QHostAddress &ip)
     QString countryCode = _database.countryCodeByAddr(ip);
     if (! countryCode.isEmpty()) {
       QPair<float,float> coords = CountryInfo::countryLocation(countryCode);
-      return GeoIpRecord(ip, coords.first, coords.second, 
+      return GeoIpRecord(ip, coords.first, coords.second,
                          CountryInfo::countryName(countryCode),
                          countryCode);
     }
@@ -81,6 +81,6 @@ GeoIpResolver::resolve(const QHostAddress &ip)
   if (_useLocalDatabase)
     return resolveUsingLocalDatabase(ip);
 #endif
-  return resolveUsingTor(ip); 
+  return resolveUsingTor(ip);
 }
 

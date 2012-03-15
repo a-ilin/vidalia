@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -110,7 +110,7 @@ NetViewer::NetViewer(QWidget *parent)
    * needs to be called to get rid of any descriptors that were removed. */
   _refreshTimer.setInterval(60*60*1000);
   connect(&_refreshTimer, SIGNAL(timeout()), this, SLOT(refresh()));
- 
+
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(refresh()));
@@ -229,7 +229,7 @@ NetViewer::refresh()
 
   /* Ok, they can refresh again. */
   ui.actionRefresh->setEnabled(true);
-} 
+}
 
 /** Clears the lists and the map */
 void
@@ -246,7 +246,7 @@ NetViewer::clear()
   ui.textRouterInfo->clear();
 }
 
-/** Called when the search of a router is triggered by the signal 
+/** Called when the search of a router is triggered by the signal
  * returnPressed from the search field. */
 void
 NetViewer::onRouterSearch()
@@ -287,7 +287,19 @@ void
 NetViewer::addCircuit(const Circuit &circuit)
 {
   /* Add the circuit to the list of all current circuits */
-  ui.treeCircuitList->addCircuit(circuit);
+  if(circuit.purpose() == Circuit::General or
+     circuit.purpose() == Circuit::Controller or
+     circuit.purpose() == Circuit::Testing) {
+    if((circuit.buildFlags() & Circuit::OneHopTunnel) or
+       (circuit.buildFlags() & Circuit::IsInternal)) {
+      ui.treeInternalCircuitList->addCircuit(circuit);
+    } else {
+      ui.treeCircuitList->addCircuit(circuit);
+    }
+  } else {
+    ui.treeHSCircuitList->addCircuit(circuit);
+  }
+
   /* Plot the circuit on the map */
   _map->addCircuit(circuit.id(), circuit.routerIDs());
 }
@@ -301,7 +313,7 @@ NetViewer::addStream(const Stream &stream)
   if (stream.status() == Stream::New) {
     QString target = stream.targetAddress();
     if (! QHostAddress(target).isNull() && _addressMap.isMapped(target)) {
-      /* Replace the IP address in the stream event with the original 
+      /* Replace the IP address in the stream event with the original
        * hostname */
       ui.treeCircuitList->addStream(
         Stream(stream.id(), stream.status(), stream.circuitId(),
@@ -332,11 +344,11 @@ void
 NetViewer::preLoadNetworkStatus()
 {
   NetworkStatus networkStatus = _torControl->getNetworkStatus();
-  
+
   foreach(RouterStatus rs, networkStatus) {
     if (!rs.isRunning())
       continue;
-    
+
     RouterDescriptor rd = _torControl->getRouterDescriptor(rs.id());
     if(_torControl->useMicrodescriptors()) {
       rd.appendRouterStatusInfo(rs);
@@ -346,7 +358,7 @@ NetViewer::preLoadNetworkStatus()
 
     QCoreApplication::processEvents();
   }
-  
+
   _it = _routers.constBegin();
   QTimer::singleShot(200, this, SLOT(loadNetworkStatus()));
 }
@@ -448,13 +460,13 @@ NetViewer::routerSelected(const QList<RouterDescriptor> &routers)
   //   _map->selectRouter(routers[0].id());
 }
 
-/** Called when the user selects a router on the network map. Displays a 
+/** Called when the user selects a router on the network map. Displays a
  * dialog with detailed information for the router specified by
  * <b>id</b>.*/
 void
 NetViewer::displayRouterInfo(const QString &id)
 {
-  RouterInfoDialog dlg(_map->isFullScreen() ? static_cast<QWidget*>(_map) 
+  RouterInfoDialog dlg(_map->isFullScreen() ? static_cast<QWidget*>(_map)
                                             : static_cast<QWidget*>(this));
 
   /* Fetch the specified router's descriptor */

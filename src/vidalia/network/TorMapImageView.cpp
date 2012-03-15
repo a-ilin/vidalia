@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -59,7 +59,7 @@ static float  plen[] = {
     0.6213, 0.5722, 0.5322
   };
 
-/** Distance of corresponding parallel from equator */ 
+/** Distance of corresponding parallel from equator */
 static float  pdfe[] = {
     0.0000, 0.0620, 0.1240, 0.1860,
     0.2480, 0.3100, 0.3720, 0.4340,
@@ -88,7 +88,7 @@ TorMapImageView::addRouter(const RouterDescriptor &desc, const GeoIpRecord &geoi
 {
   QString id = desc.id();
   QPointF routerCoord = toMapSpace(geoip.latitude(), geoip.longitude());
-  
+
   /* Add data the hash of known routers, and plot the point on the map */
   if (_routers.contains(id))
     _routers.value(id)->first = routerCoord;
@@ -101,25 +101,25 @@ void
 TorMapImageView::addCircuit(const CircuitId &circid, const QStringList &path)
 {
   QPainterPath *circPainterPath = new QPainterPath;
-  
+
   /* Build the new circuit */
   for (int i = 0; i < path.size()-1; i++) {
     QString fromNode = path.at(i);
     QString toNode = path.at(i+1);
-   
+
     /* Add the coordinates of the hops to the circuit */
     if (_routers.contains(fromNode) && _routers.contains(toNode)) {
       /* Find the two endpoints for this path segment */
       QPointF fromPos = _routers.value(fromNode)->first;
       QPointF endPos = _routers.value(toNode)->first;
-      
-      /* Draw the path segment */ 
+
+      /* Draw the path segment */
       circPainterPath->moveTo(fromPos);
       circPainterPath->lineTo(endPos);
       circPainterPath->moveTo(endPos);
     }
   }
-  
+
   /** Add the data to the hash of known circuits and plot the circuit on the map */
   if (_circuits.contains(circid)) {
     /* This circuit is being updated, so just update the path, making sure we
@@ -156,7 +156,7 @@ TorMapImageView::selectRouter(const QString &id)
   repaint();
 }
 
-/** Selects and highlights the circuit with the id <b>circid</b> 
+/** Selects and highlights the circuit with the id <b>circid</b>
  * on the map. */
 void
 TorMapImageView::selectCircuit(const CircuitId &circid)
@@ -199,17 +199,17 @@ TorMapImageView::clear()
     delete circuitPair;
   }
 }
-  
+
 /** Draws the routers and paths onto the map image. */
 void
 TorMapImageView::paintImage(QPainter *painter)
 {
   painter->setRenderHint(QPainter::Antialiasing);
-  
+
   /* Draw the router points */
   foreach(QString router, _routers.keys()) {
     QPair<QPointF,bool> *routerPair = _routers.value(router);
-    painter->setPen((routerPair->second ? PEN_SELECTED : PEN_ROUTER)); 
+    painter->setPen((routerPair->second ? PEN_SELECTED : PEN_ROUTER));
     painter->drawPoint(routerPair->first);
   }
   /* Draw the circuit paths */
@@ -231,10 +231,10 @@ TorMapImageView::toMapSpace(float latitude, float longitude)
 
   float lat;
   float lon;
-  
+
   lat = floor(longitude * (deg * lerp(abs(int(latitude)), plen))
 	      + width/2 + MAP_LEFT);
-  
+
   if (latitude < 0) {
     lon = floor((height/2) + (lerp(abs(int(latitude)), pdfe) * (height/2))
 		+ MAP_TOP);
@@ -245,14 +245,14 @@ TorMapImageView::toMapSpace(float latitude, float longitude)
 
   return QPointF(lat, lon);
 }
-  
+
 /** Linearly interpolates using the values in the Robinson projection table */
 float
 TorMapImageView::lerp(float input, float *table)
 {
   int x = int(floor(input / 5));
 
-  return ((table[x+1] - table[x]) / 
+  return ((table[x+1] - table[x]) /
 	  (((x+1)*5) - (x*5))) * (input - x*5) + table[x];
 }
 
@@ -270,7 +270,7 @@ void
 TorMapImageView::zoomToFit()
 {
   QRectF rect = circuitBoundingBox();
-  
+
   if (rect.isNull()) {
     /* If there are no circuits, zoom all the way out */
     resetZoomPoint();
@@ -279,7 +279,7 @@ TorMapImageView::zoomToFit()
     /* Zoom in on the displayed circuits */
     float zoomLevel = 1.0 - qMax(rect.height()/float(MAP_HEIGHT),
                                  rect.width()/float(MAP_WIDTH));
-    
+
     zoom(rect.center().toPoint(), zoomLevel+0.2);
   }
 }
@@ -305,12 +305,12 @@ void
 TorMapImageView::zoomToRouter(const QString &id)
 {
   QPair<QPointF,bool> *routerPair;
-  
+
   if (_routers.contains(id)) {
     deselectAll();
     routerPair = _routers.value(id);
     routerPair->second = true;  /* Set the router point to "selected" */
-    zoom(routerPair->first.toPoint(), 1.0); 
+    zoom(routerPair->first.toPoint(), 1.0);
   }
 }
 
