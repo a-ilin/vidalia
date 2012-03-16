@@ -18,6 +18,7 @@
 #include "RouterListItem.h"
 #include "Vidalia.h"
 #include "VMessageBox.h"
+#include "ServerSettings.h"
 
 #include <QMessageBox>
 #include <QToolBar>
@@ -344,6 +345,10 @@ void
 NetViewer::preLoadNetworkStatus()
 {
   NetworkStatus networkStatus = _torControl->getNetworkStatus();
+
+  ServerSettings settings(_torControl);
+  if(settings.isServerEnabled())
+    _routers << *RouterDescriptor::fromTorControl(_torControl);
 
   foreach(RouterStatus rs, networkStatus) {
     if (!rs.isRunning())

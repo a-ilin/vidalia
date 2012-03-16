@@ -24,6 +24,8 @@
 
 #include "RouterStatus.h"
 
+class TorControl;
+
 class RouterDescriptor
 {
   Q_DECLARE_TR_FUNCTIONS(RouterDescriptor)
@@ -98,6 +100,9 @@ public:
   /** Uses the RouterStatus information to update key elements of the
    *  descriptor */
   void appendRouterStatusInfo(const RouterStatus &rs);
+
+  /** Creates a RouterDescriptor from the control port information */
+  static RouterDescriptor *fromTorControl(TorControl *tc);
 
 private:
   /** Parses this router's descriptor for relevant information. */

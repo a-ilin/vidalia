@@ -14,6 +14,7 @@
 */
 
 #include "RouterDescriptor.h"
+#include "TorControl.h"
 
 #include <QtGlobal>
 
@@ -109,4 +110,25 @@ RouterDescriptor::appendRouterStatusInfo(const RouterStatus &rs)
   _avgBandwidth = rs.bandwidth();
   _burstBandwidth = rs.bandwidth();
   _observedBandwidth = rs.bandwidth();
+}
+
+RouterDescriptor *
+RouterDescriptor::fromTorControl(TorControl *tc)
+{
+  RouterDescriptor *rd = new RouterDescriptor(QStringList(), true);
+
+  if(tc->isConnected()) {
+    rd->_id = tc->getInfo("fingerprint").toString();
+    rd->_name = tc->getConf("Nickname").toString();
+    rd->_ip = QHostAddress(tc->getInfo("address").toString());
+    rd->_orPort = (quint16)tc->getConf("ORPort").toUInt();
+    rd->_dirPort = (quint16)tc->getConf("DirPort").toUInt();
+    rd->_avgBandwidth = (quint64)tc->getConf("BandwidthRate").toLongLong();
+    rd->_burstBandwidth = (quint64)tc->getConf("BandwidthBurst").toLongLong();
+    rd->_observedBandwidth = rd->_avgBandwidth;
+
+    rd->_status = Offline;
+  }
+
+  return rd;
 }
