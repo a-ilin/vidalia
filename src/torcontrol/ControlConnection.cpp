@@ -34,6 +34,7 @@ ControlConnection::ControlConnection(ControlMethod::Method method, TorEvents *ev
   _events = events;
   _status = Unset;
   _sock = 0;
+  _connectTimer = 0;
   _sendWaiter = new SendCommandEvent::SendWaiter();
   _method = method;
   _connected = false;
@@ -44,9 +45,8 @@ ControlConnection::~ControlConnection()
 {
   /* Clean up after the send waiter */
   delete _sendWaiter;
-  delete _sock;
-  delete _connectTimer;
-  _sock = 0;
+  if(_sock) delete _sock;
+  if(_connectTimer) delete _connectTimer;
 }
 
 /** Connect to the specified Tor control interface. */

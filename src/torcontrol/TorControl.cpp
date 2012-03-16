@@ -107,7 +107,7 @@ TorControl::~TorControl()
   if (isVidaliaRunningTor()) {
     stop();
   }
-  _controlConn->disconnect();
+  disconnect();
   delete _controlConn;
 }
 
