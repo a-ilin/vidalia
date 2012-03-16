@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -48,8 +48,8 @@
 #define HIGHBW_MAX_RATE         (10240*1024)
 /** Minimum allowed bandwidth rate (20KB) */
 #define MIN_BANDWIDTH_RATE      20
-/** Maximum bandwidth rate. This is limited to 2147483646 bytes, 
- * or 2097151 kilobytes. (2147483646/1024) */ 
+/** Maximum bandwidth rate. This is limited to 2147483646 bytes,
+ * or 2097151 kilobytes. (2147483646/1024) */
 #define MAX_BANDWIDTH_RATE      2097151
 
 /** Ports represented by the "Websites" checkbox. (80) */
@@ -62,7 +62,7 @@
  * (703,1863,5050,5190,5222,8300,8888) */
 #define PORTS_IM     (QStringList() << "706" << "1863" << "5050" << "5190" \
                                     << "5222" << "5223" << "8300" << "8888")
-/** Ports represented by the "Internet Relay Chat" checkbox. 
+/** Ports represented by the "Internet Relay Chat" checkbox.
  * (6660-6669,6697,7000-7001) */
 #define PORTS_IRC    (QStringList() << "6660-6669" << "6697" << "7000-7001")
 
@@ -73,7 +73,7 @@ ServerPage::ServerPage(QWidget *parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
-  
+
   /* Create ServerSettings object */
   _settings = new ServerSettings(Vidalia::torControl());
 
@@ -83,9 +83,9 @@ ServerPage::ServerPage(QWidget *parent)
   connect(ui.btnUpnpHelp, SIGNAL(clicked()), this, SLOT(upnpHelp()));
   connect(ui.cmboRate, SIGNAL(currentIndexChanged(int)),
                  this, SLOT(rateChanged(int)));
-  connect(ui.lineAvgRateLimit, SIGNAL(editingFinished()), 
+  connect(ui.lineAvgRateLimit, SIGNAL(editingFinished()),
                          this, SLOT(customRateChanged()));
-  connect(ui.lineMaxRateLimit, SIGNAL(editingFinished()), 
+  connect(ui.lineMaxRateLimit, SIGNAL(editingFinished()),
                          this, SLOT(customRateChanged()));
   connect(ui.rdoClientMode, SIGNAL(toggled(bool)),
                       this, SLOT(serverModeChanged(bool)));
@@ -204,7 +204,7 @@ ServerPage::loadBridgeIdentity()
     tc->getInfo("address", address);
     tc->getInfo("fingerprint", fingerprint);
     tc->getConf("ORPort", orPort);
-  
+
     if (!address.isEmpty() && !orPort.isEmpty() && orPort != "0")
       bridge = address + ":" + orPort + " ";
     if (!fingerprint.isEmpty())
@@ -229,11 +229,11 @@ ServerPage::serverModeChanged(bool enabled)
   bool bridgeEnabled = ui.rdoBridgeMode->isChecked();
   bool relayEnabled = ui.rdoServerMode->isChecked() ||
                       ui.rdoNonExitMode->isChecked();
-  
+
   /* Show the tab menu only if the user is running a normal relay or a bridge
    * relay. */
   ui.tabsMenu->setVisible(relayEnabled || bridgeEnabled);
-  
+
   /* Display the widgets that show the user their bridge identity if bridge
    * relay mode is selected. */
   ui.lblYourBridgeRelayIs->setVisible(bridgeEnabled);
@@ -260,7 +260,7 @@ ServerPage::serverModeChanged(bool enabled)
 
   ui.chkMirrorDirectory->setEnabled(!bridgeEnabled);
 
-  /* Disable the Exit Policies tab when bridge or non-exit relay mode is 
+  /* Disable the Exit Policies tab when bridge or non-exit relay mode is
    * selected */
   ui.tabsMenu->setTabEnabled(2, !bridgeEnabled and !ui.rdoNonExitMode->isChecked());
 
@@ -301,8 +301,8 @@ ServerPage::save(QString &errmsg)
 {
   /* Force the bandwidth rate limits to validate */
   customRateChanged();
-  
-  if (ui.rdoServerMode->isChecked() || 
+
+  if (ui.rdoServerMode->isChecked() ||
       ui.rdoNonExitMode->isChecked() ||
       ui.rdoBridgeMode->isChecked()) {
     /* A server must have an ORPort and a nickname */
@@ -319,7 +319,7 @@ ServerPage::save(QString &errmsg)
       ui.lineMaxRateLimit->setText(QString::number(5242880/1024) /* 5MB */);
     }
   }
-  
+
   /* "Server" is enabled whether we're a bridge or normal relay. "Bridge" is
    * only enabled if we're a bridge (obviously). */
   _settings->setServerEnabled(ui.rdoServerMode->isChecked()
@@ -346,7 +346,7 @@ ServerPage::save(QString &errmsg)
   if(ui.chkAccounting->checkState() != Qt::Checked)
     _settings->disableAccounting();
   else {
-    _settings->setAccountingMax(ui.spnAmount->value(), 
+    _settings->setAccountingMax(ui.spnAmount->value(),
                                 ui.cmbUnit->currentText());
     _settings->setAccountingStart(ui.cmbTime->currentText(),
                                   ui.spnDay->value(),
@@ -431,23 +431,23 @@ ServerPage::loadBandwidthLimits()
   quint32 avgRate = _settings->getBandwidthAvgRate();
   quint32 maxRate = _settings->getBandwidthBurstRate();
 
-  if (avgRate == CABLE256_AVG_RATE && 
+  if (avgRate == CABLE256_AVG_RATE &&
       maxRate == CABLE256_MAX_RATE) {
     /* Cable/DSL 256 Kbps */
-    ui.cmboRate->setCurrentIndex(CableDsl256); 
-  } else if (avgRate == CABLE512_AVG_RATE && 
+    ui.cmboRate->setCurrentIndex(CableDsl256);
+  } else if (avgRate == CABLE512_AVG_RATE &&
              maxRate == CABLE512_MAX_RATE) {
     /* Cable/DSL 512 Kbps */
     ui.cmboRate->setCurrentIndex(CableDsl512);
-  } else if (avgRate == CABLE768_AVG_RATE && 
+  } else if (avgRate == CABLE768_AVG_RATE &&
              maxRate == CABLE768_MAX_RATE) {
     /* Cable/DSL 768 Kbps */
     ui.cmboRate->setCurrentIndex(CableDsl768);
-  } else if (avgRate == T1_AVG_RATE && 
+  } else if (avgRate == T1_AVG_RATE &&
              maxRate == T1_MAX_RATE) {
     /* T1/Cable/DSL 1.5 Mbps */
     ui.cmboRate->setCurrentIndex(T1CableDsl1500);
-  } else if (avgRate == HIGHBW_AVG_RATE && 
+  } else if (avgRate == HIGHBW_AVG_RATE &&
              maxRate == HIGHBW_MAX_RATE) {
     /* > 1.5 Mbps */
     ui.cmboRate->setCurrentIndex(GreaterThan1500);
@@ -501,7 +501,7 @@ void
 ServerPage::loadExitPolicies()
 {
   ExitPolicy exitPolicy = _settings->getExitPolicy();
-  
+
   if (exitPolicy.contains(Policy(Policy::RejectAll))) {
     /* If the policy ends with reject *:*, check if the policy explicitly
      * accepts these ports */
@@ -533,7 +533,7 @@ ServerPage::saveExitPolicies()
   } else {
     exitPolicy = new ExitPolicy();
     bool rejectUnchecked = ui.chkMisc->isChecked();
-    
+
     /* If misc is checked, then reject unchecked items and leave the default exit
     * policy alone. Else, accept only checked items and end with reject *:*,
     * replacing the default exit policy. */
@@ -573,12 +573,12 @@ ServerPage::saveExitPolicies()
 void
 ServerPage::rateChanged(int index)
 {
-  /* If the "Custom" option is selected, show the custom bandwidth 
+  /* If the "Custom" option is selected, show the custom bandwidth
    * limits form. */
   ui.frmCustomRate->setVisible(index == CustomBwLimits);
 }
 
-/** Called when the user edits the long-term average or maximum bandwidth limit. 
+/** Called when the user edits the long-term average or maximum bandwidth limit.
  * This ensures that the average bandwidth rate is greater than MIN_RATE
  * (20KB/s) and that the max rate is greater than the average rate. */
 void
@@ -587,7 +587,7 @@ ServerPage::customRateChanged()
   /* Make sure the average rate isn't too low or too high */
   quint32 avgRate = (quint32)ui.lineAvgRateLimit->text().toUInt();
   if (avgRate < MIN_BANDWIDTH_RATE) {
-    ui.lineAvgRateLimit->setText(QString::number(MIN_BANDWIDTH_RATE));    
+    ui.lineAvgRateLimit->setText(QString::number(MIN_BANDWIDTH_RATE));
   }
   if (avgRate > MAX_BANDWIDTH_RATE) {
     ui.lineAvgRateLimit->setText(QString::number(MAX_BANDWIDTH_RATE));
@@ -610,7 +610,7 @@ ServerPage::testUpnp()
 #if defined(USE_MINIUPNPC)
   UPNPTestDialog dlg(ui.lineServerPort->text().toUInt(),
                      ui.lineDirPort->text().toUInt(), this);
-  
+
   connect(&dlg, SIGNAL(help()), this, SLOT(upnpHelp()));
 
   dlg.exec();
@@ -653,11 +653,11 @@ ServerPage::displayBridgeUsage()
     bool ok;
 
     keyvals = string_parse_keyvals(info, &ok);
-    if (!ok || !keyvals.contains("TimeStarted") 
+    if (!ok || !keyvals.contains("TimeStarted")
             || !keyvals.contains("CountrySummary"))
       goto err;
 
-    timeStarted = QDateTime::fromString(keyvals.value("TimeStarted"), 
+    timeStarted = QDateTime::fromString(keyvals.value("TimeStarted"),
                                         "yyyy-MM-dd HH:mm:ss");
     if (!timeStarted.isValid())
       goto err;

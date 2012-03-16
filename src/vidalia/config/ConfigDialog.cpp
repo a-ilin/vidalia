@@ -3,12 +3,12 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file ConfigDialog.cpp
 ** \brief Contains a series of Vidalia and Tor configuration pages
 */
@@ -43,12 +43,12 @@ ConfigDialog::ConfigDialog(QWidget* parent)
 {
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
- 
+
   /* Override the QDialogButtonBox button text so we can use our own
    * translations. */
   QPushButton *button = ui.buttonBox->button(QDialogButtonBox::Ok);
   if (button) {
-    Vidalia::createShortcut(QKeySequence(Qt::Key_Return), 
+    Vidalia::createShortcut(QKeySequence(Qt::Key_Return),
                             this, button, SLOT(click()));
   }
   button = ui.buttonBox->button(QDialogButtonBox::Cancel);
@@ -56,7 +56,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
     Vidalia::createShortcut("Esc", this, button, SLOT(click()));
     Vidalia::createShortcut("Ctrl+W", this, button, SLOT(click()));
   }
-  
+
   /* Connect the button box signals to the appropriate slots */
   connect(ui.buttonBox, SIGNAL(accepted()), this, SLOT(saveChanges()));
   connect(ui.buttonBox, SIGNAL(rejected()), this, SLOT(close()));
@@ -96,14 +96,16 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     connect(page, SIGNAL(helpRequested(QString)),
             this, SLOT(help(QString)));
+    connect(page, SIGNAL(reloadAll()),
+            this, SLOT(loadSettings()));
   }
 
   /* Create the toolbar */
   ui.toolBar->addActions(grp->actions());
   ui.toolBar->addSeparator();
-  connect(grp, SIGNAL(triggered(QAction *)), 
+  connect(grp, SIGNAL(triggered(QAction *)),
           ui.stackPages, SLOT(showPage(QAction *)));
-  
+
   /* Create and bind the Help button */
   QAction *helpAct = new QAction(QIcon(IMAGE_HELP), tr("Help"), ui.toolBar);
   helpAct->setData("Help");
@@ -121,7 +123,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
 
 /** Creates a new action associated with a config page. */
 QAction*
-ConfigDialog::createPageAction(const QIcon &img, const QString &text, 
+ConfigDialog::createPageAction(const QIcon &img, const QString &text,
                                const QString &data, QActionGroup *group)
 {
   QAction *action = new QAction(img, text, group);
@@ -181,16 +183,16 @@ void
 ConfigDialog::saveChanges()
 {
   QString errmsg;
-  
+
   /* Call each config page's save() method to save its data */
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     if (!page->save(errmsg)) {
       /* Display the offending page */
       ui.stackPages->setCurrentPage(page);
-      
+
       /* Show the user what went wrong */
-      VMessageBox::warning(this, 
-        tr("Error Saving Settings"), 
+      VMessageBox::warning(this,
+        tr("Error Saving Settings"),
         p(tr("Vidalia was unable to save your %1 settings.")
              .arg(tr(qPrintable(page->title()), "ConfigDialog"))) + p(errmsg),
         VMessageBox::Ok);
@@ -259,7 +261,7 @@ void
 ConfigDialog::help()
 {
   Page currentPage = static_cast<Page>(ui.stackPages->currentIndex());
-  
+
   switch (currentPage) {
     case Network:
       help("config.network"); break;

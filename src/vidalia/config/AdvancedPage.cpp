@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -138,7 +138,7 @@ AdvancedPage::save(QString &errmsg)
     if (controlAddress.isNull()) {
       errmsg = tr("'%1' is not a valid IP address.")
                 .arg(ui.lineControlAddress->text());
-      return false; 
+      return false;
     }
     _settings->setControlMethod(ControlMethod::Port);
   } else {
@@ -149,9 +149,9 @@ AdvancedPage::save(QString &errmsg)
     }
     _settings->setControlMethod(ControlMethod::Socket);
   }
-  
+
   /* Validate the selected authentication options */
-  TorSettings::AuthenticationMethod authMethod = 
+  TorSettings::AuthenticationMethod authMethod =
     indexToAuthMethod(ui.cmbAuthMethod->currentIndex());
   if (authMethod == TorSettings::PasswordAuth
         && ui.linePassword->text().isEmpty()
@@ -178,13 +178,13 @@ AdvancedPage::save(QString &errmsg)
 
   /* Only remember the torrc and datadir values if Vidalia started Tor, or
    * if the user changed the displayed values. */
-  if (Vidalia::torControl()->isVidaliaRunningTor() or 
+  if (Vidalia::torControl()->isVidaliaRunningTor() or
       !Vidalia::torControl()->isConnected()) {
     QString torrc = ui.lineTorConfig->text();
     if (torrc != _settings->getTorrc()) {
       _settings->setTorrc(torrc);
       if(Vidalia::torControl()->isConnected()) {
-        QMessageBox::StandardButtons res = QMessageBox::question(this, tr("Warning"), 
+        QMessageBox::StandardButtons res = QMessageBox::question(this, tr("Warning"),
             tr("You changed torrc path, would you like to restart Tor?"),
             QMessageBox::Yes | QMessageBox::No);
         if(res == QMessageBox::Yes)
@@ -225,6 +225,10 @@ AdvancedPage::load()
 {
   ui.lineControlAddress->setText(_settings->getControlAddress().toString());
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
+
+  // We don't want to loose the socksport
+  _settings->setSocksPort(_settings->getSocksPort());
+
   ui.lineTorConfig->setText(_settings->getTorrc());
   ui.lineTorDataDirectory->setText(_settings->getDataDirectory());
   ui.chkAuto->setChecked(_settings->autoControlPort());
@@ -292,7 +296,7 @@ void
 AdvancedPage::browseTorConfig()
 {
   /* Prompt the user to select a file or create a new one */
-  QString filename = QFileDialog::getOpenFileName(this, 
+  QString filename = QFileDialog::getOpenFileName(this,
                        tr("Select Tor Configuration File"),
                        QFileInfo(ui.lineTorConfig->text()).filePath(),
                        tr("Tor Configuration File (torrc);;All Files (*)"));
@@ -311,7 +315,7 @@ AdvancedPage::browseTorConfig()
                      tr("%1 does not exist. Would you like to create it?")
                                                             .arg(filename),
                      VMessageBox::Yes, VMessageBox::No);
-    
+
     if (response == VMessageBox::No) {
       /* Don't create it. Just bail. */
       return;
@@ -339,7 +343,7 @@ AdvancedPage::browseTorDataDirectory()
                       tr("Select a Directory to Use for Tor Data"),
                       ui.lineTorDataDirectory->text());
 
-  if (!dataDir.isEmpty()) 
+  if (!dataDir.isEmpty())
     ui.lineTorDataDirectory->setText(dataDir);
 }
 
@@ -355,7 +359,7 @@ AdvancedPage::browseSocketPath()
                       tr("Select a file to use for Tor socket path"),
                       start);
 
-  if (!socketPath.isEmpty()) 
+  if (!socketPath.isEmpty())
     ui.lineSocketPath->setText(socketPath);
 }
 
@@ -371,12 +375,12 @@ AdvancedPage::setupService(bool useService)
   if (!useService && isInstalled) {
     /* Uninstall if we don't want to use it anymore */
     Vidalia::torControl()->stop();
-    
+
     if (!service.remove()) {
       VMessageBox::critical(this,
                             tr("Unable to remove Tor Service"),
                             tr("Vidalia was unable to remove the Tor service.\n\n"
-                               "You may need to remove it manually."), 
+                               "You may need to remove it manually."),
                             VMessageBox::Ok, VMessageBox::Cancel);
     }
   } else if (useService && !isInstalled) {
@@ -395,14 +399,15 @@ AdvancedPage::setupService(bool useService)
 #endif
 
 /** Called when the user presses the Edit current torrc button */
-void 
+void
 AdvancedPage::displayTorrcDialog()
 {
   TorrcDialog rcdialog(this);
   rcdialog.exec();
+  emit reloadAll();
 }
 
-void 
+void
 AdvancedPage::toggleControl(bool)
 {
   if(ui.rdoControlPort->isChecked()) {
@@ -439,7 +444,7 @@ AdvancedPage::toggleAuto(bool)
 void
 AdvancedPage::displayWarning(bool checked)
 {
-  ui.lblWarn->setVisible(!checked and 
-                         indexToAuthMethod(ui.cmbAuthMethod->currentIndex()) == 
+  ui.lblWarn->setVisible(!checked and
+                         indexToAuthMethod(ui.cmbAuthMethod->currentIndex()) ==
                          TorSettings::PasswordAuth);
 }

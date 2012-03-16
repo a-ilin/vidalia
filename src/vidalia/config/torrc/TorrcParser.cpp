@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -237,7 +237,7 @@ TorrcParser::TorrcParser()
   _torOpts << TorOpt("MinUptimeHidServDirectoryV2", TorOpt::TimeInterval, "25 hours");
   _torOpts << TorOpt("VoteOnHidServDirectoriesV2", TorOpt::Boolean, "1");
   _torOpts << TorOpt("_UsingTestNetworkDefaults", TorOpt::Boolean, "0");
- 
+
   _regexp = createRegExp();
 }
 
@@ -278,7 +278,7 @@ TorrcParser::parse(const QString &path,
     vWarn("Can't read torrc file, aborting parsing.");
     return lines;
   }
-  
+
   if(not torrc.open(QIODevice::ReadOnly)) {
     vWarn("Can't open torrc file, aborting parsing.");
     return lines;
@@ -288,7 +288,7 @@ TorrcParser::parse(const QString &path,
   torrc.close();
 
   lines = toTorrcLines(raw_contents);
-  
+
   QString key, value;
   int sp_pos = -1;
 
@@ -317,12 +317,13 @@ TorrcParser::parse(const QString &path,
 
     TorOpt opt(getTorOpt(key));
     opt.setLine(line);
+
     if(map.contains(key) and opt.isMultivalued())
       map.insertMulti(key, QPair<QString, TorOpt>(value, opt));
     else
       map.insert(key, QPair<QString, TorOpt>(value, opt));
   }
-  
+
   return lines;
 }
 
@@ -339,7 +340,7 @@ TorrcParser::stripContents(QString contents)
       stripped_contents += "\n";
       continue;
     }
-    
+
     current_line = line.mid(0, comment_pos).trimmed();
     if(current_line.size() == 0)
       continue;
@@ -363,7 +364,7 @@ TorrcParser::toTorrcLines(QString contents)
       lines << new TorrcLine(line.trimmed());
       continue;
     }
-    
+
     current_line = line.mid(0, comment_pos).trimmed().replace("\t", " ");
     if(current_line.size() == 0) {
       // The line is just a comment
@@ -375,9 +376,9 @@ TorrcParser::toTorrcLines(QString contents)
 
   return lines;
 }
-  
+
 QList<TorrcLine *>
-TorrcParser::findValueLines(TorrcLine *line, 
+TorrcParser::findValueLines(TorrcLine *line,
                             const QList<TorrcLine *> &lines) const
 {
   QList<TorrcLine *> collected;

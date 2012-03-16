@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -32,6 +32,7 @@
 #define SETTING_DEFAULTS_TORRC      "DefaultsTorrc"
 #define SETTING_CONTROL_ADDR        "ControlListenAddress"
 #define SETTING_CONTROL_PORT        "ControlPort"
+#define SETTING_SOCKS_PORT          "SocksPort"
 #define SETTING_SOCKET_PATH         "ControlSocket"
 #define SETTING_CONTROL_METHOD      "ControlMethod"
 #define SETTING_AUTH_TOKEN          "AuthToken"
@@ -86,6 +87,7 @@ TorSettings::TorSettings(TorControl *torControl)
   setDefault(SETTING_DEFAULTS_TORRC,Vidalia::dataDirectory() + "/defaults_torrc");
   setDefault(SETTING_CONTROL_ADDR,  "127.0.0.1");
   setDefault(SETTING_CONTROL_PORT,  9051);
+  setDefault(SETTING_SOCKS_PORT,  9050);
   setDefault(SETTING_AUTH_METHOD,   toString(DEFAULT_AUTH_METHOD));
   setDefault(SETTING_CONTROL_METHOD, DEFAULT_CONTROL_METHOD);
   setDefault(SETTING_SOCKET_PATH, DEFAULT_SOCKET_PATH);
@@ -102,9 +104,6 @@ bool
 TorSettings::apply(QString *errmsg)
 {
   Torrc *torrc = Vidalia::torrc();
-  
-  torrc->setValue(SETTING_CONTROL_PORT, 
-                  QString::number(volatileValue(SETTING_CONTROL_PORT).toInt()));
 
   torrc->clear(QStringList()
                << TOR_ARG_SOCKSPORT
@@ -114,24 +113,25 @@ TorSettings::apply(QString *errmsg)
 
   if(volatileValue(SETTING_AUTOCONTROL).toBool()) {
     torrc->setValue(SETTING_CONTROL_PORT, "auto");
-    torrc->setValue(TOR_ARG_SOCKSPORT, "auto");
+    torrc->setValue(SETTING_SOCKS_PORT, "auto");
     torrc->setValue(TOR_ARG_CONTROLFILE, QString("%1/port.conf").arg(getDataDirectory()));
   } else {
-    QString socks = "9050", control = "9051";
+    QString socks = volatileValue(SETTING_SOCKS_PORT).toString();
+    QString control = volatileValue(SETTING_CONTROL_PORT).toString();
     {
-      with_torrc_value(TOR_ARG_SOCKSPORT)
+      with_torrc_value(SETTING_SOCKS_PORT)
         socks = ret.at(0);
     }
     {
-      with_torrc_value(TOR_ARG_SOCKSPORT)
+      with_torrc_value(SETTING_CONTROL_PORT)
         control = ret.at(0);
     }
-    torrc->setValue(TOR_ARG_SOCKSPORT, socks);
+    torrc->setValue(SETTING_SOCKS_PORT, socks);
     torrc->setValue(SETTING_CONTROL_PORT, control);
   }
 
   QString hashedPassword;
-  AuthenticationMethod authMethod = 
+  AuthenticationMethod authMethod =
     toAuthenticationMethod(localValue(SETTING_AUTH_METHOD).toString());
   switch (authMethod) {
     case CookieAuth:
@@ -139,7 +139,7 @@ TorSettings::apply(QString *errmsg)
       torrc->setValue(TOR_ARG_HASHED_PASSWORD, "");
       break;
     case PasswordAuth:
-      hashedPassword = useRandomPassword() 
+      hashedPassword = useRandomPassword()
                           ? hashPassword(randomPassword())
                           : hashPassword(getControlPassword());
       if (hashedPassword.isEmpty()) {
@@ -161,7 +161,7 @@ TorSettings::apply(QString *errmsg)
 
 /** Gets the location of Tor's data directory. */
 QString
-TorSettings::getDataDirectory()
+TorSettings::getDataDirectory() const
 {
   with_torrc_value(SETTING_DATA_DIRECTORY) {
     return ret.at(0);
@@ -206,7 +206,7 @@ TorSettings::getTorrc() const
 }
 
 /** Sets the torrc that will be used when starting Tor.
- * \param torrc The torrc to use. 
+ * \param torrc The torrc to use.
  */
 void
 TorSettings::setTorrc(const QString &torrc)
@@ -226,7 +226,7 @@ TorSettings::getDefaultsTorrc() const
 }
 
 /** Sets the defaults torrc that will be used when starting Tor.
- * \param torrc The defaults torrc to use. 
+ * \param torrc The defaults torrc to use.
  */
 void
 TorSettings::setDefaultsTorrc(const QString &torrc)
@@ -241,7 +241,7 @@ TorSettings::getControlAddress() const
   QString addr = defaultValue(SETTING_CONTROL_ADDR).toString();
   with_torrc_value(SETTING_CONTROL_ADDR) {
     addr = ret.at(0);
-  } 
+  }
   return QHostAddress(addr);
 }
 
@@ -263,6 +263,17 @@ TorSettings::getControlPort() const
   return port;
 }
 
+/** Get the socks port used to connect to Tor */
+quint16
+TorSettings::getSocksPort() const
+{
+  quint16 port = defaultValue(SETTING_SOCKS_PORT).toInt();
+  with_torrc_value(SETTING_SOCKS_PORT) {
+    port = (quint16)ret.at(0).toUInt();
+  }
+  return port;
+}
+
 /** Set the control port used to connect to Tor */
 void
 TorSettings::setControlPort(quint16 port)
@@ -270,8 +281,15 @@ TorSettings::setControlPort(quint16 port)
   setVolatileValue(SETTING_CONTROL_PORT, port);
 }
 
+/** Set the socks port used to connect to Tor */
+void
+TorSettings::setSocksPort(quint16 port)
+{
+  setVolatileValue(SETTING_SOCKS_PORT, port);
+}
+
 /** Get the path for ControlSocket */
-QString 
+QString
 TorSettings::getSocketPath() const
 {
   with_torrc_value(SETTING_SOCKET_PATH) {
@@ -281,7 +299,7 @@ TorSettings::getSocketPath() const
 }
 
 /** Set the path for ControlSocket */
-void 
+void
 TorSettings::setSocketPath(const QString &path)
 {
   setVolatileValue(SETTING_SOCKET_PATH, path);
@@ -295,7 +313,7 @@ TorSettings::getControlMethod() const
 }
 
 /** Set the control method */
-void 
+void
 TorSettings::setControlMethod(ControlMethod::Method method)
 {
   setValue(SETTING_CONTROL_METHOD, ControlMethod::toString(method));
@@ -439,7 +457,7 @@ TorSettings::toString(AuthenticationMethod method) const
  * description of the authentication method given in <b>authMethod</b>. */
 TorSettings::AuthenticationMethod
 TorSettings::toAuthenticationMethod(const QString &authMethod) const
-{ 
+{
   QString str = authMethod.toLower();
   if (str == toString(NullAuth))
     return NullAuth;
@@ -463,7 +481,7 @@ QString
 TorSettings::hashPassword(const QString &password)
 {
   QByteArray salt;
-  
+
   /* Generate an 8 octet salt value. Bail if we fail to generate enough
    * random bytes (unlikely). */
   while (salt.size() < 8) {
@@ -510,13 +528,13 @@ TorSettings::bootstrapFrom() const
   return QDir::convertSeparators(value(SETTING_BOOTSTRAP_FROM).toString());
 }
 
-bool 
+bool
 TorSettings::autoControlPort() const
 {
   return getControlPort() == 0;
 }
 
-void 
+void
 TorSettings::setAutoControlPort(const bool autoControl)
 {
   setVolatileValue(SETTING_AUTOCONTROL, autoControl);

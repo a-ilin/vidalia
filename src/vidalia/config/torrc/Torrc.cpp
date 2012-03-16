@@ -3,12 +3,12 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file Torrc.cpp
 ** \brief Handles the interaction with the torrc file
 */
@@ -27,6 +27,9 @@ Torrc::Torrc(const QString &torrcPath, const QString &defaultsPath) :
 void
 Torrc::load(const QString &torrcPath, const QString &defaultsPath)
 {
+  _torrcMap.clear();
+  _defaultsMap.clear();
+
   _lines = _parser.parse(torrcPath, _torrcMap);
 
   if(not defaultsPath.isEmpty())
@@ -46,7 +49,7 @@ Torrc::apply(TorControl *tc, QString *errmsg)
     *errmsg = "Couldn't open torrc file";
     return false;
   }
-  
+
   QString torrc_contents = "";
   QString current_line;
 
@@ -59,11 +62,14 @@ Torrc::apply(TorControl *tc, QString *errmsg)
 
   if(torrc_info.isWritable())
     torrc.write(torrc_contents.trimmed().toLatin1());
+  else
+    vWarn("Torrc is not writable!");
+
   torrc.close();
 
   clearAll();
   load(_torrcPath);
-  
+
   changed = false;
 
   bool ret = true;
@@ -160,16 +166,16 @@ Torrc::setValue(const QString &key, const QString &value, const QString &comment
 
   changed = true;
 
-  TorOpt opt(_parser.getTorOpt(key));
   TorrcLine *line = new TorrcLine(QString("%1 %2")
                                   .arg(key)
                                   .arg(value).trimmed(),
                                   comment.trimmed());
-
   if(key.isEmpty()) {
     _lines << line;
     return;
   }
+
+  TorOpt opt(_parser.getTorOpt(key));
 
   if(opt.isMultivalued()) {
     bool found = false;
@@ -180,7 +186,7 @@ Torrc::setValue(const QString &key, const QString &value, const QString &comment
         break;
       }
     }
-    
+
     opt.setLine(line);
 
     if(!found)
@@ -241,7 +247,5 @@ Torrc::setRawContents(const QString &contents, QString *errmsg, TorControl *tc)
 
   load(_torrcPath);
 
-  if(tc && tc->isConnected())
-    return tc->signal(TorSignal::Reload, errmsg);
-  return true;
+  return apply(tc, errmsg);
 }

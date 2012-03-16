@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -31,7 +31,7 @@ public:
   VSettings(const QString group = QString());
   /** Default destructor */
   ~VSettings();
-  
+
   /** Returns the location of Vidalia's configuration settings file. */
   static QString settingsFile();
   /** Returns true if Vidalia's configuration settings file already exists. */
@@ -60,7 +60,7 @@ protected:
   QMap<QString, QVariant> allSettings() const;
 
   virtual QVariant volatileValue(const QString &key,
-                                 const QVariant &defaultVal = QVariant());
+                                 const QVariant &defaultVal = QVariant()) const;
   virtual void setVolatileValue(const QString &key, const QVariant &val);
 
 private:

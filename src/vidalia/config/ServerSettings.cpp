@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -75,13 +75,13 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_RELAY_BANDWIDTH_BURST, 10485760);
   setDefault(SETTING_EXITPOLICY,
     ExitPolicy(ExitPolicy::Middleman).toString());
-  setDefault(SETTING_ENABLE_UPNP, false); 
+  setDefault(SETTING_ENABLE_UPNP, false);
   setDefault(SETTING_BRIDGE_RELAY, false);
   setDefault(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
 }
 
 /** Applies the current server configuration settings to Tor. If <b>errmsg</b>
- * is specified and an error occurs while applying the settings, it will be 
+ * is specified and an error occurs while applying the settings, it will be
  * set to a string describing the error. */
 bool
 ServerSettings::apply(QString *errmsg)
@@ -100,26 +100,26 @@ ServerSettings::apply(QString *errmsg)
     torrc->setValue(SETTING_ORPORT,
                 volatileValue(SETTING_ORPORT).toString());
     /* Server DirPort */
-    torrc->setValue(SETTING_DIRPORT, 
+    torrc->setValue(SETTING_DIRPORT,
                 volatileValue(SETTING_DIRPORT).toString());
     /* Server Exit Policy */
     torrc->clear(QStringList() << SETTING_EXITPOLICY);
-    if(volatileValue(SETTING_BRIDGE_RELAY).toBool() || 
+    if(volatileValue(SETTING_BRIDGE_RELAY).toBool() ||
        volatileValue(SETTING_NONEXIT_RELAY).toBool()) {
       torrc->setValue(SETTING_EXITPOLICY, "reject *:*");
     } else {
       torrc->setValue(SETTING_EXITPOLICY, volatileValue(SETTING_EXITPOLICY).toString());
     }
     /* Server bandwidth settings */
-    torrc->setValue((torVersion >= 0x020001 ? SETTING_RELAY_BANDWIDTH_RATE 
+    torrc->setValue((torVersion >= 0x020001 ? SETTING_RELAY_BANDWIDTH_RATE
                  : SETTING_BANDWIDTH_RATE),
                 QString::number(volatileValue(SETTING_BANDWIDTH_RATE).toUInt()) + " bytes");
     torrc->setValue((torVersion >= 0x020001 ? SETTING_RELAY_BANDWIDTH_BURST
                  : SETTING_BANDWIDTH_BURST),
                 QString::number(volatileValue(SETTING_BANDWIDTH_BURST).toUInt()) + " bytes");
-    
+
     /* Server Contact Information */
-    QString contact = 
+    QString contact =
       volatileValue(SETTING_CONTACT).toString().trimmed();
     QString defaultContact = defaultValue(SETTING_CONTACT).toString();
     if ((contact == defaultContact) ||
@@ -128,7 +128,7 @@ ServerSettings::apply(QString *errmsg)
       contact = "";
     }
     torrc->setValue(SETTING_CONTACT, scrub_email_addr(contact));
-  
+
     /* Set if we're a bridge relay */
     if (volatileValue(SETTING_BRIDGE_RELAY).toBool()) {
       torrc->setValue(SETTING_BRIDGE_RELAY, "1");
@@ -144,8 +144,8 @@ ServerSettings::apply(QString *errmsg)
   } else {
     QStringList resetKeys;
     quint32 torVersion = torControl()->getTorVersion();
-    resetKeys << SETTING_ORPORT 
-              << SETTING_NICKNAME 
+    resetKeys << SETTING_ORPORT
+              << SETTING_NICKNAME
               << SETTING_DIRPORT
               << SETTING_CONTACT
               << SETTING_EXITPOLICY
@@ -216,8 +216,8 @@ ServerSettings::torValue(const QString &key) const
   return AbstractTorSettings::torValue(key);
 }
 
-/** Enables or disables running Tor as a server. 
- * \param enable Whether to enable or disable the Tor server. 
+/** Enables or disables running Tor as a server.
+ * \param enable Whether to enable or disable the Tor server.
  */
 void
 ServerSettings::setServerEnabled(bool enable)
@@ -338,7 +338,7 @@ ServerSettings::getNickname()
     nickname = defaultValue(SETTING_NICKNAME).toString();
   }
   /* Ensure the nickname contains only valid characters and is not too long. */
-  return ensure_valid_chars(nickname, 
+  return ensure_valid_chars(nickname,
                             VALID_NICKNAME_CHARS).left(MAX_NICKNAME_LEN);
 }
 
@@ -528,7 +528,7 @@ ServerSettings::accountingMaxAmount()
       return 0;
     return parts.at(0).trimmed().toInt();
   }
-  
+
   return 0;
 }
 
@@ -541,7 +541,7 @@ ServerSettings::accountingMaxUnit()
       return QString();
     return parts.at(1).trimmed();
   }
-  
+
   return QString();
 }
 
@@ -554,7 +554,7 @@ ServerSettings::accountingStartDwm()
       return QString();
     return parts.at(0).trimmed();
   }
-  
+
   return QString();
 }
 
@@ -567,7 +567,7 @@ ServerSettings::accountingStartDay()
       return 1;
     return parts.at(1).trimmed().toInt();
   }
-  
+
   return 1;
 }
 
@@ -582,6 +582,6 @@ ServerSettings::accountingStartTime()
       return parts.at(2).trimmed();
     return parts.at(1).trimmed();
   }
-  
+
   return QString();
 }

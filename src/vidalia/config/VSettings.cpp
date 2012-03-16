@@ -3,14 +3,14 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
 /*
 ** \file VSettings.cpp
-** \brief Stores and retrieves settings from Vidalia's configuration file. 
+** \brief Stores and retrieves settings from Vidalia's configuration file.
 */
 
 #include "VSettings.h"
@@ -114,7 +114,7 @@ VSettings::allSettings() const
 
 QVariant
 VSettings::volatileValue(const QString &key,
-                         const QVariant &defaultVal)
+                         const QVariant &defaultVal) const
 {
   if(_volatileSettings.count(key) == 0)
     return defaultVal;
