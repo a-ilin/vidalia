@@ -3,12 +3,12 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file AddressMap.cpp
 ** \brief Stores a list of address mappings and their expiration times
 */
@@ -37,7 +37,7 @@ AddressMap::add(const QString &from, const QString &to,
 }
 
 /** Adds a new address mapping by parsing the fields in <b>mapping</b>, which
- * should be formatted as follows: 
+ * should be formatted as follows:
  *
  *   Address SP Address SP Expiry
  *   Expiry = DQUOTE ISOTime DQUOTE / "NEVER"

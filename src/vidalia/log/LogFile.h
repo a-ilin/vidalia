@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -36,7 +36,7 @@ public:
   bool open(QString filename, QString *errmsg = 0);
   /** Closes an open log file. */
   void close();
-  
+
   /** Returns true if the logfile is currently open. */
   bool isOpen();
   /** Returns the filename of the current log file. */
@@ -44,7 +44,7 @@ public:
 
   /** Overloaded ostream operator. */
   LogFile& operator<<(const QString &s);
-  
+
 private:
   /** Creates a path to the given log file */
   bool createPathToFile(QString filename);

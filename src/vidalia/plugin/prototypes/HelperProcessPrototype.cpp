@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file HelperProcessPrototype.cpp
 ** \brief Prototype for the HelperProcess class
 */
@@ -25,7 +25,7 @@ HelperProcessPrototype::constructor(QScriptContext *context, QScriptEngine *engi
   return engine->newQObject(new HelperProcess(), QScriptEngine::ScriptOwnership);
 }
 
-int 
+int
 HelperProcessPrototype::metaTypeId()
 {
   return qMetaTypeId<HelperProcess *>();
@@ -37,7 +37,7 @@ HelperProcessPrototype::name()
   return QString("HelperProcess");
 }
 
-void 
+void
 HelperProcessPrototype::start(const QString &app, const QString &args)
 {
   HelperProcess *obj = qscriptvalue_cast<HelperProcess *>(thisObject());
@@ -46,7 +46,7 @@ HelperProcessPrototype::start(const QString &app, const QString &args)
     obj->start(app, args);
 }
 
-void 
+void
 HelperProcessPrototype::start(const QString &app, const QStringList &args)
 {
   HelperProcess *obj = qscriptvalue_cast<HelperProcess *>(thisObject());
@@ -55,7 +55,7 @@ HelperProcessPrototype::start(const QString &app, const QStringList &args)
     obj->start(app, args);
 }
 
-bool 
+bool
 HelperProcessPrototype::isDone() const
 {
   HelperProcess *obj = qscriptvalue_cast<HelperProcess *>(thisObject());

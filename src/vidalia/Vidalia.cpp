@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -116,7 +116,7 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
     if (!_args.contains(ARG_LOGFILE))
       _log.open(stdout);
   }
-  if (!_args.contains(ARG_LOGLEVEL) && 
+  if (!_args.contains(ARG_LOGLEVEL) &&
       !_args.contains(ARG_LOGFILE))
     _log.setLogLevel(Log::Off);
 
@@ -141,7 +141,7 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
   Marble::MarbleDirs::setMarbleDataPath(dataDirectory());
 
 #ifdef Q_OS_WIN32
-  Marble::MarbleDirs::setMarblePluginPath(vApp->applicationDirPath() 
+  Marble::MarbleDirs::setMarblePluginPath(vApp->applicationDirPath()
                                             + "/plugins/marble");
 #endif
 #endif
@@ -204,7 +204,7 @@ Vidalia::showUsageMessageBox()
 
   out << "Available Options:" << endl;
   out << "<table>";
-  out << trow(tcol("-"ARG_HELP) + 
+  out << trow(tcol("-"ARG_HELP) +
               tcol(tr("Displays this usage message and exits.")));
   out << trow(tcol("-"ARG_RESET) +
               tcol(tr("Resets ALL stored Vidalia settings.")));
@@ -220,12 +220,12 @@ Vidalia::showUsageMessageBox()
   out << trow(tcol("-"ARG_GUISTYLE" &lt;style&gt;") +
               tcol(tr("Sets Vidalia's interface style.") +
                    "<br>[" + QStyleFactory::keys().join("|") + "]"));
-  out << trow(tcol("-"ARG_LANGUAGE" &lt;language&gt;") + 
+  out << trow(tcol("-"ARG_LANGUAGE" &lt;language&gt;") +
               tcol(tr("Sets Vidalia's language.") +
                    "<br>[" + LanguageSupport::languageCodes().join("|") + "]"));
   out << "</table>";
 
-  VMessageBox::information(0, 
+  VMessageBox::information(0,
     tr("Vidalia Usage Information"), usage, VMessageBox::Ok);
 }
 
@@ -500,7 +500,7 @@ Vidalia::copyDefaultSettingsFile() const
   CFStringRef pathRef;
   const char *path;
 
-  confUrlRef = CFBundleCopyResourceURL(CFBundleGetMainBundle(), 
+  confUrlRef = CFBundleCopyResourceURL(CFBundleGetMainBundle(),
                                        CFSTR("vidalia"), CFSTR("conf"), NULL);
   if (confUrlRef == NULL)
     return;

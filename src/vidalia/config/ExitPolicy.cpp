@@ -3,14 +3,14 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
 /*
 ** \file ExitPolicy.cpp
-** \brief Collection of Policy objects representing an exit policy 
+** \brief Collection of Policy objects representing an exit policy
 */
 
 #include "ExitPolicy.h"
@@ -44,7 +44,7 @@ ExitPolicy::ExitPolicy(SpecialExitPolicy exitPolicy)
   }
 }
 
-/** Parses the given string for a comma-delimited list of policies and 
+/** Parses the given string for a comma-delimited list of policies and
  * adds them to this this policy. */
 ExitPolicy::ExitPolicy(QString exitPolicy)
 {
@@ -125,13 +125,13 @@ ExitPolicy::rejectsPorts(QStringList portList)
   return true;
 }
 
-/** Returns true if this exit policy contains the given policy. */ 
+/** Returns true if this exit policy contains the given policy. */
 bool
 ExitPolicy::contains(Policy policy)
 {
   Policy acceptAll(Policy::AcceptAll);
   Policy rejectAll(Policy::RejectAll);
-  
+
   /* Check for this policy item in the explicitly defined policies */
   foreach (Policy p, _exitPolicy) {
     if (p.matches(policy)) {

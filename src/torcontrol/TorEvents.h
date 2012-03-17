@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -145,7 +145,7 @@ signals:
 
   /** Emitted when Tor decides the client's external IP address has changed
    * to <b>ip</b>. If <b>hostname</b> is non-empty, Tor obtained the new
-   * value for <b>ip</b> by resolving <b>hostname</b>. 
+   * value for <b>ip</b> by resolving <b>hostname</b>.
    */
   void externalAddressChanged(const QHostAddress &ip, const QString &hostname);
 
@@ -165,7 +165,7 @@ signals:
    */
   void dnsUseless();
 
-  /** Indicates Tor has started testing the reachability of its OR port 
+  /** Indicates Tor has started testing the reachability of its OR port
    * using the IP address <b>ip</b> and port <b>port</b>.
    */
   void checkingOrPortReachability(const QHostAddress &ip, quint16 port);
@@ -216,7 +216,7 @@ private:
    * pair. If either portion is invalid, a default-constructed QPair() is
    * returned. */
    static QPair<QHostAddress,quint16> splitAddress(const QString &address);
-  
+
   /** Handle a bandwidth update event */
   void handleBandwidthUpdate(const ReplyLine &line);
   /** Handle a circuit status event */

@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -31,7 +31,7 @@ VidaliaWindow::VidaliaWindow(const QString &name, QWidget *parent,
 {
   _name     = name;
   _settings = new VSettings(name);
-} 
+}
 
 /** Destructor. */
 VidaliaWindow::~VidaliaWindow()
@@ -103,7 +103,7 @@ VidaliaWindow::saveSetting(QString prop, QVariant value)
 }
 
 /** Overloaded QWidget::setVisible(). If this window is already visible and
- * <b>visible</b> is true, this window will be brought to the top and given 
+ * <b>visible</b> is true, this window will be brought to the top and given
  * focus. If <b>visible</b> is false, then the window state will be saved and
  * this window will be hidden. */
 void

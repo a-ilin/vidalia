@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -36,7 +36,7 @@ public:
     AcceptAll, /**< Accepts all connections. Equivalent to "accept *:*". */
     RejectAll  /**< Rejects all connections. Equivalent to "reject *:*". */
   };
-  
+
   /** Default constructor. Creates an AcceptAll policy. */
   Policy();
   /** Parses the given policy, represented as a string. */
@@ -60,7 +60,7 @@ public:
   QString toString() const;
   /** Converts a string action to an Action enum value. */
   static Action toAction(QString action);
-  
+
   /** Returns the action taken when this policy matches an address. */
   QString action() const;
   /** Returns the host address (including mask, if set) for this policy. */

@@ -3,12 +3,12 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file BootstrapStatus.h
 ** \brief Describes the Tor software's current bootstrap status
 */
@@ -26,7 +26,7 @@ class BootstrapStatus
 {
 public:
   /** Currently enumerated bootstrapping states defined by Tor's control
-   * protocol (Tor >= 0.2.1.0-alpha-dev. */ 
+   * protocol (Tor >= 0.2.1.0-alpha-dev. */
   enum Status {
     UnrecognizedStatus,
     ConnectingToDirMirror,
@@ -74,7 +74,7 @@ public:
 
   /** Returns a description of Tor's current bootstrapping status. */
   QString description() const { return _description; }
-  
+
   /** Returns a description of the most recent error Tor encountered while
    * attempting to bootstrap, if this event's severity is 'warn'. Otherwise,
    * this returns a default-constructed QString. */
@@ -87,7 +87,7 @@ public:
   tc::ConnectionStatusReason reason() const { return _reason; }
 
   /** Returns the action that the Tor software recommended be taken in
-   * response to this bootstrap status event. */ 
+   * response to this bootstrap status event. */
   Recommendation recommendedAction() const { return _action; }
 
   /** Returns true if this object represents a valid bootstrap status
@@ -108,21 +108,21 @@ private:
 
   /** Current bootstrapping status value.
    * \sa status
-   */ 
+   */
   Status _status;
-  
+
   /** Approximate percentage of Tor's bootstrapping process that is complete.
    * \sa percentComplete
    */
   int _percentComplete;
-  
+
   /** Description of Tor's current bootstrapping status.
    * \sa description
    */
   QString _description;
-  
+
   /** Description of the most recent error Tor encountered while attempting to
-   * bootstrap. 
+   * bootstrap.
    * \sa warning
    */
   QString _warning;

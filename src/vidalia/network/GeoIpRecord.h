@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -58,7 +58,7 @@ public:
    */
   QString city() const { return _city; }
 
-  /** Returns the full region name (e.g., state) in which this IP address 
+  /** Returns the full region name (e.g., state) in which this IP address
    * resides, if known. Otherwise, returns an empty QString.
    */
   QString region() const { return _region; }
@@ -81,7 +81,7 @@ public:
   QString toString() const;
 
   /** Returns true if the GeoIpRecord object is valid. A valid GeoIpRecord object must
-   * have valid IP address, valid latitude and longitude coordinates and a 
+   * have valid IP address, valid latitude and longitude coordinates and a
    * two-letter country code.
    */
   bool isValid() const;

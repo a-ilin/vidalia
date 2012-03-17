@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -143,7 +143,7 @@ UpdateProcess::readStandardError()
           _packageList << pkgInfo;
       }
     } else if (_currentCommand == CheckForUpdates
-                 && ! type.compare("DEBUG") 
+                 && ! type.compare("DEBUG")
                  && args.value("msg").startsWith("Got ")) {
       /* XXX: This is an even worse fucking kludge. Thandy only reports
        *      download progress in a not-so-parser-friendly log message,

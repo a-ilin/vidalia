@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -47,7 +47,7 @@ public:
 
   /** Adds a new descriptor the list. */
   RouterListItem* addRouter(const RouterDescriptor &rd);
-  /** Finds the list item whose key ID matches <b>id</b>. Returns 0 if not 
+  /** Finds the list item whose key ID matches <b>id</b>. Returns 0 if not
    * found. */
   RouterListItem* findRouterById(QString id);
   /** Deselects all currently selected routers. */
@@ -66,7 +66,7 @@ signals:
 public slots:
   /** Clears the list of router items. */
   void clearRouters();
-  /** Called when the search of a router is triggered by the signal 
+  /** Called when the search of a router is triggered by the signal
    * textChanged from the search field. */
   void onRouterSearch(const QString routerNickname);
 

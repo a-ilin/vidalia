@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -25,7 +25,7 @@
 class TorControlPrototype : public QObject, QScriptable
 {
   Q_OBJECT
-  
+
 public:
   TorControlPrototype();
 
@@ -55,14 +55,14 @@ public:
   Q_INVOKABLE QVariant authenticate(const QByteArray cookie);
   /** Sends an authentication password to Tor. */
   Q_INVOKABLE QVariant authenticate(const QString &password = QString());
-  
+
   /** Sends a PROTOCOLINFO command to Tor and parses the response. */
 //  Q_INVOKABLE QVariant protocolInfo();
 
   /** Returns the Tor software's current bootstrap phase and status. */
 //  Q_INVOKABLE BootstrapStatus bootstrapStatus(QString *errmsg = 0);
 
-  /** Returns true if Tor either has an open circuit or (on Tor >= 
+  /** Returns true if Tor either has an open circuit or (on Tor >=
    * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
   Q_INVOKABLE bool isCircuitEstablished();
 
@@ -82,11 +82,11 @@ public:
 
   /** Sends a signal to Tor */
   Q_INVOKABLE QVariant signal(TorSignal::Signal sig);
- 
+
   /** Returns an address on which Tor is listening for application
    * requests. If none are available, a null QHostAddress is returned. */
 //  Q_INVOKABLE QVariant getSocksAddress();
-  /** Returns a (possibly empty) list of all currently configured 
+  /** Returns a (possibly empty) list of all currently configured
    * SocksListenAddress entries. */
   Q_INVOKABLE QStringList getSocksAddressList(QString *errmsg = 0);
   /** Returns a valid SOCKS port for Tor, or 0 if Tor is not accepting
@@ -135,7 +135,7 @@ public:
   /** Sends a GETCONF message to Tor with the single key and returns a QString
    * containing the value returned by Tor */
   Q_INVOKABLE QVariant getHiddenServiceConf(const QString &key);
-  
+
   /** Asks Tor to save the current configuration to its torrc */
   Q_INVOKABLE QVariant saveConf();
   /** Tells Tor to reset the given configuration keys back to defaults. */
@@ -171,7 +171,7 @@ public:
   Q_INVOKABLE CircuitList getCircuits(QString *errmsg = 0);
   /** Gets a list of current streams. */
   Q_INVOKABLE StreamList getStreams(QString *errmsg = 0);
-  
+
   /** Gets a list of address mappings of the type specified by <b>type</b>
    * (defaults to <i>AddressMapAll</i>. */
   Q_INVOKABLE AddressMap getAddressMap(
@@ -281,7 +281,7 @@ signals:
 
   /** Emitted when Tor decides the client's external IP address has changed
    * to <b>ip</b>. If <b>hostname</b> is non-empty, Tor obtained the new
-   * value for <b>ip</b> by resolving <b>hostname</b>. 
+   * value for <b>ip</b> by resolving <b>hostname</b>.
    */
   void externalAddressChanged(const QHostAddress &ip, const QString &hostname);
 
@@ -306,7 +306,7 @@ signals:
    */
   void dnsUseless();
 
-  /** Indicates Tor has started testing the reachability of its OR port 
+  /** Indicates Tor has started testing the reachability of its OR port
    * using the IP address <b>ip</b> and port <b>port</b>.
    */
   void checkingOrPortReachability(const QHostAddress &ip, quint16 port);

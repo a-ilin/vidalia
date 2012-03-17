@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -32,7 +32,7 @@ VAttachButton::~VAttachButton()
   disconnect(this,0,0,0);
 }
 
-void 
+void
 VAttachButton::setTab(VidaliaTab *tab)
 {
   _tab = tab;
@@ -45,7 +45,7 @@ VAttachButton::getTab()
   return _tab;
 }
 
-void 
+void
 VAttachButton::toggleAttach()
 {
   if(_attached) {

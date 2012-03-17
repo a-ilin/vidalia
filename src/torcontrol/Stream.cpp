@@ -1,20 +1,20 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file Stream.cpp
 ** \brief Object representing a Tor stream
 */
 
 #include "Stream.h"
-#include "Circuit.h" 
+#include "Circuit.h"
 
 #include <QStringList>
 
@@ -50,7 +50,7 @@ Stream::Stream(const StreamId &streamId, Status status,
   int i = target.indexOf(":");
   if (i >= 0)
     _address = target.mid(0, i);
-  if (i + 1 < target.length()) 
+  if (i + 1 < target.length())
     _port = target.mid(i+1).toUInt();
 }
 
@@ -63,7 +63,7 @@ Stream
 Stream::fromString(const QString &stream)
 {
   QStringList parts = stream.split(" ", QString::SkipEmptyParts);
-  if (parts.size() >= 4) { 
+  if (parts.size() >= 4) {
     /* Get the stream ID */
     StreamId streamId = parts.at(0);
     /* Get the stream status value */
@@ -72,7 +72,7 @@ Stream::fromString(const QString &stream)
     CircuitId circId = parts.at(2);
     /* Get the target address for this stream */
     QString target = parts.at(3);
-    
+
     return Stream(streamId, status, circId, target);
   }
   return Stream();
@@ -120,7 +120,7 @@ Stream::toStatus(const QString &strStatus)
   return Unknown;
 }
 
-/** Returns a human-understandable string representation of this 
+/** Returns a human-understandable string representation of this
  * stream's status. */
 QString
 Stream::statusString() const
@@ -128,7 +128,7 @@ Stream::statusString() const
   QString status;
   switch (_status) {
     case New:           status = tr("New"); break;
-    case NewResolve:    
+    case NewResolve:
     case SentResolve:   status = tr("Resolving"); break;
     case SentConnect:   status = tr("Connecting"); break;
     case Succeeded:     status = tr("Open"); break;
@@ -147,7 +147,7 @@ Stream::isValid() const
 {
   return (isValidStreamId(_streamId)
             && Circuit::isValidCircuitId(_circuitId)
-            && (_status != Unknown) 
+            && (_status != Unknown)
             && !_address.isEmpty());
 }
 

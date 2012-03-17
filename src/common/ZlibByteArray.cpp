@@ -3,15 +3,15 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 **
 **                     *       *       *
-** 
+**
 **  Zlib support in this class is derived from Tor's torgzip.[ch].
 **  Tor is distributed under this license:
-** 
+**
 **    Copyright (c) 2001-2004, Roger Dingledine
 **    Copyright (c) 2004-2006, Roger Dingledine, Nick Mathewson
 **
@@ -26,7 +26,7 @@
 **       copyright notice, this list of conditions and the following disclaimer
 **       in the documentation and/or other materials provided with the
 **       distribution.
-** 
+**
 **     * Neither the names of the copyright owners nor the names of its
 **       contributors may be used to endorse or promote products derived from
 **       this software without specific prior written permission.
@@ -146,9 +146,9 @@ ZlibByteArray::isGzipSupported()
   return isGzipSupported;
 }
 
-/** Compresses the current contents of this object using <b>method</b>. 
- * Returns the  compressed data if successful. If an error occurs, this will 
- * return an empty QByteArray and set the optional <b>errmsg</b> to a string 
+/** Compresses the current contents of this object using <b>method</b>.
+ * Returns the  compressed data if successful. If an error occurs, this will
+ * return an empty QByteArray and set the optional <b>errmsg</b> to a string
  * describing the failure. */
 QByteArray
 ZlibByteArray::compress(const CompressionMethod method,
@@ -172,7 +172,7 @@ ZlibByteArray::compress(const QByteArray in,
   size_t out_len;
   size_t in_len = in.length();
   off_t offset;
-  
+
   if (method == None)
     return in;
   if (method == Gzip && !isGzipSupported()) {
@@ -182,14 +182,14 @@ ZlibByteArray::compress(const QByteArray in,
                                         .arg(ZLIB_VERSION);
     return QByteArray();
   }
-  
+
   stream = new struct z_stream_s;
   stream->zalloc = Z_NULL;
   stream->zfree = Z_NULL;
   stream->opaque = NULL;
   stream->next_in = (unsigned char*)in.data();
   stream->avail_in = in_len;
-  
+
   if (deflateInit2(stream, Z_BEST_COMPRESSION, Z_DEFLATED,
                    methodBits(method),
                    8, Z_DEFAULT_STRATEGY) != Z_OK) {
@@ -197,15 +197,15 @@ ZlibByteArray::compress(const QByteArray in,
                  .arg(stream->msg ? stream->msg : "<no message>");
     goto err;
   }
-  
+
   /* Guess 50% compression. */
   out_size = in_len / 2;
   if (out_size < 1024) out_size = 1024;
-  
+
   out.resize(out_size);
   stream->next_out = (unsigned char*)out.data();
   stream->avail_out = out_size;
-  
+
   while (1) {
     switch (deflate(stream, Z_FINISH))
     {
@@ -221,7 +221,7 @@ ZlibByteArray::compress(const QByteArray in,
         out.resize(out_size);
         stream->next_out = (unsigned char*)(out.data() + offset);
         if (out_size - offset > UINT_MAX) {
-          errorstr = 
+          errorstr =
             "Ran over unsigned int limit of zlib while uncompressing";
           goto err;
         }
@@ -253,9 +253,9 @@ err:
   return QByteArray();
 }
 
-/** Uncompresses the current contents of this object using <b>method</b>. 
- * Returns the uncompressed data if successful. If an error occurs, this will 
- * return an empty QByteArray and set the optional <b>errmsg</b> to a string 
+/** Uncompresses the current contents of this object using <b>method</b>.
+ * Returns the uncompressed data if successful. If an error occurs, this will
+ * return an empty QByteArray and set the optional <b>errmsg</b> to a string
  * describing the failure. */
 QByteArray
 ZlibByteArray::uncompress(const CompressionMethod method,
@@ -280,7 +280,7 @@ ZlibByteArray::uncompress(const QByteArray in,
   size_t in_len = in.length();
   off_t offset;
   int r;
-  
+
   if (method == None)
     return in;
   if (method == Gzip && !isGzipSupported()) {
@@ -290,7 +290,7 @@ ZlibByteArray::uncompress(const QByteArray in,
                                         .arg(ZLIB_VERSION);
     return QByteArray();
   }
-  
+
   stream = new struct z_stream_s;
   stream->zalloc = Z_NULL;
   stream->zfree = Z_NULL;
@@ -298,21 +298,21 @@ ZlibByteArray::uncompress(const QByteArray in,
   stream->msg = NULL;
   stream->next_in = (unsigned char*) in.data();
   stream->avail_in = in_len;
-  
+
   if (inflateInit2(stream,
                    methodBits(method)) != Z_OK) {
     errorstr = QString("Error from inflateInit2: %1")
                  .arg(stream->msg ? stream->msg : "<no message>");
     goto err;
   }
-  
+
   out_size = in_len * 2;  /* guess 50% compression. */
   if (out_size < 1024) out_size = 1024;
-  
+
   out.resize(out_size);
   stream->next_out = (unsigned char*)out.data();
   stream->avail_out = out_size;
-  
+
   while (1) {
     switch (inflate(stream, Z_FINISH))
     {
@@ -347,7 +347,7 @@ ZlibByteArray::uncompress(const QByteArray in,
           out.resize(out_size);
           stream->next_out = (unsigned char*)(out.data() + offset);
           if (out_size - offset > UINT_MAX) {
-            errorstr = 
+            errorstr =
               "Ran over unsigned int limit of zlib while uncompressing";
             goto err;
           }

@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -34,7 +34,7 @@ public:
   MessageLog(QStatusBar *st = 0, QWidget *parent = 0);
   /** Default destructor **/
   ~MessageLog();
-  
+
 protected:
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
@@ -65,7 +65,7 @@ private slots:
   /** Called when the user clicks "Help" to see help info about the log. */
   void help();
 
-private:  
+private:
   /** Create and bind actions to events **/
   void createActions();
   /** Set Tool Tips for various widgets **/
@@ -85,8 +85,8 @@ private:
   VidaliaSettings* _settings;
   /** Stores the current message filter */
   uint _filter;
-  /** Set to true if we will log all messages to a file. */  	 
-  bool _enableLogging;  
+  /** Set to true if we will log all messages to a file. */
+  bool _enableLogging;
   /* The log file used to store log messages. */
   LogFile _logFile;
 

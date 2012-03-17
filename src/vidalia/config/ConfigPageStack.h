@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -36,7 +36,7 @@ public:
   void setCurrentPage(ConfigPage *page);
   /** Sets the current config page index and checks its action. */
   void setCurrentIndex(int index);
-  
+
   /** Returns a list of all pages in the stack. The order of the pages in the
    * returned QList is the same as the order in which the pages were
    * initially added to the stack. */
@@ -45,7 +45,7 @@ public:
 public slots:
   /** Displays the page associated with the activated action. */
   void showPage(QAction *pageAction);
-  
+
 private:
   /** Maps an action to a config page. */
   QHash<QAction*, ConfigPage*> _pages;

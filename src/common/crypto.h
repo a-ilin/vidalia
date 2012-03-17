@@ -3,15 +3,15 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
-** 
+**
 **                     *       *       *
-** 
+**
 **  Pseudorandom number generation support in this file is derived from
 **  Tor's crypto.[ch]. Tor is distributed under this license.
-** 
+**
 **    Copyright (c) 2001-2004, Roger Dingledine
 **    Copyright (c) 2004-2007, Roger Dingledine, Nick Mathewson
 **
@@ -26,7 +26,7 @@
 **       copyright notice, this list of conditions and the following disclaimer
 **       in the documentation and/or other materials provided with the
 **       distribution.
-** 
+**
 **     * Neither the names of the copyright owners nor the names of its
 **       contributors may be used to endorse or promote products derived from
 **       this software without specific prior written permission.
@@ -68,10 +68,10 @@ quint32 crypto_rand_quint32(quint32 max);
 QString crypto_rand_string(int len);
 /** Generates a salted hash of <b>secret</b> using the random <b>salt</b>
  * according to the iterated and salted S2K algorithm in RFC 2440. <b>c</b>
- * is the one-octet coded count value that specifies how much data to hash. 
+ * is the one-octet coded count value that specifies how much data to hash.
  * <b>salt</b> must contain at least 8 bytes, otherwise this method will
  * return a default-constructed QByteArray. */
-QByteArray 
+QByteArray
 crypto_secret_to_key(const QString &secret, const QByteArray &salt, quint8 c);
 
 #endif

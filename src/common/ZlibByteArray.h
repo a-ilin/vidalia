@@ -3,15 +3,15 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 **
 **                     *       *       *
-** 
+**
 **  Zlib support in this class is derived from Tor's torgzip.[ch].
 **  Tor is distributed under this license:
-** 
+**
 **    Copyright (c) 2001-2004, Roger Dingledine
 **    Copyright (c) 2004-2006, Roger Dingledine, Nick Mathewson
 **
@@ -26,7 +26,7 @@
 **       copyright notice, this list of conditions and the following disclaimer
 **       in the documentation and/or other materials provided with the
 **       distribution.
-** 
+**
 **     * Neither the names of the copyright owners nor the names of its
 **       contributors may be used to endorse or promote products derived from
 **       this software without specific prior written permission.
@@ -65,15 +65,15 @@ public:
     Gzip,   /**< Gzip compression method. */
     Zlib    /**< Zlib compression method. */
   };
-  
+
   /** Constructor. */
-  ZlibByteArray(QByteArray data); 
-  
+  ZlibByteArray(QByteArray data);
+
   /** Compresses the current contents of this object using <b>method</b>. */
   QByteArray compress(const CompressionMethod method = Zlib,
                       QString *errmsg = 0) const;
   /** Compreses the contents of <b>in</b> using <b>method</b>. */
-  static QByteArray compress(const QByteArray in, 
+  static QByteArray compress(const QByteArray in,
                              const CompressionMethod method = Zlib,
                              QString *errmsg = 0);
   /** Uncompresses the current contents of this object using <b>method</b>. */

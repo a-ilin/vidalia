@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -53,7 +53,7 @@ UpdatesAvailableDialog::loadPackagesTable(const PackageList &packageList)
   int row = 0;
   QString language;
   QTreeWidgetItem *item;
- 
+
   language = Vidalia::language();
 
   foreach (PackageInfo package, packageList) {
@@ -77,7 +77,7 @@ UpdatesAvailableDialog::loadPackagesTable(const PackageList &packageList)
 void
 UpdatesAvailableDialog::currentItemChanged(QTreeWidgetItem *current,
                                          QTreeWidgetItem *previous)
-{ 
+{
   Q_UNUSED(previous);
 
   ui.textDetails->clear();

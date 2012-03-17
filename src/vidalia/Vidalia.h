@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -60,12 +60,12 @@ public:
   static void showUsageMessageBox();
   /** Returns true if the user wants to see usage information. */
   static bool showUsage();
-  
+
   /** Sets the current language. */
   static bool setLanguage(QString languageCode = QString());
   /** Sets the current GUI style. */
   static bool setStyle(QString styleKey = QString());
-  
+
   /** Returns the current language. */
   static QString language() { return _language; }
   /** Returns the current GUI style. */
@@ -78,12 +78,12 @@ public:
 
   /** Returns Vidalia's main TorControl object. */
   static Torrc* torrc() { return _torrc; }
-  
+
   /** Returns the location Vidalia uses for its data files. */
   static QString dataDirectory();
   /** Returns the default location of Vidalia's data directory. */
   static QString defaultDataDirectory();
-  
+
   /** Returns the location of Vidalia's pid file. */
   static QString pidFile();
 
@@ -93,7 +93,7 @@ public:
 
   /** Writes <b>msg</b> with severity <b>level</b> to Vidalia's log. */
   static Log::LogMessage log(Log::LogLevel level, QString msg);
- 
+
   /** Enters the main event loop and waits until exit() is called. The signal
    * running() will be emitted when the event loop has started. */
   static int run();
@@ -118,7 +118,7 @@ public:
 
 signals:
   /** Emitted when the application is running and the main event loop has
-   * started. */ 
+   * started. */
   void running();
 
 protected:
@@ -135,9 +135,9 @@ private slots:
    * will emit the running() signal to indicate that the application's event
    * loop is running. */
   void onEventLoopStarted();
- 
+
 private:
-  /** Catches debugging messages from Qt and sends them to 
+  /** Catches debugging messages from Qt and sends them to
    * Vidalia's logs. */
   static void qt_msg_handler(QtMsgType type, const char *msg);
 

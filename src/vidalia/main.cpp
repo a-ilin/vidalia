@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -57,7 +57,7 @@ setup_crash_reporter()
     return;
   }
 
-  /* Set the Vidalia executable and options used to restart Vidalia after a 
+  /* Set the Vidalia executable and options used to restart Vidalia after a
    * crash. We strip off the first argument in Vidalia::arguments(), since
    * it's the application name again anyway. */
   CrashReporter::set_restart_options(Vidalia::applicationFilePath(),
@@ -137,7 +137,7 @@ main(int argc, char *argv[])
 {
   Q_INIT_RESOURCE(vidalia);
   QStringList args = char_array_to_stringlist(argv+1, argc-1);
- 
+
   /* Construct the application object. Qt strips any command-line arguments
    * that it recognizes in argv, so we'll pass a stringlist of the original
    * list of command-line arguments too. */
@@ -153,7 +153,7 @@ main(int argc, char *argv[])
   vApp->addLibraryPath(vApp->applicationDirPath() + "/plugins/qt");
 #endif
 
-  /* Install a signal handler to clean up properly after a catching a 
+  /* Install a signal handler to clean up properly after a catching a
    * SIGINT or SIGTERM. */
   install_signal_handler();
 
@@ -179,11 +179,11 @@ main(int argc, char *argv[])
                                                                .arg(get_pid());
     /* Let the user know another Vidalia is running and we are going to exit
      * now. */
-    int ret = VMessageBox::critical(0, 
+    int ret = VMessageBox::critical(0,
                 vApp->translate("Vidalia",
                   QT_TRANSLATE_NOOP("Vidalia", "Vidalia is already running")),
                 vApp->translate("Vidalia",
-                  QT_TRANSLATE_NOOP("Vidalia", 
+                  QT_TRANSLATE_NOOP("Vidalia",
                     "Another Vidalia process is possibly already running. "
                     "If there really is not another Vidalia process running, "
                     "you can choose to continue anyway.\n\n"

@@ -5,8 +5,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -24,42 +24,42 @@
 #define WXL_ATTR_TRANSLATION_TYPE      "Culture"
 #define WXL_ATTR_OVERRIDABLE           "Overridable"
 
-/** We need to provide an element with the LCID for this locale 
+/** We need to provide an element with the LCID for this locale
  * that is used in the WiX Product definition. */
 QString
 culture_lcid(const QString &culture)
 {
   /* For now character encoding focused, not generally locale / dialect aware. */
   QString lcid = "0";
-  if(!culture.compare("en", Qt::CaseInsensitive)) 
+  if(!culture.compare("en", Qt::CaseInsensitive))
     lcid = "1033";
-  else if(!culture.compare("cs", Qt::CaseInsensitive)) 
+  else if(!culture.compare("cs", Qt::CaseInsensitive))
     lcid = "1029";
-  else if(!culture.compare("de", Qt::CaseInsensitive)) 
+  else if(!culture.compare("de", Qt::CaseInsensitive))
     lcid = "1031";
-  else if(!culture.compare("es", Qt::CaseInsensitive)) 
+  else if(!culture.compare("es", Qt::CaseInsensitive))
     lcid = "1034";
-  else if(!culture.compare("fa", Qt::CaseInsensitive)) 
+  else if(!culture.compare("fa", Qt::CaseInsensitive))
     lcid = "1065";
-  else if(!culture.compare("fi", Qt::CaseInsensitive)) 
+  else if(!culture.compare("fi", Qt::CaseInsensitive))
     lcid = "1035";
-  else if(!culture.compare("fr", Qt::CaseInsensitive)) 
+  else if(!culture.compare("fr", Qt::CaseInsensitive))
     lcid = "1036";
-  else if(!culture.compare("he", Qt::CaseInsensitive)) 
+  else if(!culture.compare("he", Qt::CaseInsensitive))
     lcid = "1037";
-  else if(!culture.compare("it", Qt::CaseInsensitive)) 
+  else if(!culture.compare("it", Qt::CaseInsensitive))
     lcid = "1040";
-  else if(!culture.compare("nl", Qt::CaseInsensitive)) 
+  else if(!culture.compare("nl", Qt::CaseInsensitive))
     lcid = "1043";
-  else if(!culture.compare("pl", Qt::CaseInsensitive)) 
+  else if(!culture.compare("pl", Qt::CaseInsensitive))
     lcid = "1045";
-  else if(!culture.compare("pt", Qt::CaseInsensitive)) 
+  else if(!culture.compare("pt", Qt::CaseInsensitive))
     lcid = "1046";
-  else if(!culture.compare("ro", Qt::CaseInsensitive)) 
+  else if(!culture.compare("ro", Qt::CaseInsensitive))
     lcid = "1048";
-  else if(!culture.compare("ru", Qt::CaseInsensitive)) 
+  else if(!culture.compare("ru", Qt::CaseInsensitive))
     lcid = "1049";
-  else if(!culture.compare("sv", Qt::CaseInsensitive)) 
+  else if(!culture.compare("sv", Qt::CaseInsensitive))
     lcid = "1053";
   return lcid;
 }
@@ -93,7 +93,7 @@ QDomDocument
 new_wxl_document(const QString &culture)
 {
   QDomDocument wxl;
-  
+
   QDomElement root = wxl.createElementNS(WXL_NAMESPACE, WXL_ELEMENT_ROOT);
   root.setAttribute(WXL_ATTR_TRANSLATION_TYPE, culture);
   wxl.appendChild(root);
@@ -127,8 +127,8 @@ parse_message_context_lame(const QString &str)
 QString
 parse_message_string(const QString &msg)
 {
-  QString out = msg.trimmed(); 
-  
+  QString out = msg.trimmed();
+
   out.replace("\"\n\"", "\n");
   if (out.startsWith("\""))
     out = out.remove(0, 1);
@@ -154,7 +154,7 @@ read_next_line(QTextStream *stream)
   return stream->readLine().append("\n");
 }
 
-/** Skip past the header portion of the PO file and any leading whitespace. 
+/** Skip past the header portion of the PO file and any leading whitespace.
  * The next line read from <b>po</b> will be the first non-header line in the
  * document. */
 void
@@ -189,9 +189,9 @@ po2wxl(const QString& culture, QTextStream *po, QDomDocument *wxl,
   *wxl = new_wxl_document(culture);
 
   /* Set the LCID to Language code for use as !(loc.LCID) in Product. */
-  QString lcid = culture_lcid(culture); 
+  QString lcid = culture_lcid(culture);
   wxl->documentElement().appendChild(
-    new_message_element(wxl, WXL_ATTR_LANGUAGE, lcid, lcid)); 
+    new_message_element(wxl, WXL_ATTR_LANGUAGE, lcid, lcid));
 
   skip_po_header(po);
   line = read_next_line(po);
@@ -208,19 +208,19 @@ po2wxl(const QString& culture, QTextStream *po, QDomDocument *wxl,
 
     /* A context specified on a "msgctxt" line takes precedence over a context
      * specified using the overload "#:" notation. */
-    if (line.startsWith("msgctxt ")) {    
+    if (line.startsWith("msgctxt ")) {
       msgctxt = line.section(" ", 1);
       msgctxt = parse_message_context(msgctxt);
       line = read_next_line(po);
     }
-    
+
     /* Parse the (possibly multiline) message source string */
     if (!line.startsWith("msgid ")) {
       *errorMessage = "expected 'msgid' line";
       return -1;
     }
     msgid = line.section(" ", 1);
-    
+
     line = read_next_line(po);
     while (line.startsWith("\"")) {
       msgid.append(line);
@@ -234,7 +234,7 @@ po2wxl(const QString& culture, QTextStream *po, QDomDocument *wxl,
       return -1;
     }
     msgstr = line.section(" ", 1);
-    
+
     line = read_next_line(po);
     while (line.startsWith("\"")) {
       msgstr.append(line);
@@ -244,8 +244,8 @@ po2wxl(const QString& culture, QTextStream *po, QDomDocument *wxl,
 
     /* Add the message and translation to the .wxl document */
     wxl->documentElement().appendChild(
-      new_message_element(wxl, msgctxt, msgid, msgstr)); 
-    
+      new_message_element(wxl, msgctxt, msgid, msgstr));
+
     n_strings++;
   }
   return n_strings;
@@ -296,7 +296,7 @@ main(int argc, char *argv[])
         return 1;
       }
     } else
-      print_usage_and_exit(); 
+      print_usage_and_exit();
   }
 
   /* Open the input PO file for reading. */

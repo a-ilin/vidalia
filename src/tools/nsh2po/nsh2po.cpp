@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -43,8 +43,8 @@ parse_message_context_lame(const QString &str)
 QString
 parse_message_string(const QString &msg)
 {
-  QString out = msg.trimmed(); 
-  
+  QString out = msg.trimmed();
+
   if (out.startsWith("\""))
     out = out.remove(0, 1);
   if (out.endsWith("\""))
@@ -59,7 +59,7 @@ QString
 parse_nsh_langstring(const QString &msg)
 {
   QString out = msg.trimmed();
-  
+
   if (out.startsWith("\""))
     out = out.remove(0, 1);
   if (out.endsWith("\""))
@@ -113,7 +113,7 @@ read_next_line(QTextStream *stream)
   return stream->readLine();
 }
 
-/** Skip past the header portion of the POT file and any leading whitespace. 
+/** Skip past the header portion of the POT file and any leading whitespace.
  * The next line read from <b>po</b> will be the first non-header line in the
  * document. */
 void
@@ -130,14 +130,14 @@ skip_pot_header(QTextStream *pot)
 
 /** Parse a PO template file for (context,source string) pairs, which are
  * be stored in <b>out</b> using <i>msgctxt</i> as the key and <i>msgid</i>
- * as the value. Return true on success, or false on failure and set 
+ * as the value. Return true on success, or false on failure and set
  * <b>errmsg</b>. */
 bool
 parse_po_template(QTextStream *pot, QHash<QString,QString> *out,
                   QString *errmsg)
 {
   QString line, msgctxt, msgid;
-  
+
   skip_pot_header(pot);
   line = read_next_line(pot);
   while (!pot->atEnd()) {
@@ -146,7 +146,7 @@ parse_po_template(QTextStream *pot, QHash<QString,QString> *out,
       line = read_next_line(pot);
       continue;
     }
-    
+
     if (line.startsWith("#:")) {
       /* Context was specified with the stupid overloaded "#:" syntax.*/
       msgctxt = line.section(" ", 1);
@@ -162,13 +162,13 @@ parse_po_template(QTextStream *pot, QHash<QString,QString> *out,
       msgctxt = parse_message_context(msgctxt);
       line = read_next_line(pot);
     }
-    
+
     if (!line.startsWith("msgid ")) {
       *errmsg = "expected 'msgid' line";
       return false;
     }
     msgid = line.section(" ", 1);
-    
+
     line = read_next_line(pot);
     while (line.startsWith("\"")) {
       /* This msgid line had multiple parts to it */
@@ -179,7 +179,7 @@ parse_po_template(QTextStream *pot, QHash<QString,QString> *out,
 
     out->insert(msgctxt, msgid);
   }
-  
+
   return true;
 }
 
@@ -188,7 +188,7 @@ parse_po_template(QTextStream *pot, QHash<QString,QString> *out,
  * message entry is PO-formatted and appended to <b>po</b>. Return true on
  * success, or false on failure and <b>errmsg</b> will be set. */
 int
-nsh2po(QTextStream *nsh, const QString &charset, 
+nsh2po(QTextStream *nsh, const QString &charset,
        const QHash<QString,QString> &pot, QString *po, QString *errmsg)
 {
   QString line, msgctxt, msgid, msgstr;
@@ -209,7 +209,7 @@ nsh2po(QTextStream *nsh, const QString &charset,
       msgctxt = parts.at(1);
     else
       continue; /* Not properly formatted */
-      
+
     idx = line.indexOf("\"");
     if (idx > 0)
       msgstr = parse_nsh_langstring(line.mid(idx));
@@ -217,7 +217,7 @@ nsh2po(QTextStream *nsh, const QString &charset,
   }
 
   /* Format the PO file based on the template. */
-  n_strings = 0;  
+  n_strings = 0;
   foreach (QString msgctxt, pot.keys()) {
     msgid = pot.value(msgctxt);
     if (langStrings.contains(msgctxt)) {
@@ -226,7 +226,7 @@ nsh2po(QTextStream *nsh, const QString &charset,
     } else {
       msgstr = msgid;
     }
-    
+
     po->append(QString("msgctxt \"%1\"\n").arg(msgctxt));
     po->append(QString("msgid \"%1\"\n").arg(msgid));
     po->append(QString("msgstr \"%1\"\n").arg(msgstr));
@@ -247,7 +247,7 @@ write_po_output(const char *poFileName, const QString &po, QTextCodec *codec,
     *errmsg = QString("Unable to open '%1' for writing.").arg(poFileName);
     return false;
   }
-  
+
   QTextStream out(&poFile);
   out.setCodec(codec);
   out << po;
@@ -280,7 +280,7 @@ main(int argc, char *argv[])
   QTextStream pot, nsh;
   QTextCodec *codec = QTextCodec::codecForName("utf-8");
   bool quiet = false;
-  
+
   /* Check for the correct number of input parameters. */
   if (argc < 7 || argc > 10)
     print_usage_and_exit();
@@ -316,18 +316,18 @@ main(int argc, char *argv[])
         return 1;
       }
     } else
-      print_usage_and_exit(); 
+      print_usage_and_exit();
   }
   pot.setCodec(codec);
   nsh.setCodec(codec);
-  
+
   /* Parse the template for the source strings */
   QHash<QString,QString> poTemplate;
   if (!parse_po_template(&pot, &poTemplate, &errorMessage)) {
     error << QString("Failed to parse PO template: %1\n").arg(errorMessage);
     return 1;
   }
-  
+
   /* Parse the nsh for the translated strings */
   int n_strings = nsh2po(&nsh, QString(codec->name()), poTemplate,
                          &po, &errorMessage);
@@ -335,13 +335,13 @@ main(int argc, char *argv[])
     error << QString("Conversion failed: %1\n").arg(errorMessage);
     return 2;
   }
-  
+
   /* Write the formatted PO output */
   if (!write_po_output(outFileName, po, codec, &errorMessage)) {
     error << QString("Failed to write PO output: %1\n").arg(errorMessage);
     return 3;
   }
-  
+
   if (!quiet) {
     QTextStream out(stdout);
     out << QString("Wrote %1 strings to '%2'.\n").arg(n_strings)

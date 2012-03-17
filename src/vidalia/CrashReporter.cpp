@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 /*
@@ -139,7 +139,7 @@ static char restartExecutableArgs[MAX_CMD_LEN + 1] = "";
 static time_t startupTime = 0;
 
 
-/** Slightly modified version of the strlcat() implementation by Todd C. 
+/** Slightly modified version of the strlcat() implementation by Todd C.
  * Miller (see the top of this file or the LICENSE file for license details),
  * that supports arguments of either wchar_t* on Windows or the usual char*
  * everywhere else but retains the semantics of strlcat().
@@ -234,7 +234,7 @@ write_extra_dump_info(const _char_t *path, const _char_t *id, time_t crashTime)
     return false;
   }
 #endif
-  
+
   char crashTimeString[24], startupTimeString[24];
   TIME_TO_STRING(crashTimeString, 24, crashTime);
   TIME_TO_STRING(startupTimeString, 24, startupTime);

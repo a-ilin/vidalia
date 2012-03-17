@@ -69,7 +69,7 @@ private:
 
   /** Stores values that last as long as Vidalia lives as a process */
   QMap<QString, QVariant> _volatileSettings;
-  
+
   /** Defaults stored in a settings file */
   QSettings *_defaultSettings;
 };

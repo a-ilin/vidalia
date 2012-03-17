@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -44,7 +44,7 @@
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
-#define VIDALIA_REG_KEY        "Vidalia" 
+#define VIDALIA_REG_KEY        "Vidalia"
 #endif
 
 #define SETTING_ICON_PREF	"IconPref"
@@ -329,13 +329,13 @@ VidaliaSettings::setLocalGeoIpDatabase(const QString &databaseFile)
   setValue(SETTING_LOCAL_GEOIP_DATABASE, databaseFile);
 }
 
-QString 
+QString
 VidaliaSettings::pluginPath() const
 {
   return QDir::convertSeparators(value(SETTING_PLUGIN_PATH).toString());
 }
 
-void 
+void
 VidaliaSettings::setPluginPath(const QString &path)
 {
   setValue(SETTING_PLUGIN_PATH, path);

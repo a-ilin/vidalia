@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -35,7 +35,7 @@ Policy::Policy(QString policy)
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
   _mask = 0;
- 
+
   /* Parse the given string to override the defaults. */
   fromString(policy);
 }
@@ -48,7 +48,7 @@ Policy::Policy(QString action, QString address, QString ports)
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
   _mask = 0;
- 
+
   fromString(action + " " + address + ":" + ports);
 }
 
@@ -63,7 +63,7 @@ Policy::Policy(SpecialPolicy policy)
 }
 
 /** Constructor. Creates a new policy object based on the given rules. */
-Policy::Policy(Action action, QHostAddress addr, uchar mask, 
+Policy::Policy(Action action, QHostAddress addr, uchar mask,
                quint16 fromPort, quint16 toPort)
 {
   _action   = action;
@@ -105,7 +105,7 @@ Policy::fromString(QString policy)
   /* Separate the action and the address/mask/port info */
   QStringList ruleParts = policy.split(" ");
   _action = toAction(ruleParts.at(0));
-  
+
   /* If some address/mask/port stuff was specified, parse it. */
   if (ruleParts.size() > 1) {
     QStringList addrParts = ruleParts.at(1).split(":");
@@ -171,14 +171,14 @@ QString
 Policy::address() const
 {
   QString addrString;
-  
+
   if (_mask) {
     addrString = _address.toString() + "/" + QString::number(_mask);
   } else if (_address == QHostAddress::Any || _address.isNull()) {
     addrString = "*";
   } else {
     addrString = _address.toString();
-  } 
+  }
   return addrString;
 }
 

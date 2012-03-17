@@ -1,10 +1,10 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -35,7 +35,7 @@ public:
     Warn       = (1u<<1),  /**< Warn level log message. */
     Error      = (1u<<0)   /**< Error level log message. */
   };
-  
+
   /** Default constructor */
   LogEvent(Severity severity, QString message);
 
@@ -45,10 +45,10 @@ public:
   static QString severityToString(Severity severity);
 
   /** Returns the severity of this log event */
-  Severity severity() const; 
+  Severity severity() const;
   /** Returns the message for this log event */
   QString message() const;
-  
+
 private:
   Severity _severity;
   QString  _message;

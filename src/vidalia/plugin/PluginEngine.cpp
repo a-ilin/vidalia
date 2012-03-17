@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -48,7 +48,7 @@ PluginEngine::PluginEngine(QObject *parent)
   loadAllPlugins();
 }
 
-PluginEngine::~PluginEngine() 
+PluginEngine::~PluginEngine()
 {
   foreach(PluginWrapper *wrapper, wrappers)
     wrapper->stop();
@@ -63,7 +63,7 @@ PluginEngine::loadAllPlugins()
   QDir path = QDir(settings.pluginPath());
 
   DebugDialog::outputDebug(QString("PluginPath=%1").arg(path.absolutePath()));
-  
+
   foreach(QString pdir, path.entryList(QDir::NoDotAndDotDot|QDir::AllDirs)) {
     QFileInfo finfo(QString("%1%2%3")
         .arg(path.absolutePath())
@@ -86,7 +86,7 @@ PluginEngine::tryLoadPlugin(QDir path)
         .arg(path.absolutePath()));
     return;
   }
-  
+
   PluginWrapper *wrapper = new PluginWrapper(QString("%1%2info.xml")
                                             .arg(path.absolutePath())
                                             .arg(QDir::separator()), this);
@@ -111,13 +111,13 @@ PluginEngine::getAllActions()
   return actions;
 }
 
-QScriptValue 
+QScriptValue
 PluginEngine::importExtension(QScriptContext *context, QScriptEngine *engine)
 {
     return engine->importExtension(context->argument(0).toString());
 }
 
-//QScriptValue 
+//QScriptValue
 //PluginEngine::includeScript(QScriptContext *context, QScriptEngine *engine)
 //{
 //  VidaliaSettings settings;
@@ -134,7 +134,7 @@ PluginEngine::importExtension(QScriptContext *context, QScriptEngine *engine)
 //  return engine->toScriptValue(true);
 //}
 
-//bool 
+//bool
 //PluginEngine::loadFile(QString fileName, QScriptEngine *engine)
 //{
 //    static QSet<QString> loadedFiles;

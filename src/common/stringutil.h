@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -39,7 +39,7 @@ bool err(QString *str, const QString &errmsg);
 /** Wraps <b>str</b> at <b>width</b> characters wide, using <b>sep</b> as the
  * word separator (" ", for example), and placing the line ending <b>le</b> at
  * the end of each line, except the last.*/
-QString string_wrap(const QString &str, int width, 
+QString string_wrap(const QString &str, int width,
                     const QString &sep = QString(" "),
                     const QString &le = QString("\n"));
 

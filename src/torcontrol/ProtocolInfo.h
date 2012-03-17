@@ -1,10 +1,10 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -24,10 +24,10 @@ class ProtocolInfo
 public:
   /** Default constructor. */
   ProtocolInfo() {}
-  
+
   /** Returns true if this ProtocolInfo object contains no data. */
   bool isEmpty() const;
-  
+
   /** Sets the authentication methods Tor currently accepts. <b>methods</b>
    * should be a comma-delimited list of authentication methods. */
   void setAuthMethods(const QString methods);

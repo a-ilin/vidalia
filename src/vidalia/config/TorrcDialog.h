@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -52,14 +52,14 @@ private:
   void loadToolBar();
   /** Loads the contents of the torrc file that Tor has loaded */
   void loadTorrc();
-  /** Parses the options edited and sets them through SETCONF 
+  /** Parses the options edited and sets them through SETCONF
     * if they pass the parsing stage */
   bool parseAndSet(QString *errmsg = 0);
-  
+
   Ui::TorrcDialog ui; /**< Qt Designer generated object. */
   /** TorControl object to comunicate with Tor */
   TorControl *tc;
-  
+
 };
 
 #endif // _TORRCDIALOG_H

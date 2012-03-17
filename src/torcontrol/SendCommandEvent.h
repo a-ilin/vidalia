@@ -1,10 +1,10 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -44,17 +44,17 @@ public:
     QWaitCondition _waitCond; /**< Waits for the send to complete. */
     QString _errmsg; /**< Error message if the send fails. */
   };
-  
+
   /** Constructor. */
   SendCommandEvent(const ControlCommand &cmd, SendWaiter *w = 0);
   /** Returns the control command to send to Tor. */
   ControlCommand command() { return _cmd; }
   /** Returns a SendWaiter (if any) for the result of this send. */
   SendWaiter* waiter() { return _waiter; }
-    
+
 private:
   ControlCommand _cmd;  /**< Command to send to Tor. */
-  SendWaiter* _waiter; /**< SendWaiter for the result of this event. */  
+  SendWaiter* _waiter; /**< SendWaiter for the result of this event. */
 };
 
 #endif

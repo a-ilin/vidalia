@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -28,7 +28,7 @@ class TorrcLine
     : _content(content), _comment(comment) {}
 
   /** Returns the content for this line */
-  QString content() 
+  QString content()
   { return _content; }
   /** Sets the contents for this line */
   void setContent(const QString &content)
@@ -98,9 +98,9 @@ class TorOpt
    : _name(opt.name()), _type(opt.type()), _default(opt.defaultValue()), _line(opt.line()) {}
 
   /** Returns true if this option can be defined with multiple lines */
-  bool isMultilined() 
+  bool isMultilined()
   { return _type == LineList or _type == Dependant or _type == Virtual; }
-  
+
   /** Returns true if this option can be defined multiple times with
    *  different values */
   bool isMultivalued()
@@ -117,7 +117,7 @@ class TorOpt
   /** Returns the default value that tor assumes for this option */
   QString defaultValue() const
   { return _default; }
-  
+
   /** Returns a pointer to the TorrcLine for this option */
   TorrcLine *line() const
   { return _line; }
@@ -125,11 +125,11 @@ class TorOpt
   /** Sets the line for this option */
   void setLine(TorrcLine *line)
   { _line = line; }
-  
+
   /** Returns true if it's a null TorOpt */
   bool isNull() const
   { return _type == NIL; }
-  
+
   /** Creates a null TorOpt*/
   static TorOpt null()
   { return TorOpt("Nil", NIL); }
@@ -158,7 +158,7 @@ class TorrcParser
                            QMap<QString, QPair<QString, TorOpt> > &map);
   /** Returns the TorOpt for a given option name */
   TorOpt getTorOpt(const QString &name);
-  
+
  private:
   /** List with all the current valid options for the torrc */
   QList<TorOpt> _torOpts;
@@ -172,7 +172,7 @@ class TorrcParser
   QList<TorrcLine *> toTorrcLines(QString contents);
   /** Given a TorrcLine and the line list where it belongs, it returns
    *  the set of lines that define the multilined value */
-  QList<TorrcLine *> findValueLines(TorrcLine *line, 
+  QList<TorrcLine *> findValueLines(TorrcLine *line,
                                     const QList<TorrcLine *> &lines) const;
   /** Creates the regular expression used in parsing */
   QRegExp createRegExp();

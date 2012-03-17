@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -46,7 +46,7 @@ public:
     SolidLine = 0,  /**< Plot bandwidth as solid lines. */
     AreaGraph       /**< Plot bandwidth as alpha blended area graphs. */
   };
-  
+
   /** Default Constructor */
   GraphFrame(QWidget *parent = 0);
   /** Default Destructor */
@@ -84,7 +84,7 @@ private:
    * of send or receive values. */
   QVector<QPointF> pointsFromData(QList<qreal>* list);
   /** Paints a line with the data in <b>points</b>. */
-  void paintLine(QVector<QPointF> points, QColor color, 
+  void paintLine(QVector<QPointF> points, QColor color,
                  Qt::PenStyle lineStyle = Qt::SolidLine);
   /** Paints an integral using the supplied data. */
   void paintIntegral(QVector<QPointF> points, QColor color, qreal alpha = 1.0);

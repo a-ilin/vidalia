@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -35,7 +35,7 @@ public:
   void setServerEnabled(bool enable);
   /** Returns true if Tor is running as a server. */
   bool isServerEnabled();
-  
+
   /** Sets to <b>enabled</b> whether Tor should be a bridge node when acting
    * as a server. */
   void setBridgeEnabled(bool enable);
@@ -57,12 +57,12 @@ public:
   void setDirPort(quint16 dirPort);
   /** Gets the server's DirPort value. */
   quint16 getDirPort();
- 
+
   /** Sets the server's nickname. */
   void setNickname(QString nickname);
   /** Gets the server's nickname. */
   QString getNickname();
-  
+
   /** Sets the server operator's contact information. */
   void setContactInfo(QString info);
   /** Gets the server operator's contact information. */
@@ -76,7 +76,7 @@ public:
   void setExitPolicy(ExitPolicy &policy);
   /** Gets the exit policy for this server. */
   ExitPolicy getExitPolicy();
-  
+
   /** Sets the long-term average bandwidth rate (in KB/s) of this server. */
   void setBandwidthAvgRate(quint32 rate);
   /** Gets the long-term average bandwidth rate (in KB/s) of this server. */

@@ -1,10 +1,10 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -34,7 +34,7 @@ ControlSocket::ControlSocket(ControlMethod::Method method)
     case ControlMethod::Port:
       _socket = _tcpSocket;
       break;
-      
+
     case ControlMethod::Socket:
       _socket = _localSocket;
       break;
@@ -43,7 +43,7 @@ ControlSocket::ControlSocket(ControlMethod::Method method)
   QObject::connect(_socket, SIGNAL(readyRead()), this, SIGNAL(readyRead()));
   QObject::connect(_socket, SIGNAL(disconnected()), this, SIGNAL(disconnected()));
   QObject::connect(_socket, SIGNAL(connected()), this, SIGNAL(connected()));
-  QObject::connect(_socket, SIGNAL(error(QAbstractSocket::SocketError)), 
+  QObject::connect(_socket, SIGNAL(error(QAbstractSocket::SocketError)),
                    this, SIGNAL(error(QAbstractSocket::SocketError)));
 }
 
@@ -56,7 +56,7 @@ ControlSocket::isConnected()
     case ControlMethod::Port:
       return (_tcpSocket->isValid() && _tcpSocket->state() == QAbstractSocket::ConnectedState);
       break;
-      
+
     default:
     case ControlMethod::Socket:
       return (_localSocket->isValid() && _localSocket->state() == QLocalSocket::ConnectedState);
@@ -65,28 +65,28 @@ ControlSocket::isConnected()
 }
 
 /** Connects to address:port */
-void 
+void
 ControlSocket::connectToHost(const QHostAddress &address, quint16 port)
 {
   _tcpSocket->connectToHost(address, port);
 }
 
 /** Disconnects from host */
-void 
+void
 ControlSocket::disconnectFromHost()
 {
   _tcpSocket->disconnectFromHost();
 }
 
 /** Connects to a unix socket file */
-void 
+void
 ControlSocket::connectToServer(const QString &name)
 {
   _localSocket->connectToServer(name);
 }
 
 /** Disconnects from the socket */
-void 
+void
 ControlSocket::disconnectFromServer()
 {
   _localSocket->disconnectFromServer();
@@ -160,11 +160,11 @@ ControlSocket::customEvent(QEvent *event)
  */
 bool
 ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
-{  
+{
   if (!isConnected()) {
     return err(errmsg, tr("Control socket is not connected."));
   }
-  
+
   /* Format the control command */
   QString strCmd = cmd.toString();
   tc::debug("Control Command: %1").arg(strCmd.trimmed());
@@ -178,7 +178,7 @@ ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
     case ControlMethod::Port:
       _tcpSocket->flush();
       break;
-      
+
     case ControlMethod::Socket:
       _localSocket->flush();
       break;
@@ -216,7 +216,7 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
     if (!readLine(line, errmsg)) {
       return false;
     }
-    
+
     if (line.length() < 4) {
       return err(errmsg, tr("Invalid control reply. [%1]").arg(line));
     }

@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -50,7 +50,7 @@ bool
 LogFile::open(QString filename, QString *errmsg)
 {
   QFile *newLogFile;
- 
+
   /* If the file is already open, then no need to open it again */
   if (_file && _file->isOpen()) {
     if (_file->fileName() == filename) {
@@ -62,14 +62,14 @@ LogFile::open(QString filename, QString *errmsg)
   if (!createPathToFile(filename)) {
     return err(errmsg, "Unable to create path to log file.");
   }
- 
+
   /* Try to open the new log file */
   newLogFile = new QFile(filename);
   if (!newLogFile->open(QFile::WriteOnly|QIODevice::Append|QIODevice::Text)) {
     delete newLogFile;
     return err(errmsg, newLogFile->errorString());
   }
- 
+
   /* Rotate the new log file in place of the old one */
   if (_file) {
     delete _file;

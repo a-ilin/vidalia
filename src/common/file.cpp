@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -25,7 +25,7 @@
 
 
 /** Create an empty file named <b>filename</b>. if <b>createdir</b> is true,
- * then the full path to <b>filename</b> will be created. Returns true on 
+ * then the full path to <b>filename</b> will be created. Returns true on
  * success, or false on error and <b>errmsg</b> will be set. */
 bool
 touch_file(const QString &filename, bool createdir, QString *errmsg)
@@ -33,19 +33,19 @@ touch_file(const QString &filename, bool createdir, QString *errmsg)
   /* Expand the file's path if it starts with a shortcut, like "~/" or
    * "%APPDATA%" */
   QString expanded = expand_filename(filename);
-    
+
   /* If the file's path doesn't exist and we're supposed to create it, do that
    * now. */
   if (createdir && !create_path(QFileInfo(expanded).absolutePath())) {
     return false;
   }
- 
+
   /* Touch the file */
   QFile file(expanded);
   if (!QFileInfo(expanded).exists()) {
     if (!file.open(QIODevice::WriteOnly)) {
       return err(errmsg, file.errorString());
-    } 
+    }
   }
   return true;
 }
@@ -72,9 +72,9 @@ copy_dir(const QString &source, const QString &dest)
   /* Source and destination as QDir's */
   QDir src(source);
   QDir dst(dest);
-  
+
   /* Get contents of the directory */
-  QFileInfoList contents = src.entryInfoList(QDir::Files | QDir::Dirs 
+  QFileInfoList contents = src.entryInfoList(QDir::Files | QDir::Dirs
                                                | QDir::NoDotAndDotDot);
 
   /* Copy each entry in src to dst */
@@ -94,7 +94,7 @@ copy_dir(const QString &source, const QString &dest)
       /* This is a file, copy it */
       if (!QFile::copy(srcFilePath, dstFilePath))
 	return false;
-    } 
+    }
     /* Ignore special files (e.g. symlinks, devices) */
 
   }
@@ -112,7 +112,7 @@ expand_filename(const QString &filename)
   if (fname.startsWith("%APPDATA%\\") ||
       fname.startsWith("%APPDATA%/"))
     return fname.replace(0, 9, win32_app_data_folder());
-    
+
   if (fname.startsWith("%PROGRAMFILES%\\") ||
       fname.startsWith("%PROGRAMFILES%/"))
     return fname.replace(0, 14, win32_program_files_folder());

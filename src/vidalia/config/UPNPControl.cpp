@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file UPNPControl.cpp
 ** \brief Singleton object for interacting with UPNP device
 */
@@ -45,7 +45,7 @@ UPNPControl::UPNPControl()
   _forwardedDirPort = 0;
   _error = UnknownError;
   _state = IdleState;
-  
+
   qRegisterMetaType<UPNPControl::UPNPError>("UPNPControl::UPNPError");
   qRegisterMetaType<UPNPControl::UPNPState>("UPNPControl::UPNPState");
 
@@ -70,7 +70,7 @@ UPNPControl::cleanup()
   _instance->_controlThread->stop();
   delete _instance;
   _instance = 0;
-}  
+}
 
 /** Sets <b>desiredDirPort</b> and <b>desiredOrPort</b> to the currently
  * forwarded DirPort and ORPort values. */
@@ -92,7 +92,7 @@ UPNPControl::setDesiredState(quint16 desiredDirPort, quint16 desiredOrPort)
   _forwardedDirPort = desiredDirPort;
   _forwardedORPort = desiredOrPort;
   _mutex->unlock();
-  
+
   _controlThread->wakeup();
 }
 
@@ -104,7 +104,7 @@ UPNPControl::setError(UPNPError upnpError)
   _mutex->lock();
   _error = upnpError;
   _mutex->unlock();
-  
+
   emit error(upnpError);
 }
 

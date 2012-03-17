@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -41,7 +41,7 @@ public slots:
    */
   void setDownloadProgress(qint64 value, qint64 maximum);
 
-  /** Called when the bridge download completes successfully and discards 
+  /** Called when the bridge download completes successfully and discards
    * the progress dialog with an Accept result code. <b>bridges</b>
    * contains the list of bridges downloaded, but is currently ignored.
    */

@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -40,7 +40,7 @@ public:
   bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
-  
+
   /** Applies the server configuration settings to Tor. Returns true if the
    * settings were applied successfully. Otherwise, <b>errmsg</b> is set and
    * false is returned. */
@@ -97,10 +97,10 @@ private:
     GreaterThan1500, /**< > 1.5 Mbps */
     CustomBwLimits   /**< Custom bandwidth limits */
   };
-  
+
   /** Returns the index of the selected item in lstExitPolicies */
   int selectedIndex();
-  
+
   /** Saves the server's bandwidth average and burst limits. */
   void saveBandwidthLimits();
   /** Loads the server's bandwidth average and burst limits. */

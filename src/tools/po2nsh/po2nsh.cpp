@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -41,8 +41,8 @@ parse_message_context_lame(const QString &str)
 QString
 parse_message_string(const QString &msg)
 {
-  QString out = msg.trimmed(); 
-  
+  QString out = msg.trimmed();
+
   out.replace("\"\n\"", "");
   if (out.startsWith("\""))
     out = out.remove(0, 1);
@@ -62,7 +62,7 @@ read_next_line(QTextStream *stream)
   return stream->readLine().append("\n");
 }
 
-/** Skip past the header portion of the PO file and any leading whitespace. 
+/** Skip past the header portion of the PO file and any leading whitespace.
  * The next line read from <b>po</b> will be the first non-header line in the
  * document. */
 void
@@ -90,11 +90,11 @@ po2nsh(QTextStream *po, QString *nsh, const QString &language,
   QHash<QString,QString> header;
   QTextCodec *codec;
   int n_strings = 0;
-  
+
   Q_ASSERT(po);
   Q_ASSERT(nsh);
   Q_ASSERT(errorMessage);
-  
+
   skip_po_header(po);
   line = read_next_line(po);
   while (!po->atEnd()) {
@@ -110,19 +110,19 @@ po2nsh(QTextStream *po, QString *nsh, const QString &language,
 
     /* A context specified on a "msgctxt" line takes precedence over a context
      * specified using the overload "#:" notation. */
-    if (line.startsWith("msgctxt ")) {    
+    if (line.startsWith("msgctxt ")) {
       msgctxt = line.section(" ", 1);
       msgctxt = parse_message_context(msgctxt);
       line = read_next_line(po);
     }
-    
+
     /* Parse the (possibly multiline) message source string */
     if (!line.startsWith("msgid ")) {
       *errorMessage = "expected 'msgid' line";
       return -1;
     }
     msgid = line.section(" ", 1);
-    
+
     line = read_next_line(po);
     while (line.startsWith("\"")) {
       msgid.append(line);
@@ -136,7 +136,7 @@ po2nsh(QTextStream *po, QString *nsh, const QString &language,
       return -1;
     }
     msgstr = line.section(" ", 1);
-    
+
     line = read_next_line(po);
     while (line.startsWith("\"")) {
       msgstr.append(line);
@@ -185,7 +185,7 @@ main(int argc, char *argv[])
   bool quiet = false;
   QTextCodec *from_codec = QTextCodec::codecForName("utf-8");
   QTextCodec *to_codec   = QTextCodec::codecForName("iso-8859-1");
-  
+
   /* Check for the correct number of input parameters. */
   if (argc < 7 || argc > 12)
     print_usage_and_exit();
@@ -212,7 +212,7 @@ main(int argc, char *argv[])
         return 1;
       }
     } else
-      print_usage_and_exit(); 
+      print_usage_and_exit();
   }
 
   /* Open the input PO file for reading. */
@@ -232,7 +232,7 @@ main(int argc, char *argv[])
                                                     .arg(errorMessage);
     return 3;
   }
-  
+
   /* Open the NSH file for writing. */
   QFile nshFile(outfile);
   if (!nshFile.open(QIODevice::WriteOnly | QIODevice::Text)) {

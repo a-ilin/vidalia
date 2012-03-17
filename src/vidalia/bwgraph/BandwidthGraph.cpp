@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -71,7 +71,7 @@ BandwidthGraph::BandwidthGraph(QStatusBar *st, QWidget *parent)
     ui.frmOpacity->setVisible(false);
   }
 #endif
-  
+
 #if defined(Q_WS_X11)
   ui.frmOpacity->setVisible(false);
 #endif
@@ -154,7 +154,7 @@ BandwidthGraph::reset()
 {
   /* Set to current time */
   if(_statusBar && _onTop)
-    _statusBar->showMessage(tr("Since:") + " " + 
+    _statusBar->showMessage(tr("Since:") + " " +
             QDateTime::currentDateTime()
             .toString(DATETIME_FMT));
   /* Reset the graph */
@@ -167,7 +167,7 @@ BandwidthGraph::saveChanges()
 {
   /* Hide the settings frame and reset toggle button */
   showSettingsFrame(false);
-  
+
   /* Save the opacity and graph style */
   saveSetting(SETTING_OPACITY, ui.sldrOpacity->value());
   saveSetting(SETTING_STYLE, ui.cmbGraphStyle->currentIndex());
@@ -192,14 +192,14 @@ BandwidthGraph::saveChanges()
   ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),
                                ui.chkSendRate->isChecked());
   ui.frmGraph->setGraphStyle((GraphFrame::GraphStyle)ui.cmbGraphStyle->currentIndex());
-  
+
   /* A change in window flags causes the window to disappear, so make sure
    * it's still visible. */
   showNormal();
 }
 
 /** Simply restores the previously saved settings. */
-void 
+void
 BandwidthGraph::cancelChanges()
 {
   /* Hide the settings frame and reset toggle button */
@@ -214,7 +214,7 @@ void
 BandwidthGraph::showSettingsFrame(bool show)
 {
   static QSize minSize = minimumSize();
-  
+
   QSize newSize = size();
   if (show) {
     /* Extend the bottom of the bandwidth graph and show the settings */
@@ -229,7 +229,7 @@ BandwidthGraph::showSettingsFrame(bool show)
     ui.frmSettings->setVisible(false);
     ui.btnToggleSettings->setChecked(false);
     ui.btnToggleSettings->setText(tr("Show Settings"));
-    
+
     /* 6 = vertical spacing between the settings frame and graph frame */
     newSize.setHeight(newSize.height() - ui.frmSettings->height() - 6);
     setMinimumSize(minSize);
@@ -242,7 +242,7 @@ void
 BandwidthGraph::setOpacity(int value)
 {
   qreal newValue = value / 100.0;
-  
+
   /* Opacity only supported by Mac and Win32 */
 #if defined(Q_WS_MAC)
   this->setWindowOpacity(newValue);

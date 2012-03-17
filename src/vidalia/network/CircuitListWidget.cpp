@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -75,7 +75,7 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
   QTreeWidgetItem *item = itemAt(pos);
   if (!item)
     return;
-    
+
   if (!item->parent()) {
     /* A circuit was selected */
     CircuitItem *circuitItem = dynamic_cast<CircuitItem *>(item);
@@ -93,7 +93,7 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
     menu.addSeparator();
 #endif
     menu.addAction(closeAct);
-      
+
     /* Display the context menu and find out which (if any) action was
      * selected */
     QAction* action = menu.exec(mapToGlobal(pos));
@@ -106,7 +106,7 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
     StreamItem *streamItem = dynamic_cast<StreamItem *>(item);
     if (!streamItem)
       return;
- 
+
     /* Set up the stream context menu */
     QAction *closeAct = new QAction(QIcon(IMG_CLOSE),
                                     tr("Close Stream (Del)"), this);
@@ -145,7 +145,7 @@ CircuitListWidget::addCircuit(const Circuit &circuit)
 {
   /* Check to see if the circuit already exists in the tree */
   CircuitItem *item = findCircuitItem(circuit.id());
-  
+
   if (!item) {
     /* Add the new circuit */
     item = new CircuitItem(circuit);
@@ -200,7 +200,7 @@ CircuitListWidget::scheduleCircuitRemoval(CircuitItem *circuit, int delay)
   if (!_circuitRemovalList.contains(circuit)) {
     _circuitRemovalList << circuit;
     QTimer::singleShot(delay, this, SLOT(removeCircuit()));
-  } 
+  }
 }
 
 /** Schedules the given stream to be removed after the specified timeout. */
@@ -210,7 +210,7 @@ CircuitListWidget::scheduleStreamRemoval(StreamItem *stream, int delay)
   if (!_streamRemovalList.contains(stream)) {
     _streamRemovalList << stream;
     QTimer::singleShot(delay, this, SLOT(removeStream()));
-  } 
+  }
 }
 
 /** Removes the first circuit scheduled to be removed. */
@@ -240,7 +240,7 @@ CircuitListWidget::removeCircuit(CircuitItem *circuit)
         int index = _streamRemovalList.indexOf(stream);
         _streamRemovalList.replace(index, (StreamItem *)0);
       }
-      
+
       /* Remove the stream item from the circuit */
       circuit->removeStream(stream);
     }
@@ -264,7 +264,7 @@ void
 CircuitListWidget::removeStream(StreamItem *stream)
 {
   if (stream) {
-    /* Try to get the stream's parent (a circuit item) */ 
+    /* Try to get the stream's parent (a circuit item) */
     CircuitItem *circuit = (CircuitItem *)stream->parent();
     if (circuit) {
       /* Remove the stream from the circuit and delete the item */
@@ -307,11 +307,11 @@ CircuitListWidget::findStreamItem(const StreamId &streamid)
 {
   int numCircs = topLevelItemCount();
   int numStreams;
-  
+
   for (int i = 0; i < numCircs; i++) {
     CircuitItem *circuit = (CircuitItem *)topLevelItem(i);
     numStreams = circuit->childCount();
-  
+
     for (int j = 0; j < numStreams; j++) {
       StreamItem *stream = (StreamItem *)circuit->child(j);
       if (streamid == stream->id()) {
@@ -324,14 +324,14 @@ CircuitListWidget::findStreamItem(const StreamId &streamid)
 
 /** Called when the current item selection has changed. */
 void
-CircuitListWidget::onSelectionChanged(QTreeWidgetItem *cur, 
+CircuitListWidget::onSelectionChanged(QTreeWidgetItem *cur,
                                       QTreeWidgetItem *prev)
 {
   Q_UNUSED(prev);
 
   if (cur) {
     Circuit circuit;
-    
+
     if (!cur->parent()) {
       /* User selected a CircuitItem, so just grab the Circuit */
       circuit = ((CircuitItem *)cur)->circuit();
@@ -352,7 +352,7 @@ CircuitListWidget::circuits()
 {
   int numCircs = topLevelItemCount();
   CircuitList circs;
-  
+
   for (int i = 0; i < numCircs; i++) {
     CircuitItem *circ = (CircuitItem *)topLevelItem(i);
     circs << circ->circuit();

@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -68,13 +68,13 @@ bool
 AbstractTorSettings::isEmptyValue(const QVariant &value) const
 {
   switch (value.type()) {
-    case QVariant::String: 
+    case QVariant::String:
       return (value.toString().isEmpty());
     case QVariant::StringList:
       return (value.toStringList().isEmpty());
     case QVariant::UInt:
     case QVariant::Int:
-      return (value.toUInt() == 0); 
+      return (value.toUInt() == 0);
     case QVariant::Invalid:
       return true;
     default:  break;
@@ -90,7 +90,7 @@ AbstractTorSettings::localValue(const QString &key) const
   return VSettings::value(key);
 }
 
-/** Returns the value associated with <b>key</b> by querying TOr via 
+/** Returns the value associated with <b>key</b> by querying TOr via
  * <i>getconf key</i>. */
 QVariant
 AbstractTorSettings::torValue(const QString &key) const

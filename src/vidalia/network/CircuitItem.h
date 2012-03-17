@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -32,7 +32,7 @@ class CircuitItem : public QTreeWidgetItem
 public:
   /** Default constructor */
   CircuitItem(const Circuit &circuit);
- 
+
   /** Adds a stream to this circuit item */
   void addStream(StreamItem *stream);
   /** Removes the stream item from the list and frees its memory. */
@@ -45,7 +45,7 @@ public:
   Circuit circuit() const { return _circuit; }
   /** Returns a list of all stream items on this circuit. */
   QList<StreamItem *> streams() const;
-  
+
 private:
   Circuit _circuit; /**< Circuit associated with this item. */
 };

@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -82,13 +82,13 @@ ZImageView::drawScaledImage()
   // aspect ratio as the screen, so we cut the _view region out of the _image
   // and scale it to the screen dimensions and paint it.
 
-  // There is a slight catch in that the _view may be larger than the image in 
+  // There is a slight catch in that the _view may be larger than the image in
   // one or both directions.  In that case, we need to reduce the _view region
   // to lie within the image, then paint the background around it.  Copying
   // a region from an image where the region is bigger than the image results
   // in the parts outside the image being black, which is not what we want.
 
-  // The view has the same aspect ratio as the screen, so the vertical and 
+  // The view has the same aspect ratio as the screen, so the vertical and
   // horizontal scale factors will be equal.
 
   double scaleFactor = double(sRect.width()) / double(_view.width());
@@ -108,12 +108,12 @@ ZImageView::drawScaledImage()
   }
 
   // Figure out the size that the 'r' region will be when drawn to the screen.
-  QSize scaleTo(int(double(r.width()) * scaleFactor), 
+  QSize scaleTo(int(double(r.width()) * scaleFactor),
 		int(double(r.height()) * scaleFactor));
 
   /** Make a copy of the image so we don't ruin the original */
   QImage i = _image.copy();
-  
+
   /** Create a QPainter that draws directly on the copied image and call the
    * virtual function to draw whatever the subclasses need to on the image. */
   QPainter painter;
@@ -132,7 +132,7 @@ ZImageView::drawScaledImage()
   // We don't want to paint the background
   // because this isn't double buffered and that would flicker.
   // We could double buffer it, but that would cost ~3 MB of memory.
-  
+
   QPainter p(this);
   if (extraWidth > 0) {
     p.fillRect(0, 0, extraWidth, sRect.height(), background);
@@ -149,14 +149,14 @@ ZImageView::drawScaledImage()
   // Finally, paint the image copy.
   p.drawImage(extraWidth, extraHeight, i);
 }
-	
+
 /** Updates the displayed viewport. */
 void
 ZImageView::updateViewport(int screendx, int screendy)
 {
   /* The gist of this is to find the biggest and smallest possible viewports,
-   * then use the _zoom factor to interpolate between them.  Also pan the 
-   * viewport, but constrain each dimension to lie within the image or to be 
+   * then use the _zoom factor to interpolate between them.  Also pan the
+   * viewport, but constrain each dimension to lie within the image or to be
    * centered if the image is too small in that direction. */
 
   QRect sRect = rect();
@@ -166,9 +166,9 @@ ZImageView::updateViewport(int screendx, int screendy)
   float sh = float(sRect.height());
   float iw = float(iRect.width());
   float ih = float(iRect.height());
-	
-  // Get the initial max and min sizes for the viewport.  These won't have the 
-  // correct aspect ratio.  They will actually be the least upper bound and 
+
+  // Get the initial max and min sizes for the viewport.  These won't have the
+  // correct aspect ratio.  They will actually be the least upper bound and
   // greatest lower bound of the set containing the screen and image rects.
   float maxw = float(std::max<int>(sRect.width(), iRect.width())) + _padding;
   float maxh = float(std::max<int>(sRect.height(), iRect.height())) + _padding;
@@ -194,7 +194,7 @@ ZImageView::updateViewport(int screendx, int screendy)
     newminw = minw;
     newminh = newminw / aspect;
   }
-	
+
   // Now interpolate between max and min.
   float vw = (1.0f - _zoom) * (newmaxw - newminw) + newminw;
   float vh = (1.0f - _zoom) * (newmaxh - newminh) + newminh;
@@ -207,7 +207,7 @@ ZImageView::updateViewport(int screendx, int screendy)
   // Convert the pan delta from screen coordinates to view coordinates.
   float vdx = vw * (float(screendx) / sw);
   float vdy = vh * (float(screendy) / sh);
-	
+
   // Constrain the center of the viewport to the image rect.
   _desiredX = qBound(0.0f, _desiredX + vdx, iw);
   _desiredY = qBound(0.0f, _desiredY + vdy, ih);
@@ -222,10 +222,10 @@ ZImageView::updateViewport(int screendx, int screendy)
   //
   // If the viewport is smaller than the image in either direction, then make
   // sure the edge of the viewport isn't past the edge of the image.
-	
+
   vdx = 0;
   vdy = 0;
-   
+
   if (iw <= vw) {
     vdx = (iw / 2.0f) - vx;  // Center horizontally.
   } else {
@@ -238,7 +238,7 @@ ZImageView::updateViewport(int screendx, int screendy)
       vdx = iw - vr;
     }
   }
-    
+
   if (ih <= vh) {
     vdy = (ih / 2.0f) - vy; // Center vertically.
   } else {
@@ -316,7 +316,7 @@ ZImageView::mousePressEvent(QMouseEvent *e)
 }
 
 /** Responds to the user releasing a mouse button. */
-void 
+void
 ZImageView::mouseReleaseEvent(QMouseEvent *e)
 {
   e->accept();
@@ -332,8 +332,8 @@ void
 ZImageView::mouseDoubleClickEvent(QMouseEvent *e)
 {
   e->accept();
-  
-  QPoint center = rect().center(); 
+
+  QPoint center = rect().center();
   int dx = e->x() - center.x();
   int dy = e->y() - center.y();
   updateViewport(dx, dy);

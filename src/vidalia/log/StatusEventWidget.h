@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -45,7 +45,7 @@ public:
    */
   void setMaximumItemCount(int maximumItemCount);
 
-  /** Returns the maximum number of status items that can be displayed in 
+  /** Returns the maximum number of status items that can be displayed in
    * this StatusEventWidget.
    */
   int maximumItemCount() const;
@@ -131,7 +131,7 @@ private slots:
 
   /** Called when Tor decides the client's external IP address has changed
    * to <b>ip</b>. If <b>hostname</b> is non-empty, Tor obtained the new
-   * value for <b>ip</b> by resolving <b>hostname</b>. 
+   * value for <b>ip</b> by resolving <b>hostname</b>.
    */
   void externalAddressChanged(const QHostAddress &ip, const QString &hostname);
 
@@ -140,36 +140,36 @@ private slots:
    * "NXDOMAIN".
    */
   void dnsHijacked();
-  
+
   /** Called when Tor determines that the user's DNS provider is providing
    * a hijacked address even for well-known websites.
    */
   void dnsUseless();
-  
-  /** Indicates Tor has started testing the reachability of its OR port 
+
+  /** Indicates Tor has started testing the reachability of its OR port
    * using the IP address <b>ip</b> and port <b>port</b>.
    */
   void checkingOrPortReachability(const QHostAddress &ip, quint16 port);
-  
+
   /** Tor has completed testing the reachability of its OR port using
    * the IP address <b>ip</b> and port <b>port</b>. If the user's OR port
    * was reachable, <b>reachable</b> will be set to true.
    */
   void orPortReachabilityFinished(const QHostAddress &ip, quint16 port,
                                   bool reachable);
-  
+
   /** Indicates Tor has started testing the reachability of its directory
    * port using the IP address <b>ip</b> and port <b>port</b>.
    */
   void checkingDirPortReachability(const QHostAddress &ip, quint16 port);
-  
+
   /** Tor has completed testing the reachability of its directory port using
    * the IP address <b>ip</b> and port <b>port</b>. If the user's directory
    * port was reachable, <b>reachable</b> will be set to true.
    */
   void dirPortReachabilityFinished(const QHostAddress &ip, quint16 port,
                                    bool reachable);
-  
+
   /** Called when the directory authority with IP address <b>ip</b> and
    * port <b>port</b> rejected the user's server descriptor. <b>reason</b>
    * describes why the descriptor was rejected (e.g., malformed, skewed

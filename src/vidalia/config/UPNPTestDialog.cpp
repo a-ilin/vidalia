@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file UPNPTestDialog.cpp
 ** \brief Dialog that displays the progress of a UPnP configuration test
 */
@@ -27,7 +27,7 @@ UPNPTestDialog::UPNPTestDialog(quint16 orPort, quint16 dirPort, QWidget *parent)
 
   ui.buttonBox->setStandardButtons(QDialogButtonBox::Close
                                      | QDialogButtonBox::Help);
-  
+
   ui.progressBar->setValue(0);
   ui.progressBar->setFormat("");
   ui.progressBar->setMinimum(0);
@@ -63,8 +63,8 @@ UPNPTestDialog::startTest()
 
   connect(UPNPControl::instance(), SIGNAL(stateChanged(UPNPControl::UPNPState)),
           this, SLOT(upnpStateChanged(UPNPControl::UPNPState)));
-  
-  UPNPControl::instance()->setDesiredState(_dirPort, _orPort);  
+
+  UPNPControl::instance()->setDesiredState(_dirPort, _orPort);
 }
 
 /** Called when the UPnP test successfully enables port forwarding. Enables
@@ -88,7 +88,7 @@ UPNPTestDialog::testFailed()
   ui.buttonBox->setStandardButtons(QDialogButtonBox::Retry
                                      | QDialogButtonBox::Close
                                      | QDialogButtonBox::Help);
-  
+
   disconnect(UPNPControl::instance(), 0, this, 0);
 }
 

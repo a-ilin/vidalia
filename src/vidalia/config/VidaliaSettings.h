@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -48,12 +48,12 @@ public:
   QString getLanguageCode();
   /** Saves the preferred language code. */
   void setLanguageCode(QString languageCode);
- 
+
   /** Gets the interface style key (e.g., "windows", "motif", etc.) */
   QString getInterfaceStyle();
   /** Sets the interface style key. */
   void setInterfaceStyle(QString styleKey);
-  
+
   /** Returns true if Vidalia should start Tor when it starts. */
   bool runTorAtStart();
   /** Set whether to run Tor when Vidalia starts. */
@@ -64,7 +64,7 @@ public:
   bool showMainWindowAtStart();
   /** Sets whether to show Vidalia's main window when the application starts. */
   void setShowMainWindowAtStart(bool show);
-  
+
   /** Returns true if Vidalia should start on system boot. */
   bool runVidaliaOnBoot();
   /** Set whether to run Vidalia on system boot. */
@@ -109,7 +109,7 @@ public:
   QString getProxyExecutableArguments() const;
   /** Sets the additional arguments to be passed to Proxy Executable */
   void setProxyExecutableArguments(const QString &proxyExecutableArguments);
-  
+
   /** Returns true if Vidalia should automatically check for software updates.
    */
   bool isAutoUpdateEnabled() const;
@@ -150,7 +150,7 @@ public:
   /** Returns true if Vidalia should skip the version check for tor */
   bool skipVersionCheck() const;
 
-  /** Returns true if Vidalia should not ask if the user wants to shutdown 
+  /** Returns true if Vidalia should not ask if the user wants to shutdown
    *  tor gracefully */
   bool rememberShutdown();
   /** Sets RememberShutdown to val */

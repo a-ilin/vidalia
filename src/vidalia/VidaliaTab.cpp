@@ -59,13 +59,13 @@ VidaliaTab::retranslateUi()
   /* The default retranslateUi() implementation does nothing */
 }
 
-void 
+void
 VidaliaTab::setOnTop(bool top)
 {
   _onTop = top;
 }
 
-void 
+void
 VidaliaTab::closeEvent(QCloseEvent *event)
 {
   event->ignore();

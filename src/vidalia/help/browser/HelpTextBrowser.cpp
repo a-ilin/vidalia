@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -39,7 +39,7 @@ HelpTextBrowser::loadResource(int type, const QUrl &name)
   /* If it's an HTML file, we'll handle it ourselves */
   if (type == QTextDocument::HtmlResource) {
     QString helpPath = ":/help/";
-    
+
     /* Fall back to English if there is no translation of the specified help
      * page in the current language. */
     if (!name.path().contains("/")) {
@@ -48,7 +48,7 @@ HelpTextBrowser::loadResource(int type, const QUrl &name)
         language = "en";
       helpPath += language + "/";
     }
-    
+
     QFile file(helpPath + name.path());
     if (!file.open(QIODevice::ReadOnly)) {
       return tr("Error opening help file: ") + name.path();
@@ -76,12 +76,12 @@ HelpTextBrowser::setSource(const QUrl &url)
                      "anonymous.")) +
                 p(tr("Do you want Vidalia to open the link in your Web "
                      "browser?")),
-                VMessageBox::Yes|VMessageBox::Default, 
+                VMessageBox::Yes|VMessageBox::Default,
                 VMessageBox::Cancel|VMessageBox::Cancel);
-    
+
     if (ret == VMessageBox::Cancel)
       return;
-    
+
     bool ok = QDesktopServices::openUrl(url);
     if (!ok) {
       VMessageBox::information(this,

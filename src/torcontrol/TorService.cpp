@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file TorService.cpp
 ** \brief Starts, stops, installs, and uninstalls a Tor service (Win32).
 */
@@ -23,7 +23,7 @@
 #define UNKNOWN_EXIT_CODE     -999999
 
 /** List of dynamically loaded NT service functions. */
-ServiceFunctions TorService::_service_fns = 
+ServiceFunctions TorService::_service_fns =
   { false,
     NULL, NULL, NULL, NULL, NULL,
     NULL, NULL, NULL, NULL, NULL
@@ -91,8 +91,8 @@ TorService::openService()
     return NULL;
   if (!_scm)
     return NULL;
-  return _service_fns.OpenServiceA(_scm, 
-                                   (LPCTSTR)TOR_SERVICE_NAME, 
+  return _service_fns.OpenServiceA(_scm,
+                                   (LPCTSTR)TOR_SERVICE_NAME,
                                    TOR_SERVICE_ACCESS);
 }
 
@@ -204,7 +204,7 @@ TorService::exitCode()
 {
   SC_HANDLE service;
   int exitCode = UNKNOWN_EXIT_CODE;
-  
+
   service = openService();
   if (service) {
     SERVICE_STATUS s;
@@ -224,7 +224,7 @@ TorService::exitCode()
 QProcess::ExitStatus
 TorService::exitStatus()
 {
-  /* NT services don't really have an equivalent to QProcess::CrashExit, so 
+  /* NT services don't really have an equivalent to QProcess::CrashExit, so
    * this just returns QProcess::NormalExit. Tor _could_ set
    * dwServiceSpecificExitCode to some magic value when it starts and then
    * set it to the real exit code when Tor exits. Then we would know if the
@@ -240,10 +240,10 @@ TorService::install(const QString &torPath, const QString &torrc,
                     quint16 controlPort)
 {
   SC_HANDLE service;
-  
+
   if (!_scm)
     return false;
- 
+
   service = openService();
   if (!service) {
     QString command = QString("\"%1\" --nt-service -f \"%2\" ControlPort %3")
@@ -253,11 +253,11 @@ TorService::install(const QString &torPath, const QString &torrc,
 
     tc::debug("Installing the Tor service using the command line '%1'")
                                                           .arg(command);
-    service = _service_fns.CreateServiceA(_scm, 
+    service = _service_fns.CreateServiceA(_scm,
                               (LPCTSTR)TOR_SERVICE_NAME, (LPCTSTR)TOR_SERVICE_DISP,
                               TOR_SERVICE_ACCESS, SERVICE_WIN32_OWN_PROCESS,
                               SERVICE_AUTO_START, SERVICE_ERROR_IGNORE,
-                              (LPCTSTR)command.toAscii().data(), NULL, NULL, NULL, 
+                              (LPCTSTR)command.toAscii().data(), NULL, NULL, NULL,
                               NULL, NULL);
     if (!service) {
       /* XXX This needs an actual reason message. */
@@ -267,7 +267,7 @@ TorService::install(const QString &torPath, const QString &torrc,
 
     SERVICE_DESCRIPTION desc;
     desc.lpDescription = TOR_SERVICE_DESC;
-    _service_fns.ChangeServiceConfig2A(service, 
+    _service_fns.ChangeServiceConfig2A(service,
                                        SERVICE_CONFIG_DESCRIPTION, &desc);
     closeHandle(service);
   }
@@ -302,7 +302,7 @@ TorService::status()
   SC_HANDLE service;
   SERVICE_STATUS s;
   DWORD stat = SERVICE_ERROR;
-  
+
   service = openService();
   if (service && _service_fns.QueryServiceStatus(service, &s))
     stat = s.dwCurrentState;

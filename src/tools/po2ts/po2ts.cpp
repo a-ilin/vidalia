@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -31,7 +31,7 @@ QDomElement
 new_context_element(QDomDocument *ts, const QString &contextName)
 {
   QDomElement context, name;
- 
+
   /* Create a <name> element */
   name = ts->createElement(TS_ELEMENT_NAME);
   name.appendChild(ts->createTextNode(contextName));
@@ -76,7 +76,7 @@ QDomDocument
 new_ts_document()
 {
   QDomDocument ts(TS_DOCTYPE);
-  
+
   QDomElement root = ts.createElement(TS_ELEMENT_ROOT);
   root.setAttribute(TS_ATTR_VERSION, "1.1");
   ts.appendChild(root);
@@ -110,8 +110,8 @@ parse_message_context_lame(const QString &str)
 QString
 parse_message_string(const QString &msg)
 {
-  QString out = msg.trimmed(); 
-  
+  QString out = msg.trimmed();
+
   out.replace("\"\n\"", "");
   if (out.startsWith("\""))
     out = out.remove(0, 1);
@@ -129,7 +129,7 @@ read_next_line(QTextStream *stream)
   return stream->readLine().append("\n");
 }
 
-/** Skip past the header portion of the PO file and any leading whitespace. 
+/** Skip past the header portion of the PO file and any leading whitespace.
  * The next line read from <b>po</b> will be the first non-header line in the
  * document. */
 void
@@ -162,7 +162,7 @@ po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
   Q_ASSERT(errorMessage);
 
   *ts = new_ts_document();
-  
+
   skip_po_header(po);
   line = read_next_line(po);
   while (!po->atEnd()) {
@@ -178,19 +178,19 @@ po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
 
     /* A context specified on a "msgctxt" line takes precedence over a context
      * specified using the overload "#:" notation. */
-    if (line.startsWith("msgctxt ")) {    
+    if (line.startsWith("msgctxt ")) {
       msgctxt = line.section(" ", 1);
       msgctxt = parse_message_context(msgctxt);
       line = read_next_line(po);
     }
-    
+
     /* Parse the (possibly multiline) message source string */
     if (!line.startsWith("msgid ")) {
       *errorMessage = "expected 'msgid' line";
       return -1;
     }
     msgid = line.section(" ", 1);
-    
+
     line = read_next_line(po);
     while (line.startsWith("\"")) {
       msgid.append(line);
@@ -204,7 +204,7 @@ po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
       return -1;
     }
     msgstr = line.section(" ", 1);
-    
+
     line = read_next_line(po);
     while (line.startsWith("\"")) {
       msgstr.append(line);
@@ -220,8 +220,8 @@ po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
       ts->documentElement().appendChild(contextElement);
       contextElements.insert(msgctxt, contextElement);
     }
-    contextElement.appendChild(new_message_element(ts, msgid, msgstr)); 
-    
+    contextElement.appendChild(new_message_element(ts, msgid, msgstr));
+
     n_strings++;
   }
   return n_strings;
@@ -269,7 +269,7 @@ main(int argc, char *argv[])
         return 1;
       }
     } else
-      print_usage_and_exit(); 
+      print_usage_and_exit();
   }
 
   /* Open the input PO file for reading. */

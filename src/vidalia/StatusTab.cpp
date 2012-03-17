@@ -19,59 +19,59 @@ StatusTab::~StatusTab()
 
 }
 
-void 
+void
 StatusTab::setTorStatus(const QString &text)
 {
   ui.lblTorStatus->setText(text);
 }
 
-void 
+void
 StatusTab::setTorStatus(const QPixmap &icon)
 {
   ui.lblTorStatusImg->setPixmap(icon);
 }
 
-void 
+void
 StatusTab::setTorStatus(const QPixmap &icon, const QString &text)
 {
   ui.lblTorStatusImg->setPixmap(icon);
   ui.lblTorStatus->setText(text);
 }
 
-void 
+void
 StatusTab::setTorStatusVisible(bool visible)
 {
   ui.lblTorStatusImg->setVisible(visible);
   ui.lblTorStatus->setVisible(visible);
 }
 
-void 
+void
 StatusTab::setProgress(int progress, const QString &description)
 {
   ui.progressBar->setValue(progress);
   ui.lblStartupProgress->setText(description);
 }
 
-void 
+void
 StatusTab::setProgressVisible(bool visible)
 {
   ui.progressBar->setVisible(visible);
   ui.lblStartupProgress->setVisible(visible);
 }
 
-bool 
+bool
 StatusTab::isCheckedShowOnStartup()
 {
   return ui.chkShowOnStartup->isChecked();
 }
 
-void 
+void
 StatusTab::checkShowOnStartup(bool check)
 {
   ui.chkShowOnStartup->setChecked(check);
 }
 
-void 
+void
 StatusTab::hideCheckShowOnStartup()
 {
   ui.chkShowOnStartup->hide();

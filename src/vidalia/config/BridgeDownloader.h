@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -86,7 +86,7 @@ private slots:
    * statusChanged() signal is emitted with the appropriate text
    * describing the new state of the request.
    */
-  void httpsStateChanged(int state); 
+  void httpsStateChanged(int state);
 
   /** Called when the underlying QHttp object used to make the bridge
    * request completes. <b>error</b> is set to false if the request was
@@ -100,7 +100,7 @@ private slots:
   /** Called when the HTTPS connection encounters one or more
    * <b>sslErrors</b>. Currently the errors are just logged and
    * bridgeRequestFailed() is <i>not</i> emitted, since QHttp will also
-   * emit 
+   * emit
    */
   void sslErrors(QNetworkReply *, const QList<QSslError> &sslErrors);
 
@@ -113,7 +113,7 @@ private:
   /** Used to connect to the bridge database, send an HTTPS request for
    * new bridge addresses and then read the response. */
   QNetworkAccessManager* _https;
-  
+
   /** Identifier of the current bridge request */
   QNetworkReply *_reply;
 };

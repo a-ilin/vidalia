@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -90,9 +90,9 @@ TorSocket::sendSocksHandshake(const QString &remoteHost, quint16 remotePort)
   sock << (quint8)0;
 }
 
-/** Handles the second half of the handshake, received from the SOCKS 
- * proxy server. The response should be formatted as follows: 
- * 
+/** Handles the second half of the handshake, received from the SOCKS
+ * proxy server. The response should be formatted as follows:
+ *
  *    0x00                 (response version)
  *    STATUS               (0x5A means success; other values mean failure)
  *    PORT                 (not set)
@@ -106,10 +106,10 @@ TorSocket::onHandshakeResponse()
     /* We've received our response, so stop waiting for it. */
     QObject::disconnect(this, SIGNAL(readyRead()),
                         this, SLOT(onHandshakeResponse()));
-    
+
     /* Read the 8-byte response off the socket. */
     response = read(SOCKS_RESPONSE_LEN);
-    
+
     /* Check to make sure we got a good response from the proxy. */
     if ((uchar)response[0] == (uchar)SOCKS_RESPONSE_VERSION &&
         (uchar)response[1] == (uchar)SOCKS_CONNECT_STATUS_OK) {

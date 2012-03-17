@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -35,7 +35,7 @@ VidaliaTabPrototype::constructor(QScriptContext *context, QScriptEngine *engine)
   return engine->newQObject(new VidaliaTab(title, name), QScriptEngine::ScriptOwnership);
 }
 
-int 
+int
 VidaliaTabPrototype::metaTypeId()
 {
   return qMetaTypeId<VidaliaTab *>();
@@ -56,7 +56,7 @@ VidaliaTabPrototype::setLayout(QLayout *layout)
     obj->setLayout(layout);
 }
 
-QVariant 
+QVariant
 VidaliaTabPrototype::getSetting(QString name, QVariant defaultValue)
 {
   VidaliaTab *obj = qscriptvalue_cast<VidaliaTab *>(thisObject());
@@ -65,7 +65,7 @@ VidaliaTabPrototype::getSetting(QString name, QVariant defaultValue)
     return obj->getSetting(name, defaultValue);
 }
 
-void 
+void
 VidaliaTabPrototype::saveSetting(QString name, QVariant value)
 {
   VidaliaTab *obj = qscriptvalue_cast<VidaliaTab *>(thisObject());

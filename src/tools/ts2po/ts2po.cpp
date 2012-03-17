@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -115,7 +115,7 @@ convert_context(const QDomElement &context, QString *po, QString *errorMessage)
     msgstr.replace("\r", "");
     msgstr.replace("\"", "\\\"");
     msgstr.replace("\n", "\\n\"\n\"");
-  
+
     /* Try to extract the <location> tags (optional) */
     location = msg.firstChildElement(TS_ELEMENT_LOCATION);
     filename = parse_filename(location.attribute(TS_ATTR_FILENAME));
@@ -128,7 +128,7 @@ convert_context(const QDomElement &context, QString *po, QString *errorMessage)
     (*po).append(QString("msgid \"%1\"\n").arg(msgid));
     (*po).append(QString("msgstr \"%1\"\n").arg(msgstr));
     (*po).append("\n");
-  
+
     /* Find the next source message in the current context */
     msg = msg.nextSiblingElement(TS_ELEMENT_MESSAGE);
     n++;
@@ -152,7 +152,7 @@ ts2po(const QDomDocument *ts, QString *po, const QString &encoding,
   Q_ASSERT(errorMessage);
 
   /* Get the document root and check that it's valid */
-  QDomElement root = ts->documentElement(); 
+  QDomElement root = ts->documentElement();
   if (root.tagName() != TS_DOCTYPE)
     return -1;
 
@@ -164,12 +164,12 @@ ts2po(const QDomDocument *ts, QString *po, const QString &encoding,
   QDomElement child = root.firstChildElement(TS_ELEMENT_CONTEXT);
   while (!child.isNull()) {
     QString context;
-  
+
     /* Convert the current .ts context to .po */
     int n = convert_context(child, &context, errorMessage);
     if (n < 0)
       return -1;
-    
+
     /* Add it to the output file */
     (*po).append(context);
     n_strings += n;
@@ -203,7 +203,7 @@ main(int argc, char *argv[])
   char *infile, *outfile;
   QTextCodec *codec = QTextCodec::codecForName("utf-8");
   bool quiet = false;
-  
+
   /* Check for the correct number of input parameters. */
   if (argc < 5 || argc > 8)
     print_usage_and_exit();
@@ -222,9 +222,9 @@ main(int argc, char *argv[])
         return 1;
       }
     } else
-      print_usage_and_exit(); 
+      print_usage_and_exit();
   }
- 
+
   /* Read and parse the input .ts file. */
   QDomDocument ts;
   QFile tsFile(infile);
@@ -233,7 +233,7 @@ main(int argc, char *argv[])
                                                   .arg(errorMessage);
     return 1;
   }
-  
+
   /* Try to open the output .po file for writing. */
   QFile poFile(outfile);
   if (!poFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -242,7 +242,7 @@ main(int argc, char *argv[])
                                                    .arg(tsFile.errorString());
     return 2;
   }
- 
+
   /* Convert the input .ts file to a .po formatted file. */
   QString po;
   int n_strings = ts2po(&ts, &po, QString(codec->name()), &errorMessage);
@@ -258,7 +258,7 @@ main(int argc, char *argv[])
   out.setCodec(codec);
   out << po;
   poFile.close();
- 
+
   if (!quiet) {
     QTextStream results(stdout);
     results << QString("Converted %1 strings from %2 to %3.\n").arg(n_strings)

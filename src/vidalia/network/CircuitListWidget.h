@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -29,14 +29,14 @@
 class CircuitListWidget : public QTreeWidget
 {
   Q_OBJECT
-  
+
 public:
   /** Circuit list columns. */
   enum Columns {
     ConnectionColumn = 0, /**< Column for either the circuit or stream */
     StatusColumn = 1      /**< Status of the connection. */
   };
-  
+
   /** Default constructor */
   CircuitListWidget(QWidget *parent = 0);
 
@@ -62,14 +62,14 @@ signals:
   void closeStream(StreamId streamid);
   /** Emitted when the user selects a circuit to zoom to. */
   void zoomToCircuit(CircuitId circid);
-  
+
 public slots:
   /** Clears all circuits and streams from the list. */
   void clearCircuits();
 
 private slots:
   /** Removes the first circuit scheduled to be removed.*/
-  void removeCircuit(); 
+  void removeCircuit();
   /** Removes the first stream scheduled to be removed. */
   void removeStream();
   /** Called when the current item selectio has changed. */

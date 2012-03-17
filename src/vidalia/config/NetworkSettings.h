@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -61,7 +61,7 @@ public:
   void setReachablePorts(const QList<quint16> &reachablePorts);
 
   /** Returns the proxy type Tor is using, or NoProxy if it makes direct
-   * connections. */ 
+   * connections. */
   ProxyType getProxyType();
   /** Set the type of proxy Tor should use to <b>type</b>. */
   void setProxyType(ProxyType type);
@@ -73,14 +73,14 @@ public:
 
   /** Returns the username used to login to the proxy server. */
   QString getProxyUsername();
-  /** Sets the proxy server username to <b>user</b>. */ 
+  /** Sets the proxy server username to <b>user</b>. */
   void setProxyUsername(const QString &user);
 
   /** Returns the password used to login to the proxy server. */
   QString getProxyPassword();
-  /** Sets the proxy server password to <b>pass</b>. */ 
+  /** Sets the proxy server password to <b>pass</b>. */
   void setProxyPassword(const QString &pass);
- 
+
   /** Returns true if Tor should try to use bridge nodes to access the Tor
    * network. */
   bool getUseBridges();

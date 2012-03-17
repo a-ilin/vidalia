@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file UPNPControlThread.cpp
 ** \brief Thread for configuring UPnP in the background
 */
@@ -44,8 +44,8 @@ UPNPControlThread::UPNPControlThread(UPNPControl *control)
 }
 
 /** Destructor. The UPnP control thread must be stopped prior to destroying
- * this object. 
- * \sa stop() 
+ * this object.
+ * \sa stop()
  */
 UPNPControlThread::~UPNPControlThread()
 {
@@ -93,7 +93,7 @@ UPNPControlThread::run()
 
 /** Sets up port forwarding according the previously-configured desired state.
  * The desired state is set using UPNPControl's setDesiredState() method.
- * \sa UPNPControl::setDesiredState 
+ * \sa UPNPControl::setDesiredState
  */
 void
 UPNPControlThread::configurePorts()
@@ -183,7 +183,7 @@ UPNPControlThread::stop()
 }
 
 /** Wakes up the UPnP control thread's run() loop.
- * \sa run() 
+ * \sa run()
  */
 void
 UPNPControlThread::wakeup()
@@ -193,14 +193,14 @@ UPNPControlThread::wakeup()
   _waitMutex->unlock();
 }
 
-/** Updates the port mapping for <b>oldPort</b>, changing it to 
+/** Updates the port mapping for <b>oldPort</b>, changing it to
  * <b>newPort</b>. */
 UPNPControl::UPNPError
 UPNPControlThread::updatePort(quint16 oldPort, quint16 newPort)
 {
   UPNPControl::UPNPError retval;
 
-#ifdef Q_OS_WIN32  
+#ifdef Q_OS_WIN32
   // Workaround from http://trolltech.com/developer/knowledgebase/579
   WSAData wsadata;
   if (WSAStartup(MAKEWORD(2,0), &wsadata) != 0) {
@@ -232,7 +232,7 @@ UPNPControlThread::updatePort(quint16 oldPort, quint16 newPort)
   return retval;
 }
 
-/** Discovers UPnP-enabled IGDs on the network. Based on 
+/** Discovers UPnP-enabled IGDs on the network. Based on
  * http://miniupnp.free.fr/files/download.php?file=xchat-upnp20061022.patch
  * This method will block for UPNPCONTROL_DISCOVER_TIMEOUT milliseconds. */
 UPNPControl::UPNPError

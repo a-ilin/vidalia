@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -22,7 +22,7 @@ BridgeDownloaderProgressDialog::BridgeDownloaderProgressDialog(QWidget *parent)
   : QDialog(parent)
 {
   ui.setupUi(this);
- 
+
   connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton *)),
           this, SLOT(buttonClicked(QAbstractButton *)));
 
@@ -56,7 +56,7 @@ void
 BridgeDownloaderProgressDialog::bridgeRequestFinished(const QStringList &bridges)
 {
   Q_UNUSED(bridges);
-  
+
   accept();
 }
 
@@ -81,7 +81,7 @@ BridgeDownloaderProgressDialog::buttonClicked(QAbstractButton *button)
     setStatus(tr("Retrying bridge request..."));
     setDownloadProgress(0, 0);
     ui.buttonBox->setStandardButtons(QDialogButtonBox::Cancel);
-  
+
     QTimer::singleShot(1000, this, SIGNAL(retry()));
   } else {
     done(standardButton);

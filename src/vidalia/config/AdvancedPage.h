@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -23,7 +23,7 @@
 #include <QFileDialog>
 
 
-class AdvancedPage : public ConfigPage 
+class AdvancedPage : public ConfigPage
 {
   Q_OBJECT
 
@@ -36,7 +36,7 @@ public:
   bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
- 
+
   /** Applies the network configuration settings to Tor. Returns true if the
    * settings were applied successfully. Otherwise, <b>errmsg</b> is set
    * and false is returned. */
@@ -58,7 +58,7 @@ private slots:
   /** Called when the user selects a different authentication method from the
    * combo box. */
   void authMethodChanged(int index);
-  /** Called when the user clicks "Browse" to choose location of Tor config 
+  /** Called when the user clicks "Browse" to choose location of Tor config
    * file */
   void browseTorConfig();
   /** Called when the user clicks "Browse" to choose the location of Tor's
@@ -87,8 +87,8 @@ private:
   /** Returns the index in the authentication methods combo box for the given
    * authentication <b>method</b>. */
   int authMethodToIndex(TorSettings::AuthenticationMethod method);
- 
-#if 0 
+
+#if 0
 #if defined(Q_WS_WIN)
   /** Installs or removes the Tor service as necessary */
   void setupService(bool useService);

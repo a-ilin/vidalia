@@ -3,14 +3,14 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
 /*
 ** \file procutil.cpp
-** \brief Process information and pidfile functions 
+** \brief Process information and pidfile functions
 */
 
 #include "procutil.h"
@@ -85,11 +85,11 @@ write_pidfile(const QString &pidFileName, QString *errmsg)
 
 /** Reads the given pidfile and returns the value contained in it. If the file
  * does not exist 0 is returned. Returns -1 if an error occurs. */
-qint64 
+qint64
 read_pidfile(const QString &pidFileName, QString *errmsg)
 {
   qint64 pid;
-  
+
   /* Open the pidfile, if it exists */
   QFile pidfile(pidFileName);
   if (!pidfile.exists()) {
@@ -99,9 +99,9 @@ read_pidfile(const QString &pidFileName, QString *errmsg)
     if (errmsg) {
       *errmsg = pidfile.errorString();
     }
-    return -1; 
+    return -1;
   }
-  
+
   /* Read the PID in from the file */
   QTextStream pidstream(&pidfile);
   pidstream >> pid;

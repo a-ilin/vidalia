@@ -3,17 +3,17 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 /*
-**  This file was originally written by Steven J. Murdoch, and 
+**  This file was originally written by Steven J. Murdoch, and
 **  modified by Matt Edman. It is distributed under the following
 **  license:
 **
 **  Copyright (C) 2007, Matt Edman
-**  Copyright (C) 2007, Steven J. Murdoch 
+**  Copyright (C) 2007, Steven J. Murdoch
 **                      <http://www.cl.cam.ac.uk/users/sjm217/>
 **
 **  This program is free software; you can redistribute it and/or
@@ -28,7 +28,7 @@
 **
 **  You should have received a copy of the GNU General Public License
 **  along with this program; if not, write to the Free Software
-**  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+**  Foundation, Inc., 51 Franklin Street, Fifth Floor,
 **  Boston, MA  02110-1301, USA.
 */
 
@@ -45,9 +45,9 @@
 #include <QString>
 #include <QFileInfo>
 
-#ifdef Q_WS_MAC 
-#include <Carbon/Carbon.h> 
-#endif 
+#ifdef Q_WS_MAC
+#include <Carbon/Carbon.h>
+#endif
 
 /** Default constructor */
 HelperProcess::HelperProcess(QObject *parent)
@@ -101,7 +101,7 @@ HelperProcess::start(const QString &app, const QString &args)
 
 /** Start the specified application. */
 void
-HelperProcess::start(const QString &app, const QStringList &args) 
+HelperProcess::start(const QString &app, const QStringList &args)
 {
   // Remember the executable name of the process
   QFileInfo fi(app);
@@ -137,7 +137,7 @@ HelperProcess::isDone() const
 void
 HelperProcess::toForeground()
 {
-#if defined(Q_WS_MAC) 
+#if defined(Q_WS_MAC)
   ProcessSerialNumber psn;
   OSStatus st;
 
@@ -146,5 +146,5 @@ HelperProcess::toForeground()
   } while(st == -600);
 
   SetFrontProcess(&psn);
-#endif 
+#endif
 }

@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -48,7 +48,7 @@ protected:
   /** Splits <b>text</b> at <b>maxLineWidth</b> pixels computed using the
    * font dimensions given by <b>fontMetrics</b> and returns a QStringList
    * containing at most <b>maxLines</b> of text. If the number of wrapped
-   * lines is greater than or equal to <b>maxLines</b>, the last line of 
+   * lines is greater than or equal to <b>maxLines</b>, the last line of
    * text will be elided. If <b>maxLines</b> is less than or equal to 0, no
    * eliding will be done. If <b>textHeight</b> is not NULL, it will be set
    * to the height (in pixels) required to display the returned wrapped

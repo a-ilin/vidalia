@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -58,7 +58,7 @@ RouterListItem::update(const RouterDescriptor &rd)
     delete _rd;
   }
   _rd = new RouterDescriptor(rd);
-  
+
   /* Determine the status value (used for sorting) and icon */
   if (_rd->offline()) {
     _statusValue = -1;
@@ -69,7 +69,7 @@ RouterListItem::update(const RouterDescriptor &rd)
     statusIcon = QIcon(IMG_NODE_SLEEPING);
     setToolTip(STATUS_COLUMN, tr("Hibernating"));
   } else {
-    _statusValue = (qint64)qMin(_rd->observedBandwidth(), 
+    _statusValue = (qint64)qMin(_rd->observedBandwidth(),
                                 qMin(_rd->averageBandwidth(),
                                      _rd->burstBandwidth()));
     if (_statusValue >= 400*1024) {
@@ -83,7 +83,7 @@ RouterListItem::update(const RouterDescriptor &rd)
     }
     setToolTip(STATUS_COLUMN, tr("%1 KB/s").arg(_statusValue/1024));
   }
-  
+
   /* Make the new information visible */
   setIcon(STATUS_COLUMN, statusIcon);
   setText(NAME_COLUMN, _rd->name());
@@ -113,7 +113,7 @@ RouterListItem::operator<(const QTreeWidgetItem &other) const
 {
   const RouterListItem *a = this;
   const RouterListItem *b = (RouterListItem *)&other;
- 
+
   if (_list) {
     Qt::SortOrder order = _list->header()->sortIndicatorOrder();
     switch (_list->sortColumn()) {

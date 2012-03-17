@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -31,11 +31,11 @@ GeneralPage::GeneralPage(QWidget *parent)
   /* Create settings objects */
   _vidaliaSettings = new VidaliaSettings;
   _torSettings = new TorSettings;
-  
+
   /* Bind event to actions */
-  connect(ui.btnBrowseTorExecutable, SIGNAL(clicked()), 
+  connect(ui.btnBrowseTorExecutable, SIGNAL(clicked()),
           this, SLOT(browseTorExecutable()));
-  connect(ui.btnBrowseProxyExecutable, SIGNAL(clicked()), 
+  connect(ui.btnBrowseProxyExecutable, SIGNAL(clicked()),
           this, SLOT(browseProxyExecutable()));
   connect(ui.btnUpdateNow, SIGNAL(clicked()), this, SLOT(updateNow()));
 
@@ -75,7 +75,7 @@ GeneralPage::browseExecutable(const QString &caption, const QString &file)
 #else
   QString filter = "";
 #endif
- 
+
   QString filePath = QFileDialog::getOpenFileName(this, caption, file, filter);
   return QDir::convertSeparators(filePath);
 }
@@ -115,7 +115,7 @@ GeneralPage::save(QString &errmsg)
     _vidaliaSettings->setProxyExecutableArguments(
       ui.lineProxyExecutableArguments->text());
   }
-  
+
   _torSettings->setExecutable(torExecutable);
   _vidaliaSettings->setRunTorAtStart(ui.chkRunTorAtVidaliaStartup->isChecked());
   _vidaliaSettings->setRunVidaliaOnBoot(
@@ -131,7 +131,7 @@ GeneralPage::load()
 {
   ui.chkRunVidaliaAtSystemStartup->setChecked(
     _vidaliaSettings->runVidaliaOnBoot());
-  
+
   ui.lineTorExecutable->setText(_torSettings->getExecutable());
   ui.chkRunTorAtVidaliaStartup->setChecked(_vidaliaSettings->runTorAtStart());
 

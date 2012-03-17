@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -31,7 +31,7 @@ public:
   /** Constructor. All settings will be under the heading <b>group</b> and
    * <b>torControl</b> will be used to <i>getconf</i> values from Tor. */
   AbstractTorSettings(const QString &group, TorControl *torControl = 0);
-  
+
   /** Sets a value indicating that the server settings have changed since
    * apply() was last called. */
   void setChanged(bool changed);
@@ -53,7 +53,7 @@ protected:
   /** Returns the value associated with <b>key</b> saved in the local
    * configuration file. */
   virtual QVariant localValue(const QString &key) const;
-  /** Returns the value associated with <b>key</b> by querying TOr via 
+  /** Returns the value associated with <b>key</b> by querying TOr via
    * <i>getconf key</i>. */
   virtual QVariant torValue(const QString &key) const;
   /** Saves the value <b>val</b> for the setting <b>key</b> to the local
@@ -61,7 +61,7 @@ protected:
   virtual void setValue(const QString &key, const QVariant &value);
 
   virtual void setVolatileValue(const QString &key, const QVariant &value);
-  
+
   /** Returns true if the given QVariant contains an empty value, depending on
    * the data type. For example, 0 is considered an empty integer and "" is
    * an empty string. */

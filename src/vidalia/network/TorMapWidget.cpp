@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -57,7 +57,7 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   inputHandler()->setMouseButtonPopupEnabled(Qt::RightButton, false);
 
   // Hack to disable Marble's menus
-  disconnect(inputHandler(), SIGNAL(lmbRequest(int,int)), 
+  disconnect(inputHandler(), SIGNAL(lmbRequest(int,int)),
              0,0);
 
   connect(inputHandler(), SIGNAL(lmbRequest(int,int)),
@@ -145,7 +145,7 @@ TorMapWidget::removeCircuit(const CircuitId &circid)
   repaint();
 }
 
-/** Selects and highlights the circuit with the id <b>circid</b> 
+/** Selects and highlights the circuit with the id <b>circid</b>
  * on the map. */
 void
 TorMapWidget::selectCircuit(const CircuitId &circid)
@@ -185,7 +185,7 @@ TorMapWidget::clear()
 
   repaint();
 }
- 
+
 /** Zooms the map to fit entirely within the constraints of the current
  * viewport size. */
 void

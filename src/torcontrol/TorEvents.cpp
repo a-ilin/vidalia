@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file TorEvents.cpp
 ** \brief Parses and dispatches events from Tor
 */
@@ -138,7 +138,7 @@ TorEvents::handleEvent(const ControlReply &reply)
       case ServerStatus:
         handleStatusEvent(ServerStatus, line); break;
 
-      case LogDebug: 
+      case LogDebug:
       case LogInfo:
       case LogNotice:
       case LogWarn:
@@ -163,7 +163,7 @@ TorEvents::handleBandwidthUpdate(const ReplyLine &line)
   if (msg.size() >= 3) {
     quint64 bytesIn = (quint64)msg.at(1).toULongLong();
     quint64 bytesOut = (quint64)msg.at(2).toULongLong();
-  
+
     /* Post the event to each of the interested targets */
     emit bandwidthUpdate(bytesIn, bytesOut);
   }
@@ -194,8 +194,8 @@ TorEvents::handleCircuitStatus(const ReplyLine &line)
 }
 
 /** Handle a stream status event. The format of this message is:
- *     
- *    "650" SP "STREAM" SP StreamID SP StreamStatus SP CircID SP Target SP 
+ *
+ *    "650" SP "STREAM" SP StreamID SP StreamStatus SP CircID SP Target SP
  *     StreamStatus =
  *                 "NEW"          / ; New request to connect
  *                 "NEWRESOLVE"   / ; New request to resolve an address
@@ -207,7 +207,7 @@ TorEvents::handleCircuitStatus(const ReplyLine &line)
  *                 "DETACHED"       ; Detached from circuit; still retriable.
  *      Target = Address ":" Port
  *
- *  If the circuit ID is 0, then the stream is unattached.      
+ *  If the circuit ID is 0, then the stream is unattached.
  */
 void
 TorEvents::handleStreamStatus(const ReplyLine &line)
@@ -243,7 +243,7 @@ TorEvents::handleLogMessage(const ReplyLine &line)
 
 /** Handles a new descriptor event. The format for event messages of this type
  * is:
- *  
+ *
  *   "650" SP "NEWDESC" 1*(SP ServerID)
  */
 void
@@ -294,7 +294,7 @@ TorEvents::handleStatusEvent(Event e, const ReplyLine &line)
   tc::Severity severity;
   QHash<QString,QString> args;
   QString msg = line.getMessage();
-  
+
   severity = tc::severityFromString(msg.section(' ', 1, 1));
   status   = msg.section(' ', 2, 2);
   args     = string_parse_keyvals(msg.section(' ', 3));

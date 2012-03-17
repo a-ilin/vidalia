@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -29,12 +29,12 @@
 
 
 /** Default constructor. */
-LogTreeItem::LogTreeItem(tc::Severity type, const QString &message, 
+LogTreeItem::LogTreeItem(tc::Severity type, const QString &message,
                          const QDateTime &timestamp)
   : QTreeWidgetItem()
 {
   static quint32 seqnum = 0;
-  
+
   /* Set this message's sequence number */
   _seqnum = seqnum++;
   /* Set the item's log time */
@@ -80,7 +80,7 @@ LogTreeItem::setSeverity(tc::Severity type)
       setBackgroundColor(i, Qt::yellow);
     }
   }
-  
+
   setTextAlignment(COL_TYPE, Qt::AlignCenter);
   setText(COL_TYPE, severityToString(type));
   setData(COL_TYPE, ROLE_TYPE, (uint)type);
@@ -138,7 +138,7 @@ LogTreeItem::operator<(const QTreeWidgetItem &other) const
 {
   LogTreeItem *that = (LogTreeItem *)&other;
   int sortColumn = (treeWidget() ? treeWidget()->sortColumn() : COL_TIME);
-   
+
   switch (sortColumn) {
     case COL_TIME:
       /* Sort chronologically */
@@ -148,14 +148,14 @@ LogTreeItem::operator<(const QTreeWidgetItem &other) const
       if (this->severity() == that->severity()) {
         return (this->_seqnum < that->_seqnum);
       }
-      /* The comparison is flipped because higher severities have 
+      /* The comparison is flipped because higher severities have
        * lower numeric values */
       return (this->severity() > that->severity());
     default:
       /* Sort by message, then chronologically */
       QString thisMessage = this->message().toLower();
       QString thatMessage = that->message().toLower();
-      
+
       if (thisMessage == thatMessage) {
         return (this->_seqnum < that->_seqnum);
       }

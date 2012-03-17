@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -89,7 +89,7 @@ win32_app_data_folder()
       CSIDL_LOCAL_APPDATA, QDir::homePath() + "\\Application Data");
 }
 
-/** Returns the value in keyName at keyLocation. 
+/** Returns the value in keyName at keyLocation.
  *  Returns an empty QString if the keyName doesn't exist */
 QString
 win32_registry_get_key_value(QString keyLocation, QString keyName)
@@ -100,11 +100,11 @@ win32_registry_get_key_value(QString keyLocation, QString keyName)
 
   /* Open the key for reading (opens new key if it doesn't exist) */
   if (RegOpenKeyExA(HKEY_CURRENT_USER,
-                    qPrintable(keyLocation), 
+                    qPrintable(keyLocation),
                     0L, KEY_READ, &key) == ERROR_SUCCESS) {
-    
+
     /* Key exists, so read the value into data */
-    RegQueryValueExA(key, qPrintable(keyName), 
+    RegQueryValueExA(key, qPrintable(keyName),
                     NULL, NULL, (LPBYTE)data, &size);
   }
 
@@ -119,7 +119,7 @@ void
 win32_registry_set_key_value(QString keyLocation, QString keyName, QString keyValue)
 {
   HKEY key;
-  
+
   /* Open the key for writing (opens new key if it doesn't exist */
   if (RegOpenKeyExA(HKEY_CURRENT_USER,
                    qPrintable(keyLocation),
@@ -133,7 +133,7 @@ win32_registry_set_key_value(QString keyLocation, QString keyName, QString keyVa
   }
 
   /* Save the value in the key */
-  RegSetValueExA(key, qPrintable(keyName), 0, REG_SZ, 
+  RegSetValueExA(key, qPrintable(keyName), 0, REG_SZ,
                 (BYTE *)qPrintable(keyValue),
                 (DWORD)keyValue.length() + 1); // include null terminator
 
@@ -146,12 +146,12 @@ void
 win32_registry_remove_key(QString keyLocation, QString keyName)
 {
   HKEY key;
-  
+
   /* Open the key for writing (opens new key if it doesn't exist */
   if (RegOpenKeyExA(HKEY_CURRENT_USER,
                    qPrintable(keyLocation),
                    0, KEY_SET_VALUE, &key) == ERROR_SUCCESS) {
-  
+
     /* Key exists so delete it */
     RegDeleteValueA(key, qPrintable(keyName));
   }
@@ -163,7 +163,7 @@ win32_registry_remove_key(QString keyLocation, QString keyName)
 /**
  * Callback for EnumThreadWindows which sends the WM_QUIT message
  */
-BOOL CALLBACK 
+BOOL CALLBACK
 quitWindowCallback(HWND hwnd, LPARAM targetPID)
 {
   DWORD hwndPID = 0;
@@ -241,7 +241,7 @@ win32_process_list()
     (CreateToolhelp32Snapshot_fn)QLibrary::resolve("kernel32", "CreateToolhelp32Snapshot");
   pProcess32First = (Process32First_fn)QLibrary::resolve("kernel32", "Process32First");
   pProcess32Next = (Process32Next_fn)QLibrary::resolve("kernel32", "Process32Next");
- 
+
   if (!pCreateToolhelp32Snapshot || !pProcess32First || !pProcess32Next) {
     qWarning("Unable to load tool help functions. Running process information "
              "will be unavailable.");
@@ -252,14 +252,14 @@ win32_process_list()
   hSnapshot = pCreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
   if (hSnapshot != INVALID_HANDLE_VALUE) {
     proc.dwSize = sizeof(PROCESSENTRY32);
-    
+
     /* Iterate through all the processes in the snapshot */
     if (pProcess32First(hSnapshot, &proc)) {
       do {
         /* Extract the PID and exe filename from the process record */
         pid = (qint64)proc.th32ProcessID;
         exeFile = QString::fromAscii((const char *)proc.szExeFile);
-        
+
         /* Add this process to our list */
         procList.insert(pid, exeFile);
       } while (pProcess32Next(hSnapshot, &proc));

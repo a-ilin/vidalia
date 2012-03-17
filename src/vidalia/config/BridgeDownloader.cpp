@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -27,7 +27,7 @@ BridgeDownloader::BridgeDownloader(QObject *parent)
   connect(_https, SIGNAL(finished(QNetworkReply *)),
           this, SLOT(httpsRequestFinished(QNetworkReply *)));
   connect(_https, SIGNAL(sslErrors(QNetworkReply *, QList<QSslError>)),
-          this, SLOT(sslErrors(QNetworkReply *, QList<QSslError>)));  
+          this, SLOT(sslErrors(QNetworkReply *, QList<QSslError>)));
 }
 
 void
@@ -47,7 +47,7 @@ BridgeDownloader::downloadBridges(BridgeDownloadMethod method)
     case DownloadMethodHttps:
       startHttpsDownload();
       break;
- 
+
     default:
       break;
   }
@@ -69,7 +69,7 @@ BridgeDownloader::isMethodSupported(BridgeDownloadMethod method)
 
 void
 BridgeDownloader::startHttpsDownload()
-{  
+{
   emit statusChanged(tr("Starting HTTPS bridge request..."));
   emit downloadProgress(0, 0);
 
@@ -115,7 +115,7 @@ BridgeDownloader::httpsRequestFinished(QNetworkReply *reply)
   if (reply->error() != QNetworkReply::NoError) {
     QString errorString = reply->errorString();
     vWarn("Bridge request failed: %2").arg(errorString);
-  
+
     emit bridgeRequestFailed(errorString);
   } else {
     QByteArray response = reply->readAll();

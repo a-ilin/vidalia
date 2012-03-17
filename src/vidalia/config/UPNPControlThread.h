@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file UPNPControlThread.h
 ** \brief Thread for configuring UPnP in the background
 */
@@ -64,7 +64,7 @@ private:
   /** Discovers UPnP-enabled IGDs on the network.  This method will block for
    * UPNPCONTROL_DISCOVER_TIMEOUT milliseconds. */
   UPNPControl::UPNPError initializeUPNP();
-  /** Updates the port mapping for <b>oldPort</b>, changing it to 
+  /** Updates the port mapping for <b>oldPort</b>, changing it to
    * <b>newPort</b>. */
   UPNPControl::UPNPError updatePort(quint16 oldPort, quint16 newPort);
   /** Adds a port forwarding mapping from external:<b>port</b> to
@@ -73,7 +73,7 @@ private:
   /** Removes the port mapping for <b>port</b>. Returns 0 on success or
    * non-zero on failure. */
   UPNPControl::UPNPError disablePort(quint16 port);
-  
+
   QTime _upnpInitialized; /**< Time at which the UPnP state was last set. */
   bool _keepRunning; /**< True if the control thread should keep running. */
   UPNPControl *_control; /**< Stores desired UPnP state. */
@@ -87,5 +87,5 @@ private:
   struct IGDdatas data;
   char lanaddr[16];
 };
-#endif 
+#endif
 

@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -27,7 +27,7 @@ GraphFrame::GraphFrame(QWidget *parent)
   _sendData = new QList<qreal>();
   _painter = new QPainter();
   _graphStyle = SolidLine;
-  
+
   /* Initialize graph values */
   _recvData->prepend(0);
   _sendData->prepend(0);
@@ -47,7 +47,7 @@ GraphFrame::~GraphFrame()
   delete _sendData;
 }
 
-/** Gets the width of the desktop, which is the maximum number of points 
+/** Gets the width of the desktop, which is the maximum number of points
  * we can plot in the graph. */
 int
 GraphFrame::getNumPoints()
@@ -84,7 +84,7 @@ GraphFrame::addPoints(qreal recv, qreal send)
   /* Add to the total counters */
   _totalSend += send;
   _totalRecv += recv;
-  
+
   bool maxUpdated = false;
   /* Check for a new maximum value */
   if (send > _maxValue) {
@@ -129,7 +129,7 @@ GraphFrame::setShowCounters(bool showRecv, bool showSend)
   this->update();
 }
 
-/** Overloads default QWidget::paintEvent. Draws the actual 
+/** Overloads default QWidget::paintEvent. Draws the actual
  * bandwidth graph. */
 void
 GraphFrame::paintEvent(QPaintEvent *event)
@@ -138,14 +138,14 @@ GraphFrame::paintEvent(QPaintEvent *event)
 
   /* Set current graph dimensions */
   _rec = this->frameRect();
-  
+
   /* Start the painter */
   _painter->begin(this);
-  
+
   /* We want antialiased lines and text */
   _painter->setRenderHint(QPainter::Antialiasing);
   _painter->setRenderHint(QPainter::TextAntialiasing);
-  
+
   /* Fill in the background */
   _painter->fillRect(_rec, QBrush(BACK_COLOR));
   _painter->drawRect(_rec);
@@ -173,7 +173,7 @@ GraphFrame::paintData()
   /* Convert the bandwidth data points to graph points */
   recvPoints = pointsFromData(_recvData);
   sendPoints = pointsFromData(_sendData);
-  
+
   if (_graphStyle == AreaGraph) {
     /* Plot the bandwidth data as area graphs */
     if (_showRecv)
@@ -181,7 +181,7 @@ GraphFrame::paintData()
     if (_showSend)
       paintIntegral(sendPoints, SEND_COLOR, 0.4);
   }
-  
+
   /* Plot the bandwidth as solid lines. If the graph style is currently an
    * area graph, we end up outlining the integrals. */
   if (_showRecv)
@@ -200,7 +200,7 @@ GraphFrame::pointsFromData(QList<qreal>* list)
   int y = _rec.height();
   qreal scale = (y - (y/10)) / _maxValue;
   qreal currValue;
-  
+
   /* Translate all data points to points on the graph frame */
   points << QPointF(x, y);
   for (int i = 0; i < list->size(); i++) {
@@ -213,7 +213,7 @@ GraphFrame::pointsFromData(QList<qreal>* list)
     x -= SCROLL_STEP;
   }
   points << QPointF(_scaleWidth, y);
-  return points; 
+  return points;
 }
 
 /** Plots an integral using the data points in <b>points</b>. The area will be
@@ -233,7 +233,7 @@ GraphFrame::paintIntegral(QVector<QPointF> points, QColor color, qreal alpha)
 /** Iterates the input list and draws a line on the graph in the appropriate
  * color. */
 void
-GraphFrame::paintLine(QVector<QPointF> points, QColor color, Qt::PenStyle lineStyle) 
+GraphFrame::paintLine(QVector<QPointF> points, QColor color, Qt::PenStyle lineStyle)
 {
   /* Save the current brush, plot the line, and restore the old brush */
   QPen oldPen = _painter->pen();
@@ -259,7 +259,7 @@ GraphFrame::paintTotals()
     y = rowHeight;
     _painter->setPen(RECV_COLOR);
     _painter->drawText(x, y,
-        tr("Recv: ") + totalToStr(_totalRecv) + 
+        tr("Recv: ") + totalToStr(_totalRecv) +
         " ("+tr("%1 KB/s").arg(_recvData->first(), 0, 'f', 2)+")");
   }
 

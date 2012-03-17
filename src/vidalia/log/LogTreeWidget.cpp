@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -109,11 +109,11 @@ QStringList
 LogTreeWidget::selectedMessages()
 {
   QStringList messages;
-  
+
   /* Get all selected log items */
-  QList<LogTreeItem *> items = 
+  QList<LogTreeItem *> items =
     qlist_cast(selectedItems());
-  
+
   /* Format the message items as strings and put them in a list */
   foreach (LogTreeItem *item, qlist_sort(items)) {
     messages << item->toString();
@@ -146,7 +146,7 @@ void
 LogTreeWidget::setMaximumMessageCount(int max)
 {
   while (max < messageCount() && _itemHistory.size() > 0) {
-    /* If the new max is less than the currently displayed number of 
+    /* If the new max is less than the currently displayed number of
      * items, then we'll get rid of some. */
     int index = indexOfTopLevelItem(_itemHistory.takeFirst());
     if (index != -1)
@@ -249,9 +249,9 @@ LogTreeWidget::filter(uint filter)
 QList<LogTreeItem *>
 LogTreeWidget::find(QString text, bool highlight)
 {
-  QList<LogTreeItem *> items = 
+  QList<LogTreeItem *> items =
     qlist_cast(findItems(text, Qt::MatchContains|Qt::MatchWrap, MessageColumn));
-  
+
   if (highlight) {
     /* Deselect all items before highlighting our search results. */
     deselectAll();

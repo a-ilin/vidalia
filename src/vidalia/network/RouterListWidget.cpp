@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -36,7 +36,7 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   sortItems(StatusColumn, Qt::DescendingOrder);
 
   /* Find out when the selected item has changed. */
-  connect(this, SIGNAL(itemSelectionChanged()), 
+  connect(this, SIGNAL(itemSelectionChanged()),
           this, SLOT(onSelectionChanged()));
 }
 
@@ -173,14 +173,14 @@ RouterListWidget::searchNextRouter(const QString routerNickname)
   /* currentIndex().row() = -1 if no item is selected. */
   int startIndex = currentIndex().row() + 1;
   /* Search for a router whose name start with routerNickname. Case-insensitive search. */
-  QModelIndexList qmIndList = model()->match(model()->index(startIndex, NameColumn), 
-                                             Qt::DisplayRole, 
+  QModelIndexList qmIndList = model()->match(model()->index(startIndex, NameColumn),
+                                             Qt::DisplayRole,
                                              QVariant(routerNickname),
                                              1,
                                              (Qt::MatchStartsWith | Qt::MatchWrap));
   if (qmIndList.count() > 0) {
     setCurrentIndex(qmIndList.at(0));
-    /* If item at currentIndex() was already selected but not visible, 
+    /* If item at currentIndex() was already selected but not visible,
      * make it visible. */
     scrollToItem(itemFromIndex(currentIndex()));
   }
@@ -192,7 +192,7 @@ void
 RouterListWidget::keyPressEvent(QKeyEvent *event)
 {
   int index;
-  
+
   QString key = event->text();
   if (!key.isEmpty() && key.at(0).isLetterOrNumber()) {
     /* A text key was pressed, so search for routers that begin with that key. */
@@ -203,7 +203,7 @@ RouterListWidget::keyPressEvent(QKeyEvent *event)
                                                NameColumn);
     if (list.size() > 0) {
       QList<QTreeWidgetItem *> s = selectedItems();
-      
+
       /* A match was found, so deselect any previously selected routers,
        * select the new match, and make sure it's visible. If there was
        * already a router selected that started with the search key, go to the
@@ -222,7 +222,7 @@ RouterListWidget::keyPressEvent(QKeyEvent *event)
   }
 }
 
-/** Finds the list item whose key ID matches <b>id</b>. Returns 0 if not 
+/** Finds the list item whose key ID matches <b>id</b>. Returns 0 if not
  * found. */
 RouterListItem*
 RouterListWidget::findRouterById(QString id)
@@ -256,7 +256,7 @@ RouterListWidget::addRouter(const RouterDescriptor &rd)
   return item;
 }
 
-/** Called when the selected items have changed. This emits the 
+/** Called when the selected items have changed. This emits the
  * routerSelected() signal with the descriptor for the selected router.
  */
 void

@@ -50,7 +50,7 @@ VTabWidget::retranslateUi()
   }
 }
 
-void 
+void
 VTabWidget::setTabButton(int pos, QTabBar::ButtonPosition butpos, QWidget *w)
 {
   tabBar()->setTabButton(pos, butpos, w);

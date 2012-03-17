@@ -38,9 +38,9 @@ public:
 
   /** Default constructor. */
   RouterDescriptor(bool microdesc = false) : _microdesc(microdesc) {}
-  /** Constructor. */ 
+  /** Constructor. */
   RouterDescriptor(QStringList descriptor, bool microdesc = false);
-  
+
   /** Returns the router's name. */
   QString name() const { return _name; }
   /** Returns the router's IP address. */
@@ -77,7 +77,7 @@ public:
   bool isEmpty() { return (_id.isEmpty() && _name.isEmpty()); }
   /** Returns a string representation of the status of this router. */
   QString status();
-  
+
   /** Returns geographic location information for this router. Note that this
    * information is NOT part of the Tor directory protocol, but can be
    * determined out of band and set using setLocation(). */

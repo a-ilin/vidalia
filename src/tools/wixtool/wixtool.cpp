@@ -129,7 +129,7 @@ walkdoc(QDomDocument *doc,
   return true;
 }
 
-void 
+void
 splicefunc(void *cbdata,
  QDomElement e)
 {
@@ -227,7 +227,7 @@ docsplice(QDomDocument *doc,
   return walkdoc(doc, &splicefunc, &cbdata, errorMessage);
 }
 
-void 
+void
 replacefunc(void *cbdata,
  QDomElement e)
 {
@@ -317,7 +317,7 @@ docreplace(QDomDocument *doc,
   return walkdoc(doc, &replacefunc, &cbdata, errorMessage);
 }
 
-void 
+void
 addfunc(void *cbdata,
  QDomElement e)
 {
@@ -391,7 +391,7 @@ void
 createRegLocalComponent(QDomElement e,
  QString dirName,
  QString keyPath)
-{ 
+{
   QDomElement nrk = e.ownerDocument().createElement(WIX_TAG_REGKEY);
   QDomElement nrv = e.ownerDocument().createElement(WIX_TAG_REGVAL);
   nrk.setAttribute(WIX_ATTR_REG_ROOT, "HKCU");
@@ -684,7 +684,7 @@ main(int argc, char *argv[])
         }
       }
       else if (!command.compare("add", Qt::CaseInsensitive)) {
-        if (!docadd(&doc, commandargs[i], &errorMessage)) { 
+        if (!docadd(&doc, commandargs[i], &errorMessage)) {
           error << QString("Unable to process add command '%1': %2\n")
                           .arg(commandargs[i]).arg(errorMessage);
           return 4;

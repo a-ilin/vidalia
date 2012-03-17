@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -52,7 +52,7 @@ read_annotations_file(const QString &fileName, QString &errorMessage)
     if (idx > 0 && idx < line.length()-1) {
       QString key = line.mid(0, idx).trimmed();
       QString val = line.mid(idx + 1).trimmed();
-      annotations.insert(key, val); 
+      annotations.insert(key, val);
     }
   }
   return annotations;

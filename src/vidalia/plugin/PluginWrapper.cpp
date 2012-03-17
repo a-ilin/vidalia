@@ -1,14 +1,14 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file PluginWrapper.cpp
 ** \brief Wrapper for the plugin scripts
 */
@@ -46,7 +46,7 @@ PluginWrapper::PluginWrapper(const QString &info_path, PluginEngine *engine, QOb
                                 .arg(res.errorMessage())
                                 .arg(name()));
       }
-    } else 
+    } else
       DebugDialog::outputDebug(tr("%1: Error opening file %2")
                                 .arg(name()).arg(path));
   }
@@ -171,19 +171,19 @@ PluginWrapper::checkExceptions()
   return false;
 }
 
-bool 
+bool
 PluginWrapper::hasGUI()
 {
   return _gui;
 }
 
-bool 
+bool
 PluginWrapper::isPersistent()
 {
   return _persistent;
 }
 
-QString 
+QString
 PluginWrapper::name() const
 {
   if(_name.isEmpty())
@@ -191,25 +191,25 @@ PluginWrapper::name() const
   return _name;
 }
 
-QString 
+QString
 PluginWrapper::date() const
 {
   return _date;
 }
 
-QString 
+QString
 PluginWrapper::author() const
 {
   return _author;
 }
 
-QString 
+QString
 PluginWrapper::nspace() const
 {
   return _nspace;
 }
 
-QStringList 
+QStringList
 PluginWrapper::files() const
 {
   return _files;

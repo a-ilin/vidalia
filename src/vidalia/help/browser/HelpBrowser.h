@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -36,7 +36,7 @@ class HelpBrowser : public VidaliaWindow
 public:
   /** Default constructor **/
   HelpBrowser(QWidget *parent = 0);
- 
+
 public slots:
   /** Overrides the default QWidget::show() */
   void showWindow(QString topic = QString());
@@ -56,7 +56,7 @@ private slots:
   void contentsItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
   /** Called when the user selects a different item in the search tree */
   void searchItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
-   
+
 private:
   /** Returns the language in which help topics should appear, or English
    * ("en") if no translated help files exist for the current GUI language. */
@@ -97,4 +97,4 @@ private:
 };
 
 #endif
-  
+

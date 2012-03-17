@@ -3,8 +3,8 @@
 **  LICENSE file, found in the top level directory of this distribution. If you
 **  did not receive the LICENSE file with this file, you may obtain it from the
 **  Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 */
 
@@ -23,7 +23,7 @@
 class TorSocket : public QTcpSocket
 {
   Q_OBJECT
-  
+
 public:
   /** Constructor. */
   TorSocket(const QHostAddress &socksAddr,
@@ -38,7 +38,7 @@ signals:
   void connectedToRemoteHost();
   /** Emitted when a connection error has occurred. */
   void socketError(QString errmsg);
-  
+
 private slots:
   /** Called when the socket is connected to the proxy and sends our
    * half of a Socks4a handshake. */
@@ -51,7 +51,7 @@ private slots:
 private:
   /** Sends the client part of a Socks4a handshake with a proxy server. */
   void sendSocksHandshake(const QString &remoteHost, quint16 remotePort);
-  
+
   QHostAddress _socksAddr; /**< Address of Tor's SOCKS listener. */
   QString _remoteHost;     /**< Remote hostname. */
   quint16 _socksPort;      /**< Port of Tor's SOCKS listener. */
