@@ -98,6 +98,10 @@ NetViewer::NetViewer(QWidget *parent)
     resizeSection(RouterListWidget::CountryColumn, 25);
   ui.treeCircuitList->header()->
     resizeSection(CircuitListWidget::ConnectionColumn, 235);
+  ui.treeInternalCircuitList->header()->
+    resizeSection(CircuitListWidget::ConnectionColumn, 235);
+  ui.treeHSCircuitList->header()->
+    resizeSection(CircuitListWidget::ConnectionColumn, 235);
 
   /* Create the TorMapWidget and add it to the dialog */
 #if defined(USE_MARBLE)
