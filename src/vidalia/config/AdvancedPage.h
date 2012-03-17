@@ -67,6 +67,9 @@ private slots:
   /** Called when the user clicks "Browse" to choose the location of Tor's
    * socket path. */
   void browseSocketPath();
+  /** Called when the user clicks "Browse" to choose location of Tor config
+   * file */
+  void browsePanicPath();
   /** Called when the user changes from ControlPort to ControlSocket or
    * the other way aroud */
   void toggleControl(bool);

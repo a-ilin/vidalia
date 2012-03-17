@@ -136,6 +136,16 @@ public:
   bool rememberShutdown();
   /** Sets RememberShutdown to val */
   void setRememberShutdown(bool val);
+
+  /** Returns true if AllowPanic is enabled */
+  bool allowPanic() const;
+  /** Sets AllowPanic to val */
+  void setAllowPanic(bool val);
+
+  /** Returns the path that should be eliminated for panic */
+  QString panicPath() const;
+  /** Sets the path for panic */
+  void setPanicPath(const QString &path);
 };
 
 #endif

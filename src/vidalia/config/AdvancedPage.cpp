@@ -19,6 +19,7 @@
 #include "VMessageBox.h"
 #include "IpValidator.h"
 #include "Local8BitStringValidator.h"
+#include "VidaliaSettings.h"
 
 #include "file.h"
 
@@ -68,6 +69,8 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   connect(ui.btnBrowseSocketPath, SIGNAL(clicked()), this, SLOT(browseSocketPath()));
   connect(ui.chkAuto, SIGNAL(toggled(bool)), this, SLOT(toggleAuto(bool)));
 
+  connect(ui.btnBrowsePanicPath, SIGNAL(clicked()), this, SLOT(browsePanicPath()));
+
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
 #if 0
@@ -76,6 +79,11 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   /* Disable ControlSocket */
   ui.rdoControlSocket->setEnabled(false);
 #endif
+
+  ui.lblPanicWarn->setVisible(false);
+  ui.lblPanicPath->setVisible(false);
+  ui.linePanicPath->setVisible(false);
+  ui.btnBrowsePanicPath->setVisible(false);
 }
 
 /** Destructor */
@@ -209,6 +217,10 @@ AdvancedPage::save(QString &errmsg)
         && !ui.chkRandomPassword->isChecked())
     _settings->setControlPassword(ui.linePassword->text());
 
+  VidaliaSettings vsettings;
+  vsettings.setAllowPanic(ui.chkEnablePanic->isChecked());
+  vsettings.setPanicPath(ui.linePanicPath->text());
+
 #if 0
 #if defined(Q_WS_WIN)
   /* Install or uninstall the Tor service as necessary */
@@ -252,6 +264,11 @@ AdvancedPage::load()
     ui.chkAuto->setChecked(false);
     ui.chkAuto->setVisible(false);
   }
+
+  VidaliaSettings settings;
+
+  ui.chkEnablePanic->setChecked(settings.allowPanic());
+  ui.linePanicPath->setText(settings.panicPath());
 }
 
 /** Called when the user selects a different authentication method from the
@@ -447,4 +464,17 @@ AdvancedPage::displayWarning(bool checked)
   ui.lblWarn->setVisible(!checked and
                          indexToAuthMethod(ui.cmbAuthMethod->currentIndex()) ==
                          TorSettings::PasswordAuth);
+}
+
+/** Opens a QFileDialog for the user to browse to or create a directory for
+ * Tor's DataDirectory. */
+void
+AdvancedPage::browsePanicPath()
+{
+  QString panicPath = QFileDialog::getExistingDirectory(this,
+                      tr("Select a Directory to Use for Panic"),
+                      ui.linePanicPath->text());
+
+  if (!panicPath.isEmpty())
+    ui.linePanicPath->setText(panicPath);
 }

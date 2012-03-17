@@ -38,6 +38,8 @@
 #define SETTING_LOCAL_GEOIP_DATABASE "LocalGeoIpDatabase"
 #define SETTING_PLUGIN_PATH         "PluginPath"
 #define SETTING_SKIP_VERSION_CHECK  "SkipVersionCheck"
+#define SETTING_ALLOW_PANIC         "AllowPanic"
+#define SETTING_PANIC_PATH          "PanicPath"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -84,6 +86,8 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_ICON_PREF, Both);
   setDefault(SETTING_SKIP_VERSION_CHECK, false);
   setDefault(SETTING_REMEMBER_SHUTDOWN, false);
+  setDefault(SETTING_ALLOW_PANIC, false);
+  setDefault(SETTING_PANIC_PATH, "");
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -337,4 +341,28 @@ void
 VidaliaSettings::setRememberShutdown(bool val)
 {
   setValue(SETTING_REMEMBER_SHUTDOWN, val);
+}
+
+bool
+VidaliaSettings::allowPanic() const
+{
+  return value(SETTING_ALLOW_PANIC).toBool();
+}
+
+void
+VidaliaSettings::setAllowPanic(bool val)
+{
+  setValue(SETTING_ALLOW_PANIC, val);
+}
+
+QString
+VidaliaSettings::panicPath() const
+{
+  return value(SETTING_PANIC_PATH).toString();
+}
+
+void
+VidaliaSettings::setPanicPath(const QString &path)
+{
+  setValue(SETTING_PANIC_PATH, path);
 }

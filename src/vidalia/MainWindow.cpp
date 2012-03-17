@@ -180,6 +180,7 @@ MainWindow::createActions()
   _actionStartStopTor = new QAction(QIcon(IMG_START_TOR_16), tr("Start Tor"), this);
   _actionExit = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
   _actionDebugDialog = new QAction(tr("Debug output"), this);
+  _actionPanic = new QAction(QIcon(IMG_EXIT), tr("Panic!"), this);
 }
 
 /** Creates the menu bar */
@@ -238,6 +239,10 @@ MainWindow::createToolBar()
   tool->addAction(_actionNewIdentity);
   tool->addAction(_actionConfigure);
 
+  VidaliaSettings settings;
+  if(settings.allowPanic())
+    tool->addAction(_actionPanic);
+
   tool->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 }
 
@@ -255,6 +260,12 @@ MainWindow::createTrayMenu()
   menu->addAction(_actionNewIdentity);
   menu->addSeparator();
   menu->addAction(_actionShowControlPanel);
+
+  VidaliaSettings settings;
+  if(settings.allowPanic()) {
+    menu->addSeparator();
+    menu->addAction(_actionPanic);
+  }
 
   menu->addMenu(&_reattachMenu);
 
@@ -365,6 +376,7 @@ MainWindow::retranslateUi()
   _actionStatus->setText(tr("Status"));
   _actionVidaliaHelp->setText(tr("Help"));
   _actionNewIdentity->setText(tr("New Circuit"));
+  _actionPanic->setText(tr("Panic!"));
 
 #if !defined(Q_WS_MAC)
   _actionAbout->setText(tr("About"));
@@ -395,6 +407,8 @@ MainWindow::createConnections()
   connect(_actionNetworkMap, SIGNAL(triggered()), this, SLOT(showNetViewerTab()));
 
   connect(_actionDebugDialog, SIGNAL(triggered()), this, SLOT(showDebugDialog()));
+
+  connect(_actionPanic, SIGNAL(triggered()), this, SLOT(panic()));
 
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
@@ -2138,3 +2152,69 @@ MainWindow::installUpdatesFailed(const QString &errmsg)
 
 #endif
 
+/** Called when the panic button is pressed */
+void
+MainWindow::panic()
+{
+  VidaliaSettings settings;
+  QString binaryPath;
+  QFileInfo starter, vidalia;
+
+  // First some sanity checks so we don't remove any directory
+
+#if defined(Q_WS_WIN)
+  starter.setFile(QString("%1/%2")
+                  .arg(settings.panicPath())
+                  .arg("Start Tor Browser.exe"));
+  vidalia.setFile(QString("%1/%2")
+                  .arg(settings.panicPath())
+                  .arg("App/vidalia.exe"));
+
+  binaryPath = vidalia.absoluteFilePath();
+#elif defined(Q_WS_MAC)
+  starter.setFile(QString("%1/%2")
+                  .arg(settings.panicPath())
+                  .arg("Contents/MacOS/TorBrowserBundle"));
+  vidalia.setFile(QString("%1/%2")
+                  .arg(settings.panicPath())
+                  .arg("Contents/MacOS/Vidalia.app"));
+
+  binaryPath = QFileInfo(QString("%1/%2")
+                         .arg(settings.panicPath())
+                         .arg("Contents/MacOS/Vidalia.app/Contents/MacOS/Vidalia")).absolutePath();
+#else
+  starter.setFile(QString("%1/%2")
+                  .arg(settings.panicPath())
+                  .arg("start-tor-browser"));
+  vidalia.setFile(QString("%1/%2")
+                  .arg(settings.panicPath())
+                  .arg("App/vidalia"));
+
+  binaryPath = vidalia.absoluteFilePath();
+#endif
+
+  if(not (starter.exists() and vidalia.exists())) {
+    vWarn("Trying to panic but the directory is not what was expected.");
+    return;
+  }
+
+  if(binaryPath != QApplication::applicationFilePath()) {
+    vWarn("Trying to panic but the Panic Path does not contain Vidalia's binary");
+    return;
+  }
+
+  hide();
+  _trayIcon.setVisible(false);
+
+#if !defined(Q_WS_WIN)
+  bool res = remove_dir(settings.panicPath());
+#else
+  QProcess::startDetached(QString("cmd /C ping -n 1 127.0.0.1 >NUL && rmdir /Q /S \"%1\"")
+                          .arg(settings.panicPath()));
+#endif
+  if(_torControl->isRunning()) {
+    // We have taken tor's ownership, so just quit
+    vApp->disconnect();
+  }
+  vApp->quit();
+}

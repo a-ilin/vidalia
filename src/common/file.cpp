@@ -123,3 +123,30 @@ expand_filename(const QString &filename)
   return fname;
 }
 
+/** Recursively remove the directory with all its contents. */
+bool
+remove_dir(const QString &path)
+{
+  bool res = true;
+  QDir dir(path);
+
+  if(not dir.exists(path))
+    return false;
+
+  foreach(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot |
+                                            QDir::System |
+                                            QDir::Hidden |
+                                            QDir::AllDirs |
+                                            QDir::Files)) {
+    if(info.isDir())
+      res = remove_dir(info.absoluteFilePath());
+    else
+      res = QFile::remove(info.absoluteFilePath());
+
+    if(!res)
+      return res;
+  }
+  res = dir.rmdir(path);
+
+  return res;
+}

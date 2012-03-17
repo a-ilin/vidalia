@@ -162,6 +162,9 @@ private slots:
   /** Called when tor detects a problem with the system clock */
   void clockSkewed(int skew, const QString &source);
 
+  /** Called when the Panic! button is pressed */
+  void panic();
+
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
    * settings page. */
@@ -291,6 +294,7 @@ private:
   QAction *_actionAbout;
   QAction *_actionExit;
   QAction *_actionDebugDialog;
+  QAction *_actionPanic;
 
   QMenu _reattachMenu; /**< Menu used to handle tab re-attaching */
   QAction *_dummy; /**< Dummy action to display when there are no more tabs */

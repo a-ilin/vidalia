@@ -38,5 +38,8 @@ QString expand_filename(const QString &filename);
  * otherwise. */
 bool copy_dir(const QString &source, const QString &dest);
 
+/** Recursively remove the directory with all its contents. */
+bool remove_dir(const QString &dir);
+
 #endif
 
