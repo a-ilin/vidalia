@@ -1,12 +1,12 @@
 <!--
 **  $Id$
-** 
+**
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
-**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-**  including this file, may be copied, modified, propagated, or distributed 
+**  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+**  including this file, may be copied, modified, propagated, or distributed
 **  except according to the terms described in the LICENSE file.
 -->
 
@@ -94,7 +94,7 @@ to your <i>average rate</i>.
 </p>
 <p>
 The <i>average rate</i> is the maximum long-term average bandwidth allowed (in
-kilobytes per second). For example, you might want to choose 2 megabytes per 
+kilobytes per second). For example, you might want to choose 2 megabytes per
 second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable
 connection). Tor requires a minimum of 20 kilobytes per second to run a
 relay.
@@ -112,16 +112,16 @@ labeled <i>Mirror the relay directory</i>.
 <h3>Exit Policies</h3>
 <p>
 Exit policies give you a way to specify what kinds of resources on the
-Internet you are willing let other Tor users access from your Tor relay. 
-Tor uses a default list of exit policies that restrict some services, 
-such as mail to prevent spam and some default file sharing ports to reduce 
-abuse of the Tor network. 
+Internet you are willing let other Tor users access from your Tor relay.
+Tor uses a default list of exit policies that restrict some services,
+such as mail to prevent spam and some default file sharing ports to reduce
+abuse of the Tor network.
 </p>
 <p>
 Each of the checkboxes represents a type of resource that you can allow Tor
 users to access through your relay. If you uncheck the box next to a
 particular type of resource, Tor users will not be allowed to access that
-resource from your relay. If the box labeled <i>Misc Other Services</i> 
+resource from your relay. If the box labeled <i>Misc Other Services</i>
 is checked, Tor users will be able to access other services not
 covered by the other checkboxes or Tor's default exit policy.
 </p>
@@ -193,7 +193,7 @@ multiple computers on a local network to share the same Internet connection.
 Some users may also be behind a <i>firewall</i> that blocks incoming
 connections to your computer from other computers on the Internet.  If you
 want to run a Tor relay, however, other Tor clients and relays must be able to
-connect to your relay through your home router or firewall. 
+connect to your relay through your home router or firewall.
 </p>
 
 <p>
@@ -235,6 +235,28 @@ other operating systems. If you also checked the checkbox labeled <i>Mirror
 the relay directory</i>, then you will also need to forward your <i>Directory
 Port</i>. The <i>Directory Port</i> is set to port 9030 by default on all
 operating systems.
+</p>
+
+<a name="offline"/>
+<h3>Relay offline</h3>
+<p>
+The first time you configure a relay, if you immediately go to the
+Network Map you may encounter that your relay is listed as Offline
+(the flag is a red cross). This means that your relay does not have
+the Running flag even though it is running. This is expected behavior,
+it may take around four hours to be marked as online.
+</p>
+
+<a name="consensus"/>
+<h3>Relay not in the consensus</h3>
+<p>
+For security reasons, the Tor network has what is called
+a <i>consensus</i>. This consensus contains the list of all the relays
+that form the network as seen from an odd number of
+trusted <i>Directory Authorities</i>, and these are the routers you
+can see in the Network Map. For a new relay to reach the consensus it
+takes around four hours, so you may not see your relay listed in the
+Network Map, and that is because it is not in the consensus yet.
 </p>
 
 </body>
