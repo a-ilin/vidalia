@@ -48,6 +48,9 @@ NetViewer::NetViewer(QWidget *parent)
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
+  ui.lblConsensus->setVisible(false);
+  ui.lblOffline->setVisible(false);
+
 #if defined(Q_WS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
 #endif
@@ -78,6 +81,15 @@ NetViewer::NetViewer(QWidget *parent)
   _torControl->setEvent(TorEvents::NewDescriptor);
   connect(_torControl, SIGNAL(newDescriptors(QStringList)),
           this, SLOT(newDescriptors(QStringList)));
+
+  _torControl->setEvent(TorEvents::NewDescriptor);
+  connect(_torControl, SIGNAL(newConsensus()),
+          this, SLOT(refresh()));
+
+  connect(ui.lblOffline, SIGNAL(linkActivated(QString)),
+          this, SLOT(linkActivated(QString)));
+  connect(ui.lblConsensus, SIGNAL(linkActivated(QString)),
+          this, SLOT(linkActivated(QString)));
 
   /* Change the column widths of the tree widgets */
   ui.treeRouterList->header()->
@@ -347,8 +359,12 @@ NetViewer::preLoadNetworkStatus()
   NetworkStatus networkStatus = _torControl->getNetworkStatus();
 
   ServerSettings settings(_torControl);
-  if(settings.isServerEnabled())
+  if(_torControl->isConnected() and settings.isServerEnabled())
     _routers << *RouterDescriptor::fromTorControl(_torControl);
+  else {
+    ui.lblConsensus->setVisible(false);
+    ui.lblOffline->setVisible(true);
+  }
 
   foreach(RouterStatus rs, networkStatus) {
     if (!rs.isRunning())
@@ -382,6 +398,13 @@ NetViewer::loadNetworkStatus()
   if(_it != _routers.constEnd())
     QTimer::singleShot(10, this, SLOT(loadNetworkStatus()));
   else {
+    QString id = _torControl->getInfo("fingerprint").toString();
+    RouterListItem *item = ui.treeRouterList->findRouterById(id);
+    if(item) {
+      ui.lblConsensus->setVisible(true);
+      ui.lblOffline->setVisible(false);
+    }
+
     /* Load existing address mappings */
     loadAddressMap();
     /* Load Circuits and Streams information */
@@ -545,3 +568,9 @@ NetViewer::toggleFullScreen()
   }
 }
 
+/** Called when the user clicks on a QLabel containing a hyperlink. */
+void
+NetViewer::linkActivated(const QString &url)
+{
+  emit helpRequested(url);
+}

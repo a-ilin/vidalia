@@ -113,6 +113,9 @@ private slots:
    *  in the internal _router list */
   void loadNetworkStatus();
 
+  /** Called when the user clicks on a QLabel containing a hyperlink. */
+  void linkActivated(const QString &url);
+
 private:
   /** */
   void setupGeoIpResolver();
