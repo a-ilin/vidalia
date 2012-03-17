@@ -32,9 +32,6 @@
 #define SETTING_BROWSER_EXECUTABLE  "BrowserExecutable"
 #define SETTING_BROWSER_DIRECTORY   "BrowserDirectory"
 #define SETTING_IM_EXECUTABLE       "IMExecutable"
-#define SETTING_RUN_PROXY_AT_START  "RunProxyAtStart"
-#define SETTING_PROXY_EXECUTABLE    "ProxyExecutable"
-#define SETTING_PROXY_EXECUTABLE_ARGUMENTS  "ProxyExecutableArguments"
 #define SETTING_CHECK_FOR_UPDATES   "CheckForUpdates"
 #define SETTING_LAST_UPDATE_CHECK   "LastUpdateCheck"
 #define SETTING_USE_LOCAL_GEOIP_DATABASE  "UseLocalGeoIpDatabase"
@@ -74,9 +71,6 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
   setDefault(SETTING_BROWSER_EXECUTABLE, "");
   setDefault(SETTING_IM_EXECUTABLE, "");
-  setDefault(SETTING_RUN_PROXY_AT_START, false);
-  setDefault(SETTING_PROXY_EXECUTABLE, "");
-  setDefault(SETTING_PROXY_EXECUTABLE_ARGUMENTS, QString());
 #if defined(Q_WS_WIN)
   setDefault(SETTING_CHECK_FOR_UPDATES, true);
 #else
@@ -232,53 +226,6 @@ void
 VidaliaSettings::setIMExecutable(const QString &IMExecutable)
 {
   setValue(SETTING_IM_EXECUTABLE, IMExecutable);
-}
-
-/** Returns true if Vidalia should start a proxy application when it
- * starts. */
-bool
-VidaliaSettings::runProxyAtStart()
-{
-  return value(SETTING_RUN_PROXY_AT_START).toBool();
-}
-
-/** Set whether to run a proxy application when Vidalia starts. */
-void
-VidaliaSettings::setRunProxyAtStart(bool run)
-{
-  setValue(SETTING_RUN_PROXY_AT_START, run);
-}
-
-/** Returns a fully-qualified path to the proxy server, including the
- * executable name. */
-QString
-VidaliaSettings::getProxyExecutable() const
-{
-  return QDir::convertSeparators(value(SETTING_PROXY_EXECUTABLE).toString());
-}
-
-/** Sets the location and name of the proxy server executable to the given
- * string. If set to the empty string, the proxy will not be started. */
-void
-VidaliaSettings::setProxyExecutable(const QString &proxyExecutable)
-{
-  setValue(SETTING_PROXY_EXECUTABLE, proxyExecutable);
-}
-
-/** Returns a string containing additional command line arguments to be passed
- * to ProxyExecutable */
-QString
-VidaliaSettings::getProxyExecutableArguments() const
-{
-  return value(SETTING_PROXY_EXECUTABLE_ARGUMENTS).toString();
-}
-
-/** Sets the additional arguments to be passed to Proxy Executable */
-void
-VidaliaSettings::setProxyExecutableArguments(const QString
-                                             &proxyExecutableArguments)
-{
-  setValue(SETTING_PROXY_EXECUTABLE_ARGUMENTS, proxyExecutableArguments);
 }
 
 bool

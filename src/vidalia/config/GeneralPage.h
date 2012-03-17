@@ -47,8 +47,6 @@ signals:
 private slots:
   /** Open a QFileDialog to browse for a Tor executable file. */
   void browseTorExecutable();
-  /** Open a QFileDialog to browse for a proxy executable file. */
-  void browseProxyExecutable();
   /** Initiate an immediate check for software updates. */
   void updateNow();
 
