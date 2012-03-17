@@ -65,6 +65,7 @@ TorEvents::toString(Event e)
     case GeneralStatus:   event = "STATUS_GENERAL"; break;
     case ClientStatus:    event = "STATUS_CLIENT"; break;
     case ServerStatus:    event = "STATUS_SERVER"; break;
+    case NewConsensus:    event = "NEWCONSENSUS"; break;
     default: event = "UNKNOWN"; break;
   }
   return event;
@@ -101,6 +102,8 @@ TorEvents::toTorEvent(const QString &event)
     e = ClientStatus;
   } else if (event == "STATUS_SERVER") {
     e = ServerStatus;
+  } else if (event == "NEWCONSENSUS") {
+    e = NewConsensus;
   } else {
     e = Unknown;
   }
@@ -129,6 +132,7 @@ TorEvents::handleEvent(const ControlReply &reply)
       case CircuitStatus:  handleCircuitStatus(line); break;
       case StreamStatus:   handleStreamStatus(line); break;
       case NewDescriptor:  handleNewDescriptor(line); break;
+      case NewConsensus:   handleNewConsensus(line); break;
       case AddressMap:     handleAddressMap(line); break;
 
       case GeneralStatus:
@@ -252,6 +256,18 @@ TorEvents::handleNewDescriptor(const ReplyLine &line)
   QString descs = line.getMessage();
   QStringList descList = descs.mid(descs.indexOf(" ")+1).split(" ");
   emit newDescriptors(descList);
+}
+
+/** Handles a new consensus event. The format for event messages of this type
+ * is:
+ *
+ *   "650" SP "NEWCONSENSUS" CRLF (...)
+ */
+void
+TorEvents::handleNewConsensus(const ReplyLine &line)
+{
+  Q_UNUSED(line);
+  emit newConsensus();
 }
 
 /** Handles a new or updated address mapping event. The format for event

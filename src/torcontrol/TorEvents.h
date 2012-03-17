@@ -55,10 +55,11 @@ public:
     AddressMap    = (1u << 10),
     GeneralStatus = (1u << 11),
     ClientStatus  = (1u << 12),
-    ServerStatus  = (1u << 13)
+    ServerStatus  = (1u << 13),
+    NewConsensus  = (1u << 14),
   };
   static const Event EVENT_MIN = TorEvents::Bandwidth;
-  static const Event EVENT_MAX = TorEvents::ServerStatus;
+  static const Event EVENT_MAX = TorEvents::NewConsensus;
   Q_DECLARE_FLAGS(Events, Event);
 
   /** Default Constructor */
@@ -102,6 +103,9 @@ signals:
    * <b>ids</b> contains a list of digests of the new descriptors.
    */
   void newDescriptors(const QStringList &ids);
+
+  /** Emitted when Tor has received a new consensus. */
+  void newConsensus();
 
   /** Indicates Tor has been able to successfully establish one or more
    * circuits.
@@ -229,6 +233,8 @@ private:
   void handleOrConnStatus(const ReplyLine &line);
   /** Handles a new list of descriptors event. */
   void handleNewDescriptor(const ReplyLine &line);
+  /** Handles a new consensus event. */
+  void handleNewConsensus(const ReplyLine &line);
   /** Handles a new or updated address map event. */
   void handleAddressMap(const ReplyLine &line);
 
