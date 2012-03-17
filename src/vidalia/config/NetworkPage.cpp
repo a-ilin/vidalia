@@ -388,12 +388,11 @@ void
 NetworkPage::bridgeRequestFinished(const QStringList &bridges)
 {
   bool foundNewBridges = false;
-  QString normalized;
 
   foreach (QString bridge, bridges) {
-    QString address = normalized.split(" ").at(0);
+    QString address = bridge.trimmed().split(" ").at(1);
     if (ui.listBridges->findItems(address, Qt::MatchContains).isEmpty()) {
-      ui.listBridges->addItem(normalized);
+      ui.listBridges->addItem(address);
       foundNewBridges = true;
     }
   }
