@@ -289,6 +289,9 @@ signals:
    */
   void newDescriptors(const QStringList &ids);
 
+  /** Emitted when Tor has received a new consensus. */
+  void newConsensus();
+
   /** Indicates Tor has been able to successfully establish one or more
    * circuits.
    */

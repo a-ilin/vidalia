@@ -42,6 +42,7 @@ TorControl::TorControl(ControlMethod::Method method)
   RELAY_SIGNAL(_eventHandler, SIGNAL(circuitStatusChanged(Circuit)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(streamStatusChanged(Stream)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(newDescriptors(QStringList)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(newConsensus()));
   RELAY_SIGNAL(_eventHandler, SIGNAL(logMessage(tc::Severity, QString)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(dangerousPort(quint16, bool)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(socksError(tc::SocksError, QString)));
