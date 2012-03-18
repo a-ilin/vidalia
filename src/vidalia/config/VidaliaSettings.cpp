@@ -40,6 +40,7 @@
 #define SETTING_SKIP_VERSION_CHECK  "SkipVersionCheck"
 #define SETTING_ALLOW_PANIC         "AllowPanic"
 #define SETTING_PANIC_PATH          "PanicPath"
+#define SETTING_FIRST_RUN           "FirstRun"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -88,6 +89,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_REMEMBER_SHUTDOWN, false);
   setDefault(SETTING_ALLOW_PANIC, false);
   setDefault(SETTING_PANIC_PATH, "");
+  setDefault(SETTING_FIRST_RUN, true);
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -365,4 +367,16 @@ void
 VidaliaSettings::setPanicPath(const QString &path)
 {
   setValue(SETTING_PANIC_PATH, path);
+}
+
+bool
+VidaliaSettings::firstRun() const
+{
+  return value(SETTING_FIRST_RUN).toBool();
+}
+
+void
+VidaliaSettings::setFirstRun(bool val)
+{
+  setValue(SETTING_FIRST_RUN, val);
 }

@@ -146,6 +146,11 @@ public:
   QString panicPath() const;
   /** Sets the path for panic */
   void setPanicPath(const QString &path);
+
+  /** Returns true if it's Vidalia's first run */
+  bool firstRun() const;
+  /** Sets Vidalia's first run option */
+  void setFirstRun(bool val);
 };
 
 #endif

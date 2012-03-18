@@ -124,8 +124,9 @@ MainWindow::MainWindow()
   _isVidaliaRunningTor = false;
   updateTorStatus(Stopped);
 
-#if defined(Q_WS_MAC)
   VidaliaSettings settings;
+
+#if defined(Q_WS_MAC)
   /* Display OSX dock icon if icon preference is not set to "Tray Only" */
   if (settings.getIconPref() != VidaliaSettings::Tray) {
     ProcessSerialNumber psn = { 0, kCurrentProcess };
@@ -134,6 +135,15 @@ MainWindow::MainWindow()
   /* Vidalia launched in background (LSUIElement=true). Bring to foreground. */
   VidaliaWindow::setVisible(settings.showMainWindowAtStart());
 #endif
+
+  if(settings.firstRun()) {
+    if(settings.allowPanic())
+      VMessageBox::warning(this, tr("Panic is enabled"),
+                           tr("<b>WARNING:</b> The Panic button is enabled. Use "
+                              "it carefully because it will remove Tor completely."),
+                           VMessageBox::Ok|VMessageBox::Default);
+    settings.setFirstRun(false);
+  }
 }
 
 /** Destructor */
