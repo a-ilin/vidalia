@@ -134,13 +134,6 @@ TorControl::start(const QString &tor, const QStringList &args)
   }
 }
 
-/** Returns true if the process is running */
-bool
-TorControl::torStarted()
-{
-  return _torProcess->state() == QProcess::Running;
-}
-
 /** Called when starting the tor process failed */
 void
 TorControl::torStartFailed(QString errmsg)

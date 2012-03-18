@@ -58,8 +58,6 @@ public:
 
   /** Start the Tor process */
   void start(const QString &tor, const QStringList &args);
-  /** Returns true if the process is running */
-  bool torStarted();
 
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);

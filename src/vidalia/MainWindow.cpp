@@ -658,7 +658,7 @@ MainWindow::start()
   _torControl->start(settings.getExecutable(), args);
 
   QString errmsg;
-  while(not _torControl->torStarted()) {
+  while(not _torControl->isRunning()) {
     QCoreApplication::processEvents();
     if(not _torControl->shouldContinue(&errmsg) and not _pressedStop) {
       startFailed(errmsg);
