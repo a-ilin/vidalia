@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2011-05-03 14:28+0000\n"
+"POT-Creation-Date: 2012-03-21 17:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -185,9 +185,41 @@ msgid "Select a file to use for Tor socket path"
 msgstr ""
 
 msgctxt "AdvancedPage"
+msgid "Configure ControlPort automatically"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "<b>WARNING</b>: If you hand pick the password it will be saved as plain text in Vidalia's configuration file. Using a random password is safer."
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Panic"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "<b>WARNING</b>: The panic button will erease the application if pressed"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Enable panic button"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Panic path:"
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "You've checked the autoconfiguration option for the ControlPort, but provided no Data Directory. Please add one, or uncheck the \"Configure ControlPort automatically\" option."
+msgstr ""
+
+msgctxt "AdvancedPage"
 msgid "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
+msgstr ""
+
+msgctxt "AdvancedPage"
+msgid "Select a Directory to Use for Panic"
 msgstr ""
 
 msgctxt "AppearancePage"
@@ -208,6 +240,22 @@ msgstr ""
 
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
+msgstr ""
+
+msgctxt "AppearancePage"
+msgid "System Icon Preferences (changes will take effect when you restart Vidalia)"
+msgstr ""
+
+msgctxt "AppearancePage"
+msgid "Show the Tray Icon and Dock Icon (default)"
+msgstr ""
+
+msgctxt "AppearancePage"
+msgid "Hide the Tray Icon"
+msgstr ""
+
+msgctxt "AppearancePage"
+msgid "Hide the Dock Icon"
 msgstr ""
 
 msgctxt "BandwidthGraph"
@@ -375,10 +423,6 @@ msgid "Sharing"
 msgstr ""
 
 msgctxt "ConfigDialog"
-msgid "Services"
-msgstr ""
-
-msgctxt "ConfigDialog"
 msgid "Appearance"
 msgstr ""
 
@@ -423,6 +467,10 @@ msgid "Problem connecting to Tor"
 msgstr ""
 
 msgctxt "ControlPasswordInputDialog"
+msgid "Vidalia can try to restart Tor for you.  Doing so will close all currently active connections through your Tor process."
+msgstr ""
+
+msgctxt "ControlPasswordInputDialog"
 msgid "Tor is already running, but Vidalia can't connect to it.\n"
 "\n"
 "This can happen when something else (such as another active Vidalia process, or a Vidalia process that crashed) launched Tor."
@@ -430,10 +478,6 @@ msgstr ""
 
 msgctxt "ControlPasswordInputDialog"
 msgid "You will need to shut down the Tor process before Vidalia can launch a new one."
-msgstr ""
-
-msgctxt "ControlPasswordInputDialog"
-msgid "Vidalia can try to restart Tor for you.  Doing so will close all currently active connections through your Tor process."
 msgstr ""
 
 msgctxt "ControlSocket"
@@ -1257,18 +1301,6 @@ msgid "Vidalia encountered an error and needed to close"
 msgstr ""
 
 msgctxt "CrashReportDialog"
-msgid "A crash report has been created that you can automatically send to the Vidalia developers to help identify and fix the problem. The submitted report does not contain any personally identifying information, but your connection to the crash reporting server may not be anonymous."
-msgstr ""
-
-msgctxt "CrashReportDialog"
-msgid "Please also describe what you were doing before the application crashed (optional):"
-msgstr ""
-
-msgctxt "CrashReportDialog"
-msgid "Send my crash report to the Vidalia developers"
-msgstr ""
-
-msgctxt "CrashReportDialog"
 msgid "Restart Vidalia"
 msgstr ""
 
@@ -1284,16 +1316,36 @@ msgctxt "CrashReportDialog"
 msgid "We were unable to automatically restart Vidalia. Please restart Vidalia manually."
 msgstr ""
 
-msgctxt "CrashReportUploader"
-msgid "Connecting..."
+msgctxt "CrashReportDialog"
+msgid "Please fill a ticket in:"
 msgstr ""
 
-msgctxt "CrashReportUploader"
-msgid "Sending crash report..."
+msgctxt "CrashReportDialog"
+msgid "<a href=\"https://trac.torproject.org/projects/tor/newticket\">https://trac.torproject.org/projects/tor/newticket</a>"
 msgstr ""
 
-msgctxt "CrashReportUploader"
-msgid "Receiving response..."
+msgctxt "CrashReportDialog"
+msgid "A crash report has been created that you can send to the Vidalia developers to help identify and fix the problem. The submitted report does not contain any personally identifying information."
+msgstr ""
+
+msgctxt "CrashReportDialog"
+msgid "with a description of what you were doing before the application crashed, along with the following files corresponding to the crash report:"
+msgstr ""
+
+msgctxt "DebugDialog"
+msgid "Plugin debug output"
+msgstr ""
+
+msgctxt "DebugDialog"
+msgid "Plugin Output"
+msgstr ""
+
+msgctxt "DebugDialog"
+msgid "Syntax Errors"
+msgstr ""
+
+msgctxt "DebugDialog"
+msgid "Exceptions"
 msgstr ""
 
 msgctxt "GeneralPage"
@@ -1302,10 +1354,6 @@ msgstr ""
 
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
-msgstr ""
-
-msgctxt "GeneralPage"
-msgid "Select Proxy Executable"
 msgstr ""
 
 msgctxt "GeneralPage"
@@ -1322,18 +1370,6 @@ msgstr ""
 
 msgctxt "GeneralPage"
 msgid "Tor"
-msgstr ""
-
-msgctxt "GeneralPage"
-msgid "Proxy Application (optional)"
-msgstr ""
-
-msgctxt "GeneralPage"
-msgid "Start a proxy application when Tor starts"
-msgstr ""
-
-msgctxt "GeneralPage"
-msgid "Proxy Application Arguments:"
 msgstr ""
 
 msgctxt "GeneralPage"
@@ -1625,39 +1661,11 @@ msgid "Help"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "New Identity"
-msgstr ""
-
-msgctxt "MainWindow"
 msgid "Tor"
 msgstr ""
 
 msgctxt "MainWindow"
 msgid "View"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Error starting web browser"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Vidalia was unable to start the configured web browser"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Error starting IM client"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Error starting proxy server"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Vidalia was unable to start the configured proxy server"
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1698,10 +1706,6 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Unrecognized startup status"
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1905,23 +1909,11 @@ msgid "The following error occurred:"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2."
-msgstr ""
-
-msgctxt "MainWindow"
 msgid "Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
 msgstr ""
 
 msgctxt "MainWindow"
 msgid "toolBar"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Start"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Stop"
 msgstr ""
 
 msgctxt "MainWindow"
@@ -1941,6 +1933,71 @@ msgid "Bootstrapping torrc from %1 to %2"
 msgstr ""
 
 msgctxt "MainWindow"
+msgid "Vidalia tried to restart Tor, but was not able to. Please check your Task Manager to ensure there are no other Tor processes running."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Error reloading configuration"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Vidalia was unable to reload Tor's configuration."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "No dettached tabs"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Panic is enabled"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "<b>WARNING:</b> The Panic button is enabled. Use it carefully because it will remove Tor completely."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "New Circuit"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Debug output"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Panic!"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Reattach tabs"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Plugins"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Your clock is wrong"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Your computer's clock is wrong, tor may not work as expected. Please check the Message Log for more information."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Vidalia can't find out how to talk to Tor because it can't access this file: %1\n"
+"\n"
+"Here's the last error message:\n"
+" %2"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "It seems Tor has stopped running since Vidalia started it.\n"
+"\n"
+"See the Advanced Message Log for more information."
+msgstr ""
+
+msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
 "\n"
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
@@ -1953,32 +2010,24 @@ msgid "Vidalia detected that the Tor software exited unexpectedly.\n"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid "Vidalia tried to restart Tor, but was not able to. Please check your Task Manager to ensure there are no other Tor processes running."
-msgstr ""
-
-msgctxt "MainWindow"
 msgid "failed (%1)"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid ", probably Telnet,"
+msgid "(probably Telnet)"
 msgstr ""
 
 msgctxt "MainWindow"
-msgid ", probably an email client,"
+msgid "(probably an email client)"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "One of your applications %1 appears to be making a potentially unencrypted and unsafe connection to port %2."
 msgstr ""
 
 msgctxt "MainWindow"
 msgid "Your relay is shutting down.\n"
 "Click 'Stop' again to stop your relay now."
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Error reloading configuration"
-msgstr ""
-
-msgctxt "MainWindow"
-msgid "Vidalia was unable to reload Tor's configuration."
 msgstr ""
 
 msgctxt "MessageLog"
@@ -2234,11 +2283,11 @@ msgid "Automatically save new log messages to a file"
 msgstr ""
 
 msgctxt "MessageLog"
-msgid "Always Save New Log Messages"
+msgid "toolbar"
 msgstr ""
 
 msgctxt "MessageLog"
-msgid "toolbar"
+msgid "Always Save New Log Messages"
 msgstr ""
 
 msgctxt "MessageLog"
@@ -2390,12 +2439,24 @@ msgctxt "NetViewer"
 msgid "Status"
 msgstr ""
 
-msgctxt "NetworkPage"
-msgid "Invalid Bridge"
+msgctxt "NetViewer"
+msgid "<a href=\"server.offline\">Why is my relay offline?</a>"
 msgstr ""
 
-msgctxt "NetworkPage"
-msgid "The specified bridge identifier is not valid."
+msgctxt "NetViewer"
+msgid "If your relay isn't listed among the others, it may be because it doesn't have a Running flag yet. <a href=\"server.consensus\">What's this?</a>"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Exit circuits"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Internal circuits"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Hidden Service circuits"
 msgstr ""
 
 msgctxt "NetworkPage"
@@ -2523,11 +2584,70 @@ msgid "SOCKS 5"
 msgstr ""
 
 msgctxt "NetworkPage"
-msgid "HTTP"
+msgid "HTTP / HTTPS"
 msgstr ""
 
 msgctxt "NetworkPage"
-msgid "HTTP / HTTPS"
+msgid "You must specify one or more bridges."
+msgstr ""
+
+msgctxt "PluginEngine"
+msgid "WARNING: %1 doesn't have an info file."
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%1: Processing..."
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%4: ERROR: Line: %1 - Column: %2\n"
+"%3"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%1: Error opening file %2"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%2: ERROR: Cannot open %1"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%2: ERROR: Parsing %1"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "Line: %1 - Column: %2\n"
+"Message: %3"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%1: Starting..."
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%1: Stoping..."
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%1: WARNING: doesn't have a GUI, and buildGUI() was called"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "%2:\n"
+"*** Exception in line %1"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "*** Backtrace:"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "(untitled)"
+msgstr ""
+
+msgctxt "PluginWrapper"
+msgid "Error: buildGUI() failed for plugin %1"
 msgstr ""
 
 msgctxt "Policy"
@@ -2536,6 +2656,31 @@ msgstr ""
 
 msgctxt "Policy"
 msgid "reject"
+msgstr ""
+
+msgctxt "QDialogButtonBox"
+msgid "OK"
+msgstr ""
+
+msgctxt "QObject"
+msgid "There were some settings that Vidalia wasn't able to apply together"
+msgstr ""
+
+msgctxt "QObject"
+msgid "Failed to set %1:\n"
+"Reason: %2"
+msgstr ""
+
+msgctxt "QObject"
+msgid "The failed options were saved in your torrc and will be applied when you restart."
+msgstr ""
+
+msgctxt "QObject"
+msgid "The failed options were NOT saved in your torrc and will be applied when you restart."
+msgstr ""
+
+msgctxt "QObject"
+msgid "Vidalia was unable to save the options to the torrc file."
 msgstr ""
 
 msgctxt "RouterDescriptor"
@@ -2951,80 +3096,60 @@ msgid "Email address at which you may be reached if there is a\n"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Error while trying to unpublish all services"
+msgctxt "ServerPage"
+msgid "day"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
+msgctxt "ServerPage"
+msgid "week"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Error"
+msgctxt "ServerPage"
+msgid "month"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Please select a Service."
+msgctxt "ServerPage"
+msgid "Enable accounting"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Select Service Directory"
+msgctxt "ServerPage"
+msgid "h:mm"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Virtual Port may only contain valid port numbers [1..65535]."
+msgctxt "ServerPage"
+msgid "at"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Target may only contain address:port, address, or port."
+msgctxt "ServerPage"
+msgid "per"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Directory already in use by another service."
+msgctxt "ServerPage"
+msgid "bytes"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Provided Hidden Services"
+msgctxt "ServerPage"
+msgid "KB"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Onion Address"
+msgctxt "ServerPage"
+msgid "MB"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Virtual Port"
+msgctxt "ServerPage"
+msgid "GB"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Target"
+msgctxt "ServerPage"
+msgid "TB"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Directory Path"
+msgctxt "ServerPage"
+msgid "Push no more than"
 msgstr ""
 
-msgctxt "ServicePage"
-msgid "Enabled"
-msgstr ""
-
-msgctxt "ServicePage"
-msgid "Add new service to list"
-msgstr ""
-
-msgctxt "ServicePage"
-msgid "Remove selected service from list"
-msgstr ""
-
-msgctxt "ServicePage"
-msgid "Copy onion address of selected service to clipboard"
-msgstr ""
-
-msgctxt "ServicePage"
-msgid "Browse in local file system and choose directory for selected service"
-msgstr ""
-
-msgctxt "ServicePage"
-msgid "Created by Tor"
+msgctxt "ServerPage"
+msgid "time"
 msgstr ""
 
 msgctxt "StatusEventWidget"
@@ -3259,6 +3384,22 @@ msgctxt "TorControl"
 msgid "Vidalia has not started Tor. You need to stop Tor through the interface you started it."
 msgstr ""
 
+msgctxt "TorControl"
+msgid "Start failed: %1"
+msgstr ""
+
+msgctxt "TorControl"
+msgid "Process finished: ExitCode=%1"
+msgstr ""
+
+msgctxt "TorControl"
+msgid "Connection failed: %1"
+msgstr ""
+
+msgctxt "TorControl"
+msgid "Disconnected"
+msgstr ""
+
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
 msgstr ""
@@ -3277,10 +3418,6 @@ msgstr ""
 
 msgctxt "TorrcDialog"
 msgid "Editing torrc"
-msgstr ""
-
-msgctxt "TorrcDialog"
-msgid "Save settings. If unchecked it will only apply settings to the current Tor instance."
 msgstr ""
 
 msgctxt "TorrcDialog"
@@ -3305,26 +3442,6 @@ msgstr ""
 
 msgctxt "TorrcDialog"
 msgid "Select All"
-msgstr ""
-
-msgctxt "TorrcDialog"
-msgid "Apply all"
-msgstr ""
-
-msgctxt "TorrcDialog"
-msgid "Apply selection only"
-msgstr ""
-
-msgctxt "TorrcDialog"
-msgid "Error connecting to Tor"
-msgstr ""
-
-msgctxt "TorrcDialog"
-msgid "Selection is empty. Please select some text, or check \"Apply all\""
-msgstr ""
-
-msgctxt "TorrcDialog"
-msgid "Error at line %1: \"%2\""
 msgstr ""
 
 msgctxt "TorrcDialog"
@@ -3483,14 +3600,6 @@ msgctxt "UpdatesAvailableDialog"
 msgid "Version"
 msgstr ""
 
-msgctxt "UploadProgressDialog"
-msgid "Uploading Crash Report"
-msgstr ""
-
-msgctxt "UploadProgressDialog"
-msgid "Unable to send report: %1"
-msgstr ""
-
 msgctxt "VMessageBox"
 msgid "OK"
 msgstr ""
@@ -3581,6 +3690,10 @@ msgstr ""
 
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
+msgstr ""
+
+msgctxt "Vidalia"
+msgid "Value required for parameter :"
 msgstr ""
 
 msgctxt "Vidalia"
