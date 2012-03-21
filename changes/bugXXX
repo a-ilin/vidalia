@@ -1,0 +1,1 @@
+  o Fix deadlock when the browser process failed to launch in OSX.
