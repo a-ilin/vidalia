@@ -44,8 +44,6 @@ PluginEngine::PluginEngine(QObject *parent)
   DebugDialog::outputDebug("Available extensions:");
   foreach(QString ext, availableExtensions())
     DebugDialog::outputDebug(QString("  %1").arg(ext));
-
-  loadAllPlugins();
 }
 
 PluginEngine::~PluginEngine()
@@ -74,6 +72,12 @@ PluginEngine::loadAllPlugins()
       tryLoadPlugin(finfo.filePath());
     }
   }
+}
+
+void
+PluginEngine::provide(const QString &name, QObject *obj)
+{
+  globalObject().setProperty(name, newQObject(obj));
 }
 
 void

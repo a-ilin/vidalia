@@ -55,6 +55,10 @@ public:
 public slots:
   /** Shows or hides this window. **/
   virtual void setVisible(bool visible);
+  /** Display a message in the application system tray icon */
+  void trayMessage(const QString &title, const QString &msg,
+                   QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::Information,
+                   int milli = 10000);
 
 protected:
   /** Called when the user changes the UI translation. */
@@ -318,4 +322,3 @@ private:
 };
 
 #endif
-

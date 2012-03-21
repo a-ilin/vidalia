@@ -113,6 +113,8 @@ MainWindow::MainWindow()
   _torControl = Vidalia::torControl();
 
   _engine = new PluginEngine();
+  _engine->provide("VidaliaMainWindow", this);
+  _engine->loadAllPlugins();
 
   _dummy = new QAction(tr("No dettached tabs"), this);
 
@@ -447,7 +449,7 @@ MainWindow::createConnections()
   connect(&_updateTimer, SIGNAL(timeout()), this, SLOT(checkForUpdates()));
 
   /* Also check for updates in the foreground when the user clicks the
-   * "Check Now" button in the config dialog. */
+   * "check Now" button in the config dialog. */
   connect(_configDialog, SIGNAL(checkForUpdates()),
           this, SLOT(checkForUpdatesWithUi()));
 
@@ -2227,4 +2229,12 @@ MainWindow::panic()
     vApp->disconnect();
   }
   vApp->quit();
+}
+
+/** Display a message in the application system tray icon */
+void
+MainWindow::trayMessage(const QString &title, const QString &msg,
+                        QSystemTrayIcon::MessageIcon icon, int milli)
+{
+  _trayIcon.showMessage(title, msg, icon, milli);
 }

@@ -39,7 +39,9 @@ class PluginEngine : public QScriptEngine {
     PluginEngine(QObject *parent = 0);
     ~PluginEngine();
 
+    void loadAllPlugins();
     QList<QAction *> getAllActions();
+    void provide(const QString &name, QObject *obj);
 
   signals:
     void pluginTab(VidaliaTab *);
@@ -52,7 +54,6 @@ class PluginEngine : public QScriptEngine {
     static QScriptValue findWidget(QScriptContext *context, QScriptEngine *engine);
     static QScriptValue sleep(QScriptContext *context, QScriptEngine *engine);
 
-    void loadAllPlugins();
     void tryLoadPlugin(QDir path);
 
     QList<PluginWrapper *> wrappers;
