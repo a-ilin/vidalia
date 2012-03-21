@@ -259,7 +259,7 @@ GraphFrame::paintTotals()
     y = rowHeight;
     _painter->setPen(RECV_COLOR);
     _painter->drawText(x, y,
-        tr("Recv: ") + totalToStr(_totalRecv) +
+        tr("Recv:") + " " + totalToStr(_totalRecv) +
         " ("+tr("%1 KB/s").arg(_recvData->first(), 0, 'f', 2)+")");
   }
 
@@ -268,7 +268,7 @@ GraphFrame::paintTotals()
     y += rowHeight;
     _painter->setPen(SEND_COLOR);
     _painter->drawText(x, y,
-        tr("Sent: ") + totalToStr(_totalSend) +
+        tr("Sent:") + " " + totalToStr(_totalSend) +
         " ("+tr("%1 KB/s").arg(_sendData->first(), 0, 'f', 2)+")");
   }
 }
