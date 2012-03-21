@@ -1,0 +1,2 @@
+  o Provide the MainWindow object to the plugins so they can provide
+    messages in the system tray. Fixes bug 5338.
