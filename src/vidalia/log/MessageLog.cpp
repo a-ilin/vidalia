@@ -30,6 +30,7 @@
 
 /* Message log settings */
 #define SETTING_MSG_FILTER          "MessageFilter"
+#define SETTING_FILTER_TERM         "MessageFilterSearchTerm"
 #define SETTING_MAX_MSG_COUNT       "MaxMsgCount"
 #define SETTING_ENABLE_LOGFILE      "EnableLogFile"
 #define SETTING_LOGFILE             "LogFile"
@@ -45,6 +46,7 @@
 #else
 #define DEFAULT_LOGFILE       (QDir::homePath() + "/.tor/tor-log.txt")
 #endif
+#define DEFAULT_FILTER_TERM         ""
 
 #define ADD_TO_FILTER(f,v,b)  (f = ((b) ? ((f) | (v)) : ((f) & ~(v))))
 
@@ -58,6 +60,7 @@
  */
 MessageLog::MessageLog(QStatusBar *st, QWidget *parent)
 : VidaliaTab(tr("Message Log"), "MessageLog", parent),
+  _logFilter(NULL),
   _statusBar(st)
 {
   /* Invoke Qt Designer generated QObject setup routine */
@@ -89,6 +92,8 @@ MessageLog::MessageLog(QStatusBar *st, QWidget *parent)
 MessageLog::~MessageLog()
 {
   _logFile.close();
+  if (_logFilter)
+    delete _logFilter;
 }
 
 /** Binds events (signals) to actions (slots). */
@@ -162,6 +167,13 @@ MessageLog::setToolTips()
                                "during normal Tor operation."));
   ui.chkTorDebug->setToolTip(tr("Hyper-verbose messages primarily of \n"
                                 "interest to Tor developers."));
+  ui.chkFilterSearch->setToolTip(tr("Custom filter based on search term."));
+  ui.lineSearchTerm->setToolTip(tr("Here you can type a search term used \n"
+                                   "to filter log messages. Recognized "
+                                   "keywords: \nNOT, AND, OR.\n"
+                                   "You can use brackets for grouping.\n"
+                                   "To input regular expression in perl\n"
+                                   "syntax, use \\r prefix."));
 }
 
 /** Called when the user changes the UI translation. */
@@ -201,9 +213,16 @@ MessageLog::loadSettings()
   ui.chkTorDebug->setChecked(_filter & tc::DebugSeverity);
   registerLogEvents();
 
+  /* Load custom search term filter */
+  const QString term = getSetting(SETTING_FILTER_TERM, DEFAULT_FILTER_TERM)
+                      .toString();
+  ui.chkFilterSearch->setChecked(!term.isEmpty());
+  ui.lineSearchTerm->setText(term);
+  buildMessageFilter(term);
+
   /* Filter the message log */
   QApplication::setOverrideCursor(Qt::WaitCursor);
-  ui.listMessages->filter(_filter);
+  ui.listMessages->filter(_logFilter);
   QApplication::restoreOverrideCursor();
 }
 
@@ -290,9 +309,17 @@ MessageLog::saveSettings()
   saveSetting(SETTING_MSG_FILTER, filter);
   registerLogEvents();
 
+  /* Save search term filter */
+  QString term;
+  if (ui.chkFilterSearch->isChecked()) {
+    term = ui.lineSearchTerm->text();
+  }
+  saveSetting(SETTING_FILTER_TERM, term);
+  buildMessageFilter(term);
+
   /* Filter the message log */
   QApplication::setOverrideCursor(Qt::WaitCursor);
-  ui.listMessages->filter(_filter);
+  ui.listMessages->filter(_logFilter);
   QApplication::restoreOverrideCursor();
 
   /* Hide the settings frame and reset toggle button*/
@@ -438,6 +465,18 @@ MessageLog::find()
   }
 }
 
+/** Tests if message should be added to the Message History.
+ * \param severity The message's severity type.
+ * \param message The log message to be tested.
+ */
+bool
+MessageLog::testMessage(tc::Severity severity, const QString &message) const
+{
+  if (_logFilter)
+    return _logFilter->eval(severity, message);
+  return true;
+}
+
 /** Writes a message to the Message History and tags it with
  * the proper date, time and type.
  * \param type The message's severity type.
@@ -448,7 +487,7 @@ MessageLog::log(tc::Severity type, const QString &message)
 {
   setUpdatesEnabled(false);
   /* Only add the message if it's not being filtered out */
-  if (_filter & (uint)type) {
+  if (testMessage(type, message)) {
     /* Add the message to the list and scroll to it if necessary. */
     LogTreeItem *item = ui.listMessages->log(type, message);
 
@@ -477,3 +516,23 @@ MessageLog::help()
   emit helpRequested("log");
 }
 
+/** Create regular expression used to filter incoming log messages.
+ * \param input String used to create reg exp.
+ */
+void
+MessageLog::buildMessageFilter(const QString &input)
+{
+  if (_logFilter)
+    delete _logFilter;
+
+  if (input.isEmpty()) {
+    _logFilter = new LogFilter(_filter);
+  } else if (input.startsWith("\\r")) {
+    QString pattern = input;
+    pattern.remove(0,2);
+    const QRegExp rx(pattern.trimmed(), Qt::CaseSensitive, QRegExp::RegExp);
+    _logFilter = new LogFilterRegExp(rx, _filter);
+  } else {
+    _logFilter = new LogFilterSearchTerm(input, _filter);
+  }
+}

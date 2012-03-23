@@ -303,6 +303,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   log/StatusEventItem.cpp
   log/StatusEventItemDelegate.cpp
   log/StatusEventWidget.cpp
+  log/LogFilter.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   log/LogFile.h

@@ -17,6 +17,7 @@
 #define _LOGTREEWIDGET_H
 
 #include "LogTreeItem.h"
+#include "LogFilter.h"
 
 #include "TorControl.h"
 
@@ -44,9 +45,9 @@ public:
   LogTreeWidget(QWidget *parent = 0);
 
   /** Returns a list of all currently selected messages. */
-  QStringList selectedMessages();
+  QStringList selectedMessages() const;
   /** Returns a list of all messages in the tree. */
-  QStringList allMessages();
+  QStringList allMessages() const;
   /** Deselects all currently selected messages. */
   void deselectAll();
 
@@ -55,8 +56,8 @@ public:
   /** Sets the maximum number of items in the tree. */
   void setMaximumMessageCount(int max);
   /** Filters the log according to the specified filter. */
-  void filter(uint filter);
-
+  void filter(LogFilter * filter);
+  
   /** Adds a log item to the tree. */
   LogTreeItem* log(tc::Severity severity, const QString &message);
 
@@ -79,9 +80,9 @@ private:
   /** Adds <b>item</b> as a top-level item in the tree. */
   void addLogTreeItem(LogTreeItem *item);
   /** Casts a QList of one pointer type to another. */
-  QList<LogTreeItem *> qlist_cast(QList<QTreeWidgetItem *> inlist);
+  QList<LogTreeItem *> qlist_cast(QList<QTreeWidgetItem *> inlist) const;
   /** Sortrs a QList of pointers to tree items. */
-  QList<LogTreeItem *> qlist_sort(QList<LogTreeItem *> inlist);
+  QList<LogTreeItem *> qlist_sort(QList<LogTreeItem *> inlist) const;
 
   /**< List of pointers to all log message items currently in the tree. */
   QList<LogTreeItem *> _itemHistory;

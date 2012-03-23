@@ -60,7 +60,7 @@ LogTreeWidget::verticalSliderReleased()
 /** Cast a QList of QTreeWidgetItem pointers to a list of LogTreeWidget
  * pointers. There really must be a better way to do this. */
 QList<LogTreeItem *>
-LogTreeWidget::qlist_cast(QList<QTreeWidgetItem *> inlist)
+LogTreeWidget::qlist_cast(QList<QTreeWidgetItem *> inlist) const
 {
   QList<LogTreeItem *> outlist;
   foreach (QTreeWidgetItem *item, inlist) {
@@ -71,7 +71,7 @@ LogTreeWidget::qlist_cast(QList<QTreeWidgetItem *> inlist)
 
 /** Sorts the list of pointers to log tree items by timestamp. */
 QList<LogTreeItem *>
-LogTreeWidget::qlist_sort(QList<LogTreeItem *> inlist)
+LogTreeWidget::qlist_sort(QList<LogTreeItem *> inlist) const
 {
   QMap<quint32, LogTreeItem *> outlist;
   foreach (LogTreeItem *item, inlist) {
@@ -106,7 +106,7 @@ LogTreeWidget::clearMessages()
 
 /** Returns a list of all currently selected items. */
 QStringList
-LogTreeWidget::selectedMessages()
+LogTreeWidget::selectedMessages() const
 {
   QStringList messages;
 
@@ -123,7 +123,7 @@ LogTreeWidget::selectedMessages()
 
 /** Returns a list of all items in the tree. */
 QStringList
-LogTreeWidget::allMessages()
+LogTreeWidget::allMessages() const
 {
   QStringList messages;
 
@@ -229,12 +229,16 @@ LogTreeWidget::addLogTreeItem(LogTreeItem *item)
 
 /** Filters the message log based on the given filter. */
 void
-LogTreeWidget::filter(uint filter)
+LogTreeWidget::filter(LogFilter * filter)
 {
+  if (!filter) {
+    return;
+  }
   int itemsShown = 0;
   for (int i = _itemHistory.size()-1; i >= 0; i--) {
     LogTreeItem *item = _itemHistory.at(i);
-    if ((itemsShown < _maxItemCount) && (filter & item->severity())) {
+    tc::Severity type = item->severity();
+    if ((itemsShown < _maxItemCount) && filter->eval(type,item->message())) {
       itemsShown++;
     } else {
       int itemIndex = indexOfTopLevelItem(item);

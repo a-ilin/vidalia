@@ -78,16 +78,22 @@ private:
   void save(const QStringList &messages);
   /** Rotates the log file based on the filename and the current logging status. */
   bool rotateLogFile(const QString &filename);
+  /** Test if given log message should be included into message history. */
+  bool testMessage(tc::Severity severity, const QString& message) const;
+  /** Create filter for log messages. */
+  void buildMessageFilter(const QString& input);
 
   /** A pointer to a TorControl object, used to register for log events */
   TorControl* _torControl;
   /** A VidaliaSettings object that handles getting/saving settings **/
   VidaliaSettings* _settings;
-  /** Stores the current message filter */
+  /** Stores the current message severity filter */
   uint _filter;
-  /** Set to true if we will log all messages to a file. */
-  bool _enableLogging;
-  /* The log file used to store log messages. */
+  /** Stores message filter */
+  LogFilter* _logFilter;
+  /** Set to true if we will log all messages to a file. */  	 
+  bool _enableLogging;  
+  /** The log file used to store log messages. */
   LogFile _logFile;
 
   QStatusBar *_statusBar;
