@@ -217,6 +217,8 @@ MessageLog::loadSettings()
   const QString term = getSetting(SETTING_FILTER_TERM, DEFAULT_FILTER_TERM)
                       .toString();
   ui.chkFilterSearch->setChecked(!term.isEmpty());
+  ui.lineSearchTerm->setEnabled(!term.isEmpty());
+
   ui.lineSearchTerm->setText(term);
   buildMessageFilter(term);
 
