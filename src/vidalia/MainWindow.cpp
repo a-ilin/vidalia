@@ -635,6 +635,8 @@ MainWindow::start()
 
   /* Specify Tor's data directory, if different from the default */
   QString dataDirectory = settings.getDataDirectory();
+  if(QDir(dataDirectory).isRelative())
+    dataDirectory = QCoreApplication::applicationDirPath() + "/" + dataDirectory;
   QString expDataDirectory = expand_filename(dataDirectory);
 
   if(settings.getControlMethod() == ControlMethod::Port) {
@@ -681,7 +683,10 @@ MainWindow::start()
    * start. */
   _isIntentionalExit = true;
   /* Kick off the Tor process */
-  _torControl->start(settings.getExecutable(), args);
+  QString torExecutable = settings.getExecutable();
+  if(QDir(QFileInfo(torExecutable).filePath()).isRelative())
+    torExecutable = QCoreApplication::applicationDirPath() + "/" + torExecutable;
+  _torControl->start(torExecutable, args);
 
   QString errmsg;
   while(not _torControl->isRunning()) {

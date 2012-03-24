@@ -202,7 +202,11 @@ TorSettings::getTorrc() const
   TorControl *tc = torControl();
   if (tc && tc->isConnected() && tc->getInfo("config-file", torrc))
     return QDir::convertSeparators(torrc);
-  return QDir::convertSeparators(localValue(SETTING_TORRC).toString());
+
+  torrc = localValue(SETTING_TORRC).toString();
+  if(QDir(QFileInfo(torrc).filePath()).isRelative())
+    torrc = QCoreApplication::applicationDirPath() + "/" + torrc;
+  return QDir::convertSeparators(torrc);
 }
 
 /** Sets the torrc that will be used when starting Tor.
@@ -222,7 +226,11 @@ TorSettings::getDefaultsTorrc() const
   // TorControl *tc = torControl();
   // if (tc && tc->isConnected() && tc->getInfo("config-file", torrc))
   //   return QDir::convertSeparators(torrc);
-  return QDir::convertSeparators(localValue(SETTING_DEFAULTS_TORRC).toString());
+
+  torrc = localValue(SETTING_DEFAULTS_TORRC).toString();
+  if(QDir(QFileInfo(torrc).filePath()).isRelative())
+    torrc = QCoreApplication::applicationDirPath() + "/" + torrc;
+  return QDir::convertSeparators(torrc);
 }
 
 /** Sets the defaults torrc that will be used when starting Tor.
