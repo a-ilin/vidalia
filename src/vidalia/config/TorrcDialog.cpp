@@ -107,7 +107,8 @@ TorrcDialog::loadTorrc()
     } while(!line.isNull());
     ui.teditTorrc->setText(text);
   } else {
-    QMessageBox::critical(this, tr("Error"), tr("An error ocurred while opening torrc file"));
+    QMessageBox::critical(this, tr("Error"), tr("An error ocurred while opening torrc file: %1")
+                          .arg(file.error()));
   }
 }
 
