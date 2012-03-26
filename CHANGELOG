@@ -1,58 +1,65 @@
 0.3.2   ??-???-2012
-  o Classify circuits based on their purpose. This will help users
-    understand that nothing is wrong when Tor builds a one-hop
-    circuit, for example. Fixes bug 2114.
-  o Add option to use search query as message log filter. Fixes
-    ticket 2733.
+  New features:
+  o In the Network Map window, classify circuits based on their
+    purpose. This will help users understand that nothing is wrong when
+    Tor builds a one-hop circuit, for example. Fixes bug 2114.
+  o In the Message Log window, add an option to filter by search query.
+    Fixes ticket 2733.
   o Add a new configured relay immediately to the list of relays in
     the Network Map. Also document why a relay might be offline or not
     in the consensus/router list. Fixes bug 2735.
   o Add accounting options to the relay configuration panel. Fixes bug
     2944.
+  o Add a Panic button, for users who want to get rid of the Tor Browser
+    Bundle quickly in certain circumstances. Note that it uses a simple
+    erase, rather than a secure erase method. Resolves ticket 4107.
+  o Add a way to handle default settings through a file instead of
+    just the hardcoded values. Vidalia will read a vidalia.defaults.conf
+    file from the same place as the vidalia.conf file, and override the
+    hardcoded default if a configuration option and value are listed in
+    this defaults file.
+  o Implement a torrc parser and editor and use that to take every
+    tor configuration option from the vidalia.conf file to the
+    torrc. Vidalia now just needs to know the minimal information to
+    connect to the tor process (ControlPort or ControlSocket and
+    authentication) and everything else would be handled through the
+    torrc file.
+
+  Bugfixes relative to Vidalia 0.2.x:
+  o Fix deadlock when the browser process fails to launch in OS X.
+  o Resume listing relays in the Network Map panel even when Tor
+    only offers microdescriptors (new in Tor 0.2.3.x). Fixes ticket 4203.
   o Use consensus bandwidth for routers when microdescriptors is
     enabled. Fixes bug 3287.
-  o Improve a method that didn't return the specified type if
-    another control method was selected. Fixes bug 4065.
-  o Add a Panic button, for users who want to get rid of the Tor Browser
-    Bundle quickly in certain circumstances. It uses a simple erase,
-    rather than a secure erase method. Resolves ticket 4107.
   o Handle unrecognized Tor bootstrap phases. (Tor tells us a summary
     description of each bootstrap phase as it occurs, so we can use that
     string if needed.) Fixes bug 5109.
   o Change the wording from New Identity to New Circuit. For a proper
     New Identity while browsing, TorButton's solution should be
     used. Fixes bug 5277.
+  o Fix the bridge line parsing for requests to bridges.torproject.org
+    when the user clicks 'find bridges now'. Fixes bug 5730.
+
+  Bugfixes relative to Vidalia 0.3.x:
   o Center detached tabs to avoid placing them out of reach. Fixes bug
     5326.
   o Provide the MainWindow object to the plugins so they can provide
     messages in the system tray. Fixes bug 5338.
-  o Do not ignore the Show on Startup checkbox. Fixes bug 5351.
-  o Fix the bridge line parsing for requests to
-    bridges.torproject.org. Fixes bug 5730.
-  o Remove the ability to launch an http proxy (e.g. Polipo), since we
-    do not use it anymore. In the future, perhaps a plugin will allow
-    users to launch external applications like this. Fix bug 5386.
-  o Fix deadlock when the browser process failed to launch in OSX.
-  o Removes the need for threads to handle interaction with the
-    ControlPort. It now uses asynchronous IO through Qt's event loop.
-  o Add a way to handle default settings through a file instead of
-    just the hardcoded values. Vidalia will look for a
-    vidalia.defaults.conf file in the same place the vidalia.conf file
-    is, and from it it will read the default values for each
-    configuration option or fall back to the hardcoded default if the
-    key isn't present.
-  o Improve the bootstrap behavior for the new async TorControl.
-  o Resume listing relays in the Network Map panel even when Tor
-    only offers microdescriptors (new in Tor 0.2.3.x). Fixes ticket 4203.
+  o Do not ignore the "Show on Startup" checkbox. Fixes bug 5351.
+
+  Internal cleanups and improvements:
+  o Remove the ability to launch an http proxy (e.g. Polipo), since Tor
+    Browser Bundle does not use it anymore. In the future, perhaps
+    a plugin will allow users to launch external applications like
+    this. Fix bug 5386.
+  o Fix a method that didn't return the specified type if another control
+    method was selected. Fixes bug 4065.
+  o Remove the need for threads to handle interaction with the
+    ControlPort. Vidalia now uses asynchronous IO through Qt's event loop.
   o Migrate the code that handles Marble to the new library
     interface. It works as expected with the latest Marble from the
     upstream git repo.
-  o Implements a torrc parser and editor and uses that to take every
-    tor configuration option from the vidalia.conf file to the
-    torrc. Vidalia now just needs to know the minimal information to
-    connect to the tor process (ControlPort or ControlSocket and
-    authentication) and everything else would be handled through the
-    torrc file.
+
 
 0.3.1   27-Feb-2012
   o Draw the bandwidth graph curves based on the local maximum, not
