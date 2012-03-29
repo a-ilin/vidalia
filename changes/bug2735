@@ -1,3 +1,0 @@
-  o Add a new configured relay immediately to the list of relays in
-    the Network Map. Also document why a relay might be offline of not
-    in the consensus/router list. Fixes bug 2735.

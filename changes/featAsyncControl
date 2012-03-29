@@ -1,2 +1,0 @@
-  o Removes the need for threads to handle interaction with the
-    ControlPort. It now uses asynchronous IO through Qt's event loop.

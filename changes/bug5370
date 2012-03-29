@@ -1,2 +1,0 @@
-  o Fix the bridge line parsing for requests to
-    bridges.torproject.org. Fixes bug 5730.

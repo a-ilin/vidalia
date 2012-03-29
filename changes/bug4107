@@ -1,4 +1,0 @@
-  o Add a Panic button. Some users want to get rid of the Tor Browser
-    Bundle quickly in certain circumstances, this button does exactly
-    that but with a simple erease, not some secure method. Resolves
-    ticket 4107.

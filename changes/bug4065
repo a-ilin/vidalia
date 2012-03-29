@@ -1,2 +1,0 @@
-  o Improve a method that didn't returned the specified type if
-    another control method was selected. Fixes bug 4065.

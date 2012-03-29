@@ -1,2 +1,0 @@
-  o Remove the proxy settings handling since we do not use it
-    anymore. Fix bug 5386.

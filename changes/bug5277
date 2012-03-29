@@ -1,3 +1,0 @@
-  o Change the wording from New Identity to New Circuit. For a proper
-    New Identity while browsing, TorButton's solution should be
-    used. Fixes bug 5277.

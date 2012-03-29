@@ -1,2 +1,0 @@
-  o Handle tor's bootstrap phases in a more generic way. Fixes bug
-    5109.

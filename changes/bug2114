@@ -1,3 +1,0 @@
-  o Classify circuits based on their purpose. This will help users
-    understand that nothing is wrong when Tor builds a one hop
-    circuit, for example. Fixes bug 2114.
