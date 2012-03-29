@@ -189,6 +189,12 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>18</height>
+           </size>
+          </property>
           <property name="text">
            <string>Use TCP connection (ControlPort)</string>
           </property>
@@ -224,6 +230,12 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>18</height>
+           </size>
           </property>
           <property name="text">
            <string>Use Unix domain socket (ControlSocket)</string>
