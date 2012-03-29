@@ -26,7 +26,7 @@ class VidaliaTab : public QWidget
 
 public:
   /** Default constructor. */
-  VidaliaTab(const QString &title, const QString &name = "", QWidget *parent = 0);
+  VidaliaTab(const QString &title, const QString &name = "General", QWidget *parent = 0);
   /** Destructor. */
   ~VidaliaTab();
 
