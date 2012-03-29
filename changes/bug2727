@@ -1,0 +1,3 @@
+  New Features:
+  o In Network View, store layout of network map panes. 
+    Fixes ticket 2727.
