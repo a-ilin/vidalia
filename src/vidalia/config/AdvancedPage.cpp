@@ -478,3 +478,23 @@ AdvancedPage::browsePanicPath()
   if (!panicPath.isEmpty())
     ui.linePanicPath->setText(panicPath);
 }
+
+/** Hides the specified group */
+void
+AdvancedPage::hideGroup(ConfigGroup group)
+{
+  switch(group) {
+  case Control:
+    ui.grpControlPort->hide();
+    break;
+  case ConfigurationFile:
+    ui.grpTorConfigFile->hide();
+    break;
+  case DataDirectory:
+    ui.grpTorDataDirectory->hide();
+    break;
+  case Panic:
+    ui.grpPanic->hide();
+    break;
+  }
+}

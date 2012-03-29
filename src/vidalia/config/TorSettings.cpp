@@ -47,6 +47,7 @@
 #define SETTING_BOOTSTRAP            "Bootstrap"
 #define SETTING_BOOTSTRAP_FROM       "BootstrapFrom"
 #define SETTING_AUTOCONTROL          "AutoControl"
+#define SETTING_DISABLE_NETWORK      "DisableNetwork"
 
 /** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
@@ -97,6 +98,7 @@ TorSettings::TorSettings(TorControl *torControl)
   setDefault(SETTING_BOOTSTRAP, false);
   setDefault(SETTING_BOOTSTRAP_FROM, "");
   setDefault(SETTING_AUTOCONTROL, false);
+  setDefault(SETTING_DISABLE_NETWORK, false);
 }
 
 /** Applies any changes to Tor's control port or authentication settings. */
@@ -155,6 +157,9 @@ TorSettings::apply(QString *errmsg)
       torrc->setValue(TOR_ARG_COOKIE_AUTH,    "0");
       torrc->setValue(TOR_ARG_HASHED_PASSWORD, "");
   }
+
+  torrc->setValue(SETTING_DISABLE_NETWORK,
+                  volatileValue(SETTING_DISABLE_NETWORK).toBool() ? "1" : "0");
 
   return torrc->apply(Vidalia::torControl(), errmsg);
 }
@@ -444,6 +449,26 @@ TorSettings::setRejectPlaintextPorts(const QList<quint16> &ports)
     rejectList << QString::number(port);
   }
   setValue(SETTING_REJECT_PLAINTEXT_PORTS, rejectList.join(","));
+}
+
+/** Returns the value for the DisableNetwork option */
+bool
+TorSettings::getDisableNetwork() const
+{
+  bool val = false;
+  with_torrc_value(SETTING_DISABLE_NETWORK) {
+    val = (bool)ret.at(0).toUInt();
+  }
+
+  return val;
+}
+
+/** Sets the DisableNetwork property for tor. When enabled, tor
+ * won't try to reach any node. */
+void
+TorSettings::setDisableNetwork(bool val)
+{
+  setVolatileValue(SETTING_DISABLE_NETWORK, val);
 }
 
 /** Returns the string description of the authentication method specified by

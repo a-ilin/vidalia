@@ -127,6 +127,12 @@ public:
    * when the user tries to connect to one of them. */
   void setRejectPlaintextPorts(const QList<quint16> &ports);
 
+  /** Returns the value for the DisableNetwork option */
+  bool getDisableNetwork() const;
+  /** Sets the DisableNetwork property for tor. When enabled, tor
+   * won't try to reach any node. */
+  void setDisableNetwork(bool val);
+
   /** Generates a random control password consisting of PASSWORD_LEN
    * characters. */
   static QString randomPassword();

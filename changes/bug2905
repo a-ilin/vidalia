@@ -1,0 +1,6 @@
+  New Features:
+  o Add a wizard for the special cases where the user starts Vidalia
+    while tor has DisableNetwork=1 or the Panic feature enabled. This
+    wizard is meant to warn the user about either the Panic feature or
+    that she might need to configure a proxy or a bridge before tor
+    connects to the outside world. Fixes ticket 2905.

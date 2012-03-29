@@ -87,6 +87,7 @@ TorrcParser::TorrcParser()
   _torOpts << TorOpt("DirServer", TorOpt::LineList, "");
   _torOpts << TorOpt("DisableAllSwap", TorOpt::Boolean, "0");
   _torOpts << TorOpt("DisableIOCP", TorOpt::Boolean, "1");
+  _torOpts << TorOpt("DisableNetwork", TorOpt::Boolean, "0");
   _torOpts << TorOpt("DNSPort", TorOpt::LineList, "");
   _torOpts << TorOpt("DNSListenAddress", TorOpt::LineList, "");
   _torOpts << TorOpt("DownloadExtraInfo", TorOpt::Boolean, "0");

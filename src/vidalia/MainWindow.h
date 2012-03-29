@@ -42,6 +42,8 @@
 #include <QTimer>
 #include <QSystemTrayIcon>
 
+class FirstRunWizard;
+
 class MainWindow : public VidaliaWindow
 {
   Q_OBJECT
@@ -198,6 +200,9 @@ private slots:
   void upnpError(UPNPControl::UPNPError error);
 #endif
 
+  /** Called when the user has finished the first run wizard */
+  void enableNetwork();
+
 private:
   enum TorStatus {
     Unset,      /**< Tor's status has not yet been set. */
@@ -319,6 +324,8 @@ private:
   QString _previousSocksPort; /**< Holds the previous socksport used */
 
   bool _pressedStop; /**< True if the user has pressed the Stop Tor button */
+
+  FirstRunWizard *_wizard; /**< Wizard displayed when running Vidalia for the first time */
 };
 
 #endif

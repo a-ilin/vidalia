@@ -28,6 +28,13 @@ class AdvancedPage : public ConfigPage
   Q_OBJECT
 
 public:
+  enum ConfigGroup {
+    Control,
+    ConfigurationFile,
+    DataDirectory,
+    Panic
+  };
+
   /** Default Constructor */
   AdvancedPage(QWidget *parent = 0);
   /** Default Destructor */
@@ -49,6 +56,9 @@ public:
   bool changedSinceLastApply();
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
+
+  /** Hides the specified group */
+  void hideGroup(ConfigGroup group);
 
 signals:
   /** Emitted when the user changes torrc file to restart Tor */

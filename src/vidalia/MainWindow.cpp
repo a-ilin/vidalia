@@ -23,6 +23,7 @@
 #include "VMessageBox.h"
 #include "TorSettings.h"
 #include "ServerSettings.h"
+#include "NetworkSettings.h"
 #include "AboutDialog.h"
 #include "HelpBrowser.h"
 #include "VAttachButton.h"
@@ -40,6 +41,8 @@
 
 #include "PluginWrapper.h"
 #include "DebugDialog.h"
+
+#include "FirstRunWizard.h"
 
 #include <QtGui>
 
@@ -138,13 +141,17 @@ MainWindow::MainWindow()
   VidaliaWindow::setVisible(settings.showMainWindowAtStart());
 #endif
 
+  TorSettings tor_settings(_torControl);
+
   if(settings.firstRun()) {
-    if(settings.allowPanic())
-      VMessageBox::warning(this, tr("Panic is enabled"),
-                           tr("<b>WARNING:</b> The Panic button is enabled. Use "
-                              "it carefully because it will remove Tor completely."),
-                           VMessageBox::Ok|VMessageBox::Default);
-    settings.setFirstRun(false);
+    if(tor_settings.getDisableNetwork() or settings.allowPanic()) {
+      _wizard = new FirstRunWizard(this, settings.allowPanic(), tor_settings.getDisableNetwork());
+      _wizard->show();
+      connect(_wizard, SIGNAL(accepted()),
+              this, SLOT(enableNetwork()));
+
+      settings.setFirstRun(false);
+    }
   }
 }
 
@@ -153,6 +160,20 @@ MainWindow::~MainWindow()
 {
   delete _engine;
 }
+
+/** Called when the user has finished the first run wizard */
+void
+MainWindow::enableNetwork()
+{
+  TorSettings tor_settings(_torControl);
+  tor_settings.setDisableNetwork(false);
+  QString errmsg;
+  if(not tor_settings.apply(&errmsg))
+    VMessageBox::warning(this, tr("Error finishing apply of first run settings"),
+                         tr("Error: %1").arg(errmsg),
+                         VMessageBox::Ok|VMessageBox::Default);
+}
+
 
 /** Calls the different methods that will handle the GUI "creation".
  * It's called once at the MainWindow creation. */

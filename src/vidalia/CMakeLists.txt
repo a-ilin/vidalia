@@ -182,6 +182,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   VidaliaTab.cpp
   StatusTab.cpp
   HelperProcess.cpp
+  FirstRunWizard.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   Vidalia.h
@@ -194,6 +195,7 @@ qt4_wrap_cpp(vidalia_SRCS
   VidaliaTab.h
   StatusTab.h
   HelperProcess.h
+  FirstRunWizard.h
 )
 
 if (USE_MINIUPNPC)
