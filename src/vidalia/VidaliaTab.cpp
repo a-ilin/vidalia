@@ -1,18 +1,20 @@
 #include "VidaliaTab.h"
 #include "Vidalia.h"
 
+/** Default constructor.
+ * \param title Tab title.
+ * \param name Optional group name for settings accessed by this tab.
+ * \param parent Parent widget.
+ */
 VidaliaTab::VidaliaTab(const QString &title, const QString &name, QWidget *parent)
   : QWidget(parent), _title(title)
 {
-  _settings = NULL;
-  if(!name.isEmpty())
-    _settings = new VSettings(name);
+  _settings = new VSettings(name);
 }
 
 VidaliaTab::~VidaliaTab()
 {
-  if(_settings)
-    delete _settings;
+  delete _settings;
 }
 
 /** Gets the saved value of a property associated with this window object.
