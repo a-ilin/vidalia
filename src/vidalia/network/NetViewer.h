@@ -45,6 +45,8 @@ class NetViewer : public VidaliaTab
 public:
   /** Default constructor */
   NetViewer(QWidget* parent = 0);
+  /** Destructor */
+  ~NetViewer();
 
 public slots:
   /** Displays the network map window. */

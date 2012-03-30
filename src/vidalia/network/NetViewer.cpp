@@ -39,11 +39,23 @@
 #define MAX_RESOLVE_QUEUE_DELAY   (30*1000)
 #endif
 
+/* Settings key for main layout splitter state */
+#define SETTING_SPLITTER_MAIN 	"NetViewSplitMain"
+/* Key for network map splitter */
+#define SETTING_SPLITTER_MAP    "NetViewSplitMap"
+/* Key for router description splitter */
+#define SETTING_SPLITTER_ROUT   "NetViewSplitRouter"
+
+/* Default values for splitter states. */
+#define DEFAULT_SPLITTER_MAIN   QByteArray()
+#define DEFAULT_SPLITTER_MAP    QByteArray()
+#define DEFAULT_SPLITTER_ROUT   QByteArray()
+
 /** Constructor. Loads settings from VidaliaSettings.
  * \param parent The parent widget of this NetViewer object.\
  */
 NetViewer::NetViewer(QWidget *parent)
-  : VidaliaTab(tr("Network Map"), "", parent)
+  : VidaliaTab(tr("Network Map"), "NetViewer", parent)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -162,6 +174,25 @@ NetViewer::NetViewer(QWidget *parent)
 
   tb->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
   ui.horizontalLayout->addWidget(tb);
+  
+  /* Restore the state of each splitter */
+  ui.spltMain->restoreState(getSetting(SETTING_SPLITTER_MAIN,
+                                       DEFAULT_SPLITTER_MAIN)
+                            .toByteArray());
+  ui.spltMap->restoreState(getSetting(SETTING_SPLITTER_MAP,
+                                      DEFAULT_SPLITTER_MAP)
+                           .toByteArray());
+  ui.spltRouter->restoreState(getSetting(SETTING_SPLITTER_ROUT,
+                                         DEFAULT_SPLITTER_ROUT)
+                              .toByteArray());
+}
+
+/** Destructor. Saves splitter states to store layout. */
+NetViewer::~NetViewer()
+{
+  saveSetting(SETTING_SPLITTER_MAIN, ui.spltMain->saveState());
+  saveSetting(SETTING_SPLITTER_MAP, ui.spltMap->saveState());
+  saveSetting(SETTING_SPLITTER_ROUT, ui.spltRouter->saveState());
 }
 
 /** Called when the user changes the UI translation. */
