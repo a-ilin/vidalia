@@ -427,7 +427,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="QGroupBox" name="grpPanic">
      <property name="title">
       <string>Panic</string>
      </property>
