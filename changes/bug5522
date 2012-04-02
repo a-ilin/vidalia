@@ -1,3 +1,0 @@
-  Internal cleanups and improvements:
-  o Always create settings access object, with default section name
-    set to General. Fixes bug 5522.

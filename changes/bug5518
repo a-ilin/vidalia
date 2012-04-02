@@ -1,4 +1,0 @@
-  Bugfixes relative to Vidalia 0.2.x:
-  o In Advanced Settings tab, corrected radio buttons minimum sizes
-    to prevent hiding of socket controls on window resize.
-    Fixes bug 5518.

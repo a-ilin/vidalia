@@ -24,6 +24,13 @@
     connect to the tor process (ControlPort or ControlSocket and
     authentication) and everything else would be handled through the
     torrc file.
+  o In Network View, store layout of network map panes. Fixes ticket
+    2727.
+  o Add a wizard for the special cases where the user starts Vidalia
+    while tor has DisableNetwork=1 or the Panic feature enabled. This
+    wizard is meant to warn the user about either the Panic feature or
+    that she might need to configure a proxy or a bridge before tor
+    connects to the outside world. Fixes ticket 2905.
 
   Bugfixes relative to Vidalia 0.2.x:
   o Fix deadlock when the browser process fails to launch in OS X.
@@ -39,6 +46,9 @@
     used. Fixes bug 5277.
   o Fix the bridge line parsing for requests to bridges.torproject.org
     when the user clicks 'find bridges now'. Fixes bug 5730.
+  o In Advanced Settings tab, corrected radio buttons minimum sizes to
+    prevent hiding of socket controls on window resize. Fixes bug
+    5518.
 
   Bugfixes relative to Vidalia 0.3.x:
   o Center detached tabs to avoid placing them out of reach. Fixes bug
@@ -59,7 +69,8 @@
   o Migrate the code that handles Marble to the new library
     interface. It works as expected with the latest Marble from the
     upstream git repo.
-
+  o Always create settings access object, with default section name
+    set to General. Fixes bug 5522.
 
 0.3.1   27-Feb-2012
   o Draw the bandwidth graph curves based on the local maximum, not
