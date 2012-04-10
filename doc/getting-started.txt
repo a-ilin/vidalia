@@ -1,0 +1,397 @@
+== Getting started with coding for Vidalia ==
+
+=== Sections ===
+ * Foreword
+ * Dependencies
+ * Building plain Vidalia
+ * How to build some of its optional features:
+  * Building with Marble
+  * Enabling plugin support
+ * Code structure
+ * Contributing workflow
+
+=== Foreword ===
+
+Vidalia has a stable and an alpha branch. The stable branch is
+actually called master in the source code repository. The stable
+branch will have bugfixes and new features when these demand being
+released as stable for the sake of the users. Most of the information
+in this document applies to all Vidalia branches and released
+versions, in case there is a specific issue that applies from a
+specific version or on a specific branch, it will be specified
+explicitly.
+
+This is not a Git tutorial, for that there are really good references
+already online. I particularly recommend the online (and paperback)
+book ProGit.
+
+Vidalia can be built for most flavors of BSDs too. They should be
+similar to the references to Linux, but we do not support actively any
+of them. That being said, if you find a bug. that does not mean we
+won't fix it. It means that we are not building Vidalia on, say,
+FreeBSD every day.
+
+=== Dependencies ===
+
+The most important (and the basic) dependencies to build Vidalia are:
+Qt >= 4.7.4 and CMake.
+CMake should be installed as a regular application for every OS. Qt on
+the other hand can be used in several ways, the most important thing
+to understand is that you need to let CMake know the path to the tool
+named qmake from the Qt toolkit, and based on that it should be able
+to figure out the rest of the paths. If that fails, we will explain
+how to solve it later on. We will use the terminal to build Vidalia
+and explain how to do the different things we are going to cover in
+this document.
+
+If you use Linux you will have easy access to a terminal. If you use
+Windows, on the other hand, what I use is msysGit[1] (especially since
+we will use Git for a lot of things explained later on this document).
+If you are an OSX user, you should use Terminal.app.
+
+To manage the source code, Vidalia (and all the Tor Project projects)
+use Git[2]. You should install it with your preferred package manager
+if on Linux, use msysGit on Windows, or use MacPort or Homebrew on
+OSX.
+
+Vidalia has a lot of optional features that can be enabled or disabled
+in the configure stage (see section Building plain Vidalia). Among
+these possibilities, Vidalia can use Marble widget[3], which is a map
+widget to display nodes around the world in the Network Map. You
+should clone Marble's repository (which also uses git) if you want to
+build with Marble support (see section Building with Marble), but it
+is not mandatory.
+
+Another optional feature is Google Breakpad, which we won't get into
+details here, but you should be able to enable it based on how you
+enabled Marble, and the README.breakpad guide.
+
+If you are running the alpha branch (or release >=0.3.1), another
+dependency will be qtscriptgenerator. We will get into details for
+this in the section Enabling plugin support.
+
+=== Building plain Vidalia ===
+
+Building Vidalia is quite simple if you know the few steps you should follow.
+Assuming you have installed Qt, locate the qmake binary. We will
+denote this path as $QMAKE_BIN.
+
+After that, you should clone Vidalia's source code repository:
+
+{{{
+$ git clone https://git.torproject.org/vidalia.git
+}}}
+
+This will create a directory called vidalia. If you want to use the
+alpha branch, you should do the following:
+
+{{{
+$ cd vidalia
+$ git fetch origin
+$ git checkout alpha
+}}}
+
+From this point we will start using CMake. This tool has the
+peculiarity that you can have a separate directory to build your code,
+so that all the object code and other auxiliary files do not get in
+the way of your implementation. So we will use a directory named
+"build" inside Vidalia's root:
+
+{{{
+$ mkdir build
+$ cd build
+$ cmake .. -DQT_QMAKE_EXECUTABLE="${QMAKE_BIN}"
+}}}
+
+The cmake .. command directs cmake to where the code repository is,
+and also sets the variable QT_QMAKE_EXECUTABLE. If CMake complains
+about other variables not being set, you should set them similarly to
+the one we are already setting.
+This last step is called the configuration step (or phase).
+
+After this, we start the actual building phase:
+
+{{{
+$ make -j4
+}}}
+
+The number you would use for the -j parameter should be number of
+cores +1 (unless you want to wait longer for the build, in which case
+you can just ignore the parameter completely).
+
+If everything goes alright, you should have the Vidalia binary inside
+the path: build/src/vidalia/. If you are on Linux it will be called
+vidalia, vidalia.exe on Windows, and Vidalia.app on OSX. You can run
+Vidalia with the following parameters (assuming you are on Linux, it
+will be similar in the rest of the OSs):
+
+{{{
+$ ./src/vidalia/vidalia --loglevel info --logfile /dev/stdout
+}}}
+
+=== How to build some of its optional features ===
+
+==== Building with Marble ====
+
+To build Vidalia with Marble support, you should clone and build
+Marble from git[5] with Qt-only support.
+
+We will assume that your marble clone is located in ~/marble, your
+build directory is located in ~/marble/build.
+
+Once we reach this point, we can configure Vidalia to use Marble with
+the following command (from Vidalia's root):
+
+{{{
+$ cmake -DUSE_MARBLE=1 \
+        -DMARBLE_INCLUDE_DIR=~/marble/src/lib \
+        -DMARBLE_DATA_DIR=~/marble/data \
+        -DMARBLE_LIBRARY_DIR=~/marble/build/src/lib \
+        -DMARBLE_PLUGIN_DIR=~/marble/build/src/plugins ..
+}}}
+
+When the configuration has finished, you can compile Vidalia as usual:
+
+{{{
+$ make -j4
+}}}
+
+Remember that the -j parameter is something you should figure out for
+your system or just leave it out completely if in doubt.
+
+==== Enabling plugin support ====
+
+Vidalia >= 0.3.1 has support for plugins. How plugins are structured
+and how they work will be covered on another document, but to actually
+work with plugins we need to be able to build qtscriptgenerator[4].
+
+To build it, you should follow its README, but the following hints
+might come handy if you get stuck:
+
+ * On Windows, you may need to execute the following to get the
+generator to locate Qt's headers:
+
+{{{
+   setx QTDIR /c/QtSDK/Desktop/Qt/4.7.4/mingw/
+}}}
+
+Note that the path may change depending on your Qt installation.
+
+ * On OSX we build this the following way:
+
+In the file qtbindings/qtscript_uitools/qtscript_uitools.pro, change this:
+
+{{{
+CONFIG += uitools
+}}}
+
+to this:
+
+{{{
+CONFIG += uitools plugin link_prl
+}}}
+
+And then follow these steps:
+
+{{{
+$ cd path/to/generator/
+$ qmake -spec macx-g++
+$ make
+$ ./generator
+$ cd ../qtbindings/
+$ qmake  -spec macx-g++ -recursive
+$ make release
+}}}
+
+=== Code structure ===
+
+Vidalia is separated in several modules, here is a brief explanation
+of each directory:
+
+{{{
+src/
+  All the source code is located in this directory.
+
+src/vidalia/
+  Main module, this is where Vidalia's GUI files are located, the main
+window classes are right there, other parts of Vidalia that take
+several files are located in their own submodule inside this one.
+
+src/vidalia/about/
+  The About and the License dialogs are located here.
+
+src/vidalia/bwgraph/
+  The Bandwidth Graph classes are here.
+
+src/vidalia/config/
+  In this directory all the configuration classes are located.
+
+src/vidalia/help/
+  The help browser and the actual help content is located in here.
+
+src/vidalia/i18n/
+  Here we have all the files used for translations.
+
+src/vidalia/log/
+  The Message Log code is located in this directory.
+
+src/vidalia/network/
+  Here you can find the Network Map code. Here lives the code that
+also handles Marble.
+
+src/vidalia/res/
+  All the different resources like icons or certificates are in this directory.
+
+src/common/
+  The common module has somwhat generic classes and functions used in
+other modules.
+
+src/crashreporter/
+  Here you can find the code that interacts with Google BreakPad.
+
+src/miniupnpc/
+  Miniupnpc is a UPNPC library that Vidalia bundles in its code to
+build it with CMake, but it is not an code that is maintained by us.
+
+src/tools/
+  Inside this directory you can find self contained simple
+applications that are used for different purposes, like translating
+from different translation file types.
+
+src/torcontrol/
+  This is the most important module that handles the interaction
+between Tor and Vidalia.
+
+changes/
+  In this directory live the different changes introduced by a branch
+that has been merged, its contents will go to the CHANGELOG file. See
+the Contributing workflow section for more information.
+
+cmake/
+  This directory contains the CMake macros used by Vidalia's build scripts.
+
+contrib/
+  In here you can find some GeoIP scripts.
+
+debian/
+  This directory contains some Debian specific information.
+
+doc/
+  This one contains some documentation regarding Vidalia's design and
+Doxygen configuration.
+
+pkg/
+  This directory contains the scripts used for packaging on different
+formats, like app for OSX, rpm for Linux and a Windows installer.
+}}}
+
+=== Contributing workflow ===
+
+There are at least two different ways to contribute to Vidalia in
+terms of how you submit your changes. The first approach might be
+simpler than the second, but the one you choose depends on how you
+will get involved.
+
+NOTE: There are several ways of doing what is proposed, we will not
+get into details, each person should adopt the way suits them best.
+
+==== Submit a patch ====
+
+Vidalia uses git to manage its source code, as we explained before.
+Git has a nice feature called format-patch. Here's how it works:
+
+ * Update the repository to its latest version. You should replace
+master with the current branch you are working on
+
+{{{
+ $ git pull origin master
+}}}
+
+ * Edit the code as you see fit
+
+ * Add the files you want to be in the patch you will submit
+
+{{{
+ $ git add file1 file2
+}}}
+
+  * Create a commit
+
+{{{
+  $ git commit -m "Some commit message that represents the changes"
+}}}
+
+  * And then we create the patch:
+
+{{{
+  $ git format-patch HEAD..HEAD~1
+}}}
+
+Why not just create the patch with diff? This way you will be in
+charge of the actual commit (you will be the committer). Another added
+value is that you can make several commits, if it makes more sense for
+your code. Otherwise, the person that will push the new code has to
+handle all themselves, and it may not be what you'd have done (even
+though the final code will be the same).
+
+==== Create a branch ====
+
+The ideal way to contribute is to have a remote somewhere (github,
+gitorious, etc), and point us to a branch in that remote. The branch
+should be named bugXXXX_sometext, where XXXX is the ticket number, and
+sometext is a representative text for the code in that branch.
+
+When the branch is reviewed, it will be merged to its base branch and
+pushed to the official Vidalia repository.
+
+The review process varies with each fix or person that is involved,
+but there are some basic guidelines that you should follow to make the
+procedure as fast as possible.
+
+===== Changes file =====
+
+Each Vidalia release has its own portion of the CHANGELOG. This
+CHANGELOG is built from a series of changes files. These files are
+located in the "changes" directory. Their basic structure is the
+following:
+
+{{{
+  <Category>:
+  o <Text that describes the change>. [Fixes bug | Resolves ticket]
+<ticket number>.
+}}}
+
+The valid categories are:
+
+ * New features
+ * Bugfixes relative to Vidalia 0.2.x
+ * Bugfixes relative to Vidalia 0.3.x
+ * Internal cleanups and improvements
+
+The decision whether to use "Fixes bug" or "Resolves ticket" should be
+determined by the nature of the issue. If it was a bug, it should say
+"Fixes bug", and if it's a ticket for a new feature, it should say
+"Resolves ticket".
+
+Each branch must have their own changes file, this way when it is
+merged it will add the file to the changes directory in the base
+branch.
+
+===== Commit structure and code guidelines =====
+
+A fix branch (or format-patch) should separate a fix into several
+relevant commits, especially if the fix is a big one and can be
+devided (there are exceptions to this rule).
+
+In terms of coding guidelines, code that does not follow the
+guidelines specified in the HACKING document won't be merged. You can
+find this document in the root directory of your cloned Vidalia
+repository.
+
+--
+
+[1] http://msysgit.github.com/
+[2] http://git-scm.com
+[3] http://edu.kde.org/marble/
+[4] https://qt.gitorious.org/qt-labs/qtscriptgenerator
+[5] http://edu.kde.org/marble/obtain.php
