@@ -51,6 +51,8 @@ signals:
   void checkForUpdates();
   /** Emitted when the user changes torrc file to restart Tor */
   void restartTor();
+  /** Emitted when user changes server configuration */
+  void configChanged();
 
 protected:
   /** Called when the user changes the UI translation. */

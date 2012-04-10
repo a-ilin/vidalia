@@ -185,6 +185,7 @@ MainWindow::createGUI()
   createMenuBar();
   createToolBar();
   createTrayIcon();
+  updateTitle();
 
   // We need to create this tab at the beggining
   // and we must specify the statusBar
@@ -495,6 +496,25 @@ MainWindow::createConnections()
 
   connect(_engine, SIGNAL(pluginTab(VidaliaTab *)),
           this, SLOT(addTab(VidaliaTab *)));
+}
+
+/* Sets window title to "Nickname ORPort" if running as relay */
+void
+MainWindow::updateTitle()
+{
+  ServerSettings settings(_torControl);
+
+  QString baseTitle = tr("Vidalia Control Panel");
+
+  if (settings.isServerEnabled()) {
+    QString Nickname = settings.getNickname();
+    QString ORPort = QString::number(settings.getORPort());
+    setWindowTitle(QString("%1 - %2 %3").arg(baseTitle)
+                                        .arg(Nickname)
+                                        .arg(ORPort));
+  } else {
+    setWindowTitle(baseTitle);
+  }
 }
 
 /** Called when the application is closing, by selecting "Exit" from the tray
@@ -1778,6 +1798,8 @@ MainWindow::showConfigDialog(ConfigDialog::Page page)
           this, SLOT(showHelpDialog(QString)));
   connect(configDialog, SIGNAL(restartTor()),
           this, SLOT(restart()));
+  connect(configDialog, SIGNAL(configChanged()),
+          this, SLOT(updateTitle()));
   configDialog->showWindow(page);
 }
 

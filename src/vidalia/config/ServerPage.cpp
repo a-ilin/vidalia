@@ -284,7 +284,13 @@ ServerPage::changedSinceLastApply()
 bool
 ServerPage::apply(QString &errmsg)
 {
-  return _settings->apply(&errmsg);
+  if (_settings->apply(&errmsg)) {
+    /* Emits signal used to set Vidalia window title in MainWindow */
+    emit configChanged();
+    return true;
+  }
+
+  return false;
 }
 
 /** Returns true if the user has changed their server settings since the

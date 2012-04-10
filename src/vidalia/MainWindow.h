@@ -171,6 +171,9 @@ private slots:
   /** Called when the Panic! button is pressed */
   void panic();
 
+  /** Called when server configuration is changed */
+  void updateTitle();
+
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
    * settings page. */

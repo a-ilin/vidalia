@@ -66,6 +66,8 @@ ConfigDialog::ConfigDialog(QWidget* parent)
 
   /* Used to connect restartTor signals */
   AdvancedPage *advancedPage;
+  /* Used to connect configChanged signals */
+  ServerPage *serverPage;
   /* Create the config pages and actions */
   QActionGroup *grp = new QActionGroup(this);
   GeneralPage *generalPage = new GeneralPage(ui.stackPages);
@@ -79,7 +81,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
                      createPageAction(QIcon(IMAGE_NETWORK),
                                       tr("Network"), "Network", grp));
 
-  ui.stackPages->add(new ServerPage(ui.stackPages),
+  ui.stackPages->add(serverPage = new ServerPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVER),
                                       tr("Sharing"), "Sharing", grp));
 
@@ -92,6 +94,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
                                       tr("Advanced"), "Advanced", grp));
 
   connect(advancedPage, SIGNAL(restartTor()), this, SIGNAL(restartTor()));
+  connect(serverPage, SIGNAL(configChanged()), this, SIGNAL(configChanged()));
 
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     connect(page, SIGNAL(helpRequested(QString)),

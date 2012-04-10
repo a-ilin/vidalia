@@ -65,6 +65,9 @@ signals:
   /** Emitted when all the settings need to be reloaded */
   void reloadAll();
 
+  /** Emitted when user changes server configuration */
+  void configChanged();
+
 private:
   QString _title; /**< Title of this configuration page. */
 };
