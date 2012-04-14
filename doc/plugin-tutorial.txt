@@ -1,0 +1,544 @@
+== How to write Vidalia Plugins ===
+
+=== Sections ==
+
+ * Foreword
+ * Directory structure for plugins
+ * How Vidalia executes the plugin
+ * GUI handling
+ * Settings handling
+ * Simple example
+ * I know Qt, how do I use signals and slots?
+ * I made a plugin, what now?
+
+=== Foreword ===
+
+This document intends to be a simple tutorial that will help you write
+Vidalia plugins. It is not intended to be an exhaustive plugin API
+reference, there will be another document for that. This is also not a
+Javascript reference nor a Qt one, although you will need knowledge of
+both in order to write a plugin.
+
+This is not also a complete plugin engine specification, for that
+there is already a doc named plugin-framework.txt inside Vidalia's doc
+directory.
+
+We assume in this document that you have basic Qt and Javascript
+knowledge, and that you have Vidalia with the qtscriptgenerator libs
+available.
+
+To check this last point, you can open Vidalia, go to Plugins->Debug
+output and you should be able to see the following:
+
+{{{
+
+Available extensions:
+  qt
+  qt.core
+  qt.dbus
+  qt.gui
+  qt.network
+  qt.uitools
+  qt.xml
+
+}}}
+
+The actual important extensions are: qt, qt.core, qt.gui and qt.uitool
+(only if it's a GUI plugin). Depending on the functionality you intend
+your plugin to have, you can ignore the rest.
+
+=== Directory structure for plugins ===
+
+If you open vidalia.conf for Vidalia >= 0.3.1, you will notice a
+variable named "PluginPath" in the [General] section. This variable
+points to the root of where all the plugins are placed. So, the plugin
+root will look something like this:
+
+{{{
+
+pluginRoot/
+ \_ plugin1/
+ |_ plugin2/
+ |_ plugin3/
+
+}}}
+
+Vidalia expects every installed plugin to be a directory inside the
+plugins root.
+
+For every plugin, the directory structure should have at least the
+following files:
+
+{{{
+
+plugin1/
+ \_ info.xml
+ |_ plugin1.js
+
+}}}
+
+You can distribute any files other than these, may be as a dependency
+for your plugin (icons, another complete application that is executed
+by your plugin, .ui files, etc).
+
+==== The info.xml file ====
+
+The most important file (besides the actual plugin code) is the
+info.xml one. This contains the basic information that Vidalia needs
+to understand what to do with this plugin, how to execute it, how to
+and if it should display it in the Plugins menu, and what files to
+load.
+
+Lets take a look at the info.xml file from the Tor Browser Bundle
+plugin:
+
+{{{
+
+<VidaliaPlugin>
+  <name>Browser Bundle Configuration</name>
+  <date>15/06/2011</date>
+  <author>chiiph</author>
+  <type persistent="true" gui="true" />
+  <files>
+    <file>tbb.js</file>
+  </files>
+  <namespace>tbb</namespace>
+</VidaliaPlugin>
+
+}}}
+
+For a complete description of each tag, please read secrion 2 of the
+plugin-framework.txt doc.
+
+In practise, the name tag will be used as the menu entry for this
+plugin if it is of type gui="true". Vidalia will load every file
+descripted in the files tag, so they should all be valid Javascript
+files. And the namespace should be unique (i.e. do not create a plugin
+with tbb as its namespace, unless you want to have one of the two
+overriden by the other). This namespace should be the same as the name
+of the main variable you will use inside the javascript files, as we
+will see later on.
+
+=== How Vidalia executes the plugin ===
+
+As a quick reference for how plugins are executed, there are three
+main functions: start(), stop(), and buildGUI(). The functions that
+must be implemented are start and stop, since they will always be
+executed one way or the other. buildGUI depends on whether your plugin
+is of type gui="true" or not.
+
+Here's a basic skeleton for a plugin's main Javascript file:
+
+{{{
+
+importExtension("qt");
+importExtension("qt.core");
+importExtension("qt.gui"); // optional
+importExtension("qt.uitools"); // optional
+
+var tbb = {
+  someStaticVariable: 1,
+  someOtherStaticVar: "Some string",
+
+  start: function() {
+    // Start code here...
+  },
+
+  buildGUI: function() {
+    // GUI creation here...
+  },
+
+  stop: function() {
+    // Stop function in here...
+  },
+};
+
+}}}
+
+The start function is executed when Vidalia starts if type
+persistent="true", or before the GUI is created when type gui="true".
+
+If a plugin is not of type persistent or gui, it will never be started
+in any way.
+
+The idea behind persistent is that you can run things in background,
+like a UNIX daemon (sort of). As an example, you could start a QTimer
+in your start() function and check something periodically. We use this
+in the Thandy plugin, if you want to read a "real world" example.
+
+=== GUI handling ===
+
+If you want your plugin to have a GUI, we have made kind of a template
+that you can follow:
+
+(This is a part of the Tor Browser Bundles complete buildGUI
+implementation, you can see it in tbb.js in the plugins official
+repository.)
+
+{{{
+  buildGUI: function() {
+        this.tab = new VidaliaTab("Browser Bundle Settings", "TBB");
+
+        var file = new QFile(pluginPath+"/tbb/tbb.ui");
+        var loader = new QUiLoader(this.tab);
+        file.open(QIODevice.ReadOnly);
+        this.widget = loader.load(file);
+        var layout = new QVBoxLayout();
+        layout.addWidget(this.widget, 0, Qt.AlignCenter);
+        this.tab.setLayout(layout);
+        file.close();
+
+        var portInfo = this.widget.children()[findWidget(this.widget, "portInfo")];
+        if(portInfo == null) {
+            return this.tab;
+        }
+
+        var groupBox = this.widget.children()[findWidget(this.widget, "browserBox")];
+        if(groupBox == null) {
+            return this.tab;
+        }
+
+        this.btnLaunch = groupBox.children()[findWidget(groupBox, "btnLaunch")];
+        if(this.btnLaunch != null) {
+            this.btnLaunch["clicked()"].connect(this, this.startSubProcess);
+        }
+
+        return this.tab;
+  },
+}}}
+
+If you read Qt's documentation, what this function does is quite
+straight forward, but I will give you a quick summarization:
+
+{{{
+  buildGUI: function() {
+        this.tab = new VidaliaTab("Browser Bundle Settings", "TBB");
+}}}
+
+First, we need to create a new VidaliaTab. The first parameter is its
+name, which can be an arbitrary string. The second one is important,
+because Vidalia will use it as its section inside the vidalia.conf
+file, if you want to store some kind of settings (we will get to this
+in the next section).
+
+{{{
+        var file = new QFile(pluginPath+"/tbb/tbb.ui");
+        var loader = new QUiLoader(this.tab);
+        file.open(QIODevice.ReadOnly);
+        this.widget = loader.load(file);
+}}}
+
+We encourage you to build your GUIs with Qt Designer, but you are free
+to craft them in the code. In this example we use a .ui Designer file.
+
+So we first load the file as a regular one. The pluginPath variable is
+a variable provided by Vidalia for you to know the location of the
+plugin's root directory. From that point, you should know where your
+files are supposed to be located, in this case it is
+pluginsPath+"/tbb/tbb.ui".
+
+We then create the QUiLoader object, open the file and ask the loader
+to do its magic.
+
+{{{
+        var layout = new QVBoxLayout();
+        layout.addWidget(this.widget, 0, Qt.AlignCenter);
+        this.tab.setLayout(layout);
+        file.close();
+}}}
+
+The QUiLoader creates a QWidget derived object in this.widget and now
+we need to put it somewhere the user can see. We could just display
+the widget, but we encourage you to try to integrate your plugin to
+Vidalia as much as possible, so we will add it to a vertical layout,
+and set it as the tab's main layout.
+
+{{{
+        var portInfo = this.widget.children()[findWidget(this.widget, "portInfo")];
+        if(portInfo == null) {
+            return this.tab;
+        }
+
+        var groupBox = this.widget.children()[findWidget(this.widget, "browserBox")];
+        if(groupBox == null) {
+            return this.tab;
+        }
+
+        this.btnLaunch = groupBox.children()[findWidget(groupBox, "btnLaunch")];
+        if(this.btnLaunch != null) {
+            this.btnLaunch["clicked()"].connect(this, this.startSubProcess);
+        }
+}}}
+
+We can access each widget from this.widget, but it is recommended to
+create variables for each component that you'd like to access.
+
+To make that job easier, Vidalia provides a findWidget function that
+takes a widget and finds the one with the provided name inside the
+first one's children.
+
+For example, in this.btnLaunch, we want to find the widget called
+btnLaunch inside the groupBox widget.
+
+{{{
+        return this.tab;
+  },
+}}}
+
+As the last step, we return the tab for Vidalia to display. Depending
+on how you code your buildGUI function, you may want to check if
+this.tab is already created and return it instead of executing the
+whole function every time Vidalia wants to display the plugins GUI.
+
+Keep in mind that Vidalia deletes the returned tab when the user
+closes it, that's why we create the tab every time buildGUI is
+executed..
+
+=== Settings handling ===
+
+For settings handling, Vidalia provides two methods that belong to the
+VidaliaTab class: saveSetting and getSetting. These methods will get
+and set values inside the plugin's section, in the case of the Tor
+Browser Bundle plugin, it will be the TBB section, as we described
+before.
+
+As an example, we will look at an extract of the saveSettings function
+from tbb.js:
+
+{{{
+this.tab.saveSetting(this.BrowserExecutable, this.lineExecutable.text);
+this.tab.saveSetting(this.BrowserDirectory, this.lineDirectory.text);
+}}}
+
+this.BrowserExecutable is a variable defined before, which is
+"BrowserExecutable". this.lineExecutable is a QLineEdit from the GUI.
+
+This first call, assuming the content of this.lineExecutable is
+"/some/path", will lead to the following text in vidalia.conf:
+
+{{{
+
+[TBB]
+BrowserExecutable=/some/path
+
+}}}
+
+Note that there might be other values before and after
+"BrowserExecutable".
+
+For retrieving settings from the plugins own section you can use the
+method getSetting, which receives the name of the setting and the
+default value as parameters.
+
+Here's an example from the buildGUI() method in tbb.js:
+
+{{{
+if(this.lineExecutable != null) {
+    this.lineExecutable.text = this.tab.getSetting(this.BrowserExecutable, "");
+}
+}}}
+
+=== I know Qt, how do I use signals and slots? ===
+
+Signals and slots are available inside the plugins environment. the
+only restriction is that you can't emit signals properly (there are
+some hacks to get around this though).
+
+As an example, lets look at a part of the start() function of tbb.js:
+
+{{{
+torControl["authenticated()"].connect(this, this.showWaitDialog);
+}}}
+
+The torControl variable is one that Vidalia provides to interact with
+the code that is able to talk to Tor inside Vidalia. This object emits
+a signal called "authenticated()" at some point.
+
+So the syntax to use for connecting a certain signal to a certain slot
+is the following:
+
+{{{
+<object that emits the signal>["<signal name>"].connect(<receiver>, <slot>);
+}}}
+
+It is not a complicated issue, but it may not be intuitive at first if
+you are familliar with Qt's way of doing this in C++.
+
+=== Simple example ===
+
+We have been through the most important parts of a plugin, you can
+always look at how the Tor Browser Bundle plugin works and learn from
+it, but if you are going to start a plugin from scratch, it may not be
+the best option since it a bit big. So in this section I will give you
+a really simple plugin that uses everything we've been talking about
+and it is still clear enough for you to have it as a quick reference
+for your own plugin.
+
+The plugin we are going to be implementing for this section is a
+simple bandwidth history recorder. This means that every certain
+amount of bytes tor sends or receives, it notifies the controllers
+through an event how many have been sent or received since the last
+time it notified.
+
+Looking at how Vidalia TorControl class works, we notice a signal
+called:
+
+{{{
+  /** Emitted when Tor sends a bandwidth usage update (roughly once every
+   * second). <b>bytesReceived</b> is the number of bytes read by Tor over
+   * the previous second and <b>bytesWritten</b> is the number of bytes
+   * sent over the same interval.
+   */
+  void bandwidthUpdate(quint64 bytesReceived, quint64 bytesSent);
+}}}
+
+(This is from src/vidalia/plugin/prototypes/TorControlPrototype.h)
+
+What we need to do is connect this signal with a slot that records
+these bytes, and we have half of our work done.
+
+Once we have that, we can create a simple GUI to display this as a tab
+inside Vidalia. For added fun, we added a button to reset the counter
+and the start date.
+
+Here's the complete Javascript source code for this:
+
+{{{
+importExtension("qt");
+importExtension("qt.core");
+importExtension("qt.gui");
+importExtension("qt.uitools");
+
+var tutorial = {
+    From: "From",
+    Sent: "Sent",
+    Recv: "Recv",
+
+    start: function() {
+		    vdebug("Tutorial@start");
+        torControl["bandwidthUpdate(quint64, quint64)"].connect(this, this.saveBandwidth);
+        this.tab = new VidaliaTab("Display bandwidth history", "BandwidthHistory");
+
+        this.recv = parseInt(this.tab.getSetting(this.Sent, 0));
+        this.sent = parseInt(this.tab.getSetting(this.Recv, 0));
+        this.from = this.tab.getSetting(this.From, "");
+
+        if(this.from.length == 0)
+            this.from = QDateTime.currentDateTime().toString();
+
+        // null labels so that we don't update them until the GUI is created
+        this.lblFrom = null;
+        this.lblSent = null;
+        this.lblRecv = null;
+    },
+
+    saveBandwidth: function(recv, sent) {
+        vdebug("Tutorial::Recv", recv);
+        vdebug("Totorial::Sent", sent);
+
+        this.recv += recv;
+        this.sent += sent;
+        this.tab.saveSetting(this.Recv, this.recv);
+        this.tab.saveSetting(this.Sent, this.sent);
+        this.tab.saveSetting(this.From, this.from);
+
+        if(this.lblFrom)
+            this.lblFrom.text = this.from;
+        if(this.lblSent)
+            this.lblSent.text = this.sent.toString();
+        if(this.lblRecv)
+            this.lblRecv.text = this.recv.toString();
+    },
+
+    resetCounters: function() {
+        this.recv = 0;
+        this.sent = 0;
+        this.from = QDateTime.currentDateTime().toString();
+        this.saveBandwidth(0,0);
+    },
+
+    buildGUI: function() {
+        vdebug("Tutorial@buildGUI");
+        // Load the GUI file
+
+        if(this.tab)
+            delete this.tab;
+
+        this.tab = new VidaliaTab("Display bandwidth history", "BandwidthHistory");
+
+        var file = new QFile(pluginPath+"/tutorial/tutorial.ui");
+        var loader = new QUiLoader(this.tab);
+        file.open(QIODevice.ReadOnly);
+        this.widget = loader.load(file);
+        var layout = new QVBoxLayout();
+        layout.addWidget(this.widget, 0, Qt.AlignCenter);
+        this.tab.setLayout(layout);
+        file.close();
+
+        var grpBandwidth = this.widget.children()[findWidget(this.widget, "grpBandwidth")];
+        if(grpBandwidth == null)
+            return this.tab;
+
+        this.lblFrom = grpBandwidth.children()[findWidget(grpBandwidth, "lblFrom")];
+        if(this.lblFrom == null)
+            return this.tab;
+
+        this.lblSent = grpBandwidth.children()[findWidget(grpBandwidth, "lblSent")];
+        if(this.lblSent == null)
+            return this.tab;
+
+        this.lblRecv = grpBandwidth.children()[findWidget(grpBandwidth, "lblRecv")];
+        if(this.lblRecv == null)
+            return this.tab;
+
+        this.btnReset = grpBandwidth.children()[findWidget(grpBandwidth, "btnReset")];
+        if(this.btnReset == null)
+            return this.tab;
+
+        this.lblFrom.text = this.from;
+        this.lblSent.text = this.sent.toString();
+        this.lblRecv.text = this.recv.toString();
+
+        this.btnReset["clicked()"].connect(this, this.resetCounters);
+
+        return this.tab;
+    },
+
+    stop: function() {
+        vdebug("Tutorial@stop");
+        this.saveBandwidth(0,0);
+    },
+};
+}}}
+
+With just 105 lines we have a nice byte history recorder. You can find
+the tutorial.ui and info.xml files in our repository:
+
+https://gitweb.torproject.org/vidalia-plugins.git
+
+=== I made a plugin, what now? ===
+
+So you have your cool plugin with a crazy new idea and it works great,
+what is the next step? We have a repository for official plugins
+(official as in "some folk from Tor made it"), and you can give us
+your plugin to put it there and may be convince us why we should
+distribute your plugin along with the rest.
+
+The idea to have plugins though is to let people develop functionality
+in one of the main Tor controllers, and not depend on us to merge new
+stuff into the main line of distribution.
+
+In the (near) future, we will have a Vidalia Plugins web section where
+plugins that we think are good and won't compromise the users privacy
+will be listed.
+
+Right now the plugin distribution and installation is not something
+that any user might be able to do, so the other future plan is to
+create a distribution file format (probably just a zip file with
+certain internal structure) and a graphical way of installing plugins.
+
+If you are interested in helping with the infrastructure for plugins,
+please don't hesitate to join us on IRC at OFTC #vidalia.
+
+If you find any bugs, do not hesitate to report them in
+https://trac.torproject.org with Vidalia as the component.
