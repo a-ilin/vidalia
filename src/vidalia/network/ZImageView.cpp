@@ -109,7 +109,7 @@ ZImageView::drawScaledImage()
 
   // Figure out the size that the 'r' region will be when drawn to the screen.
   QSize scaleTo(int(double(r.width()) * scaleFactor),
-		int(double(r.height()) * scaleFactor));
+                int(double(r.height()) * scaleFactor));
 
   /** Make a copy of the image so we don't ruin the original */
   QImage i = _image.copy();
@@ -123,8 +123,8 @@ ZImageView::drawScaledImage()
 
   /** Rescale the image copy */
   i = i.copy(r).scaled(scaleTo,
-		     Qt::KeepAspectRatioByExpanding,
-		     Qt::SmoothTransformation);
+                       Qt::KeepAspectRatioByExpanding,
+                       Qt::SmoothTransformation);
 
   int extraWidth = int(double(sRect.width() - i.width()) / 2.0);
   int extraHeight = int(double(sRect.height() - i.height()) / 2.0);
@@ -137,13 +137,13 @@ ZImageView::drawScaledImage()
   if (extraWidth > 0) {
     p.fillRect(0, 0, extraWidth, sRect.height(), background);
     p.fillRect(sRect.width() - extraWidth, 0,
-	       sRect.width(), sRect.height(), background);
+               sRect.width(), sRect.height(), background);
   }
 
   if (extraHeight > 0) {
     p.fillRect(0, 0, sRect.width(), extraHeight, background);
     p.fillRect(0, sRect.height() - extraHeight,
-	       sRect.width(), sRect.height(), background);
+               sRect.width(), sRect.height(), background);
   }
 
   // Finally, paint the image copy.

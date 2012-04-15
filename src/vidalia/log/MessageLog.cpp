@@ -130,15 +130,15 @@ MessageLog::createActions()
   connect(ui.btnBrowse, SIGNAL(clicked()),
           this, SLOT(browse()));
 
-	QToolBar *tb = new QToolBar(tr("toolbar"));
-	tb->addAction(ui.actionSave_All);
-	tb->addAction(ui.actionSave_Selected);
-	tb->addAction(ui.actionCopy);
-	tb->addAction(ui.actionSelect_All);
-	tb->addAction(ui.actionFind);
-	tb->addAction(ui.actionClear);
-	tb->addAction(ui.actionSettings);
-	tb->addAction(ui.actionHelp);
+  QToolBar *tb = new QToolBar(tr("toolbar"));
+  tb->addAction(ui.actionSave_All);
+  tb->addAction(ui.actionSave_Selected);
+  tb->addAction(ui.actionCopy);
+  tb->addAction(ui.actionSelect_All);
+  tb->addAction(ui.actionFind);
+  tb->addAction(ui.actionClear);
+  tb->addAction(ui.actionSettings);
+  tb->addAction(ui.actionHelp);
 
   tb->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
   ui.verticalLayout->insertWidget(0, tb);

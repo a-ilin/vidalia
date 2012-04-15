@@ -233,14 +233,14 @@ TorMapImageView::toMapSpace(float latitude, float longitude)
   float lon;
 
   lat = floor(longitude * (deg * lerp(abs(int(latitude)), plen))
-	      + width/2 + MAP_LEFT);
+              + width/2 + MAP_LEFT);
 
   if (latitude < 0) {
     lon = floor((height/2) + (lerp(abs(int(latitude)), pdfe) * (height/2))
-		+ MAP_TOP);
+                + MAP_TOP);
   } else {
     lon = floor((height/2) - (lerp(abs(int(latitude)), pdfe) * (height/2))
-		+ MAP_TOP);
+                + MAP_TOP);
   }
 
   return QPointF(lat, lon);
@@ -253,7 +253,7 @@ TorMapImageView::lerp(float input, float *table)
   int x = int(floor(input / 5));
 
   return ((table[x+1] - table[x]) /
-	  (((x+1)*5) - (x*5))) * (input - x*5) + table[x];
+          (((x+1)*5) - (x*5))) * (input - x*5) + table[x];
 }
 
 /** Returns the minimum size of the widget */

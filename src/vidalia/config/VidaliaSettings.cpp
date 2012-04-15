@@ -47,7 +47,7 @@
 #define VIDALIA_REG_KEY        "Vidalia"
 #endif
 
-#define SETTING_ICON_PREF	"IconPref"
+#define SETTING_ICON_PREF  "IconPref"
 
 /** Default Constructor */
 VidaliaSettings::VidaliaSettings()

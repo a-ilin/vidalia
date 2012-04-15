@@ -87,13 +87,13 @@ copy_dir(const QString &source, const QString &dest)
     if (fileInfo.isDir()) {
       /* This is a directory, make it and recurse */
       if (!dst.mkdir(fileName))
-	return false;
+        return false;
       if (!copy_dir(srcFilePath, dstFilePath))
-	return false;
+        return false;
     } else if (fileInfo.isFile()) {
       /* This is a file, copy it */
       if (!QFile::copy(srcFilePath, dstFilePath))
-	return false;
+        return false;
     }
     /* Ignore special files (e.g. symlinks, devices) */
 

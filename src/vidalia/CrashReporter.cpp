@@ -174,7 +174,7 @@ append_string(_char_t *dst, const _char_t *src, size_t siz)
   }
   *d = TEXT('\0');
 
-  return(dlen + (s - src));	/* count does not include NUL */
+  return(dlen + (s - src));  /* count does not include NUL */
 }
 
 /** Writes the formatted string "<b>key</b>=</b>val\n" to the file handle

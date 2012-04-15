@@ -40,7 +40,7 @@
 #endif
 
 /* Settings key for main layout splitter state */
-#define SETTING_SPLITTER_MAIN 	"NetViewSplitMain"
+#define SETTING_SPLITTER_MAIN   "NetViewSplitMain"
 /* Key for network map splitter */
 #define SETTING_SPLITTER_MAP    "NetViewSplitMap"
 /* Key for router description splitter */
@@ -144,7 +144,7 @@ NetViewer::NetViewer(QWidget *parent)
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(refresh()));
   connect(ui.treeRouterList, SIGNAL(routerSelected(QList<RouterDescriptor>)),
-	        this, SLOT(routerSelected(QList<RouterDescriptor>)));
+          this, SLOT(routerSelected(QList<RouterDescriptor>)));
   connect(ui.treeRouterList, SIGNAL(zoomToRouter(QString)),
           _map, SLOT(zoomToRouter(QString)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),

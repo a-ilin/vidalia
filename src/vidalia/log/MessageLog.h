@@ -91,8 +91,8 @@ private:
   uint _filter;
   /** Stores message filter */
   LogFilter* _logFilter;
-  /** Set to true if we will log all messages to a file. */  	 
-  bool _enableLogging;  
+  /** Set to true if we will log all messages to a file. */
+  bool _enableLogging;
   /** The log file used to store log messages. */
   LogFile _logFile;
 
