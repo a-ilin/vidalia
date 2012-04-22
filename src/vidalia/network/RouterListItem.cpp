@@ -18,12 +18,16 @@
 
 #include "TorSettings.h"
 #include "Vidalia.h"
+#include "stringutil.h"
 
 #include <QHeaderView>
 
 #define STATUS_COLUMN   (RouterListWidget::StatusColumn)
 #define COUNTRY_COLUMN  (RouterListWidget::CountryColumn)
 #define NAME_COLUMN     (RouterListWidget::NameColumn)
+#define IP_COLUMN       (RouterListWidget::IPnumberColumn)
+#define BW_COLUMN       (RouterListWidget::BandwidthColumn)
+#define UPTIME_COLUMN   (RouterListWidget::UptimeColumn)
 
 #define NONEXIT_COLOR   (Qt::white)
 #define EXIT_COLOR      (QColor::fromRgb(169, 207, 84))
@@ -96,6 +100,20 @@ RouterListItem::update(const RouterDescriptor &rd)
   /* Make the new information visible */
   setIcon(STATUS_COLUMN, statusIcon);
   setText(NAME_COLUMN, _rd->name());
+  setText(IP_COLUMN, _rd->ip().toString());
+  /* We show the observedBandwidth and not the minBandwidth as in
+   * RouterDescriptorView.cpp
+   */
+  setText(BW_COLUMN, string_format_bandwidth(_rd->observedBandwidth()));
+  /* Clf. quint64
+   * RouterInfoDialog::adjustUptime(quint64 uptime, const QDateTime &published)
+   */
+  QDateTime now = QDateTime::currentDateTime().toUTC();
+  if (now < _rd->published())
+      setText(UPTIME_COLUMN, string_format_uptime(_rd->uptime()));
+  else
+      setText(UPTIME_COLUMN, string_format_uptime(_rd->uptime() +
+      (now.toTime_t() - _rd->published().toTime_t())));
   setToolTip(NAME_COLUMN, QString(_rd->name() + "\r\n" + _rd->platform()));
 }
 
@@ -114,6 +132,27 @@ RouterListItem::setLocation(const GeoIpRecord &geoip)
 
   _location = geoip;
   _countryCode = geoip.countryCode();
+}
+
+/** Convert IP numbers to quint64 for the comparison operator
+ * filling the dot separated groups with zeroes if necessary.
+ */
+quint64
+RouterListItem::iptoquint64(const RouterListItem *ListItem) const
+{
+  bool ok;
+  quint64 ipNumber;
+  QString ipString;
+  ipString = ListItem->descriptor().ip().toString();
+  QStringList ipList = ipString.split(".", QString::SkipEmptyParts);
+  ipString = "";
+  for (int i = ipList.size()-1; i >= 1; i--) {
+     ipList[i] = ipList[i].rightJustified(3, '0');
+     ipString.prepend(ipList[i]);
+  }
+  ipString.prepend(ipList[0]);
+  ipNumber = ipString.toULongLong(&ok, 10);
+  return(ipNumber);
 }
 
 /** Overload the comparison operator. */
@@ -153,6 +192,35 @@ RouterListItem::operator<(const QTreeWidgetItem &other) const
             return (a->_statusValue < b->_statusValue);
         }
         return (a->name().toLower() < b->name().toLower());
+        /* Compare IP numbers based on their quint64 values  */
+      case RouterListWidget::IPnumberColumn:
+        if (a->descriptor().ip() == b->descriptor().ip()) {
+          if (order == Qt::AscendingOrder)
+            return (a->_statusValue > b->_statusValue);
+          else
+            return (a->_statusValue < b->_statusValue);
+        }
+        return (iptoquint64(a) < iptoquint64(b));
+      case RouterListWidget::BandwidthColumn:
+      /* Compare bandwidth in bytes */
+        if (a->descriptor().observedBandwidth() ==
+            b->descriptor().observedBandwidth()) {
+          if (order == Qt::AscendingOrder)
+            return (a->_statusValue > b->_statusValue);
+          else
+            return (a->_statusValue < b->_statusValue);
+        }
+        return (a->descriptor().observedBandwidth() <
+                b->descriptor().observedBandwidth());
+      case RouterListWidget::UptimeColumn:
+      /* Compare uptime in seconds */
+        if (a->descriptor().uptime() == b->descriptor().uptime()) {
+          if (order == Qt::AscendingOrder)
+            return (a->_statusValue > b->_statusValue);
+          else
+            return (a->_statusValue < b->_statusValue);
+         }
+        return (a->descriptor().uptime() < b->descriptor().uptime());
       default:
         break;
     }

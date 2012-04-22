@@ -118,6 +118,16 @@ private slots:
   /** Called when the user clicks on a QLabel containing a hyperlink. */
   void linkActivated(const QString &url);
 
+  /** Saves the Network Map settings and
+   * then hides the settings frame. */
+  void saveSettings();
+  /** Loads the saved Network Map settings
+   * except Splitter settings. */
+  void loadSettings();
+  /** Simply restores the previously saved settings and hides the settings
+  * frame. */
+  void cancelChanges();
+
 private:
   /** */
   void setupGeoIpResolver();

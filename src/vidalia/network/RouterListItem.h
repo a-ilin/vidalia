@@ -49,7 +49,10 @@ public:
   void setLocation(const GeoIpRecord &geoip);
   /** Returns the location information set for this router item. */
   GeoIpRecord location() const { return _location; }
-
+  /** Convert IP numbers to quint64 for the comparison operator
+   * filling the dot separated groups with zeroes if necessary.
+   */
+  quint64 iptoquint64(const RouterListItem *ListItem) const;
   /** Overload the comparison operator. */
   virtual bool operator<(const QTreeWidgetItem &other) const;
 
@@ -82,4 +85,3 @@ private:
 };
 
 #endif
-

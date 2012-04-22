@@ -1,0 +1,3 @@
+  New features:
+  o Adds Settings frame for Network Map with optional
+    columns for Relay panel. Resolves ticket 2731.

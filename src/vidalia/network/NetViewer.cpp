@@ -51,6 +51,20 @@
 #define DEFAULT_SPLITTER_MAP    QByteArray()
 #define DEFAULT_SPLITTER_ROUT   QByteArray()
 
+/* Settings key for IP column */
+#define SETTING_IP_COLUMN  "RelayPanel/ShowIPColumn"
+/* Settings key for Bandwidth column */
+#define SETTING_BW_COLUMN  "RelayPanel/ShowBandwidthColumn"
+/* Settings key for Uptime column */
+#define SETTING_UPTIME_COLUMN  "RelayPanel/ShowUptimeColumn"
+
+/* Default key value for IP column */
+#define DEFAULT_IP_COLUMN  false
+/* Default key value for Bandwidth column */
+#define DEFAULT_BW_COLUMN  false
+/* Default key value for Uptime column */
+#define DEFAULT_UPTIME_COLUMN  false
+
 /** Constructor. Loads settings from VidaliaSettings.
  * \param parent The parent widget of this NetViewer object.\
  */
@@ -63,6 +77,8 @@ NetViewer::NetViewer(QWidget *parent)
   ui.lblConsensus->setVisible(false);
   ui.lblOffline->setVisible(false);
 
+  loadSettings();
+  ui.frmSettings->setVisible(false);
 #if defined(Q_WS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
 #endif
@@ -163,7 +179,10 @@ NetViewer::NetViewer(QWidget *parent)
           ui.treeRouterList, SLOT(onRouterSearch(QString)));
   connect(ui.treeRouterList, SIGNAL(displayRouterInfo(QString)),
           this, SLOT(displayRouterInfo(QString)));
-
+  connect(ui.btnSaveSettings, SIGNAL(clicked()),
+          this, SLOT(saveSettings()));
+  connect(ui.btnCancelSettings, SIGNAL(clicked()),
+          this, SLOT(cancelChanges()));
   setupGeoIpResolver();
 
   QToolBar *tb = new QToolBar();
@@ -173,10 +192,11 @@ NetViewer::NetViewer(QWidget *parent)
   tb->addAction(ui.actionZoomOut);
   tb->addAction(ui.actionZoomToFit);
   tb->addAction(ui.actionZoomFullScreen);
+  tb->addAction(ui.actionSettings);
 
   tb->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
   ui.horizontalLayout->addWidget(tb);
-  
+
   /* Restore the state of each splitter */
   ui.spltMain->restoreState(getSetting(SETTING_SPLITTER_MAIN,
                                        DEFAULT_SPLITTER_MAIN)
@@ -618,4 +638,61 @@ void
 NetViewer::linkActivated(const QString &url)
 {
   emit helpRequested(url);
+}
+
+/** Saves the Network Map settings and
+ * then hides the settings frame. */
+void
+NetViewer::saveSettings()
+{
+  ui.treeRouterList->setColumnHidden(RouterListWidget::IPnumberColumn,
+                                     !(ui.chkShowIP->isChecked()));
+  ui.treeRouterList->setColumnHidden(RouterListWidget::BandwidthColumn,
+                                     !(ui.chkShowBW->isChecked()));
+  ui.treeRouterList->setColumnHidden(RouterListWidget::UptimeColumn,
+                                     !(ui.chkShowUptime->isChecked()));
+  saveSetting(SETTING_IP_COLUMN, ui.chkShowIP->isChecked());
+  saveSetting(SETTING_BW_COLUMN, ui.chkShowBW->isChecked());
+  saveSetting(SETTING_UPTIME_COLUMN, ui.chkShowUptime->isChecked());
+}
+
+/** Simply restores the previously saved settings and hides the settings
+ * frame. */
+void
+NetViewer::cancelChanges()
+{
+  /* Hide the settings frame and reset toggle button */
+  ui.actionSettings->toggle();
+  /* Reload the settings */
+  loadSettings();
+}
+
+/** Loads the saved Network Map settings
+ * except Splitter settings. */
+void
+NetViewer::loadSettings()
+{
+  /* Add optional columns to Relay Panel if their setting values are
+   *  true, otherwise use default values. */
+  ui.treeRouterList->setColumnHidden(RouterListWidget::IPnumberColumn,
+                                     !(getSetting(SETTING_IP_COLUMN,
+                                                  DEFAULT_IP_COLUMN).
+                                                  toBool()));
+  ui.chkShowIP->setChecked(getSetting(SETTING_IP_COLUMN,
+                                      DEFAULT_IP_COLUMN).
+                                      toBool());
+  ui.treeRouterList->setColumnHidden(RouterListWidget::BandwidthColumn,
+                                     !(getSetting(SETTING_BW_COLUMN,
+                                                  DEFAULT_BW_COLUMN).
+                                                  toBool()));
+  ui.chkShowBW->setChecked(getSetting(SETTING_BW_COLUMN,
+                                      DEFAULT_BW_COLUMN).
+                                      toBool());
+  ui.treeRouterList->setColumnHidden(RouterListWidget::UptimeColumn,
+                                     !(getSetting(SETTING_UPTIME_COLUMN,
+                                                  DEFAULT_UPTIME_COLUMN).
+                                                  toBool()));
+  ui.chkShowUptime->setChecked(getSetting(SETTING_UPTIME_COLUMN,
+                                          DEFAULT_UPTIME_COLUMN).
+                                          toBool());
 }

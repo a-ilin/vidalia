@@ -34,7 +34,10 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   /* Create and initialize columns */
   setHeaderLabels(QStringList() << QString("")
                                 << QString("")
-                                << tr("Relay"));
+                                << tr("Relay")
+                                << tr("IP")
+                                << tr("Bandwidth")
+                                << tr("Uptime"));
 
   /* Sort by descending server bandwidth */
   sortItems(StatusColumn, Qt::DescendingOrder);
@@ -50,7 +53,10 @@ RouterListWidget::retranslateUi()
 {
   setHeaderLabels(QStringList() << QString("")
                                 << QString("")
-                                << tr("Relay"));
+                                << tr("Relay")
+                                << tr("IP")
+                                << tr("Bandwidth")
+                                << tr("Uptime"));
 }
 
 /** Called when the user requests a context menu for a router in the list. A
