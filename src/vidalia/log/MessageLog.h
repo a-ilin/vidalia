@@ -96,7 +96,7 @@ private:
   /** The log file used to store log messages. */
   LogFile _logFile;
 
-  QStatusBar *_statusBar;
+  QPointer<QStatusBar> _statusBar;
 
   /** Qt Designer generatated QObject **/
   Ui::MessageLog ui;
