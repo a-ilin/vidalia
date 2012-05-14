@@ -19,7 +19,6 @@
 #include "ui_NetworkPage.h"
 #include "ConfigPage.h"
 #include "Vidalia.h"
-#include "BridgeDownloader.h"
 
 class NetworkSettings;
 
@@ -69,26 +68,12 @@ private slots:
   /** Called when a link in a label is clicked. <b>url</b> is the target of
    * the clicked link.*/
   void onLinkActivated(const QString &url);
-  /** Called when the user clicks the "Find Bridges Now" button. Calls
-   * startBridgeRequest() to start a new request for additional bridge
-   * addresses, and displays a progress dialog for the user. */
-  void findBridges();
-  /** Starts a new request for additional bridge addresses. */
-  void startBridgeRequest();
-  /** Called when a previous bridge request initiated by the findBridges()
-   * method has completed. <b>bridges</b> contains a list of all bridges
-   * received. */
-  void bridgeRequestFinished(const QStringList &bridges);
 
   /** Disable proxy username and password fields when the user wants to use
    * a SOCKS 4 proxy. */
   void proxyTypeChanged(int selection);
 
 private:
-  /** Helper class used to facilitate downloading one or more bridge
-   * addresses. */
-  BridgeDownloader* _bridgeDownloader;
-
   /** Qt Designer generated object */
   Ui::NetworkPage ui;
 

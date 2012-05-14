@@ -1,12 +1,12 @@
 ##
 ##  $Id$
-## 
+##
 ##  This file is part of Vidalia, and is subject to the license terms in the
-##  LICENSE file, found in the top level directory of this distribution. If 
+##  LICENSE file, found in the top level directory of this distribution. If
 ##  you did not receive the LICENSE file with this file, you may obtain it
 ##  from the Vidalia source package distributed by the Vidalia Project at
-##  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-##  including this file, may be copied, modified, propagated, or distributed 
+##  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+##  including this file, may be copied, modified, propagated, or distributed
 ##  except according to the terms described in the LICENSE file.
 ##
 
@@ -65,7 +65,7 @@ configure_file(
 add_subdirectory(i18n)
 
 ## About dialog sources
-set(vidalia_SRCS 
+set(vidalia_SRCS
   about/AboutDialog.cpp
   about/LicenseDialog.cpp
 )
@@ -106,8 +106,6 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/AbstractTorSettings.cpp
   config/AdvancedPage.cpp
   config/AppearancePage.cpp
-  config/BridgeDownloader.cpp
-  config/BridgeDownloaderProgressDialog.cpp
   config/BridgeUsageDialog.cpp
   config/ConfigDialog.cpp
   config/ConfigPageStack.cpp
@@ -134,8 +132,6 @@ qt4_wrap_cpp(vidalia_SRCS
   config/AbstractTorSettings.h
   config/AdvancedPage.h
   config/AppearancePage.h
-  config/BridgeDownloader.h
-  config/BridgeDownloaderProgressDialog.h
   config/BridgeUsageDialog.h
   config/ConfigDialog.h
   config/ConfigPage.h
@@ -212,7 +208,6 @@ qt4_wrap_ui(vidalia_SRCS
   bwgraph/BandwidthGraph.ui
   config/AdvancedPage.ui
   config/AppearancePage.ui
-  config/BridgeDownloaderProgressDialog.ui
   config/BridgeUsageDialog.ui
   config/ConfigDialog.ui
   config/GeneralPage.ui
@@ -320,7 +315,7 @@ qt4_wrap_cpp(vidalia_SRCS
 if (APPLE)
   ## Set the output file name (make it uppercase on OS X)
   set(vidalia_BIN Vidalia)
-  
+
   ## Create an OS X application bundle
   set(MACOSX_BUNDLE_BUNDLE_NAME           Vidalia)
   set(MACOSX_BUNDLE_BUNDLE_VERSION        ${VERSION})
@@ -334,10 +329,10 @@ if (APPLE)
   set(CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}/)
   add_executable(${vidalia_BIN} MACOSX_BUNDLE ${vidalia_SRCS})
 
-  ## Specify location of custom Info.plist file 
+  ## Specify location of custom Info.plist file
   configure_file(${CMAKE_CURRENT_SOURCE_DIR}/MacOSXBundleInfo.plist.in
                  ${CMAKE_CURRENT_BINARY_DIR}/MacOSXBundleInfo.plist)
-  set_target_properties(${vidalia_BIN} PROPERTIES MACOSX_BUNDLE_INFO_PLIST 
+  set_target_properties(${vidalia_BIN} PROPERTIES MACOSX_BUNDLE_INFO_PLIST
                         ${CMAKE_CURRENT_BINARY_DIR}/MacOSXBundleInfo.plist)
 
   ## Get the location of the app bundle for the current configuration
@@ -352,7 +347,7 @@ if (APPLE)
     COMMAND ${CMAKE_COMMAND}
       ARGS -E make_directory ${MACOSX_BUNDLE_DIRECTORY}/share/tor
     COMMAND cp
-      ARGS ${CMAKE_CURRENT_SOURCE_DIR}/res/icons/*.icns 
+      ARGS ${CMAKE_CURRENT_SOURCE_DIR}/res/icons/*.icns
            ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources/
   )
 
@@ -367,7 +362,7 @@ if (APPLE)
         COMMAND ${CMAKE_COMMAND}
           ARGS -E make_directory ${outdir}
         COMMAND ${CMAKE_COMMAND}
-          ARGS -E copy_if_different 
+          ARGS -E copy_if_different
                 ${MARBLE_DATA_DIR}/${it} ${outdir}/${outfile}
       )
     endforeach(it)
@@ -376,7 +371,7 @@ if (APPLE)
     if (MARBLE_PLUGINS)
       add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
         COMMAND ${CMAKE_COMMAND}
-          ARGS -E make_directory 
+          ARGS -E make_directory
                ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources/plugins
       )
       foreach(it ${MARBLE_PLUGINS})
@@ -407,7 +402,7 @@ else(APPLE)
           COMMAND ${CMAKE_COMMAND}
             ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
           COMMAND ${CMAKE_COMMAND}
-            ARGS -E copy_if_different ${MARBLE_DATA_DIR}/${it} 
+            ARGS -E copy_if_different ${MARBLE_DATA_DIR}/${it}
                                       ${CMAKE_CURRENT_BINARY_DIR}/data/${it}
         )
       endforeach(it)
@@ -421,7 +416,7 @@ else(APPLE)
         foreach(it ${MARBLE_PLUGINS})
           add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
             COMMAND ${CMAKE_COMMAND}
-              ARGS -E copy_if_different ${it} 
+              ARGS -E copy_if_different ${it}
                     ${CMAKE_CURRENT_BINARY_DIR}/plugins/marble/
           )
         endforeach(it)

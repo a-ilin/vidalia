@@ -14,12 +14,6 @@
    <enum>Qt::NoContextMenu</enum>
   </property>
   <layout class="QVBoxLayout">
-   <property name="spacing">
-    <number>6</number>
-   </property>
-   <property name="margin">
-    <number>9</number>
-   </property>
    <item>
     <widget class="QCheckBox" name="chkUseProxy">
      <property name="toolTip">
@@ -57,12 +51,6 @@
       <string>Proxy Settings</string>
      </property>
      <layout class="QGridLayout">
-      <property name="margin">
-       <number>9</number>
-      </property>
-      <property name="spacing">
-       <number>6</number>
-      </property>
       <item row="0" column="0">
        <widget class="QLabel" name="lblProxyAddress">
         <property name="text">
@@ -75,12 +63,6 @@
       </item>
       <item row="0" column="1" colspan="2">
        <layout class="QHBoxLayout">
-        <property name="spacing">
-         <number>6</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
         <item>
          <widget class="QLineEdit" name="lineProxyAddress"/>
         </item>
@@ -118,12 +100,6 @@
       </item>
       <item row="1" column="1" colspan="2">
        <layout class="QHBoxLayout">
-        <property name="spacing">
-         <number>6</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
         <item>
          <widget class="QLineEdit" name="lineProxyUsername"/>
         </item>
@@ -148,7 +124,7 @@
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0">
          <size>
           <width>40</width>
           <height>20</height>
@@ -206,12 +182,6 @@
       <string>Firewall Settings</string>
      </property>
      <layout class="QHBoxLayout">
-      <property name="spacing">
-       <number>6</number>
-      </property>
-      <property name="margin">
-       <number>9</number>
-      </property>
       <item>
        <widget class="QLabel" name="lblReachablePorts">
         <property name="text">
@@ -263,20 +233,8 @@
       <string>Bridge Settings</string>
      </property>
      <layout class="QVBoxLayout">
-      <property name="spacing">
-       <number>6</number>
-      </property>
-      <property name="margin">
-       <number>9</number>
-      </property>
       <item>
        <layout class="QHBoxLayout">
-        <property name="spacing">
-         <number>6</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
         <item>
          <widget class="QLabel" name="lblAddBridge">
           <property name="text">
@@ -289,7 +247,7 @@
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0">
            <size>
             <width>40</width>
             <height>20</height>
@@ -301,20 +259,8 @@
       </item>
       <item>
        <layout class="QHBoxLayout">
-        <property name="spacing">
-         <number>6</number>
-        </property>
-        <property name="margin">
-         <number>0</number>
-        </property>
         <item>
          <layout class="QVBoxLayout">
-          <property name="spacing">
-           <number>6</number>
-          </property>
-          <property name="margin">
-           <number>0</number>
-          </property>
           <item>
            <widget class="QLineEdit" name="lineBridge">
             <property name="maxLength">
@@ -336,12 +282,6 @@
         </item>
         <item>
          <layout class="QVBoxLayout">
-          <property name="spacing">
-           <number>6</number>
-          </property>
-          <property name="margin">
-           <number>0</number>
-          </property>
           <item>
            <widget class="QToolButton" name="btnAddBridge">
             <property name="text">
@@ -392,7 +332,7 @@
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>40</height>
@@ -407,19 +347,12 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QPushButton" name="btnFindBridges">
-          <property name="text">
-           <string>Find Bridges Now</string>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QLabel" name="lblHelpFindBridges">
           <property name="cursor">
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>&lt;a href=&quot;bridges.finding&quot;&gt;How else can I find bridges?&lt;/a&gt;</string>
+           <string>&lt;a href=&quot;bridges.finding&quot;&gt;How can I find bridges?&lt;/a&gt;</string>
           </property>
          </widget>
         </item>
@@ -428,7 +361,7 @@
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-          <property name="sizeHint" >
+          <property name="sizeHint" stdset="0">
            <size>
             <width>40</width>
             <height>20</height>
@@ -446,7 +379,7 @@
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
        <height>40</height>

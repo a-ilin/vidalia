@@ -17,7 +17,6 @@
 #include "NetworkSettings.h"
 #include "VMessageBox.h"
 #include "Vidalia.h"
-#include "BridgeDownloaderProgressDialog.h"
 #include "DomainValidator.h"
 
 #include "stringutil.h"
@@ -52,7 +51,6 @@ NetworkPage::NetworkPage(QWidget *parent)
   connect(ui.lineBridge, SIGNAL(returnPressed()), this, SLOT(addBridge()));
   connect(ui.lblHelpFindBridges, SIGNAL(linkActivated(QString)),
           this, SLOT(onLinkActivated(QString)));
-  connect(ui.btnFindBridges, SIGNAL(clicked()), this, SLOT(findBridges()));
   connect(ui.cmboProxyType, SIGNAL(currentIndexChanged(int)),
           this, SLOT(proxyTypeChanged(int)));
 
@@ -62,17 +60,6 @@ NetworkPage::NetworkPage(QWidget *parent)
   vApp->createShortcut(QKeySequence(QKeySequence::Copy),
                        ui.listBridges, this,
                        SLOT(copySelectedBridgesToClipboard()));
-
-  if (! BridgeDownloader::isMethodSupported(BridgeDownloader::DownloadMethodHttps)) {
-    ui.btnFindBridges->setVisible(false);
-    ui.lblHelpFindBridges->setText(
-      tr("<a href=\"bridges.finding\">How can I find bridges?</a>"));
-    _bridgeDownloader = 0;
-  } else {
-    _bridgeDownloader = new BridgeDownloader(this);
-    connect(_bridgeDownloader, SIGNAL(bridgeRequestFinished(QStringList)),
-            this, SLOT(bridgeRequestFinished(QStringList)));
-  }
 
 #if defined(Q_WS_MAC)
   /* On OS X, the network page looks better without frame titles. Everywhere
@@ -332,84 +319,6 @@ NetworkPage::load()
   ui.chkUseBridges->setChecked(_settings->getUseBridges());
   ui.listBridges->clear();
   ui.listBridges->addItems(_settings->getBridgeList());
-}
-
-/** Called when the user clicks the "Find Bridges Now" button.
- * Attempts to establish an HTTPS connection to bridges.torproject.org
- * and download one or more bridge addresses. */
-void
-NetworkPage::findBridges()
-{
-  BridgeDownloaderProgressDialog *dlg = new BridgeDownloaderProgressDialog(this);
-
-  connect(_bridgeDownloader, SIGNAL(statusChanged(QString)),
-          dlg, SLOT(setStatus(QString)));
-  connect(_bridgeDownloader, SIGNAL(downloadProgress(qint64, qint64)),
-          dlg, SLOT(setDownloadProgress(qint64, qint64)));
-  connect(_bridgeDownloader, SIGNAL(bridgeRequestFailed(QString)),
-          dlg, SLOT(bridgeRequestFailed(QString)));
-  connect(_bridgeDownloader, SIGNAL(bridgeRequestFinished(QStringList)),
-          dlg, SLOT(bridgeRequestFinished(QStringList)));
-  connect(dlg, SIGNAL(retry()), this, SLOT(startBridgeRequest()));
-
-  startBridgeRequest();
-  switch (dlg->exec()) {
-    case QDialogButtonBox::Cancel:
-      _bridgeDownloader->cancelBridgeRequest();
-      break;
-
-    case QDialogButtonBox::Help:
-      emit helpRequested("bridges.finding");
-      break;
-  }
-
-  delete dlg;
-}
-
-/** Starts a new request for additional bridge addresses. */
-void
-NetworkPage::startBridgeRequest()
-{
-  if (ui.chkUseProxy->isChecked() &&
-     ui.cmboProxyType->currentIndex() == NetworkSettings::HttpHttpsProxy) {
-    _bridgeDownloader->setProxy(ui.lineProxyAddress->text(),
-                                ui.lineProxyPort->text().toUInt(),
-                                ui.lineProxyUsername->text(),
-                                ui.lineProxyPassword->text());
-  }
-
-  _bridgeDownloader->downloadBridges(BridgeDownloader::DownloadMethodHttps);
-}
-
-/** Called when a previous bridge request initiated by the findBridges()
- * method has completed. <b>bridges</b> contains a list of all bridges
- * received. */
-void
-NetworkPage::bridgeRequestFinished(const QStringList &bridges)
-{
-  bool foundNewBridges = false;
-
-  foreach (QString bridge, bridges) {
-    QString address = bridge.trimmed().split(" ").at(1);
-    if (ui.listBridges->findItems(address, Qt::MatchContains).isEmpty()) {
-      ui.listBridges->addItem(address);
-      foundNewBridges = true;
-    }
-  }
-
-  if (! foundNewBridges) {
-    QMessageBox dlg(this);
-    dlg.setIcon(QMessageBox::Information);
-    dlg.setText(tr("No new bridges are currently available. You can either "
-                   "wait a while and try again, or try another method of "
-                   "finding new bridges."));
-    dlg.setInformativeText(tr("Click Help to see other methods of finding "
-                              "new bridges."));
-    dlg.setStandardButtons(QMessageBox::Ok | QMessageBox::Help);
-
-    if (dlg.exec() == QMessageBox::Help)
-      emit helpRequested("bridges.finding");
-  }
 }
 
 /** Disable proxy username and password fields when the user wants to use
