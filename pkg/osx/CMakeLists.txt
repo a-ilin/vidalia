@@ -65,7 +65,6 @@ add_custom_target(dist-osx
     --copy ${Vidalia_SOURCE_DIR}/LICENSE:/Licenses/License.txt
     --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV2:/Licenses/License-GPLv2.txt
     --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV3:/Licenses/License-GPLv3.txt
-    --copy ${Vidalia_SOURCE_DIR}/LICENSE-OPENSSL:/Licenses/License-OpenSSL.txt
     --copy ${Vidalia_SOURCE_DIR}/README:/ReadMe.txt
     --copy ${Vidalia_SOURCE_DIR}/CHANGELOG:/Changes.txt
   COMMENT "Creating vidalia-${VERSION}-${DMG_ARCH}.dmg"
@@ -102,7 +101,6 @@ if (TOR_SOURCE_DIR AND SCRIPT_DIR)
       --copy ${Vidalia_SOURCE_DIR}/LICENSE:/Licenses/License.txt
       --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV2:/Licenses/License-GPLv2.txt
       --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV3:/Licenses/License-GPLv3.txt
-      --copy ${Vidalia_SOURCE_DIR}/LICENSE-OPENSSL:/Licenses/License-OpenSSL.txt
       --copy ${Vidalia_SOURCE_DIR}/CHANGELOG:/Changes.txt
       --copy ${TOR_SOURCE_DIR}/src/or/tor:/Vidalia.app/Contents/MacOS/
       --copy ${TOR_SOURCE_DIR}/src/tools/tor-checkkey:/Vidalia.app/Contents/MacOS/

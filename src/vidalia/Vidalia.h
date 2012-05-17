@@ -151,11 +151,6 @@ private:
    */
   void copyDefaultSettingsFile() const;
 
-  /** Clears the list of default CA certificates and adds only the ones
-   * Vidalia is interested in.
-   */
-  void loadDefaultCaCertificates() const;
-
   static QMap<QString, QString> _args; /**< List of command-line arguments.  */
   static QString _style;               /**< The current GUI style.           */
   static QString _language;            /**< The current language.            */

@@ -1,0 +1,4 @@
+  o Code simplifications and refactoring:
+    - Really get rid of the openssl dependency. The goal had been to achieve
+      that for 0.2.18, but not everything was actually removed.
+

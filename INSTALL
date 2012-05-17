@@ -210,11 +210,6 @@ the command line and follows the format "-D <var>:<type>=<value>
   
     Specifies the location of Qt's 'qmake' binary.
 
-  -DOPENSSL_LIBRARY_DIR=/path/to/openssl
-  
-    Specifies the location of OpenSSL's libraries for building installer on 
-    Windows.
-
   -DCMAKE_INSTALL_PREFIX=/usr/local
   
     Specifies the install prefix used for `make install`.

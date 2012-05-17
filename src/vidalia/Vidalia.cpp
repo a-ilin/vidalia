@@ -32,7 +32,6 @@
 #include <QShortcut>
 #include <QTranslator>
 #include <QLibraryInfo>
-#include <QSslSocket>
 
 #ifdef Q_OS_MACX
 #include <Carbon/Carbon.h>
@@ -131,10 +130,6 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 
   /* Creates a Torrc handler */
   _torrc = new Torrc(settings.getTorrc(), settings.getDefaultsTorrc());
-
-  /* If we were built with QSslSocket support, then populate the default
-   * CA certificate store. */
-  loadDefaultCaCertificates();
 
 #ifdef USE_MARBLE
   /* Tell Marble where to stash its generated data */
@@ -521,24 +516,5 @@ Vidalia::copyDefaultSettingsFile() const
   CFRelease(confUrlRef);
   CFRelease(pathRef);
 #endif
-}
-
-void
-Vidalia::loadDefaultCaCertificates() const
-{
-  QSslSocket::setDefaultCaCertificates(QList<QSslCertificate>());
-
-  if (! QSslSocket::addDefaultCaCertificates(":/pki/EquifaxSecureCA.crt"))
-    vWarn("Failed to add the Equifax Secure CA certificate to the default CA "
-          "certificate database.");
-  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertCA.crt"))
-    vWarn("Failed to add the DigiCert Global CA certificate to the default CA "
-          "certificate database.");
-  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertAssuredCA.crt"))
-    vWarn("Failed to add the DigiCert Assured CA certificate to the default CA "
-          "certificate database.");
-  if (! QSslSocket::addDefaultCaCertificates(":/pki/DigiCertHighAssuranceCA.crt"))
-    vWarn("Failed to add the DigiCert High Assurance CA certificate to the default CA "
-          "certificate database.");
 }
 

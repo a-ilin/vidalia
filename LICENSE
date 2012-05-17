@@ -11,9 +11,6 @@ your option) any later version. The full text of versions 2 and 3 of
 the GPL can be found respectively in the files LICENSE-GPLV2 and
 LICENSE-GPLV3.
 
-EXCEPTION: This distribution of Vidalia may be linked against OpenSSL
-according to the terms of the section below entitled "OpenSSL Exception."
-
 This program is distributed in the hope that it will be useful, but
 WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
@@ -22,39 +19,6 @@ Public License for more details.
 You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-
-                       
-                       _OpenSSL Exception_
-
-0. Definitions
-
-"Vidalia" means Vidalia software licensed under version 2 or any later
-version of the GNU General Public License (collectively, "GPL"), or a
-work based on such software and licensed under the GPL.
-
-"OpenSSL" means OpenSSL toolkit software distributed by the OpenSSL
-Project and licensed under the OpenSSL Licenses, or a work based on such
-software and licensed under the OpenSSL Licenses.
-
-"OpenSSL Licenses" means the OpenSSL License and Original SSLeay License
-under which the OpenSSL Project distributes the OpenSSL toolkit software,
-as those licenses appear in the file LICENSE-OPENSSL.
-
-1. Exception
-
-You have permission to copy, modify, propagate, and distribute a work
-formed by combining OpenSSL with Vidalia, or a work derivative of such a
-combination, even if such copying, modification, propagation, or
-distribution would otherwise violate the terms of the GPL. You must
-comply with the GPL in all respects for all of the code used other than
-OpenSSL.
-
-You may include this OpenSSL Exception and its grant of permissions when
-you distribute Vidalia.  Inclusion of this notice with such a
-distribution constitutes a grant of such permission.  If you do not wish
-to grant these permissions, remove this section entitled "OpenSSL
-Exception" from your distribution.
-
 
 ===================================================================
 

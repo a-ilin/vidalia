@@ -16,12 +16,6 @@ if (MINGW)
   endif(NOT MINGW_BINARY_DIR)
 endif(MINGW)
 
-if (USE_QSSLSOCKET)
-  if (NOT OPENSSL_BINARY_DIR)
-    set(OPENSSL_BINARY_DIR ${Vidalia_BINARY_DIR}/bin)
-  endif(NOT OPENSSL_BINARY_DIR)
-endif(USE_QSSLSOCKET)
-
 ## Only configure the bundle installer if paths to Tor, Polipo, and
 ## Torbutton are specified 
 set(CONFIGURE_BUNDLE_NSI TRUE)

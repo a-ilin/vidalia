@@ -11,7 +11,6 @@
   <?define QtLibraryGuid="420D52CF-D7C0-4BA0-9D4E-A229E6CFAE9D" ?>
   <?define QtImageFormatPluginsGuid="420D52CF-D7C0-4BA0-9D4E-A229E6CFAE9D" ?>
   <?define MinGWLibraryGuid="B4925AB4-DEF4-4B1E-88A7-67EACD8F1312" ?>
-  <?define OpenSSLLibraryGuid="F93379CC-F2E8-4476-BCBC-D57FEA0E5320" ?>
   <?define MarbleWidgetLibraryGuid="8D749190-ADD6-40EA-A59F-3331EDAEDE01" ?>
   <?define MarblePluginsGuid="D323FF55-CD5F-4EF1-BAE1-1D8A4B79E112" ?>
   <?define MarbleLegendsDataGuid="46903134-8E51-4D06-9ABB-92A6E1F439BE" ?>
@@ -99,8 +98,6 @@
               Name="LICENSE-GPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV3" />
         <File Id="VidaliaLicenseLgplV3" DiskId="1"
               Name="LICENSE-LGPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-LGPLV3" />
-        <File Id="VidaliaLicenseOpenSSL" DiskId="1"
-              Name="LICENSE-OPENSSL" Source="@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL" />
       </Component>
 
       <!-- Qt-related library files -->
@@ -121,14 +118,6 @@
           <File Id="QtWebKit4Dll" DiskId="1"
                 Name="QtWebKit4.dll" Source="@QT_BINARY_DIR@\QtWebKit4.dll" />
         <?endif?>
-      </Component>
-
-      <!-- OpenSSL-related library files -->
-      <Component Id="OpenSSLLibrary" Guid="$(var.OpenSSLLibraryGuid)">
-        <File Id="ssleay32dll" DiskId="1"
-              Name="ssleay32.dll" Source="@OPENSSL_BINARY_DIR@\ssleay32.dll" />
-        <File Id="libeay32dll" DiskId="1"
-              Name="libeay32.dll" Source="@OPENSSL_BINARY_DIR@\libeay32.dll" />
       </Component>
 
       <?if $(var.UseBreakpad) = "ON"?>
@@ -319,7 +308,6 @@
         <ComponentRef Id="VidaliaExecutable" />
         <ComponentRef Id="VidaliaDocuments" />
         <ComponentRef Id="QtLibrary" />
-        <ComponentRef Id="OpenSSLLibrary" />
         <?if $(var.UseMarble) = "ON"?>
           <ComponentRef Id="QtImageFormatPlugins" />
           <ComponentRef Id="MarbleWidgetLibrary" />

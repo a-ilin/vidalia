@@ -163,15 +163,12 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "@QT_BINARY_DIR@\QtXml4.dll"
       File "@QT_BINARY_DIR@\libgcc_s_dw2-1.dll"
       File "@MINGW_BINARY_DIR@\mingwm10.dll"
-      File "@OPENSSL_BINARY_DIR@\ssleay32.dll"
-      File "@OPENSSL_BINARY_DIR@\libeay32.dll"
       File "@Vidalia_SOURCE_DIR@\README"
       File "@Vidalia_SOURCE_DIR@\CHANGELOG"
       File "@Vidalia_SOURCE_DIR@\LICENSE"
       File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV2"
       File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV3"
       File "@Vidalia_SOURCE_DIR@\LICENSE-LGPLV3"
-      File "@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL"
       File "@Vidalia_SOURCE_DIR@\CREDITS"
       
       ; Include a prebuilt GeoIP cache
