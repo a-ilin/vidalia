@@ -46,6 +46,10 @@ target_link_libraries(ts2po
   ${QT_QTXML_LIBRARY}
 )
 
+if (WIN32 AND QT_CONFIG MATCHES "static")
+  target_link_libraries(ts2po z)
+endif(WIN32 AND QT_CONFIG MATCHES "static")
+
 ## Remember the location of ts2po so we can use it in custom commands
 get_target_property(TS2PO_EXECUTABLE ts2po LOCATION)
 set(VIDALIA_TS2PO_EXECUTABLE ${TS2PO_EXECUTABLE}

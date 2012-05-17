@@ -31,10 +31,13 @@ if(WIN32)
   )
 endif(WIN32)
 
-
 add_library(common STATIC ${common_SRCS})
 target_link_libraries(common
   ${QT_QTCORE_LIBRARY}
   ${QT_QTNETWORK_LIBRARY}
 )
+
+if (WIN32 AND QT_CONFIG MATCHES "static")
+  target_link_libraries(common z)
+endif(WIN32 AND QT_CONFIG MATCHES "static")
 

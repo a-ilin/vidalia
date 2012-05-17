@@ -20,6 +20,10 @@ target_link_libraries(wixtool
   ${QT_QTXML_LIBRARY}
 )
 
+if (WIN32 AND QT_CONFIG MATCHES "static")
+  target_link_libraries(wixtool ws2_32 z)
+endif(WIN32 AND QT_CONFIG MATCHES "static")
+
 ## Remember location so we can use it in custom commands
 get_target_property(WIXTOOL_EXECUTABLE wixtool LOCATION)
 set(VIDALIA_WIXTOOL_EXECUTABLE ${WIXTOOL_EXECUTABLE}

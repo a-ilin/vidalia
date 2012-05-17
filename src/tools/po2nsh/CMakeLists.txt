@@ -23,6 +23,10 @@ target_link_libraries(po2nsh
   ${QT_QTCORE_LIBRARY}
 )
 
+if (WIN32 AND QT_CONFIG MATCHES "static")
+  target_link_libraries(po2nsh ws2_32 z)
+endif(WIN32 AND QT_CONFIG MATCHES "static")
+
 ## Remember the location of po2nsh so we can use it in custom commands
 get_target_property(PO2NSH_EXECUTABLE po2nsh LOCATION)
 set(VIDALIA_PO2NSH_EXECUTABLE ${PO2NSH_EXECUTABLE}
