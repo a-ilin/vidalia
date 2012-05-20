@@ -39,7 +39,12 @@ PluginEngine::PluginEngine(QObject *parent)
   globalObject().setProperty("sleep", newFunction(sleep));
 
   VidaliaSettings settings;
-  globalObject().setProperty("pluginPath", QScriptValue(settings.pluginPath()));
+  QDir path(settings.pluginPath());
+  if(path.isRelative()) {
+    path.setPath(QApplication::applicationDirPath() + "/" + settings.pluginPath());
+  }
+
+  globalObject().setProperty("pluginPath", QScriptValue(path.canonicalPath()));
 
   DebugDialog::outputDebug("Available extensions:");
   foreach(QString ext, availableExtensions())
@@ -58,9 +63,12 @@ PluginEngine::loadAllPlugins()
   DebugDialog::outputDebug("Loading all plugins...");
 
   VidaliaSettings settings;
-  QDir path = QDir(settings.pluginPath());
+  QDir path(settings.pluginPath());
+  if(path.isRelative()) {
+    path.setPath(QApplication::applicationDirPath() + "/" + settings.pluginPath());
+  }
 
-  DebugDialog::outputDebug(QString("PluginPath=%1").arg(path.absolutePath()));
+  DebugDialog::outputDebug(QString("PluginPath=%1").arg(path.canonicalPath()));
 
   foreach(QString pdir, path.entryList(QDir::NoDotAndDotDot|QDir::AllDirs)) {
     QFileInfo finfo(QString("%1%2%3")
