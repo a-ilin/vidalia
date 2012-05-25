@@ -779,6 +779,7 @@ MainWindow::connectToTor()
 #else
       sleep(1);
 #endif
+      QCoreApplication::processEvents();
     }
 
     if(tries >= maxtries) {

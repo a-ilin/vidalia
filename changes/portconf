@@ -1,0 +1,3 @@
+  Internal cleanups and improvements:
+  o Call QCoreApplication::processEvents() while waiting to read
+    port.conf so that Vidalia does not freeze.
