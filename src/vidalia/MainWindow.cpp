@@ -185,7 +185,6 @@ MainWindow::createGUI()
   createMenuBar();
   createToolBar();
   createTrayIcon();
-  updateTitle();
 
   // We need to create this tab at the beggining
   // and we must specify the statusBar
@@ -1032,6 +1031,9 @@ MainWindow::connectFailed(QString errmsg)
 void
 MainWindow::authenticated()
 {
+  // We update the title once we are authenticated
+  updateTitle();
+
   TorSettings settings;
 
   _torControl->clearErrState();
