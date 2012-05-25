@@ -251,20 +251,23 @@ ControlConnection::send(const ControlCommand &cmd,
   bool result = false;
   QString errstr;
 
-  if (send(cmd, &errstr)) {
-    /* Create and enqueue a new receive waiter */
-    ReceiveWaiter *w = new ReceiveWaiter();
-    _recvQueue.enqueue(w);
+  /* Preentively create and enqueue a new receive waiter */
+  ReceiveWaiter *w = new ReceiveWaiter();
+  _recvQueue.enqueue(w);
 
+  if (send(cmd, &errstr)) {
     /* Wait for and get the result, clean up, and return */
     result = w->getResult(&reply, &errstr);
+
     if (!result)
       tc::error("Failed to receive control reply: %1").arg(errstr);
-    delete w;
   } else {
     tc::error("Failed to send control command (%1): %2").arg(cmd.keyword())
                                                         .arg(errstr);
+    _recvQueue.dequeue();
   }
+
+  delete w;
 
   if (!result && errmsg)
     *errmsg = errstr;
