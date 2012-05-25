@@ -1,0 +1,2 @@
+  Internal cleanups and improvements:
+  o Do not send ControlCommands if Vidalia haven't authenticated yet.

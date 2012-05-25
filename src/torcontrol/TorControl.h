@@ -81,6 +81,8 @@ public:
   bool authenticate(const QByteArray cookie, QString *errmsg = 0);
   /** Sends an authentication password to Tor. */
   bool authenticate(const QString &password = QString(), QString *errmsg = 0);
+  /** Returns true if the process has passed through auth successfully */
+  bool isAuthenticated();
 
   /** Sends a PROTOCOLINFO command to Tor and parses the response. */
   ProtocolInfo protocolInfo(QString *errmsg = 0);
@@ -412,6 +414,9 @@ private:
 
   bool _shouldContinue;
   QString _reason;
+
+  /** True when the process has passed through the auth successfully */
+  bool _authenticated;
 
   /** Send a message to Tor and read the response */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);

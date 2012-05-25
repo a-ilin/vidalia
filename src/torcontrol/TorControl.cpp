@@ -26,7 +26,7 @@
 
 /** Default constructor */
 TorControl::TorControl(ControlMethod::Method method)
-  : QObject(), _shouldContinue(true), _reason("") {
+  : QObject(), _shouldContinue(true), _reason(""), _authenticated(false) {
 #define RELAY_SIGNAL(src, sig) \
   QObject::connect((src), (sig), this, (sig))
 
@@ -266,6 +266,7 @@ TorControl::disconnect()
 {
   if (isConnected())
     _controlConn->disconnect();
+  _authenticated = false;
 }
 
 /** Emits the proper bootstrapStatusChanged */
@@ -330,6 +331,15 @@ TorControl::isConnected()
 bool
 TorControl::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
+  if (!_authenticated and (cmd.keyword() != "AUTHENTICATE") and
+      (cmd.keyword() != "PROTOCOLINFO") and
+      (cmd.keyword() != "QUIT")) {
+    if (errmsg)
+      *errmsg = "TorControl not authenticated";
+
+    return false;
+  }
+
   if (_controlConn->send(cmd, reply, errmsg)) {
     if (reply.getStatus() == "250") {
       return true;
@@ -397,6 +407,8 @@ TorControl::authenticate(const QString &password, QString *errmsg)
 void
 TorControl::onAuthenticated()
 {
+  _authenticated = true;
+
   /* The version of Tor isn't going to change while we're connected to it, so
    * save it for later. */
   getInfo("version", _torVersion);
@@ -408,6 +420,13 @@ TorControl::onAuthenticated()
   getBootstrapPhase();
 
   emit authenticated();
+}
+
+/** Returns true if the process has passed through auth successfully */
+bool
+TorControl::isAuthenticated()
+{
+  return _authenticated;
 }
 
 /** Sends a PROTOCOLINFO command to Tor and parses the response. */
