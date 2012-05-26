@@ -401,12 +401,17 @@ NetViewer::preLoadNetworkStatus()
     ui.lblOffline->setVisible(true);
   }
 
+  bool usingMicrodescriptors = _torControl->useMicrodescriptors();
+
   foreach(RouterStatus rs, networkStatus) {
+    if (!_torControl->isConnected())
+      return;
+
     if (!rs.isRunning())
       continue;
 
     RouterDescriptor rd = _torControl->getRouterDescriptor(rs.id());
-    if(_torControl->useMicrodescriptors()) {
+    if(usingMicrodescriptors) {
       rd.appendRouterStatusInfo(rs);
     }
     if (!rd.isEmpty())
