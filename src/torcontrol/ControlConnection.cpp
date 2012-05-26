@@ -112,17 +112,7 @@ ControlConnection::connect()
 void
 ControlConnection::disconnect()
 {
-  /** If there are any messages waiting for a response, clear them. */
-  if (_sendWaiter->status() == SendCommandEvent::SendWaiter::Waiting)
-    _sendWaiter->setResult(false, tr("Control socket is not connected."));
-
-  while (!_recvQueue.isEmpty()) {
-    ReceiveWaiter *w = _recvQueue.dequeue();
-    w->setResult(false, ControlReply(),
-                 tr("Control socket is not connected."));
-
-    QCoreApplication::processEvents(QEventLoop::AllEvents, 1000);
-  }
+  clearCommandQueue();
 
   setStatus(Disconnecting);
 
@@ -138,6 +128,23 @@ ControlConnection::disconnect()
   }
 
   _sock->disconnect(this);
+}
+
+/** Clears all waiting commands. */
+void
+ControlConnection::clearCommandQueue()
+{
+  /** If there are any messages waiting for a response, clear them. */
+  if (_sendWaiter->status() == SendCommandEvent::SendWaiter::Waiting)
+    _sendWaiter->setResult(false, tr("Control socket is not connected."));
+
+  while (!_recvQueue.isEmpty()) {
+    ReceiveWaiter *w = _recvQueue.dequeue();
+    w->setResult(false, ControlReply(),
+                 tr("Control socket is not connected."));
+
+    QCoreApplication::processEvents(QEventLoop::AllEvents, 1000);
+  }
 }
 
 /** Called when the control socket is connected. This method checks that the
@@ -241,6 +248,8 @@ ControlConnection::setStatus(Status status)
                                        .arg(statusString(_status))
                                        .arg(statusString(status));
   _status = status;
+  if (_status == Disconnected)
+    clearCommandQueue();
 }
 
 /** Sends a control command to Tor and waits for the reply. */
