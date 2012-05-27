@@ -19,26 +19,92 @@
 
 #include "stringutil.h"
 
+#include <QLocalSocket>
+#include <QTcpSocket>
+
 /** Timeout reads in 250ms. We can set this to a short value because if there
 * isn't any data to read, we want to return anyway. */
 #define READ_TIMEOUT  250
 
 
+/** A simple helper class to wrap the sockets access code. */
+class ControlSocket::SocketWrapper{
+
+public:
+  SocketWrapper(ControlMethod::Method method)
+    :_method(method)
+  {
+    _tcpSocket = new QTcpSocket();
+    _localSocket = new QLocalSocket();
+  }
+
+  ~SocketWrapper()
+  {
+    delete _localSocket;
+    delete _tcpSocket;
+  }
+
+  ControlMethod::Method getMethod() const
+  {
+    return _method;
+  }
+
+  QIODevice * socket() const
+  {
+    if (_method == ControlMethod::Socket)
+      return _localSocket;
+    else
+      return _tcpSocket;
+  }
+
+  bool isConnected() const
+  {
+    if (_method==ControlMethod::Socket)
+      return (_localSocket->isValid() && _localSocket->state() == QLocalSocket::ConnectedState);
+    else
+      return (_tcpSocket->isValid() && _tcpSocket->state() == QAbstractSocket::ConnectedState);
+  }
+
+  void flush()
+  {
+    if (_method==ControlMethod::Socket)
+      _localSocket->flush();
+    else
+      _tcpSocket->flush();
+  }
+
+  void connectToHost(const QHostAddress &address, quint16 port)
+  {
+    _tcpSocket->connectToHost(address, port);
+  }
+
+  void disconnectFromHost()
+  {
+    _tcpSocket->disconnectFromHost();
+  }
+
+  void connectToServer(const QString &name)
+  {
+    _localSocket->connectToServer(name);
+  }
+
+  void disconnectFromServer()
+  {
+    _localSocket->disconnectFromServer();
+  }
+
+private:
+  QTcpSocket *_tcpSocket; /**< Socket used in the connection */
+  QLocalSocket *_localSocket; /**< Socket used in the connection */
+  ControlMethod::Method _method; /**< Connection method. */
+};
+
+
 /** Default constructor. */
 ControlSocket::ControlSocket(ControlMethod::Method method)
 {
-  _tcpSocket = new QTcpSocket();
-  _localSocket = new QLocalSocket();
-  _method = method;
-  switch(_method) {
-    case ControlMethod::Port:
-      _socket = _tcpSocket;
-      break;
-
-    case ControlMethod::Socket:
-      _socket = _localSocket;
-      break;
-  }
+  _sock = new SocketWrapper(method);
+  _socket = _sock->socket();
 
   QObject::connect(_socket, SIGNAL(readyRead()), this, SIGNAL(readyRead()));
   QObject::connect(_socket, SIGNAL(disconnected()), this, SIGNAL(disconnected()));
@@ -47,54 +113,57 @@ ControlSocket::ControlSocket(ControlMethod::Method method)
                    this, SIGNAL(error(QAbstractSocket::SocketError)));
 }
 
+/** Destructor. */
+ControlSocket::~ControlSocket()
+{
+  delete _sock;
+}
+
 /** Returns true if the control socket is connected and ready to send or
  * receive. */
 bool
-ControlSocket::isConnected()
+ControlSocket::isConnected() const
 {
-  switch(_method) {
-    case ControlMethod::Port:
-      return (_tcpSocket->isValid() && _tcpSocket->state() == QAbstractSocket::ConnectedState);
-      break;
+  return _sock->isConnected();
+}
 
-    default:
-    case ControlMethod::Socket:
-      return (_localSocket->isValid() && _localSocket->state() == QLocalSocket::ConnectedState);
-      break;
-  }
+ControlMethod::Method
+ControlSocket::getMethod() const
+{
+  return _sock->getMethod();
 }
 
 /** Connects to address:port */
 void
 ControlSocket::connectToHost(const QHostAddress &address, quint16 port)
 {
-  _tcpSocket->connectToHost(address, port);
+  _sock->connectToHost(address, port);
 }
 
 /** Disconnects from host */
 void
 ControlSocket::disconnectFromHost()
 {
-  _tcpSocket->disconnectFromHost();
+  _sock->disconnectFromHost();
 }
 
 /** Connects to a unix socket file */
 void
 ControlSocket::connectToServer(const QString &name)
 {
-  _localSocket->connectToServer(name);
+  _sock->connectToServer(name);
 }
 
 /** Disconnects from the socket */
 void
 ControlSocket::disconnectFromServer()
 {
-  _localSocket->disconnectFromServer();
+  _sock->disconnectFromServer();
 }
 
 /** Interface to QTcpSocket::canReadLine */
 bool
-ControlSocket::canReadLine()
+ControlSocket::canReadLine() const
 {
   return _socket->canReadLine();
 }
@@ -174,15 +243,7 @@ ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
     return err(errmsg, tr("Error sending control command. [%1]")
                                             .arg(_socket->errorString()));
   }
-  switch(_method) {
-    case ControlMethod::Port:
-      _tcpSocket->flush();
-      break;
-
-    case ControlMethod::Socket:
-      _localSocket->flush();
-      break;
-  }
+  _sock->flush();
   return true;
 }
 
