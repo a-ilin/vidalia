@@ -20,9 +20,8 @@
 #include "ControlReply.h"
 #include "ControlMethod.h"
 
-#include <QtCore>
-#include <QLocalSocket>
-#include <QTcpSocket>
+#include <QObject>
+#include <QAbstractSocket>
 
 class ControlSocket : public QObject
 {
@@ -31,6 +30,8 @@ class ControlSocket : public QObject
 public:
   /** Default constructor. */
   ControlSocket(ControlMethod::Method method = ControlMethod::Port);
+  /** Destructor. */
+  ~ControlSocket();
 
   /** Send a command to Tor */
   bool sendCommand(ControlCommand cmd, QString *errmsg = 0);
@@ -39,9 +40,9 @@ public:
 
   /** Returns true if the control socket is connected and ready to send or
    * receive. */
-  bool isConnected();
+  bool isConnected() const;
   /** Interface to each socket's canReadLine implementation */
-  bool canReadLine();
+  bool canReadLine() const;
 
   void connectToHost(const QHostAddress &address, quint16 port);
   /** Disconnects from host */
@@ -51,7 +52,7 @@ public:
   /** Disconnects from the socket */
   void disconnectFromServer();
 
-  ControlMethod::Method getMethod() { return _method; }
+  ControlMethod::Method getMethod() const;
 
   /** Returns the string description of <b>error</b>. */
   static QString toString(const QAbstractSocket::SocketError error);
@@ -73,10 +74,10 @@ protected:
   bool readLine(QString &line, QString *errmsg = 0);
 
 private:
-  QTcpSocket *_tcpSocket; /**< Socket used in the connection */
-  QLocalSocket *_localSocket; /**< Socket used in the connection */
+  class SocketWrapper;
+
+  SocketWrapper * _sock;  /**< Helper object to convenient use both sockets */
   QIODevice *_socket; /**< Abstract pointer to transparently use both sockets */
-  ControlMethod::Method _method;
 };
 
 #endif

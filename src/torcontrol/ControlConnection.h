@@ -90,6 +90,8 @@ private:
   void setStatus(Status status);
   /** Returns the string description of <b>status</b>. */
   QString statusString(Status status);
+  /** Clears all waiting commands. */
+  void clearCommandQueue();
   /** Main thread implementation. */
   void run();
 
