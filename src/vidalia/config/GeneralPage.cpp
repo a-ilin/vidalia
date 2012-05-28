@@ -45,6 +45,11 @@ GeneralPage::GeneralPage(QWidget *parent)
 #if !defined(USE_AUTOUPDATE)
   ui.grpSoftwareUpdates->setVisible(false);
 #endif
+
+  if (_vidaliaSettings->getBrowserExecutable().length() > 0) {
+    ui.lineHorizontalSeparator->setVisible(false);
+    ui.chkRunVidaliaAtSystemStartup->setVisible(false);
+  }
 }
 
 /** Destructor */

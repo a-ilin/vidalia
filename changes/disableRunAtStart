@@ -1,0 +1,3 @@
+  o Disable "Run Vidalia when my system starts" if the
+    BrowserExecutable config option is set. This will avoid issues with
+    TBB users starting Vidalia the wrong way.
