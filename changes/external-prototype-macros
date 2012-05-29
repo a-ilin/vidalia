@@ -1,0 +1,3 @@
+  Internal cleanups and improvements:
+  o Created prototypemacros.h to store the preprocessor macros
+    used by TorControlPrototype
