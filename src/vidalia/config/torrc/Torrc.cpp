@@ -19,7 +19,7 @@
 #include <QtGlobal>
 
 Torrc::Torrc(const QString &torrcPath, const QString &defaultsPath) :
-  _torrcPath(torrcPath), changed(false)
+  QObject(), _torrcPath(torrcPath), changed(false)
 {
   load(torrcPath, defaultsPath);
 }

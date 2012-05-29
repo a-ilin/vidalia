@@ -149,6 +149,7 @@ qt4_wrap_cpp(vidalia_SRCS
   config/TorSettings.h
   config/VidaliaSettings.h
   config/VSettings.h
+  config/torrc/Torrc.h
 )
 if (USE_MINIUPNPC)
   include_directories(${MINIUPNPC_INCLUDE_DIR})
