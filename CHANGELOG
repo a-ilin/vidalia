@@ -1,4 +1,4 @@
-0.3.2   ??-???-2012
+0.3.2   30-May-2012
   New features:
   o In the Network Map window, classify circuits based on their
     purpose. This will help users understand that nothing is wrong
@@ -90,6 +90,10 @@
     port.conf so that Vidalia does not freeze.
   o Make sure there is a ReceiveWaiter in the queue before issuing a
     ControlCommand to avoid deadlocks in the event loop.
+  o Really get rid of the openssl dependency. The goal had been to achieve
+    that for 0.2.18, but not everything was actually removed.
+  o For static builds on windows, correctly link with zlib and
+    ws32_2.lib.
 
 0.3.1   27-Feb-2012
   o Draw the bandwidth graph curves based on the local maximum, not
