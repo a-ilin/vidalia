@@ -1,3 +1,0 @@
-  New features:
-  o Automigrate TorExecutable, Torrc, DefaultsTorrc and DataDirectory
-    config options to the new relative path handling.

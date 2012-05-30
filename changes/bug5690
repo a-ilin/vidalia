@@ -1,3 +1,0 @@
-  Internal cleanups and improvements:
-  o Fix possible dangling pointer access in MessageLog at
-    Vidalia exit. Fixes bug 5690.

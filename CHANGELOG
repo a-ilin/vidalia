@@ -1,25 +1,26 @@
 0.3.2   ??-???-2012
   New features:
   o In the Network Map window, classify circuits based on their
-    purpose. This will help users understand that nothing is wrong when
-    Tor builds a one-hop circuit, for example. Fixes bug 2114.
-  o In the Message Log window, add an option to filter by search query.
-    Fixes ticket 2733.
+    purpose. This will help users understand that nothing is wrong
+    when Tor builds a one-hop circuit, for example. Fixes bug 2114.
+  o In the Message Log window, add an option to filter by search
+    query.  Fixes ticket 2733.
   o Add a new configured relay immediately to the list of relays in
     the Network Map. Also document why a relay might be offline or not
     in the consensus/router list. Fixes bug 2735.
   o Add accounting options to the relay configuration panel. Fixes bug
     2944.
-  o Add a Panic button, for users who want to get rid of the Tor Browser
-    Bundle quickly in certain circumstances. Note that it uses a simple
-    erase, rather than a secure erase method. Resolves ticket 4107.
+  o Add a Panic button, for users who want to get rid of the Tor
+    Browser Bundle quickly in certain circumstances. Note that it uses
+    a simple erase, rather than a secure erase method. Resolves ticket
+    4107.
   o Add a way to handle default settings through a file instead of
-    just the hardcoded values. Vidalia will read a vidalia.defaults.conf
-    file from the same place as the vidalia.conf file, and override the
-    hardcoded default if a configuration option and value are listed in
-    this defaults file.
-  o Implement a torrc parser and editor and use that to take every
-    tor configuration option from the vidalia.conf file to the
+    just the hardcoded values. Vidalia will read a
+    vidalia.defaults.conf file from the same place as the vidalia.conf
+    file, and override the hardcoded default if a configuration option
+    and value are listed in this defaults file.
+  o Implement a torrc parser and editor and use that to take every tor
+    configuration option from the vidalia.conf file to the
     torrc. Vidalia now just needs to know the minimal information to
     connect to the tor process (ControlPort or ControlSocket and
     authentication) and everything else would be handled through the
@@ -31,6 +32,10 @@
     wizard is meant to warn the user about either the Panic feature or
     that she might need to configure a proxy or a bridge before tor
     connects to the outside world. Fixes ticket 2905.
+  o Automigrate TorExecutable, Torrc, DefaultsTorrc and DataDirectory
+    config options to the new relative path handling.
+  o Display the relay Nickname and ORPort in the window title when
+    Vidalia is running as a relay. Fixes bug 3634.
 
   Bugfixes relative to Vidalia 0.2.x:
   o Fix deadlock when the browser process fails to launch in OS X.
@@ -71,6 +76,20 @@
     upstream git repo.
   o Always create settings access object, with default section name
     set to General. Fixes bug 5522.
+  o Do not send ControlCommands if Vidalia haven't authenticated yet.
+  o Document how to get started with Vidalia development in a tutorial
+    fashion. Fixes bug 2925.
+  o Fix possible infinite loop in ControlConnection object. Fixes bug
+    5519.
+  o Wrapper class for socket access in ControlSocket class. Fixes
+    ticket 5519.
+  o Fix possible dangling pointer access in MessageLog at Vidalia
+    exit. Fixes bug 5690.
+  o Document how to write plugins in a tutorial fashion.
+  o Call QCoreApplication::processEvents() while waiting to read
+    port.conf so that Vidalia does not freeze.
+  o Make sure there is a ReceiveWaiter in the queue before issuing a
+    ControlCommand to avoid deadlocks in the event loop.
 
 0.3.1   27-Feb-2012
   o Draw the bandwidth graph curves based on the local maximum, not
@@ -88,7 +107,7 @@
     inside Tor Browser Bundle.
   o Check tor version and that settings are sanitized before trying to
     use the port autoconfiguration feature. Fixes bug 3843.
-  o Provide the necessary fields (Control password, ControlPort) to let 
+  o Provide the necessary fields (Control password, ControlPort) to let
     TorButton NEWNYM. Vidalia provides these in env vars when it launches
     the Firefox instance. Resolves bug 2659.
   o Add an option in the Tor menu to exit the application. Fixes bug
@@ -206,18 +225,18 @@
   o Vidalia's SVN repository has been migrated to Git. All branches but
     master have been archived for later review, since SVN trunk had changed
     significantly; they should be reviewed later to determine whether
-    they can and should still be merged. All \version $Id$ headers have been 
+    they can and should still be merged. All \version $Id$ headers have been
     removed since Git does not support $Id$.
   o As part of the move, Vidalia's Trac is now at:
       https://trac.torproject.org/
     All Trac numbers in Vidalia 0.2.12 and beyond refer to the new Trac
     entries. The old Trac is archived for posterity at:
       https://trac-vidalia.torproject.org/projects/vidalia
-  o Add support for Tor's ControlSocket as an alternative to ControlPort. It 
-    can be used for Linux maintainers to build a better default interaction 
-    between Tor and Vidalia by just setting the right permissions and file 
-    owner on the socket file for the connection. Using ControlSocket means 
-    you don't need to worry about authentication methods with ControlPort. 
+  o Add support for Tor's ControlSocket as an alternative to ControlPort. It
+    can be used for Linux maintainers to build a better default interaction
+    between Tor and Vidalia by just setting the right permissions and file
+    owner on the socket file for the connection. Using ControlSocket means
+    you don't need to worry about authentication methods with ControlPort.
     Resolves bug 2091.
   o Add a way to edit arbitrary torrc entries while Tor is running. Now
     Vidalia users have more flexibility for configuring Tor. This change
@@ -234,7 +253,7 @@
   o Fix how the advanced message log window displays message updates when
     messages are coming in too quickly, for example when you're listening
     to debug-level messages from Tor. Fixes bug 2093.
-  o Add a what's this? link to the bridge option to explain in a more verbose 
+  o Add a what's this? link to the bridge option to explain in a more verbose
     fashion what being a bridge involves. Resolves bug 1995.
   o Prompt users to restart Tor after changing the path to torrc. Fixes bug
     2086.
@@ -307,7 +326,7 @@
   o Fix compilation on Debian GNU/kFreeBSD. Patch from dererk.
   o Clean up a couple status event messages related to dangerous port
     warnings.
-  o Change the vidalia_ru.nsh output encoding from KOI8-R to Windows-1251. 
+  o Change the vidalia_ru.nsh output encoding from KOI8-R to Windows-1251.
     (Ticket #527)
   o Add an option for building an OS X 10.4 compatible binary.
 
@@ -361,7 +380,7 @@
 
 0.2.3   27-Aug-2009
   o Create the data directory before trying to copy over the default
-    Vidalia configuration file from inside the application bundle on Mac 
+    Vidalia configuration file from inside the application bundle on Mac
     OS X. Affects only OS X drag-and-drop installer users without a
     previous Vidalia installation.
   o Change all Tor event handling to use Qt's signals and slots mechanism
@@ -448,18 +467,18 @@
   o Remove an old warning on the relay settings page that running a bridge
     relay requires Tor 0.2.0.8-alpha or newer.
   o Add a workaround for a bug that prevented Vidalia's tray icon from
-    getting added to the system notification area on Gnome when Vidalia was 
+    getting added to the system notification area on Gnome when Vidalia was
     run on system startup. Patch by Steve Tyree. (Ticket #247)
   o Fix a bug that prevented the control panel from displaying when
     running on the Enlightenment window manager. Patch by Steve Tyree.
   o Rename the CMake variables used to store the location of Qt's lupdate
-    and lrelease executables. Recent versions of CMake decided to use the 
+    and lrelease executables. Recent versions of CMake decided to use the
     same variable name, which was stomping on mine, resulting in the wrong
     lupdate and lrelease executables being used.
   o Use the TorProcess subclass of QProcess for launching Tor when hashing
     a control password so we can take advantage of its PATH+=:/usr/sbin
     trick on Debian there too.
-  o If a RouterDescriptor object is empty, don't try to display it in the 
+  o If a RouterDescriptor object is empty, don't try to display it in the
     router descriptor details viewer. (Ticket #479)
   o Wait until Vidalia has registered for log events via the control port
     before ignoring Tor's output on stdout. Previously we would start
@@ -480,7 +499,7 @@
     the user the option to disable future warnings.
   o Add an interface for displaying the geographic distribution of
     clients who have recently used a bridge operator's relay.
-  o Add tooltips to tree items in the help browser's table of contents. Some 
+  o Add tooltips to tree items in the help browser's table of contents. Some
     of the help topic labels are a bit long.
   o Switch to a simpler About dialog and move the license information to a
     separate HTML-formatted display.
@@ -544,9 +563,9 @@
 
 
 0.1.9   02-Sep-2008
-  o Create the control panel's menubar as a parentless QMenuBar, so it is 
+  o Create the control panel's menubar as a parentless QMenuBar, so it is
     visible even if the control panel is not the topmost window. (Ticket #286)
-  o Add a context menu with a "copy" option to RouterDescriptorView? so 
+  o Add a context menu with a "copy" option to RouterDescriptorView? so
     users can copy some text to the clipboard. (Ticket #291)
   o Make the Tor status label and Vidalia tray icon tooltip display the same
     text after a circuit is established. (Ticket #390)
@@ -555,7 +574,7 @@
   o Try to load a translation for the current language from Qt's translations
     directory, so we can get Qt's internal widgets (e.g. QDialogButtonBox)
     translated. (Ticket #375)
-  o Use "$\r$\n" in the MessageBox strings in the Windows installer 
+  o Use "$\r$\n" in the MessageBox strings in the Windows installer
     translations, so the newlines appear properly. (Ticket #411)
   o Grab the Qt .dlls included in the Vidalia installer directly from the
     configured Qt binary directory (as specified by ${QT_BINARY_DIR}).
@@ -567,29 +586,29 @@
     configurable CMake options so the bundle can be built without having to
     shimmy all these files into some specific directory hierarchy. Makes the
     bundle a bit less annoying to build.
-  o Use the architecture name (e.g. "universal" or "ppc") rather than the 
+  o Use the architecture name (e.g. "universal" or "ppc") rather than the
     OS X version name (e.g. "tiger" or "panther") when naming OS X packages.
   o Update the INSTALL file to recommend out-of-source builds.
-  o Stop building the nsh2po and po2nsh conversion tools on non-Windows 
+  o Stop building the nsh2po and po2nsh conversion tools on non-Windows
     platforms.
 
 
 0.1.8   17-Aug-2008
-  o Make the position of the y-axis on the bandwidth graph variable based on 
-    the width of the axis labels. This works better for languages like Farsi 
+  o Make the position of the y-axis on the bandwidth graph variable based on
+    the width of the axis labels. This works better for languages like Farsi
     where "KB/s" somehow becomes 19 characters. (Ticket #373)
   o Support alphanumeric circuit and stream IDs, rather than assuming IDs will
-    always be numeric. Current Tors only use numeric circuit and stream IDs, 
+    always be numeric. Current Tors only use numeric circuit and stream IDs,
     but they may some day. (Ticket #400)
   o Include ssleay32.dll in the Windows packages so Vidalia won't crash when
-    it finds an incompatible version of ssleay32.dll in the user's $PATH. 
+    it finds an incompatible version of ssleay32.dll in the user's $PATH.
     (Ticket #401)
-  o If the message log is sorted by severity or lexiographically, or if the 
-    user manually repositioned the vertical scroll bar, then retain the scroll 
+  o If the message log is sorted by severity or lexiographically, or if the
+    user manually repositioned the vertical scroll bar, then retain the scroll
     bar's previous position after adding a new message to the log.
   o If the current message log layout is right-to-left (e.g. if the user's
     translation is Farsi), then use a custom item delegate for the log message
-    column whose sole purpose is to keep Qt from screwing with the message  
+    column whose sole purpose is to keep Qt from screwing with the message
     text. (Ticket #396)
   o Reduce the default number of messages to retain in the message log to 50
     messages. Most people never look at the window and the extra 200 messages
@@ -598,10 +617,10 @@
     context menus. They were lost in the move to the Oxygen icon theme in
     0.1.4.
   o Make both the 'Ctrl+W' and 'Esc' shortcuts for closing any Vidalia window.
-    Previously, it was just 'Esc' on Windows and 'Ctrl+W' on all other 
+    Previously, it was just 'Esc' on Windows and 'Ctrl+W' on all other
     platforms.
-  o Make pressing "Return" mean the same thing as clicking 'OK' in the 
-    config dialog, and make pressing 'Esc' mean the same thing as clicking 
+  o Make pressing "Return" mean the same thing as clicking 'OK' in the
+    config dialog, and make pressing 'Esc' mean the same thing as clicking
     'Cancel'. (Ticket #327)
   o Fix the icon used for the help browser's window icon.
 
@@ -625,7 +644,7 @@
     LangString entries from an NSIS file and generate a .po file. This was
     used to help push our installer translations into Pootle.
   o Add a po2nsh tool to convert the Windows installer .po files to NSIS .nsh
-    files at build time. 
+    files at build time.
   o Tell CMake to skip the pkg/ subdirectories that aren't likely to be needed
     on the current build platform.
   o Updated Czech, French, and German translations.
@@ -638,7 +657,7 @@
     uses to write out the .ts file. This resulted in garbled characters when
     viewing some translations on apparently all platforms except OS X.
   o Use the correct field when trying to parse the severity value from the
-    'getinfo status/bootstrap-phase' response. 
+    'getinfo status/bootstrap-phase' response.
   o Fix compilation of the ts2po and po2ts conversion tools on OS X Panther.
   o Tweak the ts2po and po2ts dependencies so Vidalia can be built with Xcode
     on OS X again.
@@ -693,7 +712,7 @@
     to use Tor.
   o Apply some Tor trademark compliance updates to user-visible strings.
   o Cut down the margin around the table of contents in the help browser. It
-    looked goofy with so much empty space. 
+    looked goofy with so much empty space.
   o Update Finnish, Spanish, and Swedish translations.
 
 
@@ -846,7 +865,7 @@
     automatically on login for the user that installed the bundle.
   o Added an Arabic translation from Ahmad Gharbeia.
   o Updated Finnish, German, Simplified Chinese, and Traditional Chinese
-    translations. 
+    translations.
 
 
 0.0.15  24-Oct-2007
@@ -919,7 +938,7 @@
   o Add some information to the help browser about the new network settings
     and bridge relay configuration, as well as the new authentication
     settings in 0.0.14.
-  o When the user clicks the Help button in the Settings dialog, take them 
+  o When the user clicks the Help button in the Settings dialog, take them
     directly to the help topic for whichever settings page they are currently
     viewing.
   o Added Torbutton 1.1.9.1-alpha to the Mac OS X bundles, thanks to
@@ -962,7 +981,7 @@
     simply load the documentation from the English version.
   o Use RelayBandwidthBurst and RelayBandwidthRate on Tor >= 0.2.0.1-alpha.
   o Remove from the server config page the 'Address' text box, the 'Get
-    Address' button, and 'Automatically Update' checkbox. 
+    Address' button, and 'Automatically Update' checkbox.
   o Don't do balloon messages on Windows 2000; I'm told it doesn't work even
     though QSystemTrayIcon::supportsMessages() says it should.
   o Removed a duplicate check when determining what control event Vidalia
@@ -980,8 +999,8 @@
   o Added a Swedish GUI and installer translation from Amin Amini.
   o Added an Italian installer translation from Alex Mazzariol.
   o Update Finnish, French, German, Italian, Russian and Spanish translations.
-  
-  
+
+
 0.0.12  01-Jun-2007
   o Added a new "Control Panel" main window that appears when Vidalia first
     starts. This dialog is for people who either aren't trained to look in
@@ -1009,7 +1028,7 @@
     don't waste memory on a window the user might never use.
   o Fix a minor bug that's been around since 0.0.1: actually remove objects
     from the list of targets for an event, instead of from a copy of the list.
-  o Display command-line options information as a message box so even Win32 
+  o Display command-line options information as a message box so even Win32
     folks can see it, if they give Vidalia a bogus argument.
   o Revert back to the single uninstaller strategy on Win32, so don't leave
     program groups behind after uninstalling the bundle. (Ticket #237)
@@ -1017,7 +1036,7 @@
     after completing the Win32 installer.
   o Don't skip past the Win32 installer results immediately, since there could
     have been errors the user should see.
-  o Include a default.action file for Privoxy in the Win32 and OS X bundles 
+  o Include a default.action file for Privoxy in the Win32 and OS X bundles
     with the +limit-connect{1-} fix.
   o Include some more helpful text in the Win32 installer welcome screen and
     category descriptions.
@@ -1026,28 +1045,28 @@
     X bundle. (Ticket #230)
   o Updated Dutch, Finnish, French, German, Norwegian, Polish and Spanish
     translations.
- 
+
 
 0.0.11  07-Feb-2007
   o Fix a race condition that could (and did) cause Vidalia to freeze.
-  o RESETCONF all server-related settings when the be-a-server checkbox gets 
+  o RESETCONF all server-related settings when the be-a-server checkbox gets
     unchecked, not just ORPort and Nickname.
-  o Add support for zlib or gzip compressed GeoIP responses. 
+  o Add support for zlib or gzip compressed GeoIP responses.
   o Handle chunked transfer encodings properly in GeoIP responses.
   o Be a little less eager to send GeoIP requests right away. Now we wait 10
     seconds after adding an address to the queue, or a maximum of 30 seconds,
     before sending the request.
   o Tolerate entries in geoip-cache that have no timestamp. If an entry does
-    not have a timestamp, use the current date and time. 
+    not have a timestamp, use the current date and time.
   o Respond to double-clicks on the map. Double left-click zooms in towards
     the mouse pointer and double right-click zooms out.
-  o If Vidalia is built with Qt >= 4.2, use the open and closed hand cursors 
+  o If Vidalia is built with Qt >= 4.2, use the open and closed hand cursors
     in ZImageView when panning the world map.
-  o Qt >= 4.2 handles the sorting in addTopLevelItem() in the server list. We 
-    still do the sorted inserts ourselves in older Qts. 
-  o Display circuits as a list of server nicknames (like we currently do), but 
+  o Qt >= 4.2 handles the sorting in addTopLevelItem() in the server list. We
+    still do the sorted inserts ourselves in older Qts.
+  o Display circuits as a list of server nicknames (like we currently do), but
     save the original circuit paths (possibly with key IDs for non-Named
-    servers) so we don't display the wrong server information when the user 
+    servers) so we don't display the wrong server information when the user
     selects that circuit.
   o Fix a bug introduced in 0.0.10 that caused a server's little pinpoint on
     the map to not be highlighted green when the server is selected in the
@@ -1056,16 +1075,16 @@
     NEW stream events.
   o Add an EU flag for the server list.
   o Add a "Cancel" button to the message box that asks server operators if
-    they want to delay server shutdown or kill Tor right away. (Ticket #222) 
+    they want to delay server shutdown or kill Tor right away. (Ticket #222)
   o Add version information to our compiled Win32 vidalia.exe.
-  o Be more tolerant of Win32 people removing the Tor service out from under 
+  o Be more tolerant of Win32 people removing the Tor service out from under
     Vidalia.
   o Explicitly specify the tab order in the bandwidth graph.
   o Fix a bug in parsing Tor's version string when it contains modifiers such
     as '-alpha'.
   o Make Circuit::hops() correctly return an empty QStringList for empty paths,
     instead of a QStringList with one empty QString.
-  o Do a better job of detecting Qt 4.2 debug libs on OS X. There were a few 
+  o Do a better job of detecting Qt 4.2 debug libs on OS X. There were a few
     necessary non-Qt libs missing from LIBS when we did our AC_TRY_LINK.
   o Add vidalia.spec to our configure.in, so the RPM spec file stays current.
   o Add a Traditional Chinese installer and GUI translation from Cloud.
@@ -1075,17 +1094,17 @@
 0.0.10  25-Dec-2006
   o Load NT service functions on demand so we can run on Windows 95/98/ME
     again. (Ticket #211)
-  o Add a column to the list of servers in the network map window, with a 
-    little flag icon for each server. 
+  o Add a column to the list of servers in the network map window, with a
+    little flag icon for each server.
   o If the network map window is not visible, queue all GeoIP requests until
     either the window becomes visible again or the queue contains requests for
     at least one-quarter of all known servers.
   o If we get a valid geoip response telling us the geoip database doesn't
-    have a location for the requested IP address, cache that response for one 
-    week so we don't keep sending requests that are likely to fail anyway. 
-  o Use QSystemTrayIcon when available (except on Mac). If we are using 
-    QSystemTrayIcon on systems that support balloon messages, use a balloon to 
-    indicate when NEWNYM is successful. We still show a message box when NEWNYM 
+    have a location for the requested IP address, cache that response for one
+    week so we don't keep sending requests that are likely to fail anyway.
+  o Use QSystemTrayIcon when available (except on Mac). If we are using
+    QSystemTrayIcon on systems that support balloon messages, use a balloon to
+    indicate when NEWNYM is successful. We still show a message box when NEWNYM
     fails. (Ticket #183)
   o Add a graph style dropdown box to the bandwidth graph settings, so you can
     choose between a fancy alpha blended area graph and a faster, simpler line
@@ -1097,8 +1116,8 @@
   o Add a "Zoom to Circuit" option to the circuit context menu in the network
     map's list of circuits.
   o Add a context menu to the dock icon on OS X. (Ticket #135)
-  o If we're building with Qt >= 4.2.0, then use its new saveGeometry() and 
-    restoreGeometry() functions to save and restore window size and position. 
+  o If we're building with Qt >= 4.2.0, then use its new saveGeometry() and
+    restoreGeometry() functions to save and restore window size and position.
     If we're still using an old Qt, make sure the window fits on screen when
     we try to restore it. (Ticket #207)
   o Fix a bug in how the server points were keyed on the network map that
@@ -1119,7 +1138,7 @@
   o Add a Spanish translation contributed by desolator.
   o Add a Portuguese (Brazilian) translation contributed by Mabat Haram.
   o Add a Simplified Chinese installer translation contributed by omg.
-  o Updates to Finnish, French, German, Italian, Norwegian, Polish, 
+  o Updates to Finnish, French, German, Italian, Norwegian, Polish,
     Russian, and Simplified Chinese translations.
 
 
@@ -1129,13 +1148,13 @@
   o Improved our ./configure script so it will detect old or non-debug
     versions of Qt and link accordingly.
   o Added support for more easily building Qt as a Universal binary on OS X.
-  o Added a right-click option to circuits listed in the network map dialog to 
+  o Added a right-click option to circuits listed in the network map dialog to
     close the circuit (Ticket #176).
-  o Added a right-click option to servers listed in the network map dialog to 
+  o Added a right-click option to servers listed in the network map dialog to
     zoom in on the server on the map (Ticket #176).
   o Stop using a custom font and just use the platform default on all dialogs.
   o Add "Close Window" shortcuts for Linux (Ctrl+W).
-  o Fixed a crash bug that would occur when saving messages in the message 
+  o Fixed a crash bug that would occur when saving messages in the message
     log (Ticket #185).
   o Fixed a bug that would cause messages with identical timestamps to not
     get copied to the clipboard (Ticket #190).
@@ -1146,12 +1165,12 @@
     down; just stop Tor and exit immediately so Windows doesn't yell at us.
   o Detect if Tor was installed as an NT service prior to Vidalia, so we don't
     accidentally remove it.
-  o Create a new torrc and specify a control port for the Tor NT service, so 
+  o Create a new torrc and specify a control port for the Tor NT service, so
     it doesn't die when the user tries to start the service and we don't have
     to tell the user to go add a line to their torrc.
   o Fixed a bug that caused Vidalia to crash if it tried to read in a bogus
     geoip-cache file from its data directory (Ticket #184).
-  o Refuse to cache information we did not ask for that we received in response 
+  o Refuse to cache information we did not ask for that we received in response
     to a GeoIP request.
   o Wait no more than ten seconds after queueing a GeoIP request before
     sending it, so requests don't starve if we keep constantly getting new
@@ -1172,8 +1191,8 @@
     ControlPort, Vidalia will "attach" to that Tor instead of starting a new
     process.
   o Vidalia now supports running Tor as an NT service on Windows.
-  o When Vidalia starts its own Tor process, it will now default to starting it 
-    with a "-f ~/.vidalia/torrc", to avoid permissions conflicts when running 
+  o When Vidalia starts its own Tor process, it will now default to starting it
+    with a "-f ~/.vidalia/torrc", to avoid permissions conflicts when running
     Tor as a user that does not have write access to the default torrc. The
     torrc used when starting Tor is still configurable.
   o Fix a bug that was causing unexpected behavior with many unrelated Windows
@@ -1181,11 +1200,11 @@
   o Do a better job of determining if another Vidalia process is running on
     Windows, to eliminate all the false positives reported.
   o Major performance improvements related to loading the network map.
-  o Support receiving server identities in circ events, as well as names, so 
+  o Support receiving server identities in circ events, as well as names, so
     Vidalia will work with Tor 0.1.2.2-alpha and later.
   o Moved the "New Identity" button to the main popup menu for easier
     access.
-  o Vidalia dialogs remember their last size and location when Vidalia exits 
+  o Vidalia dialogs remember their last size and location when Vidalia exits
     and restore their size and location the next time Vidalia runs.
   o Vidalia windows now close in response to a Command-W on Mac OS X.
   o Added a "Zoom To Fit" button to the network map, to zoom in on the active
@@ -1202,14 +1221,14 @@
   o Updates to the Finnish, French, and Russian translations.
 
 
-0.0.7   07-Jul-2006 
+0.0.7   07-Jul-2006
   o Fix a bug that was causing Vidalia to freeze frequently for some people,
     particularly when running at a verbose log level.
   o Fix a bug that would cause Windows Vidalias to not want to start after
     Vidalia had been killed via the Task Manager.
   o Add a French translation contributed by Michel Burkhardt.
   o In the network map, update the displayed uptime by looking at the difference
-    between now and the publication time, and add that difference to the published 
+    between now and the publication time, and add that difference to the published
     uptime.
 
 
@@ -1237,8 +1256,8 @@
   o Add an Italian translation contributed by Alex Mazzariol.
   o Add a Russian translation contributed by ygrek.
   o Add a manpage for Vidalia contributed by Alexander Wirt.
-  
-  
+
+
 0.0.5   02-Jun-2006
   o Make the "Always On Top" property of the bandwidth graph optional.
   o Add a new dialog showing a list of routers that the user's Tor currently
@@ -1273,13 +1292,13 @@
   o Be smarter about guessing the default location of Tor in non-English
     Windowses.
 
-  
+
 0.0.3   13-Apr-2006
   o Fixed a server configuration bug that caused people to not really be a
     middleman node, even though the checkbox told them they were.
   o Fixed a bug in choosing a default language that caused help documents to
     sometimes not appear.
-  o Fixed the Win32 bundle installer to not leave 2 files and a registry key 
+  o Fixed the Win32 bundle installer to not leave 2 files and a registry key
     laying around after an uninstall. Also give users the option of launching
     Vidalia when the solo installer is finished.
   o Fixed a bug where Vidalia would ignore Windows when asked to shut down
@@ -1290,7 +1309,7 @@
   o Improved help document accessibility by adding "Help" buttons to many
     dialogs and error message boxes.
 
-  
+
 0.0.2   02-Apr-2006
   o Added an integrated help browser and documentation.
   o Added exit policy configuration support for servers.
@@ -1299,7 +1318,7 @@
   o Added support for changing Vidalia's interface style.
   o Aesthetic improvements in many dialogs.
 
-  
+
 0.0.1   28-Feb-2006
   o Initial testing release.
   o Basic features include:
