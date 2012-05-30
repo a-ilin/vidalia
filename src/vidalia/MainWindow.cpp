@@ -647,7 +647,38 @@ MainWindow::start()
   }
 
   QString torrc = settings.getTorrc();
+  QFileInfo torrcInfo(torrc);
+
+  if(QDir(torrcInfo.filePath()).isRelative()) {
+    torrc = QCoreApplication::applicationDirPath() + "/" + torrc;
+
+    QFileInfo newTorrcInfo(torrc);
+    if(!newTorrcInfo.exists() and torrcInfo.exists()) {
+      torrc = QDir(QCoreApplication::applicationDirPath()).relativeFilePath(torrcInfo.absoluteFilePath());
+      vWarn("Automigrating configuration for Torrc:\nOld path: %1\nNew path: %2")
+        .arg(newTorrcInfo.filePath())
+        .arg(torrc);
+      settings.setTorrc(torrc);
+      torrc = QCoreApplication::applicationDirPath() + "/" + torrc;
+    }
+  }
+
   QString torrc_defaults = settings.getDefaultsTorrc();
+  QFileInfo torrc_defaultsInfo(torrc_defaults);
+
+  if(QDir(torrc_defaultsInfo.filePath()).isRelative()) {
+    torrc_defaults = QCoreApplication::applicationDirPath() + "/" + torrc_defaults;
+
+    QFileInfo newTorrc_DefaultsInfo(torrc_defaults);
+    if(!newTorrc_DefaultsInfo.exists() and torrc_defaultsInfo.exists()) {
+      torrc_defaults = QDir(QCoreApplication::applicationDirPath()).relativeFilePath(torrc_defaultsInfo.absoluteFilePath());
+      vWarn("Automigrating configuration for DefaultsTorrc:\nOld path: %1\nNew path: %2")
+        .arg(newTorrc_DefaultsInfo.filePath())
+        .arg(torrc_defaults);
+      settings.setDefaultsTorrc(torrc_defaults);
+      torrc_defaults = QCoreApplication::applicationDirPath() + "/" + torrc_defaults;
+    }
+  }
 
   if(settings.bootstrap()) {
     QString boottorrc = settings.bootstrapFrom();
@@ -675,8 +706,21 @@ MainWindow::start()
 
   /* Specify Tor's data directory, if different from the default */
   QString dataDirectory = settings.getDataDirectory();
-  if(QDir(dataDirectory).isRelative())
+  QFileInfo dataDirectoryInfo(dataDirectory);
+
+  if(QDir(dataDirectory).isRelative()) {
     dataDirectory = QCoreApplication::applicationDirPath() + "/" + dataDirectory;
+    QFileInfo newDataDirectoryInfo(dataDirectory);
+    if(!newDataDirectoryInfo.exists() and dataDirectoryInfo.exists()) {
+      dataDirectory = QDir(QCoreApplication::applicationDirPath()).relativeFilePath(dataDirectoryInfo.absoluteFilePath());
+      vWarn("Automigrating configuration for DataDirectory:\nOld path: %1\nNew path: %2")
+        .arg(newDataDirectoryInfo.absoluteFilePath())
+        .arg(dataDirectory);
+      settings.setDataDirectory(dataDirectory);
+      dataDirectory = QCoreApplication::applicationDirPath() + "/" + dataDirectory;
+    }
+  }
+
   QString expDataDirectory = expand_filename(dataDirectory);
 
   if(settings.getControlMethod() == ControlMethod::Port) {
@@ -724,8 +768,22 @@ MainWindow::start()
   _isIntentionalExit = true;
   /* Kick off the Tor process */
   QString torExecutable = settings.getExecutable();
-  if(QDir(QFileInfo(torExecutable).filePath()).isRelative())
+  QFileInfo torExecutableInfo(torExecutable);
+
+  if(QDir(torExecutableInfo.filePath()).isRelative()) {
     torExecutable = QCoreApplication::applicationDirPath() + "/" + torExecutable;
+
+    QFileInfo newTorExecutableInfo(torExecutable);
+    if(!newTorExecutableInfo.exists() and torExecutableInfo.exists()) {
+      torExecutable = QDir(QCoreApplication::applicationDirPath()).relativeFilePath(torExecutableInfo.absoluteFilePath());
+      vWarn("Automigrating configuration for TorExecutable:\nOld path: %1\nNew path: %2")
+        .arg(newTorExecutableInfo.filePath())
+        .arg(torExecutable);
+      settings.setExecutable(torExecutable);
+      torExecutable = QCoreApplication::applicationDirPath() + "/" + torExecutable;
+    }
+  }
+
   _torControl->start(torExecutable, args);
 
   QString errmsg;
