@@ -269,6 +269,9 @@ AdvancedPage::load()
 
   ui.chkEnablePanic->setChecked(settings.allowPanic());
   ui.linePanicPath->setText(settings.panicPath());
+
+  /** We need to keep the ExitNodes settings, even if we don't use it here */
+  _settings->setExitNodes(_settings->exitNodes());
 }
 
 /** Called when the user selects a different authentication method from the
