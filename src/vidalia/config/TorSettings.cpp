@@ -108,12 +108,9 @@ TorSettings::apply(QString *errmsg)
 {
   Torrc *torrc = Vidalia::torrc();
 
-  torrc->clear(QStringList()
-               << TOR_ARG_SOCKSPORT
-               << SETTING_CONTROL_PORT);
-
   torrc->setValue(SETTING_DATA_DIRECTORY, volatileValue(SETTING_DATA_DIRECTORY).toString());
 
+  torrc->clear(QStringList() << SETTING_SOCKS_PORT);
   if(volatileValue(SETTING_AUTOCONTROL).toBool()) {
     torrc->setValue(SETTING_CONTROL_PORT, "auto");
     torrc->setValue(SETTING_SOCKS_PORT, "auto");
@@ -121,14 +118,23 @@ TorSettings::apply(QString *errmsg)
   } else {
     QString socks = volatileValue(SETTING_SOCKS_PORT).toString();
     QString control = volatileValue(SETTING_CONTROL_PORT).toString();
+
+    if (socks == "0")
+      socks = "9050";
+
     {
-      with_torrc_value(SETTING_SOCKS_PORT)
-        socks = ret.at(0);
+      with_torrc_value(SETTING_SOCKS_PORT) {
+        if (ret.at(0) != "auto")
+          socks = ret.at(0);
+      }
     }
     {
-      with_torrc_value(SETTING_CONTROL_PORT)
-        control = ret.at(0);
+      with_torrc_value(SETTING_CONTROL_PORT) {
+        if (ret.at(0) != "auto")
+          control = ret.at(0);
+      }
     }
+
     torrc->setValue(SETTING_SOCKS_PORT, socks);
     torrc->setValue(SETTING_CONTROL_PORT, control);
   }

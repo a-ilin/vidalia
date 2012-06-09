@@ -458,7 +458,8 @@ AdvancedPage::toggleAuto(bool)
   ui.lineControlAddress->setVisible(!ui.chkAuto->isChecked());
   ui.label->setVisible(!ui.chkAuto->isChecked());
   ui.lineControlPort->setVisible(!ui.chkAuto->isChecked());
-  ui.lineControlPort->setText("9051");
+  if (ui.lineControlPort->text() == "0")
+    ui.lineControlPort->setText("9051");
 }
 
 void
