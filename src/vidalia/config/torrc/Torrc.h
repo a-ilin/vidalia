@@ -21,7 +21,9 @@
 #include "TorControl.h"
 #include "TorrcParser.h"
 
-class Torrc {
+class Torrc : public QObject
+{
+  Q_OBJECT
  public:
   /** Constructor */
   Torrc(const QString &torrcPath, const QString &defaultsPath = "");

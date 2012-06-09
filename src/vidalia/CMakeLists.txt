@@ -91,6 +91,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   plugin/prototypes/VidaliaTabPrototype.cpp
   plugin/prototypes/HelperProcessPrototype.cpp
   plugin/prototypes/TorControlPrototype.cpp
+  plugin/prototypes/TorrcPrototype.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   plugin/PluginEngine.h
@@ -99,6 +100,7 @@ qt4_wrap_cpp(vidalia_SRCS
   plugin/prototypes/VidaliaTabPrototype.h
   plugin/prototypes/HelperProcessPrototype.h
   plugin/prototypes/TorControlPrototype.h
+  plugin/prototypes/TorrcPrototype.h
 )
 
 ## Configuration dialog sources
@@ -149,6 +151,7 @@ qt4_wrap_cpp(vidalia_SRCS
   config/TorSettings.h
   config/VidaliaSettings.h
   config/VSettings.h
+  config/torrc/Torrc.h
 )
 if (USE_MINIUPNPC)
   include_directories(${MINIUPNPC_INCLUDE_DIR})

@@ -28,8 +28,10 @@ PluginEngine::PluginEngine(QObject *parent)
   ADD_PROTOTYPE(HelperProcessPrototype)
   MAKE_CREATABLE(HelperProcessPrototype)
   ADD_PROTOTYPE(TorControlPrototype)
+  ADD_PROTOTYPE(TorrcPrototype)
 
   globalObject().setProperty("torControl", newQObject(Vidalia::torControl()));
+  globalObject().setProperty("torrc", newQObject(Vidalia::torrc()));
   globalObject().setProperty("vidaliaApp", newQObject(vApp));
 
 //  globalObject().setProperty("include", newFunction(includeScript));
