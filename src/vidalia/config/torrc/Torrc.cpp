@@ -19,7 +19,7 @@
 #include <QtGlobal>
 
 Torrc::Torrc(const QString &torrcPath, const QString &defaultsPath) :
-  QObject(), _torrcPath(torrcPath), changed(false)
+  QObject(), _torrcPath(torrcPath), _changed(false)
 {
   load(torrcPath, defaultsPath);
 }
@@ -39,7 +39,7 @@ Torrc::load(const QString &torrcPath, const QString &defaultsPath)
 bool
 Torrc::apply(TorControl *tc, QString *errmsg)
 {
-  if(not changed)
+  if(not _changed)
     return true;
 
   QFile torrc(_torrcPath);
@@ -70,7 +70,7 @@ Torrc::apply(TorControl *tc, QString *errmsg)
   clearAll();
   load(_torrcPath);
 
-  changed = false;
+  _changed = false;
 
   bool ret = true;
   if(tc && tc->isConnected()) {
@@ -155,7 +155,7 @@ Torrc::setValue(const QString &key, const QString &value, const QString &comment
                                       .arg(value));
         if(not comment.isEmpty() and val.second.line()->comment().isEmpty())
           val.second.line()->setComment(comment);
-        changed = true;
+        _changed = true;
         return;
       } else if(not val.second.isMultilined() and val.first == value) {
         // if it's the same, leave it like that
@@ -164,7 +164,7 @@ Torrc::setValue(const QString &key, const QString &value, const QString &comment
     }
   }
 
-  changed = true;
+  _changed = true;
 
   TorrcLine *line = new TorrcLine(QString("%1 %2")
                                   .arg(key)
@@ -212,6 +212,7 @@ Torrc::clear(QStringList &keys)
       }
     }
     _torrcMap.remove(key);
+    _changed = true;
   }
 }
 

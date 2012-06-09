@@ -71,7 +71,7 @@ class Torrc : public QObject
   QString _torrcPath;
 
   /** True if the config options have been changed */
-  bool changed;
+  bool _changed;
 };
 
 #endif
