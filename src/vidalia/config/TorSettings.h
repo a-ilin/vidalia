@@ -149,6 +149,11 @@ public:
   /** Sets the location of the bootstrap torrc file */
   void setBootstrapFrom(const QString &from);
 
+  /** Returns the selected exit nodes */
+  QStringList exitNodes() const;
+  /** Sets the exit nodes to the specified list */
+  void setExitNodes(const QStringList &exitNodes);
+
 private:
   /** Returns the AuthenticationMethod enum value for the string
    * description of the authentication method given in <b>authMethod</b>. */

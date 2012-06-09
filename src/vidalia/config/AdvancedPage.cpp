@@ -269,6 +269,9 @@ AdvancedPage::load()
 
   ui.chkEnablePanic->setChecked(settings.allowPanic());
   ui.linePanicPath->setText(settings.panicPath());
+
+  /** We need to keep the ExitNodes settings, even if we don't use it here */
+  _settings->setExitNodes(_settings->exitNodes());
 }
 
 /** Called when the user selects a different authentication method from the
@@ -455,7 +458,8 @@ AdvancedPage::toggleAuto(bool)
   ui.lineControlAddress->setVisible(!ui.chkAuto->isChecked());
   ui.label->setVisible(!ui.chkAuto->isChecked());
   ui.lineControlPort->setVisible(!ui.chkAuto->isChecked());
-  ui.lineControlPort->setText("9051");
+  if (ui.lineControlPort->text() == "0")
+    ui.lineControlPort->setText("9051");
 }
 
 void

@@ -1066,8 +1066,11 @@ TorControl::useMicrodescriptors(QString *errmsg)
 QStringList
 TorControl::getRouterDescriptorText(const QString &id, QString *errmsg)
 {
-  if(useMicrodescriptors(errmsg))
-    return getInfo("md/id/" + id, errmsg).toStringList();
+  if(useMicrodescriptors(errmsg)) {
+    QStringList res = getInfo("md/id/" + id, errmsg).toStringList();
+    if(!res.isEmpty())
+      return res;
+  }
 
   return getInfo("desc/id/" + id, errmsg).toStringList();
 }

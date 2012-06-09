@@ -1,0 +1,9 @@
+  New features:
+  o Provide a way of hand picking exit nodes from the router list in
+  the Network Map.
+
+  Internal cleanups and improvements:
+  o Fix return value from VMessageBox::question.
+  o Make TorControl::getRouterDescriptorText() default to regular
+    descriptors in case the microdescriptor is not available.
+  o Improve handling of ControlPort and SocksPort settings.

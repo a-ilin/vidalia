@@ -21,7 +21,8 @@
 #include <QDateTime>
 
 /** Public setting keys */
-#define SETTING_REMEMBER_SHUTDOWN   "RememberShutdown"
+#define SETTING_REMEMBER_SHUTDOWN      "RememberShutdown"
+#define SETTING_REMEMBER_DONTWARNEXIT  "DontWarnExitNodes"
 
 /** Handles saving and restoring Vidalia's settings, such as the
  * location of Tor, the control port, etc.
@@ -151,6 +152,13 @@ public:
   bool firstRun() const;
   /** Sets Vidalia's first run option */
   void setFirstRun(bool val);
+
+  /** Returns true if Vidalia should warn the user when setting Exit
+   *  nodes by hand */
+  bool dontWarnExitNodes() const;
+  /** Sets wether Vidalia should warn the user when setting Exit nodes
+   *  by hand */
+  void setDontWarnExitNodes(bool val);
 };
 
 #endif

@@ -48,6 +48,7 @@
 #define SETTING_BOOTSTRAP_FROM       "BootstrapFrom"
 #define SETTING_AUTOCONTROL          "AutoControl"
 #define SETTING_DISABLE_NETWORK      "DisableNetwork"
+#define SETTING_EXITNODES            "ExitNodes"
 
 /** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
@@ -107,12 +108,9 @@ TorSettings::apply(QString *errmsg)
 {
   Torrc *torrc = Vidalia::torrc();
 
-  torrc->clear(QStringList()
-               << TOR_ARG_SOCKSPORT
-               << SETTING_CONTROL_PORT);
-
   torrc->setValue(SETTING_DATA_DIRECTORY, volatileValue(SETTING_DATA_DIRECTORY).toString());
 
+  torrc->clear(QStringList() << SETTING_SOCKS_PORT);
   if(volatileValue(SETTING_AUTOCONTROL).toBool()) {
     torrc->setValue(SETTING_CONTROL_PORT, "auto");
     torrc->setValue(SETTING_SOCKS_PORT, "auto");
@@ -120,14 +118,23 @@ TorSettings::apply(QString *errmsg)
   } else {
     QString socks = volatileValue(SETTING_SOCKS_PORT).toString();
     QString control = volatileValue(SETTING_CONTROL_PORT).toString();
+
+    if (socks == "0")
+      socks = "9050";
+
     {
-      with_torrc_value(SETTING_SOCKS_PORT)
-        socks = ret.at(0);
+      with_torrc_value(SETTING_SOCKS_PORT) {
+        if (ret.at(0) != "auto")
+          socks = ret.at(0);
+      }
     }
     {
-      with_torrc_value(SETTING_CONTROL_PORT)
-        control = ret.at(0);
+      with_torrc_value(SETTING_CONTROL_PORT) {
+        if (ret.at(0) != "auto")
+          control = ret.at(0);
+      }
     }
+
     torrc->setValue(SETTING_SOCKS_PORT, socks);
     torrc->setValue(SETTING_CONTROL_PORT, control);
   }
@@ -160,6 +167,14 @@ TorSettings::apply(QString *errmsg)
 
   torrc->setValue(SETTING_DISABLE_NETWORK,
                   volatileValue(SETTING_DISABLE_NETWORK).toBool() ? "1" : "0");
+
+  QString exitNodes = volatileValue(SETTING_EXITNODES).toString();
+
+  if (exitNodes.isEmpty()) {
+    torrc->clear(QStringList() << SETTING_EXITNODES);
+  } else {
+    torrc->setValue(SETTING_EXITNODES, exitNodes);
+  }
 
   return torrc->apply(Vidalia::torControl(), errmsg);
 }
@@ -571,4 +586,23 @@ void
 TorSettings::setAutoControlPort(const bool autoControl)
 {
   setVolatileValue(SETTING_AUTOCONTROL, autoControl);
+}
+
+
+/** Returns the selected exit nodes */
+QStringList
+TorSettings::exitNodes() const
+{
+  QStringList exitNodes;
+  with_torrc_value(SETTING_EXITNODES) {
+    exitNodes = ret.at(0).split(",");
+  }
+  return exitNodes;
+}
+
+/** Sets the exit nodes to the specified list */
+void
+TorSettings::setExitNodes(const QStringList &exitNodes)
+{
+  setVolatileValue(SETTING_EXITNODES, exitNodes.join(","));
 }
