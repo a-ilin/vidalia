@@ -16,11 +16,18 @@
 #include "RouterListItem.h"
 #include "RouterListWidget.h"
 
+#include "TorSettings.h"
+#include "Vidalia.h"
+
 #include <QHeaderView>
 
 #define STATUS_COLUMN   (RouterListWidget::StatusColumn)
 #define COUNTRY_COLUMN  (RouterListWidget::CountryColumn)
 #define NAME_COLUMN     (RouterListWidget::NameColumn)
+
+#define NONEXIT_COLOR   (Qt::white)
+#define EXIT_COLOR      (QColor::fromRgb(169, 207, 84))
+#define CANBEEXIT_COLOR (QColor::fromRgb(172, 209, 233))
 
 #define IMG_NODE_OFFLINE    ":/images/icons/node-unresponsive.png"
 #define IMG_NODE_SLEEPING   ":/images/icons/node-hibernating.png"
@@ -39,6 +46,7 @@ RouterListItem::RouterListItem(RouterListWidget *list, RouterDescriptor rd)
   _rd   = 0;
   _countryCode = "~"; /* Force items with no country to the bottom */
   setIcon(COUNTRY_COLUMN, QIcon(IMG_FLAG_UNKNOWN));
+  _selectedExit = false;
   update(rd);
 }
 
@@ -151,3 +159,52 @@ RouterListItem::operator<(const QTreeWidgetItem &other) const
   return QTreeWidgetItem::operator<(other);
 }
 
+/** Sets the whole line to the given brush */
+void
+RouterListItem::setBackground(const QBrush &brush)
+{
+  QTreeWidgetItem::setBackground(STATUS_COLUMN, brush);
+  QTreeWidgetItem::setBackground(COUNTRY_COLUMN, brush);
+  QTreeWidgetItem::setBackground(NAME_COLUMN, brush);
+}
+
+/** Sets this item's background to selected exit color if exit is true */
+void
+RouterListItem::showAsSelectedExit(bool exit)
+{
+  _selectedExit = exit;
+  TorSettings settings;
+  QStringList exitNodes = settings.exitNodes();
+  bool changed = false;
+
+  if (exit) {
+    setBackground(EXIT_COLOR);
+
+    if (exitNodes.indexOf(id()) == -1) {
+      exitNodes << id();
+      settings.setExitNodes(exitNodes);
+      changed = true;
+    }
+  } else {
+    setBackground(CANBEEXIT_COLOR);
+    exitNodes.removeAll(id());
+    settings.setExitNodes(exitNodes);
+    changed = true;
+  }
+
+  QString errmsg;
+  if (changed && !settings.apply(&errmsg)) {
+    vWarn(errmsg);
+  }
+}
+
+/** Sets this item's background to exit color if exit is true */
+void
+RouterListItem::showAsExit(bool exit)
+{
+  if (exit) {
+    setBackground(CANBEEXIT_COLOR);
+  } else {
+    setBackground(NONEXIT_COLOR);
+  }
+}

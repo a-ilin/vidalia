@@ -53,12 +53,25 @@ public:
   /** Overload the comparison operator. */
   virtual bool operator<(const QTreeWidgetItem &other) const;
 
+  /** Sets this item's background to selected exit color if exit is true */
+  void showAsSelectedExit(bool exit);
+  /** Sets this item's background to exit color if exit is true */
+  void showAsExit(bool exit);
+
+  /** Returns true if this item has been selected as exit */
+  bool selectedExit() const { return _selectedExit; }
+
 private:
   RouterDescriptor* _rd;   /**< Descriptor for this router item. */
   RouterListWidget* _list; /**< The list for this list item. */
   qint64 _statusValue;     /**< Value used to sort items by status. */
   GeoIpRecord _location;   /**< Location information for this router. */
   QString _countryCode;
+
+  bool _selectedExit;      /**< True if this router has been selected for exit */
+
+  /** Sets the whole line to the given brush */
+  void setBackground(const QBrush &brush);
 };
 
 #endif

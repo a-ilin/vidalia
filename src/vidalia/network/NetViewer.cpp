@@ -161,6 +161,8 @@ NetViewer::NetViewer(QWidget *parent)
           this, SLOT(onRouterSearch()));
   connect(ui.lineRouterSearch, SIGNAL(textChanged(QString)),
           ui.treeRouterList, SLOT(onRouterSearch(QString)));
+  connect(ui.treeRouterList, SIGNAL(displayRouterInfo(QString)),
+          this, SLOT(displayRouterInfo(QString)));
 
   setupGeoIpResolver();
 

@@ -62,6 +62,9 @@ signals:
   void routerSelected(QList<RouterDescriptor> rd);
   /** Emitted when the user selects a router to zoom in on. */
   void zoomToRouter(QString id);
+  /** Emitted when the user selects a router to display more
+   * information about */
+  void displayRouterInfo(QString id);
 
 public slots:
   /** Clears the list of router items. */
@@ -84,6 +87,10 @@ private slots:
   /** Emits a zoomToRouter() signal containing the fingerprint of the
    * currently selected relay. */
   void zoomToSelectedRelay();
+  /** Called when the Display router info menu action is selected */
+  void displayRouterInfo();
+  /** Called when the Use as Exit node menu action is selected */
+  void useAsExit();
 
 protected:
   /** Called when the user presses a key while the list has focus. */

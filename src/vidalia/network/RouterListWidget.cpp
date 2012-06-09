@@ -16,6 +16,8 @@
 #include "RouterListWidget.h"
 #include "RouterListItem.h"
 #include "Vidalia.h"
+#include "VidaliaSettings.h"
+#include "VMessageBox.h"
 
 #include <QHeaderView>
 #include <QClipboard>
@@ -55,7 +57,7 @@ RouterListWidget::retranslateUi()
 void
 RouterListWidget::contextMenuEvent(QContextMenuEvent *event)
 {
-  QAction *action;
+  QAction *action, *routerInfoAction, *useAsExit;
   QMenu *menu, *copyMenu;
   QList<QTreeWidgetItem *> selected;
 
@@ -76,6 +78,24 @@ RouterListWidget::contextMenuEvent(QContextMenuEvent *event)
     action->setEnabled(false);
   else
     connect(action, SIGNAL(triggered()), this, SLOT(zoomToSelectedRelay()));
+
+  routerInfoAction = menu->addAction(tr("Router Info"));
+  connect(routerInfoAction, SIGNAL(triggered()), this, SLOT(displayRouterInfo()));
+
+  RouterListItem *item = static_cast<RouterListItem*>(selected.first());
+
+  useAsExit = menu->addAction(tr("Use as Exit node"));
+  if (selected.size() > 1) {
+    useAsExit->setEnabled(false);
+  } else if (item->descriptor().exitPolicy().isEmpty()) {
+    useAsExit->setEnabled(false);
+  } else {
+    if (item->selectedExit()) {
+      useAsExit->setText(tr("Do not use as Exit node"));
+    }
+
+    connect(useAsExit, SIGNAL(triggered()), this, SLOT(useAsExit()));
+  }
 
   menu->exec(event->globalPos());
   delete menu;
@@ -245,7 +265,15 @@ RouterListWidget::addRouter(const RouterDescriptor &rd)
   if (item) {
     item->update(rd);
   } else {
+    TorSettings settings;
+    QStringList exitNodes = settings.exitNodes();
+
     item = new RouterListItem(this, rd);
+    if (exitNodes.indexOf(id) == -1)
+      item->showAsExit(rd.exitPolicy().length() != 0);
+    else
+      item->showAsSelectedExit(true);
+
     addTopLevelItem(item);
     _idmap.insert(id, item);
   }
@@ -273,3 +301,43 @@ RouterListWidget::onSelectionChanged()
     emit routerSelected(descriptors);
 }
 
+/** Called when the Display router info menu action is selected */
+void
+RouterListWidget::displayRouterInfo()
+{
+  foreach (QTreeWidgetItem *item, selectedItems()) {
+    RouterListItem *relay = dynamic_cast<RouterListItem *>(item);
+    if (relay)
+      emit displayRouterInfo(relay->id());
+    break;
+  }
+}
+
+/** Called when the Use as Exit node menu action is selected */
+void
+RouterListWidget::useAsExit()
+{
+  foreach (QTreeWidgetItem *item, selectedItems()) {
+    RouterListItem *relay = dynamic_cast<RouterListItem *>(item);
+    if (relay->descriptor().exitPolicy().length() != 0) {
+      VidaliaSettings settings;
+      if (!settings.dontWarnExitNodes()) {
+        int res = VMessageBox::question(this, tr("You are about to set a fixed Exit node"),
+                                        tr("You need to understand that by doing this you might be "
+                                           "putting your anonymity at risk and/or limiting the "
+                                           "services you have available through Tor.\n\n"
+                                           "Do you still want to set this node as Exit?"),
+                                        VMessageBox::Yes,
+                                        VMessageBox::No|VMessageBox::Default,
+                                        VMessageBox::Cancel|VMessageBox::Escape,
+                                        "I know what I'm doing, do not remind me", &settings,
+                                        SETTING_REMEMBER_DONTWARNEXIT);
+
+        if (res == VMessageBox::Yes)
+          relay->showAsSelectedExit(!relay->selectedExit());
+      } else {
+        relay->showAsSelectedExit(!relay->selectedExit());
+      }
+    }
+  }
+}
