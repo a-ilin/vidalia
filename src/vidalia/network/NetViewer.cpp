@@ -396,11 +396,14 @@ NetViewer::preLoadNetworkStatus()
   NetworkStatus networkStatus = _torControl->getNetworkStatus();
 
   ServerSettings settings(_torControl);
-  if(_torControl->isConnected() and settings.isServerEnabled())
-    _routers << *RouterDescriptor::fromTorControl(_torControl);
-  else {
-    ui.lblConsensus->setVisible(false);
-    ui.lblOffline->setVisible(true);
+  if (settings.isServerEnabled()) {
+    RouterDescriptor *rd = RouterDescriptor::fromTorControl(_torControl);
+    if(_torControl->isConnected() and settings.isServerEnabled()) {
+      _routers << *rd;
+    } else {
+      ui.lblConsensus->setVisible(false);
+      ui.lblOffline->setVisible(rd->offline());
+    }
   }
 
   bool usingMicrodescriptors = _torControl->useMicrodescriptors();

@@ -1,0 +1,3 @@
+  Bugfixes relative to Vidalia 0.3.x:
+  o Show the "Why is my relay offline?" notification only if tor is
+    running one and it's marked as offline.
