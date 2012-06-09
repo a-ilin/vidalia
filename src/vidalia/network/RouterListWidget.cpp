@@ -24,7 +24,9 @@
 
 #define IMG_ZOOM   ":/images/22x22/page-zoom.png"
 #define IMG_COPY   ":/images/22x22/edit-copy.png"
-
+#define IMG_PLUS   ":/images/22x22/list-add.png"
+#define IMG_MINUS  ":/images/22x22/list-remove.png"
+#define IMG_INFO   ":/images/16x16/dialog-information.png"
 
 RouterListWidget::RouterListWidget(QWidget *parent)
   : QTreeWidget(parent)
@@ -79,12 +81,12 @@ RouterListWidget::contextMenuEvent(QContextMenuEvent *event)
   else
     connect(action, SIGNAL(triggered()), this, SLOT(zoomToSelectedRelay()));
 
-  routerInfoAction = menu->addAction(tr("Router Info"));
+  routerInfoAction = menu->addAction(QIcon(IMG_INFO), tr("Router Info"));
   connect(routerInfoAction, SIGNAL(triggered()), this, SLOT(displayRouterInfo()));
 
   RouterListItem *item = static_cast<RouterListItem*>(selected.first());
 
-  useAsExit = menu->addAction(tr("Use as Exit node"));
+  useAsExit = menu->addAction(QIcon(IMG_PLUS), tr("Use as Exit node"));
   if (selected.size() > 1) {
     useAsExit->setEnabled(false);
   } else if (item->descriptor().exitPolicy().isEmpty()) {
@@ -92,6 +94,7 @@ RouterListWidget::contextMenuEvent(QContextMenuEvent *event)
   } else {
     if (item->selectedExit()) {
       useAsExit->setText(tr("Do not use as Exit node"));
+      useAsExit->setIcon(QIcon(IMG_MINUS));
     }
 
     connect(useAsExit, SIGNAL(triggered()), this, SLOT(useAsExit()));
