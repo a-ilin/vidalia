@@ -159,7 +159,7 @@ VMessageBox::question(QWidget *parent, QString caption, QString text,
     return ret;
   settings->setValue(key, messageBox._chkRemember->checkState() == Qt::Checked);
 
-  return ret;
+  return VMessageBox::selected(ret, button0, button1, button2);
 }
 
 /** Displays an information message box with the given caption, message text, and
