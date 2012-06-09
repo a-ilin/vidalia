@@ -90,6 +90,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_ALLOW_PANIC, false);
   setDefault(SETTING_PANIC_PATH, "");
   setDefault(SETTING_FIRST_RUN, true);
+  setDefault(SETTING_REMEMBER_DONTWARNEXIT, true);
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -379,4 +380,16 @@ void
 VidaliaSettings::setFirstRun(bool val)
 {
   setValue(SETTING_FIRST_RUN, val);
+}
+
+bool
+VidaliaSettings::dontWarnExitNodes() const
+{
+  return value(SETTING_REMEMBER_DONTWARNEXIT).toBool();
+}
+
+void
+VidaliaSettings::setDontWarnExitNodes(bool val)
+{
+  setValue(SETTING_REMEMBER_DONTWARNEXIT, val);
 }
