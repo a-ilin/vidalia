@@ -49,6 +49,7 @@
 #define SETTING_AUTOCONTROL          "AutoControl"
 #define SETTING_DISABLE_NETWORK      "DisableNetwork"
 #define SETTING_EXITNODES            "ExitNodes"
+#define SETTING_ENTRYNODES           "EntryNodes"
 
 /** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
@@ -174,6 +175,14 @@ TorSettings::apply(QString *errmsg)
     torrc->clear(QStringList() << SETTING_EXITNODES);
   } else {
     torrc->setValue(SETTING_EXITNODES, exitNodes);
+  }
+
+  QString entryNodes = volatileValue(SETTING_ENTRYNODES).toString();
+
+  if (entryNodes.isEmpty()) {
+    torrc->clear(QStringList() << SETTING_ENTRYNODES);
+  } else {
+    torrc->setValue(SETTING_ENTRYNODES, entryNodes);
   }
 
   return torrc->apply(Vidalia::torControl(), errmsg);
@@ -605,4 +614,22 @@ void
 TorSettings::setExitNodes(const QStringList &exitNodes)
 {
   setVolatileValue(SETTING_EXITNODES, exitNodes.join(","));
+}
+
+/** Returns the selected entry nodes */
+QStringList
+TorSettings::entryNodes() const
+{
+  QStringList entryNodes;
+  with_torrc_value(SETTING_ENTRYNODES) {
+    entryNodes = ret.at(0).split(",");
+  }
+  return entryNodes;
+}
+
+/** Sets the entry nodes to the specified list */
+void
+TorSettings::setEntryNodes(const QStringList &entryNodes)
+{
+  setVolatileValue(SETTING_ENTRYNODES, entryNodes.join(","));
 }

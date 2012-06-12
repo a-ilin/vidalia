@@ -393,3 +393,15 @@ VidaliaSettings::setDontWarnExitNodes(bool val)
 {
   setValue(SETTING_REMEMBER_DONTWARNEXIT, val);
 }
+
+bool
+VidaliaSettings::dontWarnEntryNodes() const
+{
+  return value(SETTING_REMEMBER_DONTWARNENTRY).toBool();
+}
+
+void
+VidaliaSettings::setDontWarnEntryNodes(bool val)
+{
+  setValue(SETTING_REMEMBER_DONTWARNENTRY, val);
+}

@@ -23,6 +23,7 @@
 /** Public setting keys */
 #define SETTING_REMEMBER_SHUTDOWN      "RememberShutdown"
 #define SETTING_REMEMBER_DONTWARNEXIT  "DontWarnExitNodes"
+#define SETTING_REMEMBER_DONTWARNENTRY "DontWarnEntryNodes"
 
 /** Handles saving and restoring Vidalia's settings, such as the
  * location of Tor, the control port, etc.
@@ -159,6 +160,13 @@ public:
   /** Sets wether Vidalia should warn the user when setting Exit nodes
    *  by hand */
   void setDontWarnExitNodes(bool val);
+
+  /** Returns true if Vidalia should warn the user when setting Entry
+   *  nodes by hand */
+  bool dontWarnEntryNodes() const;
+  /** Sets wether Vidalia should warn the user when setting Entry nodes
+   *  by hand */
+  void setDontWarnEntryNodes(bool val);
 };
 
 #endif

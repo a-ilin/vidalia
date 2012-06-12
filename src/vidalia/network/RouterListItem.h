@@ -61,6 +61,12 @@ public:
   /** Returns true if this item has been selected as exit */
   bool selectedExit() const { return _selectedExit; }
 
+  /** Sets this item's background to selected entry color if exit is true */
+  void showAsSelectedEntry(bool entry);
+
+  /** Returns true if this item has been selected as entry */
+  bool selectedEntry() const { return _selectedEntry; }
+
 private:
   RouterDescriptor* _rd;   /**< Descriptor for this router item. */
   RouterListWidget* _list; /**< The list for this list item. */
@@ -69,6 +75,7 @@ private:
   QString _countryCode;
 
   bool _selectedExit;      /**< True if this router has been selected for exit */
+  bool _selectedEntry;     /**< True if this router has been selected for exit */
 
   /** Sets the whole line to the given brush */
   void setBackground(const QBrush &brush);

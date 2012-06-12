@@ -1,6 +1,6 @@
   New features:
-  o Provide a way of hand picking exit nodes from the router list in
-  the Network Map.
+  o Provide a way of hand picking entry and exit nodes from the
+    router list in the Network Map.
 
   Internal cleanups and improvements:
   o Fix return value from VMessageBox::question.

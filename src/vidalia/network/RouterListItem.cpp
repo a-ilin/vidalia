@@ -28,6 +28,7 @@
 #define NONEXIT_COLOR   (Qt::white)
 #define EXIT_COLOR      (QColor::fromRgb(169, 207, 84))
 #define CANBEEXIT_COLOR (QColor::fromRgb(172, 209, 233))
+#define ENTRY_COLOR     (QColor::fromRgb(255, 144, 0))
 
 #define IMG_NODE_OFFLINE    ":/images/icons/node-unresponsive.png"
 #define IMG_NODE_SLEEPING   ":/images/icons/node-hibernating.png"
@@ -206,5 +207,35 @@ RouterListItem::showAsExit(bool exit)
     setBackground(CANBEEXIT_COLOR);
   } else {
     setBackground(NONEXIT_COLOR);
+  }
+}
+
+/** Sets this item's background to selected entry color if entry is true */
+void
+RouterListItem::showAsSelectedEntry(bool entry)
+{
+  _selectedEntry = entry;
+  TorSettings settings;
+  QStringList entryNodes = settings.entryNodes();
+  bool changed = false;
+
+  if (entry) {
+    setBackground(ENTRY_COLOR);
+
+    if (entryNodes.indexOf(id()) == -1) {
+      entryNodes << id();
+      settings.setEntryNodes(entryNodes);
+      changed = true;
+    }
+  } else {
+    setBackground(NONEXIT_COLOR);
+    entryNodes.removeAll(id());
+    settings.setEntryNodes(entryNodes);
+    changed = true;
+  }
+
+  QString errmsg;
+  if (changed && !settings.apply(&errmsg)) {
+    vWarn(errmsg);
   }
 }

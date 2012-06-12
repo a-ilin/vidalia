@@ -272,6 +272,8 @@ AdvancedPage::load()
 
   /** We need to keep the ExitNodes settings, even if we don't use it here */
   _settings->setExitNodes(_settings->exitNodes());
+  /** ... and the same for entry nodes */
+  _settings->setEntryNodes(_settings->entryNodes());
 }
 
 /** Called when the user selects a different authentication method from the

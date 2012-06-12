@@ -154,6 +154,11 @@ public:
   /** Sets the exit nodes to the specified list */
   void setExitNodes(const QStringList &exitNodes);
 
+  /** Returns the selected entry nodes */
+  QStringList entryNodes() const;
+  /** Sets the entry nodes to the specified list */
+  void setEntryNodes(const QStringList &entryNodes);
+
 private:
   /** Returns the AuthenticationMethod enum value for the string
    * description of the authentication method given in <b>authMethod</b>. */

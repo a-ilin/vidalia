@@ -59,7 +59,7 @@ RouterListWidget::retranslateUi()
 void
 RouterListWidget::contextMenuEvent(QContextMenuEvent *event)
 {
-  QAction *action, *routerInfoAction, *useAsExit;
+  QAction *action, *routerInfoAction, *useAsExit, *useAsEntry;
   QMenu *menu, *copyMenu;
   QList<QTreeWidgetItem *> selected;
 
@@ -98,6 +98,18 @@ RouterListWidget::contextMenuEvent(QContextMenuEvent *event)
     }
 
     connect(useAsExit, SIGNAL(triggered()), this, SLOT(useAsExit()));
+  }
+
+  useAsEntry = menu->addAction(QIcon(IMG_PLUS), tr("Use as Entry node"));
+  if (selected.size() > 1) {
+    useAsEntry->setEnabled(false);
+  } else {
+    if (item->selectedEntry()) {
+      useAsEntry->setText(tr("Do not use as Entry node"));
+      useAsEntry->setIcon(QIcon(IMG_MINUS));
+    }
+
+    connect(useAsEntry, SIGNAL(triggered()), this, SLOT(useAsEntry()));
   }
 
   menu->exec(event->globalPos());
@@ -342,5 +354,32 @@ RouterListWidget::useAsExit()
         relay->showAsSelectedExit(!relay->selectedExit());
       }
     }
+  }
+}
+
+/** Called when the Use as Entry node menu action is selected */
+void
+RouterListWidget::useAsEntry()
+{
+  foreach (QTreeWidgetItem *item, selectedItems()) {
+    RouterListItem *relay = dynamic_cast<RouterListItem *>(item);
+    VidaliaSettings settings;
+    if (!settings.dontWarnEntryNodes()) {
+      int res = VMessageBox::question(this, tr("You are about to set a fixed Entry node"),
+                                        tr("You need to understand that by doing this you might be "
+                                            "putting your anonymity at risk and/or limiting the "
+                                            "services you have available through Tor.\n\n"
+                                            "Do you still want to set this node as Entry?"),
+                                        VMessageBox::Yes,
+                                        VMessageBox::No|VMessageBox::Default,
+                                        VMessageBox::Cancel|VMessageBox::Escape,
+                                        "I know what I'm doing, do not remind me", &settings,
+                                        SETTING_REMEMBER_DONTWARNENTRY);
+
+        if (res == VMessageBox::Yes)
+          relay->showAsSelectedEntry(!relay->selectedEntry());
+      } else {
+        relay->showAsSelectedEntry(!relay->selectedEntry());
+      }
   }
 }

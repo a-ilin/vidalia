@@ -91,6 +91,8 @@ private slots:
   void displayRouterInfo();
   /** Called when the Use as Exit node menu action is selected */
   void useAsExit();
+  /** Called when the Use as Entry node menu action is selected */
+  void useAsEntry();
 
 protected:
   /** Called when the user presses a key while the list has focus. */
