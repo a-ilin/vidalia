@@ -20,6 +20,8 @@
 
 #include "Vidalia.h"
 
+#include <unistd.h>
+
 PluginEngine::PluginEngine(QObject *parent)
   : QScriptEngine(parent)
 {
@@ -228,7 +230,7 @@ PluginEngine::sleep(QScriptContext *context, QScriptEngine *engine)
 #if defined(Q_WS_WIN)
   Sleep(s*1000);
 #else
-  !::sleep(s);
+  (void)::sleep(s);
 #endif
 
   return engine->nullValue();
