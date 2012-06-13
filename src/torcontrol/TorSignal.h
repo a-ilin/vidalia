@@ -14,7 +14,7 @@
 */
 
 #ifndef _TORSIGNAL_H
-#define _TORSGINAL_H
+#define _TORSIGNAL_H
 
 #include <QString>
 
