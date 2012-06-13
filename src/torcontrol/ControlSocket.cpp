@@ -283,7 +283,14 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
     }
 
     /* Parse the status and message */
-    ReplyLine replyLine(line.mid(0, 3), line.mid(4));
+    QString status = line.mid(0,3);
+    bool ok = false;
+    status.toInt(&ok);
+    if (!ok) {
+      return err(errmsg, QString("Malformed control reply: %1").arg(line));
+    }
+
+    ReplyLine replyLine(status, line.mid(4));
     c = line.at(3);
 
     /* If the reply line contains data, then parse out the data up until the
