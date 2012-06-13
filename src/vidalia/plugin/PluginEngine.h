@@ -21,7 +21,6 @@
 
 #include "VidaliaTabPrototype.h"
 #include "HelperProcessPrototype.h"
-#include "TorControlPrototype.h"
 #include "TorrcPrototype.h"
 
 class PluginWrapper;

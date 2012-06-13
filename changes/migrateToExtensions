@@ -1,0 +1,3 @@
+  Internal cleanups and improvements:
+  o Migrate from the hand made TorControl prototype for QtScript to an
+    automatically generated equivalent with qtscriptgenerator.

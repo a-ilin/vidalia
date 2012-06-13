@@ -19,17 +19,20 @@
 #include "DebugDialog.h"
 
 #include "Vidalia.h"
+#include "VidaliaExtensions.h"
 
 #include <unistd.h>
 
 PluginEngine::PluginEngine(QObject *parent)
   : QScriptEngine(parent)
 {
+  VidaliaExtensions ve;
+  ve.initialize("vidalia", this);
+
   ADD_PROTOTYPE(VidaliaTabPrototype)
   MAKE_CREATABLE(VidaliaTabPrototype)
   ADD_PROTOTYPE(HelperProcessPrototype)
   MAKE_CREATABLE(HelperProcessPrototype)
-  ADD_PROTOTYPE(TorControlPrototype)
   ADD_PROTOTYPE(TorrcPrototype)
 
   globalObject().setProperty("torControl", newQObject(Vidalia::torControl()));
