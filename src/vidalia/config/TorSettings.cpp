@@ -166,8 +166,10 @@ TorSettings::apply(QString *errmsg)
       torrc->setValue(TOR_ARG_HASHED_PASSWORD, "");
   }
 
-  torrc->setValue(SETTING_DISABLE_NETWORK,
-                  volatileValue(SETTING_DISABLE_NETWORK).toBool() ? "1" : "0");
+  quint32 torVersion = Vidalia::torControl()->getTorVersion();
+  if (torVersion >= 0x00020309)
+    torrc->setValue(SETTING_DISABLE_NETWORK,
+                    volatileValue(SETTING_DISABLE_NETWORK).toBool() ? "1" : "0");
 
   QString exitNodes = volatileValue(SETTING_EXITNODES).toString();
 

@@ -165,6 +165,9 @@ MainWindow::~MainWindow()
 void
 MainWindow::enableNetwork()
 {
+  quint32 torVersion = Vidalia::torControl()->getTorVersion();
+  if (torVersion < 0x00020309)
+    return;
   TorSettings tor_settings(_torControl);
   tor_settings.setDisableNetwork(false);
   QString errmsg;
