@@ -104,7 +104,7 @@ class TorOpt
   /** Returns true if this option can be defined multiple times with
    *  different values */
   bool isMultivalued()
-  { return _type == LineList; }
+  { return _type == LineList or _type == Dependant; }
 
   /** Returns the name for this option */
   QString name() const
