@@ -325,6 +325,9 @@ ControlConnection::onReadyRead()
       }
     } else {
       tc::error("Unable to read control reply: %1").arg(errmsg);
+      if (!isConnected()) {
+        break;
+      }
     }
   }
 }
