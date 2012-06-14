@@ -1,0 +1,3 @@
+  Internal cleanups and improvements:
+  o Fixed compile time warning when generating ui_AdvancedPage.h.
+    Fixes bug 5554.
