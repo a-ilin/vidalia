@@ -645,6 +645,8 @@ NetViewer::linkActivated(const QString &url)
 void
 NetViewer::saveSettings()
 {
+  /* Hide the settings frame and reset toggle button */
+  ui.actionSettings->toggle();
   ui.treeRouterList->setColumnHidden(RouterListWidget::IPnumberColumn,
                                      !(ui.chkShowIP->isChecked()));
   ui.treeRouterList->setColumnHidden(RouterListWidget::BandwidthColumn,
