@@ -73,6 +73,7 @@ NetViewer::NetViewer(QWidget *parent)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
+  ui.treeRouterList->setSortingEnabled(false);
 
   ui.lblConsensus->setVisible(false);
   ui.lblOffline->setVisible(false);
@@ -454,14 +455,14 @@ NetViewer::preLoadNetworkStatus()
 void
 NetViewer::loadNetworkStatus()
 {
-  int count = 0, thres = 10;
+  int count = 0, thres = 50;
   for(; _it != _routers.constEnd() and count < thres; ++_it, ++count) {
     addRouter((*_it));
     QCoreApplication::processEvents();
   }
 
   if(_it != _routers.constEnd())
-    QTimer::singleShot(10, this, SLOT(loadNetworkStatus()));
+    QTimer::singleShot(1, this, SLOT(loadNetworkStatus()));
   else {
     QString id = _torControl->getInfo("fingerprint").toString();
     RouterListItem *item = ui.treeRouterList->findRouterById(id);
@@ -470,6 +471,7 @@ NetViewer::loadNetworkStatus()
       ui.lblOffline->setVisible(false);
     }
 
+    ui.treeRouterList->setSortingEnabled(true);
     /* Load existing address mappings */
     loadAddressMap();
     /* Load Circuits and Streams information */

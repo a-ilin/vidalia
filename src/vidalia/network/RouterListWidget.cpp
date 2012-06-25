@@ -40,6 +40,7 @@ RouterListWidget::RouterListWidget(QWidget *parent)
                                 << tr("Uptime"));
 
   /* Sort by descending server bandwidth */
+  setSortingEnabled(false);
   sortItems(StatusColumn, Qt::DescendingOrder);
 
   /* Find out when the selected item has changed. */
