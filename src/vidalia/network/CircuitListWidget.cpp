@@ -79,8 +79,11 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
   if (!item->parent()) {
     /* A circuit was selected */
     CircuitItem *circuitItem = dynamic_cast<CircuitItem *>(item);
-    if (!circuitItem)
+    if (!circuitItem and
+        ((circuitItem->circuit().status() == Circuit::Closed) or
+        (circuitItem->circuit().status() == Circuit::Failed)))
       return;
+    CircuitId id = circuitItem->id();
 
     /* Set up the circuit context menu */
     QAction *zoomAct  = new QAction(QIcon(IMG_ZOOM),
@@ -98,14 +101,15 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
      * selected */
     QAction* action = menu.exec(mapToGlobal(pos));
     if (action == closeAct)
-      emit closeCircuit(circuitItem->id());
+      emit closeCircuit(id);
     else if (action == zoomAct)
-      emit zoomToCircuit(circuitItem->id());
+      emit zoomToCircuit(id);
   } else {
     /* A stream was selected */
     StreamItem *streamItem = dynamic_cast<StreamItem *>(item);
     if (!streamItem)
       return;
+    StreamId id = streamItem->id();
 
     /* Set up the stream context menu */
     QAction *closeAct = new QAction(QIcon(IMG_CLOSE),
@@ -116,7 +120,7 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
      * selected */
     QAction* action = menu.exec(mapToGlobal(pos));
     if (action == closeAct)
-      emit closeStream(streamItem->id());
+      emit closeStream(id);
   }
 }
 
