@@ -54,6 +54,12 @@ Torrc::apply(TorControl *tc, QString *errmsg)
   QString current_line;
 
   foreach(TorrcLine *line, _lines) {
+    if (line->content().trimmed().length() > 0) {
+      TorOpt currentOpt = _parser.getTorOpt(line->content().split(" ")[0]);
+      // Skip default values
+      if(not currentOpt.isMultilined() and currentOpt.defaultValue() == _torrcMap.value(currentOpt.name()).first)
+        continue;
+    }
     torrc_contents += QString("%1 %2")
       .arg(line->content())
       .arg(line->comment()).trimmed();
@@ -138,12 +144,23 @@ Torrc::setValue(const QString &key, const QString &value, const QString &comment
   if(not key.isEmpty() and value.isEmpty())
     return;
 
+  TorOpt currentOpt = _parser.getTorOpt(key);
+  if(currentOpt.isNull())
+    return;
+
   if(_defaultsMap.contains(key)) {
     QPair<QString,TorOpt> defvalue;
     foreach(defvalue, _defaultsMap.values(key)) {
-      if(defvalue.first == value)
+      if(defvalue.first == value) {
+        if(not currentOpt.isMultivalued())
+          clear(QStringList() << key);
         return;
+      }
     }
+  } else if(currentOpt.defaultValue() == value) {
+    if(not currentOpt.isMultivalued())
+      clear(QStringList() << key);
+    return;
   }
 
   if(_torrcMap.contains(key)) {

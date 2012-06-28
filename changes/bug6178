@@ -1,0 +1,2 @@
+  Bugfixes relative to Vidalia 0.3.x:
+  o Don't write values that are default in torrc. Fixes bug 6178.
