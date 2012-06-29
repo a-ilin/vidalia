@@ -13,7 +13,10 @@
 
 set(VIDALIA_APP_BUNDLE_ROOT ${Vidalia_BINARY_DIR}/src/vidalia/Vidalia.app)
 get_target_property(VIDALIA_EXECUTABLE Vidalia LOCATION)
-add_custom_target(dist-osx-libraries DEPENDS Vidalia)
+add_custom_target(dist-osx-libraries DEPENDS Vidalia
+  COMMAND ${QT_BINARY_DIR}/macdeployqt ${VIDALIA_APP_BUNDLE_ROOT}
+)
+
 if (QT_USE_FRAMEWORKS)
   vidalia_copy_plugins(
     TARGET dist-osx-libraries
@@ -50,7 +53,6 @@ else(OSX_FAT_BINARY)
 endif(OSX_FAT_BINARY)
 
 add_custom_target(dist-osx
-  COMMAND ${QT_BINARY_DIR}/macdeployqt ${VIDALIA_APP_BUNDLE_ROOT}
   COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/pkg-dmg
     --source ${VIDALIA_APP_BUNDLE_ROOT}
     --target ${Vidalia_BINARY_DIR}/vidalia-${VERSION}-${DMG_ARCH}.dmg
