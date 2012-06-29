@@ -1327,6 +1327,7 @@ MainWindow::bootstrapStatusChanged(const BootstrapStatus &bs)
       break;
     case BootstrapStatus::BootstrappingDone:
       description = tr("Connected to the Tor network!");
+      updateTorStatus(CircuitEstablished);
       warn = false; /* probably false anyway */
       break;
     default:
