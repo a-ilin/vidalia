@@ -254,6 +254,10 @@ NetworkPage::save(QString &errmsg)
   }
   _settings->setReachablePorts(reachablePorts);
 
+  if (!ui.lineBridge->text().trimmed().isEmpty())
+    addBridge();
+
+
   if (ui.chkUseBridges->isChecked()) {
     if (ui.listBridges->count() < 1) {
       errmsg = tr("You must specify one or more bridges.");
