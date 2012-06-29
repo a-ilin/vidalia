@@ -41,6 +41,7 @@
 #define SETTING_ALLOW_PANIC         "AllowPanic"
 #define SETTING_PANIC_PATH          "PanicPath"
 #define SETTING_FIRST_RUN           "FirstRun"
+#define SETTING_VIDALIA_VERSION     "VidaliaVersion"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -91,6 +92,8 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_PANIC_PATH, "");
   setDefault(SETTING_FIRST_RUN, true);
   setDefault(SETTING_REMEMBER_DONTWARNEXIT, true);
+
+  setValue(SETTING_VIDALIA_VERSION, Vidalia::version());
 }
 
 /** Gets the currently preferred language code for Vidalia. */
