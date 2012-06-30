@@ -41,6 +41,8 @@ TorControl::TorControl(ControlMethod::Method method)
   RELAY_SIGNAL(_eventHandler, SIGNAL(bandwidthUpdate(quint64, quint64)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(circuitStatusChanged(Circuit)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(streamStatusChanged(Stream)));
+  RELAY_SIGNAL(_eventHandler,
+               SIGNAL(streamBandwidthUpdate(StreamId, quint64, quint64)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(newDescriptors(QStringList)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(newConsensus()));
   RELAY_SIGNAL(_eventHandler, SIGNAL(logMessage(tc::Severity, QString)));

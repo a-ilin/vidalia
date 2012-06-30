@@ -33,8 +33,15 @@ public:
   /** Returns the ID of the stream associated with this tree item. */
   StreamId id() const { return _stream.id(); }
 
+  /** Updates the traffic totals of this stream item. */
+  void setTraffic(quint64 bytesReceived, quint64 bytesSent);
+  quint64 bytesReceived() const { return _bytesReceived; }
+  quint64 bytesSent() const { return _bytesSent; }
+
 private:
   Stream _stream;
+  quint64 _bytesReceived;
+  quint64 _bytesSent;
 };
 
 #endif

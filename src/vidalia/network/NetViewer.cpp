@@ -103,6 +103,10 @@ NetViewer::NetViewer(QWidget *parent)
   connect(_torControl, SIGNAL(streamStatusChanged(Stream)),
           this, SLOT(addStream(Stream)));
 
+  _torControl->setEvent(TorEvents::StreamBandwidth);
+  connect(_torControl, SIGNAL(streamBandwidthUpdate(StreamId, quint64, quint64)),
+          ui.treeCircuitList, SLOT(onStreamBandwidthUpdate(StreamId, quint64, quint64)));
+
   _torControl->setEvent(TorEvents::AddressMap);
   connect(_torControl, SIGNAL(addressMapped(QString, QString, QDateTime)),
           this, SLOT(addressMapped(QString, QString, QDateTime)));

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>740</width>
-    <height>786</height>
+    <height>752</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -224,7 +224,7 @@
               <bool>false</bool>
              </property>
              <property name="columnCount">
-              <number>2</number>
+              <number>3</number>
              </property>
              <column>
               <property name="text">
@@ -234,6 +234,11 @@
              <column>
               <property name="text">
                <string>Status</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Traffic</string>
               </property>
              </column>
             </widget>
@@ -279,7 +284,7 @@
               <bool>false</bool>
              </property>
              <property name="columnCount">
-              <number>2</number>
+              <number>3</number>
              </property>
              <column>
               <property name="text">
@@ -289,6 +294,11 @@
              <column>
               <property name="text">
                <string>Status</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Traffic</string>
               </property>
              </column>
             </widget>
@@ -334,7 +344,7 @@
               <bool>false</bool>
              </property>
              <property name="columnCount">
-              <number>2</number>
+              <number>3</number>
              </property>
              <column>
               <property name="text">
@@ -344,6 +354,11 @@
              <column>
               <property name="text">
                <string>Status</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Traffic</string>
               </property>
              </column>
             </widget>

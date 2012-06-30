@@ -25,6 +25,7 @@
 
 class Circuit;
 class Stream;
+typedef QString StreamId;
 class BootstrapStatus;
 class ControlReply;
 class ReplyLine;
@@ -41,25 +42,26 @@ class TorEvents : public QObject
 public:
   /** Asynchronous events sent from Tor to the controller */
   enum Event {
-    Unknown       = 0,
-    Bandwidth     = (1u << 0),
-    LogDebug      = (1u << 1),
-    LogInfo       = (1u << 2),
-    LogNotice     = (1u << 3),
-    LogWarn       = (1u << 4),
-    LogError      = (1u << 5),
-    CircuitStatus = (1u << 6),
-    StreamStatus  = (1u << 7),
-    OrConnStatus  = (1u << 8),
-    NewDescriptor = (1u << 9),
-    AddressMap    = (1u << 10),
-    GeneralStatus = (1u << 11),
-    ClientStatus  = (1u << 12),
-    ServerStatus  = (1u << 13),
-    NewConsensus  = (1u << 14),
+    Unknown         = 0,
+    Bandwidth       = (1u << 0),
+    LogDebug        = (1u << 1),
+    LogInfo         = (1u << 2),
+    LogNotice       = (1u << 3),
+    LogWarn         = (1u << 4),
+    LogError        = (1u << 5),
+    CircuitStatus   = (1u << 6),
+    StreamStatus    = (1u << 7),
+    OrConnStatus    = (1u << 8),
+    NewDescriptor   = (1u << 9),
+    AddressMap      = (1u << 10),
+    GeneralStatus   = (1u << 11),
+    ClientStatus    = (1u << 12),
+    ServerStatus    = (1u << 13),
+    NewConsensus    = (1u << 14),
+    StreamBandwidth = (1u << 15),
   };
   static const Event EVENT_MIN = TorEvents::Bandwidth;
-  static const Event EVENT_MAX = TorEvents::NewConsensus;
+  static const Event EVENT_MAX = TorEvents::StreamBandwidth;
   Q_DECLARE_FLAGS(Events, Event);
 
   /** Default Constructor */
@@ -91,6 +93,14 @@ signals:
   /** Emitted when the circuit status of <b>circuit</b> has changed.
    */
   void circuitStatusChanged(const Circuit &circuit);
+
+  /** Emitted when Tor sends a bandwidth usage update for a stream.
+   * <b>bytesReceived</b> is the number of bytes read on the stream over
+   * the previous second and <b>bytesWritten</b> is the number of bytes
+   * sent over the same interval.
+   */
+  void streamBandwidthUpdate(const StreamId &streamId,
+                             quint64 bytesReceived, quint64 bytesSent);
 
   /** Emitted when Tor has mapped the address <b>from</b> to the address
    * <b>to</b>. <b>expires</b> indicates the time at which when the address
@@ -227,6 +237,8 @@ private:
   void handleCircuitStatus(const ReplyLine &line);
   /** Handle a stream status event */
   void handleStreamStatus(const ReplyLine &line);
+  /** Handle a stream bandwidth event */
+  void handleStreamBandwidthUpdate(const ReplyLine &line);
   /** Handle a log message event */
   void handleLogMessage(const ReplyLine &line);
   /** Handle an OR connection status event. */

@@ -34,7 +34,7 @@ CircuitListWidget::CircuitListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
   /* Create and initialize columns */
-  setHeaderLabels(QStringList() << tr("Connection") << tr("Status"));
+  setHeaderLabels(QStringList() << tr("Connection") << tr("Status") << tr("Traffic"));
 
   /* Find out when a circuit has been selected */
   connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
@@ -52,13 +52,14 @@ CircuitListWidget::CircuitListWidget(QWidget *parent)
 void
 CircuitListWidget::retranslateUi()
 {
-  setHeaderLabels(QStringList() << tr("Connection") << tr("Status"));
+  setHeaderLabels(QStringList() << tr("Connection") << tr("Status") << tr("Traffic"));
   for (int i = 0; i < topLevelItemCount(); i++) {
     CircuitItem *circuitItem = dynamic_cast<CircuitItem *>(topLevelItem(i));
     circuitItem->update(circuitItem->circuit());
 
     foreach (StreamItem *streamItem, circuitItem->streams()) {
       streamItem->update(streamItem->stream());
+      streamItem->setTraffic(streamItem->bytesReceived(), streamItem->bytesSent());
     }
   }
 }
@@ -194,6 +195,20 @@ CircuitListWidget::addStream(const Stream &stream)
     } else if (status == Stream::Failed) {
       scheduleStreamRemoval(item, FAILED_STREAM_REMOVE_DELAY);
     }
+  }
+}
+
+/** Updates the traffic totals for a stream with the given delta values. */
+void
+CircuitListWidget::onStreamBandwidthUpdate(const StreamId &streamId,
+                                           quint64 bytesReceived,
+                                           quint64 bytesSent)
+{
+  StreamItem *item = findStreamItem(streamId);
+  if (item) {
+    item->setTraffic(
+      item->bytesReceived() + bytesReceived,
+      item->bytesSent() + bytesSent);
   }
 }
 

@@ -34,7 +34,8 @@ public:
   /** Circuit list columns. */
   enum Columns {
     ConnectionColumn = 0, /**< Column for either the circuit or stream */
-    StatusColumn = 1      /**< Status of the connection. */
+    StatusColumn = 1,     /**< Status of the connection. */
+    TrafficColumn = 2,    /**< Amount of data received and sent by the stream. */
   };
 
   /** Default constructor */
@@ -66,6 +67,9 @@ signals:
 public slots:
   /** Clears all circuits and streams from the list. */
   void clearCircuits();
+  /** Updates the traffic totals for a stream with the given delta values. */
+  void onStreamBandwidthUpdate(const StreamId &streamId,
+                               quint64 bytesReceived, quint64 bytesSent);
 
 private slots:
   /** Removes the first circuit scheduled to be removed.*/

@@ -88,8 +88,8 @@ Stream::isValidStreamId(const StreamId &streamId)
     return false;
 
   for (int i = 0; i < length; i++) {
-    char c = streamId[i].toAscii();
-    if (c < '0' && c > '9' && c < 'A' && c > 'Z' && c < 'a' && c > 'z')
+    QChar c = streamId[i];
+    if (!c.isLower() and !c.isUpper() and !c.isNumber())
       return false;
   }
   return true;

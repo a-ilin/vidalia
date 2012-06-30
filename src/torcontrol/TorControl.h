@@ -277,6 +277,14 @@ signals:
    */
   void circuitStatusChanged(const Circuit &circuit);
 
+  /** Emitted when Tor sends a bandwidth usage update for a stream.
+   * <b>bytesReceived</b> is the number of bytes read on the stream over
+   * the previous second and <b>bytesWritten</b> is the number of bytes
+   * sent over the same interval.
+   */
+  void streamBandwidthUpdate(const StreamId &streamId,
+                             quint64 bytesReceived, quint64 bytesSent);
+
   /** Emitted when Tor has mapped the address <b>from</b> to the address
    * <b>to</b>. <b>expires</b> indicates the time at which when the address
    * mapping will no longer be considered valid.

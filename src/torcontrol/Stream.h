@@ -26,6 +26,7 @@
 
 /** Stream IDs contains 1-16 alphanumeric ASCII characters. */
 typedef QString StreamId;
+Q_DECLARE_METATYPE(StreamId)
 
 
 class Stream

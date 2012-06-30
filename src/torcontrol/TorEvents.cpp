@@ -41,6 +41,7 @@ TorEvents::TorEvents(QObject *parent)
   qRegisterMetaType<BootstrapStatus>("BootstrapStatus");
   qRegisterMetaType<Circuit>("Circuit");
   qRegisterMetaType<Stream>("Stream");
+  qRegisterMetaType<StreamId>("StreamId");
 
   qRegisterMetaType<QHostAddress>("QHostAddress");
   qRegisterMetaType<QDateTime>("QDateTime");
@@ -66,6 +67,7 @@ TorEvents::toString(Event e)
     case ClientStatus:    event = "STATUS_CLIENT"; break;
     case ServerStatus:    event = "STATUS_SERVER"; break;
     case NewConsensus:    event = "NEWCONSENSUS"; break;
+    case StreamBandwidth: event = "STREAM_BW"; break;
     default: event = "UNKNOWN"; break;
   }
   return event;
@@ -104,6 +106,8 @@ TorEvents::toTorEvent(const QString &event)
     e = ServerStatus;
   } else if (event == "NEWCONSENSUS") {
     e = NewConsensus;
+  } else if (event == "STREAM_BW") {
+    e = StreamBandwidth;
   } else {
     e = Unknown;
   }
@@ -131,6 +135,7 @@ TorEvents::handleEvent(const ControlReply &reply)
       case Bandwidth:      handleBandwidthUpdate(line); break;
       case CircuitStatus:  handleCircuitStatus(line); break;
       case StreamStatus:   handleStreamStatus(line); break;
+      case StreamBandwidth:handleStreamBandwidthUpdate(line); break;
       case NewDescriptor:  handleNewDescriptor(line); break;
       case NewConsensus:   handleNewConsensus(line); break;
       case AddressMap:     handleAddressMap(line); break;
@@ -222,6 +227,27 @@ TorEvents::handleStreamStatus(const ReplyLine &line)
     Stream stream = Stream::fromString(msg.mid(i));
     if (stream.isValid())
       emit streamStatusChanged(stream);
+  }
+}
+
+/** Handle a stream bandwidth update event. The format of this message is:
+ *
+ *    "650" SP "STREAM_BW" SP StreamID SP BytesWritten SP BytesRead
+ *     BytesWritten = 1*DIGIT
+ *     BytesRead = 1*DIGIT
+ */
+void
+TorEvents::handleStreamBandwidthUpdate(const ReplyLine &line)
+{
+  QStringList msg = line.getMessage().split(" ");
+  if (msg.size() >= 4) {
+    StreamId streamId = msg.at(1);
+    quint64 bytesSent = (quint64)msg.at(2).toULongLong();
+    quint64 bytesReceived = (quint64)msg.at(3).toULongLong();
+
+    /* Post the event to each of the interested targets */
+    if (Stream::isValidStreamId(streamId))
+      emit streamBandwidthUpdate(streamId, bytesReceived, bytesSent);
   }
 }
 
