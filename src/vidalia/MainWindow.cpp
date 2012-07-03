@@ -217,6 +217,10 @@ MainWindow::createActions()
   _actionExit = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
   _actionDebugDialog = new QAction(tr("Debug output"), this);
   _actionPanic = new QAction(QIcon(IMG_EXIT), tr("Panic!"), this);
+  _actionHide = new QAction(tr("Hide"), this);
+  if (QSystemTrayIcon::isSystemTrayAvailable()) {
+    _actionHide->setShortcut(QKeySequence(tr("Ctrl+W")));
+  }
 }
 
 /** Creates the menu bar */
@@ -235,6 +239,7 @@ MainWindow::createMenuBar()
   torMenu->addAction(_actionReloadConfig);
 #endif
   torMenu->addSeparator();
+  torMenu->addAction(_actionHide);
   torMenu->addAction(_actionExit);
 
   QMenu *actionsMenu = menu->addMenu(tr("Actions"));
@@ -445,6 +450,8 @@ MainWindow::createConnections()
   connect(_actionDebugDialog, SIGNAL(triggered()), this, SLOT(showDebugDialog()));
 
   connect(_actionPanic, SIGNAL(triggered()), this, SLOT(panic()));
+
+  connect(_actionHide, SIGNAL(triggered()), this, SLOT(hide()));
 
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));

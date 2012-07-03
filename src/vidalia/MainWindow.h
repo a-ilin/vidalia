@@ -56,7 +56,7 @@ public:
 
 public slots:
   /** Shows or hides this window. **/
-  virtual void setVisible(bool visible);
+  virtual void setVisible(bool visible = false);
   /** Display a message in the application system tray icon */
   void trayMessage(const QString &title, const QString &msg,
                    QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::Information,
@@ -307,6 +307,7 @@ private:
   QAction *_actionExit;
   QAction *_actionDebugDialog;
   QAction *_actionPanic;
+  QAction *_actionHide;
 
   QMenu _reattachMenu; /**< Menu used to handle tab re-attaching */
   QAction *_dummy; /**< Dummy action to display when there are no more tabs */
