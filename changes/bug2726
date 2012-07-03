@@ -1,0 +1,3 @@
+  New features:
+  o Display node fingerprint in the details panel in the Network Map. Resolves
+    ticket 2726.

@@ -106,6 +106,7 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
 
     /* Add the IP address and router platform information */
     html.append(trow(tcol(b(tr("IP Address:"))) + tcol(rd.ip().toString())));
+    html.append(trow(tcol(b(tr("Fingerprint:"))) + tcol(rd.id())));
     if(!rd.platform().isEmpty())
       html.append(trow(tcol(b(tr("Platform:")))   + tcol(rd.platform())));
 
