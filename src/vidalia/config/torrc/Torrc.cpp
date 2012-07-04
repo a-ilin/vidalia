@@ -46,7 +46,8 @@ Torrc::apply(TorControl *tc, QString *errmsg)
   QFileInfo torrc_info(torrc);
 
   if(!torrc.open(QIODevice::WriteOnly)) {
-    *errmsg = "Couldn't open torrc file";
+    if (errmsg)
+      *errmsg = "Couldn't open torrc file";
     return false;
   }
 
@@ -96,7 +97,8 @@ Torrc::apply(TorControl *tc, QString *errmsg)
                     .arg(key).arg(ferrmsg));
               somefailed = true;
             } else {
-              *errmsg = ferrmsg;
+              if (errmsg)
+                *errmsg = ferrmsg;
               return false;
             }
           }
