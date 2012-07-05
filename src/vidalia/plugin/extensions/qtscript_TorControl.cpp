@@ -221,7 +221,7 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
             && qscriptvalue_cast<QString*>(context->argument(1))) {
             QByteArray _q_arg0 = qscriptvalue_cast<QByteArray>(context->argument(0));
             QString* _q_arg1 = qscriptvalue_cast<QString*>(context->argument(1));
-            bool _q_result = _q_self->authenticate(_q_arg0, _q_arg1);
+            bool _q_result = _q_self->authenticate(_q_arg0, false, _q_arg1);
             return QScriptValue(context->engine(), _q_result);
         } else if (context->argument(0).isString()
             && qscriptvalue_cast<QString*>(context->argument(1))) {

@@ -19,10 +19,18 @@
 #include "RouterStatus.h"
 #include "file.h"
 #include "stringutil.h"
+#include "crypto.h"
 
 #include <QHostAddress>
 #include <QVariantMap>
 
+#define SAFECOOKIE_SERVER_TO_CONTROLLER_CONSTANT \
+  "Tor safe cookie authentication server-to-controller hash"
+#define SAFECOOKIE_CONTROLLER_TO_SERVER_CONSTANT \
+  "Tor safe cookie authentication controller-to-server hash"
+#define AUTHENTICATION_COOKIE_LEN 32
+#define DIGEST256_LEN 32
+#define SAFECOOKIE_SERVER_NONCE_LEN DIGEST256_LEN
 
 /** Default constructor */
 TorControl::TorControl(ControlMethod::Method method)
@@ -333,7 +341,8 @@ TorControl::isConnected()
 bool
 TorControl::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
-  if (!_authenticated and (cmd.keyword() != "AUTHENTICATE") and
+  if (!_authenticated and (cmd.keyword() != "AUTHCHALLENGE") and
+      (cmd.keyword() != "AUTHENTICATE") and
       (cmd.keyword() != "PROTOCOLINFO") and
       (cmd.keyword() != "QUIT")) {
     if (errmsg)
@@ -366,18 +375,67 @@ TorControl::send(ControlCommand cmd, QString *errmsg)
  *   "AUTHENTICATE" SP 1*HEXDIG CRLF
  */
 bool
-TorControl::authenticate(const QByteArray cookie, QString *errmsg)
+TorControl::authenticate(const QByteArray cookie, bool safe, QString *errmsg)
 {
-  ControlCommand cmd("AUTHENTICATE", base16_encode(cookie));
   ControlReply reply;
   QString str;
+  if (safe) {
+    QByteArray client_nonce = crypto_rand_bytes(DIGEST256_LEN);
+    ControlCommand cmdChallenge("AUTHCHALLENGE", QString("SAFECOOKIE %1").arg(base16_encode(client_nonce)));
 
-  if (!send(cmd, reply, &str)) {
-    emit authenticationFailed(str);
-    _shouldContinue = false;
-    _reason = str;
+    if (!send(cmdChallenge, reply, &str)) {
+      emit authenticationFailed(str);
+      _shouldContinue = false;
+      _reason = str;
 
-    return err(errmsg, str);
+      return err(errmsg, str);
+    }
+
+    QHash<QString, QString> response = string_parse_keyvals(reply.getMessage());
+    QString tmp;
+    tmp.append(cookie);
+    tmp.append(client_nonce);
+    tmp.append(base16_decode(response.value("SERVERNONCE").toAscii()));
+
+    char *client_hash = (char*)malloc(DIGEST256_LEN);
+    char *server_hash = (char*)malloc(DIGEST256_LEN);
+
+    crypto_hmac_sha256(server_hash,
+                       SAFECOOKIE_SERVER_TO_CONTROLLER_CONSTANT,
+                       strlen(SAFECOOKIE_SERVER_TO_CONTROLLER_CONSTANT),
+                       tmp.toAscii().data(),
+                       tmp.size());
+
+    if (!QString(server_hash).compare(response.value("SERVERHASH"))) {
+      str = "Server hash was wrong in SAFECOOKIE auth";
+      return err(errmsg, str);
+    }
+
+    crypto_hmac_sha256(client_hash,
+                       SAFECOOKIE_CONTROLLER_TO_SERVER_CONSTANT,
+                       strlen(SAFECOOKIE_CONTROLLER_TO_SERVER_CONSTANT),
+                       tmp.toAscii().data(),
+                       tmp.size());
+
+    ControlCommand cmd("AUTHENTICATE", base16_encode(QByteArray(client_hash, DIGEST256_LEN)));
+
+    if (!send(cmd, reply, &str)) {
+      emit authenticationFailed(str);
+      _shouldContinue = false;
+      _reason = str;
+
+      return err(errmsg, str);
+    }
+  } else {
+    ControlCommand cmd("AUTHENTICATE", base16_encode(cookie));
+
+    if (!send(cmd, reply, &str)) {
+      emit authenticationFailed(str);
+      _shouldContinue = false;
+      _reason = str;
+
+      return err(errmsg, str);
+    }
   }
   onAuthenticated();
   return true;

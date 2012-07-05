@@ -95,7 +95,7 @@ private slots:
   /** Called when Vidalia has successfully authenticated to Tor. */
   void authenticated();
   /** Called when authenticated() detects that you can do auth with a cookie */
-  bool tryCookie(const ProtocolInfo &pi);
+  bool tryCookie(const ProtocolInfo &pi, bool safe = false);
   /** Called when cookie auth fails or when it's the only method configured */
   bool tryHashed();
   /** Called when Vidalia fails to authenticate to Tor. The failure reason is

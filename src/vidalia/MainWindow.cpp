@@ -1522,7 +1522,7 @@ MainWindow::authenticate()
   QString errmsg;
 
   if (authMethod == TorSettings::CookieAuth) {
-    if(tryCookie(pi)) {
+    if(tryCookie(pi, authMethods.contains("SAFECOOKIE"))) {
       authenticated();
       return;
     } else {
@@ -1556,7 +1556,7 @@ MainWindow::authenticate()
 }
 
 bool
-MainWindow::tryCookie(const ProtocolInfo &pi)
+MainWindow::tryCookie(const ProtocolInfo &pi, bool safe)
 {
   TorSettings settings;
   /* Try to load an auth cookie and send it to Tor */
@@ -1589,8 +1589,12 @@ MainWindow::tryCookie(const ProtocolInfo &pi)
           .arg(cookie.size()));
     return false;
   }
-  vNotice("Authenticating using 'cookie' authentication.");
-  return _torControl->authenticate(cookie);
+  if (safe) {
+    vNotice("Authenticating using 'safecookie' authentication.");
+  } else {
+    vNotice("Authenticating using 'cookie' authentication.");
+  }
+  return _torControl->authenticate(cookie, safe);
 }
 
 bool

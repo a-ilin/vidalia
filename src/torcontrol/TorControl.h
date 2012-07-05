@@ -78,7 +78,7 @@ public:
   /** Check if we're connected to Tor's control socket */
   bool isConnected();
   /** Sends an authentication cookie to Tor. */
-  bool authenticate(const QByteArray cookie, QString *errmsg = 0);
+  bool authenticate(const QByteArray cookie, bool safe = true, QString *errmsg = 0);
   /** Sends an authentication password to Tor. */
   bool authenticate(const QString &password = QString(), QString *errmsg = 0);
   /** Returns true if the process has passed through auth successfully */
