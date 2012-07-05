@@ -47,6 +47,7 @@ QString string_wrap(const QString &str, int width,
  * returns the result. This function is derived from base16_encode() in Tor's
  * util.c. See LICENSE for details on Tor's license. */
 QString base16_encode(const QByteArray &buf);
+QString base16_decode(const QByteArray &buf);
 
 /** Given a string <b>str</b>, this function returns a quoted string with all
  * '"' and '\' characters escaped with a single '\'. */

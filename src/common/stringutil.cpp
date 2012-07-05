@@ -122,6 +122,53 @@ base16_encode(const QByteArray &buf)
   return hex;
 }
 
+/** Helper: given a hex digit, return its value, or -1 if it isn't hex. */
+inline int
+_hex_decode_digit(char c)
+{
+  switch (c) {
+    case '0': return 0;
+    case '1': return 1;
+    case '2': return 2;
+    case '3': return 3;
+    case '4': return 4;
+    case '5': return 5;
+    case '6': return 6;
+    case '7': return 7;
+    case '8': return 8;
+    case '9': return 9;
+    case 'A': case 'a': return 10;
+    case 'B': case 'b': return 11;
+    case 'C': case 'c': return 12;
+    case 'D': case 'd': return 13;
+    case 'E': case 'e': return 14;
+    case 'F': case 'f': return 15;
+    default:
+      return -1;
+  }
+}
+
+/** Given a hexadecimal string of <b>srclen</b> bytes in <b>src</b>, decode it
+ * and store the result in the <b>destlen</b>-byte buffer at <b>dest</b>.
+ * Return 0 on success, -1 on failure. */
+QString
+base16_decode(const QByteArray &buf)
+{
+  int v1,v2;
+  QString dest;
+
+  if ((buf.size() % 2) != 0)
+    return QString();
+  for(int i = 0; i < buf.size(); i+=2) {
+    v1 = _hex_decode_digit(buf[i]);
+    v2 = _hex_decode_digit(buf[i+1]);
+    if (v1<0||v2<0)
+      return QString();
+    dest.append((v1<<4)|v2);
+  }
+  return dest;
+}
+
 /** Given an ASCII string <b>str</b>, this function returns a quoted string
  * with all escaped characters unescaped. Non-ASCII characters in the string
  * will be converted to the local 8-bit character encoding and encoded using
