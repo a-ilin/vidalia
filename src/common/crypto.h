@@ -73,6 +73,13 @@ QString crypto_rand_string(int len);
  * return a default-constructed QByteArray. */
 QByteArray
 crypto_secret_to_key(const QString &secret, const QByteArray &salt, quint8 c);
+/** Compute the HMAC-SHA-256 of the <b>msg_len</b> bytes in <b>msg</b>, using
+ * the <b>key</b> of length <b>key_len</b>.  Store the DIGEST256_LEN-byte
+ * result in <b>hmac_out</b>.
+ */
+void
+crypto_hmac_sha256(char *hmac_out, const char *key, size_t key_len,
+                                   const char *msg, size_t msg_len);
 
 #endif
 

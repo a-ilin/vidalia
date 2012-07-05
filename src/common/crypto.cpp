@@ -187,3 +187,90 @@ crypto_secret_to_key(const QString &secret, const QByteArray &salt, quint8 c)
   return hash.result();
 }
 
+/**
+ * Read a 32-bit value beginning at <b>cp</b>.  Equivalent to
+ * *(uint32_t*)(cp), but will not cause segfaults on platforms that forbid
+ * unaligned memory access.
+ */
+uint32_t
+get_uint32(const void *cp)
+{
+  uint32_t v;
+  memcpy(&v,cp,4);
+  return v;
+}
+/**
+ * Set a 32-bit value beginning at <b>cp</b> to <b>v</b>. Equivalent to
+ * *(uint32_t*)(cp) = v, but will not cause segfaults on platforms that forbid
+ * unaligned memory access. */
+void
+set_uint32(void *cp, uint32_t v)
+{
+  memcpy(cp,&v,4);
+}
+
+#define STMT_BEGIN do {
+#define STMT_END } while(0)
+#define SHA256_CTX sha256_state
+#define SHA256_Init sha256_init
+#define SHA256_Update sha256_process
+#define LTC_ARGCHK(x) Q_ASSERT(x)
+#include "sha256.c"
+#define SHA256_Final(a,b) sha256_done(b,a)
+
+static unsigned char *
+SHA256(const unsigned char *m, size_t len, unsigned char *d)
+{
+  SHA256_CTX ctx;
+  SHA256_Init(&ctx);
+  SHA256_Update(&ctx, m, len);
+  SHA256_Final(d, &ctx);
+  return d;
+}
+
+/** Compute the HMAC-SHA-256 of the <b>msg_len</b> bytes in <b>msg</b>, using
+ * the <b>key</b> of length <b>key_len</b>.  Store the DIGEST256_LEN-byte
+ * result in <b>hmac_out</b>.
+ */
+void
+crypto_hmac_sha256(char *hmac_out,
+                   const char *key, size_t key_len,
+                   const char *msg, size_t msg_len)
+{
+#define BLOCKSIZE 64
+#define DIGESTSIZE 32
+  uint8_t k[BLOCKSIZE];
+  uint8_t pad[BLOCKSIZE];
+  uint8_t d[DIGESTSIZE];
+  int i;
+  SHA256_CTX st;
+
+  if (key_len <= BLOCKSIZE) {
+    memset(k, 0, sizeof(k));
+    memcpy(k, key, key_len); /* not time invariant in key_len */
+  } else {
+    SHA256((const uint8_t *)key, key_len, k);
+    memset(k+DIGESTSIZE, 0, sizeof(k)-DIGESTSIZE);
+  }
+  for (i = 0; i < BLOCKSIZE; ++i)
+    pad[i] = k[i] ^ 0x36;
+  SHA256_Init(&st);
+  SHA256_Update(&st, pad, BLOCKSIZE);
+  SHA256_Update(&st, (uint8_t*)msg, msg_len);
+  SHA256_Final(d, &st);
+
+  for (i = 0; i < BLOCKSIZE; ++i)
+    pad[i] = k[i] ^ 0x5c;
+  SHA256_Init(&st);
+  SHA256_Update(&st, pad, BLOCKSIZE);
+  SHA256_Update(&st, d, DIGESTSIZE);
+  SHA256_Final((uint8_t*)hmac_out, &st);
+
+  /* Now clear everything. */
+  memset(k, 0, sizeof(k));
+  memset(pad, 0, sizeof(pad));
+  memset(d, 0, sizeof(d));
+  memset(&st, 0, sizeof(st));
+#undef BLOCKSIZE
+#undef DIGESTSIZE
+}
