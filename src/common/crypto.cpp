@@ -61,6 +61,11 @@
 #include <wincrypt.h>
 #endif
 
+#if defined(Q_OS_LINUX)
+#include <stdint.h>
+#include <arpa/inet.h>
+#endif
+
 
 /** Returns up to <b>len</b> bytes of pseudorandom data on success, or an empty
  * QByteArray on failure. The caller should verify that the returned
