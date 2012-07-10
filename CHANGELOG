@@ -1,3 +1,52 @@
+0.3.3  09-Jul-12
+  New features:
+  o Added plugin prototype for Torrc class. This allows plugins to
+    modify the .torrc configuration file.
+  o Display node fingerprint in the details panel in the Network Map.
+    Resolves ticket 2726.
+  o Adds Settings frame for Network Map with optional columns for
+    Relay panel. Resolves ticket 2731.
+  o Set what version of Vidalia wrote the configuration file. Resolves
+    ticket 5123.
+  o Hide window with Ctrl+W shortcut. Resolves ticket 5495.
+  o Use SafeCookie authentication method if available instead of the
+    regular cookie authentication. Resolves ticket 5855.
+  o Display how much traffic runs through each stream in the Network
+    Map. Resolves ticket 6249.
+  o Provide a way of hand picking entry and exit nodes from the router
+    list in the Network Map.
+
+  Bugfixes relative to Vidalia 0.2.x:
+  o Automatically add a bridge if it is in the lineEdit but the user
+    haven't pressed the plus button. Fixes bug 5107.
+  o Display paths with their native separators. Resolves ticket 4337.
+  o Disable "Run Vidalia when my system starts" if the
+    BrowserExecutable config option is set. This will avoid issues with
+    TBB users starting Vidalia the wrong way.
+
+  Bugfixes relative to Vidalia 0.3.x:
+  o Don't write values that are default in torrc. Fixes bug 6178.
+  o Fix segmentation fault when trying to close an already closed
+    circuit in the Network Map. Fixes bug 6243.
+  o Show the "Why is my relay offline?" notification only if tor is
+    running one and it's marked as offline.
+
+  Internal cleanups and improvements:
+  o Fixed compile time warning when generating ui_AdvancedPage.h.
+    Fixes bug 5554.
+  o Enlarge countries' list and make CountryInfo.cpp,
+    country-coordinates.csv and geoip consistent.
+  o Improve Network Map router loading performance by disabling
+    sorting with every addition. Resolves ticket 6216.
+  o Created prototypemacros.h to store the preprocessor macros used by
+    TorControlPrototype
+  o Migrate from the hand made TorControl prototype for QtScript to an
+    automatically generated equivalent with qtscriptgenerator.
+  o Fix return value from VMessageBox::question.
+  o Make TorControl::getRouterDescriptorText() default to regular
+    descriptors in case the microdescriptor is not available.
+  o Improve handling of ControlPort and SocksPort settings.
+
 0.3.2   30-May-2012
   New features:
   o In the Network Map window, classify circuits based on their

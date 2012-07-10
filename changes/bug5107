@@ -1,3 +1,0 @@
-  Bugfixes relative to Vidalia 0.2.x:
-  o Automatically add a bridge if it is in the lineEdit but the user haven't
-    pressed the plus button. Fixes bug 5107.

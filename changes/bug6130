@@ -1,3 +1,0 @@
-  Internal cleanups and improvements:
-  o Enlarge countries' list and make CountryInfo.cpp,
-    country-coordinates.csv and geoip consistent.

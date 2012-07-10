@@ -1,12 +1,12 @@
 ##
 ##  $Id$
-## 
+##
 ##  This file is part of Vidalia, and is subject to the license terms in the
-##  LICENSE file, found in the top level directory of this distribution. If 
+##  LICENSE file, found in the top level directory of this distribution. If
 ##  you did not receive the LICENSE file with this file, you may obtain it
 ##  from the Vidalia source package distributed by the Vidalia Project at
-##  http://www.torproject.org/projects/vidalia.html. No part of Vidalia, 
-##  including this file, may be copied, modified, propagated, or distributed 
+##  http://www.torproject.org/projects/vidalia.html. No part of Vidalia,
+##  including this file, may be copied, modified, propagated, or distributed
 ##  except according to the terms described in the LICENSE file.
 ##
 
@@ -14,7 +14,7 @@
 set(VER_MAJOR   "0")
 set(VER_MINOR   "3")
 set(VER_PATCH   "3")
-set(VERSION     "${VER_MAJOR}.${VER_MINOR}.${VER_PATCH}-git")
+set(VERSION     "${VER_MAJOR}.${VER_MINOR}.${VER_PATCH}-alpha")
 message(STATUS  "Configuring Vidalia ${VERSION}")
 project(Vidalia)
 
@@ -58,7 +58,7 @@ if(MSVC_IDE)
     set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
     set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 endif(MSVC_IDE)
-  
+
 ## Define Vidalia-specific CMake options
 if (APPLE)
   option(OSX_TIGER_COMPAT "Build an OS X 10.4 Compatible Vidalia." OFF)
@@ -71,7 +71,7 @@ if (APPLE)
 
   option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
   if (OSX_FAT_BINARY)
-    set(CMAKE_OSX_ARCHITECTURES "ppc;i386" 
+    set(CMAKE_OSX_ARCHITECTURES "ppc;i386"
         CACHE STRING "OS X build architectures" FORCE)
     set(CMAKE_EXE_LINKER_FLAGS "-mmacosx-version-min=10.4"
         CACHE STRING "Flags used by the linker." FORCE)
@@ -82,7 +82,7 @@ if (APPLE)
   option(OSX_FORCE_32BIT "Force a 32-bit build for compatibility." OFF)
   if (OSX_FORCE_32BIT)
     add_definitions(-m32)
-    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -m32" 
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -m32"
         CACHE STRING "Flags used by the linker." FORCE)
   endif(OSX_FORCE_32BIT)
 endif(APPLE)

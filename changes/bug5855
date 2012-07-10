@@ -1,3 +1,0 @@
-  New features:
-  o Use SafeCookie authentication method if available instead of the regular
-    cookie authentication. Resolves ticket 5855.

@@ -1,3 +1,0 @@
-  Internal cleanups and improvements:
-  o Improve Network Map router loading performance by disabling sorting with
-    every addition. Resolves ticket 6216.

@@ -1,3 +1,0 @@
-  New features:
-  o Added plugin prototype for Torrc class. This allows plugins to
-    modify the .torrc configuration file.

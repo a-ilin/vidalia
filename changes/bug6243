@@ -1,3 +1,0 @@
-  Bugfixes relative to Vidalia 0.3.x:
-  o Fix segmentation fault when trying to close an already closed circuit in
-  the Network Map. Fixes bug 6243.
