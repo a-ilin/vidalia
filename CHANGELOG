@@ -1,4 +1,4 @@
-0.3.3  09-Jul-12
+0.3.3  10-Jul-12
   New features:
   o Added plugin prototype for Torrc class. This allows plugins to
     modify the .torrc configuration file.
