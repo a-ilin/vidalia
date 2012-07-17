@@ -22,6 +22,43 @@
 #define TIME_FORMAT  "yyyy-MM-dd HH:mm:ss"
 
 
+RouterStatus::RouterStatus()
+  : QObject()
+{}
+
+RouterStatus::RouterStatus(const RouterStatus &rs)
+{
+  _valid = rs._valid;
+  _name = rs._name;
+  _id = rs._id;
+  _digest = rs._digest;
+  _published = rs._published;
+  _ipAddress = rs._ipAddress;
+  _orPort = rs._orPort;
+  _dirPort = rs._dirPort;
+  _flags = rs._flags;
+  _bandwidth = rs._bandwidth;
+}
+
+RouterStatus::~RouterStatus() {}
+
+RouterStatus &
+RouterStatus::operator=(const RouterStatus &rs)
+{
+  _valid = rs._valid;
+  _name = rs._name;
+  _id = rs._id;
+  _digest = rs._digest;
+  _published = rs._published;
+  _ipAddress = rs._ipAddress;
+  _orPort = rs._orPort;
+  _dirPort = rs._dirPort;
+  _flags = rs._flags;
+  _bandwidth = rs._bandwidth;
+
+  return *this;
+}
+
 /** Constructor. Parses <b>status</b> for router status information. The given
  * string should match the router status entry format from Tor's dir-spec.txt.
  * The currently recognized lines are:
@@ -34,6 +71,7 @@
  *
  * */
 RouterStatus::RouterStatus(const QStringList &status)
+  : QObject()
 {
   bool ok;
 

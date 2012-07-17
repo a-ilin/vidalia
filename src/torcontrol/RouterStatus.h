@@ -22,7 +22,7 @@
 #include <QDateTime>
 
 
-class RouterStatus
+class RouterStatus : public QObject
 {
 public:
   /** Possible router status flags. */
@@ -45,7 +45,14 @@ public:
   Q_DECLARE_FLAGS(Flags, Flag)
 
   /** Constructor. */
+  RouterStatus();
+  RouterStatus(const RouterStatus &rs);
+  /** Constructor. */
   RouterStatus(const QStringList &status);
+  /** Destructor */
+  ~RouterStatus();
+
+  RouterStatus &operator=(const RouterStatus &other);
 
   /** Returns the router's hexadecimal-encoded router identity key digest. */
   QString id() const { return _id; }

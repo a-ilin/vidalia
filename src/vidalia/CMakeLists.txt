@@ -94,7 +94,29 @@ set(vidalia_SRCS ${vidalia_SRCS}
   plugin/prototypes/TorrcPrototype.cpp
   plugin/extensions/VidaliaExtensions.cpp
   plugin/extensions/VidaliaExtensionsInit.cpp
+  plugin/extensions/qtscript_BootstrapStatus.cpp
+  plugin/extensions/qtscript_Circuit.cpp
+  plugin/extensions/qtscript_ControlCommand.cpp
+  plugin/extensions/qtscript_ControlConnection.cpp
+  plugin/extensions/qtscript_ControlMethod.cpp
+  plugin/extensions/qtscript_ControlReply.cpp
+  plugin/extensions/qtscript_ControlSocket.cpp
+  plugin/extensions/qtscript_ReplyLine.cpp
+  plugin/extensions/qtscript_RouterDescriptor.cpp
+  plugin/extensions/qtscript_RouterStatus.cpp
+  plugin/extensions/qtscript_SendCommandEvent.cpp
+  plugin/extensions/qtscript_Stream.cpp
   plugin/extensions/qtscript_TorControl.cpp
+  plugin/extensions/qtscript_TorEvents.cpp
+  plugin/extensions/qtscript_TorProcess.cpp
+  plugin/extensions/qtscript_TorSignal.cpp
+  plugin/extensions/qtscriptshell_ControlConnection.cpp
+  plugin/extensions/qtscriptshell_ControlMethod.cpp
+  plugin/extensions/qtscriptshell_ControlSocket.cpp
+  plugin/extensions/qtscriptshell_TorControl.cpp
+  plugin/extensions/qtscriptshell_TorEvents.cpp
+  plugin/extensions/qtscriptshell_TorProcess.cpp
+  plugin/extensions/qtscriptshell_TorSignal.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   plugin/PluginEngine.h

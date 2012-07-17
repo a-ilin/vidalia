@@ -6,7 +6,12 @@
 #include <qmetaobject.h>
 
 #include <TorControl.h>
+#include <BootstrapStatus.h>
+#include <Circuit.h>
+#include <ControlCommand.h>
+#include <ControlReply.h>
 #include <QVariant>
+#include <Stream.h>
 #include <qbytearray.h>
 #include <qcoreevent.h>
 #include <qdatetime.h>
@@ -14,6 +19,8 @@
 #include <qlist.h>
 #include <qobject.h>
 #include <qstringlist.h>
+
+#include "qtscriptshell_TorControl.h"
 
 static const char * const qtscript_TorControl_function_names[] = {
     "TorControl"
@@ -45,6 +52,7 @@ static const char * const qtscript_TorControl_function_names[] = {
     , "loadConf"
     , "resetConf"
     , "saveConf"
+    , "setConf"
     , "setEvents"
     , "shouldContinue"
     , "start"
@@ -55,10 +63,10 @@ static const char * const qtscript_TorControl_function_names[] = {
 };
 
 static const char * const qtscript_TorControl_function_signatures[] = {
-    ""
+    "Method method"
     // static
     // prototype
-    , "QByteArray cookie, String errmsg\nString password, String errmsg"
+    , "QByteArray cookie, bool safe, String errmsg\nString password, String errmsg"
     , ""
     , ""
     , "QHostAddress address, unsigned short port\nString path"
@@ -84,6 +92,7 @@ static const char * const qtscript_TorControl_function_signatures[] = {
     , "String contents, String errmsg"
     , "String key, String errmsg\nList keys, String errmsg"
     , "String errmsg"
+    , "String key, String value, String errmsg, ControlReply reply\nString keyAndValue, String errmsg, ControlReply reply"
     , "String errmsg"
     , "String errmsg"
     , "String tor, List args"
@@ -94,10 +103,10 @@ static const char * const qtscript_TorControl_function_signatures[] = {
 };
 
 static const int qtscript_TorControl_function_lengths[] = {
-    0
+    1
     // static
     // prototype
-    , 2
+    , 3
     , 0
     , 0
     , 2
@@ -123,6 +132,7 @@ static const int qtscript_TorControl_function_lengths[] = {
     , 2
     , 2
     , 1
+    , 4
     , 1
     , 1
     , 2
@@ -144,6 +154,7 @@ static QScriptValue qtscript_TorControl_throw_ambiguity_error_helper(
 }
 
 Q_DECLARE_METATYPE(TorControl*)
+Q_DECLARE_METATYPE(QtScriptShell_TorControl*)
 Q_DECLARE_METATYPE(QString*)
 Q_DECLARE_METATYPE(QHostAddress)
 Q_DECLARE_METATYPE(int*)
@@ -173,6 +184,8 @@ struct QMetaTypeId< QHash<QString,QString> > \
     } \
 };
 Q_DECLARE_METATYPE(QList<unsigned short>)
+Q_DECLARE_METATYPE(ControlReply*)
+Q_DECLARE_METATYPE(ControlMethod::Method)
 
 //
 // TorControl
@@ -188,7 +201,7 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     if (context->callee().isFunction())
         _id = context->callee().data().toUInt32();
     else
-        _id = 0xBABE0000 + 32;
+        _id = 0xBABE0000 + 33;
 #endif
     Q_ASSERT((_id & 0xFFFF0000) == 0xBABE0000);
     _id &= 0x0000FFFF;
@@ -218,10 +231,10 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     }
     if (context->argumentCount() == 2) {
         if ((qMetaTypeId<QByteArray>() == context->argument(0).toVariant().userType())
-            && qscriptvalue_cast<QString*>(context->argument(1))) {
+            && context->argument(1).isBoolean()) {
             QByteArray _q_arg0 = qscriptvalue_cast<QByteArray>(context->argument(0));
-            QString* _q_arg1 = qscriptvalue_cast<QString*>(context->argument(1));
-            bool _q_result = _q_self->authenticate(_q_arg0, false, _q_arg1);
+            bool _q_arg1 = context->argument(1).toBoolean();
+            bool _q_result = _q_self->authenticate(_q_arg0, _q_arg1);
             return QScriptValue(context->engine(), _q_result);
         } else if (context->argument(0).isString()
             && qscriptvalue_cast<QString*>(context->argument(1))) {
@@ -230,6 +243,13 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
             bool _q_result = _q_self->authenticate(_q_arg0, _q_arg1);
             return QScriptValue(context->engine(), _q_result);
         }
+    }
+    if (context->argumentCount() == 3) {
+        QByteArray _q_arg0 = qscriptvalue_cast<QByteArray>(context->argument(0));
+        bool _q_arg1 = context->argument(1).toBoolean();
+        QString* _q_arg2 = qscriptvalue_cast<QString*>(context->argument(2));
+        bool _q_result = _q_self->authenticate(_q_arg0, _q_arg1, _q_arg2);
+        return QScriptValue(context->engine(), _q_result);
     }
     break;
 
@@ -575,6 +595,56 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     break;
 
     case 26:
+    if (context->argumentCount() == 1) {
+        QString _q_arg0 = context->argument(0).toString();
+        bool _q_result = _q_self->setConf(_q_arg0);
+        return QScriptValue(context->engine(), _q_result);
+    }
+    if (context->argumentCount() == 2) {
+        if (context->argument(0).isString()
+            && context->argument(1).isString()) {
+            QString _q_arg0 = context->argument(0).toString();
+            QString _q_arg1 = context->argument(1).toString();
+            bool _q_result = _q_self->setConf(_q_arg0, _q_arg1);
+            return QScriptValue(context->engine(), _q_result);
+        } else if (context->argument(0).isString()
+            && qscriptvalue_cast<QString*>(context->argument(1))) {
+            QString _q_arg0 = context->argument(0).toString();
+            QString* _q_arg1 = qscriptvalue_cast<QString*>(context->argument(1));
+            bool _q_result = _q_self->setConf(_q_arg0, _q_arg1);
+            return QScriptValue(context->engine(), _q_result);
+        }
+    }
+    if (context->argumentCount() == 3) {
+        if (context->argument(0).isString()
+            && context->argument(1).isString()
+            && qscriptvalue_cast<QString*>(context->argument(2))) {
+            QString _q_arg0 = context->argument(0).toString();
+            QString _q_arg1 = context->argument(1).toString();
+            QString* _q_arg2 = qscriptvalue_cast<QString*>(context->argument(2));
+            bool _q_result = _q_self->setConf(_q_arg0, _q_arg1, _q_arg2);
+            return QScriptValue(context->engine(), _q_result);
+        } else if (context->argument(0).isString()
+            && qscriptvalue_cast<QString*>(context->argument(1))
+            && qscriptvalue_cast<ControlReply*>(context->argument(2))) {
+            QString _q_arg0 = context->argument(0).toString();
+            QString* _q_arg1 = qscriptvalue_cast<QString*>(context->argument(1));
+            ControlReply* _q_arg2 = qscriptvalue_cast<ControlReply*>(context->argument(2));
+            bool _q_result = _q_self->setConf(_q_arg0, _q_arg1, _q_arg2);
+            return QScriptValue(context->engine(), _q_result);
+        }
+    }
+    if (context->argumentCount() == 4) {
+        QString _q_arg0 = context->argument(0).toString();
+        QString _q_arg1 = context->argument(1).toString();
+        QString* _q_arg2 = qscriptvalue_cast<QString*>(context->argument(2));
+        ControlReply* _q_arg3 = qscriptvalue_cast<ControlReply*>(context->argument(3));
+        bool _q_result = _q_self->setConf(_q_arg0, _q_arg1, _q_arg2, _q_arg3);
+        return QScriptValue(context->engine(), _q_result);
+    }
+    break;
+
+    case 27:
     if (context->argumentCount() == 0) {
         bool _q_result = _q_self->setEvents();
         return QScriptValue(context->engine(), _q_result);
@@ -586,7 +656,7 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     }
     break;
 
-    case 27:
+    case 28:
     if (context->argumentCount() == 0) {
         bool _q_result = _q_self->shouldContinue();
         return QScriptValue(context->engine(), _q_result);
@@ -598,7 +668,7 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     }
     break;
 
-    case 28:
+    case 29:
     if (context->argumentCount() == 2) {
         QString _q_arg0 = context->argument(0).toString();
         QStringList _q_arg1;
@@ -608,7 +678,7 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     }
     break;
 
-    case 29:
+    case 30:
     if (context->argumentCount() == 0) {
         bool _q_result = _q_self->stop();
         return QScriptValue(context->engine(), _q_result);
@@ -620,7 +690,7 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     }
     break;
 
-    case 30:
+    case 31:
     if (context->argumentCount() == 1) {
         QString* _q_arg0 = qscriptvalue_cast<QString*>(context->argument(0));
         bool _q_result = _q_self->takeOwnership(_q_arg0);
@@ -628,7 +698,7 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     }
     break;
 
-    case 31:
+    case 32:
     if (context->argumentCount() == 0) {
         bool _q_result = _q_self->useMicrodescriptors();
         return QScriptValue(context->engine(), _q_result);
@@ -640,7 +710,7 @@ static QScriptValue qtscript_TorControl_prototype_call(QScriptContext *context, 
     }
     break;
 
-    case 32: {
+    case 33: {
     QString result = QString::fromLatin1("TorControl");
     return QScriptValue(context->engine(), result);
     }
@@ -660,8 +730,21 @@ static QScriptValue qtscript_TorControl_static_call(QScriptContext *context, QSc
     _id &= 0x0000FFFF;
     switch (_id) {
     case 0:
-    return context->throwError(QScriptContext::TypeError,
-        QString::fromLatin1("TorControl cannot be constructed"));
+    if (context->thisObject().strictlyEquals(context->engine()->globalObject())) {
+        return context->throwError(QString::fromLatin1("TorControl(): Did you forget to construct with 'new'?"));
+    }
+    if (context->argumentCount() == 0) {
+        QtScriptShell_TorControl* _q_cpp_result = new QtScriptShell_TorControl();
+        QScriptValue _q_result = context->engine()->newQObject(context->thisObject(), (TorControl*)_q_cpp_result, QScriptEngine::AutoOwnership);
+        _q_cpp_result->__qtscript_self = _q_result;
+        return _q_result;
+    } else if (context->argumentCount() == 1) {
+        ControlMethod::Method _q_arg0 = qscriptvalue_cast<ControlMethod::Method>(context->argument(0));
+        QtScriptShell_TorControl* _q_cpp_result = new QtScriptShell_TorControl(_q_arg0);
+        QScriptValue _q_result = context->engine()->newQObject(context->thisObject(), (TorControl*)_q_cpp_result, QScriptEngine::AutoOwnership);
+        _q_cpp_result->__qtscript_self = _q_result;
+        return _q_result;
+    }
     break;
 
     default:
@@ -687,14 +770,14 @@ QScriptValue qtscript_create_TorControl_class(QScriptEngine *engine)
     engine->setDefaultPrototype(qMetaTypeId<TorControl*>(), QScriptValue());
     QScriptValue proto = engine->newVariant(qVariantFromValue((TorControl*)0));
     proto.setPrototype(engine->defaultPrototype(qMetaTypeId<QObject*>()));
-    for (int i = 0; i < 33; ++i) {
+    for (int i = 0; i < 34; ++i) {
         QScriptValue fun = engine->newFunction(qtscript_TorControl_prototype_call, qtscript_TorControl_function_lengths[i+1]);
         fun.setData(QScriptValue(engine, uint(0xBABE0000 + i)));
         proto.setProperty(QString::fromLatin1(qtscript_TorControl_function_names[i+1]),
             fun, QScriptValue::SkipInEnumeration);
     }
 
-    qScriptRegisterMetaType<TorControl*>(engine, qtscript_TorControl_toScriptValue,
+    qScriptRegisterMetaType<TorControl*>(engine, qtscript_TorControl_toScriptValue, 
         qtscript_TorControl_fromScriptValue, proto);
 
     QScriptValue ctor = engine->newFunction(qtscript_TorControl_static_call, proto, qtscript_TorControl_function_lengths[0]);
