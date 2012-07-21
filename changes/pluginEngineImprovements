@@ -3,3 +3,4 @@
     derived object and an automatically generated extension.
   o Provide a way to add icons to a plugin's menu item.
   o Output plugins engine debug messages to the terminal.
+  o Add TorControl's setEvent method to its qtscript extension.
