@@ -2,3 +2,4 @@
   o VidaliaTab prototype for plugins has been migrated to a full QWidget
     derived object and an automatically generated extension.
   o Provide a way to add icons to a plugin's menu item.
+  o Output plugins engine debug messages to the terminal.

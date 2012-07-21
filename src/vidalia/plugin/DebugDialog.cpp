@@ -15,6 +15,7 @@
 */
 
 #include "DebugDialog.h"
+#include "Vidalia.h"
 
 QStringList DebugDialog::outputBuffer;
 QStringList DebugDialog::syntaxBuffer;
@@ -46,18 +47,21 @@ void
 DebugDialog::outputDebug(const QString &msg)
 {
   outputBuffer << msg;
+  vDebug("[PluginEngine - debug] %1").arg(msg);
 }
 
 void
 DebugDialog::syntaxDebug(const QString &msg)
 {
   syntaxBuffer << msg;
+  vDebug("[PluginEngine - syntax error] %1").arg(msg);
 }
 
 void
 DebugDialog::exceptDebug(const QString &msg)
 {
   exceptBuffer << msg;
+  vDebug("[PluginEngine - exception] %1").arg(msg);
 }
 
 void
