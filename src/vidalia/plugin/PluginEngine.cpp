@@ -43,7 +43,6 @@ PluginEngine::PluginEngine(QObject *parent)
   globalObject().setProperty("torrc", newQObject(Vidalia::torrc()));
   globalObject().setProperty("vidaliaApp", newQObject(vApp));
 
-//  globalObject().setProperty("include", newFunction(includeScript));
   globalObject().setProperty("importExtension", newFunction(importExtension));
   globalObject().setProperty("vdebug", newFunction(vdebug));
   globalObject().setProperty("findWidget", newFunction(findWidget));
@@ -139,55 +138,6 @@ PluginEngine::importExtension(QScriptContext *context, QScriptEngine *engine)
 {
     return engine->importExtension(context->argument(0).toString());
 }
-
-//QScriptValue
-//PluginEngine::includeScript(QScriptContext *context, QScriptEngine *engine)
-//{
-//  VidaliaSettings settings;
-//  QString path = settings.pluginPath();
-//  QString importFile = context->argument(0).toString();
-//  QFileInfo importInfo(importFile);
-//  if (importInfo.isRelative()) {
-//      importFile =  path + "/" + importInfo.filePath();
-//  }
-
-//  if (!loadFile(importFile, engine)) {
-//      return context->throwError(QString("Failed to resolve include: %1").arg(importFile));
-//  }
-//  return engine->toScriptValue(true);
-//}
-
-//bool
-//PluginEngine::loadFile(QString fileName, QScriptEngine *engine)
-//{
-//    static QSet<QString> loadedFiles;
-//    QFileInfo fileInfo(fileName);
-//    QString absoluteFileName = fileInfo.absoluteFilePath();
-//    QString absolutePath = fileInfo.absolutePath();
-//    QString canonicalFileName = fileInfo.canonicalFilePath();
-//    if (loadedFiles.contains(canonicalFileName)) {
-//        return true;
-//    }
-//    loadedFiles.insert(canonicalFileName);
-//    QString path = fileInfo.path();
-
-//    QFile file(fileName);
-//    if (file.open(QFile::ReadOnly)) {
-//        QTextStream stream(&file);
-//        QString contents = stream.readAll();
-//        file.close();
-
-//        QScriptValue r = engine->evaluate(contents);
-//        if (engine->hasUncaughtException()) {
-//            QStringList backtrace = engine->uncaughtExceptionBacktrace();
-//            qDebug() << QString("    %1\n%2\n\n").arg(r.toString()).arg(backtrace.join("\n"));
-//            return true;
-//        }
-//    } else {
-//        return false;
-//    }
-//    return true;
-//}
 
 QScriptValue
 PluginEngine::vdebug(QScriptContext *context, QScriptEngine *engine)

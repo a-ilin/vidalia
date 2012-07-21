@@ -48,8 +48,6 @@ class PluginEngine : public QScriptEngine {
 
   protected:
     static QScriptValue importExtension(QScriptContext *context, QScriptEngine *engine);
-//    static bool loadFile(QString fileName, QScriptEngine *engine);
-//    static QScriptValue includeScript(QScriptContext *context, QScriptEngine *engine);
     static QScriptValue vdebug(QScriptContext *context, QScriptEngine *engine);
     static QScriptValue findWidget(QScriptContext *context, QScriptEngine *engine);
     static QScriptValue sleep(QScriptContext *context, QScriptEngine *engine);
