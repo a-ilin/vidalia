@@ -59,6 +59,9 @@
 #define IMG_ABOUT          ":/images/16x16/help-about.png"
 #define IMG_EXIT           ":/images/16x16/application-exit.png"
 #define IMG_NETWORK        ":/images/16x16/applications-internet.png"
+#define IMG_RELOAD         ":/images/32x32/reload.png"
+#define IMG_HIDE           ":/images/32x32/hide.png"
+#define IMG_DEBUG          ":/images/32x32/debug.png"
 
 #define IMG_START_TOR_16     ":/images/16x16/media-playback-start.png"
 #define IMG_STOP_TOR_16      ":/images/16x16/media-playback-stop.png"
@@ -203,8 +206,8 @@ void
 MainWindow::createActions()
 {
   _actionShowControlPanel = new QAction(QIcon(IMG_CONTROL_PANEL), tr("Control Panel"), this);
-  _actionRestartTor = new QAction(tr("Restart"), this);
-  _actionReloadConfig = new QAction(tr("Reload Tor's config"), this);
+  _actionRestartTor = new QAction(QIcon(IMG_RELOAD), tr("Restart"), this);
+  _actionReloadConfig = new QAction(QIcon(IMG_RELOAD), tr("Reload Tor's config"), this);
   _actionNewIdentity = new QAction(QIcon(IMG_IDENTITY), tr("New Circuit"), this);
   _actionStatus = new QAction(QIcon(IMG_CONTROL_PANEL), tr("Status"), this);
   _actionNetworkMap = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
@@ -215,9 +218,9 @@ MainWindow::createActions()
   _actionAbout = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
   _actionStartStopTor = new QAction(QIcon(IMG_START_TOR_16), tr("Start Tor"), this);
   _actionExit = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
-  _actionDebugDialog = new QAction(tr("Debug output"), this);
+  _actionDebugDialog = new QAction(QIcon(IMG_DEBUG), tr("Debug output"), this);
   _actionPanic = new QAction(QIcon(IMG_EXIT), tr("Panic!"), this);
-  _actionHide = new QAction(tr("Hide"), this);
+  _actionHide = new QAction(QIcon(IMG_HIDE), tr("Hide"), this);
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
     _actionHide->setShortcut(QKeySequence(tr("Ctrl+W")));
   }
@@ -2058,14 +2061,6 @@ MainWindow::delTab(int index)
     index = ui.tabWidget->currentIndex();
 
   VidaliaTab *tab = qobject_cast<VidaliaTab*>(ui.tabWidget->widget(index));
-  // if it isn't one of the tabs that's supposed to be open at every moment
-  if (tab != _messageLog &&
-      tab != &_statusTab &&
-      tab != &_netViewer &&
-      tab != _graph) {
-    QObject::disconnect(ui.tabWidget->widget(index), 0, 0, 0);
-    tab->deleteLater();
-  }
   ui.tabWidget->removeTab(index);
   QString key = _tabMap.at(index);
   _tabMap.removeAll(key);

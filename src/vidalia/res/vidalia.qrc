@@ -97,6 +97,9 @@
     <file>32x32/zoom-fit-best.png</file>
     <file>32x32/zoom-in.png</file>
     <file>32x32/zoom-out.png</file>
+    <file>32x32/hide.png</file>
+    <file>32x32/reload.png</file>
+    <file>32x32/debug.png</file>
   </qresource>
   <qresource prefix="/images">
     <file>48x48/applications-internet.png</file>

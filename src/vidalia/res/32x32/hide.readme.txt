@@ -1,0 +1,7 @@
+hide.png icon is a part of Picol icon pack
+
+Author: Melih Bilgil
+Web: http://www.picol.org/
+
+Distributed under CC Attribution Non-Commercial Share Alike
+(http://creativecommons.org/licenses/by-nc-sa/3.0/)
