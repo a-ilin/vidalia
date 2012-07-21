@@ -195,7 +195,6 @@ MainWindow::createGUI()
   // We need to create this tab at the beggining
   // and we must specify the statusBar
   _messageLog = new MessageLog(this->statusBar());
-  _graph = new BandwidthGraph(this->statusBar());
 
   addTab(&_statusTab);
   ui.tabWidget->pinTab(0);
@@ -212,7 +211,6 @@ MainWindow::createActions()
   _actionStatus = new QAction(QIcon(IMG_CONTROL_PANEL), tr("Status"), this);
   _actionNetworkMap = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
   _actionMessageLog= new QAction(QIcon(IMG_MESSAGELOG), tr("Message Log"), this);
-  _actionBandwidthGraph = new QAction(QIcon(IMG_BWGRAPH), tr("Bandwidth Graph"), this);
   _actionConfigure = new QAction(QIcon(IMG_CONFIG), tr("Settings"), this);
   _actionVidaliaHelp = new QAction(QIcon(IMG_HELP), tr("Help"), this);
   _actionAbout = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
@@ -252,7 +250,6 @@ MainWindow::createMenuBar()
   viewMenu->addAction(_actionStatus);
   viewMenu->addAction(_actionNetworkMap);
   viewMenu->addAction(_actionMessageLog);
-  viewMenu->addAction(_actionBandwidthGraph);
   viewMenu->addSeparator();
   viewMenu->addAction(_actionConfigure);
 
@@ -298,7 +295,6 @@ MainWindow::createTrayMenu()
   QMenu *menu = new QMenu(this);
   menu->addAction(_actionStartStopTor);
   menu->addSeparator();
-  menu->addAction(_actionBandwidthGraph);
   menu->addAction(_actionMessageLog);
   menu->addAction(_actionNetworkMap);
   menu->addAction(_actionNewIdentity);
@@ -414,7 +410,6 @@ MainWindow::retranslateUi()
     _actionStartStopTor->setText(tr("Stop Tor"));
   }
 
-  _actionBandwidthGraph->setText(tr("Bandwidth Graph"));
   _actionMessageLog->setText(tr("Message Log"));
   _actionNetworkMap->setText(tr("Network Map"));
   _actionStatus->setText(tr("Status"));
@@ -444,7 +439,6 @@ MainWindow::createConnections()
 
   connect(_actionMessageLog, SIGNAL(triggered()), this, SLOT(showMessageLogTab()));
   connect(_actionConfigure, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
-  connect(_actionBandwidthGraph, SIGNAL(triggered()), this, SLOT(showBandwidthTab()));
   connect(_actionAbout, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
   connect(_actionVidaliaHelp, SIGNAL(triggered()), this, SLOT(showHelpDialog()));
   connect(_actionStatus, SIGNAL(triggered()), this, SLOT(showStatusTab()));
@@ -2016,13 +2010,6 @@ MainWindow::addTab(VidaliaTab *tab)
      * don't do anything */
     if(tab == ui.tabWidget->widget(_tabMap.indexOf(tab->getTitle())))
       return;
-
-    /** Exception for tabs that need to be always created */
-    if (tab != _messageLog &&
-        tab != &_statusTab &&
-        tab != &_netViewer &&
-        tab != _graph)
-      tab->deleteLater();
     return;
   }
 
@@ -2076,12 +2063,6 @@ void
 MainWindow::showMessageLogTab()
 {
   addTab(_messageLog);
-}
-
-void
-MainWindow::showBandwidthTab()
-{
-  addTab(_graph);
 }
 
 /** Creates and displays Vidalia's About dialog. */

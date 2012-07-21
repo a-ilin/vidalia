@@ -24,7 +24,6 @@
 #include "ConfigDialog.h"
 #include "MessageLog.h"
 #include "NetViewer.h"
-#include "BandwidthGraph.h"
 #include "HelperProcess.h"
 #if defined(USE_AUTOUPDATE)
 #include "UpdateProcess.h"
@@ -137,8 +136,6 @@ private slots:
   void showMessageLogTab();
   /** Displays the General Tor Status tab */
   void showStatusTab();
-  /** Displays the Bandwidth graph tab */
-  void showBandwidthTab();
   /** Displays the Network map tab */
   void showNetViewerTab();
   /** Creates and displays Vidalia's About dialog. */
@@ -300,7 +297,6 @@ private:
   QAction *_actionStatus;
   QAction *_actionNetworkMap;
   QAction *_actionMessageLog;
-  QAction *_actionBandwidthGraph;
   QAction *_actionConfigure;
   QAction *_actionVidaliaHelp;
   QAction *_actionAbout;
@@ -317,7 +313,6 @@ private:
   StatusTab _statusTab; /**< Status tab that displays the load progress and a short log */
   MessageLog *_messageLog; /**< Message log that displays a more detailed log from Tor */
   NetViewer _netViewer; /**< Network map that draws circuits */
-  BandwidthGraph *_graph; /**< Graph that draws bandwidth usage */
 
   PluginEngine *_engine;
   QStringList _tabMap; /**< Map to handle opened tabs */

@@ -1,0 +1,2 @@
+  Internal cleanups and improvements:
+  o Remove bandwidth graph since it is now a plugin.

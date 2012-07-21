@@ -15,7 +15,6 @@ include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/about
-  ${CMAKE_CURRENT_SOURCE_DIR}/bwgraph
   ${CMAKE_CURRENT_SOURCE_DIR}/config
   ${CMAKE_CURRENT_SOURCE_DIR}/config/torrc
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
@@ -75,15 +74,6 @@ qt4_wrap_cpp(vidalia_SRCS
   about/LicenseDialog.h
 )
 
-## Bandwidth graph sources
-set(vidalia_SRCS ${vidalia_SRCS}
-  bwgraph/BandwidthGraph.cpp
-  bwgraph/GraphFrame.cpp
-)
-qt4_wrap_cpp(vidalia_SRCS
-  bwgraph/BandwidthGraph.h
-  bwgraph/GraphFrame.h
-)
 ## Plugin framework sources
 set(vidalia_SRCS ${vidalia_SRCS}
   plugin/PluginEngine.cpp
@@ -232,7 +222,6 @@ qt4_wrap_ui(vidalia_SRCS
   MainWindow.ui
   about/AboutDialog.ui
   about/LicenseDialog.ui
-  bwgraph/BandwidthGraph.ui
   config/AdvancedPage.ui
   config/AppearancePage.ui
   config/BridgeUsageDialog.ui
