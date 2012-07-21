@@ -1,7 +1,7 @@
 #include <QtScript/QScriptValue>
 #include <QtScript/QScriptEngine>
 
-const int classCount = 16;
+const int classCount = 17;
 
 QScriptValue qtscript_create_TorControl_class(QScriptEngine *engine);
 QScriptValue qtscript_create_Circuit_class(QScriptEngine *engine);
@@ -19,6 +19,7 @@ QScriptValue qtscript_create_TorEvents_class(QScriptEngine *engine);
 QScriptValue qtscript_create_ControlSocket_class(QScriptEngine *engine);
 QScriptValue qtscript_create_SendCommandEvent_class(QScriptEngine *engine);
 QScriptValue qtscript_create_TorProcess_class(QScriptEngine *engine);
+QScriptValue qtscript_create_VidaliaTab_class(QScriptEngine *engine);
 
 static const char * const vidalia_class_names[] = {
     "Circuit"
@@ -37,6 +38,7 @@ static const char * const vidalia_class_names[] = {
     , "ControlSocket"
     , "SendCommandEvent"
     , "TorProcess"
+    , "VidaliaTab"
 };
 
 typedef QScriptValue (*QtBindingCreator)(QScriptEngine *engine);
@@ -57,6 +59,7 @@ static const QtBindingCreator vidalia_class_functions[] = {
     , qtscript_create_ControlSocket_class
     , qtscript_create_SendCommandEvent_class
     , qtscript_create_TorProcess_class
+    , qtscript_create_VidaliaTab_class
 };
 
 void vidalia_initialize_bindings(QScriptValue &extensionObject)
@@ -64,7 +67,6 @@ void vidalia_initialize_bindings(QScriptValue &extensionObject)
     QScriptEngine *engine = extensionObject.engine();
     for (int i = 0; i < classCount; ++i) {
         extensionObject.setProperty(vidalia_class_names[i],
-            vidalia_class_functions[i](engine),
-            QScriptValue::SkipInEnumeration);
+            vidalia_class_functions[i](engine));
     }
 }

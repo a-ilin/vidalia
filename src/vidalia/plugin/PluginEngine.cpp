@@ -26,11 +26,15 @@
 PluginEngine::PluginEngine(QObject *parent)
   : QScriptEngine(parent)
 {
+  foreach(QString extension, availableExtensions()) {
+    vDebug(tr("Loading %1...").arg(extension));
+    QScriptEngine::importExtension(extension);
+  }
+
   VidaliaExtensions ve;
   ve.initialize("vidalia", this);
+  QScriptEngine::importExtension("vidalia");
 
-  ADD_PROTOTYPE(VidaliaTabPrototype)
-  MAKE_CREATABLE(VidaliaTabPrototype)
   ADD_PROTOTYPE(HelperProcessPrototype)
   MAKE_CREATABLE(HelperProcessPrototype)
   ADD_PROTOTYPE(TorrcPrototype)

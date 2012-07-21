@@ -89,7 +89,6 @@ set(vidalia_SRCS ${vidalia_SRCS}
   plugin/PluginEngine.cpp
   plugin/PluginWrapper.cpp
   plugin/DebugDialog.cpp
-  plugin/prototypes/VidaliaTabPrototype.cpp
   plugin/prototypes/HelperProcessPrototype.cpp
   plugin/prototypes/TorrcPrototype.cpp
   plugin/extensions/VidaliaExtensions.cpp
@@ -110,6 +109,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   plugin/extensions/qtscript_TorEvents.cpp
   plugin/extensions/qtscript_TorProcess.cpp
   plugin/extensions/qtscript_TorSignal.cpp
+  plugin/extensions/qtscript_VidaliaTab.cpp
   plugin/extensions/qtscriptshell_ControlConnection.cpp
   plugin/extensions/qtscriptshell_ControlMethod.cpp
   plugin/extensions/qtscriptshell_ControlSocket.cpp
@@ -117,12 +117,12 @@ set(vidalia_SRCS ${vidalia_SRCS}
   plugin/extensions/qtscriptshell_TorEvents.cpp
   plugin/extensions/qtscriptshell_TorProcess.cpp
   plugin/extensions/qtscriptshell_TorSignal.cpp
+  plugin/extensions/qtscriptshell_VidaliaTab.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   plugin/PluginEngine.h
   plugin/PluginWrapper.h
   plugin/DebugDialog.h
-  plugin/prototypes/VidaliaTabPrototype.h
   plugin/prototypes/HelperProcessPrototype.h
   plugin/prototypes/TorrcPrototype.h
 )

@@ -26,9 +26,10 @@ class VidaliaTab : public QWidget
 
 public:
   /** Default constructor. */
+  VidaliaTab(QWidget *parent = 0) : QWidget(parent) {}
   VidaliaTab(const QString &title, const QString &name = "General", QWidget *parent = 0);
   /** Destructor. */
-  ~VidaliaTab();
+  virtual ~VidaliaTab();
 
   /** Returns the tab's title */
   QString getTitle() const { return _title; }
@@ -69,6 +70,8 @@ private:
   QString _title; /**< Title displayed in the tab */
   VSettings* _settings; /**< Object used to store window properties */
 };
+
+Q_DECLARE_METATYPE(VidaliaTab*)
 
 #endif
 

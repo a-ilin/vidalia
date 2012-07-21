@@ -19,9 +19,9 @@
 #include <QtGui>
 #include <QtScript>
 
-#include "VidaliaTabPrototype.h"
 #include "HelperProcessPrototype.h"
 #include "TorrcPrototype.h"
+#include "VidaliaTab.h"
 
 class PluginWrapper;
 
