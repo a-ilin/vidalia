@@ -107,6 +107,10 @@ PluginWrapper::processInfo(const QString &path)
         }
       } else if(e.tagName() == "namespace") {
         _nspace = e.text();
+      } else if(e.tagName() == "icon") {
+        _icon = e.text();
+        if(not _icon.startsWith(":"))
+          _icon = QFileInfo(path).absoluteDir().canonicalPath() + "/" + _icon;
       }
     }
     n = n.nextSibling();
@@ -215,10 +219,19 @@ PluginWrapper::files() const
   return _files;
 }
 
+QString
+PluginWrapper::icon() const
+{
+  return _icon;
+}
+
 QAction *
 PluginWrapper::menuAction()
 {
-  _action = new QAction(_name, this);
+  if (not _icon.isEmpty())
+    _action = new QAction(QIcon(_icon), _name, this);
+  else
+    _action = new QAction(_name, this);
 
   if(hasGUI()) {
     connect(_action, SIGNAL(triggered()), this, SLOT(emitPluginTab()));

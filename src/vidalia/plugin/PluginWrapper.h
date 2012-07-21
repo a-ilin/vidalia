@@ -36,6 +36,7 @@ class PluginWrapper : public QObject {
     QString date() const;
     QString author() const;
     QString nspace() const;
+    QString icon() const;
     QStringList files() const;
 
     QAction *menuAction();
@@ -60,6 +61,7 @@ class PluginWrapper : public QObject {
     bool _persistent, _gui;
     QStringList _files;
     QString _nspace;
+    QString _icon;
 
     QAction *_action;
 };
