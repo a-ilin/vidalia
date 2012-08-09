@@ -115,7 +115,22 @@ TorSettings::apply(QString *errmsg)
   if(volatileValue(SETTING_AUTOCONTROL).toBool()) {
     torrc->setValue(SETTING_CONTROL_PORT, "auto");
     torrc->setValue(SETTING_SOCKS_PORT, "auto");
-    torrc->setValue(TOR_ARG_CONTROLFILE, QString("%1/port.conf").arg(getDataDirectory()));
+
+    QString dataDirectory = getDataDirectory();
+    if(QDir(dataDirectory).isRelative())
+      dataDirectory = QCoreApplication::applicationDirPath() + "/" + dataDirectory;
+
+    QString relativePortConf = QDir(QDir::currentPath())
+      .relativeFilePath(QString("%1/port.conf").arg(dataDirectory));
+
+#if defined(Q_WS_WIN)
+    QString torPath = getExecutable();
+    if(QDir(torPath).isRelative())
+      torPath = QCoreApplication::applicationDirPath() + "/" + torPath;
+    relativePortConf = QDir(torPath).relativeFilePath(QString("%1/port.conf").arg(dataDirectory));
+#endif
+
+    torrc->setValue(TOR_ARG_CONTROLFILE, relativePortConf);
   } else {
     QString socks = volatileValue(SETTING_SOCKS_PORT).toString();
     QString control = volatileValue(SETTING_CONTROL_PORT).toString();
