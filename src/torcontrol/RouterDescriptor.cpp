@@ -107,9 +107,10 @@ RouterDescriptor::appendRouterStatusInfo(const RouterStatus &rs)
   _ip = rs.ipAddress();
   _orPort = rs.orPort();
   _dirPort = rs.dirPort();
-  _avgBandwidth = rs.bandwidth();
-  _burstBandwidth = rs.bandwidth();
-  _observedBandwidth = rs.bandwidth();
+  _avgBandwidth = rs.bandwidth() * 1024;
+  _burstBandwidth = rs.bandwidth() * 1024;
+  _observedBandwidth = rs.bandwidth() * 1024;
+  _published = rs.published();
 }
 
 RouterDescriptor *

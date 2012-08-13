@@ -1,0 +1,2 @@
+  o Fix RouterDescriptor's bandwidth and uptime values when defined from the
+    consensus. Fixes bug 6601.
