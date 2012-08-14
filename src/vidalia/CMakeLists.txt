@@ -143,6 +143,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/VSettings.cpp
   config/torrc/TorrcParser.cpp
   config/torrc/Torrc.cpp
+  config/TransportSettings.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   config/AbstractTorSettings.h
@@ -166,6 +167,7 @@ qt4_wrap_cpp(vidalia_SRCS
   config/VidaliaSettings.h
   config/VSettings.h
   config/torrc/Torrc.h
+  config/TransportSettings.h
 )
 if (USE_MINIUPNPC)
   include_directories(${MINIUPNPC_INCLUDE_DIR})

@@ -23,6 +23,7 @@
 #include "DomainValidator.h"
 #include "NicknameValidator.h"
 #include "BridgeUsageDialog.h"
+#include "TransportSettings.h"
 
 #include "html.h"
 #include "stringutil.h"
@@ -243,6 +244,27 @@ ServerPage::serverModeChanged(bool enabled)
   ui.lblBridgeUsage->setVisible(bridgeEnabled
                                   && Vidalia::torControl()->isConnected());
 
+  TransportSettings transports;
+  ui.transportsFrame->setVisible(enabled && bridgeEnabled && transports.getTransports().size() > 0);
+
+  if (ui.transportsFrame->isVisible()) {
+    QStringList transportList = transports.getTransports();
+    foreach(QString transport, transportList) {
+      QCheckBox *chkTransport = new QCheckBox(transport);
+      ui.transportsFrame->layout()->addWidget(chkTransport);
+      _transportChecks.insert(transport, chkTransport);
+    }
+    loadTransports();
+  } else {
+    while(ui.transportsFrame->layout()->count() > 2) {
+      ui.transportsFrame->layout()->takeAt(ui.transportsFrame->layout()->count() - 1);
+    }
+    foreach(QCheckBox *chk, _transportChecks) {
+      chk->deleteLater();
+    }
+    _transportChecks.clear();
+  }
+
   if(bridgeEnabled) {
     if(ui.lineDirPort->text().length() != 0) {
       _tmpDirPort = ui.lineDirPort->text();
@@ -362,6 +384,8 @@ ServerPage::save(QString &errmsg)
 #if defined(USE_MINIUPNPC)
   _settings->setUpnpEnabled(ui.chkEnableUpnp->isChecked());
 #endif
+
+  saveTransports();
 
   return true;
 }
@@ -756,3 +780,47 @@ ServerPage::toggleDisplayDay(const QString &str)
   else
     ui.spnDay->setMaximum(7);
 }
+
+void
+ServerPage::loadTransports()
+{
+  disconnect(ui.chkEnableTransports, 0, 0, 0);
+  connect(ui.chkEnableTransports, SIGNAL(stateChanged(int)), this, SLOT(toggleTransports(int)));
+  QStringList stps = Vidalia::torrc()->value("ServerTransportPlugin");
+  ui.chkEnableTransports->setCheckState(stps.size() > 0 ? Qt::Checked : Qt::Unchecked);
+  toggleTransports(stps.size() > 0 ? Qt::Checked : Qt::Unchecked);
+  foreach (QString stp, stps) {
+    QString transport = stp.split(" ").at(0);
+    if (_transportChecks.count(transport) > 0) {
+      _transportChecks[transport]->setChecked(true);
+    } else {
+      vWarn("Unsupported transport: %1").arg(transport);
+    }
+  }
+}
+
+void
+ServerPage::saveTransports()
+{
+  bool bridgeEnabled = ui.rdoBridgeMode->isChecked();
+  TransportSettings transports;
+
+  if (bridgeEnabled) {
+    Vidalia::torrc()->clear(QStringList() << "ServerTransportPlugin");
+    foreach(QString key, _transportChecks.keys()) {
+      if (_transportChecks[key]->isChecked()) {
+        Vidalia::torrc()->setValue("ServerTransportPlugin", QString("%1 %2").arg(key).arg(transports.getSTP(key)));
+      }
+    }
+  }
+}
+
+void
+ServerPage::toggleTransports(int state)
+{
+  foreach(QCheckBox *chk, _transportChecks) {
+    chk->setEnabled(state == Qt::Checked);
+    chk->setChecked(false);
+  }
+}
+

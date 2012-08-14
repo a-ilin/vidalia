@@ -87,6 +87,9 @@ private slots:
   /** Called when the user selects a new item from cmbTime */
   void toggleDisplayDay(const QString &str);
 
+  /** Called when the user toggle the Enable transports checkbox */
+  void toggleTransports(int state);
+
 private:
   /** Index values of rate values in the bandwidth limits dropdown box. */
   enum BwRateIndex {
@@ -118,6 +121,10 @@ private:
   /** Retrieves bridge usage history from Tor, parses and validates it, and
    * then displays it in a new dialog. */
   void displayBridgeUsage();
+  /** Loads the transport settings */
+  void loadTransports();
+  /** Saves the transport settings */
+  void saveTransports();
 
   /** A ServerSettings object used to get and set information about how a
    * local Tor server is configured. */
@@ -131,6 +138,9 @@ private:
    * re-added when selecting relay */
   QString _tmpDirPort;
   bool _tmpMirror;
+
+  /** List of checkboxes used to configure transports */
+  QMap<QString, QCheckBox*> _transportChecks;
 };
 
 #endif

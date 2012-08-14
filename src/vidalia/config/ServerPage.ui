@@ -77,7 +77,7 @@
          </sizepolicy>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="ServerConfig">
          <attribute name="title">
@@ -116,7 +116,7 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="6">
+          <item row="3" column="5">
            <spacer>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -129,7 +129,7 @@
             </property>
            </spacer>
           </item>
-          <item row="4" column="0" colspan="6">
+          <item row="4" column="0" colspan="5">
            <widget class="QCheckBox" name="chkEnableUpnp">
             <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
@@ -142,7 +142,7 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="6">
+          <item row="4" column="5">
            <layout class="QHBoxLayout">
             <item>
              <widget class="QPushButton" name="btnTestUpnp">
@@ -192,7 +192,7 @@
             </item>
            </layout>
           </item>
-          <item row="1" column="1" colspan="7">
+          <item row="1" column="1" colspan="6">
            <widget class="QLineEdit" name="lineServerContact">
             <property name="cursor">
              <cursorShape>IBeamCursor</cursorShape>
@@ -206,7 +206,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </widget>
           </item>
-          <item row="3" column="3" colspan="3">
+          <item row="3" column="3" colspan="2">
            <layout class="QHBoxLayout">
             <item>
              <widget class="QLabel" name="lblDirPort">
@@ -276,20 +276,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </widget>
           </item>
-          <item row="2" column="2" colspan="6">
-           <spacer>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>321</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="8" column="0">
+          <item row="6" column="0">
            <spacer>
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -302,7 +289,20 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </spacer>
           </item>
-          <item row="3" column="5" colspan="2">
+          <item row="2" column="2" colspan="5">
+           <spacer>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>321</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="4" colspan="2">
            <spacer>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -315,7 +315,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </spacer>
           </item>
-          <item row="0" column="1" colspan="7">
+          <item row="0" column="1" colspan="6">
            <widget class="QLineEdit" name="lineServerNickname">
             <property name="cursor">
              <cursorShape>IBeamCursor</cursorShape>
@@ -379,6 +379,50 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             <property name="indent">
              <number>0</number>
             </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="6">
+           <widget class="QFrame" name="transportsFrame">
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <property name="leftMargin">
+              <number>12</number>
+             </property>
+             <property name="topMargin">
+              <number>12</number>
+             </property>
+             <property name="rightMargin">
+              <number>12</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>&lt;b&gt;Transports&lt;/b&gt;</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="chkEnableTransports">
+               <property name="text">
+                <string>Enable using transports</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
