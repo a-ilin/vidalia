@@ -112,6 +112,9 @@ ServerPage::ServerPage(QWidget *parent)
   connect(ui.cmbTime, SIGNAL(currentIndexChanged(const QString &)),
           this, SLOT(toggleDisplayDay(const QString &)));
 
+  connect(ui.chkEnableTransports, SIGNAL(stateChanged(int)),
+          this, SLOT(toggleTransports(int)));
+
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
@@ -247,7 +250,7 @@ ServerPage::serverModeChanged(bool enabled)
   TransportSettings transports;
   ui.transportsFrame->setVisible(enabled && bridgeEnabled && transports.getTransports().size() > 0);
 
-  if (ui.transportsFrame->isVisible()) {
+  if (enabled && bridgeEnabled && transports.getTransports().size() > 0) {
     QStringList transportList = transports.getTransports();
     foreach(QString transport, transportList) {
       QCheckBox *chkTransport = new QCheckBox(transport);
@@ -784,8 +787,6 @@ ServerPage::toggleDisplayDay(const QString &str)
 void
 ServerPage::loadTransports()
 {
-  disconnect(ui.chkEnableTransports, 0, 0, 0);
-  connect(ui.chkEnableTransports, SIGNAL(stateChanged(int)), this, SLOT(toggleTransports(int)));
   QStringList stps = Vidalia::torrc()->value("ServerTransportPlugin");
   ui.chkEnableTransports->setCheckState(stps.size() > 0 ? Qt::Checked : Qt::Unchecked);
   toggleTransports(stps.size() > 0 ? Qt::Checked : Qt::Unchecked);
