@@ -10,7 +10,7 @@
 
 /*
 ** \file TransportSettings.cpp
-** \brief General Vidalia settings, such as language and interface style
+** \brief Pluggable transport settings
 */
 
 #include "TransportSettings.h"

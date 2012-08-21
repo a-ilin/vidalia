@@ -1,0 +1,3 @@
+  New features:
+  o Add the capabilities to configure a bridge with pluggable transports.
+    Resolves ticket 6412.
