@@ -115,6 +115,9 @@ if (USE_GEOIP)
   include(${CMAKE_SOURCE_DIR}/cmake/FindGeoIP.cmake)
 endif(USE_GEOIP)
 
+## Optional include test sources
+option(BUILD_TESTS "Build test sources" OFF)
+
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)
 check_include_file("sys/limits.h" HAVE_SYS_LIMITS_H)

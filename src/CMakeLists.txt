@@ -65,4 +65,6 @@ add_subdirectory(common)
 add_subdirectory(tools)
 add_subdirectory(torcontrol)
 add_subdirectory(vidalia)
-
+if (BUILD_TESTS)
+  add_subdirectory(tests)
+endif (BUILD_TESTS)
