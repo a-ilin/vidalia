@@ -48,7 +48,6 @@ NetworkPage::NetworkPage(QWidget *parent)
           this, SLOT(bridgeContextMenuRequested(QPoint)));
   connect(ui.listBridges, SIGNAL(itemSelectionChanged()),
           this, SLOT(bridgeSelectionChanged()));
-  connect(ui.lineBridge, SIGNAL(returnPressed()), this, SLOT(addBridge()));
   connect(ui.lblHelpFindBridges, SIGNAL(linkActivated(QString)),
           this, SLOT(onLinkActivated(QString)));
   connect(ui.cmboProxyType, SIGNAL(currentIndexChanged(int)),
@@ -120,15 +119,29 @@ NetworkPage::onLinkActivated(const QString &url)
 void
 NetworkPage::addBridge()
 {
-  QString input = ui.lineBridge->text().trimmed();
+  QString input = ui.teBridges->toPlainText().trimmed();
 
   if (input.isEmpty())
     return;
-  if (!ui.listBridges->findItems(input, Qt::MatchFixedString).isEmpty())
-    return; /* duplicate bridge */
 
-  ui.listBridges->addItem(input);
-  ui.lineBridge->clear();
+  QStringList lines = input.split("\n", QString::SkipEmptyParts);
+  QStringList parts;
+
+  foreach(QString line, lines) {
+    if (!ui.listBridges->findItems(line, Qt::MatchFixedString).isEmpty())
+      continue; /* duplicate bridge */
+
+    /* If the bridge part is still at the beginning, strip it away.
+     */
+    parts = line.split(QRegExp("\\s+"), QString::SkipEmptyParts);
+    if (parts.size() > 1 && parts[0].toLower() == "bridge") {
+      parts.removeFirst();
+    }
+    QString bridge = parts.join(" ");
+
+    ui.listBridges->addItem(bridge);
+  }
+  ui.teBridges->setPlainText("");
 }
 
 /** Removes one or more selected bridges from the bridge list box. */
@@ -254,7 +267,7 @@ NetworkPage::save(QString &errmsg)
   }
   _settings->setReachablePorts(reachablePorts);
 
-  if (!ui.lineBridge->text().trimmed().isEmpty())
+  if (!ui.teBridges->toPlainText().trimmed().isEmpty())
     addBridge();
 
 

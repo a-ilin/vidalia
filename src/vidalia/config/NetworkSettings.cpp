@@ -145,6 +145,8 @@ NetworkSettings::apply(QString *errmsg)
     if (useBridges && !bridges.isEmpty()) {
       torrc->setValue(SETTING_USE_BRIDGES, "1");
       torrc->setValue(SETTING_UPDATE_BRIDGES, "1");
+      /* Clear the old bridge lines to be have the new value. */
+      torrc->clear(QStringList() << SETTING_BRIDGE_LIST);
       foreach (QString bridge, bridges) {
         torrc->setValue(SETTING_BRIDGE_LIST, bridge);
       }
