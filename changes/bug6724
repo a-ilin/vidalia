@@ -1,0 +1,4 @@
+ o One can now add multiple bridges in one go, as the the text box has been
+   extended to accept several "bridge" lines separated through new lines.
+ o Should a bridge line start with "bridge" this excessive text is now stripped,
+   making it easier to copy and paste bridge lines from bridges.torproject.org.
