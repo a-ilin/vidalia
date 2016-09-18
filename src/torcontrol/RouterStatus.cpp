@@ -89,11 +89,11 @@ RouterStatus::RouterStatus(const QStringList &status)
       /* Nickname */
       _name = parts.at(1);
       /* Identity key digest */
-      _id = base16_encode(QByteArray::fromBase64(parts.at(2).toAscii()));
+      _id = base16_encode(QByteArray::fromBase64(parts.at(2).toLatin1()));
       if (_id.isEmpty())
         return;
       /* Most recent descriptor digest */
-      _digest = base16_encode(QByteArray::fromBase64(parts.at(3).toAscii()));
+      _digest = base16_encode(QByteArray::fromBase64(parts.at(3).toLatin1()));
       if (_digest.isEmpty())
         return;
       /* Most recent publication date */

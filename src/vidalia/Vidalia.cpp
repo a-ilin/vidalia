@@ -25,6 +25,10 @@
 #include <MarbleDirs.h>
 #endif
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QAbstractNativeEventFilter>
+#endif
+
 #include <QDir>
 #include <QTimer>
 #include <QTextStream>
@@ -64,10 +68,17 @@ QList<QTranslator *> Vidalia::_translators;
  * emits a QtFatalMsg, we will write the message to the log and then abort().
  */
 void
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+Vidalia::qt_msg_handler(QtMsgType type, const QMessageLogContext&, const QString & msg)
+{
+#else
 Vidalia::qt_msg_handler(QtMsgType type, const char *s)
 {
   QString msg(s);
-  switch (type) {
+#endif
+
+  switch (type)
+  {
     case QtDebugMsg:
       vDebug("QtDebugMsg: %1").arg(msg);
       break;
@@ -81,19 +92,43 @@ Vidalia::qt_msg_handler(QtMsgType type, const char *s)
       vError("QtFatalMsg: %1").arg(msg);
       break;
   }
-  if (type == QtFatalMsg) {
+
+  if (type == QtFatalMsg)
+  {
     vError("Fatal Qt error. Aborting.");
     abort();
   }
 }
+
+
+/** Provides native event filtering with Qt5
+ */
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+class VidaliaNativeEventFilter : public QAbstractNativeEventFilter
+{
+public:
+  VidaliaNativeEventFilter()
+    : QAbstractNativeEventFilter() {}
+
+  bool nativeEventFilter(const QByteArray& eventType, void* message, long* result);
+};
+#endif
 
 /** Constructor. Parses the command-line arguments, resets Vidalia's
  * configuration (if requested), and sets up the GUI style and language
  * translation. */
 Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 : QApplication(argc, argv)
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+, _nativeEventFilter(new VidaliaNativeEventFilter())
+#endif
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+  installNativeEventFilter(_nativeEventFilter);
+  qInstallMessageHandler(qt_msg_handler);
+#else
   qInstallMsgHandler(qt_msg_handler);
+#endif
 
   /* Read in all our command-line arguments. */
   parseArguments(args);
@@ -140,7 +175,7 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
                                             + "/plugins/marble");
 #endif
 #endif
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
   setStyleSheet("QTreeWidget { font-size: 12pt }");
 #endif
 }
@@ -148,6 +183,11 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 /** Destructor */
 Vidalia::~Vidalia()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+  removeNativeEventFilter(_nativeEventFilter);
+  delete _nativeEventFilter;
+#endif
+
   delete _torControl;
   delete _torrc;
 }
@@ -170,16 +210,29 @@ Vidalia::onEventLoopStarted()
   emit running();
 }
 
-#if defined(Q_OS_WIN)
 /** On Windows, we need to catch the WM_QUERYENDSESSION message
  * so we know that it is time to shutdown. */
+#if defined(Q_OS_WIN)
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 bool
-Vidalia::winEventFilter(MSG *msg, long *result)
+Vidalia::winEventFilter(MSG* msg, long* result)
 {
-  if (msg->message == WM_QUERYENDSESSION) {
-    quit();
+#else
+bool
+VidaliaNativeEventFilter::nativeEventFilter(const QByteArray& /*eventType*/, void* message, long* result)
+{
+  MSG* msg = (MSG*)message;
+#endif
+
+  if (msg && (msg->message == WM_QUERYENDSESSION)) {
+    QApplication::quit();
   }
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
   return QApplication::winEventFilter(msg, result);
+#else
+  return false;
+#endif
 }
 #endif
 
@@ -199,23 +252,23 @@ Vidalia::showUsageMessageBox()
 
   out << "Available Options:" << endl;
   out << "<table>";
-  out << trow(tcol("-"ARG_HELP) +
+  out << trow(tcol("-" ARG_HELP) +
               tcol(tr("Displays this usage message and exits.")));
-  out << trow(tcol("-"ARG_RESET) +
+  out << trow(tcol("-" ARG_RESET) +
               tcol(tr("Resets ALL stored Vidalia settings.")));
-  out << trow(tcol("-"ARG_DATADIR" &lt;dir&gt;") +
+  out << trow(tcol("-" ARG_DATADIR " &lt;dir&gt;") +
               tcol(tr("Sets the directory Vidalia uses for data files.")));
-  out << trow(tcol("-"ARG_PIDFILE" &lt;file&gt;") +
+  out << trow(tcol("-" ARG_PIDFILE " &lt;file&gt;") +
               tcol(tr("Sets the name and location of Vidalia's pidfile.")));
-  out << trow(tcol("-"ARG_LOGFILE" &lt;file&gt;") +
+  out << trow(tcol("-" ARG_LOGFILE " &lt;file&gt;") +
               tcol(tr("Sets the name and location of Vidalia's logfile.")));
-  out << trow(tcol("-"ARG_LOGLEVEL" &lt;level&gt;") +
+  out << trow(tcol("-" ARG_LOGLEVEL " &lt;level&gt;") +
               tcol(tr("Sets the verbosity of Vidalia's logging.") +
                    "<br>[" + Log::logLevels().join("|") +"]"));
-  out << trow(tcol("-"ARG_GUISTYLE" &lt;style&gt;") +
+  out << trow(tcol("-" ARG_GUISTYLE " &lt;style&gt;") +
               tcol(tr("Sets Vidalia's interface style.") +
                    "<br>[" + QStyleFactory::keys().join("|") + "]"));
-  out << trow(tcol("-"ARG_LANGUAGE" &lt;language&gt;") +
+  out << trow(tcol("-" ARG_LANGUAGE " &lt;language&gt;") +
               tcol(tr("Sets Vidalia's language.") +
                    "<br>[" + LanguageSupport::languageCodes().join("|") + "]"));
   out << "</table>";
@@ -381,7 +434,7 @@ Vidalia::pidFile()
   if (_args.contains(ARG_PIDFILE)) {
     return _args.value(ARG_PIDFILE);
   }
-  return QDir::convertSeparators(dataDirectory() + "/vidalia.pid");
+  return QDir::toNativeSeparators(QDir(dataDirectory()).filePath("vidalia.pid"));
 }
 
 bool

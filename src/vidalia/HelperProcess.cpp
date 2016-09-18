@@ -45,7 +45,7 @@
 #include <QString>
 #include <QFileInfo>
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 #include <Carbon/Carbon.h>
 #endif
 
@@ -137,7 +137,7 @@ HelperProcess::isDone() const
 void
 HelperProcess::toForeground()
 {
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   if(state() != QProcess::Running)
     return;
 

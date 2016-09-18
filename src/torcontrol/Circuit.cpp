@@ -136,7 +136,7 @@ Circuit::isValidCircuitId(const CircuitId &circId)
     return false;
 
   for (int i = 0; i < length; i++) {
-    char c = circId[i].toAscii();
+    char c = circId[i].toLatin1();
     if (c < '0' && c > '9' && c < 'A' && c > 'Z' && c < 'a' && c > 'z')
       return false;
   }

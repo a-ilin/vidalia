@@ -16,7 +16,7 @@
 #include "VidaliaSettings.h"
 #include "LanguageSupport.h"
 #include "Vidalia.h"
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 #include "win32.h"
 #endif
 
@@ -53,11 +53,11 @@
 /** Default Constructor */
 VidaliaSettings::VidaliaSettings()
 {
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   setDefault(SETTING_STYLE, "macintosh (aqua)");
 #else
   static QStringList styles = QStyleFactory::keys();
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   if (styles.contains("windowsvista", Qt::CaseInsensitive))
     setDefault(SETTING_STYLE, "windowsvista");
   else
@@ -75,7 +75,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
   setDefault(SETTING_BROWSER_EXECUTABLE, "");
   setDefault(SETTING_IM_EXECUTABLE, "");
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   setDefault(SETTING_CHECK_FOR_UPDATES, true);
 #else
   setDefault(SETTING_CHECK_FOR_UPDATES, false);
@@ -158,7 +158,7 @@ VidaliaSettings::setShowMainWindowAtStart(bool show)
 bool
 VidaliaSettings::runVidaliaOnBoot()
 {
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   if (!win32_registry_get_key_value(STARTUP_REG_KEY, VIDALIA_REG_KEY).isEmpty()) {
     return true;
   } else {
@@ -174,11 +174,11 @@ VidaliaSettings::runVidaliaOnBoot()
 void
 VidaliaSettings::setRunVidaliaOnBoot(bool run)
 {
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   if (run) {
     win32_registry_set_key_value(STARTUP_REG_KEY, VIDALIA_REG_KEY,
         QString("\"" +
-                QDir::convertSeparators(QCoreApplication::applicationFilePath())) +
+                QDir::toNativeSeparators(QCoreApplication::applicationFilePath())) +
                 "\"");
   } else {
     win32_registry_remove_key(STARTUP_REG_KEY, VIDALIA_REG_KEY);
@@ -196,7 +196,7 @@ VidaliaSettings::setRunVidaliaOnBoot(bool run)
 QString
 VidaliaSettings::getBrowserExecutable() const
 {
-  return QDir::convertSeparators(value(SETTING_BROWSER_EXECUTABLE).toString());
+  return QDir::toNativeSeparators(value(SETTING_BROWSER_EXECUTABLE).toString());
 }
 
 /** Sets the location and name of the web browser executable to the given string.
@@ -211,7 +211,7 @@ VidaliaSettings::setBrowserExecutable(const QString &browserExecutable)
 QString
 VidaliaSettings::getBrowserDirectory() const
 {
-  return QDir::convertSeparators(value(SETTING_BROWSER_DIRECTORY).toString());
+  return QDir::toNativeSeparators(value(SETTING_BROWSER_DIRECTORY).toString());
 }
 
 /** Sets the location and name of the web browser directory to the given string.
@@ -227,7 +227,7 @@ VidaliaSettings::setBrowserDirectory(const QString &browserDirectory)
 QString
 VidaliaSettings::getIMExecutable() const
 {
-  return QDir::convertSeparators(value(SETTING_IM_EXECUTABLE).toString());
+  return QDir::toNativeSeparators(value(SETTING_IM_EXECUTABLE).toString());
 }
 
 /** Sets the location and name of the IM client executable to the given string.
@@ -277,7 +277,7 @@ VidaliaSettings::setUseLocalGeoIpDatabase(bool enabled)
 QString
 VidaliaSettings::localGeoIpDatabase() const
 {
-  return QDir::convertSeparators(value(SETTING_LOCAL_GEOIP_DATABASE).toString());
+  return QDir::toNativeSeparators(value(SETTING_LOCAL_GEOIP_DATABASE).toString());
 }
 
 void
@@ -289,7 +289,7 @@ VidaliaSettings::setLocalGeoIpDatabase(const QString &databaseFile)
 QString
 VidaliaSettings::pluginPath() const
 {
-  return QDir::convertSeparators(value(SETTING_PLUGIN_PATH).toString());
+  return QDir::toNativeSeparators(value(SETTING_PLUGIN_PATH).toString());
 }
 
 void

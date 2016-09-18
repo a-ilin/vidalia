@@ -169,9 +169,9 @@ struct QMetaTypeId< QHash<QString,QStringList> > \
     static int qt_metatype_id() \
     { \
         static QBasicAtomicInt metatype_id = Q_BASIC_ATOMIC_INITIALIZER(0); \
-        if (!metatype_id) \
-            metatype_id = qRegisterMetaType< QHash<QString,QStringList> >("QHash<QString,QStringList>"); \
-        return metatype_id; \
+        if (!(int)(metatype_id._q_value)) \
+            metatype_id._q_value = qRegisterMetaType< QHash<QString,QStringList> >("QHash<QString,QStringList>"); \
+        return (int)(metatype_id._q_value); \
     } \
 };
 template <> \
@@ -181,11 +181,12 @@ struct QMetaTypeId< QHash<QString,QString> > \
     static int qt_metatype_id() \
     { \
         static QBasicAtomicInt metatype_id = Q_BASIC_ATOMIC_INITIALIZER(0); \
-        if (!metatype_id) \
-            metatype_id = qRegisterMetaType< QHash<QString,QString> >("QHash<QString,QString>"); \
-        return metatype_id; \
+        if (!(int)(metatype_id._q_value)) \
+            metatype_id._q_value = qRegisterMetaType< QHash<QString,QString> >("QHash<QString,QString>"); \
+        return (int)(metatype_id._q_value); \
     } \
 };
+
 Q_DECLARE_METATYPE(QList<unsigned short>)
 Q_DECLARE_METATYPE(ControlReply*)
 Q_DECLARE_METATYPE(TorEvents::Event)

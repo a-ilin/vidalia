@@ -60,7 +60,7 @@ NetworkPage::NetworkPage(QWidget *parent)
                        ui.listBridges, this,
                        SLOT(copySelectedBridgesToClipboard()));
 
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   /* On OS X, the network page looks better without frame titles. Everywhere
    * else needs titles or else there's a break in the frame border. */
   ui.grpProxySettings->setTitle("");
@@ -158,7 +158,7 @@ NetworkPage::copySelectedBridgesToClipboard()
   QString contents;
 
   foreach (QListWidgetItem *item, ui.listBridges->selectedItems()) {
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
     contents += item->text() + "\r\n";
 #else
     contents += item->text() + "\n";

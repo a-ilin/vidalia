@@ -12,7 +12,11 @@
 #include <qgraphicseffect.h>
 #include <qgraphicsproxywidget.h>
 #include <qicon.h>
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 #include <qinputcontext.h>
+#endif
+
 #include <qkeysequence.h>
 #include <qlayout.h>
 #include <qlist.h>
@@ -380,17 +384,6 @@ void QtScriptShell_VidaliaTab::keyReleaseEvent(QKeyEvent*  arg__1)
         _q_function.call(__qtscript_self,
             QScriptValueList()
             << qScriptValueFromValue(_q_engine, arg__1));
-    }
-}
-
-void QtScriptShell_VidaliaTab::languageChange()
-{
-    QScriptValue _q_function = __qtscript_self.property("languageChange");
-    if (!_q_function.isFunction() || QTSCRIPT_IS_GENERATED_FUNCTION(_q_function)
-        || (__qtscript_self.propertyFlags("languageChange") & QScriptValue::QObjectMember)) {
-        VidaliaTab::languageChange();
-    } else {
-        _q_function.call(__qtscript_self);
     }
 }
 

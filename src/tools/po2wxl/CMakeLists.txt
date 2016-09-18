@@ -19,10 +19,18 @@ set(po2wxl_SRCS
 add_executable(po2wxl ${po2wxl_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(po2wxl
-  ${QT_QTCORE_LIBRARY}
-  ${QT_QTXML_LIBRARY}
-)
+if (USE_QT5)
+  qt5_use_modules(po2wxl
+    Core
+    Xml
+  )
+else (USE_QT5)
+  target_link_libraries(po2wxl
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTCORE_LIB_DEPENDENCIES}
+    ${QT_QTXML_LIBRARY}
+  )
+endif (USE_QT5)
 
 if (WIN32 AND QT_CONFIG MATCHES "static")
   target_link_libraries(po2wxl ws2_32 z)

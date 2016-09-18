@@ -32,14 +32,14 @@ Torrc::load(const QString &torrcPath, const QString &defaultsPath)
 
   _lines = _parser.parse(torrcPath, _torrcMap);
 
-  if(not defaultsPath.isEmpty())
+  if( ! defaultsPath.isEmpty() )
     _parser.parse(defaultsPath, _defaultsMap);
 }
 
 bool
 Torrc::apply(TorControl *tc, QString *errmsg)
 {
-  if(not _changed)
+  if( ! _changed )
     return true;
 
   QFile torrc(_torrcPath);
@@ -58,7 +58,7 @@ Torrc::apply(TorControl *tc, QString *errmsg)
     if (line->content().trimmed().length() > 0) {
       TorOpt currentOpt = _parser.getTorOpt(line->content().split(" ")[0]);
       // Skip default values
-      if(not currentOpt.isMultilined() and currentOpt.defaultValue() == _torrcMap.value(currentOpt.name()).first)
+      if( !currentOpt.isMultilined() && (currentOpt.defaultValue() == _torrcMap.value(currentOpt.name()).first))
         continue;
     }
     torrc_contents += QString("%1 %2")
@@ -91,7 +91,7 @@ Torrc::apply(TorControl *tc, QString *errmsg)
       bool somefailed = false;
       foreach(QString key, _torrcMap.keys()) {
         foreach(value, _torrcMap.values(key)) {
-          if(not tc->setConf(key, value.first, &ferrmsg, &reply)) {
+          if( ! tc->setConf(key, value.first, &ferrmsg, &reply) ) {
             if(reply.getStatus() == "553") {
               vWarn(QObject::tr("Failed to set %1:\nReason: %2")
                     .arg(key).arg(ferrmsg));
@@ -112,7 +112,7 @@ Torrc::apply(TorControl *tc, QString *errmsg)
           vWarn(QObject::tr("The failed options were NOT saved in your torrc "
                             "and will be applied when you restart."));
       }
-      if(not torrc_info.isWritable())
+      if( ! torrc_info.isWritable() )
         vWarn(QObject::tr("Vidalia was unable to save the options to the torrc file."));
     }
   }
@@ -143,7 +143,7 @@ void
 Torrc::setValue(const QString &key, const QString &value, const QString &comment)
 {
   // Prevent possible bugs
-  if(not key.isEmpty() and value.isEmpty())
+  if( !key.isEmpty() && value.isEmpty() )
     return;
 
   TorOpt currentOpt = _parser.getTorOpt(key);
@@ -154,13 +154,13 @@ Torrc::setValue(const QString &key, const QString &value, const QString &comment
     QPair<QString,TorOpt> defvalue;
     foreach(defvalue, _defaultsMap.values(key)) {
       if(defvalue.first == value) {
-        if(not currentOpt.isMultivalued())
+        if( ! currentOpt.isMultivalued() )
           clear(QStringList() << key);
         return;
       }
     }
   } else if(currentOpt.defaultValue() == value) {
-    if(not currentOpt.isMultivalued())
+    if( ! currentOpt.isMultivalued() )
       clear(QStringList() << key);
     return;
   }
@@ -168,15 +168,15 @@ Torrc::setValue(const QString &key, const QString &value, const QString &comment
   if(_torrcMap.contains(key)) {
     QPair<QString,TorOpt> val;
     foreach(val, _torrcMap.values(key)) {
-      if(not val.second.isMultilined() and val.first != value) {
+      if( !val.second.isMultilined() && (val.first != value) ) {
         val.second.line()->setContent(QString("%1 %2")
                                       .arg(key)
                                       .arg(value));
-        if(not comment.isEmpty() and val.second.line()->comment().isEmpty())
+        if( !comment.isEmpty() && val.second.line()->comment().isEmpty())
           val.second.line()->setComment(comment);
         _changed = true;
         return;
-      } else if(not val.second.isMultilined() and val.first == value) {
+      } else if( !val.second.isMultilined() && val.first == value) {
         // if it's the same, leave it like that
         return;
       } // else it's multilined, in which case we just add a new entry
@@ -238,7 +238,7 @@ Torrc::clear(QStringList &keys)
 bool
 Torrc::isValid(const QString &key, const QString &value)
 {
-  if(not _parser.getTorOpt(key).isNull())
+  if( ! _parser.getTorOpt(key).isNull() )
     return true;
   // TODO: check value
   return false;

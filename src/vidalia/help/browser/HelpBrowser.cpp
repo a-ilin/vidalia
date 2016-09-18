@@ -44,7 +44,7 @@ HelpBrowser::HelpBrowser(QWidget *parent)
 
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   ui.actionHome->setShortcut(QString("Shift+Ctrl+H"));
 #endif
 

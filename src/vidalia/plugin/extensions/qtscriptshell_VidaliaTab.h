@@ -34,7 +34,6 @@ public:
     QVariant  inputMethodQuery(Qt::InputMethodQuery  arg__1) const;
     void keyPressEvent(QKeyEvent*  arg__1);
     void keyReleaseEvent(QKeyEvent*  arg__1);
-    void languageChange();
     void leaveEvent(QEvent*  arg__1);
     int  metric(QPaintDevice::PaintDeviceMetric  arg__1) const;
     QSize  minimumSizeHint() const;

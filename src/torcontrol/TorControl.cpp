@@ -157,7 +157,7 @@ TorControl::torStartFailed(QString errmsg)
 bool
 TorControl::shouldContinue(QString *errmsg)
 {
-  if(not errmsg)
+  if( ! errmsg )
     errmsg = new QString();
 
   *errmsg = _reason;
@@ -341,9 +341,9 @@ TorControl::isConnected()
 bool
 TorControl::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
-  if (!_authenticated and (cmd.keyword() != "AUTHCHALLENGE") and
-      (cmd.keyword() != "AUTHENTICATE") and
-      (cmd.keyword() != "PROTOCOLINFO") and
+  if (!_authenticated && (cmd.keyword() != "AUTHCHALLENGE") &&
+      (cmd.keyword() != "AUTHENTICATE") &&
+      (cmd.keyword() != "PROTOCOLINFO") &&
       (cmd.keyword() != "QUIT")) {
     if (errmsg)
       *errmsg = "TorControl not authenticated";
@@ -395,7 +395,7 @@ TorControl::authenticate(const QByteArray cookie, bool safe, QString *errmsg)
     QString tmp;
     tmp.append(cookie);
     tmp.append(client_nonce);
-    tmp.append(base16_decode(response.value("SERVERNONCE").toAscii()));
+    tmp.append(base16_decode(response.value("SERVERNONCE").toLatin1()));
 
     char *client_hash = (char*)malloc(DIGEST256_LEN);
     char *server_hash = (char*)malloc(DIGEST256_LEN);
@@ -403,7 +403,7 @@ TorControl::authenticate(const QByteArray cookie, bool safe, QString *errmsg)
     crypto_hmac_sha256(server_hash,
                        SAFECOOKIE_SERVER_TO_CONTROLLER_CONSTANT,
                        strlen(SAFECOOKIE_SERVER_TO_CONTROLLER_CONSTANT),
-                       tmp.toAscii().data(),
+                       tmp.toLatin1().data(),
                        tmp.size());
 
     if (!QString(server_hash).compare(response.value("SERVERHASH"))) {
@@ -414,7 +414,7 @@ TorControl::authenticate(const QByteArray cookie, bool safe, QString *errmsg)
     crypto_hmac_sha256(client_hash,
                        SAFECOOKIE_CONTROLLER_TO_SERVER_CONSTANT,
                        strlen(SAFECOOKIE_CONTROLLER_TO_SERVER_CONSTANT),
-                       tmp.toAscii().data(),
+                       tmp.toLatin1().data(),
                        tmp.size());
 
     ControlCommand cmd("AUTHENTICATE", base16_encode(QByteArray(client_hash, DIGEST256_LEN)));
@@ -853,7 +853,7 @@ TorControl::setEvents(QString *errmsg)
 {
   ControlCommand cmd("SETEVENTS");
 
-  for (TorEvents::Event e = TorEvents::EVENT_MIN; e <= TorEvents::EVENT_MAX;) {
+  for (TorEvents::Event e = TorEvents::TorEventMin; e <= TorEvents::TorEventMax;) {
     if (_events & e)
       cmd.addArgument(TorEvents::toString(e));
     e = static_cast<TorEvents::Event>(e << 1);
@@ -885,7 +885,7 @@ TorControl::setConf(QHash<QString,QString> map, QString *errmsg, ControlReply *r
     }
   }
 
-  if(not reply)
+  if( ! reply )
     reply = new ControlReply();
   return send(cmd, *reply, errmsg);
 }
@@ -1116,7 +1116,7 @@ TorControl::useMicrodescriptors(QString *errmsg)
     return false;
   if(!getConf("FetchUselessDescriptors", fetchres, errmsg))
     return false;
-  return (mdres == "1") or (mdres == "auto" and fetchres == "0");
+  return (mdres == "1") || ((mdres == "auto") && (fetchres == "0"));
 }
 
 /** Returns an unparsed router descriptor for the router whose fingerprint

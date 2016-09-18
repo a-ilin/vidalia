@@ -21,7 +21,9 @@
 #include "Vidalia.h"
 #include "VidaliaExtensions.h"
 
+#ifndef Q_OS_WIN
 #include <unistd.h>
+#endif
 
 PluginEngine::PluginEngine(QObject *parent)
   : QScriptEngine(parent)
@@ -184,7 +186,7 @@ PluginEngine::sleep(QScriptContext *context, QScriptEngine *engine)
 
   int s = context->argument(1).toInt32();
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   Sleep(s*1000);
 #else
   (void)::sleep(s);

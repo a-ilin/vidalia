@@ -20,7 +20,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QTextStream>
-#include <QApplication>
+#include <QCoreApplication>
 #include <QProcess>
 
 #if !defined(Q_OS_WIN)
@@ -48,7 +48,7 @@ is_process_running(qint64 pid)
   if (procList.contains(pid)) {
     /* A process with this ID exists. Check if it's the same as this process. */
     QString exeFile = procList.value(pid);
-    QString thisExe = QFileInfo(QApplication::applicationFilePath()).fileName();
+    QString thisExe = QFileInfo(QCoreApplication::applicationFilePath()).fileName();
     return (exeFile.toLower() == thisExe.toLower());
   }
   return false;
@@ -68,7 +68,7 @@ write_pidfile(const QString &pidFileName, QString *errmsg)
   /* Make sure the directory exists */
   QDir pidFileDir = QFileInfo(pidFileName).absoluteDir();
   if (!pidFileDir.exists()) {
-    pidFileDir.mkpath(QDir::convertSeparators(pidFileDir.absolutePath()));
+    pidFileDir.mkpath(QDir::toNativeSeparators(pidFileDir.absolutePath()));
   }
 
   /* Try to open (and create if it doesn't exist) the pidfile */

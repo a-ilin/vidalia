@@ -10,11 +10,23 @@
 ##  except according to the terms described in the LICENSE file.
 ##
 
+if (USE_QT5)
+  find_package(Qt5 CONFIG REQUIRED LinguistTools)
+  get_property(LRELEASE TARGET ${Qt5_LRELEASE_EXECUTABLE} PROPERTY IMPORTED_LOCATION)
+  get_property(LUPDATE TARGET ${Qt5_LUPDATE_EXECUTABLE} PROPERTY IMPORTED_LOCATION)
+else (USE_QT5)
+  set(LRELEASE "lrelease-qt4")
+  set(LUPDATE "lupdate-qt4")
+endif(USE_QT5)
 
 ## Search for lrelease
-find_program(VIDALIA_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease
-  PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
+if (EXISTS ${LRELEASE})
+  set(VIDALIA_LRELEASE_EXECUTABLE ${LRELEASE})
+else (EXISTS ${LRELEASE})
+  find_program(VIDALIA_LRELEASE_EXECUTABLE NAMES ${LRELEASE} lrelease
+    PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
 )
+endif (EXISTS ${LRELEASE})
 if (NOT VIDALIA_LRELEASE_EXECUTABLE)
   message(FATAL_ERROR
     "Vidalia could not find lrelease. Please make sure Qt >= ${QT_MIN_VERSION} is installed."
@@ -23,9 +35,13 @@ endif(NOT VIDALIA_LRELEASE_EXECUTABLE)
 
 
 ## Search for lupdate
-find_program(VIDALIA_LUPDATE_EXECUTABLE NAMES lupdate-qt4 lupdate
-  PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
-)
+if (EXISTS ${LUPDATE})
+  set(VIDALIA_LUPDATE_EXECUTABLE ${LUPDATE})
+else (EXISTS ${LUPDATE})
+  find_program(VIDALIA_LUPDATE_EXECUTABLE NAMES ${LUPDATE} lupdate
+    PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
+  )
+endif(EXISTS ${LUPDATE})
 if (NOT VIDALIA_LUPDATE_EXECUTABLE)
   message(FATAL_ERROR
     "Vidalia could not find lupdate. Please make sure Qt >= ${QT_MIN_VERSION} is installed."

@@ -117,7 +117,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   /* Select the first action */
   grp->actions()[0]->setChecked(true);
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   helpAct->setShortcut(QString("F1"));
 #else
   helpAct->setShortcut(QString("Ctrl+?"));

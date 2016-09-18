@@ -87,8 +87,6 @@ po2nsh(QTextStream *po, QString *nsh, const QString &language,
 {
   QString line;
   QString msgctxt, msgid, msgstr;
-  QHash<QString,QString> header;
-  QTextCodec *codec;
   int n_strings = 0;
 
   Q_ASSERT(po);

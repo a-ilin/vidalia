@@ -73,7 +73,7 @@ AppearancePage::save(QString &errmsg)
   Vidalia::setStyle(ui.cmboStyle->currentText());
   _settings->setInterfaceStyle(ui.cmboStyle->currentText());
 
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   /* Save new icon preference */
   if(ui.rdoIconPrefDock->isChecked()) {
     _settings->setIconPref(VidaliaSettings::Dock);
@@ -100,7 +100,7 @@ AppearancePage::load()
   index = ui.cmboStyle->findData(Vidalia::style().toLower());
   ui.cmboStyle->setCurrentIndex(index);
 
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   /* set current icon preference */
   ui.rdoIconPrefBoth->setChecked(_settings->getIconPref() == VidaliaSettings::Both);
   ui.rdoIconPrefTray->setChecked(_settings->getIconPref() == VidaliaSettings::Tray);

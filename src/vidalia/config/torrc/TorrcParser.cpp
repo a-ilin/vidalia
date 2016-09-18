@@ -275,12 +275,12 @@ TorrcParser::parse(const QString &path,
   QList<TorrcLine *> lines;
   torrc_info.setFile(torrc);
 
-  if(not torrc_info.isReadable()) {
+  if( ! torrc_info.isReadable() ) {
     vWarn("Can't read torrc file, aborting parsing.");
     return lines;
   }
 
-  if(not torrc.open(QIODevice::ReadOnly)) {
+  if( ! torrc.open(QIODevice::ReadOnly) ) {
     vWarn("Can't open torrc file, aborting parsing.");
     return lines;
   }
@@ -319,7 +319,7 @@ TorrcParser::parse(const QString &path,
     TorOpt opt(getTorOpt(key));
     opt.setLine(line);
 
-    if(map.contains(key) and opt.isMultivalued())
+    if (map.contains(key) && opt.isMultivalued())
       map.insertMulti(key, QPair<QString, TorOpt>(value, opt));
     else
       map.insert(key, QPair<QString, TorOpt>(value, opt));
@@ -406,7 +406,7 @@ TorrcParser::isKeyword(const QString &contents, int pos)
 {
   while(contents.at(pos) != '\n') {
     pos--;
-    if(pos < 0 or contents.at(pos) == '\n')
+    if ((pos < 0) || (contents.at(pos) == '\n'))
       return true;
     if(contents.at(pos) != ' ')
       return false;

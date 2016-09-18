@@ -44,9 +44,13 @@
 
 #include "FirstRunWizard.h"
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QtWidgets>
+#else
 #include <QtGui>
+#endif
 
-#ifdef Q_WS_MAC
+#ifdef Q_OS_MAC
 #include <Carbon/Carbon.h>
 #endif
 
@@ -73,13 +77,13 @@
 #define IMG_TOR_STOPPING_48  ":/images/48x48/tor-stopping.png"
 
 /* Decide which of our four sets of tray icons to use. */
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 /* QSystemTrayIcon on Windows wants 16x16 .png files */
 #define IMG_TOR_STOPPED  ":/images/16x16/tor-off.png"
 #define IMG_TOR_RUNNING  ":/images/16x16/tor-on.png"
 #define IMG_TOR_STARTING ":/images/16x16/tor-starting.png"
 #define IMG_TOR_STOPPING ":/images/16x16/tor-stopping.png"
-#elif defined(Q_WS_MAC)
+#elif defined(Q_OS_MAC)
 /* On Mac, the dock icons look best at 128x128, otherwise they get blurry
  * if resized from a smaller image */
 #define IMG_TOR_STOPPED    ":/images/128x128/tor-off.png"
@@ -134,7 +138,7 @@ MainWindow::MainWindow()
 
   VidaliaSettings settings;
 
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   /* Display OSX dock icon if icon preference is not set to "Tray Only" */
   if (settings.getIconPref() != VidaliaSettings::Tray) {
     ProcessSerialNumber psn = { 0, kCurrentProcess };
@@ -147,7 +151,7 @@ MainWindow::MainWindow()
   TorSettings tor_settings(_torControl);
 
   if(settings.firstRun()) {
-    if(tor_settings.getDisableNetwork() or settings.allowPanic()) {
+    if(tor_settings.getDisableNetwork() || settings.allowPanic()) {
       _wizard = new FirstRunWizard(this, settings.allowPanic(), tor_settings.getDisableNetwork());
       _wizard->show();
       connect(_wizard, SIGNAL(accepted()),
@@ -174,7 +178,7 @@ MainWindow::enableNetwork()
   TorSettings tor_settings(_torControl);
   tor_settings.setDisableNetwork(false);
   QString errmsg;
-  if(not tor_settings.apply(&errmsg))
+  if( ! tor_settings.apply(&errmsg) )
     VMessageBox::warning(this, tr("Error finishing apply of first run settings"),
                          tr("Error: %1").arg(errmsg),
                          VMessageBox::Ok|VMessageBox::Default);
@@ -236,7 +240,7 @@ MainWindow::createMenuBar()
   QMenu *torMenu = menu->addMenu(tr("Tor"));
   torMenu->addAction(_actionStartStopTor);
   torMenu->addAction(_actionRestartTor);
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN)
   torMenu->addAction(_actionReloadConfig);
 #endif
   torMenu->addSeparator();
@@ -309,7 +313,7 @@ MainWindow::createTrayMenu()
 
   menu->addMenu(&_reattachMenu);
 
-#if !defined(Q_WS_MAC)
+#if !defined(Q_OS_MAC)
   /* These aren't added to the dock menu on Mac, since they are in the
    * standard Mac locations in the menu bar. */
   menu->addAction(_actionConfigure);
@@ -355,7 +359,7 @@ MainWindow::createTrayIcon()
   connect(&_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
           this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
 
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   qt_mac_set_dock_menu(menu);
 #endif
 
@@ -417,7 +421,7 @@ MainWindow::retranslateUi()
   _actionNewIdentity->setText(tr("New Circuit"));
   _actionPanic->setText(tr("Panic!"));
 
-#if !defined(Q_WS_MAC)
+#if !defined(Q_OS_MAC)
   _actionAbout->setText(tr("About"));
   _actionConfigure->setText(tr("Settings"));
   _actionExit->setText(tr("Exit"));
@@ -660,7 +664,7 @@ MainWindow::start()
     torrc = QCoreApplication::applicationDirPath() + "/" + torrc;
 
     QFileInfo newTorrcInfo(torrc);
-    if(!newTorrcInfo.exists() and torrcInfo.exists()) {
+    if(!newTorrcInfo.exists() && torrcInfo.exists()) {
       torrc = QDir(QCoreApplication::applicationDirPath()).relativeFilePath(torrcInfo.absoluteFilePath());
       vWarn("Automigrating configuration for Torrc:\nOld path: %1\nNew path: %2")
         .arg(newTorrcInfo.filePath())
@@ -677,7 +681,7 @@ MainWindow::start()
     torrc_defaults = QCoreApplication::applicationDirPath() + "/" + torrc_defaults;
 
     QFileInfo newTorrc_DefaultsInfo(torrc_defaults);
-    if(!newTorrc_DefaultsInfo.exists() and torrc_defaultsInfo.exists()) {
+    if(!newTorrc_DefaultsInfo.exists() && torrc_defaultsInfo.exists()) {
       torrc_defaults = QDir(QCoreApplication::applicationDirPath()).relativeFilePath(torrc_defaultsInfo.absoluteFilePath());
       vWarn("Automigrating configuration for DefaultsTorrc:\nOld path: %1\nNew path: %2")
         .arg(newTorrc_DefaultsInfo.filePath())
@@ -718,7 +722,7 @@ MainWindow::start()
   if(QDir(dataDirectory).isRelative()) {
     dataDirectory = QCoreApplication::applicationDirPath() + "/" + dataDirectory;
     QFileInfo newDataDirectoryInfo(dataDirectory);
-    if(!newDataDirectoryInfo.exists() and dataDirectoryInfo.exists()) {
+    if(!newDataDirectoryInfo.exists() && dataDirectoryInfo.exists()) {
       dataDirectory = QDir(QCoreApplication::applicationDirPath()).relativeFilePath(dataDirectoryInfo.absoluteFilePath());
       vWarn("Automigrating configuration for DataDirectory:\nOld path: %1\nNew path: %2")
         .arg(newDataDirectoryInfo.absoluteFilePath())
@@ -781,7 +785,7 @@ MainWindow::start()
     torExecutable = QCoreApplication::applicationDirPath() + "/" + torExecutable;
 
     QFileInfo newTorExecutableInfo(torExecutable);
-    if(!newTorExecutableInfo.exists() and torExecutableInfo.exists()) {
+    if(!newTorExecutableInfo.exists() && torExecutableInfo.exists()) {
       torExecutable = QDir(QCoreApplication::applicationDirPath()).relativeFilePath(torExecutableInfo.absoluteFilePath());
       vWarn("Automigrating configuration for TorExecutable:\nOld path: %1\nNew path: %2")
         .arg(newTorExecutableInfo.filePath())
@@ -794,9 +798,9 @@ MainWindow::start()
   _torControl->start(torExecutable, args);
 
   QString errmsg;
-  while(not _torControl->isRunning()) {
+  while( ! _torControl->isRunning() ) {
     QCoreApplication::processEvents();
-    if(not _torControl->shouldContinue(&errmsg) and not _pressedStop) {
+    if( !_torControl->shouldContinue(&errmsg) && !_pressedStop) {
       startFailed(errmsg);
 
       int exitCode;
@@ -836,10 +840,10 @@ MainWindow::connectToTor()
     QString dataDirectory = settings.getDataDirectory();
     QFile file(QString("%1/port.conf").arg(expand_filename(dataDirectory)));
     int tries = 0, maxtries = 5;
-    while((!file.open(QIODevice::ReadOnly | QIODevice::Text)) and
+    while((!file.open(QIODevice::ReadOnly | QIODevice::Text)) &&
           (tries++ < maxtries)) {
       vWarn(QString("This is try number: %1.").arg(tries));
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
       Sleep(1000);
 #else
       sleep(1);
@@ -893,9 +897,9 @@ MainWindow::connectToTor()
   setStartupProgress(STARTUP_PROGRESS_CONNECTING, tr("Connecting to Tor"));
 
   QString errmsg;
-  while(not _torControl->isConnected()) {
+  while( ! _torControl->isConnected() ) {
     QCoreApplication::processEvents();
-    if(not _torControl->shouldContinue(&errmsg) and not _pressedStop) {
+    if( !_torControl->shouldContinue(&errmsg) && !_pressedStop) {
       connectFailed(errmsg);
 
       int exitCode;
@@ -962,7 +966,7 @@ MainWindow::stop()
   int exitCode;
   QProcess::ExitStatus exitStatus;
 
-  while(not _torControl->finished(&exitCode, &exitStatus)) {
+  while( ! _torControl->finished(&exitCode, &exitStatus) ) {
     QCoreApplication::processEvents();
   }
 
@@ -1167,9 +1171,9 @@ MainWindow::authenticated()
   }
 
   /* Check if Tor has a circuit established */
-  while(not _torControl->isCircuitEstablished()) {
+  while( ! _torControl->isCircuitEstablished() ) {
     QCoreApplication::processEvents();
-    if(not _torControl->shouldContinue(&errmsg) and not _pressedStop) {
+    if( !_torControl->shouldContinue(&errmsg) && !_pressedStop) {
       startFailed(errmsg);
 
       int exitCode;
@@ -1605,7 +1609,7 @@ MainWindow::tryHashed()
   }
 
   qputenv("TOR_CONTROL_PASSWD",
-          _controlPassword.toAscii().toHex());
+          _controlPassword.toLatin1().toHex());
 
   return _torControl->authenticate(_controlPassword);
 }
@@ -1648,7 +1652,7 @@ MainWindow::loadControlCookie(QString cookiePath)
     if (!dataDir.isEmpty())
       pathList << dataDir;
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
     pathList << expand_filename("%APPDATA%\\Tor");
 #else
     pathList << expand_filename("~/.tor");
@@ -1764,7 +1768,7 @@ MainWindow::updateTorStatus(TorStatus status)
 void
 MainWindow::setTrayIcon(const QString &iconFile)
 {
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   VidaliaSettings settings;
   QApplication::setWindowIcon(QPixmap(iconFile));
 
@@ -2020,7 +2024,7 @@ MainWindow::addTab(VidaliaTab *tab)
   ui.tabWidget->setCurrentIndex(pos);
 
   atb->setTab(tab);
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   ui.tabWidget->setTabButton(pos, QTabBar::RightSide, atb);
 #else
   ui.tabWidget->setTabButton(pos, QTabBar::LeftSide, atb);
@@ -2037,7 +2041,7 @@ MainWindow::addTab(VidaliaTab *tab)
   _tabMap << tab->getTitle();
   connect(tab, SIGNAL(helpRequested(QString)),
           this, SLOT(showHelpDialog(QString)));
-  if(!isVisible() and (tab != &_statusTab))
+  if(!isVisible() && (tab != &_statusTab))
     setVisible(true);
 }
 
@@ -2274,7 +2278,7 @@ MainWindow::panic()
 
   // First some sanity checks so we don't remove any directory
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   starter.setFile(QString("%1/%2")
                   .arg(settings.panicPath())
                   .arg("Start Tor Browser.exe"));
@@ -2283,7 +2287,7 @@ MainWindow::panic()
                   .arg("App/vidalia.exe"));
 
   binaryPath = vidalia.absoluteFilePath();
-#elif defined(Q_WS_MAC)
+#elif defined(Q_OS_MAC)
   starter.setFile(QString("%1/%2")
                   .arg(settings.panicPath())
                   .arg("Contents/MacOS/TorBrowserBundle"));
@@ -2305,7 +2309,7 @@ MainWindow::panic()
   binaryPath = vidalia.absoluteFilePath();
 #endif
 
-  if(not (starter.exists() and vidalia.exists())) {
+  if( ! (starter.exists() && vidalia.exists()) ) {
     vWarn("Trying to panic but the directory is not what was expected.");
     return;
   }
@@ -2318,7 +2322,7 @@ MainWindow::panic()
   hide();
   _trayIcon.setVisible(false);
 
-#if !defined(Q_WS_WIN)
+#if !defined(Q_OS_WIN)
   bool res = remove_dir(settings.panicPath());
 #else
   QProcess::startDetached(QString("cmd /C ping -n 1 127.0.0.1 >NUL && rmdir /Q /S \"%1\"")

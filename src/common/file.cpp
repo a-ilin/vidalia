@@ -130,7 +130,7 @@ remove_dir(const QString &path)
   bool res = true;
   QDir dir(path);
 
-  if(not dir.exists(path))
+  if( ! dir.exists(path) )
     return false;
 
   foreach(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot |

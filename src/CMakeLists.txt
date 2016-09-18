@@ -24,11 +24,6 @@ link_directories(
 
 if(MSVC)
   add_definitions(-D_USE_MATH_DEFINES=1)
- 
-  ## Qt's Visual Studio builds explicitly disable treating wchar_t as a
-  ## built-in type, so we need to do that as well otherwise we get linker
-  ## errors due to name mangling if we try to use a wchar_t-related method
-  add_definitions(/Zc:wchar_t-)
 
   ## Specify that we want the "W" version of Windows methods, such as
   ## CreateFileW or WriteFileW
@@ -42,6 +37,11 @@ if(MSVC)
   set(CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
       "${CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO} /INCREMENTAL:NO"
   )
+
+  ## Disable MSVC compiler warnings about unsafe CRT functions
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+  ## Force using exception handling
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -EHsc")
 endif(MSVC)
 
 ## Add some Qt definitions

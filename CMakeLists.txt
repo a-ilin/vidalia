@@ -19,36 +19,77 @@ message(STATUS  "Configuring Vidalia ${VERSION}")
 project(Vidalia)
 
 ## Specify the minimim required CMake version
-cmake_minimum_required(VERSION 2.4.7)
+cmake_minimum_required(VERSION 3.2.2)
 if (COMMAND cmake_policy)
-  # Force CMake 2.4 compatibility for handling linker search paths
+  ## Force CMake 2.4 compatibility for handling linker search paths
   cmake_policy(SET CMP0003 OLD)
+  ## Force linking with qtmain.lib on Windows
+  cmake_policy(SET CMP0020 NEW)
+  ## Allow use of the LOCATION target property
+  cmake_policy(SET CMP0026 OLD)
 endif(COMMAND cmake_policy)
+
+## Tell CMake to run moc when necessary:
+set(CMAKE_AUTOMOC ON)
+## Handle .qrc files added as target sources at build time and invoke rcc accordingly
+set(CMAKE_AUTORCC ON)
+## Handle uic automatically for Qt targets.
+set(CMAKE_AUTOUIC ON)
+## As moc files are generated in the binary dir, tell CMake
+## to always look for includes there:
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+option(USE_QT5 "Build Vidalia using Qt5")
 
 ## We declare this option here, because it determines the minimum
 ## required Qt version
 option(USE_MARBLE "Enable the KDE Marble-based map widget." OFF)
 
-## Specify the minimum version of Qt required
-set(QT_MIN_VERSION    "4.3.0")
+if (USE_QT5)
+  MESSAGE(STATUS "Using Qt5...")
 
-## Specify the Qt libraries used
-include(FindQt4)
-find_package(Qt4 REQUIRED)
-set(QT_USE_QTNETWORK  true)
-set(QT_USE_QTXML      true)
-set(QT_USE_QTSCRIPT   true)
-if (USE_MARBLE)
-  set(QT_USE_QTSVG    true)
-  set(QT_USE_QTWEBKIT true)
-  set(QT_USE_QTDBUS   true)
-endif(USE_MARBLE)
-include(${QT_USE_FILE})
+  ## Specify the minimum version of Qt required
+  set(QT_MIN_VERSION    "5.3.1")
+
+  ## Specify the Qt libraries used and hint at where to find them
+  find_package(Qt5Widgets REQUIRED)
+  find_package(Qt5Network REQUIRED)
+  find_package(Qt5Xml REQUIRED)
+  find_package(Qt5Script REQUIRED)
+
+  if (USE_MARBLE)
+    find_package(Qt5Svg REQUIRED)
+    find_package(Qt5WebKit REQUIRED)
+    find_package(Qt5DBus REQUIRED)
+  endif(USE_MARBLE)
+
+else (USE_QT5)
+  MESSAGE(STATUS "Using Qt4...")
+
+  ## Specify the minimum version of Qt required
+  set(QT_MIN_VERSION    "4.3.0")
+
+  ## Specify the Qt libraries used
+  include(FindQt4)
+  find_package(Qt4 REQUIRED)
+  set(QT_USE_QTNETWORK  true)
+  set(QT_USE_QTXML      true)
+  set(QT_USE_QTSCRIPT   true)
+  if (USE_MARBLE)
+    set(QT_USE_QTSVG    true)
+    set(QT_USE_QTWEBKIT true)
+    set(QT_USE_QTDBUS   true)
+  endif(USE_MARBLE)
+  include(${QT_USE_FILE})
+
+endif (USE_QT5)
+
 include(${CMAKE_SOURCE_DIR}/cmake/VidaliaMacros.cmake)
 include(CheckIncludeFile)
 include(CheckIncludeFileCXX)
 include(CheckTypeSize)
 include(CheckFunctionExists)
+
 if (WIN32)
   include(${CMAKE_SOURCE_DIR}/cmake/FindWiX.cmake)
 endif(WIN32)

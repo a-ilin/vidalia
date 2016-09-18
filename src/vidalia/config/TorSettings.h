@@ -86,7 +86,7 @@ public:
   bool autoControlPort() const;
 
   /** Sets whether Vidalia should get the ControlPort from Tor */
-  void setAutoControlPort(const bool auto);
+  void setAutoControlPort(const bool autoControl);
 
   /** Set the control method */
   void setControlMethod(ControlMethod::Method method);

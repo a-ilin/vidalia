@@ -1,5 +1,6 @@
 *~
 *.po
+*.user
 \#*\#
 # /
 /CMakeCache.txt

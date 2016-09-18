@@ -80,7 +80,7 @@ GeneralPage::browseExecutable(const QString &caption, const QString &file)
 #endif
 
   QString filePath = QFileDialog::getOpenFileName(this, caption, file, filter);
-  return QDir::convertSeparators(filePath);
+  return QDir::toNativeSeparators(filePath);
 }
 
 /** Open a QFileDialog to browse for a Tor executable file. */

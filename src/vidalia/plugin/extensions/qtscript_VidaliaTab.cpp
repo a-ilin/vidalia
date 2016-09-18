@@ -17,7 +17,11 @@
 #include <qgraphicseffect.h>
 #include <qgraphicsproxywidget.h>
 #include <qicon.h>
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 #include <qinputcontext.h>
+#endif
+
 #include <qkeysequence.h>
 #include <qlayout.h>
 #include <qlist.h>

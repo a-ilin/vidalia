@@ -23,4 +23,6 @@ void VidaliaExtensions::initialize(const QString &key, QScriptEngine *engine)
     }
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 Q_EXPORT_PLUGIN2(vidalia_extensions, VidaliaExtensions)
+#endif

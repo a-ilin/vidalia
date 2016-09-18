@@ -423,7 +423,7 @@ set_build_version(const QString &version)
   if (version.length() > MAX_VERSION_LEN)
     return false;
 
-  QByteArray ascii = version.toAscii();
+  QByteArray ascii = version.toLatin1();
   memcpy(buildVersion, ascii.constData(), ascii.length());
   buildVersion[ascii.length()] = '\0';
 

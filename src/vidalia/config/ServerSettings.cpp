@@ -274,7 +274,7 @@ bool
 ServerSettings::isNonExitEnabled()
 {
   with_torrc_value(SETTING_EXITPOLICY) {
-    return ret.size() == 1 and ret.at(0) == "reject *:*" and isServerEnabled();
+    return (ret.size() == 1) && (ret.at(0) == "reject *:*") && isServerEnabled();
   }
   return false;
 }
@@ -510,7 +510,7 @@ ServerSettings::setAccountingStart(const QString &dwm,
                                    int day,
                                    const QString &time)
 {
-  if(dwm == "month" or dwm == "week")
+  if ((dwm == "month") || (dwm == "week"))
     setVolatileValue(SETTING_ACCOUNTING_START,
                      QString("%1 %2 %3").arg(dwm)
                      .arg(day).arg(time));

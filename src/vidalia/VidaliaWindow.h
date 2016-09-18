@@ -30,8 +30,12 @@ class VidaliaWindow : public QMainWindow
 
 public:
   /** Default constructor. */
-  VidaliaWindow(const QString &name, QWidget *parent = 0,
-                Qt::WFlags flags = 0);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+  VidaliaWindow(const QString &name, QWidget *parent = 0, Qt::WindowFlags flags = 0);
+#else
+  VidaliaWindow(const QString &name, QWidget *parent = 0, Qt::WFlags flags = 0);
+#endif
+
   /** Destructor. */
   ~VidaliaWindow();
 

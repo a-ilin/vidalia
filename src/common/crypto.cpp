@@ -178,7 +178,7 @@ crypto_secret_to_key(const QString &secret, const QByteArray &salt, quint8 c)
 #undef EXPBIAS
 
   QCryptographicHash hash(QCryptographicHash::Sha1);
-  QByteArray tmp = salt.left(8).append(secret.toAscii());
+  QByteArray tmp = salt.left(8).append(secret.toLatin1());
   while (count) {
     if (count > tmp.length()) {
       hash.addData(tmp);

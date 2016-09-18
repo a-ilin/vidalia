@@ -89,7 +89,7 @@ Stream::isValidStreamId(const StreamId &streamId)
 
   for (int i = 0; i < length; i++) {
     QChar c = streamId[i];
-    if (!c.isLower() and !c.isUpper() and !c.isNumber())
+    if (!c.isLower() && !c.isUpper() && !c.isNumber())
       return false;
   }
   return true;

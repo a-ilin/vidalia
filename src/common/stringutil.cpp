@@ -16,7 +16,6 @@
 #include "stringutil.h"
 
 #include <QCoreApplication>
-#include <QApplication>
 
 
 /** Create a QStringList from the array of C-style strings. */
@@ -206,12 +205,12 @@ string_escape(const QString &str)
           out.append(c);
         } else {
           out.append('\\');
-          out.append(QString::number(c, 8).toAscii());
+          out.append(QString::number(c, 8).toLatin1());
         }
     }
   }
   out.append('\"');
-  return QString::fromAscii(out);
+  return QString::fromLatin1(out);
 }
 
 /** Given a quoted string <b>str</b>, this function returns an unquoted,
@@ -422,7 +421,7 @@ bool
 string_is_hex(const QString &str)
 {
   for (int i = 0; i < str.length(); i++) {
-    char c = str[i].toUpper().toAscii();
+    char c = str[i].toUpper().toLatin1();
     if ((c < 'A' || c > 'F') && (c < '0' || c > '9'))
       return false;
   }

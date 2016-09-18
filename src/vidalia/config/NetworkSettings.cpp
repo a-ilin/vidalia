@@ -66,7 +66,7 @@ NetworkSettings::apply(QString *errmsg)
 {
   quint32 torVersion = torControl()->getTorVersion();
   // If there is no tor version, asume the greatest
-  if(not torVersion)
+  if( 0 == torVersion )
     torVersion = 0xffffff;
 
   Torrc *torrc = Vidalia::torrc();

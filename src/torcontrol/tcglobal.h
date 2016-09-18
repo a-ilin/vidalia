@@ -19,6 +19,10 @@
 #include <QString>
 #include <QMetaType>
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QMessageLogContext>
+#endif
+
 namespace tc {
   /** Helper class to handle formatting log messages with arguments. */
   class DebugMessage {
@@ -40,7 +44,13 @@ namespace tc {
     virtual ~DebugMessage() {
       if (!--stream->ref) {
         stream->buf.prepend("torcontrol: ");
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+        qt_message_output(stream->type, QMessageLogContext(), stream->buf);
+#else
         qt_message_output(stream->type, qPrintable(stream->buf));
+#endif
+
         delete stream;
       }
     }

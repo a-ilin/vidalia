@@ -62,6 +62,8 @@ HelperProcessPrototype::isDone() const
 
   if(obj)
     return obj->isDone();
+
+  return false;
 }
 
 QStringList

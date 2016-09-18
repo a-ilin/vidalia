@@ -287,7 +287,7 @@ ServerPage::serverModeChanged(bool enabled)
 
   /* Disable the Exit Policies tab when bridge or non-exit relay mode is
    * selected */
-  ui.tabsMenu->setTabEnabled(2, !bridgeEnabled and !ui.rdoNonExitMode->isChecked());
+  ui.tabsMenu->setTabEnabled(2, !bridgeEnabled && !ui.rdoNonExitMode->isChecked());
 
   if(ui.chkMirrorDirectory->isChecked()) {
     ui.lblDirPort->setEnabled(!bridgeEnabled);
@@ -751,7 +751,7 @@ ServerPage::toggleAccounting(int state)
     ui.cmbUnit->setVisible(true);
     ui.lblPer->setVisible(true);
     ui.cmbTime->setVisible(true);
-    if(ui.cmbTime->currentText() == "month" or
+    if(ui.cmbTime->currentText() == "month" ||
        ui.cmbTime->currentText() == "week") {
       ui.spnDay->setVisible(true);
       ui.lblDay->setVisible(true);
@@ -776,7 +776,7 @@ ServerPage::toggleAccounting(int state)
 void
 ServerPage::toggleDisplayDay(const QString &str)
 {
-  ui.spnDay->setVisible(str == "month" or str == "week");
+  ui.spnDay->setVisible(str == "month" || str == "week");
   ui.spnDay->setMinimum(1);
   if(str == "month")
     ui.spnDay->setMaximum(28);

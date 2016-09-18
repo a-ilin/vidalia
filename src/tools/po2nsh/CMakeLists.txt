@@ -19,9 +19,15 @@ set(po2nsh_SRCS
 add_executable(po2nsh ${po2nsh_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(po2nsh
-  ${QT_QTCORE_LIBRARY}
-)
+if (USE_QT5)
+  qt5_use_modules(po2nsh
+    Core
+  )
+else (USE_QT5)
+  target_link_libraries(po2nsh
+    ${QT_QTCORE_LIBRARY}
+  )
+endif (USE_QT5)
 
 if (WIN32 AND QT_CONFIG MATCHES "static")
   target_link_libraries(po2nsh ws2_32 z)
@@ -31,3 +37,4 @@ endif(WIN32 AND QT_CONFIG MATCHES "static")
 get_target_property(PO2NSH_EXECUTABLE po2nsh LOCATION)
 set(VIDALIA_PO2NSH_EXECUTABLE ${PO2NSH_EXECUTABLE}
     CACHE STRING "Location of Vidalia's po2nsh converter." FORCE)
+

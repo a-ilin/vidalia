@@ -19,11 +19,18 @@ set(po2ts_SRCS
 add_executable(po2ts ${po2ts_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(po2ts
-  ${QT_QTCORE_LIBRARY}
-  ${QT_QTCORE_LIB_DEPENDENCIES}
-  ${QT_QTXML_LIBRARY}
-)
+if (USE_QT5)
+  qt5_use_modules(po2ts
+    Core
+    Xml
+  )
+else (USE_QT5)
+  target_link_libraries(po2ts
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTCORE_LIB_DEPENDENCIES}
+    ${QT_QTXML_LIBRARY}
+  )
+endif (USE_QT5)
 
 if (WIN32 AND QT_CONFIG MATCHES "static")
   target_link_libraries(po2ts z)

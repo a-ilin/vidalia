@@ -69,10 +69,6 @@ set(vidalia_SRCS
   about/AboutDialog.cpp
   about/LicenseDialog.cpp
 )
-qt4_wrap_cpp(vidalia_SRCS
-  about/AboutDialog.h
-  about/LicenseDialog.h
-)
 
 ## Plugin framework sources
 set(vidalia_SRCS ${vidalia_SRCS}
@@ -109,13 +105,6 @@ set(vidalia_SRCS ${vidalia_SRCS}
   plugin/extensions/qtscriptshell_TorSignal.cpp
   plugin/extensions/qtscriptshell_VidaliaTab.cpp
 )
-qt4_wrap_cpp(vidalia_SRCS
-  plugin/PluginEngine.h
-  plugin/PluginWrapper.h
-  plugin/DebugDialog.h
-  plugin/prototypes/HelperProcessPrototype.h
-  plugin/prototypes/TorrcPrototype.h
-)
 
 ## Configuration dialog sources
 set(vidalia_SRCS ${vidalia_SRCS}
@@ -124,6 +113,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/AppearancePage.cpp
   config/BridgeUsageDialog.cpp
   config/ConfigDialog.cpp
+  config/ConfigPage.cpp
   config/ConfigPageStack.cpp
   config/DomainValidator.cpp
   config/ExitPolicy.cpp
@@ -145,41 +135,13 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/torrc/Torrc.cpp
   config/TransportSettings.cpp
 )
-qt4_wrap_cpp(vidalia_SRCS
-  config/AbstractTorSettings.h
-  config/AdvancedPage.h
-  config/AppearancePage.h
-  config/BridgeUsageDialog.h
-  config/ConfigDialog.h
-  config/ConfigPage.h
-  config/ConfigPageStack.h
-  config/DomainValidator.h
-  config/GeneralPage.h
-  config/Local8BitStringValidator.h
-  config/NetworkPage.h
-  config/NetworkSettings.h
-  config/NicknameValidator.h
-  config/PortValidator.h
-  config/ServerPage.h
-  config/ServerSettings.h
-  config/TorrcDialog.h
-  config/TorSettings.h
-  config/VidaliaSettings.h
-  config/VSettings.h
-  config/torrc/Torrc.h
-  config/TransportSettings.h
-)
+
 if (USE_MINIUPNPC)
   include_directories(${MINIUPNPC_INCLUDE_DIR})
   set(vidalia_SRCS ${vidalia_SRCS}
     config/UPNPControl.cpp
     config/UPNPControlThread.cpp
     config/UPNPTestDialog.cpp
-  )
-  qt4_wrap_cpp(vidalia_SRCS
-    config/UPNPControl.h
-    config/UPNPControlThread.h
-    config/UPNPTestDialog.h
   )
 endif(USE_MINIUPNPC)
 
@@ -199,48 +161,9 @@ set(vidalia_SRCS ${vidalia_SRCS}
   HelperProcess.cpp
   FirstRunWizard.cpp
 )
-qt4_wrap_cpp(vidalia_SRCS
-  Vidalia.h
-  VTabWidget.h
-  VAttachButton.h
-  MainWindow.h
-  VidaliaWindow.h
-  VMessageBox.h
-  ControlPasswordInputDialog.h
-  VidaliaTab.h
-  StatusTab.h
-  HelperProcess.h
-  FirstRunWizard.h
-)
-
-if (USE_MINIUPNPC)
-  qt4_wrap_ui(vidalia_SRCS config/UPNPTestDialog.ui)
-endif(USE_MINIUPNPC)
-
-## Specify all the Qt Designer .ui files
-qt4_wrap_ui(vidalia_SRCS
-  ControlPasswordInputDialog.ui
-  StatusTab.ui
-  MainWindow.ui
-  about/AboutDialog.ui
-  about/LicenseDialog.ui
-  config/AdvancedPage.ui
-  config/AppearancePage.ui
-  config/BridgeUsageDialog.ui
-  config/ConfigDialog.ui
-  config/GeneralPage.ui
-  config/NetworkPage.ui
-  config/ServerPage.ui
-  config/TorrcDialog.ui
-  log/MessageLog.ui
-  help/browser/HelpBrowser.ui
-  network/NetViewer.ui
-  network/RouterInfoDialog.ui
-  plugin/DebugDialog.ui
-)
 
 ## Add the resource files (icons, etc.)
-qt4_add_resources(vidalia_SRCS
+set(vidalia_SRCS ${vidalia_SRCS}
   res/vidalia.qrc
   help/content/content.qrc
   ${CMAKE_CURRENT_BINARY_DIR}/i18n/vidalia_i18n.qrc
@@ -260,40 +183,20 @@ set(vidalia_SRCS ${vidalia_SRCS}
   network/RouterListWidget.cpp
   network/StreamItem.cpp
 )
-qt4_wrap_cpp(vidalia_SRCS
-  network/CircuitListWidget.h
-  network/CountryInfo.h
-  network/GeoIpResolver.h
-  network/NetViewer.h
-  network/RouterDescriptorView.h
-  network/RouterInfoDialog.h
-  network/RouterListWidget.h
-)
 if (USE_MARBLE)
   set(vidalia_SRCS ${vidalia_SRCS}
     network/TorMapWidget.cpp
     network/TorMapWidgetPopupMenu.cpp
-  )
-  qt4_wrap_cpp(vidalia_SRCS
-    network/TorMapWidget.h
-    network/TorMapWidgetPopupMenu.h
   )
 else(USE_MARBLE)
   set(vidalia_SRCS ${vidalia_SRCS}
     network/TorMapImageView.cpp
     network/ZImageView.cpp
   )
-  qt4_wrap_cpp(vidalia_SRCS
-    network/TorMapImageView.h
-    network/ZImageView.h
-  )
 endif(USE_MARBLE)
 if (USE_GEOIP)
   set(vidalia_SRCS ${vidalia_SRCS}
     network/GeoIpDatabase.cpp
-  )
-  qt4_wrap_cpp(vidalia_SRCS
-    network/GeoIpDatabase.h
   )
 endif(USE_GEOIP)
 
@@ -301,10 +204,6 @@ endif(USE_GEOIP)
 set(vidalia_SRCS ${vidalia_SRCS}
   help/browser/HelpBrowser.cpp
   help/browser/HelpTextBrowser.cpp
-)
-qt4_wrap_cpp(vidalia_SRCS
-  help/browser/HelpBrowser.h
-  help/browser/HelpTextBrowser.h
 )
 
 ## Message log sources
@@ -319,14 +218,6 @@ set(vidalia_SRCS ${vidalia_SRCS}
   log/StatusEventItemDelegate.cpp
   log/StatusEventWidget.cpp
   log/LogFilter.cpp
-)
-qt4_wrap_cpp(vidalia_SRCS
-  log/LogFile.h
-  log/LogHeaderView.h
-  log/LogTreeWidget.h
-  log/MessageLog.h
-  log/StatusEventItemDelegate.h
-  log/StatusEventWidget.h
 )
 
 ## Set the appropriate executable target for the current platform
@@ -448,25 +339,49 @@ else(APPLE)
 endif(APPLE)
 add_dependencies(${vidalia_BIN} i18n)
 
+## Link the executable with the appropriate Qt libraries
+if (USE_QT5)
+  qt5_use_modules(${vidalia_BIN}
+    Core
+    Network
+    Script
+    Widgets
+    Xml
+  )
+else (USE_QT5)
+  target_link_libraries(${vidalia_BIN}
+    ${QT_LIBRARIES}
+  )
+endif (USE_QT5)
 
-## Link to the Qt libraries and other libraries built as a part of Vidalia
 target_link_libraries(${vidalia_BIN}
-  ${QT_LIBRARIES}
   common
   torcontrol
 )
+
 if (USE_MINIUPNPC)
   target_link_libraries(${vidalia_BIN} miniupnpc)
 endif(USE_MINIUPNPC)
+
 if (USE_BREAKPAD)
   target_link_libraries(${vidalia_BIN} ${BREAKPAD_LIBRARY})
 endif(USE_BREAKPAD)
+
 if (USE_MARBLE)
+  if (USE_QT5)
+    qt5_use_modules(${vidalia_BIN}
+      Svg
+    )
+  else (USE_QT5)
+    target_link_libraries(${vidalia_BIN}
+      ${QT_QTSVG_LIBRARY}
+    )
+endif (USE_QT5)
   target_link_libraries(${vidalia_BIN}
     ${MARBLE_LIBRARIES}
-    ${QT_QTSVG_LIBRARY}
   )
 endif(USE_MARBLE)
+
 if (USE_GEOIP)
   target_link_libraries(${vidalia_BIN} ${GEOIP_LIBRARIES})
 endif(USE_GEOIP)

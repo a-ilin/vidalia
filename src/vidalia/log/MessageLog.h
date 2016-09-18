@@ -22,6 +22,11 @@
 #include "TorControl.h"
 #include "VidaliaSettings.h"
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QStatusBar>
+#include <QPointer>
+#endif
+
 class LogTreeItem;
 class QStringList;
 

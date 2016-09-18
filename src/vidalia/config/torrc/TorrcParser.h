@@ -99,12 +99,12 @@ class TorOpt
 
   /** Returns true if this option can be defined with multiple lines */
   bool isMultilined()
-  { return _type == LineList or _type == Dependant or _type == Virtual; }
+  { return (_type == LineList) || (_type == Dependant) || (_type == Virtual); }
 
   /** Returns true if this option can be defined multiple times with
    *  different values */
   bool isMultivalued()
-  { return _type == LineList or _type == Dependant; }
+  { return (_type == LineList) || (_type == Dependant); }
 
   /** Returns the name for this option */
   QString name() const

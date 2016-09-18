@@ -23,7 +23,7 @@
 
 #include "file.h"
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 #include "TorService.h"
 #endif
 
@@ -72,7 +72,7 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   connect(ui.btnBrowsePanicPath, SIGNAL(clicked()), this, SLOT(browsePanicPath()));
 
   /* Hide platform specific features */
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 #if 0
   ui.grpService->setVisible(TorService::isSupported());
 #endif
@@ -186,7 +186,7 @@ AdvancedPage::save(QString &errmsg)
 
   /* Only remember the torrc and datadir values if Vidalia started Tor, or
    * if the user changed the displayed values. */
-  if (Vidalia::torControl()->isVidaliaRunningTor() or
+  if (Vidalia::torControl()->isVidaliaRunningTor() ||
       !Vidalia::torControl()->isConnected()) {
     QString torrc = ui.lineTorConfig->text();
     if (torrc != _settings->getTorrc()) {
@@ -222,7 +222,7 @@ AdvancedPage::save(QString &errmsg)
   vsettings.setPanicPath(ui.linePanicPath->text());
 
 #if 0
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   /* Install or uninstall the Tor service as necessary */
   setupService(ui.chkUseService->isChecked());
 #endif
@@ -255,7 +255,7 @@ AdvancedPage::load()
   ui.lineSocketPath->setText(_settings->getSocketPath());
 
 #if 0
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   TorService s;
   ui.chkUseService->setChecked(s.isInstalled());
 #endif
@@ -284,7 +284,7 @@ AdvancedPage::authMethodChanged(int index)
   bool usePassword = (indexToAuthMethod(index) == TorSettings::PasswordAuth);
   ui.linePassword->setEnabled(usePassword && !ui.chkRandomPassword->isChecked());
   ui.chkRandomPassword->setEnabled(usePassword);
-  ui.lblWarn->setVisible((ui.chkRandomPassword->checkState() == Qt::Unchecked) and usePassword);
+  ui.lblWarn->setVisible((ui.chkRandomPassword->checkState() == Qt::Unchecked) && usePassword);
 }
 
 /** Returns the authentication method for the given <b>index</b>. */
@@ -386,7 +386,7 @@ AdvancedPage::browseSocketPath()
 }
 
 #if 0
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
 /** Installs or removes the Tor service as necessary. */
 void
 AdvancedPage::setupService(bool useService)
@@ -467,7 +467,7 @@ AdvancedPage::toggleAuto(bool)
 void
 AdvancedPage::displayWarning(bool checked)
 {
-  ui.lblWarn->setVisible(!checked and
+  ui.lblWarn->setVisible(!checked &&
                          indexToAuthMethod(ui.cmbAuthMethod->currentIndex()) ==
                          TorSettings::PasswordAuth);
 }

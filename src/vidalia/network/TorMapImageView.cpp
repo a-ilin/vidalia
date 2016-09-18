@@ -325,7 +325,7 @@ TorMapImageView::circuitBoundingBox()
   foreach (CircuitId circid, _circuits.keys()) {
     QPair<QPainterPath*,bool> *pair = _circuits.value(circid);
     QPainterPath *circuit = pair->first;
-    rect = rect.unite(circuit->boundingRect());
+    rect = rect.united(circuit->boundingRect());
   }
   return rect;
 }

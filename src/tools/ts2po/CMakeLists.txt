@@ -25,6 +25,10 @@ set(ts2po_SRCS
   ts2po.cpp
 )
 
+set(ts2po_HDRS
+${CMAKE_CURRENT_BINARY_DIR}/ts2po_config.h
+)
+
 ## Set some of the properties used in the .po header
 set(TS2PO_PROJECT_ID    "Vidalia")
 set(TS2PO_CONTACT_ADDR  "translations@vidalia-project.net")
@@ -37,14 +41,21 @@ configure_file(
 )
 
 ## Create the ts2po executable
-add_executable(ts2po ${ts2po_SRCS})
+add_executable(ts2po ${ts2po_SRCS} ${ts2po_HDRS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(ts2po
-  ${QT_QTCORE_LIBRARY}
-  ${QT_QTCORE_LIB_DEPENDENCIES}
-  ${QT_QTXML_LIBRARY}
-)
+if (USE_QT5)
+  qt5_use_modules(ts2po
+    Core
+    Xml
+  )
+else (USE_QT5)
+  target_link_libraries(ts2po
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTCORE_LIB_DEPENDENCIES}
+    ${QT_QTXML_LIBRARY}
+  )
+endif (USE_QT5)
 
 if (WIN32 AND QT_CONFIG MATCHES "static")
   target_link_libraries(ts2po z)
@@ -54,4 +65,3 @@ endif(WIN32 AND QT_CONFIG MATCHES "static")
 get_target_property(TS2PO_EXECUTABLE ts2po LOCATION)
 set(VIDALIA_TS2PO_EXECUTABLE ${TS2PO_EXECUTABLE}
     CACHE STRING "Location of Vidalia's ts2po converter." FORCE)
-

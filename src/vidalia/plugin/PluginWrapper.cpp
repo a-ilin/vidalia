@@ -109,7 +109,7 @@ PluginWrapper::processInfo(const QString &path)
         _nspace = e.text();
       } else if(e.tagName() == "icon") {
         _icon = e.text();
-        if(not _icon.startsWith(":"))
+        if( ! _icon.startsWith(":") )
           _icon = QFileInfo(path).absoluteDir().canonicalPath() + "/" + _icon;
       }
     }
@@ -228,7 +228,7 @@ PluginWrapper::icon() const
 QAction *
 PluginWrapper::menuAction()
 {
-  if (not _icon.isEmpty())
+  if ( ! _icon.isEmpty() )
     _action = new QAction(QIcon(_icon), _name, this);
   else
     _action = new QAction(_name, this);

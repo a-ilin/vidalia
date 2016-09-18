@@ -24,6 +24,8 @@
 
 class RouterStatus : public QObject
 {
+  Q_OBJECT
+
 public:
   /** Possible router status flags. */
   enum Flag {

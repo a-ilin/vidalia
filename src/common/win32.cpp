@@ -64,7 +64,8 @@ win32_get_folder_location(int folder, QString defaultPath)
     }
     if (SUCCEEDED(result)) {
 #if defined(UNICODE)
-      return QString::fromUtf16(static_cast<const ushort *>(path));
+      static_assert(sizeof(TCHAR) == sizeof(ushort), "sizeof(TCHAR) == sizeof(ushort)");
+      return QString::fromUtf16((const ushort *)(path));
 #else
       return QString::fromLocal8Bit(static_cast<const char *>(path));
 #endif
@@ -258,7 +259,7 @@ win32_process_list()
       do {
         /* Extract the PID and exe filename from the process record */
         pid = (qint64)proc.th32ProcessID;
-        exeFile = QString::fromAscii((const char *)proc.szExeFile);
+        exeFile = QString::fromLatin1((const char *)proc.szExeFile);
 
         /* Add this process to our list */
         procList.insert(pid, exeFile);

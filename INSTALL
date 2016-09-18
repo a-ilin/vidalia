@@ -10,6 +10,22 @@ packages installed:
   * CMake >= 2.4.0      http://www.cmake.org/HTML/Download.html
 
 
+Qt5
+---
+  To configure and compile Vidalia against Qt5 use additional cmake argument:
+    -DUSE_QT5=ON
+
+  To specify the location of Qt5SDK (if needed) use variable CMAKE_PREFIX_PATH.
+  Note that Qt5 shared library directory (DLL/SO) should be in PATH environment variable.
+
+  The rest of build process is the same as for Qt4.
+
+  Example for running CMake at Windows targeting Visual Studio makefiles:
+
+    set PATH=C:\Qt\msvc2015_5.6.0\bin;%PATH%
+    cmake -G "NMake Makefiles" -DUSE_QT5=ON -DCMAKE_PREFIX_PATH="C:\Qt\msvc2015_5.6.0" ..
+
+
 Linux/BSD/Unix
 --------------
   1. To configure and compile Vidalia, you can run the following sequence of

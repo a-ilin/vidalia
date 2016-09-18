@@ -19,7 +19,9 @@
 #include "NetworkPage.h"
 #include "VMessageBox.h"
 
-#include <QtGui>
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QtWidgets>
+#endif
 
 FirstRunWizard::FirstRunWizard(QWidget *parent, bool withPanic, bool withNetwork)
   : _withPanic(withPanic), _withNetwork(withNetwork), QWizard(parent),
@@ -53,7 +55,7 @@ FirstRunWizard::handleNext()
                            VMessageBox::Ok|VMessageBox::Default);
     }
   case DonePageID:
-    if(_np->save(errmsg) and _np->apply(errmsg)) {
+    if(_np->save(errmsg) && _np->apply(errmsg)) {
       next();
     } else {
       back();

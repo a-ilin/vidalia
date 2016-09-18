@@ -1,6 +1,9 @@
 #include "VTabWidget.h"
 #include "VidaliaTab.h"
 
+#include <QApplication>
+#include <QEvent>
+
 VTabWidget::VTabWidget(QWidget *parent) : QTabWidget(parent)
 {
   connect(this, SIGNAL(currentChanged(int)), this, SLOT(updateTop(int)));

@@ -60,9 +60,9 @@ public:
     NewConsensus    = (1u << 14),
     StreamBandwidth = (1u << 15),
   };
-  static const Event EVENT_MIN = TorEvents::Bandwidth;
-  static const Event EVENT_MAX = TorEvents::StreamBandwidth;
-  Q_DECLARE_FLAGS(Events, Event);
+  static const Event TorEventMin = TorEvents::Bandwidth;
+  static const Event TorEventMax = TorEvents::StreamBandwidth;
+  Q_DECLARE_FLAGS(Events, Event)
 
   /** Default Constructor */
   TorEvents(QObject *parent = 0);

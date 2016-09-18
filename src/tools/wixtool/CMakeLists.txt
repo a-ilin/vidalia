@@ -15,10 +15,18 @@ set(wixtool_SRCS
 add_executable(wixtool ${wixtool_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(wixtool
-  ${QT_QTCORE_LIBRARY}
-  ${QT_QTXML_LIBRARY}
-)
+if (USE_QT5)
+  qt5_use_modules(wixtool
+    Core
+    Xml
+  )
+else (USE_QT5)
+  target_link_libraries(wixtool
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTCORE_LIB_DEPENDENCIES}
+    ${QT_QTXML_LIBRARY}
+  )
+endif (USE_QT5)
 
 if (WIN32 AND QT_CONFIG MATCHES "static")
   target_link_libraries(wixtool ws2_32 z)

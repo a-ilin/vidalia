@@ -123,8 +123,10 @@ signals:
 
 protected:
 #if defined(Q_OS_WIN)
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
   /** Filters Windows events, looking for events of interest */
   bool winEventFilter(MSG *msg, long *result);
+#endif
 #endif
 
   /** Removes all currently installed QTranslators. */
@@ -139,7 +141,11 @@ private slots:
 private:
   /** Catches debugging messages from Qt and sends them to
    * Vidalia's logs. */
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+  static void qt_msg_handler(QtMsgType type, const QMessageLogContext&, const QString& msg);
+#else
   static void qt_msg_handler(QtMsgType type, const char *msg);
+#endif
 
   /** Parse the list of command-line arguments. */
   void parseArguments(QStringList args);
@@ -158,6 +164,10 @@ private:
   static Torrc* _torrc;      /**< Vidalia's main Torrc object.     */
   static Log _log; /**< Logs debugging messages to file or stdout. */
   static QList<QTranslator *> _translators; /**< List of installed translators. */
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+  QAbstractNativeEventFilter* _nativeEventFilter;
+#endif
 };
 
 #endif

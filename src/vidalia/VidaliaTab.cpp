@@ -1,6 +1,10 @@
 #include "VidaliaTab.h"
 #include "Vidalia.h"
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QCloseEvent>
+#endif
+
 /** Default constructor.
  * \param title Tab title.
  * \param name Optional group name for settings accessed by this tab.

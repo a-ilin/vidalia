@@ -83,7 +83,9 @@ Q_DECLARE_METATYPE(ControlMethod::Method)
 Q_DECLARE_METATYPE(ControlReply)
 Q_DECLARE_METATYPE(QString*)
 Q_DECLARE_METATYPE(ControlCommand)
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 Q_DECLARE_METATYPE(QAbstractSocket::SocketError)
+#endif
 
 //
 // ControlSocket

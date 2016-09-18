@@ -80,7 +80,7 @@ NetViewer::NetViewer(QWidget *parent)
 
   loadSettings();
   ui.frmSettings->setVisible(false);
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
 #endif
 
@@ -362,10 +362,10 @@ void
 NetViewer::addCircuit(const Circuit &circuit)
 {
   /* Add the circuit to the list of all current circuits */
-  if(circuit.purpose() == Circuit::General or
-     circuit.purpose() == Circuit::Controller or
+  if(circuit.purpose() == Circuit::General ||
+     circuit.purpose() == Circuit::Controller ||
      circuit.purpose() == Circuit::Testing) {
-    if((circuit.buildFlags() & Circuit::OneHopTunnel) or
+    if((circuit.buildFlags() & Circuit::OneHopTunnel) ||
        (circuit.buildFlags() & Circuit::IsInternal)) {
       ui.treeInternalCircuitList->addCircuit(circuit);
     } else {
@@ -423,7 +423,7 @@ NetViewer::preLoadNetworkStatus()
   ServerSettings settings(_torControl);
   if (settings.isServerEnabled()) {
     RouterDescriptor *rd = RouterDescriptor::fromTorControl(_torControl);
-    if(_torControl->isConnected() and settings.isServerEnabled()) {
+    if(_torControl->isConnected() && settings.isServerEnabled()) {
       _routers << *rd;
     } else {
       ui.lblConsensus->setVisible(false);
@@ -460,7 +460,7 @@ void
 NetViewer::loadNetworkStatus()
 {
   int count = 0, thres = 50;
-  for(; _it != _routers.constEnd() and count < thres; ++_it, ++count) {
+  for(; _it != _routers.constEnd() && count < thres; ++_it, ++count) {
     addRouter((*_it));
     QCoreApplication::processEvents();
   }

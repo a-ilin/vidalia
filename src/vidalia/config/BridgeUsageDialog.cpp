@@ -35,9 +35,15 @@ void
 BridgeUsageDialog::showEvent(QShowEvent *e)
 {
   QHeaderView *header = ui.treeClientSummary->header();
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+  header->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+  header->resizeSection(1, 220);
+  header->setSectionResizeMode(2, QHeaderView::ResizeToContents);
+#else
   header->setResizeMode(0, QHeaderView::ResizeToContents);
   header->resizeSection(1, 220);
   header->setResizeMode(2, QHeaderView::ResizeToContents);
+#endif
 
   QDialog::showEvent(e);
 }

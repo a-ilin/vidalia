@@ -102,7 +102,7 @@ private:
   int authMethodToIndex(TorSettings::AuthenticationMethod method);
 
 #if 0
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
   /** Installs or removes the Tor service as necessary */
   void setupService(bool useService);
 #endif

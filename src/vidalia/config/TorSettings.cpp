@@ -123,7 +123,7 @@ TorSettings::apply(QString *errmsg)
     QString relativePortConf = QDir(QDir::currentPath())
       .relativeFilePath(QString("%1/port.conf").arg(dataDirectory));
 
-#if defined(Q_WS_WIN)
+#if defined(Q_OS_WIN)
     QString torPath = getExecutable();
     if(QDir(torPath).isRelative())
       torPath = QCoreApplication::applicationDirPath() + "/" + torPath;
@@ -173,7 +173,7 @@ TorSettings::apply(QString *errmsg)
         return false;
       }
       torrc->setValue(TOR_ARG_COOKIE_AUTH,    "0");
-      if(not useRandomPassword())
+      if( ! useRandomPassword() )
         torrc->setValue(TOR_ARG_HASHED_PASSWORD, hashedPassword);
       break;
     default:
@@ -212,7 +212,7 @@ TorSettings::getDataDirectory() const
   with_torrc_value(SETTING_DATA_DIRECTORY) {
     return ret.at(0);
   }
-  return QDir::convertSeparators(volatileValue(SETTING_DATA_DIRECTORY).toString());
+  return QDir::toNativeSeparators(volatileValue(SETTING_DATA_DIRECTORY).toString());
 }
 
 /** Sets the location to use as Tor's data directory. */
@@ -230,7 +230,7 @@ TorSettings::getExecutable() const
   QString tor = localValue(SETTING_TOR_EXECUTABLE).toString();
   if (tor.isEmpty()) /* Don't let the Tor executable name be empty */
     tor = defaultValue(SETTING_TOR_EXECUTABLE).toString();
-  return QDir::convertSeparators(tor);
+  return QDir::toNativeSeparators(tor);
 }
 
 /** Sets the location and name of Tor's executable to the given string. */
@@ -247,12 +247,12 @@ TorSettings::getTorrc() const
   QString torrc;
   TorControl *tc = torControl();
   if (tc && tc->isConnected() && tc->getInfo("config-file", torrc))
-    return QDir::convertSeparators(torrc);
+    return QDir::toNativeSeparators(torrc);
 
   torrc = localValue(SETTING_TORRC).toString();
   if(QDir(QFileInfo(torrc).filePath()).isRelative())
     torrc = QCoreApplication::applicationDirPath() + "/" + torrc;
-  return QDir::convertSeparators(torrc);
+  return QDir::toNativeSeparators(torrc);
 }
 
 /** Sets the torrc that will be used when starting Tor.
@@ -271,12 +271,12 @@ TorSettings::getDefaultsTorrc() const
   QString torrc;
   // TorControl *tc = torControl();
   // if (tc && tc->isConnected() && tc->getInfo("config-file", torrc))
-  //   return QDir::convertSeparators(torrc);
+  //   return QDir::toNativeSeparators(torrc);
 
   torrc = localValue(SETTING_DEFAULTS_TORRC).toString();
   if(QDir(QFileInfo(torrc).filePath()).isRelative())
     torrc = QCoreApplication::applicationDirPath() + "/" + torrc;
-  return QDir::convertSeparators(torrc);
+  return QDir::toNativeSeparators(torrc);
 }
 
 /** Sets the defaults torrc that will be used when starting Tor.
@@ -599,7 +599,7 @@ TorSettings::setBootstrapFrom(const QString &from)
 QString
 TorSettings::bootstrapFrom() const
 {
-  return QDir::convertSeparators(value(SETTING_BOOTSTRAP_FROM).toString());
+  return QDir::toNativeSeparators(value(SETTING_BOOTSTRAP_FROM).toString());
 }
 
 bool

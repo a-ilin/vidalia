@@ -27,7 +27,7 @@ TorHighlighter::highlightBlock(const QString &text)
   bool firstFormatted = false;
 
   for (int i = 0; i < text.length(); ++i) {
-    if(text.mid(i, 1) == " " and !firstFormatted) {
+    if ((text.mid(i, 1) == " ") && !firstFormatted) {
       setFormat(0, i, QColor(2,71,105));
       setFormat(i, text.length() - 1, Qt::gray);
       firstFormatted = true;
@@ -46,7 +46,11 @@ TorrcDialog::TorrcDialog(QWidget *parent)
   ui.setupUi(this);
   loadToolBar();
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+  TorHighlighter *highlighter = new TorHighlighter(ui.teditTorrc->document());
+#else
   TorHighlighter *highlighter = new TorHighlighter(ui.teditTorrc);
+#endif
 
   /* Retrieve the global TorControl instance */
   tc = Vidalia::torControl();

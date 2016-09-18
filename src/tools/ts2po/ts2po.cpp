@@ -47,18 +47,18 @@ create_po_header(const QString &encoding)
 
   header.append("msgid \"\"\n");
   header.append("msgstr \"\"\n");
-  header.append("\"Project-Id-Version: "TS2PO_PROJECT_ID"\\n\"\n");
-  header.append("\"Report-Msgid-Bugs-To: "TS2PO_CONTACT_ADDR"\\n\"\n");
+  header.append("\"Project-Id-Version: " TS2PO_PROJECT_ID "\\n\"\n");
+  header.append("\"Report-Msgid-Bugs-To: " TS2PO_CONTACT_ADDR "\\n\"\n");
   header.append(QString("\"POT-Creation-Date: %1\\n\"\n").arg(tstamp));
   header.append("\"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n\"\n");
   header.append("\"Last-Translator: \\n\"\n");
-  header.append("\"Language-Team: "TS2PO_LANGUAGE_TEAM"\\n\"\n");
+  header.append("\"Language-Team: " TS2PO_LANGUAGE_TEAM "\\n\"\n");
   header.append("\"MIME-Version: 1.0\\n\"\n");
   header.append("\"Content-Type: text/plain; ");
   header.append(QString("charset=%1\\n\"\n").arg(encoding));
   header.append("\"Content-Transfer-Encoding: 8bit\\n\"\n");
   header.append("\"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\\n\"\n");
-  header.append("\"X-Generator: Vidalia ts2po "TS2PO_VERSION"\\n\"\n");
+  header.append("\"X-Generator: Vidalia ts2po " TS2PO_VERSION "\\n\"\n");
   header.append("\n");
 
   return header;

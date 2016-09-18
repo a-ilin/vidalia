@@ -89,7 +89,7 @@ void TorrcTestSuite::testTorrcParser()
     if (i<optCount-1)
         content += "\n";
   }
-  file.write(content.toAscii());
+  file.write(content.toLatin1());
   file.close();
 
   TorrcParser parser;
@@ -143,7 +143,7 @@ void TorrcTestSuite::testTorrc()
     if (i<testData.count()-1)
       content += "\n";
   }
-  file.write(content.toAscii());
+  file.write(content.toLatin1());
   file.close();
 
   TorrcParser parser;
@@ -288,7 +288,7 @@ void TorrcTestSuite::testRunningTor()
     foreach (QString key, testData) {
       content += key + " " + testData[key] + "#comment\n";
     }
-    file.write(content.toAscii());
+    file.write(content.toLatin1());
     file.close();
     Torrc torrc(testFilePath);
     QVERIFY( torrc.apply(torControl) );
@@ -575,6 +575,8 @@ createTestValue(TorOpt::OptType type)
   case TorOpt::Port: return "9053";
   case TorOpt::NIL: return "";
   }
+
+  return "";
 }
 
 QString

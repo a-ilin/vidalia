@@ -80,8 +80,8 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
   if (!item->parent()) {
     /* A circuit was selected */
     CircuitItem *circuitItem = dynamic_cast<CircuitItem *>(item);
-    if (!circuitItem and
-        ((circuitItem->circuit().status() == Circuit::Closed) or
+    if (!circuitItem &&
+        ((circuitItem->circuit().status() == Circuit::Closed) ||
         (circuitItem->circuit().status() == Circuit::Failed)))
       return;
     CircuitId id = circuitItem->id();

@@ -20,15 +20,12 @@ set(crashreporter_SRCS
   main.cpp
   CrashReportDialog.cpp
 )
-qt4_wrap_cpp(crashreporter_SRCS
-  CrashReportDialog.h
-)
-qt4_wrap_ui(crashreporter_SRCS
-  CrashReportDialog.ui
-)
-qt4_add_resources(crashreporter_SRCS
+
+set(crashreporter_SRCS 
+  ${crashreporter_SRCS}
   res/CrashReporter.qrc
 )
+
 if (MSVC)
   configure_file(
     res/CrashReporter.rc.in
@@ -48,13 +45,25 @@ else(WIN32)
 endif(WIN32)
 
 ## Link the crash reporter application with the Qt and Breakpad libraries
+if (USE_QT5)
+  target_link_libraries(crashreporter
+    Qt5::Core
+    Qt5::Network
+    Qt5::Widgets
+  )
+else (USE_QT5)
+  target_link_libraries(crashreporter
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTGUI_LIBRARY}
+    ${QT_QTNETWORK_LIBRARY}
+  )
+endif (USE_QT5)
+
 target_link_libraries(crashreporter
-  ${QT_QTCORE_LIBRARY}
-  ${QT_QTGUI_LIBRARY}
-  ${QT_QTNETWORK_LIBRARY}
   ${BREAKPAD_LIBRARY}
   common
 )
+
 if (WIN32)
   target_link_libraries(crashreporter
     ${QT_QTMAIN_LIBRARY}

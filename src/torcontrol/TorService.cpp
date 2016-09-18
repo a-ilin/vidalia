@@ -257,7 +257,7 @@ TorService::install(const QString &torPath, const QString &torrc,
                               (LPCTSTR)TOR_SERVICE_NAME, (LPCTSTR)TOR_SERVICE_DISP,
                               TOR_SERVICE_ACCESS, SERVICE_WIN32_OWN_PROCESS,
                               SERVICE_AUTO_START, SERVICE_ERROR_IGNORE,
-                              (LPCTSTR)command.toAscii().data(), NULL, NULL, NULL,
+                              (LPCTSTR)command.toLatin1().data(), NULL, NULL, NULL,
                               NULL, NULL);
     if (!service) {
       /* XXX This needs an actual reason message. */

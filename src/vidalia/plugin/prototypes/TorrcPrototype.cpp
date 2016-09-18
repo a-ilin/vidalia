@@ -35,6 +35,8 @@ TorrcPrototype::apply(TorControl *tc, QString *errmsg){
 
   if(obj)
     return obj->apply(tc, errmsg);
+
+  return false;
 }
 
 DEF_TYPE0(Torrc, void,
@@ -68,4 +70,6 @@ TorrcPrototype::setRawContents(const QString &contents, QString *errmsg, TorCont
 
   if(obj)
     return obj->setRawContents(contents, errmsg, tc);
+
+  return false;
 }

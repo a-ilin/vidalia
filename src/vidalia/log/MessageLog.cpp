@@ -143,7 +143,7 @@ MessageLog::createActions()
   tb->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
   ui.verticalLayout->insertWidget(0, tb);
 
-#if defined(Q_WS_MAC)
+#if defined(Q_OS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
 #endif
   ui.actionClose->setShortcut(QString("Esc"));
@@ -200,7 +200,7 @@ MessageLog::loadSettings()
                               DEFAULT_ENABLE_LOGFILE).toBool();
   QString logfile = getSetting(SETTING_LOGFILE,
                                DEFAULT_LOGFILE).toString();
-  ui.lineFile->setText(QDir::convertSeparators(logfile));
+  ui.lineFile->setText(QDir::toNativeSeparators(logfile));
   rotateLogFile(logfile);
   ui.chkEnableLogFile->setChecked(_logFile.isOpen());
 
@@ -294,7 +294,7 @@ MessageLog::saveSettings()
     saveSetting(SETTING_LOGFILE, ui.lineFile->text());
     saveSetting(SETTING_ENABLE_LOGFILE, _logFile.isOpen());
   }
-  ui.lineFile->setText(QDir::convertSeparators(ui.lineFile->text()));
+  ui.lineFile->setText(QDir::toNativeSeparators(ui.lineFile->text()));
   ui.chkEnableLogFile->setChecked(_logFile.isOpen());
 
   /* Update the maximum displayed item count */
@@ -344,7 +344,7 @@ void
 MessageLog::browse()
 {
   /* Strangely, QFileDialog returns a non seperator converted path. */
-  QString filename = QDir::convertSeparators(
+  QString filename = QDir::toNativeSeparators(
                           QFileDialog::getSaveFileName(this,
                               tr("Select Log File"), "tor-log.txt"));
   if (!filename.isEmpty()) {

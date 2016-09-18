@@ -10,7 +10,6 @@
 ##  except according to the terms described in the LICENSE file.
 ##
 
-
 set(common_SRCS
   crypto.cpp
   file.cpp
@@ -21,9 +20,6 @@ set(common_SRCS
   stringutil.cpp
   TorSocket.cpp
 )
-qt4_wrap_cpp(common_SRCS 
-  TorSocket.h
-)
 
 if(WIN32)
   set(common_SRCS ${common_SRCS}
@@ -32,10 +28,18 @@ if(WIN32)
 endif(WIN32)
 
 add_library(common STATIC ${common_SRCS})
-target_link_libraries(common
-  ${QT_QTCORE_LIBRARY}
-  ${QT_QTNETWORK_LIBRARY}
-)
+
+if (USE_QT5)
+  qt5_use_modules(common
+    Core
+    Network
+  )
+else (USE_QT5)
+  target_link_libraries(common
+    ${QT_QTCORE_LIBRARY}
+    ${QT_QTNETWORK_LIBRARY}
+  )
+endif (USE_QT5)
 
 if (WIN32 AND QT_CONFIG MATCHES "static")
   target_link_libraries(common z)

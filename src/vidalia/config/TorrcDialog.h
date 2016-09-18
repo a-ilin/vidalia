@@ -18,10 +18,16 @@
 
 #include <QSyntaxHighlighter>
 
+class QTextEdit;
+
 class TorHighlighter : public QSyntaxHighlighter {
   public:
     /** Default constructor */
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    TorHighlighter(QTextDocument *td) : QSyntaxHighlighter(td) {}
+#else
     TorHighlighter(QTextEdit *te) : QSyntaxHighlighter(te) {}
+#endif
     /** Default deconstructor */
     ~TorHighlighter() {}
     /** Hightlights commented lines and gives some format to

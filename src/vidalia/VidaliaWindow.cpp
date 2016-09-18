@@ -26,7 +26,11 @@
 
 /** Default constructor. */
 VidaliaWindow::VidaliaWindow(const QString &name, QWidget *parent,
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+                            Qt::WindowFlags flags)
+#else
                             Qt::WFlags flags)
+#endif
  : QMainWindow(parent, flags)
 {
   _name     = name;
