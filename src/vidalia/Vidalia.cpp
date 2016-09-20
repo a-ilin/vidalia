@@ -37,6 +37,11 @@
 #include <QTranslator>
 #include <QLibraryInfo>
 
+#if defined(Q_OS_WIN)
+#include <qt_windows.h>
+#include "win32.h"
+#endif
+
 #ifdef Q_OS_MACX
 #include <Carbon/Carbon.h>
 #endif

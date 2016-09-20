@@ -24,6 +24,10 @@
 #include <QString>
 #include <QMessageBox>
 
+#ifdef Q_OS_WIN32
+#include <qt_windows.h>
+#endif
+
 #define UPNPCONTROL_REINIT_MSEC 300000 // 5 minutes
 #define UPNPCONTROL_MAX_WAIT_MSEC 60000 // 1 minute
 

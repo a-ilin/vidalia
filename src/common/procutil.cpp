@@ -23,10 +23,14 @@
 #include <QCoreApplication>
 #include <QProcess>
 
-#if !defined(Q_OS_WIN)
+#if defined(Q_OS_WIN)
+#include "win32.h"
+#else
+#include <sys/types.h>
+#include <unistd.h>
 #include <signal.h>
+#include <errno.h>
 #endif
-
 
 /** Returns the PID of the current process. */
 qint64

@@ -20,7 +20,7 @@
 #include <QString>
 
 #define WIN32_LEAN_AND_MEAN
-#include <windows.h>
+#include <qt_windows.h>
 
 /** Retrieves the location of the user's %PROGRAMFILES% folder. */
 QString win32_program_files_folder();

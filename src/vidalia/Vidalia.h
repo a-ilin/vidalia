@@ -29,11 +29,6 @@
 #include <QString>
 #include <QKeySequence>
 
-#if defined(Q_OS_WIN)
-#include <windows.h>
-#include "win32.h"
-#endif
-
 /** Pointer to this Vidalia application instance. */
 #define vApp  ((Vidalia *)qApp)
 

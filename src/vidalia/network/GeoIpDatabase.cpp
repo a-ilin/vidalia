@@ -20,6 +20,8 @@
 #include <QString>
 #include <QHostAddress>
 
+#include <GeoIP.h>
+#include <GeoIPCity.h>
 
 /** Default constructor. */
 GeoIpDatabase::GeoIpDatabase(QObject *parent)

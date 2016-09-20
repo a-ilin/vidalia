@@ -28,6 +28,10 @@
 
 #include <QToolBar>
 
+#ifdef Q_OS_WIN
+#include "win32.h"
+#endif
+
 /* Message log settings */
 #define SETTING_MSG_FILTER          "MessageFilter"
 #define SETTING_FILTER_TERM         "MessageFilterSearchTerm"

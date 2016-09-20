@@ -16,15 +16,13 @@
 #ifndef _GEOIPDATABASE_H
 #define _GEOIPDATABASE_H
 
-#include <GeoIP.h>
-#include <GeoIPCity.h>
-
 #include <QObject>
 
 class QString;
 class QHostAddress;
 class GeoIpRecord;
 
+typedef struct GeoIPTag GeoIP;
 
 class GeoIpDatabase : public QObject
 {

@@ -240,6 +240,9 @@ endif(USE_MARBLE)
 
 if (USE_GEOIP)
   target_link_libraries(${test_BIN} ${GEOIP_LIBRARIES})
+  if(GEOIP_INCLUDE_DIR)
+    include_directories(${GEOIP_INCLUDE_DIR})
+  endif(GEOIP_INCLUDE_DIR)
 endif(USE_GEOIP)
 
 if (APPLE)

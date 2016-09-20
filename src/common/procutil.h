@@ -17,15 +17,6 @@
 #define _PROCUTIL_H
 
 #include <QtGlobal>
-#if defined(Q_OS_WIN)
-#include "win32.h"
-#else
-#include <sys/types.h>
-#include <unistd.h>
-#include <signal.h>
-#include <errno.h>
-#endif
-
 #include <QHash>
 
 class QString;

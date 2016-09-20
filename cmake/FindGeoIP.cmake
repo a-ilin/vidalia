@@ -12,13 +12,16 @@
 
 ## Tries to find the required MaxMind GeoIPlibraries. Once done this will
 ## define the variable GEOIP_LIBRARIES.
+##
+## Variables GEOIP_INCLUDE_PATH and GEOIP_LIBRARY_PATH can be used to specify
+## the exact location of GeoIP library.
+##
 
 message(STATUS "Looking for MaxMind GeoIP header files")
-
-set(CMAKE_INCLUDE_PATH "${CMAKE_INCLUDE_PATH} ${GEOIP_INCLUDE_DIR}")
 find_path(GEOIP_INCLUDE_DIR
   NAMES GeoIP.h GeoIPCity.h
-  PATHS ${GEOIP_INCLUDE_DIR}
+  PATHS ${GEOIP_INCLUDE_PATH}
+  HINTS ${GEOIP_INCLUDE_PATH}
 )
 
 if (GEOIP_INCLUDE_DIR)
@@ -28,15 +31,21 @@ else(GEOIP_INCLUDE_DIR)
 endif(GEOIP_INCLUDE_DIR)
 
 message(STATUS "Looking for MaxMind GeoIP libraries")
-find_file(GEOIP_LIB
-  NAMES libGeoIP.a
-  PATHS ${GEOIP_LIBRARY_DIR}/.libs/
-  HINTS ${GEOIP_LIBRARY_DIR}/.libs/
+find_path(GEOIP_LIBRARY_DIR
+  NAMES libGeoIP.a GeoIP.lib
+  PATHS ${GEOIP_LIBRARY_DIR}/.libs/ ${GEOIP_LIBRARY_PATH}
+  HINTS ${GEOIP_LIBRARY_DIR}/.libs/ ${GEOIP_LIBRARY_PATH}
 )
-if (GEOIP_LIB)
+
+if (GEOIP_LIBRARY_DIR)
   message(STATUS "Looking for MaxMind GeoIP libraries - found")
-  set(GEOIP_LIBRARIES ${GEOIP_LIB})
-else(GEOIP_LIB)
+else (GEOIP_LIBRARY_DIR)
   message(FATAL_ERROR "Could not find MaxMind GeoIP library")
-endif(GEOIP_LIB)
+endif (GEOIP_LIBRARY_DIR)
+
+if (MSVC)
+  set(GEOIP_LIBRARIES ${GEOIP_LIBRARY_DIR}/GeoIP.lib)
+else (MSVC)
+  set(GEOIP_LIBRARIES ${GEOIP_LIBRARY_DIR}/libGeoIP.a)
+endif (MSVC)
 

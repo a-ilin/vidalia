@@ -33,14 +33,21 @@ set(torcontrol_SRCS
   TorSignal.cpp
 )
 
+set(torcontrol_HDRS
+)
+
 if (WIN32)
+  set(torcontrol_HDRS ${torcontrol_HDRS}
+    TorService_p.h
+  )
+
   set(torcontrol_SRCS ${torcontrol_SRCS} 
     TorService.cpp
   )
 endif(WIN32)
 
 
-add_library(torcontrol STATIC  ${torcontrol_SRCS})
+add_library(torcontrol STATIC  ${torcontrol_SRCS} ${torcontrol_HDRS})
 
 ## Link the executable with the appropriate Qt libraries
 if (USE_QT5)
