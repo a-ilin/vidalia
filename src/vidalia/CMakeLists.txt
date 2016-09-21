@@ -383,7 +383,7 @@ endif (USE_QT5)
 endif(USE_MARBLE)
 
 if (USE_GEOIP)
-  target_link_libraries(${vidalia_BIN} ${GEOIP_LIBRARIES})
+  target_link_libraries(${vidalia_BIN} ${GEOIP_LIBRARY})
 endif(USE_GEOIP)
 
 if (WIN32)

@@ -59,7 +59,7 @@ if (USE_QT5)
 
   if (USE_MARBLE)
     find_package(Qt5Svg REQUIRED)
-    find_package(Qt5WebKit REQUIRED)
+    find_package(Qt5WebKit)
     find_package(Qt5DBus REQUIRED)
   endif(USE_MARBLE)
 

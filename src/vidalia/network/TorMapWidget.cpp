@@ -218,7 +218,13 @@ TorMapWidget::zoomToRouter(const QString &id)
   if (_routers.contains(id)) {
     qreal lon, lat;
     GeoDataCoordinates coords = _routers.value(id);
-    coords.geoCoordinates(lon, lat, GeoDataPoint::Degree);
+
+    coords.geoCoordinates(lon, lat,
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+                          GeoDataCoordinates::Degree);
+#else
+                          GeoDataPoint::Degree);
+#endif
 
     zoomView(zoomFromDistance(1000));
     centerOn(lon, lat, true);
@@ -231,7 +237,10 @@ TorMapWidget::customPaint(GeoPainter *painter)
 {
   bool selected = false;
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
   painter->autoMapQuality();
+#endif
+
   painter->setPen(CIRCUIT_NORMAL_PEN);
 
   foreach (CircuitGeoPath *path, _circuits.values()) {

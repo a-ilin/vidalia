@@ -31,10 +31,14 @@
 #include <QPair>
 #include <QPainterPath>
 
-typedef QPair<Marble::GeoDataLineString, bool> CircuitGeoPath;
+namespace Marble
+{
+  class GeoDataDocument;
+  class GeoDataFolder;
+  class GeoDataLineString;
+}
 
-class Marble::GeoDataDocument;
-class Marble::GeoDataFolder;
+typedef QPair<Marble::GeoDataLineString, bool> CircuitGeoPath;
 
 class TorMapWidget : public Marble::MarbleWidget
 {

@@ -25,7 +25,27 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/../vidalia/plugin
   ${CMAKE_CURRENT_SOURCE_DIR}/../vidalia/plugin/prototypes
   ${CMAKE_CURRENT_SOURCE_DIR}/../vidalia/plugin/extensions
+  ${MARBLE_INCLUDE_DIR}
 )
+
+if (USE_MARBLE)
+  if (APPLE OR WIN32)
+  ##
+  ## XXX: The Marble build system on OS X currently doesn't actually install the
+  ## required include files to /usr/local/include or similar. Instead, we have
+  ## to pluck them directly from the source tree. Ick.
+  ##
+    include_directories(
+      ${MARBLE_INCLUDE_DIR}/AbstractLayer
+      ${MARBLE_INCLUDE_DIR}/geodata
+      ${MARBLE_INCLUDE_DIR}/geodata/data
+      ${MARBLE_INCLUDE_DIR}/geodata/handlers
+      ${MARBLE_INCLUDE_DIR}/geodata/parser
+      ${MARBLE_INCLUDE_DIR}/geodata/scene
+      ${MARBLE_INCLUDE_DIR}/Projections
+    )
+  endif(APPLE OR WIN32)
+endif(USE_MARBLE)
 
 ## About dialog sources
 set(vidalia_SRCS 
@@ -239,7 +259,7 @@ if (USE_MARBLE)
 endif(USE_MARBLE)
 
 if (USE_GEOIP)
-  target_link_libraries(${test_BIN} ${GEOIP_LIBRARIES})
+  target_link_libraries(${test_BIN} ${GEOIP_LIBRARY})
   if(GEOIP_INCLUDE_DIR)
     include_directories(${GEOIP_INCLUDE_DIR})
   endif(GEOIP_INCLUDE_DIR)

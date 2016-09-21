@@ -41,24 +41,54 @@
 ##
 
 message(STATUS "Looking for Marble header files")
+set(OLD_MARBLE_INCLUDE_DIR ${MARBLE_INCLUDE_DIR})
+unset(MARBLE_INCLUDE_DIR CACHE)
 find_path(MARBLE_INCLUDE_DIR
-  NAMES MarbleWidget.h
+  NAMES MarbleWidget.h MarbleDirs.h
   PATH_SUFFIXES marble
+  PATHS ${OLD_MARBLE_INCLUDE_DIR}
 )
 if (MARBLE_INCLUDE_DIR)
-  message(STATUS "Looking for Marble header files - found")
+  message(STATUS "Looking for Marble header files - found: ${MARBLE_INCLUDE_DIR}")
 else(MARBLE_INCLUDE_DIR)
   message(FATAL_ERROR "Could not find Marble header files. If Marble is installed, you can run CMake again and specify its location with -DMARBLE_INCLUDE_DIR=<path>")
 endif(MARBLE_INCLUDE_DIR)
 
 
+STRING(TOUPPER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE)
+
+# library name depends on Qt version and build type
+if (WIN32 AND (CMAKE_BUILD_TYPE STREQUAL "DEBUG"))
+  if (USE_QT5)
+    set(MARBLEWIDGET_LIBRARY_NAME marblewidget-qt5d)
+    set(MARBLEPLUGIN_OVERVIEW_LIBRARY_NAME OverviewMapd)
+    set(MARBLEPLUGIN_STARS_LIBRARY_NAME StarsPlugind)
+  else (USE_QT5)
+    set(MARBLEWIDGET_LIBRARY_NAME marblewidgetd)
+    set(MARBLEPLUGIN_OVERVIEW_LIBRARY_NAME MarbleOverviewMapd)
+    set(MARBLEPLUGIN_STARS_LIBRARY_NAME MarbleStarsPlugind)
+  endif (USE_QT5)
+else (WIN32 AND (CMAKE_BUILD_TYPE STREQUAL "DEBUG"))
+  if (USE_QT5)
+    set(MARBLEWIDGET_LIBRARY_NAME marblewidget-qt5)
+    set(MARBLEPLUGIN_OVERVIEW_LIBRARY_NAME OverviewMap)
+    set(MARBLEPLUGIN_STARS_LIBRARY_NAME StarsPlugin)
+  else (USE_QT5)
+    set(MARBLEWIDGET_LIBRARY_NAME marblewidget)
+    set(MARBLEPLUGIN_OVERVIEW_LIBRARY_NAME MarbleOverviewMap)
+    set(MARBLEPLUGIN_STARS_LIBRARY_NAME MarbleStarsPlugin)
+  endif (USE_QT5)
+endif (WIN32 AND (CMAKE_BUILD_TYPE STREQUAL "DEBUG"))
+
+
 message(STATUS "Looking for Marble libraries")
+unset(MARBLEWIDGET_LIBRARY CACHE)
 find_library(MARBLEWIDGET_LIBRARY
-  NAMES marblewidget.7 marblewidget
+  NAMES ${MARBLEWIDGET_LIBRARY_NAME}.7 ${MARBLEWIDGET_LIBRARY_NAME}
   PATHS ${MARBLE_LIBRARY_DIR}
 )
 if (MARBLEWIDGET_LIBRARY)
-  message(STATUS "Looking for Marble libraries - found")
+  message(STATUS "Looking for Marble libraries - found: ${MARBLEWIDGET_LIBRARY}")
   set(MARBLE_LIBRARIES ${MARBLEWIDGET_LIBRARY})
   get_filename_component(MARBLE_LIBRARY_DIR ${MARBLEWIDGET_LIBRARY} PATH)
 else(MARBLEWIDGET_LIBRARY)
@@ -68,20 +98,24 @@ endif(MARBLEWIDGET_LIBRARY)
 
 if (APPLE OR WIN32)
   message(STATUS "Looking for Marble data files")
+  set(OLD_MARBLE_DATA_DIR ${MARBLE_DATA_DIR})
+  unset(MARBLE_DATA_DIR CACHE)
   find_path(MARBLE_DATA_DIR
     NAMES srtm.dgml
     PATH_SUFFIXES maps/earth/srtm
+    PATHS ${OLD_MARBLE_DATA_DIR}
   )
   if (MARBLE_DATA_DIR)
-    message(STATUS "Looking for Marble data files - ${MARBLE_DATA_DIR}")
+    message(STATUS "Looking for Marble data files - found: ${MARBLE_DATA_DIR}")
   else (MARBLE_DATA_DIR)
-    message(FATAL_ERROR "Could not find Marble libraries. If Marble is installed, you can run CMake again and specify its location with -DMARBLE_DATA_DIR=<path>")
+    message(FATAL_ERROR "Could not find Marble data files. If Marble is installed, you can run CMake again and specify its location with -DMARBLE_DATA_DIR=<path>")
   endif(MARBLE_DATA_DIR)
 
 
   message(STATUS "Looking for Marble plugin widgets")
-  find_library(MARBLE_OVERVIEWMAP_PLUGIN
-    NAMES MarbleOverviewMap
+  unset(MARBLE_OVERVIEWMAP_PLUGIN CACHE)
+  find_file(MARBLE_OVERVIEWMAP_PLUGIN
+    NAMES ${MARBLEPLUGIN_OVERVIEW_LIBRARY_NAME}.dylib ${MARBLEPLUGIN_OVERVIEW_LIBRARY_NAME}.dll
     PATHS ${MARBLE_PLUGIN_DIR}
     PATH_SUFFIXES render/overviewmap
   )
@@ -92,8 +126,9 @@ if (APPLE OR WIN32)
     )
   endif(MARBLE_OVERVIEWMAP_PLUGIN)
 
-  find_library(MARBLE_STARS_PLUGIN
-    NAMES MarbleStarsPlugin
+  unset(MARBLE_OVERVIEWMAP_PLUGIN CACHE)
+  find_file(MARBLE_STARS_PLUGIN
+    NAMES ${MARBLEPLUGIN_STARS_LIBRARY_NAME}.dylib ${MARBLEPLUGIN_STARS_LIBRARY_NAME}.dll
     PATHS ${MARBLE_PLUGIN_DIR}
     PATH_SUFFIXES render/stars
   )

@@ -16,8 +16,13 @@
 #include "TorMapWidgetPopupMenu.h"
 #include "Vidalia.h"
 
-#include <MarbleModel.h>
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <GeoDataFeature.h>
+#else
 #include <MarblePlacemarkModel.h>
+#endif
+
+#include <MarbleModel.h>
 #include <MarbleWidgetInputHandler.h>
 
 #include <QChar>
@@ -42,9 +47,15 @@ TorMapWidgetPopupMenu::TorMapWidgetPopupMenu(TorMapWidget *widget)
 void
 TorMapWidgetPopupMenu::featureLeftClicked(int x, int y)
 {
-  QVector<const GeoDataPlacemark*> features = _widget->whichFeatureAt(QPoint(x,y));
-  QVector<const GeoDataPlacemark*>::const_iterator it = features.constBegin();
-  QVector<const GeoDataPlacemark*>::const_iterator const itEnd = features.constEnd();
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+  typedef QVector<const GeoDataFeature*> VectorGeoDataFeatures;
+#else
+  typedef QVector<const GeoDataPlacemark*> VectorGeoDataFeatures;
+#endif
+
+  VectorGeoDataFeatures features = _widget->whichFeatureAt(QPoint(x,y));
+  VectorGeoDataFeatures::const_iterator it = features.constBegin();
+  VectorGeoDataFeatures::const_iterator const itEnd = features.constEnd();
 
   QString name, id;
   int numRelays = 0;
