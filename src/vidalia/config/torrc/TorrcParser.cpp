@@ -114,6 +114,7 @@ TorrcParser::TorrcParser()
   _torOpts << TorOpt("FetchUselessDescriptors", TorOpt::Boolean, "0");
   _torOpts << TorOpt("FetchV2Networkstatus", TorOpt::Boolean, "0");
   _torOpts << TorOpt("GeoIPFile", TorOpt::Filename, "/usr/local/share/tor/geoip");
+  _torOpts << TorOpt("GeoIPv6File", TorOpt::Filename, "/usr/local/share/tor/geoip6");
   _torOpts << TorOpt("GiveGuardFlagTo_CVE_2011_2768_VulnerableRelays", TorOpt::Boolean, "0");
   _torOpts << TorOpt("HardwareAccel", TorOpt::Boolean, "0");
   _torOpts << TorOpt("HeartbeatPeriod", TorOpt::TimeInterval, "6 hours");

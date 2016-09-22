@@ -110,8 +110,8 @@ QString
 GeoIpDatabase::countryCodeByAddr(const QHostAddress &ip)
 {
   if (isOpen() && ! ip.isNull()) {
-    const char *addr = ip.toString().toLatin1().constData();
-    const char *countryCode = GeoIP_country_code_by_addr(_db, addr);
+    QByteArray addr = ip.toString().toLatin1();
+    const char *countryCode = GeoIP_country_code_by_addr(_db, addr.constData());
     if (countryCode)
       return QString::fromUtf8(countryCode);
   }
@@ -122,13 +122,13 @@ GeoIpRecord
 GeoIpDatabase::recordByAddr(const QHostAddress &ip)
 {
   if (isOpen() && ! ip.isNull()) {
-    const char *addr = ip.toString().toLatin1().constData();
+    QByteArray addr = ip.toString().toLatin1();
 
     GeoIPRecord *r;
     if (ip.protocol() == QAbstractSocket::IPv6Protocol)
-      r = GeoIP_record_by_addr_v6(_db, addr);
+      r = GeoIP_record_by_addr_v6(_db, addr.constData());
     else
-      r = GeoIP_record_by_addr(_db, addr);
+      r = GeoIP_record_by_addr(_db, addr.constData());
 
     if (r) {
       QString countryCode = QString::fromUtf8(r->country_code);

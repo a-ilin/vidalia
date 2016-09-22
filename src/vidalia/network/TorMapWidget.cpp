@@ -235,6 +235,8 @@ TorMapWidget::zoomToRouter(const QString &id)
 void
 TorMapWidget::customPaint(GeoPainter *painter)
 {
+  Marble::MarbleWidget::customPaint(painter);
+
   bool selected = false;
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
