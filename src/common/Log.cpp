@@ -80,6 +80,15 @@ Log::open(QString file)
   return isOpen();
 }
 
+bool Log::openStream(FILE* file)
+{
+  if (_logFile.isOpen())
+    close();
+
+  _logFile.open(file, QIODevice::WriteOnly);
+  return isOpen();
+}
+
 /** Flushes any outstanding log messages and closes the log file. */
 void
 Log::close()

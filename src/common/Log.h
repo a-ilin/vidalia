@@ -47,11 +47,12 @@ public:
   /** Destructor. */
   ~Log();
 
-  /** Opens a file on disk (or stdout or stderr) to which log messages will be
-   * written. */
+  /** Opens a file on disk to which log messages will be written. */
   bool open(FILE *file);
   /** Opens a file on disk to which log messages will be written. */
   bool open(QString file);
+  /** Opens a stream to which log messages will be written. */
+  bool openStream(FILE *file);
   /** Closes the log file. */
   void close();
   /** Returns true if the log file is open and ready for writing. */

@@ -153,7 +153,7 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
     _log.setLogLevel(Log::stringToLogLevel(
                       _args.value(ARG_LOGLEVEL)));
     if (!_args.contains(ARG_LOGFILE))
-      _log.open(stdout);
+      _log.openStream(stdout);
   }
   if (!_args.contains(ARG_LOGLEVEL) &&
       !_args.contains(ARG_LOGFILE))
