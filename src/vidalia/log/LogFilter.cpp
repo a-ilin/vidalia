@@ -15,6 +15,8 @@
 
 #include "LogFilter.h"
 #include <QStack>
+#include <QList>
+#include <QString>
 
 /** Constructor taking severity as argument. */
 LogFilter::LogFilter(uint filter)

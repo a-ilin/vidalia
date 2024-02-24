@@ -239,6 +239,11 @@ VidaliaNativeEventFilter::nativeEventFilter(const QByteArray& /*eventType*/, voi
   return false;
 #endif
 }
+#else
+bool VidaliaNativeEventFilter::nativeEventFilter(const QByteArray& /*eventType*/, void* message, long* result)
+{
+    return false;
+}
 #endif
 
 /** Returns true if the user wants to see usage information. */
